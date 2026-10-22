@@ -8,6 +8,7 @@ $0.004 per million input tokens, so the cap mostly guards against bugs.
 from __future__ import annotations
 
 import hashlib
+import http.client
 import json
 import os
 import sqlite3
@@ -26,8 +27,9 @@ URL = "https://openrouter.ai/api/v1/embeddings"
 USD_PER_TOKEN = 0.004 / 1e6
 CHARS_PER_TOKEN = 4
 MAX_TEXT_CHARS = 12000      # what Hades sends per record
-BATCH_TEXTS = 64
-BATCH_CHARS = 120000
+BATCH_TEXTS = 32
+BATCH_CHARS = 40000         # the proxy drops very large bodies
+RETRYABLE = (urllib.error.URLError, OSError, http.client.HTTPException, TimeoutError, KeyError, ValueError)
 CACHE = ROOT / ".cache" / "embeddings.sqlite"
 
 
@@ -89,7 +91,7 @@ class Embedder:
             batch = [text] if text is not None else []
 
     @staticmethod
-    def _post(batch: list[str], key: str, attempts: int = 5) -> list[list[float]]:
+    def _post(batch: list[str], key: str, attempts: int = 6) -> list[list[float]]:
         body = json.dumps({"model": MODEL, "input": batch, "dimensions": DIMS, "encoding_format": "float"}).encode()
         for attempt in range(attempts):
             req = urllib.request.Request(URL, data=body, method="POST",
@@ -98,8 +100,11 @@ class Embedder:
                 with urllib.request.urlopen(req, timeout=60) as resp:
                     data = json.load(resp)["data"]
                 return [row["embedding"] for row in sorted(data, key=lambda r: r["index"])]
-            except (urllib.error.URLError, TimeoutError, KeyError, ValueError):
+            except urllib.error.HTTPError as exc:
+                if exc.code in (400, 401, 402, 403) or attempt == attempts - 1:
+                    raise RuntimeError(f"embedding request refused: HTTP {exc.code} {exc.read()[:200]!r}") from None
+            except RETRYABLE:
                 if attempt == attempts - 1:
                     raise
-                time.sleep(2 * (attempt + 1))
+            time.sleep(2 * (attempt + 1))
         return []
