@@ -23,8 +23,10 @@ Full run: 100 tool cases, 250 memory cases. The v13-specific per-case gates are 
 | T_audit | transform-audit pairs drift one way | up to -40% |
 
 Hard zeros that matter:
-- **A tool case is zeroed if any model-emitted tool call is not executed through `tool_endpoint`**
-  (`cmd/dittobench-api/v10_tool_provenance.go:77-84`, `ModelSelectedNotExecuted == 0` required).
+- **A tool case is zeroed if the harness sends a call no model emission backs** (changed
+  arguments, replay, no emission: 409, counted unmatched). A model call that is never sent does
+  *not* zero a case in ordinary runs; it is only counted run-wide (`PROTOCOL.md:352-355`).
+  Corrected 2026-10-22, see `2026-10-22_hades_v6_review.md`.
 - Memory: asserting two candidate values, abstaining on an answerable question, an asserted
   distractor, another user's fact, a slot answer not restated in prose.
 - A generic refusal on an unanswerable question scores 0; the decline must cite a record token.
@@ -46,7 +48,7 @@ pre-gate harness (T) is losing 11%. Gates are the cheapest place to gain.
 
 ## Where blinkrazor loses (code evidence from the review)
 
-1. **Swallowed tool calls (zeroes the case).** Malformed or unknown calls are rejected locally
+1. **Swallowed tool calls (run-wide count; zeroes only on case-window paths).** Malformed or unknown calls are rejected locally
    and never sent (agent.cpp:632-679); duplicate calls go through a SEND/HOLD model check
    (agent.cpp:595-627, 680-703), and a HOLD means the emitted call is never executed.
 2. **Extra tool calls (E_tool).** Read tools get a "transient: retry once" hint (network.cpp:567-573),
@@ -77,7 +79,7 @@ cheating rule.
 
 | # | change | expected effect |
 |---|---|---|
-| 1 | Execute every model-emitted tool call verbatim; return validation problems as the tool result instead of rejecting locally; drop the SEND/HOLD step | removes zeroed tool cases |
+| 1 | Execute every model-emitted tool call verbatim; return validation problems as the tool result instead of rejecting locally; drop the SEND/HOLD step | the model sees and fixes its own call; lower priority after the 2026-10-22 correction |
 | 2 | Remove the "retry once" hint; at most one retry only on a real transport error | E_tool closer to 1 |
 | 3 | Memory questions never reach the action lane (route by "asks about the user's records", not by single words) | O_mem closer to 1 |
 | 4 | Temperature 0 everywhere with distinct seeds for drafts; drop the follow-up rewrite; one answer format | M_meta / twins / T_audit |
