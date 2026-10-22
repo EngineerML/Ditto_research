@@ -15,3 +15,6 @@ __pycache__/
 .ruff_cache/
 *.log
 *.tmp
+
+# practice run folders: reports, logs, traces (prompts and replies)
+practice/*/

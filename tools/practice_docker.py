@@ -82,6 +82,8 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=HERE / "practice")
     ap.add_argument("--harness-port", type=int, default=8080,
                     help="port the image listens on; validators use 8080 and some images ignore PORT")
+    ap.add_argument("--trace", action="store_true", help="write the practice trace (trace images only) to the run folder")
+    ap.add_argument("--env", action="append", default=[], help="extra KEY=VALUE for the harness container, repeatable")
     args = ap.parse_args()
 
     secrets_env = load_env_file(args.env_file)
@@ -115,7 +117,10 @@ def main() -> int:
                  "-e", f"PORT={harness_port}", "-e", "DITTOBENCH_PROVIDER=openrouter",
                  "-e", "DITTOBENCH_MODEL=openai/gpt-oss-20b", "-e", "OPENROUTER_API_KEY",
                  "-e", f"OLLAMA_BASE_URL=http://127.0.0.1:{embed_port}",
-                 "-e", "DITTOBENCH_DB=/tmp/practice.db", args.image],
+                 "-e", "DITTOBENCH_DB=/tmp/practice.db",
+                 *(["-v", f"{out_dir}:/trace", "-e", "HARNESS_TRACE_DIR=/trace"] if args.trace else []),
+                 *[x for env in args.env for x in ("-e", env)],
+                 args.image],
                 env=child_env, check=True, stdout=subprocess.DEVNULL)
             api_log = (out_dir / "scorer.log").open("wb")
             api = subprocess.Popen([str(SCORER_BIN), "-port", str(api_port)], cwd=lr.API_DIR,

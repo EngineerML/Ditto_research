@@ -55,6 +55,7 @@ def main() -> int:
     ap.add_argument("--image", default="ditto-harness:dev")
     ap.add_argument("--seed", type=int, default=4242)
     ap.add_argument("--cases", type=int, default=12)
+    ap.add_argument("--trace-dir", default="", help="host folder for the practice trace (trace images only)")
     args = ap.parse_args()
     cases = data.load(args.seed, 0, "small")
     harness_port, embed_port = free_port(), free_port()
@@ -64,7 +65,9 @@ def main() -> int:
     try:
         subprocess.run(["docker", "run", "-d", "--rm", "--name", name, "--network", "host", "-e", f"PORT={harness_port}",
                         "-e", "HARNESS_MOCK_MODEL=1", "-e", f"OLLAMA_BASE_URL=http://127.0.0.1:{embed_port}",
-                        "-e", "DITTOBENCH_DB=/tmp/smoke.db", args.image, "uvicorn", "app.main:app", "--host", "127.0.0.1",
+                        "-e", "DITTOBENCH_DB=/tmp/smoke.db",
+                        *(["-v", f"{args.trace_dir}:/trace", "-e", "HARNESS_TRACE_DIR=/trace"] if args.trace_dir else []),
+                        args.image, "uvicorn", "app.main:app", "--host", "127.0.0.1",
                         "--port", str(harness_port)], check=True, stdout=subprocess.DEVNULL)
         base = f"http://127.0.0.1:{harness_port}"
         wait(f"{base}/health")
