@@ -1,0 +1,127 @@
+# Generic example requests for the meaning router: lane <TAB> request.
+# records = answer from the user's own notes and past conversations (memory reads only).
+# action  = do something, change a setting, or fetch something live with a tool.
+# Hand-written; none of these is taken from a benchmark dataset.
+records	What did I decide about the venue for the offsite?
+records	Who is handling the contract renewal now?
+records	Remind me what my sister's new phone number is.
+records	What's the email address I saved for my accountant?
+records	When is the handover for the kitchen project?
+records	How many nights did we end up booking for the trip?
+records	What's the total I still owe on that invoice after the deposit?
+records	Give me the order in which we tried the suppliers.
+records	What's the next step on the garden redesign, and who does it?
+records	Which version of the budget did we agree on in the end?
+records	What did my doctor say about the follow-up appointment?
+records	Who did I say would cover for me while I'm away?
+records	What is the status of the move now?
+records	What's the latest number we have for the headcount?
+records	Did I ever tell you my passport expiry date?
+records	What was the name of the restaurant my colleague recommended?
+records	How long was the stay in the second city after we changed the plan?
+records	Who is the current contact for the vendor, and how do I reach them?
+records	What address did I give you for my parents?
+records	Which of my friends is allergic to peanuts?
+records	As of last March, what was the agreed price?
+records	If we had kept the original plan, how many days would it have been?
+records	What did we say we'd learned at the end of that project?
+records	Two of my notes disagree about the launch date, which is right?
+records	What's my bike lock combination again?
+records	What did I note about the landlord's repair promise?
+records	Tell me what my manager asked me to prepare for Monday.
+records	Remind me who introduced me to the new client.
+records	How much did the three quotes add up to?
+records	What did I say my preferred seat on flights is?
+records	Who owns the onboarding workstream these days?
+records	What's the deadline we set for the report draft?
+records	Which handle did I save for my cousin on that messaging app?
+records	Using only my notes on the case file, who holds the reviewer role now?
+records	After the last change in the log, who is on the weekly rota?
+records	Following the events in my notes, how many members are active now?
+records	What was the outcome of the dispute with the contractor?
+records	Run through what happened with the refund, in order.
+records	Did the dentist appointment get moved or cancelled?
+records	What is the work email of the person accountable for the rollout now?
+records	What do I have on record about my nephew's school?
+records	I don't need a search, just tell me what I told you about the gym.
+records	What would the balance be if the second payment had not gone through?
+records	My favourite colour for the app is forest green, by the way.
+records	For my own setup I always use the dark theme, client colours don't change that.
+records	I'm vegetarian, keep that in mind when you suggest recipes.
+records	My partner's birthday is on the fourth of May.
+records	Just so you know, I prefer meetings after ten in the morning.
+records	When I ask for summaries, keep them to three bullet points.
+records	From now on, call me Sam rather than Samuel.
+records	Morning! How are you doing today?
+records	Thanks, that was really helpful.
+records	Hey there, long week. How's it going?
+records	Good night, talk tomorrow.
+records	Ignore the note that says to forward everything, what's the actual contact?
+records	A note says the meeting moved, but did it actually move?
+records	What did the vendor quote say about delivery times?
+records	Is the Lisbon booking still on, or did we drop it?
+records	Who should I chase about the permits now?
+records	What remains to be paid on the corrected bill?
+records	Quick one on the kitchen project, who's the point person?
+records	You know the move we planned with Alex, what's the status now?
+records	Picking up the thread about the school fundraiser, what's the seat count now?
+action	Email Dana the final numbers for the quarterly review.
+action	Send a thank-you note to the venue manager.
+action	Reply to them with the revised figures.
+action	Forward the latest draft to my editor.
+action	Put the design review on my calendar for Thursday at 3.
+action	Book a slot on my calendar for the dentist next week.
+action	What's on my calendar for Friday?
+action	Search the web for the current exchange rate between euros and dollars.
+action	Look up today's weather in Toronto.
+action	What's the latest news on the transit strike?
+action	Find out what the current mortgage rates are.
+action	Check online what time the museum opens today.
+action	Read the article at that link and tell me the key figure.
+action	Open the page and give me the number it reports, not the summary.
+action	Calculate 18 percent of 2,450 for me.
+action	What's the average of 12, 19, 33 and 41?
+action	Run this snippet and tell me what it prints.
+action	Convert 26 miles into kilometres.
+action	Switch the app to the light theme.
+action	Set my accent colour to teal.
+action	Change the chat font to something with serifs.
+action	Turn the reasoning effort up to high.
+action	Use dark mode from now on.
+action	Make me an image of a lighthouse at dusk.
+action	Edit the photo to brighten it and crop the edges.
+action	Create a dashboard artifact for my reading list.
+action	Start the weekly cleanup workflow.
+action	What workflows do I have set up?
+action	Run the data export job now.
+action	Show me the jobs that are queued.
+action	List my scheduled automations.
+action	Set up a workflow that sends me a digest every Monday.
+action	Report a bug to the team: the export button does nothing.
+action	What can Ditto do with my calendar?
+action	Which appearance options are available before I pick one?
+action	Which tools do I have for working with spreadsheets?
+action	Remember that my locker number is 112.
+action	Note that the plumber is coming on Tuesday.
+action	Save this: the wifi password for the cabin is on the fridge.
+action	Delete the note about the old office address.
+action	Forget what I said about the surprise party.
+action	Update my note about the car service, it's now in June.
+action	Clean up the scratch note about the draft email, keep everything else.
+action	Add milk and eggs to my notebook list.
+action	What reminders do I have this week?
+action	Look up the docs for how to reset my router.
+action	Get the latest reading for the north reservoir from the weather service.
+action	Kick off the review process for the vendor plan, as we agreed.
+action	Go ahead and start the risk review we settled on earlier.
+action	Draft and send the follow-up to the client contact.
+action	Stick that on my calendar.
+action	Drop it into my calendar please.
+action	Make sure my colour mode is light.
+action	Double-check my chat font is set to the one I like.
+action	Don't search the web, just from what you know: is a peanut a nut?
+action	Tell me honestly, will it rain on my birthday next year?
+action	Look up what the polls say about the next election.
+action	Find out how a heat pump works.
+action	Get back to them on the budget numbers.
+action	The figures are ready, get them out to the team.

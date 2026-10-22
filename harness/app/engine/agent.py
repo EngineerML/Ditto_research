@@ -12,12 +12,13 @@ from app.engine.action import ActionEngine
 from app.engine.state import Outcome, TokenTally
 from app.engine.action import safe_run as run_action
 from app.config import Settings
-from app.routing.lane import RECORDS, Lane, about_own_records, classify, own_records_question
+from app.routing.lane import ACTION, RECORDS, Lane, about_own_records, classify, own_records_question, statement_like
+from app.routing.meaning import IntentBank
 from app.llm import LLM, build_llm, grow_call_gate
 from app.memory.deliberation import Deliberation
 from app.memory.embedding import Embedder, EmbeddingError, dense_order, fuse, record_text, text_key
 from app.memory.retrieval import Candidate, Retriever, UserIndex, asked_part
-from app.memory.packet import build_packet, identifier_focus
+from app.memory.packet import build_packet, identifier_focus, widen
 from app.protocol import MemoryPair, RunRequest, RunResponse
 from app.engine.records import RecordsEngine
 from app.engine.records import safe_run as run_records
@@ -39,6 +40,7 @@ class CaseRunner:
         self.retriever = Retriever(store, coverage_floor=settings.coverage_floor)
         self.embedder = Embedder(settings.ollama_base_url, http, settings.embed_timeout_seconds) if settings.embeddings else None
         self.order_readings: dict[str, asyncio.Future[str | None]] | None = {} if settings.short_order_cache else None
+        self.intents = IntentBank() if settings.meaning_route and self.embedder is not None else None
         self._default_llm: LLM | None = None
 
     async def embed_pairs(self, user_id: str | None, pairs: list[MemoryPair]) -> int:
@@ -53,7 +55,8 @@ class CaseRunner:
         self.store.put_vectors(user_id, dict(zip(missing, vectors)))
         return len(missing)
 
-    async def fused_order(self, user_id: str | None, question: str, ordered: list[Candidate], index: UserIndex) -> list[str] | None:
+    async def fused_order(self, user_id: str | None, question: str, ordered: list[Candidate], index: UserIndex) -> tuple[list[str], list[str]] | None:
+        """(lexical and meaning orders fused, meaning order alone)."""
         if self.embedder is None or not index.nodes:
             return None
         pairs = [node.pair for node in index.nodes.values()]
@@ -63,7 +66,25 @@ class CaseRunner:
         fresh = {text_key(record_text(pair)): vector for pair, vector in zip(missing, vectors[1:])}
         self.store.put_vectors(user_id, fresh)
         held.update(fresh)
-        return fuse([cand.pair.pair_id for cand in ordered], dense_order(vectors[0], pairs, held))
+        dense = dense_order(vectors[0], pairs, held)
+        return fuse([cand.pair.pair_id for cand in ordered], dense), dense
+
+    def widening(self, user_id: str | None, question: str, dense: list[str]) -> list[str]:
+        """Records to add beside the packet: the closest by meaning, then the best full-text matches."""
+        if not self.settings.widen:
+            return []
+        hits = [hit.pair.pair_id for hit in self.store.search(user_id, question, limit=self.settings.widen_text)]
+        return list(dict.fromkeys(dense[: self.settings.widen_dense] + hits))
+
+    async def meaning_lane(self, req: RunRequest, lane: Lane) -> Lane:
+        if self.intents is None or self.embedder is None:
+            return lane
+        sense = await self.intents.lane(self.embedder, req.user_input)
+        if sense is None or sense[1] < self.settings.meaning_sure or sense[0] == lane.name:
+            return lane
+        if sense[0] == RECORDS:
+            return Lane(RECORDS, "statement" if statement_like(req.user_input) else "meaning")
+        return Lane(ACTION, "meaning")
 
     def _llm_for(self, req: RunRequest) -> LLM:
         if req.inference_base_url and req.inference_base_url.strip() and not self.settings.mock_model:
@@ -72,9 +93,9 @@ class CaseRunner:
             self._default_llm = build_llm(self.settings, None)
         return self._default_llm
 
-    def records_engine(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None) -> RecordsEngine:
+    def records_engine(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None, extra: list[str] | None = None) -> RecordsEngine:
         settings = self.settings
-        return RecordsEngine(llm, executor, memory, tally, max_turns=settings.max_model_turns, max_tokens=settings.max_output_tokens, effort=settings.records_reasoning_effort, recall_max_tokens=settings.recall_max_tokens, recall_effort=settings.recall_reasoning_effort, packet_chars=settings.packet_char_budget, subject_discipline=settings.subject_discipline, arc=settings.arc_contiguous, worksheet=settings.worksheet, effort_high=settings.records_effort_high, thread_first=settings.thread_first, thread_reading=settings.thread_reading, closure=settings.evidence_closure, coverage=settings.coverage, link_hop=settings.link_hop, long_packet_chars=settings.long_packet_chars, meaning_records=settings.meaning_records, meaning_chars=settings.meaning_chars, meaning_order=settings.meaning_order, fused=fused, search_record_chars=settings.search_record_chars, search_long_records=settings.search_long_records, search_passes=settings.search_passes, search_temperature=settings.search_temperature, search_seed=int(settings.sampling_seed) if settings.sampling_seed else None, deliberation=Deliberation(settings.drafts, settings.draft_temperature, int(settings.sampling_seed) if settings.sampling_seed else None) if settings.deliberation else None, anchors=anchors, finder_order=settings.finder_order, follow_up=settings.follow_up, follow_up_retry=settings.follow_up_retry)
+        return RecordsEngine(llm, executor, memory, tally, max_turns=settings.max_model_turns, max_tokens=settings.max_output_tokens, effort=settings.records_reasoning_effort, recall_max_tokens=settings.recall_max_tokens, recall_effort=settings.recall_reasoning_effort, packet_chars=settings.packet_char_budget, subject_discipline=settings.subject_discipline, arc=settings.arc_contiguous, worksheet=settings.worksheet, effort_high=settings.records_effort_high, thread_first=settings.thread_first, thread_reading=settings.thread_reading, closure=settings.evidence_closure, coverage=settings.coverage, link_hop=settings.link_hop, long_packet_chars=settings.long_packet_chars, meaning_records=settings.meaning_records, meaning_chars=settings.meaning_chars, meaning_order=settings.meaning_order, fused=fused, search_record_chars=settings.search_record_chars, search_long_records=settings.search_long_records, search_passes=settings.search_passes, search_temperature=settings.search_temperature, search_seed=int(settings.sampling_seed) if settings.sampling_seed else None, deliberation=Deliberation(settings.drafts, settings.draft_temperature, int(settings.sampling_seed) if settings.sampling_seed else None) if settings.deliberation else None, anchors=anchors, finder_order=settings.finder_order, follow_up=settings.follow_up, follow_up_retry=settings.follow_up_retry, extra=extra, widen_chars=settings.widen_chars)
 
     async def short_answer(self, req: RunRequest, lane: Lane, focus: list[Candidate], index: UserIndex, engine: RecordsEngine, deadline: float, outcome: Outcome) -> bool:
         settings = self.settings
@@ -137,22 +158,34 @@ class CaseRunner:
                 lane = Lane(RECORDS, "identifier-held")
             elif lane.name != RECORDS and lane.reason == "live" and about_own_records(req.user_input, req.tools, lane, index, self.retriever.question_anchors(index, req.user_input)):
                 lane = Lane(RECORDS, "own-records")
+            lane = await self.meaning_lane(req, lane)
             handled = lane.name == RECORDS and await self.short_answer(req, lane, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome)
             if lane.name == RECORDS and not handled:
                 query = asked_part(req.user_input) if focus else req.user_input
                 lexical = ordered if query == req.user_input else self.retriever.rank(req.user_id, query)[0]
                 try:
-                    fused = await self.fused_order(req.user_id, query, lexical, index)
+                    orders = await self.fused_order(req.user_id, query, lexical, index)
                 except EmbeddingError as exc:
                     log.warning("case=%s embedding unavailable, lexical packet without meaning order or additions: %s", req.case_id, exc)
-                    fused = None
-                engine = self.records_engine(llm, executor, memory, tally, fused, self.retriever.question_anchors(index, req.user_input))
+                    orders = None
+                fused, dense = orders if orders is not None else (None, [])
+                extra = self.widening(req.user_id, req.user_input, dense)
+                engine = self.records_engine(llm, executor, memory, tally, fused, self.retriever.question_anchors(index, req.user_input), extra)
                 outcome = await run_records(engine, req, ordered, anchored, {pid: node.pair for pid, node in index.nodes.items()}, deadline, index, lane.reason == "statement")
             elif lane.name != RECORDS:
                 packet = build_packet(ordered, anchored, settings.packet_char_budget, settings.arc_contiguous, settings.thread_first, req.user_input, closure=settings.evidence_closure, index=index if settings.link_hop else None)
                 lead = ""
                 if settings.action_topic and not focus and own_records_question(req.user_input, req.tools):
                     packet, lead = topic_lead(req.user_input, packet, [node.pair for node in index.nodes.values()], settings.story_min_density, settings.story_max_chars)
+                if settings.widen:
+                    try:
+                        orders = await self.fused_order(req.user_id, req.user_input, ordered, index)
+                    except EmbeddingError as exc:
+                        log.warning("case=%s embedding unavailable, action packet widened by full-text matches only: %s", req.case_id, exc)
+                        orders = None
+                    pairs_by_id = {pid: node.pair for pid, node in index.nodes.items()}
+                    extra = self.widening(req.user_id, req.user_input, orders[1] if orders is not None else [])
+                    packet = widen(packet, [Candidate(pair=pairs_by_id[pid], reasons=["widen"]) for pid in extra if pid in pairs_by_id], settings.widen_chars)
                 engine = ActionEngine(llm, executor, memory, tally, max_turns=settings.action_max_turns, max_tokens=settings.action_max_tokens, effort=settings.action_reasoning_effort, levers=settings.levers)
                 outcome = await run_action(engine, req, packet, deadline, lane.reason, lead)
         except Exception:

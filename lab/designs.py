@@ -31,6 +31,7 @@ class Pick:
     text: str
     chars: int
     compressed: set[str] = field(default_factory=set)
+    path: str = ""
 
 
 def whole(case: Case, ids: list[str]) -> Pick:
@@ -78,7 +79,9 @@ def pick_hades(case: Case, lane: str, worlds: hades.HadesWorld, meaning: Meaning
         reason = hades.Lane(hades.RECORDS, "question") if lane == RECORDS else hades.Lane("action", "imperative")
     dense = (lambda c, q: meaning.order(c, q)) if meaning is not None else None
     sel = hades.select(case, reason, worlds, dense)
-    return whole(case, sel.pair_ids)
+    pick = whole(case, sel.pair_ids)
+    pick.path = sel.path
+    return pick
 
 
 def pick_dense(case: Case, meaning: Meaning, k: int) -> Pick:
@@ -107,8 +110,12 @@ def pick_overhorizon(case: Case, lane: str, meaning: Meaning, worlds: hades.Hade
 
 
 def pick_union(case: Case, lane: str, worlds: hades.HadesWorld, meaning: Meaning, dense_k: int = 12,
-               text_k: int = 8, budget: int = 48000) -> Pick:
-    base = pick_hades(case, lane, worlds, meaning).pair_ids
+               text_k: int = 8, budget: int = 48000, keep_short_paths: bool = False) -> Pick:
+    """keep_short_paths: leave Hades's short/topic paths as they are (what the harness does)."""
+    picked = pick_hades(case, lane, worlds, meaning)
+    if keep_short_paths and picked.path in ("short", "topic"):
+        return picked
+    base = picked.pair_ids
     extra = meaning.order(case)[:dense_k] + hades.full_text_hits(case, worlds, text_k)
     by_id = {r.pair_id: r for r in case.store}
     kept, used = [], 0

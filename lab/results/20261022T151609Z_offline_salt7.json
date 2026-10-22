@@ -1,0 +1,91 @@
+{
+ "args": {
+  "train": [
+   11,
+   12,
+   13,
+   14
+  ],
+  "train_salts": [
+   0,
+   3
+  ],
+  "test": [
+   101
+  ],
+  "test_salt": 7,
+  "budget_usd": 0.05,
+  "no_meaning": false,
+  "only": "hades",
+  "no_knn": true
+ },
+ "routing": {
+  "hades": {
+   "accuracy": 0.9002932551319648,
+   "records_ok": "226/258",
+   "action_ok": "81/83",
+   "none_cases": {
+    "records": 1,
+    "action": 8
+   },
+   "top_misses": [
+    [
+     "memory:world-story-order",
+     6
+    ],
+    [
+     "memory:world-story-next-action",
+     4
+    ],
+    [
+     "memory:parser-divergence-hypothetical",
+     3
+    ],
+    [
+     "memory:absence-twin-stale-removed",
+     2
+    ],
+    [
+     "memory:conversational-declarative",
+     2
+    ],
+    [
+     "memory:parser-divergence-negation",
+     2
+    ]
+   ]
+  }
+ },
+ "selection": {
+  "hades": {
+   "records": {
+    "cases": 258,
+    "complete": 0.92,
+    "recall": 0.9567,
+    "precision": 0.3728,
+    "answer_seen": 0.849,
+    "tokens_median": 3271.75,
+    "tokens_p90": 6682.5
+   },
+   "action": {
+    "cases": 83,
+    "complete": 0.8387,
+    "recall": 0.9059,
+    "precision": 0.0713,
+    "answer_seen": null,
+    "tokens_median": 3289.0,
+    "tokens_p90": 5511.0
+   },
+   "all": {
+    "cases": 350,
+    "complete": 0.9123,
+    "recall": 0.9518,
+    "precision": 0.3354,
+    "answer_seen": 0.849,
+    "tokens_median": 3245.0,
+    "tokens_p90": 6437.5
+   }
+  }
+ },
+ "embedding_usd": 0.0
+}

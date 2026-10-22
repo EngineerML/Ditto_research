@@ -309,6 +309,12 @@ def classify(request: str, tools: list[ToolDefinition], typo_cues: bool = False,
     return Lane(ACTION, "default")
 
 
+def statement_like(request: str) -> bool:
+    clauses = [clause for clause in CLAUSE_SPLIT.split(request) if clause and clause.strip()] or [request]
+    tails = QUESTION_TAIL.findall(request) if "?" in request else []
+    return not asks(request, clauses, True, tails) and states_own_fact(request)
+
+
 def acting(request: str) -> bool:
     for clause in CLAUSE_SPLIT.split(request):
         if not clause or not clause.strip():

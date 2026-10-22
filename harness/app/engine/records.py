@@ -21,7 +21,7 @@ from app.memory.deliberation import DECLINE_GROUNDS, DRAFT_TOOL_CHOICE, UNHELD_P
 from app.memory.finder import FIND_TOOL, RecordFinder
 from app.memory.retrieval import Candidate, UserIndex
 from app.memory.worksheet import render_worksheet
-from app.memory.packet import Packet, build_packet, compose, identifier_focus
+from app.memory.packet import Packet, build_packet, compose, identifier_focus, widen
 from app.protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 from app.tooling.receipts import BLOCKED
 from app.memory.tools import UNHELD_IDS_NOTE, MemoryTools
@@ -158,7 +158,7 @@ def pin(ordered: list[Candidate], pins: list[str], pairs_by_id: dict[str, Any]) 
 
 
 class RecordsEngine:
-    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, subject_discipline: bool = False, arc: bool = False, worksheet: bool = False, effort_high: bool = False, thread_first: bool = False, thread_reading: bool = False, closure: bool = False, coverage: bool = False, link_hop: bool = False, long_packet_chars: int = 0, meaning_records: int = 0, meaning_chars: int = 0, meaning_order: bool = False, fused: list[str] | None = None, search_record_chars: int = 7000, search_long_records: int = 2, search_passes: int = 1, search_temperature: float = 0.7, search_seed: int | None = None, deliberation: Deliberation | None = None, anchors: dict[str, tuple[str, float]] | None = None, finder_order: bool = False, follow_up: bool = False, follow_up_retry: bool = False) -> None:
+    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, subject_discipline: bool = False, arc: bool = False, worksheet: bool = False, effort_high: bool = False, thread_first: bool = False, thread_reading: bool = False, closure: bool = False, coverage: bool = False, link_hop: bool = False, long_packet_chars: int = 0, meaning_records: int = 0, meaning_chars: int = 0, meaning_order: bool = False, fused: list[str] | None = None, search_record_chars: int = 7000, search_long_records: int = 2, search_passes: int = 1, search_temperature: float = 0.7, search_seed: int | None = None, deliberation: Deliberation | None = None, anchors: dict[str, tuple[str, float]] | None = None, finder_order: bool = False, follow_up: bool = False, follow_up_retry: bool = False, extra: list[str] | None = None, widen_chars: int = 0) -> None:
         self.llm = llm
         self.executor = executor
         self.memory = memory
@@ -193,6 +193,8 @@ class RecordsEngine:
         self.finder_order = finder_order
         self.follow_up = follow_up
         self.follow_up_retry = follow_up_retry
+        self.extra = extra or []
+        self.widen_chars = widen_chars
 
     async def recall(self, req: RunRequest, system: str, deadline: float, outcome: Outcome) -> tuple[list[str], list[dict[str, Any]]]:
         if not any(tool.name in MEMORY_TOOL_NAMES for tool in req.tools):
@@ -415,7 +417,9 @@ class RecordsEngine:
         outcome = Outcome() if outcome is None else outcome
         pins, receipts = await self.recall(req, system_prompt(req.system_prompt, self.subject_discipline, self.thread_reading), deadline, outcome)
         packet = build_packet(pin(ordered, pins, pairs_by_id), anchored or bool(pins), self.packet_chars, self.arc, self.thread_first, req.user_input, closure=self.closure, index=index if self.link_hop else None, fused=self.fused, meaning_records=self.meaning_records, meaning_chars=self.meaning_chars, ceiling=self.long_packet_chars, meaning_order=self.meaning_order)
-        outcome.events.append(f"packet records={len(packet)} chars={packet.chars} pins={len(pins)}")
+        if self.extra:
+            packet = widen(packet, [Candidate(pair=pairs_by_id[pair_id], reasons=["widen"]) for pair_id in self.extra if pair_id in pairs_by_id], self.widen_chars)
+        outcome.events.append(f"packet records={len(packet)} chars={packet.chars} widened={packet.widened} pins={len(pins)}")
         return await self.decide(req, packet, receipts, deadline, outcome, index, statement)
 
     async def decide(self, req: RunRequest, packet: Packet, receipts: list[dict[str, Any]], deadline: float, outcome: Outcome, index: UserIndex | None = None, statement: bool = False) -> Outcome:
@@ -423,7 +427,7 @@ class RecordsEngine:
         coverage = question_coverage(index, req.user_input, packet.labels()) if self.coverage and index is not None else ""
         worksheet = render_worksheet(packet) if self.worksheet and not packet.focused else ""
         block = "\n\n".join(part for part in (coverage, worksheet) if part)
-        long_packet = bool(self.long_packet_chars) and packet.chars > self.long_packet_chars
+        long_packet = bool(self.long_packet_chars) and packet.chars - packet.widened > self.long_packet_chars
         effort, max_tokens = "low" if long_packet else self.decide_effort, self.max_tokens
         if long_packet:
             outcome.events.append(f"long packet: {packet.chars} chars, reasoning effort low")

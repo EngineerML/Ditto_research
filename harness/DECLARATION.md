@@ -58,3 +58,15 @@ components; the only model is the hosted one, called over HTTP through the reque
   ships as the reply.
 - No behaviour depends on a case id, a seed, a validator identity or an expected answer; the case id is used for logs
   and for the tool endpoint's own bookkeeping only.
+
+## 3. Changes on top of the released base
+
+- Meaning router (`app/routing/meaning.py`, `app/engine/agent.py` `meaning_lane`; switch `HARNESS_MEANING_ROUTE`,
+  on): after the word rules and their rescues pick a lane, the request is embedded and compared with the
+  hand-written example requests in `app/routing/intents.tsv`, none of which comes from a benchmark dataset. When at
+  least 80% of the similarity-weighted vote of the 5 nearest examples names the other lane, that lane is used. It
+  chooses the prompt and record packet only; the catalog and every tool call are unchanged.
+- Packet widening (`app/memory/packet.py` `widen`, `app/engine/agent.py` `widening`; switch `HARNESS_WIDEN`, on): the
+  records and action packets gain up to 12 records closest to the request by meaning and up to 8 best full-text
+  matches that they lack, within 40,000 characters. Existing records keep their order and marks; nothing is
+  removed. The program and topic short paths are unchanged.

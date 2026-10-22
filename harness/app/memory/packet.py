@@ -32,6 +32,7 @@ LINK_RESERVE = 4000
 class Packet:
     records: list[Candidate] = field(default_factory=list)
     focused: bool = False
+    widened: int = 0
 
     def labels(self) -> dict[str, str]:
         return {cand.pair.pair_id: f"M{position}" for position, cand in enumerate(self.records, start=1)}
@@ -241,6 +242,29 @@ def assemble(ordered: list[Candidate], anchored: bool, budget: int, arc: bool = 
     top = max((cand.score for cand in admitted), default=0.0)
     admitted.sort(key=lambda cand: (relevance_band(cand.score, top), cand.pair.timestamp, cand.pair.pair_id))
     return Packet(records=arc_order(admitted) if arc else admitted)
+
+
+def widen(packet: Packet, extra: list[Candidate], budget: int) -> Packet:
+    """Append records found by meaning or by full-text search that the packet lacks, within budget.
+
+    The packet's own records are never dropped or reordered, so its marks stay as they were.
+    `widened` counts the characters added, so a long-packet rule can still read the base size.
+    """
+    held = {cand.pair.pair_id for cand in packet.records}
+    used = packet.chars
+    added: list[Candidate] = []
+    for cand in extra:
+        if cand.pair.pair_id in held or len(packet.records) + len(added) >= MAX_RECORDS:
+            continue
+        size = record_size(cand)
+        if used + size > budget:
+            continue
+        held.add(cand.pair.pair_id)
+        added.append(cand)
+        used += size
+    if not added:
+        return packet
+    return Packet(records=packet.records + added, focused=packet.focused, widened=packet.widened + sum(record_size(c) for c in added))
 
 
 def render_records(packet: Packet, labels: dict[str, str] | None = None) -> str:

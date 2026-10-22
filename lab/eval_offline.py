@@ -89,13 +89,17 @@ def main() -> None:
     ap.add_argument("--test-salt", type=int, default=7)
     ap.add_argument("--budget-usd", type=float, default=0.05)
     ap.add_argument("--no-meaning", action="store_true", help="skip every design that needs embeddings")
+    ap.add_argument("--only", default="", help="comma list of selector names to run (default: all)")
+    ap.add_argument("--no-knn", action="store_true", help="skip the benchmark-trained kNN routers")
     args = ap.parse_args()
+    only = {x.strip() for x in args.only.split(",") if x.strip()}
+    wanted = lambda name: not only or name in only
 
     started = time.time()
     embedder = Embedder(args.budget_usd)
     meaning = None if args.no_meaning else Meaning(embedder)
     knn = None
-    if meaning is not None:
+    if meaning is not None and not args.no_knn:
         train = [c for seed in args.train for salt in args.train_salts for c in data.load(seed, salt)]
         knn = designs.KNNRouter(meaning, train)
         print(f"train cases {len(train)} from seeds {args.train} salts {args.train_salts}", flush=True)
@@ -125,15 +129,21 @@ def main() -> None:
                     misrouted[name][f"{case.phase}:{case.kind}"] += 1
             lane = case.lane if case.lane != "none" else designs.ACTION
             text = store_texts[key]
-            tally.add("hades (no meaning)", case, designs.pick_hades(case, lane, worlds, None), text)
-            tally.add("full-text k=16", case, designs.whole(case, hades.full_text_hits(case, worlds, 16)), text)
-            if meaning is None:
-                continue
-            tally.add("hades", case, designs.pick_hades(case, lane, worlds, meaning), text)
-            for k in (8, 16, 32):
-                tally.add(f"dense k={k}", case, designs.pick_dense(case, meaning, k), text)
-            tally.add("overhorizon", case, designs.pick_overhorizon(case, lane, meaning, worlds), text)
-            tally.add("union", case, designs.pick_union(case, lane, worlds, meaning), text)
+            picks = {
+                "hades (no meaning)": lambda: designs.pick_hades(case, lane, worlds, None),
+                "full-text k=16": lambda: designs.whole(case, hades.full_text_hits(case, worlds, 16)),
+            }
+            if meaning is not None:
+                picks |= {
+                    "hades": lambda: designs.pick_hades(case, lane, worlds, meaning),
+                    **{f"dense k={k}": (lambda k=k: designs.pick_dense(case, meaning, k)) for k in (8, 16, 32)},
+                    "overhorizon": lambda: designs.pick_overhorizon(case, lane, meaning, worlds),
+                    "union": lambda: designs.pick_union(case, lane, worlds, meaning),
+                    "harness union": lambda: designs.pick_union(case, lane, worlds, meaning, budget=40000, keep_short_paths=True),
+                }
+            for name, make in picks.items():
+                if wanted(name):
+                    tally.add(name, case, make(), text)
         print(f"seed {seed} salt {args.test_salt} done, {time.time() - started:.0f}s, embeddings ${embedder.spent:.4f}", flush=True)
 
     print("\n== routing (truth -> chosen), test seeds", args.test, "salt", args.test_salt)

@@ -127,6 +127,12 @@ class Settings:
     order_max_tokens: int = 16000
     finder_order: bool = True
     action_topic: bool = True
+    meaning_route: bool = True
+    meaning_sure: float = 0.8
+    widen: bool = True
+    widen_dense: int = 12
+    widen_text: int = 8
+    widen_chars: int = 40000
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -199,4 +205,10 @@ class Settings:
             order_max_tokens=int(_env("HARNESS_ORDER_MAX_TOKENS", "16000")),
             finder_order=_flag("HARNESS_FINDER_ORDER", True),
             action_topic=_flag("HARNESS_ACTION_TOPIC", True),
+            meaning_route=_flag("HARNESS_MEANING_ROUTE", True),
+            meaning_sure=float(_env("HARNESS_MEANING_SURE", "0.8")),
+            widen=_flag("HARNESS_WIDEN", True),
+            widen_dense=int(_env("HARNESS_WIDEN_DENSE", "12")),
+            widen_text=int(_env("HARNESS_WIDEN_TEXT", "8")),
+            widen_chars=int(_env("HARNESS_WIDEN_CHARS", "40000")),
         )
