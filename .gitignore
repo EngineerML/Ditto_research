@@ -5,6 +5,10 @@ repos/
 released/*/agent.tar.gz
 released/*/src/
 
+# local secrets and build cache
+.env.local
+.cache/
+
 __pycache__/
 *.pyc
 .venv/
