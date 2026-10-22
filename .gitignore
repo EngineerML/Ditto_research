@@ -1,6 +1,10 @@
 # upstream clones (separate git repos)
 repos/
 
+# released king artifacts: other miners' code, re-downloadable with tools/fetch_release.sh
+released/*/agent.tar.gz
+released/*/src/
+
 __pycache__/
 *.pyc
 .venv/
