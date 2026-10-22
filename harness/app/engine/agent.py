@@ -7,6 +7,7 @@ import time
 
 import httpx
 
+from app.answer import plain_hyphens
 from app.audit import CURRENT, Journal
 from app.engine.action import ActionEngine
 from app.engine.state import Outcome, TokenTally
@@ -120,7 +121,7 @@ class CaseRunner:
         token = focus_token(req.user_input, focus)
         if not token:
             return False
-        short = ShortPath(engine, effort=settings.short_effort, max_tokens=settings.short_max_tokens, readings=self.order_readings, order_max_tokens=settings.order_max_tokens, full_dates=settings.program_full_dates, shared_draft=settings.short_shared_draft)
+        short = ShortPath(engine, effort=settings.short_effort, max_tokens=settings.short_max_tokens, readings=self.order_readings, order_max_tokens=settings.order_max_tokens, full_dates=settings.program_full_dates, shared_draft=settings.short_shared_draft, order_votes=settings.short_order_votes)
         return await short.answer(req, [cand.pair for cand in focus], token, deadline, outcome)
 
     async def run(self, req: RunRequest) -> RunResponse:
@@ -203,4 +204,4 @@ class CaseRunner:
         # tool_calls is the self-report of calls the tool endpoint acknowledged, which the validator also observes;
         # it matches the observed trajectory. Records-lane memory reads cross that endpoint too, as in the baseline,
         # and their answers come from this harness's store; action-lane memory reads stay local and are not listed.
-        return RunResponse(final_text=outcome.content, tool_calls=executor.observed, prompt_tokens=tally.prompt, output_tokens=tally.output, latency_ms=latency_ms, answer=outcome.answer, abstain=False)
+        return RunResponse(final_text=plain_hyphens(outcome.content) or "", tool_calls=executor.observed, prompt_tokens=tally.prompt, output_tokens=tally.output, latency_ms=latency_ms, answer=plain_hyphens(outcome.answer), abstain=False)

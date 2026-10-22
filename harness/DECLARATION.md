@@ -34,8 +34,8 @@ components; the only model is the hosted one, called over HTTP through the reque
   (`app/answer.py:34`, called at `app/engine/action.py:354` and `app/engine/records.py:585`), with only a matching pair
   of `**` around the whole value removed (`app/answer.py:22`); a line written wholly in such a pair is read the
   same way (`app/answer.py:11`). No value is synthesized when the model wrote no such line.
-- `final_text` is the model's reply text exactly as written and `answer` is the model's own slot value as described
-  above; no character of either is changed. `tool_calls` is the executor's list of calls that crossed to the request's
+- `final_text` is the model's reply text as written and `answer` is the model's own slot value as described
+  above; the only change to either is the hyphen fold listed in section 3. `tool_calls` is the executor's list of calls that crossed to the request's
   tool endpoint and were acknowledged (`app/tooling/executor.py:148`).
 
 ## 2. Fixed properties
@@ -73,4 +73,13 @@ components; the only model is the hosted one, called over HTTP through the reque
   their order and marks; nothing is removed. The program and topic short paths are unchanged.
 - Decision-step cap (`app/engine/action.py` `PLAN_ATTEMPTS`): the action lane's one-word decision step may write at
   most 2,500 tokens; when it is cut off, it is asked once more at low effort with 1,200 tokens. As before, the host
-  never reads the decision.
+  never reads the decision. When an action turn's whole reply is the bare word NONE (the decision echoed), the model
+  is asked once to reply to the user instead (`BARE_NONE`, `NONE_REPLY_NUDGE`); the host writes no reply itself.
+- Order vote (`app/engine/short.py` `consensus_order`; setting `short_order_votes`, 3): the program short path reads
+  the order of the notes three times (once as before, twice at temperature 0.7 with fixed seeds), each reading shared
+  across rewordings like the first, and uses their vote (head-to-head majority, then Borda points). It stays advisory; the deciding call reads the notes.
+- Timeline note cap (`app/engine/records.py` `TIMELINE_MAX_TOKENS`): the timeline pass may write 8,000 tokens; a cut
+  pass leaves no note, as before.
+- Plain hyphens (`app/answer.py` `plain_hyphens`, applied in `app/engine/agent.py`): in `final_text` and `answer`,
+  U+2010 and U+2011 become "-", the character the records use; no other character changes. The v13 grader's fold does
+  not map them, so a correct value written with them would not match.

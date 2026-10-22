@@ -38,6 +38,8 @@ ORDER_SYSTEM = "You read a user's saved notes and put them in the order the user
 ORDER_BRIEF = "{notes}\n\nThe notes above are listed in no particular order. Judging from their words, work out the order the user must have written them in: a note that refers back to, changes or replaces an earlier state of the same thing was written after the note that set that state. A date mentioned inside a note tells when the thing it describes takes place, not when the note was written. Reply with one line: the marks from the last written to the first written, separated by commas."
 MIN_SECONDS = 8.0
 ORDER_MAX_TOKENS = 4000
+ORDER_VOTE_TEMPERATURE = 0.7
+ORDER_VOTE_SEED = 1000
 READINGS_HELD = 512
 CONTACT_RE = re.compile(r"\b(?:e-?mail|address)\b", re.IGNORECASE)
 MIN_DENSE_NOTES = 3
@@ -133,13 +135,13 @@ def grouped_view(groups: list[list[MemoryPair]]) -> str:
     return "\n\n".join(blocks)
 
 
-async def consult(llm: LLM, tally: TokenTally, req: RunRequest, messages: list[dict[str, Any]], max_tokens: int, effort: str, deadline: float, outcome: Outcome, what: str) -> str | None:
+async def consult(llm: LLM, tally: TokenTally, req: RunRequest, messages: list[dict[str, Any]], max_tokens: int, effort: str, deadline: float, outcome: Outcome, what: str, temperature: float | None = None, seed: int | None = None) -> str | None:
     for level in (effort, "low"):
         if deadline - time.monotonic() < MIN_SECONDS:
             outcome.events.append(f"{what}: no time left")
             return None
         try:
-            result = await llm.chat(messages, None, deadline=deadline, max_tokens=max_tokens, reasoning_effort=level)
+            result = await llm.chat(messages, None, deadline=deadline, max_tokens=max_tokens, reasoning_effort=level, temperature=temperature, seed=seed)
         except LLMError as exc:
             tally.add(exc.usage)
             log.error("case=%s %s call failed: %s", req.case_id, what, exc)
@@ -174,9 +176,29 @@ async def decide(engine: RecordsEngine, req: RunRequest, messages: list[dict[str
     return bool(outcome.content.strip())
 
 
+def consensus_order(replies: list[str], count: int) -> str:
+    """Vote over several readings that each list marks from the last written note to the first.
+
+    A mark ranks by how many other marks it comes before in most readings (Copeland), then by Borda points, then by
+    the first reading. A mark a reading leaves out takes no part in that reading's comparisons.
+    """
+    readings = [[mark for mark in dict.fromkeys(int(m) for m in MARK_RE.findall(reply)) if 1 <= mark <= count] for reply in replies]
+    seen = list(dict.fromkeys(mark for reading in readings for mark in reading))
+    points = {mark: sum(count - reading.index(mark) for reading in readings if mark in reading) for mark in seen}
+
+    def before(a: int, b: int) -> int:
+        return sum(1 for reading in readings if a in reading and b in reading and reading.index(a) < reading.index(b))
+
+    wins = {a: sum(1 for b in seen if b != a and before(a, b) > before(b, a)) for a in seen}
+    lead = readings[0] if readings else []
+    order = sorted(seen, key=lambda mark: (-wins[mark], -points[mark], lead.index(mark) if mark in lead else count))
+    return ", ".join(f"M{mark}" for mark in order)
+
+
 class ShortPath:
-    def __init__(self, engine: RecordsEngine, *, effort: str, max_tokens: int, readings: dict[str, asyncio.Future[str | None]] | None = None, order_max_tokens: int = ORDER_MAX_TOKENS, full_dates: bool = False, shared_draft: bool = False) -> None:
+    def __init__(self, engine: RecordsEngine, *, effort: str, max_tokens: int, readings: dict[str, asyncio.Future[str | None]] | None = None, order_max_tokens: int = ORDER_MAX_TOKENS, full_dates: bool = False, shared_draft: bool = False, order_votes: int = 1) -> None:
         self.engine = engine
+        self.order_votes = order_votes
         self.shared_draft = shared_draft
         self.llm = engine.llm
         self.tally = engine.tally
@@ -186,8 +208,8 @@ class ShortPath:
         self.full_dates = full_dates
         self.order_max_tokens = order_max_tokens
 
-    async def call(self, req: RunRequest, messages: list[dict[str, Any]], max_tokens: int, deadline: float, outcome: Outcome, what: str) -> str | None:
-        return await consult(self.llm, self.tally, req, messages, max_tokens, self.effort, deadline, outcome, what)
+    async def call(self, req: RunRequest, messages: list[dict[str, Any]], max_tokens: int, deadline: float, outcome: Outcome, what: str, sampling: dict[str, Any] | None = None) -> str | None:
+        return await consult(self.llm, self.tally, req, messages, max_tokens, self.effort, deadline, outcome, what, **(sampling or {}))
 
     async def read_order(self, req: RunRequest, messages: list[dict[str, Any]], deadline: float, outcome: Outcome, notes: str | None = None) -> str | None:
         # The order of a user's notes does not depend on how a request about them is worded, so rewordings of one
@@ -195,7 +217,7 @@ class ShortPath:
         scope = notes if notes is not None else messages
         return await self.shared_reading(req, messages, ["order", scope], self.order_max_tokens, deadline, outcome, "order pass")
 
-    async def shared_reading(self, req: RunRequest, messages: list[dict[str, Any]], scope: Any, max_tokens: int, deadline: float, outcome: Outcome, what: str) -> str | None:
+    async def shared_reading(self, req: RunRequest, messages: list[dict[str, Any]], scope: Any, max_tokens: int, deadline: float, outcome: Outcome, what: str, sampling: dict[str, Any] | None = None) -> str | None:
         readings = self.readings
         key = hashlib.sha256(json.dumps([req.user_id, req.system_prompt, scope], sort_keys=True).encode()).hexdigest() if readings is not None else ""
         held = readings.get(key) if readings is not None else None
@@ -213,7 +235,7 @@ class ShortPath:
                 del readings[next(iter(readings))]
         reply: str | None = None
         try:
-            reply = await self.call(req, messages, max_tokens, deadline, outcome, what)
+            reply = await self.call(req, messages, max_tokens, deadline, outcome, what, sampling)
         finally:
             if readings is not None and held is not None:
                 if reply is None:
@@ -227,10 +249,19 @@ class ShortPath:
             return groups
         shuffled = by_text(groups, token)
         messages = [{"role": "system", "content": short_system(req.system_prompt, ORDER_SYSTEM)}, {"role": "user", "content": ORDER_BRIEF.format(notes=listing(shuffled, token)) + "\n\nOriginal user request (context for this advisory ordering):\n" + req.user_input}]
-        reply = await self.read_order(req, messages, deadline, outcome, listing(shuffled, token))
+        notes = listing(shuffled, token)
+        reply = await self.read_order(req, messages, deadline, outcome, notes)
         if reply is None:
             return None
         outcome.events.append(f"order pass: {first_line(reply)}")
+        if self.order_votes > 1:
+            # One reading can misplace a note, and every rewording of the request reuses it, so a single bad reading
+            # costs the whole group. Further readings, shared the same way, vote on the order.
+            extra = await asyncio.gather(*(self.shared_reading(req, messages, ["order", notes, vote], self.order_max_tokens, deadline, outcome, f"order pass {vote}", {"temperature": ORDER_VOTE_TEMPERATURE, "seed": ORDER_VOTE_SEED + vote}) for vote in range(2, self.order_votes + 1)))
+            votes = [reply, *(r for r in extra if r)]
+            if len(votes) > 1:
+                reply = consensus_order(votes, len(shuffled))
+                outcome.events.append(f"order vote over {len(votes)} readings: {reply}")
         return sequence_from(reply, shuffled)
 
     async def answer(self, req: RunRequest, records: list[MemoryPair], token: str, deadline: float, outcome: Outcome) -> bool:

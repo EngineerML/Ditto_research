@@ -134,6 +134,7 @@ class Settings:
     widen_text: int = 8
     widen_chars: int = 24000
     widen_anchored: bool = True
+    short_order_votes: int = 3
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -214,4 +215,5 @@ class Settings:
             # the 20B model reads long prompts badly: widening only fills room inside the base packet budget
             widen_chars=int(_env("HARNESS_WIDEN_CHARS", "24000")),
             widen_anchored=_flag("HARNESS_WIDEN_ANCHORED", True),
+            short_order_votes=int(_env("HARNESS_ORDER_VOTES", "3")),
         )

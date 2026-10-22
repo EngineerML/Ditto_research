@@ -141,6 +141,8 @@ PLAN_MIN_SECONDS = 30.0
 # The answer is one word. Without a cap the decision step can reason until the turn's output limit
 # and come back empty, which leaves the action turn without a decision; a cut step retries once at low effort.
 PLAN_ATTEMPTS = ((None, 2500), ("low", 1200))
+BARE_NONE = re.compile(r"[\W_]*none[\W_]*", re.IGNORECASE)
+NONE_REPLY_NUDGE = "That one word was your decision about tools, not a reply. Now reply to the user's message itself, in your own words."
 
 
 @dataclass
@@ -264,6 +266,7 @@ class ActionEngine:
             await self.plan(messages, surface.visible(), deadline, outcome, req.case_id)
         provider_rejections = 0
         nudged = False
+        none_nudged = False
         retried_length = False
         wrapped = False
         closing_asked = False
@@ -307,6 +310,13 @@ class ActionEngine:
                         wrapped = True
                         turns_left = max(turns_left, 1)
                         outcome.events.append("wrap-up turn")
+                        continue
+                    if BARE_NONE.fullmatch(result.content.strip()) and not none_nudged:
+                        # The decision step's one-word answer echoed as the reply; it is not an answer to the user.
+                        none_nudged = True
+                        turns_left = max(turns_left, 1)
+                        messages.extend([{"role": "assistant", "content": result.content}, {"role": "user", "content": NONE_REPLY_NUDGE}])
+                        outcome.events.append("bare NONE reply nudged")
                         continue
                     outcome.content = result.content or outcome.content
                     break

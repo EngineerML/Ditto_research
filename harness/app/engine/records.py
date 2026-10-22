@@ -58,6 +58,9 @@ SEARCH_OTHER_TOOL_NOTE = "Not run: this search pass runs only find_in_records an
 SEARCH_MAX_TURNS = 8
 SEARCH_MAX_TOKENS = 16000
 LONG_RECORDS_MAX_TOKENS = 16000
+# A timeline note is a list, not an answer; past this the pass is running away (one wrote 12,413 tokens and the
+# reply after it declined an answerable question). A cut pass leaves no note, as before.
+TIMELINE_MAX_TOKENS = 8000
 SEARCH_BUDGET_SHARE = 0.35
 SEARCH_MIN_SECONDS = 20.0
 SEARCH_MIN_CALL_SECONDS = 5.0
@@ -380,7 +383,7 @@ class RecordsEngine:
             return []
         messages = [{"role": "system", "content": system_prompt(req.system_prompt, self.subject_discipline, self.thread_reading)}, {"role": "user", "content": composed}, {"role": "user", "content": TIMELINE_BRIEF}]
         try:
-            result = await self.llm.chat(messages, None, deadline=deadline, max_tokens=LONG_RECORDS_MAX_TOKENS, reasoning_effort=self.decide_effort)
+            result = await self.llm.chat(messages, None, deadline=deadline, max_tokens=TIMELINE_MAX_TOKENS, reasoning_effort=self.decide_effort)
         except LLMError as exc:
             self.tally.add(exc.usage)
             outcome.events.append(f"timeline pass failed: {exc}")

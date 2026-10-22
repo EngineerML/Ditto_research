@@ -5,6 +5,14 @@ import re
 # Only markdown bold around the whole value is wrapper cleanup; a single asterisk or a backtick may be part of the
 # value (a glob, a code span) and stays as the model wrote it.
 WRAPPERS = ("**",)
+# gpt-oss writes U+2011 (non-breaking hyphen) and U+2010 where a record has "-", and the v13 grader's text fold does
+# not map them, so "ZAPELI‑6364" would not match "ZAPELI-6364". Only these two code points change, to the record's
+# own character; letters, digits and every other character stay as the model wrote them.
+PLAIN_HYPHENS = str.maketrans({"‐": "-", "‑": "-"})
+
+
+def plain_hyphens(text: str | None) -> str | None:
+    return text.translate(PLAIN_HYPHENS) if text else text
 ANSWER_RE = re.compile(r"^\s*(?:ANSWER\s*:|(\*{1,2}|_{1,2})ANSWER\s*(?:\1\s*:|:\s*\1))\s*(?P<value>.*?)\s*$", re.IGNORECASE)
 
 
