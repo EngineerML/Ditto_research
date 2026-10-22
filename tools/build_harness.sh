@@ -1,6 +1,6 @@
 #!/bin/bash
-# Local build of harness/ with apt stall timeouts. The real Dockerfile is not changed: a temporary
-# copy gets one extra apt-config line after every FROM, so a stalled package download is dropped
+# Local build of harness/ with apt and pip stall timeouts. The real Dockerfile is not changed: a temporary
+# copy gets an apt-config line and pip timeout settings after every FROM, so a stalled download is dropped
 # after 15 s and retried. The whole build is retried up to 3 times.
 #
 #   bash tools/build_harness.sh [tag]        (default tag: ditto-harness:dev)
@@ -11,7 +11,8 @@ TAG=${1:-ditto-harness:dev}
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 APT_LINE='RUN echo '"'"'Acquire::http::Timeout "15"; Acquire::https::Timeout "15"; Acquire::Retries "20";'"'"' > /etc/apt/apt.conf.d/96net-timeouts'
-awk -v line="$APT_LINE" '{print} /^FROM /{print line}' "$HERE/harness/Dockerfile" > "$TMP/Dockerfile.local"
+PIP_LINE='ENV PIP_DEFAULT_TIMEOUT=15 PIP_RETRIES=10'
+awk -v apt="$APT_LINE" -v pip="$PIP_LINE" '{print} /^FROM /{print apt; print pip}' "$HERE/harness/Dockerfile" > "$TMP/Dockerfile.local"
 for attempt in 1 2 3; do
   echo "=== build attempt $attempt ($TAG)"
   if docker build --progress=plain -f "$TMP/Dockerfile.local" -t "$TAG" "$HERE/harness" > "$TMP/build.log" 2>&1; then

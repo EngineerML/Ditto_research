@@ -1,6 +1,0 @@
-build
-*.tar.gz
-*.db
-*.db-*
-__pycache__
-*.pyc
