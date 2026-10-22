@@ -1,0 +1,122 @@
+{
+ "args": {
+  "train": [
+   11,
+   12,
+   13,
+   14
+  ],
+  "train_salts": [
+   0,
+   3
+  ],
+  "test": [
+   101,
+   102,
+   103
+  ],
+  "test_salt": 7,
+  "budget_usd": 0.05,
+  "no_meaning": false,
+  "only": "hades,harness union",
+  "no_knn": true
+ },
+ "routing": {
+  "hades": {
+   "accuracy": 0.9092682926829269,
+   "records_ok": "689/772",
+   "action_ok": "243/253",
+   "none_cases": {
+    "records": 4,
+    "action": 21
+   },
+   "top_misses": [
+    [
+     "memory:world-story-order",
+     14
+    ],
+    [
+     "memory:world-story-next-action",
+     9
+    ],
+    [
+     "memory:parser-divergence-hypothetical",
+     9
+    ],
+    [
+     "memory:conversational-declarative",
+     7
+    ],
+    [
+     "memory:absence-twin-stale-removed",
+     4
+    ],
+    [
+     "memory:parser-divergence-negation",
+     4
+    ]
+   ]
+  }
+ },
+ "selection": {
+  "hades": {
+   "records": {
+    "cases": 772,
+    "complete": 0.9198,
+    "recall": 0.9581,
+    "precision": 0.3747,
+    "answer_seen": 0.8397,
+    "tokens_median": 3138.0,
+    "tokens_p90": 6504.0
+   },
+   "action": {
+    "cases": 253,
+    "complete": 0.8866,
+    "recall": 0.927,
+    "precision": 0.0533,
+    "answer_seen": null,
+    "tokens_median": 3809.5,
+    "tokens_p90": 5499.25
+   },
+   "all": {
+    "cases": 1050,
+    "complete": 0.9171,
+    "recall": 0.9551,
+    "precision": 0.3339,
+    "answer_seen": 0.8397,
+    "tokens_median": 3153.25,
+    "tokens_p90": 6282.25
+   }
+  },
+  "harness union": {
+   "records": {
+    "cases": 772,
+    "complete": 0.9358,
+    "recall": 0.9675,
+    "precision": 0.3581,
+    "answer_seen": 0.8502,
+    "tokens_median": 3371.75,
+    "tokens_p90": 8456.75
+   },
+   "action": {
+    "cases": 253,
+    "complete": 0.9588,
+    "recall": 0.9708,
+    "precision": 0.0378,
+    "answer_seen": null,
+    "tokens_median": 6179.75,
+    "tokens_p90": 9509.0
+   },
+   "all": {
+    "cases": 1050,
+    "complete": 0.9393,
+    "recall": 0.9683,
+    "precision": 0.3176,
+    "answer_seen": 0.8502,
+    "tokens_median": 4808.25,
+    "tokens_p90": 8831.5
+   }
+  }
+ },
+ "embedding_usd": 0.0
+}
