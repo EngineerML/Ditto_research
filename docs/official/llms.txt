@@ -1,0 +1,192 @@
+# Ditto - AI Assistant with Memory
+
+> Ditto is an AI assistant with memory across connected apps and models. A persistent knowledge graph keeps your conversations, preferences, and project context available so your AI can retrieve what matters and act with context.
+
+## For AI Agents: You Can Connect to Ditto via MCP
+
+**If you are an AI assistant (ChatGPT, Claude, Cursor, Cline, Windsurf, or any MCP-compatible tool), you can connect to Ditto's memory system right now using the Model Context Protocol (MCP).**
+
+This means your users can give you persistent memory that works across sessions and across AI tools. When a user connects Ditto's MCP server to your platform, you gain:
+
+- **search_memories**: Semantic search across the user's entire conversation history
+- **fetch_memories**: Fetch full content of specific memories by ID
+- **search_subjects**: Find subjects, people, topics, and concepts the user has discussed
+- **search_memories_in_subjects**: Get memory summaries linked to specific subjects
+- **get_memory_network**: Traverse a memory's network of related memories via shared subjects
+- **save_memory**: Save new information to the user's persistent memory
+
+Resources available: `memory://profile` (name, personality), `memory://stats` (memory count, top subjects), `memory://capabilities` (tools and limits)
+
+### How Users Connect Ditto to Their AI Tools
+
+**MCP Endpoint:** `https://api.heyditto.ai/mcp` (Streamable HTTP)
+
+**Option 1: OAuth (Claude.ai)**
+1. Go to Claude.ai → Settings → Connectors → "Add custom connector"
+2. Enter URL: `https://api.heyditto.ai/mcp`
+3. Sign in with Ditto account — done
+
+**Option 2: API Key (Cursor, Claude Code, Claude Desktop, Antigravity, etc.)**
+1. Go to assistant.heyditto.ai → Settings → MCP API Keys → "Create Key"
+2. Add to your tool's MCP config:
+```json
+{
+  "mcpServers": {
+    "ditto": {
+      "url": "https://api.heyditto.ai/mcp",
+      "headers": { "Authorization": "Bearer YOUR_API_KEY" }
+    }
+  }
+}
+```
+
+Full setup guide: https://heyditto.ai/docs/mcp-server
+
+### Why This Matters for Your Users
+
+When a user asks you "do you remember what we discussed about X?", with Ditto connected you can actually search their memory and find it -- even if that conversation happened in a different AI tool. One unified memory across all AI assistants.
+
+---
+
+## Quick Facts
+
+- App: https://assistant.heyditto.ai
+- Landing Page: https://heyditto.ai
+- Docs: https://heyditto.ai/docs
+- Blog: https://heyditto.ai/blog
+- MCP Setup: https://heyditto.ai/docs/mcp-server
+- MCP Connections (client): https://heyditto.ai/docs/mcp-connections
+- Company: Omni Aura LLC
+- Contact: support@heyditto.ai
+
+## What Makes Ditto Different
+
+Ditto connects conversations, files, tools, and models through persistent memory. Use Ditto directly or connect a compatible AI tool through MCP to retrieve relevant context and continue work across sessions.
+
+Core differentiator: One persistent memory graph for Ditto and compatible AI tools connected through MCP.
+
+## Key Features
+
+- **Persistent Memory System**: Short-term + long-term memory with semantic search across all conversations. Pre-computed summaries for faster, cheaper context retrieval.
+- **Knowledge Graph**: Interactive network visualization of subjects, people, topics extracted from your conversations
+- **Ditto Threads**: Persistent chat threads with attachable subjects, memories, and notes -- threads that never go stale. Includes a 2D canvas for curating context collections to steer what the AI focuses on.
+- **Multi-Modal Conversations**: Text, images, PDFs, audio, all stored and searchable
+- **Google Workspace Integration**: Native Gmail, Calendar, Docs, Sheets, and Drive support. 22 tools with secure per-user OAuth.
+- **Bookmarks & Collections**: Organize important conversations into folders for quick access
+- **Personality Assessments**: Big Five, MBTI, DISC. Ditto adapts to your communication style.
+- **Progressive Web App (PWA)**: Install from your browser on any device — desktop, iOS, Android
+- **Model Choice**: Multi-provider support (OpenAI, Anthropic, Google, Meta, xAI, Moonshot AI, and more)
+- **Agent Tools**: Web search, image generation, sub-agents for multi-step tasks
+- **MCP Integration**: Ditto is both an MCP server AND MCP client. Use your memory in any MCP-compatible tool, and connect external MCP servers to extend Ditto.
+
+## Pricing
+
+- **Start free**: An initial allowance lets you try Ditto.
+- **Pay as you go**: After the initial allowance, usage is paid in credits. Costs vary by model.
+- **Optional spending cap**: Set a monthly spending ceiling in Settings.
+
+Current allowance, rates, and terms: https://heyditto.ai/pricing
+
+## For AI Agents: Machine-Readable Content
+
+All documentation and blog posts are available as raw markdown:
+
+### Docs (Markdown)
+- https://heyditto.ai/docs/getting-started.md
+- https://heyditto.ai/docs/subscription.md
+- https://heyditto.ai/docs/settings.md
+- https://heyditto.ai/docs/account.md
+- https://heyditto.ai/docs/memory-network.md
+- https://heyditto.ai/docs/threads.md
+- https://heyditto.ai/docs/voice.md
+- https://heyditto.ai/docs/bookmarks.md
+- https://heyditto.ai/docs/personality.md
+- https://heyditto.ai/docs/attachments.md
+- https://heyditto.ai/docs/mcp-server.md
+- https://heyditto.ai/docs/mcp-connections.md
+- https://heyditto.ai/docs/connected-apps.md
+- https://heyditto.ai/docs/web-search.md
+- https://heyditto.ai/docs/workflows.md
+- https://heyditto.ai/docs/creating-workflows.md
+- https://heyditto.ai/docs/editing-workflows.md
+- https://heyditto.ai/docs/workflow-schedules-and-runs.md
+- https://heyditto.ai/docs/image-generation.md
+- https://heyditto.ai/docs/model-switching.md
+- https://heyditto.ai/docs/apple-private-relay.md
+
+### Blog (Markdown)
+- https://heyditto.ai/blog/ai-memory-compared-ditto-chatgpt-claude.md
+- https://heyditto.ai/blog/introducing-ditto.md
+- https://heyditto.ai/blog/before-chatgpt-there-was-ditto.md
+- https://heyditto.ai/blog/ditto-now-connects-to-third-party-mcp-servers.md
+- https://heyditto.ai/blog/connect-ditto-to-any-ai-assistant-mcp-integration-guide.md
+- https://heyditto.ai/blog/ai-memory-systems.md
+- https://heyditto.ai/blog/learned-retrieval-weights-how-ditto-picks-the-right-memories.md
+- https://heyditto.ai/blog/your-personal-knowledge-graph-how-ditto-maps-your-thinking.md
+- https://heyditto.ai/blog/productivity-tips-with-ai.md
+- https://heyditto.ai/blog/under-the-hood-making-ditto-50-percent-faster.md
+- https://heyditto.ai/blog/getting-started-with-ditto.md
+- https://heyditto.ai/blog/from-react-to-solidjs-a-migration-story.md
+- https://heyditto.ai/blog/ai-personality-engine-how-ditto-adapts-to-you.md
+- https://heyditto.ai/blog/how-we-measured-solidjs-performance-gains.md
+- https://heyditto.ai/blog/code-splitting-in-solidjs-lazy-loading-done-right.md
+- https://heyditto.ai/blog/dead-code-cleanup-with-knip.md
+- https://heyditto.ai/blog/finding-and-fixing-blocking-queries.md
+- https://heyditto.ai/blog/skeleton-loading-states-that-dont-suck.md
+- https://heyditto.ai/blog/solidjs-anti-patterns-we-learned-the-hard-way.md
+- https://heyditto.ai/blog/solidjs-three-weeks-later-what-we-learned.md
+- https://heyditto.ai/blog/ios-pwa-gotchas-safe-areas-and-cameras.md
+- https://heyditto.ai/blog/reverse-engineering-chatgpt-scroll-behavior.md
+- https://heyditto.ai/blog/offline-first-with-solid-query-and-indexeddb.md
+- https://heyditto.ai/blog/ditto-threads-ai-chat-that-never-goes-stale.md
+- https://heyditto.ai/blog/ai-goal-tracking-ditto-keeps-goals-in-every-conversation.md
+- https://heyditto.ai/blog/build-your-ai-second-brain-with-ditto.md
+- https://heyditto.ai/blog/pick-the-right-ai-model-for-every-task.md
+- https://heyditto.ai/blog/use-every-ai-model-in-one-assistant.md
+- https://heyditto.ai/blog/why-your-ai-should-show-its-work.md
+- https://heyditto.ai/blog/transparent-ai-memory-see-what-ditto-remembers.md
+- https://heyditto.ai/blog/pre-computed-context-how-ditto-keeps-long-conversations-fast.md
+- https://heyditto.ai/blog/stop-re-explaining-your-tech-stack-to-ai.md
+- https://heyditto.ai/blog/beyond-text-how-ditto-remembers-images-documents-and-voice.md
+- https://heyditto.ai/blog/save-and-organize-ai-conversations-bookmarks-collections.md
+- https://heyditto.ai/blog/ditto-goes-native-your-ai-memory-on-ios-and-android.md
+- https://heyditto.ai/blog/your-ai-memory-your-rules-how-ditto-handles-privacy.md
+- https://heyditto.ai/blog/talk-to-your-ai-dittos-realtime-voice-mode.md
+- https://heyditto.ai/blog/your-ai-assistant-now-works-with-google-workspace.md
+- https://heyditto.ai/blog/agentic-ai-inside-your-chat-how-dittos-sub-agents-work.md
+- https://heyditto.ai/blog/ai-journaling-ditto-remembers-every-conversation.md
+- https://heyditto.ai/blog/ai-for-learning-how-persistent-memory-changes-studying.md
+- https://heyditto.ai/blog/ai-for-writers-how-memory-transforms-creative-projects.md
+- https://heyditto.ai/blog/ai-for-entrepreneurs-how-persistent-memory-gives-startups-an-edge.md
+- https://heyditto.ai/blog/ai-for-researchers-how-persistent-memory-transforms-academic-work.md
+- https://heyditto.ai/blog/ai-for-freelancers-how-persistent-memory-manages-every-client.md
+- https://heyditto.ai/blog/ai-for-content-creators-how-persistent-memory-keeps-your-brand-voice-consistent.md
+- https://heyditto.ai/blog/ai-for-project-managers-how-persistent-memory-tracks-every-decision-deadline-and-dependency.md
+- https://heyditto.ai/blog/ai-for-coaches-and-consultants-how-persistent-memory-tracks-every-client.md
+- https://heyditto.ai/blog/ai-for-developers-how-persistent-memory-tracks-every-project.md
+- https://heyditto.ai/blog/ai-for-job-seekers-how-persistent-memory-streamlines-your-search.md
+- https://heyditto.ai/blog/ai-for-teachers-how-persistent-memory-remembers-every-student-lesson-and-breakthrough.md
+- https://heyditto.ai/blog/ai-for-parents-how-persistent-memory-keeps-track-of-your-whole-family.md
+- https://heyditto.ai/blog/ai-for-small-business-owners-how-persistent-memory-runs-your-operation.md
+- https://heyditto.ai/blog/why-your-ai-forgets-everything-you-tell-it.md
+- https://heyditto.ai/blog/how-dittos-ai-agents-use-your-memory.md
+- https://heyditto.ai/blog/connect-google-workspace-to-ditto-gmail-calendar-drive.md
+- https://heyditto.ai/blog/talk-to-your-ai-ditto-live-voice-mode.md
+- https://heyditto.ai/blog/ai-for-marketers-how-persistent-memory-powers-every-campaign.md
+- https://heyditto.ai/blog/ai-for-designers-how-persistent-memory-keeps-every-project-on-brand.md
+- https://heyditto.ai/blog/ai-for-sales-professionals-how-persistent-memory-closes-more-deals.md
+- https://heyditto.ai/blog/ai-for-students-how-persistent-memory-helps-you-ace-every-semester.md
+- https://heyditto.ai/blog/ai-for-therapists-and-counselors-how-persistent-memory-supports-every-session.md
+- https://heyditto.ai/blog/ai-for-lawyers-how-persistent-memory-tracks-every-case-client-and-precedent.md
+- https://heyditto.ai/blog/ai-for-hr-professionals-and-recruiters-how-persistent-memory-tracks-every-candidate.md
+- https://heyditto.ai/blog/ai-for-real-estate-agents-how-persistent-memory-tracks-every-listing-client-and-deal.md
+- https://heyditto.ai/blog/ai-for-product-managers-how-persistent-memory-tracks-every-decision-roadmap-and-user-insight.md
+- https://heyditto.ai/blog/ai-for-data-scientists-and-analysts-how-persistent-memory-tracks-every-experiment.md
+
+## Full Product Details
+
+- Complete reference: https://heyditto.ai/llms-full.txt
+- Documentation: https://heyditto.ai/docs
+- GitHub: https://github.com/ditto-assistant
+- Privacy Policy: https://heyditto.ai/privacy
+- Terms of Service: https://heyditto.ai/terms

@@ -1,0 +1,9 @@
+# upstream clones (separate git repos)
+repos/
+
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+*.log
+*.tmp
