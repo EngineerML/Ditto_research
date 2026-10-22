@@ -80,6 +80,8 @@ def main() -> int:
     ap.add_argument("--concurrency", type=int, default=2, help="scorer case concurrency")
     ap.add_argument("--env-file", type=Path, default=HERE / ".env.local")
     ap.add_argument("--out", type=Path, default=HERE / "practice")
+    ap.add_argument("--harness-port", type=int, default=8080,
+                    help="port the image listens on; validators use 8080 and some images ignore PORT")
     args = ap.parse_args()
 
     secrets_env = load_env_file(args.env_file)
@@ -93,7 +95,8 @@ def main() -> int:
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     out_dir = args.out / f"{stamp}_{args.image.replace(':', '-').replace('/', '_')}_{args.run_size}"
     out_dir.mkdir(parents=True, exist_ok=True)
-    harness_port, api_port, broker_port, embed_port = lr.reserve_ports(4)
+    api_port, broker_port, embed_port = lr.reserve_ports(3)
+    harness_port = args.harness_port
     harness_url, api_url = f"http://127.0.0.1:{harness_port}", f"http://127.0.0.1:{api_port}"
     container = f"ditto-practice-{harness_port}"
     child_env = dict(os.environ, OPENROUTER_API_KEY=key)
