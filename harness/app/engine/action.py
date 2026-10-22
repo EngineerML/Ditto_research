@@ -138,6 +138,9 @@ PLAN_QUESTION = "Before you reply, decide one thing. Which one of the listed too
 PLAN_ACT = "Now respond to the user's message as you decided: make that call, or reply without one."
 PLAN_SECONDS = 40.0
 PLAN_MIN_SECONDS = 30.0
+# The answer is one word. Without a cap the decision step can reason until the turn's output limit
+# and come back empty, which leaves the action turn without a decision; a cut step retries once at low effort.
+PLAN_ATTEMPTS = ((None, 2500), ("low", 1200))
 
 
 @dataclass
@@ -218,17 +221,25 @@ class ActionEngine:
         # reads the decision nor branches on it: every call that follows is the model's native tool call.
         listing = "\n".join(f"- {tool['function']['name']}: {tool['function'].get('description', '')}" for tool in tools)
         question = PLAN_TOOLS.format(tools=listing) + PLAN_QUESTION
-        try:
-            result = await self.llm.chat(messages + [{"role": "user", "content": question}], None, deadline=min(deadline, time.monotonic() + PLAN_SECONDS), max_tokens=self.max_tokens, reasoning_effort=self.effort)
-        except LLMError as exc:
-            self.tally.add(exc.usage)
-            outcome.events.append(f"decision step failed: {exc}")
-            return
-        self.tally.add(result)
-        outcome.model_calls += 1
-        decision = result.content.strip()
-        log.info("case=%s decision step: chars=%d finish=%s", case_id, len(decision), result.finish_reason)
-        if not decision or result.finish_reason == "length":
+        decision = ""
+        for effort, cap in PLAN_ATTEMPTS:
+            if deadline - time.monotonic() < PLAN_MIN_SECONDS:
+                break
+            try:
+                result = await self.llm.chat(messages + [{"role": "user", "content": question}], None, deadline=min(deadline, time.monotonic() + PLAN_SECONDS), max_tokens=min(cap, self.max_tokens), reasoning_effort=effort or self.effort)
+            except LLMError as exc:
+                self.tally.add(exc.usage)
+                outcome.events.append(f"decision step failed: {exc}")
+                return
+            self.tally.add(result)
+            outcome.model_calls += 1
+            decision = result.content.strip()
+            log.info("case=%s decision step: chars=%d finish=%s effort=%s", case_id, len(decision), result.finish_reason, effort or self.effort)
+            if decision and result.finish_reason != "length":
+                break
+            outcome.events.append(f"decision step cut at {cap} tokens")
+            decision = ""
+        if not decision:
             outcome.events.append("decision step: no decision")
             return
         messages.extend([{"role": "user", "content": question}, {"role": "assistant", "content": decision}, {"role": "user", "content": PLAN_ACT}])

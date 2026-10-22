@@ -69,9 +69,12 @@ class CaseRunner:
         dense = dense_order(vectors[0], pairs, held)
         return fuse([cand.pair.pair_id for cand in ordered], dense), dense
 
-    def widening(self, user_id: str | None, question: str, dense: list[str]) -> list[str]:
-        """Records to add beside the packet: the closest by meaning, then the best full-text matches."""
-        if not self.settings.widen:
+    def widening(self, user_id: str | None, question: str, dense: list[str], anchored: bool) -> list[str]:
+        """Records to add beside the packet: the closest by meaning, then the best full-text matches.
+
+        Nothing is added when the request names nothing the records hold (greetings, general questions) and
+        `widen_anchored` is on: there the extra records only lengthen the prompt."""
+        if not self.settings.widen or (self.settings.widen_anchored and not anchored):
             return []
         hits = [hit.pair.pair_id for hit in self.store.search(user_id, question, limit=self.settings.widen_text)]
         return list(dict.fromkeys(dense[: self.settings.widen_dense] + hits))
@@ -169,7 +172,7 @@ class CaseRunner:
                     log.warning("case=%s embedding unavailable, lexical packet without meaning order or additions: %s", req.case_id, exc)
                     orders = None
                 fused, dense = orders if orders is not None else (None, [])
-                extra = self.widening(req.user_id, req.user_input, dense)
+                extra = self.widening(req.user_id, req.user_input, dense, anchored)
                 engine = self.records_engine(llm, executor, memory, tally, fused, self.retriever.question_anchors(index, req.user_input), extra)
                 outcome = await run_records(engine, req, ordered, anchored, {pid: node.pair for pid, node in index.nodes.items()}, deadline, index, lane.reason == "statement")
             elif lane.name != RECORDS:
@@ -177,14 +180,14 @@ class CaseRunner:
                 lead = ""
                 if settings.action_topic and not focus and own_records_question(req.user_input, req.tools):
                     packet, lead = topic_lead(req.user_input, packet, [node.pair for node in index.nodes.values()], settings.story_min_density, settings.story_max_chars)
-                if settings.widen:
+                if settings.widen and (anchored or not settings.widen_anchored):
                     try:
                         orders = await self.fused_order(req.user_id, req.user_input, ordered, index)
                     except EmbeddingError as exc:
                         log.warning("case=%s embedding unavailable, action packet widened by full-text matches only: %s", req.case_id, exc)
                         orders = None
                     pairs_by_id = {pid: node.pair for pid, node in index.nodes.items()}
-                    extra = self.widening(req.user_id, req.user_input, orders[1] if orders is not None else [])
+                    extra = self.widening(req.user_id, req.user_input, orders[1] if orders is not None else [], anchored)
                     packet = widen(packet, [Candidate(pair=pairs_by_id[pid], reasons=["widen"]) for pid in extra if pid in pairs_by_id], settings.widen_chars)
                 engine = ActionEngine(llm, executor, memory, tally, max_turns=settings.action_max_turns, max_tokens=settings.action_max_tokens, effort=settings.action_reasoning_effort, levers=settings.levers)
                 outcome = await run_action(engine, req, packet, deadline, lane.reason, lead)

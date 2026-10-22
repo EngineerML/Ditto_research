@@ -132,7 +132,8 @@ class Settings:
     widen: bool = True
     widen_dense: int = 12
     widen_text: int = 8
-    widen_chars: int = 40000
+    widen_chars: int = 24000
+    widen_anchored: bool = True
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -210,5 +211,7 @@ class Settings:
             widen=_flag("HARNESS_WIDEN", True),
             widen_dense=int(_env("HARNESS_WIDEN_DENSE", "12")),
             widen_text=int(_env("HARNESS_WIDEN_TEXT", "8")),
-            widen_chars=int(_env("HARNESS_WIDEN_CHARS", "40000")),
+            # the 20B model reads long prompts badly: widening only fills room inside the base packet budget
+            widen_chars=int(_env("HARNESS_WIDEN_CHARS", "24000")),
+            widen_anchored=_flag("HARNESS_WIDEN_ANCHORED", True),
         )

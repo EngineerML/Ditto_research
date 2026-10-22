@@ -66,7 +66,11 @@ components; the only model is the hosted one, called over HTTP through the reque
   hand-written example requests in `app/routing/intents.tsv`, none of which comes from a benchmark dataset. When at
   least 80% of the similarity-weighted vote of the 5 nearest examples names the other lane, that lane is used. It
   chooses the prompt and record packet only; the catalog and every tool call are unchanged.
-- Packet widening (`app/memory/packet.py` `widen`, `app/engine/agent.py` `widening`; switch `HARNESS_WIDEN`, on): the
-  records and action packets gain up to 12 records closest to the request by meaning and up to 8 best full-text
-  matches that they lack, within 40,000 characters. Existing records keep their order and marks; nothing is
-  removed. The program and topic short paths are unchanged.
+- Packet widening (`app/memory/packet.py` `widen`, `app/engine/agent.py` `widening`; switch `HARNESS_WIDEN`, on): when
+  the request names something the records hold (the retriever's anchors; `HARNESS_WIDEN_ANCHORED`, on), the records
+  and action packets gain up to 12 records closest to the request by meaning and up to 8 best full-text matches
+  that they lack, only while the packet stays within the base budget of 24,000 characters. Existing records keep
+  their order and marks; nothing is removed. The program and topic short paths are unchanged.
+- Decision-step cap (`app/engine/action.py` `PLAN_ATTEMPTS`): the action lane's one-word decision step may write at
+  most 2,500 tokens; when it is cut off, it is asked once more at low effort with 1,200 tokens. As before, the host
+  never reads the decision.

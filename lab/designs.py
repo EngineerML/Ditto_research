@@ -110,10 +110,13 @@ def pick_overhorizon(case: Case, lane: str, meaning: Meaning, worlds: hades.Hade
 
 
 def pick_union(case: Case, lane: str, worlds: hades.HadesWorld, meaning: Meaning, dense_k: int = 12,
-               text_k: int = 8, budget: int = 48000, keep_short_paths: bool = False) -> Pick:
-    """keep_short_paths: leave Hades's short/topic paths as they are (what the harness does)."""
+               text_k: int = 8, budget: int = 48000, keep_short_paths: bool = False, need_anchor: bool = False) -> Pick:
+    """keep_short_paths: leave Hades's short/topic paths as they are (what the harness does).
+    need_anchor: widen only when the question names something the records hold (Hades's anchors)."""
     picked = pick_hades(case, lane, worlds, meaning)
     if keep_short_paths and picked.path in ("short", "topic"):
+        return picked
+    if need_anchor and not worlds.world(case)[1].rank(case.user, case.text)[1]:
         return picked
     base = picked.pair_ids
     extra = meaning.order(case)[:dense_k] + hades.full_text_hits(case, worlds, text_k)

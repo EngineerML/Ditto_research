@@ -140,6 +140,8 @@ def main() -> None:
                     "overhorizon": lambda: designs.pick_overhorizon(case, lane, meaning, worlds),
                     "union": lambda: designs.pick_union(case, lane, worlds, meaning),
                     "harness union": lambda: designs.pick_union(case, lane, worlds, meaning, budget=40000, keep_short_paths=True),
+                    "harness union 24k": lambda: designs.pick_union(case, lane, worlds, meaning, budget=24000, keep_short_paths=True),
+                    "union 24k anchored": lambda: designs.pick_union(case, lane, worlds, meaning, budget=24000, keep_short_paths=True, need_anchor=True),
                 }
             for name, make in picks.items():
                 if wanted(name):
