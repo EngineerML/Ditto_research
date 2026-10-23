@@ -80,8 +80,8 @@ components; the only model is the hosted one, called over HTTP through the reque
   and action packets gain up to 12 records closest to the request by meaning and up to 8 best full-text matches
   that they lack, only while the packet stays within the base budget of 24,000 characters. Existing records keep
   their order and marks; nothing is removed. The program and topic short paths are unchanged.
-- Decision-step cap (`app/engine/action.py` `PLAN_ATTEMPTS`): the action lane's one-word decision step may write at
-  most 2,500 tokens; when it is cut off, it is asked once more at low effort with 1,200 tokens. As before, the host
+- Decision-step retry (`app/engine/action.py` `PLAN_ATTEMPTS`): when the action lane's one-word decision step comes
+  back cut off or empty, it is asked once more at low effort with 1,200 tokens. As before, the host
   never reads the decision. When an action turn's whole reply is the bare word NONE (the decision echoed), the model
   is asked once to reply to the user instead (`BARE_NONE`, `NONE_REPLY_NUDGE`); the host writes no reply itself.
 - Order vote (`app/engine/short.py` `consensus_order`; setting `short_order_votes`, 3): the program short path reads

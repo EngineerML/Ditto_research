@@ -309,10 +309,27 @@ def classify(request: str, tools: list[ToolDefinition], typo_cues: bool = False,
     return Lane(ACTION, "default")
 
 
-def statement_like(request: str) -> bool:
+def asks_anything(request: str) -> bool:
     clauses = [clause for clause in CLAUSE_SPLIT.split(request) if clause and clause.strip()] or [request]
     tails = QUESTION_TAIL.findall(request) if "?" in request else []
-    return not asks(request, clauses, True, tails) and states_own_fact(request)
+    return asks(request, clauses, True, tails)
+
+
+def statement_like(request: str) -> bool:
+    return not asks_anything(request) and states_own_fact(request)
+
+
+FIRST_PERSON = re.compile(r"\b(?:i|i'm|i've|i'd|my|we|we're|our)\b", re.I)
+PLEASE = re.compile(r"\bplease\b", re.I)
+
+
+def tells_without_asking(request: str) -> bool:
+    """The user tells something about themselves and asks or directs nothing ("Heads up — I take my coffee black")."""
+    if statement_like(request):
+        return True
+    if asks_anything(request) or reading_request(request) or acting(request):
+        return False
+    return not QUESTION_WORD.search(request) and not PLEASE.search(request) and bool(FIRST_PERSON.search(request))
 
 
 def acting(request: str) -> bool:

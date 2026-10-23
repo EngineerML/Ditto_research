@@ -13,7 +13,7 @@ from app.engine.action import ActionEngine
 from app.engine.state import Outcome, TokenTally
 from app.engine.action import safe_run as run_action
 from app.config import Settings
-from app.routing.lane import ACTION, RECORDS, Lane, about_own_records, classify, own_records_question, statement_like
+from app.routing.lane import ACTION, RECORDS, Lane, about_own_records, classify, own_records_question, tells_without_asking
 from app.routing.meaning import IntentBank
 from app.llm import LLM, build_llm, grow_call_gate
 from app.memory.deliberation import Deliberation
@@ -94,7 +94,9 @@ class CaseRunner:
         if sense is None or sense[1] < self.settings.meaning_sure or sense[0] == lane.name:
             return lane
         if sense[0] == RECORDS:
-            return Lane(RECORDS, "statement" if statement_like(req.user_input) else "meaning")
+            # A message the meaning router moves to the records lane that asks nothing ("Heads up — I take my coffee
+            # black") is a statement there: no recall search, and a lasting fact is saved.
+            return Lane(RECORDS, "statement" if tells_without_asking(req.user_input) else "meaning")
         return Lane(ACTION, "meaning")
 
     def _llm_for(self, req: RunRequest) -> LLM:

@@ -138,9 +138,10 @@ PLAN_QUESTION = "Before you reply, decide one thing. Which one of the listed too
 PLAN_ACT = "Now respond to the user's message as you decided: make that call, or reply without one."
 PLAN_SECONDS = 40.0
 PLAN_MIN_SECONDS = 30.0
-# The answer is one word. Without a cap the decision step can reason until the turn's output limit
-# and come back empty, which leaves the action turn without a decision; a cut step retries once at low effort.
-PLAN_ATTEMPTS = ((None, 2500), ("low", 1200))
+# The answer is one word, but a tight output cap at medium effort made the provider refuse the call outright (8 of
+# 101 decision steps in a full run). The first ask keeps the turn's full limit; only a step that comes back cut or
+# empty is asked once more, at low effort.
+PLAN_ATTEMPTS = ((None, 0), ("low", 1200))
 BARE_NONE = re.compile(r"[\W_]*none[\W_]*", re.IGNORECASE)
 NONE_REPLY_NUDGE = "That one word was your decision about tools, not a reply. Now reply to the user's message itself, in your own words."
 REPEATED_READ_NOTE = "Not run again: this exact {name} lookup already ran in this request and its result is above; the user's own records hold nothing more for it. Use that result, or a different tool when the request needs something the records do not hold."
@@ -229,7 +230,7 @@ class ActionEngine:
             if deadline - time.monotonic() < PLAN_MIN_SECONDS:
                 break
             try:
-                result = await self.llm.chat(messages + [{"role": "user", "content": question}], None, deadline=min(deadline, time.monotonic() + PLAN_SECONDS), max_tokens=min(cap, self.max_tokens), reasoning_effort=effort or self.effort)
+                result = await self.llm.chat(messages + [{"role": "user", "content": question}], None, deadline=min(deadline, time.monotonic() + PLAN_SECONDS), max_tokens=min(cap, self.max_tokens) if cap else self.max_tokens, reasoning_effort=effort or self.effort)
             except LLMError as exc:
                 self.tally.add(exc.usage)
                 outcome.events.append(f"decision step failed: {exc}")
@@ -240,7 +241,7 @@ class ActionEngine:
             log.info("case=%s decision step: chars=%d finish=%s effort=%s", case_id, len(decision), result.finish_reason, effort or self.effort)
             if decision and result.finish_reason != "length":
                 break
-            outcome.events.append(f"decision step cut at {cap} tokens")
+            outcome.events.append(f"decision step without a decision (finish={result.finish_reason})")
             decision = ""
         if not decision:
             outcome.events.append("decision step: no decision")
