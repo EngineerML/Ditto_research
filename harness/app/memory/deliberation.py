@@ -11,7 +11,7 @@ from app.tooling.receipts import BLOCKED
 
 log = logging.getLogger("harness.deliberation")
 
-DECLINE_GROUNDS = "say plainly that you have no record of it, and say which records you did check by naming who or what each one is about — not by its label, and without repeating its contents or figures"
+DECLINE_GROUNDS = "say plainly that you have no record of it, and say which records you did check by naming who or what each one is about — not by its label, and without repeating its contents or figures, and without naming any other value of the kind that was asked for (another place, person, date or amount)"
 UNHELD_PREMISE = "A question that takes for granted something the records never record for its subject (a place, a payment, a person or an event) has no value to give, not even zero or none"
 DELIBERATION_BRIEF = """Before you reply, here are {count} drafts of a reply to the message above, each written separately from the same records. They have not been checked, and any of them may be wrong.
 

@@ -48,8 +48,9 @@ components; the only model is the hosted one, called over HTTP through the reque
   arguments) that already ran is sent again only when a one-word model check of the user's message (`SEND`/`HOLD`,
   `app/engine/action.py:69`) finds the message asks for it again; a held repeat is reported to the model as not sent.
 - The catalog is fixed for the whole request; no tool is removed while a request runs. A user's wish that no tool be
-  used reaches the deciding model in the lane prompt ("If the user wants no tools, use none.",
-  `app/engine/action.py:34`); nothing in the host reads the request's wording to grant or withdraw tools.
+  used reaches the deciding model in the lane prompt ("If the user wants no tools used for this request, use none",
+  `ACTION_LANE_PROMPT` in `app/engine/action.py`); nothing in the host reads the request's wording to grant or
+  withdraw tools.
 - Records-lane memory reads are sent to the request's tool endpoint, which records them, and are answered from this
   harness's own store for the requesting user (`app/engine/records.py`, `MemoryTools`); action-lane memory reads are
   answered locally and are not listed in `tool_calls`.
@@ -66,7 +67,13 @@ components; the only model is the hosted one, called over HTTP through the reque
   hand-written example requests in `app/routing/intents.tsv`, none of which comes from a benchmark dataset. When at
   least 80% of the similarity-weighted vote of the 5 nearest examples names the other lane, that lane is used. It
   chooses the prompt and record packet only; the catalog and every tool call are unchanged.
-- Packet widening (`app/memory/packet.py` `widen`, `app/engine/agent.py` `widening`; switch `HARNESS_WIDEN`, on): when
+- Packet refill (`app/memory/packet.py` `fused_rank`, `refill`; `HARNESS_SELECT=refill`, the default): after the
+  base packet is built, the retriever's order, the meaning order, the full-text order (half weight) and the packet's
+  own order are fused by reciprocal rank, and the packet's own size is filled again from the fused order, best first.
+  Base records that stay keep their places; new ones follow in fused order; the packet never grows past its own size.
+  The program and topic short paths are unchanged. `HARNESS_SELECT=swap` instead brings the 12 best fused records in,
+  each replacing the lowest-fused base records; `widen` selects the widening below; `off` keeps the base packet.
+- Packet widening (`app/memory/packet.py` `widen`, `app/engine/agent.py` `widening`; `HARNESS_SELECT=widen`): when
   the request names something the records hold (the retriever's anchors; `HARNESS_WIDEN_ANCHORED`, on), the records
   and action packets gain up to 12 records closest to the request by meaning and up to 8 best full-text matches
   that they lack, only while the packet stays within the base budget of 24,000 characters. Existing records keep
@@ -80,6 +87,16 @@ components; the only model is the hosted one, called over HTTP through the reque
   across rewordings like the first, and uses their vote (head-to-head majority, then Borda points). It stays advisory; the deciding call reads the notes.
 - Timeline note cap (`app/engine/records.py` `TIMELINE_MAX_TOKENS`): the timeline pass may write 8,000 tokens; a cut
   pass leaves no note, as before.
+- Prompt wording: thread answers give each asked part in the latest note's words, every state when notes disagree,
+  and one answer per part (`ANSWER_PARTS`, topic path and latest-passages reading); a decline names no other value of
+  the asked kind (`DECLINE_GROUNDS`); the action lane copies titles word for word, writes a corrected fact as it now
+  stands, maps a described setting to the schema's listed value, and treats a request about allowed tools as a
+  settings change.
+- Statements in the records lane (`app/engine/records.py` `STATEMENT_SAVE`): a message that states something and
+  asks nothing gets no recall search and no search passes, and the deciding model is told to save a lasting fact or
+  preference with save_memory when that tool is listed. Every call remains the model's own.
+- Repeated local reads (`app/engine/action.py` `REPEATED_READ_NOTE`): an action-lane memory read identical to one that
+  already ran in the request is answered with a note pointing to the earlier result instead of running again.
 - Plain hyphens (`app/answer.py` `plain_hyphens`, applied in `app/engine/agent.py`): in `final_text` and `answer`,
   U+2010 and U+2011 become "-", the character the records use; no other character changes. The v13 grader's fold does
   not map them, so a correct value written with them would not match.

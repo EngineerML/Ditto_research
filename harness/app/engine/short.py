@@ -27,7 +27,10 @@ SHORT_OPENING = "You are Ditto, the user's assistant with long-term memory. Answ
 NOTES_TOGETHER = "Read every note before answering. When several notes speak of the same person, thread or reference, read them together, with their dates, before deciding what holds now."
 SHORT_SYSTEM_FORM = SHORT_OPENING + " Reply briefly, then end with one final line 'ANSWER: {answer}'; when several things are asked, give them on that line in the order asked, separated by ' ; '. When the value asked for is worked out from other figures, give the result alone: leave the figures it was worked out from out of the reply and the ANSWER line. Write any date in full, with day, month and year. If the notes do not state it, say so."
 PROGRAM_SYSTEM = SHORT_SYSTEM_FORM.format(answer="<only the value asked for, as short as the notes put it, in their words>")
-TOPIC_SYSTEM = PROGRAM_SYSTEM.replace(SHORT_OPENING, SHORT_OPENING + " " + NOTES_TOGETHER, 1)
+# A thread question asks for named parts (who, what, through what, which state); answers lost points by giving another
+# kind of thing, rewording the notes' state words, folding two candidates into one part, or leaving a part out.
+ANSWER_PARTS = "Answer each thing the message asks for, such as who, what is to be done, through what channel, or what state something is in, and only those, each in the words of the latest note that settles it; a state is given with the state word the notes use. When the latest notes disagree about a state, give each state they record and say that they disagree. Never give two different answers for one thing asked."
+TOPIC_SYSTEM = PROGRAM_SYSTEM.replace(SHORT_OPENING, SHORT_OPENING + " " + NOTES_TOGETHER, 1) + " " + ANSWER_PARTS
 DATED_PROGRAM_SYSTEM = PROGRAM_SYSTEM.replace("Write any date in full, with day, month and year.", "Use the date precision the user requests; otherwise give the full date when the notes establish it.", 1)
 NOTES_HEADER = "Saved notes:"
 MESSAGE_HEADER = "Message:"
@@ -58,7 +61,7 @@ RECUR_EXTRA_WORDS = 6
 RECUR_TIMES = 2
 RECUR_MAX_WORDS = 40
 RECUR_TYPO_WORD = 4
-LATEST_SYSTEM = "You are Ditto, the user's assistant with long-term memory. Below are the latest passages of a longer thread in the user's saved notes. Answer the message only if these passages settle it by themselves. If the answer depends on anything earlier in the thread, reply with one sentence saying that these passages do not settle it, and nothing else. Otherwise reply briefly, then end with one final line 'ANSWER: <only the value asked for, as short as the passages put it, in their words>'; when several things are asked, give them on that line in the order asked, separated by ' ; '."
+LATEST_SYSTEM = "You are Ditto, the user's assistant with long-term memory. Below are the latest passages of a longer thread in the user's saved notes. Answer the message only if these passages settle it by themselves. If the answer depends on anything earlier in the thread, reply with one sentence saying that these passages do not settle it, and nothing else. Otherwise reply briefly, then end with one final line 'ANSWER: <only the value asked for, as short as the passages put it, in their words>'; when several things are asked, give them on that line in the order asked, separated by ' ; '. " + ANSWER_PARTS
 LATEST_BRIEF = "Passages:\n{passages}\n\nMessage:\n{message}"
 SHARED_DRAFT_NOTE = "A draft reply, written once from these same notes for the question \"{asked}\"; it has not been checked, and the notes decide wherever they differ:\n{draft}\n\nCheck the draft against the notes, then reply to the message as asked at the start."
 DRAFT_NOTE = "A draft reply, written from a reading of only the passages picked out above:\n\n{draft}\n\nCheck the draft against every note above, then reply to the message as asked at the start: briefly, ending with the line 'ANSWER: …', without mentioning the draft."

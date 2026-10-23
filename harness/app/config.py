@@ -135,6 +135,8 @@ class Settings:
     widen_chars: int = 24000
     widen_anchored: bool = True
     short_order_votes: int = 3
+    select_mode: str = "refill"
+    swap_top: int = 12
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -216,4 +218,8 @@ class Settings:
             widen_chars=int(_env("HARNESS_WIDEN_CHARS", "24000")),
             widen_anchored=_flag("HARNESS_WIDEN_ANCHORED", True),
             short_order_votes=int(_env("HARNESS_ORDER_VOTES", "3")),
+            # refill: fill the base packet's own size from the fused order; swap: bring the top fused records into it;
+            # widen: add records within widen_chars; off: base packet only
+            select_mode=_env("HARNESS_SELECT", "refill").lower(),
+            swap_top=int(_env("HARNESS_SWAP_TOP", "12")),
         )

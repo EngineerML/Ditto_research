@@ -21,7 +21,7 @@ from app.memory.deliberation import DECLINE_GROUNDS, DRAFT_TOOL_CHOICE, UNHELD_P
 from app.memory.finder import FIND_TOOL, RecordFinder
 from app.memory.retrieval import Candidate, UserIndex
 from app.memory.worksheet import render_worksheet
-from app.memory.packet import Packet, build_packet, compose, identifier_focus, widen
+from app.memory.packet import Packet, build_packet, compose, fused_rank, identifier_focus, refill, swap_in, widen
 from app.protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 from app.tooling.receipts import BLOCKED
 from app.memory.tools import UNHELD_IDS_NOTE, MemoryTools
@@ -61,6 +61,8 @@ LONG_RECORDS_MAX_TOKENS = 16000
 # A timeline note is a list, not an answer; past this the pass is running away (one wrote 12,413 tokens and the
 # reply after it declined an answerable question). A cut pass leaves no note, as before.
 TIMELINE_MAX_TOKENS = 8000
+SAVE_TOOL = "save_memory"
+STATEMENT_SAVE = "This message tells you something about the user rather than asking. When it is a lasting fact or preference of theirs, save it with save_memory, in their words, then reply briefly confirming it and repeating the value they stated; a greeting or passing remark needs no save."
 SEARCH_BUDGET_SHARE = 0.35
 SEARCH_MIN_SECONDS = 20.0
 SEARCH_MIN_CALL_SECONDS = 5.0
@@ -161,7 +163,7 @@ def pin(ordered: list[Candidate], pins: list[str], pairs_by_id: dict[str, Any]) 
 
 
 class RecordsEngine:
-    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, subject_discipline: bool = False, arc: bool = False, worksheet: bool = False, effort_high: bool = False, thread_first: bool = False, thread_reading: bool = False, closure: bool = False, coverage: bool = False, link_hop: bool = False, long_packet_chars: int = 0, meaning_records: int = 0, meaning_chars: int = 0, meaning_order: bool = False, fused: list[str] | None = None, search_record_chars: int = 7000, search_long_records: int = 2, search_passes: int = 1, search_temperature: float = 0.7, search_seed: int | None = None, deliberation: Deliberation | None = None, anchors: dict[str, tuple[str, float]] | None = None, finder_order: bool = False, follow_up: bool = False, follow_up_retry: bool = False, extra: list[str] | None = None, widen_chars: int = 0) -> None:
+    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, subject_discipline: bool = False, arc: bool = False, worksheet: bool = False, effort_high: bool = False, thread_first: bool = False, thread_reading: bool = False, closure: bool = False, coverage: bool = False, link_hop: bool = False, long_packet_chars: int = 0, meaning_records: int = 0, meaning_chars: int = 0, meaning_order: bool = False, fused: list[str] | None = None, search_record_chars: int = 7000, search_long_records: int = 2, search_passes: int = 1, search_temperature: float = 0.7, search_seed: int | None = None, deliberation: Deliberation | None = None, anchors: dict[str, tuple[str, float]] | None = None, finder_order: bool = False, follow_up: bool = False, follow_up_retry: bool = False, extra: list[str] | None = None, widen_chars: int = 0, rank_orders: list[tuple[list[str], float]] | None = None, swap_top: int = 12, select_mode: str = "refill") -> None:
         self.llm = llm
         self.executor = executor
         self.memory = memory
@@ -198,6 +200,9 @@ class RecordsEngine:
         self.follow_up_retry = follow_up_retry
         self.extra = extra or []
         self.widen_chars = widen_chars
+        self.rank_orders = rank_orders
+        self.swap_top = swap_top
+        self.select_mode = select_mode
 
     async def recall(self, req: RunRequest, system: str, deadline: float, outcome: Outcome) -> tuple[list[str], list[dict[str, Any]]]:
         if not any(tool.name in MEMORY_TOOL_NAMES for tool in req.tools):
@@ -418,15 +423,27 @@ class RecordsEngine:
 
     async def run(self, req: RunRequest, ordered: list[Candidate], anchored: bool, pairs_by_id: dict[str, Any], deadline: float, index: UserIndex | None = None, outcome: Outcome | None = None, statement: bool = False) -> Outcome:
         outcome = Outcome() if outcome is None else outcome
-        pins, receipts = await self.recall(req, system_prompt(req.system_prompt, self.subject_discipline, self.thread_reading), deadline, outcome)
+        if statement:
+            # Nothing is asked, so nothing is looked up: a recall search here is an observed call the request did not need.
+            pins, receipts = [], []
+            outcome.events.append("recall turn skipped: the message states something and asks nothing")
+        else:
+            pins, receipts = await self.recall(req, system_prompt(req.system_prompt, self.subject_discipline, self.thread_reading), deadline, outcome)
         packet = build_packet(pin(ordered, pins, pairs_by_id), anchored or bool(pins), self.packet_chars, self.arc, self.thread_first, req.user_input, closure=self.closure, index=index if self.link_hop else None, fused=self.fused, meaning_records=self.meaning_records, meaning_chars=self.meaning_chars, ceiling=self.long_packet_chars, meaning_order=self.meaning_order)
         if self.extra:
             packet = widen(packet, [Candidate(pair=pairs_by_id[pair_id], reasons=["widen"]) for pair_id in self.extra if pair_id in pairs_by_id], self.widen_chars)
+        if self.rank_orders and packet.records:
+            before = len(packet)
+            better = fused_rank(self.rank_orders + [([cand.pair.pair_id for cand in packet.records], 1.0)])
+            packet = refill(packet, better, pairs_by_id) if self.select_mode == "refill" else swap_in(packet, better, pairs_by_id, self.swap_top)
+            outcome.events.append(f"{self.select_mode}: {sum(1 for c in packet.records if self.select_mode in c.reasons)} records in, size kept ({before} -> {len(packet)} records)")
         outcome.events.append(f"packet records={len(packet)} chars={packet.chars} widened={packet.widened} pins={len(pins)}")
         return await self.decide(req, packet, receipts, deadline, outcome, index, statement)
 
     async def decide(self, req: RunRequest, packet: Packet, receipts: list[dict[str, Any]], deadline: float, outcome: Outcome, index: UserIndex | None = None, statement: bool = False) -> Outcome:
         system = system_prompt(req.system_prompt, self.subject_discipline, self.thread_reading)
+        if statement and any(tool.name == SAVE_TOOL for tool in req.tools):
+            system = system.replace(MEMORY_LANE_SYSTEM, MEMORY_LANE_SYSTEM + "\n" + STATEMENT_SAVE, 1)
         coverage = question_coverage(index, req.user_input, packet.labels()) if self.coverage and index is not None else ""
         worksheet = render_worksheet(packet) if self.worksheet and not packet.focused else ""
         block = "\n\n".join(part for part in (coverage, worksheet) if part)
@@ -443,7 +460,8 @@ class RecordsEngine:
         listed = await self.timeline(req, packet, composed, deadline, outcome) if self.timeline_shape(req, packet, statement, named) else []
         if listed and finder is not None:
             outcome.events.append("search passes not run: the timeline pass read this packet")
-        searched = [] if listed else await self.searches(req, packet, finder, deadline, outcome)
+        # A statement asks nothing to be found; search passes over it only spend calls.
+        searched = [] if listed or statement else await self.searches(req, packet, finder, deadline, outcome)
         read = await self.reading(req, packet, closest, deadline, outcome)
         if effort != "low" and has_note(searched) and self.short_identifier_packet(req, packet):
             effort = "low"

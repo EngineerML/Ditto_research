@@ -244,6 +244,69 @@ def assemble(ordered: list[Candidate], anchored: bool, budget: int, arc: bool = 
     return Packet(records=arc_order(admitted) if arc else admitted)
 
 
+RRF_K = 60
+RRF_DEPTH = 80
+
+
+def fused_rank(orders: list[tuple[list[str], float]]) -> list[str]:
+    """Weighted reciprocal-rank fusion of several orders of record ids, best first."""
+    score: dict[str, float] = {}
+    for order, weight in orders:
+        for rank, pair_id in enumerate(order[:RRF_DEPTH], start=1):
+            score[pair_id] = score.get(pair_id, 0.0) + weight / (RRF_K + rank)
+    return sorted(score, key=lambda pair_id: -score[pair_id])
+
+
+def swap_in(packet: Packet, better: list[str], pairs_by_id: dict, top: int) -> Packet:
+    """Bring the `top` best records of `better` into the packet without growing it.
+
+    Each record brought in replaces the packet's records that rank lowest in `better`, until it fits in the
+    packet's own size, so the prompt keeps the length the base budget gave it.
+    """
+    budget = packet.chars
+    rank = {pair_id: position for position, pair_id in enumerate(better)}
+    head = [pair_id for pair_id in better[:top] if pair_id in pairs_by_id]
+    kept = list(packet.records)
+    for pair_id in head:
+        if any(cand.pair.pair_id == pair_id for cand in kept):
+            continue
+        incoming = Candidate(pair=pairs_by_id[pair_id], reasons=["swap"])
+        used = sum(record_size(cand) for cand in kept)
+        victims = sorted((cand for cand in kept if cand.pair.pair_id not in head), key=lambda cand: -rank.get(cand.pair.pair_id, 10**6))
+        while used + record_size(incoming) > budget and victims:
+            out = victims.pop(0)
+            kept.remove(out)
+            used -= record_size(out)
+        if used + record_size(incoming) <= budget:
+            kept.append(incoming)
+    return Packet(records=kept, focused=packet.focused, widened=packet.widened)
+
+
+def refill(packet: Packet, better: list[str], pairs_by_id: dict) -> Packet:
+    """Refill the packet's own size from the fused order, best first.
+
+    The kept records of the base packet stay in their places (so its arc and date order holds), and the records it
+    lacked follow in fused order. The packet never grows past its own size.
+    """
+    budget = packet.chars
+    chosen: list[str] = []
+    used = 0
+    for pair_id in better:
+        pair = pairs_by_id.get(pair_id)
+        if pair is None:
+            continue
+        size = record_size(Candidate(pair=pair))
+        if used + size > budget:
+            continue
+        chosen.append(pair_id)
+        used += size
+    picked = set(chosen)
+    kept = [cand for cand in packet.records if cand.pair.pair_id in picked]
+    held = {cand.pair.pair_id for cand in kept}
+    added = [Candidate(pair=pairs_by_id[pair_id], reasons=["refill"]) for pair_id in chosen if pair_id not in held]
+    return Packet(records=kept + added, focused=packet.focused, widened=packet.widened)
+
+
 def widen(packet: Packet, extra: list[Candidate], budget: int) -> Packet:
     """Append records found by meaning or by full-text search that the packet lacks, within budget.
 

@@ -1,0 +1,142 @@
+{
+ "hades|action": {
+  "cases": 75,
+  "complete": 0.96,
+  "recall": 0.9788888888888889,
+  "precision": 0.05533456727789737,
+  "answer_seen": null,
+  "tokens_median": 5269.5,
+  "tokens_mean": 4681.826666666667,
+  "tokens_p90": 5397.0
+ },
+ "rrf@12k|action": {
+  "cases": 75,
+  "complete": 0.9466666666666667,
+  "recall": 0.9666666666666667,
+  "precision": 0.08001027611990932,
+  "answer_seen": null,
+  "tokens_median": 2989.5,
+  "tokens_mean": 2988.09,
+  "tokens_p90": 2998.75
+ },
+ "rrf@6k|action": {
+  "cases": 75,
+  "complete": 0.72,
+  "recall": 0.8655555555555556,
+  "precision": 0.12804631451865264,
+  "answer_seen": null,
+  "tokens_median": 1490.5,
+  "tokens_mean": 1487.94,
+  "tokens_p90": 1498.75
+ },
+ "rrf@hades|action": {
+  "cases": 75,
+  "complete": 0.9733333333333334,
+  "recall": 0.98,
+  "precision": 0.0635759038498379,
+  "answer_seen": null,
+  "tokens_median": 5263.0,
+  "tokens_mean": 4670.453333333333,
+  "tokens_p90": 5385.25
+ },
+ "rrf@hades/2|action": {
+  "cases": 75,
+  "complete": 0.8933333333333333,
+  "recall": 0.9355555555555556,
+  "precision": 0.0944072492006941,
+  "answer_seen": null,
+  "tokens_median": 2628.0,
+  "tokens_mean": 2329.51,
+  "tokens_p90": 2686.0
+ },
+ "swap8@hades|action": {
+  "cases": 75,
+  "complete": 0.96,
+  "recall": 0.9788888888888889,
+  "precision": 0.05669409958016562,
+  "answer_seen": null,
+  "tokens_median": 5269.5,
+  "tokens_mean": 4678.593333333333,
+  "tokens_p90": 5397.0
+ },
+ "swap@hades|action": {
+  "cases": 75,
+  "complete": 0.9866666666666667,
+  "recall": 0.9866666666666667,
+  "precision": 0.06021593612101681,
+  "answer_seen": null,
+  "tokens_median": 5254.5,
+  "tokens_mean": 4669.54,
+  "tokens_p90": 5393.5
+ },
+ "hades|records": {
+  "cases": 498,
+  "complete": 0.9236947791164659,
+  "recall": 0.9546519410977242,
+  "precision": 0.37758287621246345,
+  "answer_seen": 0.8306878306878307,
+  "tokens_median": 3254.75,
+  "tokens_mean": 3836.9156626506024,
+  "tokens_p90": 6600.0
+ },
+ "rrf@12k|records": {
+  "cases": 498,
+  "complete": 0.8594377510040161,
+  "recall": 0.920281124497992,
+  "precision": 0.3551000614433223,
+  "answer_seen": 0.8068783068783069,
+  "tokens_median": 2977.25,
+  "tokens_mean": 2485.9377510040163,
+  "tokens_p90": 2999.75
+ },
+ "rrf@6k|records": {
+  "cases": 498,
+  "complete": 0.8112449799196787,
+  "recall": 0.8873159303882195,
+  "precision": 0.37371741834895067,
+  "answer_seen": 0.7592592592592593,
+  "tokens_median": 1491.5,
+  "tokens_mean": 1657.8589357429719,
+  "tokens_p90": 2626.25
+ },
+ "rrf@hades|records": {
+  "cases": 498,
+  "complete": 0.929718875502008,
+  "recall": 0.9628514056224899,
+  "precision": 0.3788497581891404,
+  "answer_seen": 0.843915343915344,
+  "tokens_median": 3254.75,
+  "tokens_mean": 3832.2023092369477,
+  "tokens_p90": 6599.0
+ },
+ "rrf@hades/2|records": {
+  "cases": 498,
+  "complete": 0.8373493975903614,
+  "recall": 0.9112449799196788,
+  "precision": 0.37845025454205905,
+  "answer_seen": 0.7857142857142857,
+  "tokens_median": 2554.0,
+  "tokens_mean": 2315.5451807228915,
+  "tokens_p90": 3327.0
+ },
+ "swap8@hades|records": {
+  "cases": 498,
+  "complete": 0.9257028112449799,
+  "recall": 0.9579986613119142,
+  "precision": 0.37784148641083265,
+  "answer_seen": 0.8333333333333334,
+  "tokens_median": 3254.75,
+  "tokens_mean": 3836.4211847389556,
+  "tokens_p90": 6600.0
+ },
+ "swap@hades|records": {
+  "cases": 498,
+  "complete": 0.927710843373494,
+  "recall": 0.9606760374832665,
+  "precision": 0.37827378561945946,
+  "answer_seen": 0.8359788359788359,
+  "tokens_median": 3254.75,
+  "tokens_mean": 3835.1867469879517,
+  "tokens_p90": 6600.0
+ }
+}

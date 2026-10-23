@@ -1,0 +1,142 @@
+{
+ "hades|action": {
+  "cases": 108,
+  "complete": 0.8981481481481481,
+  "recall": 0.9344135802469137,
+  "precision": 0.051632021521149825,
+  "answer_seen": null,
+  "tokens_median": 5289.5,
+  "tokens_mean": 4669.509259259259,
+  "tokens_p90": 5506.5
+ },
+ "rrf@12k|action": {
+  "cases": 108,
+  "complete": 0.9351851851851852,
+  "recall": 0.9652777777777778,
+  "precision": 0.08206870720943532,
+  "answer_seen": null,
+  "tokens_median": 2990.0,
+  "tokens_mean": 2987.296296296296,
+  "tokens_p90": 2998.5
+ },
+ "rrf@6k|action": {
+  "cases": 108,
+  "complete": 0.7407407407407407,
+  "recall": 0.8765432098765432,
+  "precision": 0.11754128192839038,
+  "answer_seen": null,
+  "tokens_median": 1490.25,
+  "tokens_mean": 1488.1875,
+  "tokens_p90": 1498.75
+ },
+ "rrf@hades|action": {
+  "cases": 108,
+  "complete": 0.9629629629629629,
+  "recall": 0.9737654320987654,
+  "precision": 0.05828486197274217,
+  "answer_seen": null,
+  "tokens_median": 5275.5,
+  "tokens_mean": 4659.513888888889,
+  "tokens_p90": 5493.5
+ },
+ "rrf@hades/2|action": {
+  "cases": 108,
+  "complete": 0.9074074074074074,
+  "recall": 0.9444444444444444,
+  "precision": 0.10488992442657821,
+  "answer_seen": null,
+  "tokens_median": 2622.25,
+  "tokens_mean": 2322.599537037037,
+  "tokens_p90": 2736.5
+ },
+ "swap8@hades|action": {
+  "cases": 108,
+  "complete": 0.9074074074074074,
+  "recall": 0.9375,
+  "precision": 0.053394597080021686,
+  "answer_seen": null,
+  "tokens_median": 5288.75,
+  "tokens_mean": 4657.469907407408,
+  "tokens_p90": 5491.75
+ },
+ "swap@hades|action": {
+  "cases": 108,
+  "complete": 0.9351851851851852,
+  "recall": 0.9583333333333334,
+  "precision": 0.055928544843947055,
+  "answer_seen": null,
+  "tokens_median": 5257.5,
+  "tokens_mean": 4633.314814814815,
+  "tokens_p90": 5467.25
+ },
+ "hades|records": {
+  "cases": 748,
+  "complete": 0.9197860962566845,
+  "recall": 0.9581105169340463,
+  "precision": 0.3742376830390375,
+  "answer_seen": 0.8371681415929203,
+  "tokens_median": 3152.25,
+  "tokens_mean": 3730.7860962566847,
+  "tokens_p90": 6526.5
+ },
+ "rrf@12k|records": {
+  "cases": 748,
+  "complete": 0.8609625668449198,
+  "recall": 0.9204768270944741,
+  "precision": 0.3509088809295557,
+  "answer_seen": 0.8176991150442477,
+  "tokens_median": 2979.25,
+  "tokens_mean": 2525.757687165775,
+  "tokens_p90": 3090.5
+ },
+ "rrf@6k|records": {
+  "cases": 748,
+  "complete": 0.803475935828877,
+  "recall": 0.8818850267379679,
+  "precision": 0.36582763797005113,
+  "answer_seen": 0.784070796460177,
+  "tokens_median": 1493.0,
+  "tokens_mean": 1706.2941176470588,
+  "tokens_p90": 3090.5
+ },
+ "rrf@hades|records": {
+  "cases": 748,
+  "complete": 0.9331550802139037,
+  "recall": 0.9662433155080213,
+  "precision": 0.3765617333248515,
+  "answer_seen": 0.8477876106194691,
+  "tokens_median": 3152.25,
+  "tokens_mean": 3726.301470588235,
+  "tokens_p90": 6514.25
+ },
+ "rrf@hades/2|records": {
+  "cases": 748,
+  "complete": 0.8582887700534759,
+  "recall": 0.9207887700534759,
+  "precision": 0.37602387990079444,
+  "answer_seen": 0.8123893805309734,
+  "tokens_median": 2598.0,
+  "tokens_mean": 2290.5060160427806,
+  "tokens_p90": 3364.75
+ },
+ "swap8@hades|records": {
+  "cases": 748,
+  "complete": 0.9237967914438503,
+  "recall": 0.962121212121212,
+  "precision": 0.3747058423307262,
+  "answer_seen": 0.8424778761061947,
+  "tokens_median": 3152.25,
+  "tokens_mean": 3730.1373663101604,
+  "tokens_p90": 6526.5
+ },
+ "swap@hades|records": {
+  "cases": 748,
+  "complete": 0.9251336898395722,
+  "recall": 0.9616755793226383,
+  "precision": 0.3749826393926566,
+  "answer_seen": 0.8407079646017699,
+  "tokens_median": 3152.25,
+  "tokens_mean": 3726.7102272727275,
+  "tokens_p90": 6489.5
+ }
+}

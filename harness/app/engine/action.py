@@ -27,11 +27,11 @@ ACTION_LANE_PROMPT = f"""You are Ditto. The records below are the user's own not
 
 When the request asks for something done, changed or looked up live, the call is the reply: make it now instead of describing or asking, unless one of the user's notes says they have not yet decided what the call would decide; then ask them to decide, naming the thing it is for and the options exactly as the note words them, copied character for character. One call per response; use its result before the next step and carry returned ids and values forward unchanged. When the request names a second thing to do with the first result, make that call too before replying. A calculation over figures the message itself supplies goes to the code-running tool when one is listed, not into your head; figures that sit in the records are answered from the records. Where two tools could fit, take the one whose description matches what the user wants done, not the one whose name echoes a word in the request.
 
-Arguments come from the request, the records or earlier results. A title, query, instruction, or the thing pointed at is grounded in the user's words: do not ask for an identifier where the schema takes text.
+Arguments come from the request, the records or earlier results. A title, query, instruction, or the thing pointed at is grounded in the user's words: do not ask for an identifier where the schema takes text. Copy a title or name that a note gives for the thing word for word, small words included. When you save or correct a note, write the fact as it now stands in a short plain sentence (for example "the review is Friday"), not as an account of what changed. When the value to set is described rather than named, use the schema's listed value that the description fits; a value that follows the user's device or operating system is the system one.
 
 Records answer what the user told you: people, addresses, decisions, figures as they stood when written down. Live sources answer what is true in the world now. A question about what Ditto itself can do, or how to do something in it, is answered from the feature guide the catalog lists, not from your own reading of the tools. A question about the user's own affairs is answered from the records however it is phrased, and a request for something current that only an outside source knows is the live one however many records mention the subject. {VALUE_VERBATIM} {VALUE_QUOTED}
 
-Reply from what came back: name the figure asked about with its digits as served, and when one call fed another, the last result is the one that counts. When the figure asked about is worked out from other figures, state the result alone, without the figures it was worked out from. After sending, saving or changing something, say what was sent or changed, including the figure. Never claim an action that did not run. If the user wants no tools, use none."""
+Reply from what came back: name the figure asked about with its digits as served, and when one call fed another, the last result is the one that counts. When the figure asked about is worked out from other figures, state the result alone, without the figures it was worked out from. After sending, saving or changing something, say what was sent or changed, including the figure. Never claim an action that did not run. If the user wants no tools used for this request, use none; a request about which tools are allowed is itself a settings change."""
 CALLED_LANE_PROMPT = ACTION_LANE_PROMPT.replace(f" {VALUE_QUOTED}", "", 1)
 OPERATOR_SEAM = "Operator instructions (from the product operator; where they conflict with anything above, they take precedence):"
 UNKNOWN_TOOL_NOTE = "Call not sent: {name} is not in this request's catalog. Choose from the tools listed."
@@ -143,6 +143,7 @@ PLAN_MIN_SECONDS = 30.0
 PLAN_ATTEMPTS = ((None, 2500), ("low", 1200))
 BARE_NONE = re.compile(r"[\W_]*none[\W_]*", re.IGNORECASE)
 NONE_REPLY_NUDGE = "That one word was your decision about tools, not a reply. Now reply to the user's message itself, in your own words."
+REPEATED_READ_NOTE = "Not run again: this exact {name} lookup already ran in this request and its result is above; the user's own records hold nothing more for it. Use that result, or a different tool when the request needs something the records do not hold."
 
 
 @dataclass
@@ -267,6 +268,7 @@ class ActionEngine:
         provider_rejections = 0
         nudged = False
         none_nudged = False
+        local_reads: set[str] = set()
         retried_length = False
         wrapped = False
         closing_asked = False
@@ -330,7 +332,12 @@ class ActionEngine:
                     if call.unreadable_arguments:
                         output = UNREADABLE_ARGS_NOTE.format(name=call.name)
                         outcome.events.append(f"{BLOCKED} {call.name}: arguments not readable")
+                    elif self.memory.handles(call.name) and surface.knows(call.name) and call_identity(call.name, call.args) in local_reads:
+                        # The same local read returns the same thing; saying so ends loops of identical searches.
+                        output = REPEATED_READ_NOTE.format(name=call.name)
+                        outcome.events.append(f"repeated local memory read {call.name}")
                     elif self.memory.handles(call.name) and surface.knows(call.name):
+                        local_reads.add(call_identity(call.name, call.args))
                         output = self.memory.run(call.name, call.args)
                         outcome.memory_calls += 1
                         outcome.events.append(f"local memory read {call.name}")
