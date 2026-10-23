@@ -71,6 +71,8 @@ components; the only model is the hosted one, called over HTTP through the reque
   base packet is built, the retriever's order, the meaning order, the full-text order (half weight) and the packet's
   own order are fused by reciprocal rank, and the packet's own size is filled again from the fused order, best first.
   Base records that stay keep their places; new ones follow in fused order; the packet never grows past its own size.
+  A record the base packet lacked is brought in only when it is under 7,000 characters (`search_record_chars`), so a
+  refill never starts the long-record search passes.
   The program and topic short paths are unchanged. `HARNESS_SELECT=swap` instead brings the 12 best fused records in,
   each replacing the lowest-fused base records; `widen` selects the widening below; `off` keeps the base packet.
 - Packet widening (`app/memory/packet.py` `widen`, `app/engine/agent.py` `widening`; `HARNESS_SELECT=widen`): when
@@ -85,8 +87,6 @@ components; the only model is the hosted one, called over HTTP through the reque
 - Order vote (`app/engine/short.py` `consensus_order`; setting `short_order_votes`, 3): the program short path reads
   the order of the notes three times (once as before, twice at temperature 0.7 with fixed seeds), each reading shared
   across rewordings like the first, and uses their vote (head-to-head majority, then Borda points). It stays advisory; the deciding call reads the notes.
-- Timeline note cap (`app/engine/records.py` `TIMELINE_MAX_TOKENS`): the timeline pass may write 8,000 tokens; a cut
-  pass leaves no note, as before.
 - Prompt wording: thread answers give each asked part in the latest note's words, every state when notes disagree,
   and one answer per part (`ANSWER_PARTS`, topic path and latest-passages reading); a decline names no other value of
   the asked kind (`DECLINE_GROUNDS`); the action lane copies titles word for word, writes a corrected fact as it now

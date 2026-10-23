@@ -200,7 +200,7 @@ class CaseRunner:
                     pairs_by_id = {pid: node.pair for pid, node in index.nodes.items()}
                     if settings.select_mode in RERANK_MODES:
                         better = fused_rank(self.ranking_orders(req.user_id, req.user_input, ordered, dense) + [([c.pair.pair_id for c in packet.records], 1.0)])
-                        packet = refill(packet, better, pairs_by_id) if settings.select_mode == "refill" else swap_in(packet, better, pairs_by_id, settings.swap_top)
+                        packet = refill(packet, better, pairs_by_id, settings.search_record_chars) if settings.select_mode == "refill" else swap_in(packet, better, pairs_by_id, settings.swap_top)
                     else:
                         extra = self.widening(req.user_id, req.user_input, dense, anchored)
                         packet = widen(packet, [Candidate(pair=pairs_by_id[pid], reasons=["widen"]) for pid in extra if pid in pairs_by_id], settings.widen_chars)

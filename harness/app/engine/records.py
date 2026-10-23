@@ -58,9 +58,8 @@ SEARCH_OTHER_TOOL_NOTE = "Not run: this search pass runs only find_in_records an
 SEARCH_MAX_TURNS = 8
 SEARCH_MAX_TOKENS = 16000
 LONG_RECORDS_MAX_TOKENS = 16000
-# A timeline note is a list, not an answer; past this the pass is running away (one wrote 12,413 tokens and the
-# reply after it declined an answerable question). A cut pass leaves no note, as before.
-TIMELINE_MAX_TOKENS = 8000
+# Kept at Hades's limit: an 8,000 cap cut a 7,000-8,000-token note that the answer needed, and a cut pass leaves no note.
+TIMELINE_MAX_TOKENS = LONG_RECORDS_MAX_TOKENS
 SAVE_TOOL = "save_memory"
 STATEMENT_SAVE = "This message tells you something about the user rather than asking. When it is a lasting fact or preference of theirs, save it with save_memory, in their words, then reply briefly confirming it and repeating the value they stated; a greeting or passing remark needs no save."
 SEARCH_BUDGET_SHARE = 0.35
@@ -435,7 +434,7 @@ class RecordsEngine:
         if self.rank_orders and packet.records:
             before = len(packet)
             better = fused_rank(self.rank_orders + [([cand.pair.pair_id for cand in packet.records], 1.0)])
-            packet = refill(packet, better, pairs_by_id) if self.select_mode == "refill" else swap_in(packet, better, pairs_by_id, self.swap_top)
+            packet = refill(packet, better, pairs_by_id, self.search_record_chars) if self.select_mode == "refill" else swap_in(packet, better, pairs_by_id, self.swap_top)
             outcome.events.append(f"{self.select_mode}: {sum(1 for c in packet.records if self.select_mode in c.reasons)} records in, size kept ({before} -> {len(packet)} records)")
         outcome.events.append(f"packet records={len(packet)} chars={packet.chars} widened={packet.widened} pins={len(pins)}")
         return await self.decide(req, packet, receipts, deadline, outcome, index, statement)

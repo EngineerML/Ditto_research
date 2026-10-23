@@ -282,13 +282,16 @@ def swap_in(packet: Packet, better: list[str], pairs_by_id: dict, top: int) -> P
     return Packet(records=kept, focused=packet.focused, widened=packet.widened)
 
 
-def refill(packet: Packet, better: list[str], pairs_by_id: dict) -> Packet:
+def refill(packet: Packet, better: list[str], pairs_by_id: dict, max_new_chars: int = 0) -> Packet:
     """Refill the packet's own size from the fused order, best first.
 
     The kept records of the base packet stay in their places (so its arc and date order holds), and the records it
-    lacked follow in fused order. The packet never grows past its own size.
+    lacked follow in fused order. The packet never grows past its own size. A record the base packet did not hold is
+    brought in only when it is shorter than `max_new_chars` (0: any size), so a refill never turns a packet into a
+    long-record one that starts extra search passes.
     """
     budget = packet.chars
+    base = {cand.pair.pair_id for cand in packet.records}
     chosen: list[str] = []
     used = 0
     for pair_id in better:
@@ -297,6 +300,8 @@ def refill(packet: Packet, better: list[str], pairs_by_id: dict) -> Packet:
             continue
         size = record_size(Candidate(pair=pair))
         if used + size > budget:
+            continue
+        if max_new_chars and pair_id not in base and len(pair.prompt) + len(pair.response) >= max_new_chars:
             continue
         chosen.append(pair_id)
         used += size
