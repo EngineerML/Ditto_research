@@ -130,7 +130,7 @@ class CaseRunner:
         token = focus_token(req.user_input, focus)
         if not token:
             return False
-        short = ShortPath(engine, effort=settings.short_effort, max_tokens=settings.short_max_tokens, readings=self.order_readings, order_max_tokens=settings.order_max_tokens, full_dates=settings.program_full_dates, shared_draft=settings.short_shared_draft, order_votes=settings.short_order_votes)
+        short = ShortPath(engine, effort=settings.short_effort, max_tokens=settings.short_max_tokens, readings=self.order_readings, order_max_tokens=settings.order_max_tokens, full_dates=settings.program_full_dates, shared_draft=settings.short_shared_draft)
         return await short.answer(req, [cand.pair for cand in focus], token, deadline, outcome)
 
     async def run(self, req: RunRequest) -> RunResponse:

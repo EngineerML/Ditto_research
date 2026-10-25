@@ -84,9 +84,6 @@ components; the only model is the hosted one, called over HTTP through the reque
   back cut off or empty, it is asked once more at low effort with 1,200 tokens. As before, the host
   never reads the decision. When an action turn's whole reply is the bare word NONE (the decision echoed), the model
   is asked once to reply to the user instead (`BARE_NONE`, `NONE_REPLY_NUDGE`); the host writes no reply itself.
-- Order vote (`app/engine/short.py` `consensus_order`; setting `short_order_votes`, 3): the program short path reads
-  the order of the notes three times (once as before, twice at temperature 0.7 with fixed seeds), each reading shared
-  across rewordings like the first, and uses their vote (head-to-head majority, then Borda points). It stays advisory; the deciding call reads the notes.
 - Prompt wording: thread answers give each asked part in the latest note's words, every state when notes disagree,
   and one answer per part (`ANSWER_PARTS`, topic path and latest-passages reading); a decline names no other value of
   the asked kind (`DECLINE_GROUNDS`); the action lane copies titles word for word, writes a corrected fact as it now
