@@ -15,6 +15,7 @@ and the split ones per run) and OUT_DIR/summary.json.
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import re
 import sys
@@ -24,9 +25,22 @@ HERE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(HERE / "tools"))
 sys.path.insert(0, str(HERE))
 from lab import data  # noqa: E402
-from trace_compare import dump, effort, evidence_in_packet, match, purpose  # noqa: E402
+from trace_compare import dump, effort, evidence_in_packet, plain, purpose  # noqa: E402
 
 PAYMENT = re.compile(r"\b402\b|Payment Required|insufficient credits", re.IGNORECASE)
+
+
+def match(case: data.Case, row: dict, traces: list[dict]) -> dict | None:
+    # Twins can differ only by a case-file id, which plain() hides, so several traces may read the same;
+    # among the closest texts, the one whose duration is nearest the scorer's latency is this case's.
+    want = plain(case.text)
+    scored = [(difflib.SequenceMatcher(None, want, plain(t["user_input"])).ratio(), t) for t in traces]
+    best = max((r for r, _ in scored), default=0.0)
+    if best < 0.85:
+        return None
+    near = [t for r, t in scored if r >= best - 0.01]
+    latency = (row.get("latency_ms") or 0) / 1000
+    return min(near, key=lambda t: abs((t.get("seconds") or 0) - latency))
 
 
 def invalid(trace: dict | None) -> bool:
@@ -90,7 +104,7 @@ def main() -> None:
         obs = []
         for label, run, rows, traces in runs:
             row = rows.get(cid)
-            trace = match(case, traces) if row is not None else None
+            trace = match(case, row, traces) if row is not None else None
             obs.append((label, row, trace))
         valid = [(lab, row) for lab, row, tr in obs if row is not None and not invalid(tr)]
         for lab, row in valid:
