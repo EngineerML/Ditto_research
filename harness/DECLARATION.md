@@ -65,8 +65,26 @@ components; the only model is the hosted one, called over HTTP through the reque
 - Meaning router (`app/routing/meaning.py`, `app/engine/agent.py` `meaning_lane`; switch `HARNESS_MEANING_ROUTE`,
   on): after the word rules and their rescues pick a lane, the request is embedded and compared with the
   hand-written example requests in `app/routing/intents.tsv`, none of which comes from a benchmark dataset. When at
-  least 80% of the similarity-weighted vote of the 5 nearest examples names the other lane, that lane is used. It
-  chooses the prompt and record packet only; the catalog and every tool call are unchanged.
+  least 85% of the similarity-weighted vote of the 5 nearest examples names the other lane, that lane is used, except
+  that a request holding a verb of doing something, a sending phrase, a word asking to drop a stored note or a
+  mention of a search result stays off the records lane, and a question about the user's own things stays off the
+  action lane (`keeps_action`, `keeps_records`; switch `HARNESS_MEANING_GUARDS`, on). It chooses the prompt and
+  record packet only; the catalog and every tool call are unchanged.
+- Routing repairs (`app/routing/lane.py`, `app/engine/agent.py` `choose_lane`): all of them choose the lane only;
+  every model gets the request as written, with the whole catalog.
+  - Typo mending (`mend_cues`; `HARNESS_ROUTE_MEND`, on): a word that is not in the English word list
+    (`app/routing/words.txt`, built by `tools/build_lexicon.py` from general documentation text on an Ubuntu
+    install), the user's records or the catalog, and that keeps the first and last letters of exactly one cue word
+    within a third of its length in edits, is read as that cue word by the rules ("cowld" as "could").
+  - Own-records questions (`records_question`, `elliptical`; `HARNESS_ROUTE_OWN`, on): a request the rules left on
+    the action lane for want of a better reason goes to the records lane when it asks about, or asks to be told,
+    something its records hold (an identifier, a thread the records dwell on, a held name or value, or "my own"),
+    with no verb of doing something, no sending phrase, no outside source, no listed tool named and no reading
+    tool's word paired with a fetching verb in one sentence; a live cue needs an identifier or a thread. A question
+    about how to do something in the product goes to the action lane (`product_question`).
+  - Smaller rules: reference codes such as INV-5CCDC0 are not figures to compute with; "lately", "at the moment"
+    and "people are saying" are live cues; "make sure" is not a verb of doing something; a contact noun beside a
+    listed tool's full name does not make a stored-detail question.
 - Packet refill (`app/memory/packet.py` `fused_rank`, `refill`; `HARNESS_SELECT=refill`, the default): after the
   base packet is built, the retriever's order, the meaning order, the full-text order (half weight) and the packet's
   own order are fused by reciprocal rank, and the packet's own size is filled again from the fused order, best first.

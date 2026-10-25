@@ -33,6 +33,9 @@ class Levers:
     route_save: bool = True
     route_counting: bool = True
     plan_first: bool = True
+    route_mend: bool = True
+    route_own: bool = True
+    meaning_guards: bool = True
 
     @classmethod
     def from_env(cls) -> "Levers":
@@ -50,6 +53,9 @@ class Levers:
             route_save=_flag("HARNESS_ROUTE_SAVE", True),
             route_counting=_flag("HARNESS_ROUTE_COUNTING", True),
             plan_first=_flag("HARNESS_PLAN_FIRST", True),
+            route_mend=_flag("HARNESS_ROUTE_MEND", True),
+            route_own=_flag("HARNESS_ROUTE_OWN", True),
+            meaning_guards=_flag("HARNESS_MEANING_GUARDS", True),
         )
 
 
@@ -128,7 +134,7 @@ class Settings:
     finder_order: bool = True
     action_topic: bool = True
     meaning_route: bool = True
-    meaning_sure: float = 0.8
+    meaning_sure: float = 0.85
     widen: bool = True
     widen_dense: int = 12
     widen_text: int = 8
@@ -209,7 +215,7 @@ class Settings:
             finder_order=_flag("HARNESS_FINDER_ORDER", True),
             action_topic=_flag("HARNESS_ACTION_TOPIC", True),
             meaning_route=_flag("HARNESS_MEANING_ROUTE", True),
-            meaning_sure=float(_env("HARNESS_MEANING_SURE", "0.8")),
+            meaning_sure=float(_env("HARNESS_MEANING_SURE", "0.85")),
             widen=_flag("HARNESS_WIDEN", True),
             widen_dense=int(_env("HARNESS_WIDEN_DENSE", "12")),
             widen_text=int(_env("HARNESS_WIDEN_TEXT", "8")),

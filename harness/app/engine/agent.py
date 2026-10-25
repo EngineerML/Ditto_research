@@ -13,7 +13,8 @@ from app.engine.action import ActionEngine
 from app.engine.state import Outcome, TokenTally
 from app.engine.action import safe_run as run_action
 from app.config import Settings
-from app.routing.lane import ACTION, RECORDS, Lane, about_own_records, classify, own_records_question, tells_without_asking
+from app.routing.lane import ACTION, OVERRIDABLE_REASONS, OWN_THING, RECORDS, Lane, about_own_records, classify, elliptical, held_in_records, keeps_action, keeps_records
+from app.routing.lane import mend_cues, own_records_question, product_question, records_question, tells_without_asking, tokens
 from app.routing.meaning import IntentBank
 from app.llm import LLM, build_llm, grow_call_gate
 from app.memory.deliberation import Deliberation
@@ -30,6 +31,7 @@ from app.tooling.executor import ToolExecutor
 
 log = logging.getLogger("harness.agent")
 SWAP_TEXT_HITS = 40
+IDENTIFIER_REASONS = frozenset({"identifier", "identifier-held"})
 RERANK_MODES = ("refill", "swap")
 
 
@@ -87,16 +89,47 @@ class CaseRunner:
         hits = [hit.pair.pair_id for hit in self.store.search(user_id, question, limit=SWAP_TEXT_HITS)]
         return [([cand.pair.pair_id for cand in ordered], 1.0), (dense, 1.0), (hits, 0.5)]
 
-    async def meaning_lane(self, req: RunRequest, lane: Lane) -> Lane:
+    def choose_lane(self, req: RunRequest, ordered: list[Candidate], index: UserIndex, focus: list[Candidate]) -> tuple[Lane, str]:
+        """The lane from the request's words, and the request with its misspelled cue words mended, for routing only."""
+        settings, levers = self.settings, self.settings.levers
+        named = {word for tool in req.tools for word in tokens(tool.name.replace("_", " ") + " " + (tool.description or ""))}
+        routed = mend_cues(req.user_input, req.tools, lambda word: bool(index.df[word]) or word in named) if levers.route_mend else req.user_input
+        lane = classify(routed, req.tools, levers.typo_cues, preamble=levers.route_preamble, asking=levers.route_asking, anchor=levers.route_anchor, lexicon=levers.route_lexicon, operands=levers.route_operands, save=levers.route_save)
+        if lane.name != RECORDS and lane.reason == "live" and focus:
+            lane = Lane(RECORDS, "identifier")
+        elif lane.name != RECORDS and settings.short_route and focus and own_records_question(routed, req.tools):
+            lane = Lane(RECORDS, "identifier-held")
+        elif lane.name != RECORDS and lane.reason == "live" and about_own_records(routed, req.tools, lane, index, self.retriever.question_anchors(index, req.user_input)):
+            lane = Lane(RECORDS, "own-records")
+        elif levers.route_own and lane.name == ACTION and lane.reason in OVERRIDABLE_REASONS:
+            pairs = [node.pair for node in index.nodes.values()]
+            topic = find_topic(req.user_input, pairs, settings.story_min_density, settings.story_max_chars) is not None
+            # A live cue is answered from the records only when the request is about a thread or reference they hold.
+            held = lane.reason != "live" and (held_in_records(routed, req.tools, index, self.retriever.question_anchors(index, req.user_input)) or bool(OWN_THING.search(routed)))
+            if (focus or topic or held) and (records_question(routed, req.tools) or (topic and elliptical(routed))):
+                lane = Lane(RECORDS, "own-question")
+        if levers.route_own and lane.name == RECORDS and lane.reason in ("question", "asked") and product_question(routed):
+            lane = Lane(ACTION, "product-question")
+        return lane, routed
+
+    async def meaning_lane(self, req: RunRequest, lane: Lane, routed: str) -> Lane:
         if self.intents is None or self.embedder is None:
+            return lane
+        if lane.reason in IDENTIFIER_REASONS:
+            # An identifier that several of the user's records carry is stronger evidence than any example request.
             return lane
         sense = await self.intents.lane(self.embedder, req.user_input)
         if sense is None or sense[1] < self.settings.meaning_sure or sense[0] == lane.name:
             return lane
+        guards = self.settings.levers.meaning_guards
         if sense[0] == RECORDS:
+            if guards and keeps_action(routed):
+                return lane
             # A message the meaning router moves to the records lane that asks nothing ("Heads up — I take my coffee
             # black") is a statement there: no recall search, and a lasting fact is saved.
-            return Lane(RECORDS, "statement" if tells_without_asking(req.user_input) else "meaning")
+            return Lane(RECORDS, "statement" if tells_without_asking(routed) else "meaning")
+        if guards and keeps_records(routed, req.tools):
+            return lane
         return Lane(ACTION, "meaning")
 
     def _llm_for(self, req: RunRequest) -> LLM:
@@ -156,8 +189,7 @@ class CaseRunner:
         executor = ToolExecutor(req.tool_endpoint, req.case_id, req.user_id, self.http, self.settings.tool_timeout_seconds, deadline, memory)
         tally = TokenTally()
         settings = self.settings
-        levers = settings.levers
-        lane = classify(req.user_input, req.tools, levers.typo_cues, preamble=levers.route_preamble, asking=levers.route_asking, anchor=levers.route_anchor, lexicon=levers.route_lexicon, operands=levers.route_operands, save=levers.route_save)
+        lane = Lane(ACTION, "unrouted")
         outcome = Outcome()
         llm: LLM | None = None
         try:
@@ -165,13 +197,8 @@ class CaseRunner:
             ordered, anchored = self.retriever.rank(req.user_id, req.user_input)
             index = self.retriever.index(req.user_id)
             focus = identifier_focus(req.user_input, ordered)
-            if lane.name != RECORDS and lane.reason == "live" and focus:
-                lane = Lane(RECORDS, "identifier")
-            elif lane.name != RECORDS and settings.short_route and focus and own_records_question(req.user_input, req.tools):
-                lane = Lane(RECORDS, "identifier-held")
-            elif lane.name != RECORDS and lane.reason == "live" and about_own_records(req.user_input, req.tools, lane, index, self.retriever.question_anchors(index, req.user_input)):
-                lane = Lane(RECORDS, "own-records")
-            lane = await self.meaning_lane(req, lane)
+            lane, routed = self.choose_lane(req, ordered, index, focus)
+            lane = await self.meaning_lane(req, lane, routed)
             handled = lane.name == RECORDS and await self.short_answer(req, lane, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome)
             if lane.name == RECORDS and not handled:
                 query = asked_part(req.user_input) if focus else req.user_input

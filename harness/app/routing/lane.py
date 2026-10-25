@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from functools import lru_cache
+from pathlib import Path
 
 from app.memory.retrieval import SENTENCE_START, STOPWORDS, UserIndex
 from app.protocol import MEMORY_TOOL_NAMES, ToolDefinition
@@ -16,8 +18,9 @@ READ_SYNONYMS = {"task": "job", "tasks": "job", "queue": "job", "queued": "job",
 DO_VERBS = frozenset("make set change switch use create build run start kick dispatch send email mail schedule put add delete remove forget bin update save search find look pull open read draw generate edit tweak file report check plan split turn spin fetch research see forward pass shoot grab crunch compute normalize calculate take list summarize summarise brighten adjust enable disable move retry try apply execute reason skip describe paint outline talk google browse book crop warm resize convert post launch trigger sort begin proceed handle deploy refactor scrape rework touch bump explain break correct fix".split())
 FRAMING_VERBS = frozenset("use read look see find search pull open fetch grab take apply list skip google browse research summarize summarise describe explain reason talk compute normalize calculate crunch handle try".split())
 NON_VERBS = frozenset("my our i i'm i've we the a an this that these those it its one for on in at when if what which who where how why did do does is are was were will would could can should has have had thanks hey hi ok okay so yes no ditto".split())
-LIVE_CUES = re.compile(r"\b(latest|current(?:ly)?|right now|at (?:\w+ )?now|up[- ]to[- ]date|live|online|the web|news|today'?s?|nowadays|these days|changed since|actually changed|what'?s new)\b", re.I)
-ARITHMETIC = re.compile(r"\b(percent|percentage|sum|average|mean|total|times|minus|plus|split|divide|divided|compound|spread|multiply|normalize|fractions?|tip|median|crunch|calc(?:ulation)?)\b", re.I)
+LIVE_CUES = re.compile(r"\b(latest|current(?:ly)?|right now|at (?:\w+ )?now|up[- ]to[- ]date|live|online|the web|news|today'?s?|nowadays|these days|changed since|actually changed|what'?s new|lately|at the moment|people (?:are )?saying|happening now|trending)\b", re.I)
+REFERENCE_CODE = re.compile(r"\b[A-Za-z]+-[A-Za-z0-9-]*\d[A-Za-z0-9-]*\b|\b(?=[0-9a-z]*[0-9])(?=[0-9a-z]*[a-z])[0-9a-z]{6,}\b", re.I)
+ARITHMETIC = re.compile(r"\b(percent|percentage|sum|average|mean|total|times|minus|plus|split|divide|divided|compound|spread|multiply|normalize|fractions?|tip|median|crunch|calc(?:ulation)?|far apart|difference between)\b", re.I)
 DIGITS = re.compile(r"\d")
 QUESTION = re.compile(r"\?\s*$|^\s*(?:what|which|who|whom|whose|where|when|how|why|did|do|does|is|are|was|were|will|would|could|can|should|has|have|had)\b", re.I)
 CLAUSE_SPLIT = re.compile(r"[;—–]|\s-\s|,\s*(?:and|but|then|so)\s+|\b(?:and then|then)\b|\.\s+|\?\s+")
@@ -219,6 +222,7 @@ def names_listed_tool(request: str, tools: list[ToolDefinition]) -> bool:
 
 
 def asks_stored_detail(request: str) -> bool:
+    request = NOT_ASKED.sub(" ensure ", request)
     words = tokens(request)
     # A write verb counts where it addresses the assistant, not in the user's account of their own plans ("before I hit send").
     slotted = [word for clause in CLAUSE_SPLIT.split(request) if clause and clause.strip() for part in PART_SPLIT.split(clause) for word in verb_slots(tokens(part))]
@@ -272,19 +276,21 @@ def classify(request: str, tools: list[ToolDefinition], typo_cues: bool = False,
             acting = ""
         if SAVE_FORM.match(clause) or (save and SAVE_FORM_WIDE.match(clause)) or acting:
             reason = reason or "imperative"
-        elif verb_initial and any(nearest(word, write, lexicon) for word in words):
+        elif (verb_initial or need) and any(nearest(word, write, lexicon) for word in words):
+            # "I want a snake game as a working artifact" asks for what a listed tool makes, as an order would.
             reason = reason or "imperative-setter"
         probes = [word for word in words if not (lexicon and verb_initial and word == verb and word in LOOSE_SYNONYMS)]
         if any(nearest(word, read, lexicon) for word in probes):
             reason = reason or "read-capability"
     if LIVE_CUES.search(cue_text) and not (anchor and record_anchor(request)):
         reason = reason or "live"
-    figures = DATE_SPAN.sub(" ", request) if operands else request
+    # Dates and reference codes (INV-5CCDC0) hold digits but are not figures to work with.
+    figures = REFERENCE_CODE.sub(" ", DATE_SPAN.sub(" ", request)) if operands else request
     if compute and ARITHMETIC.search(fold_arithmetic_cues(request) if typo_cues else request) and DIGITS.search(figures):
         reason = reason or "arithmetic"
     if names_listed_tool(request, tools):
         reason = reason or "names-tool"
-    if reason in STORED_DETAIL_REASONS and asks_stored_detail(request):
+    if reason in STORED_DETAIL_REASONS and asks_stored_detail(request) and not names_listed_tool(request, tools):
         return Lane(RECORDS, "stored-detail")
     if reason == "imperative-setter" and anchor and record_anchor(request) and not effecting(request):
         # A setting-like word beside the user's own record nouns, with nothing to be done, asks about those records.
@@ -362,7 +368,8 @@ def held_in_records(request: str, tools: list[ToolDefinition], index: UserIndex,
         if any(word in READ_SYNONYMS or nearest(word, read) or nearest(word, write) for word in phrase):
             continue
         noun = next((word for word in phrase if word not in POSSESSION_MODIFIERS), "")
-        if len(noun) >= 4 and noun not in STOPWORDS and index.df[noun]:
+        # A misspelled noun ("my current ddntist") is matched through the records' own words.
+        if len(noun) >= 4 and noun not in STOPWORDS and index.df[index.fix_typo(noun)]:
             return True
     return False
 
@@ -372,7 +379,7 @@ def about_own_records(request: str, tools: list[ToolDefinition], lane: Lane, ind
         return False
     clauses = [clause for clause in CLAUSE_SPLIT.split(request) if clause and clause.strip()] or [request]
     tails = QUESTION_TAIL.findall(request) if "?" in request else []
-    if not asks(request, clauses, True, tails) or acting(request) or unknown_name(request, index):
+    if not asks(request, clauses, True, tails) or acting(request) or SEND_IDIOM.search(request) or unknown_name(request, index):
         return False
     return held_in_records(request, tools, index, anchors)
 
@@ -411,9 +418,147 @@ def near_reading_tool(request: str, tools: list[ToolDefinition]) -> bool:
         for word in tool.name.split("_"):
             if word not in GENERIC_NAME_WORDS and len(word) > 2:
                 words[singular(word)] = tool.name
+    # Everyday words for a reading tool's subject ("options" for capabilities, "task" for jobs) pair as its own words do.
+    for synonym, subject in READ_SYNONYMS.items():
+        held = next((words[key] for key in (subject, singular(subject)) if key in words), None)
+        if held:
+            words.setdefault(singular(synonym), held)
     return any(nearest(word, words) for word in tokens(request))
 
 
 def effecting(request: str) -> bool:
     return verb_in(request, EFFECT_VERBS)
+
+
+# Typing slips in the words the rules read. A request often carries a misspelled word or two, and a misspelled cue
+# ("cowld", "cleear", "caendur", "hqndle") silently drops the rule it feeds. A slip keeps a word's first and last
+# letters and is not itself a real word, so a word found in the English word list (words.txt, built by
+# tools/build_lexicon.py from general documentation text), in the user's records or in the catalog is left alone,
+# and so is a capitalised word inside a sentence (a name). Any other word that keeps the first and last letters of
+# exactly one cue word, within a third of its length in edits, is read as that cue word. Only routing reads the
+# mended text; every model gets the request as written.
+CUE_EXTRA = frozenset("could would should what which where when whose there please online internet current currently latest calendar remind remember note notes spell walk".split()) | frozenset(READ_SYNONYMS)
+SHORTEST_CUE = 4
+LEXICON_PATH = Path(__file__).with_name("words.txt")
+
+
+@lru_cache(maxsize=1)
+def lexicon() -> frozenset[str]:
+    return frozenset(LEXICON_PATH.read_text(encoding="utf-8").split()) if LEXICON_PATH.is_file() else frozenset()
+
+
+def edit_distance(a: str, b: str) -> int:
+    """Optimal string alignment distance: insertions, deletions, substitutions and adjacent swaps."""
+    previous = list(range(len(b) + 1))
+    before: list[int] = []
+    for i, ca in enumerate(a, start=1):
+        current = [i] + [0] * len(b)
+        for j, cb in enumerate(b, start=1):
+            current[j] = min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + (ca != cb))
+            if i > 1 and j > 1 and ca == b[j - 2] and a[i - 2] == cb:
+                current[j] = min(current[j], before[j - 2] + 1)
+        before, previous = previous, current
+    return previous[-1]
+
+
+def slip_of(word: str, cue: str) -> bool:
+    bound = min(max(len(cue) // 3, 1), 3)
+    return word[0] == cue[0] and word[-1] == cue[-1] and abs(len(word) - len(cue)) <= bound and edit_distance(word, cue) <= bound
+
+
+@lru_cache(maxsize=64)
+def cue_vocabulary(names: tuple[str, ...]) -> tuple[frozenset[str], dict[tuple[str, str], tuple[str, ...]]]:
+    """The cue words, and the same words keyed by their first and last letters."""
+    words = DO_VERBS | WRITE_VERBS | SENDING_VERBS | DETAIL_NOUNS | SPEECH_VERBS | FETCH_VERBS | RECORD_NOUNS | CUE_EXTRA
+    named = {word for name in names for word in name.lower().split("_") if len(word) > 3}
+    vocab = frozenset(word for word in words | named if len(word) > 3 and word.isalpha())
+    edges: dict[tuple[str, str], list[str]] = {}
+    for word in sorted(vocab):
+        edges.setdefault((word[0], word[-1]), []).append(word)
+    return vocab, {key: tuple(value) for key, value in edges.items()}
+
+
+def mend_cues(request: str, tools: list[ToolDefinition], known) -> str:
+    vocab, edges = cue_vocabulary(tuple(tool.name for tool in tools))
+    words = lexicon()
+
+    def mend(match: re.Match) -> str:
+        word = match.group(0)
+        lower = word.lower()
+        # A slip can drop a letter, so a three-letter word may be a four-letter cue ("tel", "gve").
+        if len(lower) < SHORTEST_CUE - 1 or not lower.isalpha() or lower in vocab or lower in words or lower in STOPWORDS or known(lower):
+            return word
+        before = request[: match.start()].rstrip()
+        if word[0].isupper() and before and before[-1] not in SENTENCE_BREAK:
+            return word
+        near = [cue for cue in edges.get((lower[0], lower[-1]), ()) if slip_of(lower, cue)]
+        if len(near) != 1:
+            return word
+        return near[0].capitalize() if word[0].isupper() else near[0]
+
+    return WORD.sub(mend, request)
+
+
+# A request that asks about what the user's own records hold, in whatever form ("List the vendors in the order they
+# came in", "Put the two hotels in order", "Tell me the next action"), with nothing to be done, no outside source,
+# no listed tool named and no question about what the assistant can do.
+READING_IDIOM = re.compile(r"\b(?:put|line|lay|set)\s+(?:\w+\s+){0,4}?in order\b|\b(?:walk|run|take) me through\b|\bspell out\b|\bgo over\b|^\s*(?:please\s+)?remind me\b", re.I)
+# Phrases that hold a verb of doing without asking for it ("want to make sure it reaches them") or ask for a sending
+# without a sending verb ("get the number over to Evie").
+NOT_ASKED = re.compile(r"\bmake sure\b", re.I)
+SEND_IDIOM = re.compile(r"\b(?:get|pass|send|hand)\s+(?:\w+\s+){0,3}?(?:over|along|across)(?:\s+to\b|\s*$|[.,;])|\bget\s+(?:them|him|her|it)\s+(?:my|the|this|that|our)\b", re.I)
+CAPABILITY_ASK = re.compile(r"\b(?:is there a way|how (?:do|can|could|would|should) (?:i|we|you)|are you able|which of your tools|what can you|is it possible)\b", re.I)
+OVERRIDABLE_REASONS = frozenset({"default", "imperative", "imperative-setter", "read-capability", "live", "request"})
+SENTENCE_SPLIT = re.compile(r"(?<=[.?!])\s+|(?<=[:;])\s+|\s+[—–]\s+")
+
+
+def plain_request(request: str) -> str:
+    return READING_IDIOM.sub(" list ", NOT_ASKED.sub(" ensure ", request))
+
+
+def fetches_from_tool(request: str, tools: list[ToolDefinition]) -> bool:
+    # A fetching verb and a reading tool's word pair only inside one sentence.
+    return any(fetching(part) and near_reading_tool(part, tools) for part in SENTENCE_SPLIT.split(request) if part.strip())
+
+
+def records_question(request: str, tools: list[ToolDefinition]) -> bool:
+    if OUTSIDE_SOURCE.search(request) or names_listed_tool(request, tools) or CAPABILITY_ASK.search(request) or fetches_from_tool(request, tools) or SEND_IDIOM.search(request):
+        return False
+    text = plain_request(request)
+    return (asks_anything(text) or reading_request(text) or bool(READING_IDIOM.search(request))) and not effecting(text)
+
+
+def elliptical(request: str) -> bool:
+    """A request with no verb at all ("Original vendor then current vendor, please.")."""
+    return not asks_anything(request) and not acting(plain_request(request)) and not OUTSIDE_SOURCE.search(request) and not SEND_IDIOM.search(request)
+
+
+# Words that ask to have a stored note dropped or corrected without the usual verbs ("is stale now", "save yourself
+# the clutter"), or that point at a live search result; with them, or with a verb of doing something, the meaning
+# router does not move a request off the action lane.
+MEMORY_EDIT_CUES = re.compile(r"\b(?:stale|clutter|throwaway|bin|clear out|get rid of|scratch that|no longer needed|fix the note)\b", re.I)
+RESULT_CUES = re.compile(r"\b(?:top|first|search) results?\b", re.I)
+
+
+def keeps_action(request: str) -> bool:
+    return effecting(plain_request(request)) or bool(MEMORY_EDIT_CUES.search(request) or RESULT_CUES.search(request) or SEND_IDIOM.search(request))
+
+
+OWN_MARKERS = re.compile(r"\b(?:my|mine|our)\b", re.I)
+OWN_THING = re.compile(r"\b(?:my own|my personal|mine)\b", re.I)
+
+
+def keeps_records(request: str, tools: list[ToolDefinition]) -> bool:
+    """A question about the user's own things ("What font belongs in my Ditto interface?") stays with the records."""
+    return asks_anything(request) and bool(OWN_MARKERS.search(request)) and records_question(request, tools)
+
+
+# A question about how to do something in the product ("is there a way to turn on dark mode?") is for the product's
+# own guide and settings tools, not the user's records.
+PRODUCT_WORDS = re.compile(r"\b(?:mode|theme|dark|light|font|typeface|accent|colou?r|feature|features|setting|settings|option|options|app|ditto|tool|tools|effort|integration|notifications?)\b", re.I)
+CONTACT_VERBS = re.compile(r"\b(?:reach|contact|get hold of|call|message|email)\b", re.I)
+
+
+def product_question(request: str) -> bool:
+    return bool(CAPABILITY_ASK.search(request) and PRODUCT_WORDS.search(request)) and not CONTACT_VERBS.search(request) and not asks_stored_detail(request)
 
