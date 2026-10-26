@@ -1,6 +1,6 @@
 """Watch the dan0l-vs-combined practice runs: one line per 10 finished cases, one per finished run.
 
-    python3 tools/watch_runs.py practice/dan0l_vs_combined_full.log [START_FROM]
+    python3 tools/watch_runs.py practice/dan0l_vs_combined_full.log [START_FROM] [COMBINED_START_FROM] [RUN_GLOB]
 
 Prints, for each block of 10 cases a traced run finishes: the lanes, paths, mean model calls,
 failed model calls, empty answers and mean seconds; when a run ends, its composite, tool and
@@ -19,6 +19,7 @@ import urllib.request
 LOG = sys.argv[1]
 skip = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 skip_combined = int(sys.argv[3]) if len(sys.argv) > 3 else 0
+RUN_GLOB = sys.argv[4] if len(sys.argv) > 4 else "practice/*_ditto-harness-combined-trace_full"
 reported: dict[str, int] = collections.defaultdict(int)
 seen_lines = 0
 
@@ -85,7 +86,7 @@ while True:
         if re.search(r"^=====|composite:|tool_mean:|memory_mean:|^after |balance under|Traceback|Error", line):
             say("RUN " + line.strip())
     seen_lines = len(lines)
-    for run in sorted(glob.glob("practice/*_ditto-harness-dan0l-v24-trace_full") + glob.glob("practice/*_ditto-harness-combined-trace_full")):
+    for run in sorted(glob.glob("practice/*_ditto-harness-dan0l-v24-trace_full") + glob.glob(RUN_GLOB)):
         if os.path.getmtime(run) > time.time() - 6 * 3600:
             blocks(run)
             scores(run)
