@@ -14,7 +14,7 @@ source /etc/profile.d/zz-proxy.sh
 cd /home/bittensor/ditto || exit 1
 CASES=${1:?case list}; WRITES=${2:?replay writes}; shift 2
 REPEATS=${REPEATS:-1}
-SEED=3590624429364033488
+SEED=${SEED:-3590624429364033488}
 PINNED='{"order":["deepinfra","parasail","akashml"],"allow_fallbacks":false,"data_collection":"deny"}'
 PLATFORM='{"sort":"throughput","ignore":["coreweave"],"allow_fallbacks":true,"data_collection":"deny","zdr":true}'
 case "${PREFS:-pinned}" in

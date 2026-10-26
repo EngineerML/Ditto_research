@@ -11,6 +11,7 @@ from typing import Any, Callable
 from .answer import parse_slot
 from .llm import LLM, ChatResult, LLMError, Usage
 from .lane import reads_state
+from .ours.guidance import guide_block
 from .packet import Packet, compose, render_records
 from .protocol import RunRequest
 from .route import Route, route_by_catalog
@@ -158,10 +159,11 @@ class ReplyCheck:
     deadline: float
     max_tokens: int
     effort: str
+    guide: str = ""
 
     async def __call__(self, message: str, tools: list[dict[str, Any]], reply: str) -> str | None:
         question = REPLY_CHECK_QUESTION.format(message=message, catalog=catalog_lines(tools), reply=reply)
-        messages = [{"role": "system", "content": system_prompt(REPLY_CHECK_SYSTEM, self.operator)}, {"role": "user", "content": question}]
+        messages = [{"role": "system", "content": system_prompt(with_guide(REPLY_CHECK_SYSTEM, self.guide), self.operator)}, {"role": "user", "content": question}]
         try:
             result = await self.llm.chat(messages, None, deadline=min(self.deadline, time.monotonic() + REPLY_CHECK_SECONDS), max_tokens=self.max_tokens, reasoning_effort=self.effort)
         except LLMError as exc:
@@ -322,6 +324,11 @@ def shape_rejection(result: ChatResult) -> str:
     if "schema" not in message.lower() and "validation" not in message.lower():
         return ""
     return message[:PROVIDER_MESSAGE_CHARS]
+
+
+def with_guide(base: str, guide: str) -> str:
+    """The lane prompt with the request's advisory notes (app/ours/guidance.py) after it."""
+    return base + "\n\n" + guide if guide else base
 
 
 def system_prompt(base: str, operator: str) -> str:
@@ -531,8 +538,11 @@ class ActionEngine:
         if route:
             outcome.events.append(f"route {route.basis}: {' > '.join(route.tools)}")
         surface = Surface(req.tools, req.user_input, route=route)
+        guide = guide_block(req.user_input, req.tools)
+        if guide:
+            outcome.events.append("request guidance: " + ", ".join(note.split(":", 1)[0] for note in guide.split("\n")))
         messages: list[dict[str, Any]] = [
-            {"role": "system", "content": system_prompt(ACTION_LANE_PROMPT, req.system_prompt)},
+            {"role": "system", "content": system_prompt(with_guide(ACTION_LANE_PROMPT, guide), req.system_prompt)},
             {"role": "user", "content": (f"{lead}\n\n" if lead else "") + compose(packet, req.user_input, precursor=focus_block(packet, req.user_input))},
         ]
         provider_rejections = 0
@@ -589,7 +599,7 @@ class ActionEngine:
                             continue
                     if not checked and not closing_asked and turns_left and not outcome.host_calls and result.content.strip() and deadline - time.monotonic() >= REPLY_CHECK_MIN_SECONDS:
                         checked = True
-                        finding = await ReplyCheck(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort)(messages[1]["content"], tools, result.content.strip())
+                        finding = await ReplyCheck(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort, guide)(messages[1]["content"], tools, result.content.strip())
                         if finding:
                             messages.append({"role": "assistant", "content": result.content})
                             messages.append({"role": "user", "content": REPLY_CHECK_NOTE.format(finding=finding)})
@@ -600,7 +610,7 @@ class ActionEngine:
                 messages.append(assistant)
                 if uncalled:
                     uncalled = False
-                    messages[0] = {"role": "system", "content": system_prompt(CALLED_LANE_PROMPT, req.system_prompt)}
+                    messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, guide), req.system_prompt)}
                 read_worthy = False
                 linked = False
                 for call in result.tool_calls:
@@ -642,7 +652,7 @@ class ActionEngine:
                         outcome.events.append("result read: link fact")
                     reading = await ResultRead(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort)(req.user_input, self.executor.ledger)
                     if reading:
-                        messages[0] = {"role": "system", "content": system_prompt(CALLED_LANE_PROMPT + "\n\n" + read_note(reading, closing_for(verdict), linked), req.system_prompt)}
+                        messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, guide) + "\n\n" + read_note(reading, closing_for(verdict), linked), req.system_prompt)}
                 outcome.content = result.content or outcome.content
                 if turns_left:
                     continue
