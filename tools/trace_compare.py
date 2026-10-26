@@ -37,6 +37,18 @@ PURPOSES = [
     ("suggests a follow-up question your reply could offer", "rewrite with follow-up"),
     ("drafts of a reply to the message above", "final after drafts"),
     ("A separate reading pass saw only the records", "decide (with reading note)"),
+    # dan0l v24's stages (also in combined/)
+    ("put them in the order the things they describe happened", "order pass"),
+    ("You look at one reply before it is sent to the user", "reply check"),
+    ("You look at one request and the calls made for it so far", "result verdict"),
+    ("check it against what the user asked", "check before sending"),
+    ("Do the user's own notes say that what this call would do is already done", "duplicate check"),
+    ("drafts of the next step made separately for this request", "turn after drafts note"),
+    ("A check of the reply above, not verified", "turn after reply check"),
+    ("One last check before this reply is sent", "final check"),
+    ("Before you reply, here are", "deciding call (drafts)"),
+    ("A draft reply, written once from these same notes", "program decide (shared draft)"),
+    ("Before this message is answered, decide what in the user's stored conversations", "recall turn"),
 ]
 
 
