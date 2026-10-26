@@ -15,7 +15,16 @@ tripped the typo-tolerant-token-compare fingerprint).
 - screen_local: no leads in guidance.py; generator n-gram scan: 0 hashes.
 - Fits the policy-v13 clarification on routed instruction guidance (2026-10-23): advisory, routed by
   phrasing, the model decides, no benchmark-private content. Note texts are generic product advice.
-- Not re-run: the L1 review (about $0.5); worth one pass before submitting.
+- L1 review (tools/l1_review_local.py, screener at 8c20b218, prompt source-review-v38-policy-v13,
+  $0.88): risk low, category none, clearance certified, confidence 0.84 (0.88 this morning without
+  the notes). All eight invariants pass; I5 reads "routed task guidance retain the request and full
+  tool catalog for model decision; no ... family solver or authoritative family compiler". The
+  reviewer spent most of its steps on guidance.py: 12 benchmark-emulation concerns along the way
+  ("finite request-triggered recipes", "I5 family-compiler concern"), all closed by the final pass.
+  Two typography-normalizer concerns (app/typography.py) are older code and also closed.
+  Observation: practice/l1_guidance.json.
+- Risk left: one sampled L1 run; L2/L3 (gpt-6-sol) not run. The notes that prescribe a no-call
+  outcome or a fixed call order are what drew the concerns.
 
 ## A/B on the questions the notes reach (platform providers, two runs a side)
 
