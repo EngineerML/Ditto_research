@@ -65,7 +65,7 @@ def main() -> int:
             regress.append(line)
         elif not any(o) and any(n):
             gain.append(line)
-        elif o != n:
+        elif not ((all(o) and all(n)) or (not any(o) and not any(n))):
             flip.append(line)
     head = "| case | category | old passed | new passed | expected | new answers |\n|---|---|---|---|---|---|"
     lines += ["", f"## Regressions: passed every old run, failed a new one ({len(regress)})", "", head] + regress

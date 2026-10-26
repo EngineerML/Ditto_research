@@ -26,7 +26,9 @@ SHORT_OPENING = "You are Ditto, the user's assistant with long-term memory. Answ
 NOTES_TOGETHER = "Read every note before answering. When several notes speak of the same person, thread or reference, read them together, with their dates, before deciding what holds now."
 SHORT_ANSWER_LINE = "Reply briefly, then end with one final line 'ANSWER: <only the value asked for, as short as the notes put it, in their words>'; when several things are asked, give them on that line in the order asked, separated by ' ; '."
 PROGRAM_SYSTEM = f"{SHORT_OPENING} {SHORT_ANSWER_LINE} Write any date in full, with day, month and year, even when the message asks for less. If the notes do not state it, say so."
-TOPIC_SYSTEM = f"{SHORT_OPENING} {NOTES_TOGETHER} {VALUE_VERBATIM} {SHORT_ANSWER_LINE} Write any date in full, with day, month and year. If the notes do not state it, say so."
+TOPIC_SPELLING = "Ordinary words keep their usual spelling in your reply even where a note misspells them; names, codes, email addresses and handles stay exactly as written."
+THREAD_STATE = "A thread changes over time: asked where it stands, give the state it is in after the latest change, not the next step; asked what happens next, give the next step and who takes it."
+TOPIC_SYSTEM = f"{SHORT_OPENING} {NOTES_TOGETHER} {THREAD_STATE} {VALUE_VERBATIM} {TOPIC_SPELLING} {SHORT_ANSWER_LINE} Write any date in full, with day, month and year. If the notes do not state it, say so."
 NOTES_HEADER = "Saved notes:"
 MESSAGE_HEADER = "Message:"
 EDGE = " \t\r\n:;.,-–—|\"'“”‘’`"
@@ -37,6 +39,7 @@ ORDER_BRIEF = "{notes}\n\nThe notes above are listed in no particular order. Jud
 MIN_SECONDS = 8.0
 READINGS_HELD = 512
 CONTACT_RE = re.compile(r"\b(?:e-?mail|address)\b", re.IGNORECASE)
+CONTACT_NOTE = "If the message asks how to reach a person, the answer is that person's own contact detail, such as their email address as the notes give it, not their employer's name or place, nor an address set up for a team or a thread."
 MIN_DENSE_NOTES = 3
 MIN_THREAD_NOTES = 2
 PARAGRAPH_BREAK = "\n\n"
@@ -53,7 +56,7 @@ RECUR_EXTRA_WORDS = 6
 RECUR_TIMES = 2
 RECUR_MAX_WORDS = 40
 RECUR_TYPO_WORD = 4
-LATEST_SYSTEM = "You are Ditto, the user's assistant with long-term memory. Below are the latest passages of a longer thread in the user's saved notes. Answer the message only if these passages settle it by themselves. If the answer depends on anything earlier in the thread, reply with one sentence saying that these passages do not settle it, and nothing else. Otherwise reply briefly, then end with one final line 'ANSWER: <only the value asked for, as short as the passages put it, in their words>'; when several things are asked, give them on that line in the order asked, separated by ' ; '."
+LATEST_SYSTEM = "You are Ditto, the user's assistant with long-term memory. Below are the latest passages of a longer thread in the user's saved notes. Answer the message only if these passages settle it by themselves. If the answer depends on anything earlier in the thread, reply with one sentence saying that these passages do not settle it, and nothing else. Otherwise reply briefly, then end with one final line 'ANSWER: <only the value asked for, as short as the passages put it, in their words, with ordinary words spelled correctly>'; when several things are asked, give them on that line in the order asked, separated by ' ; '."
 LATEST_BRIEF = "Passages:\n{passages}\n\nMessage:\n{message}"
 SHARED_DRAFT_NOTE = "A draft reply, written once from these same notes for the question \"{asked}\"; it has not been checked, and the notes decide wherever they differ:\n{draft}\n\nCheck the draft against the notes, then reply to the message as asked at the start."
 SHARED_WAIT_RESERVE = 60.0
@@ -369,7 +372,10 @@ class TopicPath:
         return sum(record_size(pair) for pair in notes) <= self.max_chars
 
     def with_cards(self, notes: list[MemoryPair], pairs: list[MemoryPair], named: list[str] | None = None) -> list[MemoryPair]:
-        named = named or full_names("\n".join(pair.prompt + "\n" + pair.response for pair in notes), pairs)
+        # the reading's pick first, then everyone else the thread names: a handover can leave
+        # the reading on an earlier holder, and the deciding turn should see both people's records
+        in_thread = full_names("\n".join(pair.prompt + "\n" + pair.response for pair in notes), pairs)
+        named = list(dict.fromkeys((named or []) + in_thread))
         held = {pair.pair_id for pair in notes}
         out = list(notes)
         for pair in cards_for(named, pairs):
@@ -384,10 +390,11 @@ class TopicPath:
             outcome.events.append(f"topic path: notes over {self.max_chars} chars; records lane decides")
             return False
         phrase = " ".join(found.topic.phrase)
-        if CONTACT_RE.search(req.user_input):
+        contact = bool(CONTACT_RE.search(req.user_input))
+        if contact:
             notes = self.with_cards(notes, pairs, await self.named_in_reading(req, notes, found.excerpts, phrase, pairs, deadline, outcome))
         draft = await self.latest_draft(req, notes, found.excerpts, phrase, pairs, deadline, outcome)
-        messages = topic_messages(req, notes, found.excerpts, phrase, pairs, draft)
+        messages = topic_messages(req, notes, found.excerpts, phrase, pairs, draft, CONTACT_NOTE if contact else "")
         outcome.events.append(f"topic path phrase={phrase!r} records={len(notes)}")
         return await decide(self.engine, req, messages, self.effort, self.max_tokens, deadline, outcome)
 
@@ -408,11 +415,12 @@ class TopicPath:
         return named or None
 
 
-def topic_messages(req: RunRequest, notes: list[MemoryPair], excerpts: dict[str, str], phrase: str, pairs: list[MemoryPair], draft: str = "") -> list[dict[str, Any]]:
+def topic_messages(req: RunRequest, notes: list[MemoryPair], excerpts: dict[str, str], phrase: str, pairs: list[MemoryPair], draft: str = "", note: str = "") -> list[dict[str, Any]]:
     recent = recent_view(notes, excerpts, phrase, pairs)
     beside = f"\n\n{recent}" if recent else ""
     after = f"\n\n{DRAFT_NOTE.format(draft=draft)}" if draft else ""
-    user = f"{passages_view(notes, excerpts, phrase)}\n\n{NOTES_HEADER}\n\n{record_view(notes)}{beside}{after}\n\n{MESSAGE_HEADER}\n{req.user_input}"
+    guide = f"\n\n{note}" if note else ""
+    user = f"{passages_view(notes, excerpts, phrase)}\n\n{NOTES_HEADER}\n\n{record_view(notes)}{beside}{after}{guide}\n\n{MESSAGE_HEADER}\n{req.user_input}"
     return [{"role": "system", "content": short_system(req.system_prompt, TOPIC_SYSTEM)}, {"role": "user", "content": user}]
 
 
