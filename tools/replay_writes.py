@@ -21,7 +21,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "tools"))
-from flag_failed_calls import case_of  # noqa: E402
+from flag_failed_calls import case_ids, graded_rows, latencies  # noqa: E402
 from lab import data  # noqa: E402
 
 WRITES = ("save_memory", "update_memory")
@@ -54,18 +54,17 @@ def main() -> int:
     ap.add_argument("--size", default="full")
     args = ap.parse_args()
     skip = set(args.skip.read_text().split()) if args.skip else set()
-    report = json.load(open(args.run / "report.json"))["report"]["per_case"]
-    observed = {c["case_id"] for c in report if c.get("observed") and set(c.get("called") or []) & set(WRITES)}
+    rows = graded_rows(args.run)
+    observed = {c["case_id"] for c in rows if c.get("observed") and set(c.get("called") or []) & set(WRITES)}
     follows = [m.groups() for m in map(FOLLOW_LINE.match, (args.run / "harness.log").read_text().splitlines()) if m]
     save_times = [f"{day}T{clock}Z" for day, clock, name in follows if name == "save_memory"]
-    by_text = {c.text: c for c in data.load(args.seed, 0, args.size)}
+    traces = [json.loads(line) for line in open(args.run / "trace.jsonl", encoding="utf-8")]
+    ids = case_ids(traces, data.load(args.seed, 0, args.size), latencies(rows))
     writes, missing = [], 0
-    for trace in map(json.loads, open(args.run / "trace.jsonl", encoding="utf-8")):
+    for trace, cid in zip(traces, ids):
         calls = [tc for c in trace["calls"] for tc in c.get("tool_calls") or [] if tc["name"] in WRITES]
         if not calls:
             continue
-        case = case_of(trace, by_text)
-        cid = case.key.rsplit("/", 1)[-1] if case else "?"
         if cid not in observed:
             continue
         last = calls[-1]

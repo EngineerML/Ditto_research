@@ -13,6 +13,7 @@ Needs OPENROUTER_API_KEY in .env.local (KEY=VALUE lines, never committed).
 
 import argparse
 import importlib.util
+import json
 import os
 import re
 import subprocess
@@ -126,7 +127,8 @@ def main() -> int:
         try:
             shim = subprocess.Popen(
                 [sys.executable, str(HERE / "tools" / "embed_shim.py"), "--port", str(embed_port)],
-                env=child_env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                env=child_env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                start_new_session=True)  # lr.stop_process stops the process group
             # host network: the harness reaches the scorer's tool endpoint and the shim on 127.0.0.1;
             # the key goes in through the environment, not the command line
             subprocess.run(
@@ -144,7 +146,7 @@ def main() -> int:
             if args.only_cases:
                 scorer_env["DITTOBENCH_ONLY_CASES"] = str((out_dir / "only_cases.txt").resolve())
             api = subprocess.Popen([str(scorer_bin), "-port", str(api_port)], cwd=lr.API_DIR,
-                                   env=scorer_env,
+                                   env=scorer_env, start_new_session=True,
                                    stdout=api_log, stderr=subprocess.STDOUT)
             print("waiting for harness, scorer and embedding shim...", flush=True)
             wait_http(f"http://127.0.0.1:{embed_port}/health")
@@ -156,7 +158,14 @@ def main() -> int:
                                                               args.seed, args.bench_version))
             run_id = accepted["run_id"]
             print(f"bench v{args.bench_version} {args.run_size} run {run_id}", flush=True)
-            completed = lr.poll_run(api_url, run_id, timeout=args.timeout)
+            try:
+                completed = lr.poll_run(api_url, run_id, timeout=args.timeout)
+            except lr.RehearsalError:
+                # keep what was graded before the scorer goes down with the container
+                status = lr.request_json(f"{api_url}/v1/runs/{run_id}")
+                (out_dir / "scorer_status.json").write_text(json.dumps(status))
+                print(f"run stopped early; {len(status.get('partial') or [])} graded results in scorer_status.json", flush=True)
+                raise
             print(lr.format_summary(completed))
             lr.write_report(out_dir / "report.json", completed)
             print(f"saved {out_dir}")

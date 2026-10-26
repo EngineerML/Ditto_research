@@ -1,6 +1,7 @@
 #!/bin/bash
 # Re-run the questions of the dan0l-vs-combined full runs that a provider problem may have spoiled
-# (failed or cut model calls, time budget eaten by slow calls, no answer), then merge each re-run
+# (failed or cut model calls, time budget eaten by slow calls, no answer) or that a run cut short
+# never reached (its graded results saved in scorer_status.json), then merge each re-run
 # back into its full run. Same seed, provider list and case concurrency as practice/dan0l_vs_combined.sh;
 # every seed wave is loaded as before, and the agent's own tool-phase memory writes are put back.
 #
@@ -28,12 +29,12 @@ build combined-replay combined
 
 for spec in "dan0l=dan0l-v24-replay=$DAN0L_RUN" "combined=combined-replay=$COMBINED_RUN"; do
   name=${spec%%=*}; rest=${spec#*=}; image=ditto-harness:${rest%%=*}; full=${rest#*=}; full=${full%/}
-  $PY tools/flag_failed_calls.py "$full" --ids "$WORK/$name.flagged.txt" | tail -1
+  $PY tools/flag_failed_calls.py "$full" --missing --ids "$WORK/$name.flagged.txt" | tail -2
   $PY tools/replay_writes.py "$full" "$WORK/$name.writes.jsonl" --skip "$WORK/$name.flagged.txt" || exit 1
   [ -s "$WORK/$name.flagged.txt" ] || { echo "$name: nothing to re-run"; continue; }
   $PY tools/key_usage.py --need "$NEED" || { echo "balance under \$$NEED, not starting $name"; exit 1; }
   echo "===== $name re-run of $(wc -l < "$WORK/$name.flagged.txt") questions $(date -u +%H:%M) $($PY tools/key_usage.py)"
-  timeout 7200 python3 tools/practice_docker.py --image "$image" --run-size full --seed "$SEED" --trace \
+  timeout 11000 python3 tools/practice_docker.py --image "$image" --run-size full --seed "$SEED" --trace --timeout 10800 \
     --env "HARNESS_PROVIDER_PREFS=$PREFS" --only-cases "$WORK/$name.flagged.txt" --replay-writes "$WORK/$name.writes.jsonl" 2>&1 | tail -6
   rerun=$(ls -td practice/*_ditto-harness-${rest%%=*}_full_rerun | head -1)
   grep -E "replayed" "$rerun/harness.log" | sed -E 's/^[0-9-]+ [0-9:,]+ //'

@@ -12,7 +12,7 @@ PY=.venv/bin/python
 for image in ditto-harness:dan0l-v24-trace ditto-harness:combined-trace; do
   $PY tools/key_usage.py --need "$NEED" || { echo "balance under \$$NEED, not starting $image"; exit 1; }
   echo "===== $image $SIZE seed $SEED $(date -u +%H:%M) $($PY tools/key_usage.py)"
-  timeout 14000 python3 tools/practice_docker.py --image "$image" --run-size "$SIZE" --seed "$SEED" --trace --env "HARNESS_PROVIDER_PREFS=$PREFS" 2>&1 | tail -20
+  timeout 15000 python3 tools/practice_docker.py --image "$image" --run-size "$SIZE" --seed "$SEED" --trace --timeout 14400 --env "HARNESS_PROVIDER_PREFS=$PREFS" 2>&1 | tail -20
   echo "after $image: $($PY tools/key_usage.py)"
 done
 echo "===== done $(date -u +%H:%M)"
