@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 
+from .memory.people import ALIAS_RE, FULL_NAME_RE, SHORT_RECORD_CHARS, by_date, full_names
 from .memory.retrieval import Candidate, UserIndex, identifier_tokens, relevance_band
 from .protocol import handed_out
 from .store import CODE_RE
@@ -283,6 +285,55 @@ def refill(packet: Packet, better: list[str], pairs_by_id: dict, max_new_chars: 
     held = {cand.pair.pair_id for cand in kept}
     added = [Candidate(pair=pairs_by_id[pair_id], reasons=["refill"]) for pair_id in chosen if pair_id not in held]
     return Packet(records=kept + added, focused=packet.focused)
+
+
+CARD_MAX_RECORDS = 6
+CARD_MAX_CHARS = 2400
+
+
+def nickname_records(name: str, pairs: list) -> list:
+    """Short records that speak of a person only by the one-word name another record gives them.
+
+    The nickname comes from a short record that names the person in full. A record that uses the
+    nickname as the first name of someone else ("Jake" in "Jake Baca") is about that other person.
+    """
+    short = [pair for pair in pairs if len(pair.prompt) < SHORT_RECORD_CHARS]
+    parts = set(name.split())
+    aliases = {alias for pair in short if name in pair.prompt for alias in ALIAS_RE.findall(pair.prompt) if alias not in parts}
+    # a nickname another person also goes by points at no one in particular
+    shared = {alias for pair in short if name not in pair.prompt and FULL_NAME_RE.search(pair.prompt) for alias in ALIAS_RE.findall(pair.prompt)}
+    aliases = sorted(aliases - shared)
+    found = []
+    for pair in short:
+        if name in pair.prompt:
+            continue
+        for alias in aliases:
+            if re.search(r"\b" + re.escape(alias) + r"\b", pair.prompt) and not re.search(r"\b" + re.escape(alias) + r" [A-Z][a-z]+", pair.prompt):
+                found.append(pair)
+                break
+    return found
+
+
+def person_cards(message: str, packet: Packet, pairs: list, max_chars: int = CARD_MAX_CHARS) -> list[Candidate]:
+    """Records about the people the message names in full that use only their nickname, when the packet lacks them.
+
+    A search on the message's words never reaches a record that calls someone by the nickname
+    another record gives them; this follows that one link, a few short records at most.
+    """
+    held = {cand.pair.pair_id for cand in packet.records}
+    added: list[Candidate] = []
+    used = 0
+    # newest first, so a later change or removal is never the record the cap leaves out
+    for pair in reversed(by_date([pair for name in full_names(message, pairs) for pair in nickname_records(name, pairs)])):
+        if pair.pair_id in held or len(added) >= CARD_MAX_RECORDS:
+            continue
+        cand = Candidate(pair=pair, reasons=["person"])
+        if used + record_size(cand) > min(max_chars, CARD_MAX_CHARS):
+            continue
+        added.append(cand)
+        held.add(pair.pair_id)
+        used += record_size(cand)
+    return sorted(added, key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id))
 
 
 def render_records(packet: Packet, labels: dict[str, str] | None = None) -> str:

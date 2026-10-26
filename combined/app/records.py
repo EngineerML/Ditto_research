@@ -19,7 +19,7 @@ from .memory.deliberation import DRAFT_TOOL_CHOICE, NO_RECORD_REPLY, Deliberatio
 from .memory.finder import FIND_TOOL, RecordFinder
 from .memory.retrieval import Candidate, UserIndex, asked_part, identifier_tokens
 from .memory.worksheet import render_worksheet
-from .packet import Packet, build_packet, compose, fused_rank, identifier_focus, refill
+from .packet import Packet, build_packet, compose, fused_rank, identifier_focus, person_cards, refill
 from .protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 from .tools import BLOCKED, UNHELD_IDS_NOTE, MemoryTools, ToolExecutor, openai_tools
 
@@ -392,6 +392,12 @@ class RecordsEngine:
             before = len(packet)
             packet = refill(packet, fused_rank(self.rank_orders + [([cand.pair.pair_id for cand in packet.records], 1.0)]), pairs_by_id, self.search_record_chars)
             outcome.events.append(f"refill: {sum(1 for c in packet.records if 'refill' in c.reasons)} records in ({before} -> {len(packet)} records)")
+        if packet.records and packet.chars <= self.long_packet_chars:
+            # records about the people the message names, never so many that the packet turns long
+            cards = person_cards(req.user_input, packet, list(pairs_by_id.values()), self.long_packet_chars - packet.chars)
+            if cards:
+                packet = Packet(records=packet.records + cards, focused=packet.focused)
+                outcome.events.append(f"person cards: {len(cards)} records in")
         outcome.events.append(f"packet records={len(packet)} chars={packet.chars} pins={len(pins)}")
         return await self.decide(req, packet, receipts, deadline, outcome, index, statement)
 
