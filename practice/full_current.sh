@@ -2,12 +2,12 @@
 # Full traced practice run of the current combined design on dan0l v24's scored seed, with the
 # platform relay's own provider preferences (fastest by throughput, as validators score).
 #
-#   bash practice/full_current.sh [TAG] [min balance $]
+#   SEED=... bash practice/full_current.sh [TAG] [min balance $]   (default seed: dan0l v24's scored seed)
 source /etc/profile.d/zz-proxy.sh
 cd /home/bittensor/ditto || exit 1
 TAG=${1:-combined-current}
 NEED=${2:-2}
-SEED=3590624429364033488
+SEED=${SEED:-3590624429364033488}
 PREFS='{"sort":"throughput","ignore":["coreweave"],"allow_fallbacks":true,"data_collection":"deny","zdr":true}'
 PY=.venv/bin/python
 echo "===== build ditto-harness:$TAG from combined at $(git rev-parse --short HEAD)"
