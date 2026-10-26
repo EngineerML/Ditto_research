@@ -31,6 +31,15 @@ constructs no scored answer, and the request reaches the model unchanged. The me
 (app/short.py) were cleared: drafts and recent-passage notes are preliminary, the deciding model
 receives the notes and writes the answer. Full observation: practice/l1_combined.json.
 
+## Follow-up
+
+- Comments and docstrings in app/ours/lane.py no longer quote request-like examples or the slips
+  seen in practice; the code is unchanged (AST identical) and the v14 n-gram scan now finds no lead
+  in the scanned files. app/ours/intents.tsv (not scanned, .tsv) still shares 10 n-gram hashes over
+  7 ordinary example lines; rewording them would change the meaning router and was left alone.
+- A plain spell-checker mender was built and measured offline: it routes 6 fewer of 3500 questions
+  right, so the current mender stays and the draft is parked in drafts/ (see drafts/README.md).
+
 ## Limits
 
 - One L1 run of a sampled model; another run can read the same code differently.

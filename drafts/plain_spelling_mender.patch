@@ -1,0 +1,57 @@
+--- a/app/ours/lane.py
++++ b/app/ours/lane.py
+@@ -433,9 +433,9 @@
+ # Typing slips in the words the rules read. A request often carries a misspelled word or two, and a misspelled cue
+ # word silently drops the rule it feeds. A slip is not itself a real word, so a word found in the English word
+ # list (words.txt, built by tools/build_lexicon.py from general documentation text), in the user's records or in
+-# the catalog is left alone, and so is a capitalised word inside a sentence (a name). Any other word that keeps the
+-# first and last letters of exactly one cue word, within a third of its length in edits, is read as that cue word.
+-# Only routing reads the mended text; every model gets the request as written.
++# the catalog is left alone, and so is a capitalised word inside a sentence (a name). Any other word within plain
++# spelling distance of exactly one cue word (same first letter; one edit for a word of up to four letters, two for
++# a longer one) is read as that cue word. Only routing reads the mended text; every model gets the request as written.
+ CUE_EXTRA = frozenset("could would should what which where when whose there please online internet current currently latest calendar remind remember note notes spell walk".split()) | frozenset(READ_SYNONYMS)
+ SHORTEST_CUE = 4
+ LEXICON_PATH = Path(__file__).with_name("words.txt")
+@@ -460,25 +460,21 @@
+     return previous[-1]
+ 
+ 
+-def slip_of(word: str, cue: str) -> bool:
+-    bound = min(max(len(cue) // 3, 1), 3)
+-    return word[0] == cue[0] and word[-1] == cue[-1] and abs(len(word) - len(cue)) <= bound and edit_distance(word, cue) <= bound
++def near_spelling(word: str, cue: str) -> bool:
++    # The usual spell-checker assumption that the first letter is typed right; a short word allows one edit.
++    bound = 1 if len(cue) <= 4 else 2
++    return word[0] == cue[0] and abs(len(word) - len(cue)) <= bound and edit_distance(word, cue) <= bound
+ 
+ 
+ @lru_cache(maxsize=64)
+-def cue_vocabulary(names: tuple[str, ...]) -> tuple[frozenset[str], dict[tuple[str, str], tuple[str, ...]]]:
+-    """The cue words, and the same words keyed by their first and last letters."""
++def cue_vocabulary(names: tuple[str, ...]) -> frozenset[str]:
+     words = DO_VERBS | WRITE_VERBS | SENDING_VERBS | DETAIL_NOUNS | SPEECH_VERBS | FETCH_VERBS | RECORD_NOUNS | CUE_EXTRA
+     named = {word for name in names for word in name.lower().split("_") if len(word) > 3}
+-    vocab = frozenset(word for word in words | named if len(word) > 3 and word.isalpha())
+-    edges: dict[tuple[str, str], list[str]] = {}
+-    for word in sorted(vocab):
+-        edges.setdefault((word[0], word[-1]), []).append(word)
+-    return vocab, {key: tuple(value) for key, value in edges.items()}
++    return frozenset(word for word in words | named if len(word) > 3 and word.isalpha())
+ 
+ 
+ def mend_cues(request: str, tools: list[ToolDefinition], known) -> str:
+-    vocab, edges = cue_vocabulary(tuple(tool.name for tool in tools))
++    vocab = cue_vocabulary(tuple(tool.name for tool in tools))
+     words = lexicon()
+ 
+     def mend(match: re.Match) -> str:
+@@ -490,7 +486,7 @@
+         before = request[: match.start()].rstrip()
+         if word[0].isupper() and before and before[-1] not in SENTENCE_BREAK:
+             return word
+-        near = [cue for cue in edges.get((lower[0], lower[-1]), ()) if slip_of(lower, cue)]
++        near = [cue for cue in sorted(vocab) if near_spelling(lower, cue)]
+         if len(near) != 1:
+             return word
+         return near[0].capitalize() if word[0].isupper() else near[0]

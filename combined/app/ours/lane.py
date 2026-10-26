@@ -224,7 +224,7 @@ def names_listed_tool(request: str, tools: list[ToolDefinition]) -> bool:
 def asks_stored_detail(request: str) -> bool:
     request = NOT_ASKED.sub(" ensure ", request)
     words = tokens(request)
-    # A write verb counts where it addresses the assistant, not in the user's account of their own plans ("before I hit send").
+    # A write verb counts where it addresses the assistant, not where the user describes their own plans.
     slotted = [word for clause in CLAUSE_SPLIT.split(request) if clause and clause.strip() for part in PART_SPLIT.split(clause) for word in verb_slots(tokens(part))]
     if CODE_IDENTIFIER.search(request.lower()) or any(word in WRITE_VERBS for word in slotted):
         return False
@@ -277,7 +277,7 @@ def classify(request: str, tools: list[ToolDefinition], typo_cues: bool = False,
         if SAVE_FORM.match(clause) or (save and SAVE_FORM_WIDE.match(clause)) or acting:
             reason = reason or "imperative"
         elif (verb_initial or need) and any(nearest(word, write, lexicon) for word in words):
-            # "I want a snake game as a working artifact" asks for what a listed tool makes, as an order would.
+            # Wanting something a listed tool makes is a request for it, as an order would be.
             reason = reason or "imperative-setter"
         probes = [word for word in words if not (lexicon and verb_initial and word == verb and word in LOOSE_SYNONYMS)]
         if any(nearest(word, read, lexicon) for word in probes):
@@ -330,7 +330,7 @@ PLEASE = re.compile(r"\bplease\b", re.I)
 
 
 def tells_without_asking(request: str) -> bool:
-    """The user tells something about themselves and asks or directs nothing ("Heads up — I take my coffee black")."""
+    """The user tells something about themselves and asks or directs nothing."""
     if statement_like(request):
         return True
     if asks_anything(request) or reading_request(request) or acting(request):
@@ -368,7 +368,7 @@ def held_in_records(request: str, tools: list[ToolDefinition], index: UserIndex,
         if any(word in READ_SYNONYMS or nearest(word, read) or nearest(word, write) for word in phrase):
             continue
         noun = next((word for word in phrase if word not in POSSESSION_MODIFIERS), "")
-        # A misspelled noun ("my current ddntist") is matched through the records' own words.
+        # A misspelled noun is matched through the records' own words.
         if len(noun) >= 4 and noun not in STOPWORDS and index.df[index.fix_typo(noun)]:
             return True
     return False
@@ -431,12 +431,11 @@ def effecting(request: str) -> bool:
 
 
 # Typing slips in the words the rules read. A request often carries a misspelled word or two, and a misspelled cue
-# ("cowld", "cleear", "caendur", "hqndle") silently drops the rule it feeds. A slip keeps a word's first and last
-# letters and is not itself a real word, so a word found in the English word list (words.txt, built by
-# tools/build_lexicon.py from general documentation text), in the user's records or in the catalog is left alone,
-# and so is a capitalised word inside a sentence (a name). Any other word that keeps the first and last letters of
-# exactly one cue word, within a third of its length in edits, is read as that cue word. Only routing reads the
-# mended text; every model gets the request as written.
+# word silently drops the rule it feeds. A slip is not itself a real word, so a word found in the English word
+# list (words.txt, built by tools/build_lexicon.py from general documentation text), in the user's records or in
+# the catalog is left alone, and so is a capitalised word inside a sentence (a name). Any other word that keeps the
+# first and last letters of exactly one cue word, within a third of its length in edits, is read as that cue word.
+# Only routing reads the mended text; every model gets the request as written.
 CUE_EXTRA = frozenset("could would should what which where when whose there please online internet current currently latest calendar remind remember note notes spell walk".split()) | frozenset(READ_SYNONYMS)
 SHORTEST_CUE = 4
 LEXICON_PATH = Path(__file__).with_name("words.txt")
@@ -485,7 +484,7 @@ def mend_cues(request: str, tools: list[ToolDefinition], known) -> str:
     def mend(match: re.Match) -> str:
         word = match.group(0)
         lower = word.lower()
-        # A slip can drop a letter, so a three-letter word may be a four-letter cue ("tel", "gve").
+        # A slip can drop a letter, so a three-letter word may be a four-letter cue.
         if len(lower) < SHORTEST_CUE - 1 or not lower.isalpha() or lower in vocab or lower in words or lower in STOPWORDS or known(lower):
             return word
         before = request[: match.start()].rstrip()
@@ -499,12 +498,11 @@ def mend_cues(request: str, tools: list[ToolDefinition], known) -> str:
     return WORD.sub(mend, request)
 
 
-# A request that asks about what the user's own records hold, in whatever form ("List the vendors in the order they
-# came in", "Put the two hotels in order", "Tell me the next action"), with nothing to be done, no outside source,
-# no listed tool named and no question about what the assistant can do.
+# A request that asks about what the user's own records hold, in whatever form (a list, an order, a summary), with
+# nothing to be done, no outside source, no listed tool named and no question about what the assistant can do.
 READING_IDIOM = re.compile(r"\b(?:put|line|lay|set)\s+(?:\w+\s+){0,4}?in order\b|\b(?:walk|run|take) me through\b|\bspell out\b|\bgo over\b|^\s*(?:please\s+)?remind me\b", re.I)
-# Phrases that hold a verb of doing without asking for it ("want to make sure it reaches them") or ask for a sending
-# without a sending verb ("get the number over to Evie").
+# Phrases that hold a verb of doing without asking for it, or that ask for something to be passed to someone
+# without a sending verb.
 NOT_ASKED = re.compile(r"\bmake sure\b", re.I)
 SEND_IDIOM = re.compile(r"\b(?:get|pass|send|hand)\s+(?:\w+\s+){0,3}?(?:over|along|across)(?:\s+to\b|\s*$|[.,;])|\bget\s+(?:them|him|her|it)\s+(?:my|the|this|that|our)\b", re.I)
 CAPABILITY_ASK = re.compile(r"\b(?:is there a way|how (?:do|can|could|would|should) (?:i|we|you)|are you able|which of your tools|what can you|is it possible)\b", re.I)
@@ -529,13 +527,13 @@ def records_question(request: str, tools: list[ToolDefinition]) -> bool:
 
 
 def elliptical(request: str) -> bool:
-    """A request with no verb at all ("Original vendor then current vendor, please.")."""
+    """A request with no verb at all, only the things it wants named."""
     return not asks_anything(request) and not acting(plain_request(request)) and not OUTSIDE_SOURCE.search(request) and not SEND_IDIOM.search(request)
 
 
-# Words that ask to have a stored note dropped or corrected without the usual verbs ("is stale now", "save yourself
-# the clutter"), or that point at a live search result; with them, or with a verb of doing something, the meaning
-# router does not move a request off the action lane.
+# Words that ask to have a stored note dropped or corrected without the usual verbs, or that point at a live search
+# result; with them, or with a verb of doing something, the meaning router does not move a request off the action
+# lane.
 MEMORY_EDIT_CUES = re.compile(r"\b(?:stale|clutter|throwaway|bin|clear out|get rid of|scratch that|no longer needed|fix the note)\b", re.I)
 RESULT_CUES = re.compile(r"\b(?:top|first|search) results?\b", re.I)
 
@@ -549,12 +547,12 @@ OWN_THING = re.compile(r"\b(?:my own|my personal|mine)\b", re.I)
 
 
 def keeps_records(request: str, tools: list[ToolDefinition]) -> bool:
-    """A question about the user's own things ("What font belongs in my Ditto interface?") stays with the records."""
+    """A question about the user's own things stays with the records."""
     return asks_anything(request) and bool(OWN_MARKERS.search(request)) and records_question(request, tools)
 
 
-# A question about how to do something in the product ("is there a way to turn on dark mode?") is for the product's
-# own guide and settings tools, not the user's records.
+# A question about how to do something in the product is for the product's own guide and settings tools, not the
+# user's records.
 PRODUCT_WORDS = re.compile(r"\b(?:mode|theme|dark|light|font|typeface|accent|colou?r|feature|features|setting|settings|option|options|app|ditto|tool|tools|effort|integration|notifications?)\b", re.I)
 CONTACT_VERBS = re.compile(r"\b(?:reach|contact|get hold of|call|message|email)\b", re.I)
 
