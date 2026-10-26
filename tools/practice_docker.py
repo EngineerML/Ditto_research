@@ -31,6 +31,7 @@ lr = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(lr)
 
 SCORER_BIN = HERE / ".cache" / "dittobench-api"
+SUBSET_SCORER_BIN = HERE / ".cache" / "dittobench-api-subset"
 LIVE_BENCH = 13  # live contract on 2026-10-22 (/api/v1/public/bench/config); the kit still says 12
 
 
@@ -84,7 +85,18 @@ def main() -> int:
                     help="port the image listens on; validators use 8080 and some images ignore PORT")
     ap.add_argument("--trace", action="store_true", help="write the practice trace (trace images only) to the run folder")
     ap.add_argument("--env", action="append", default=[], help="extra KEY=VALUE for the harness container, repeatable")
+    ap.add_argument("--only-cases", type=Path,
+                    help="re-run only these canonical case ids (needs the subset scorer, tools/build_subset_scorer.py)")
+    ap.add_argument("--replay-writes", type=Path,
+                    help="memory writes from tools/replay_writes.py for the harness to put back after the first seed (with --trace)")
     args = ap.parse_args()
+    scorer_bin = SUBSET_SCORER_BIN if args.only_cases else SCORER_BIN
+    if args.only_cases and not scorer_bin.is_file():
+        print(f"{scorer_bin} missing: run tools/build_subset_scorer.py", file=sys.stderr)
+        return 2
+    if args.replay_writes and not args.trace:
+        print("--replay-writes goes through the trace folder: add --trace", file=sys.stderr)
+        return 2
 
     secrets_env = load_env_file(args.env_file)
     key = secrets_env.get("OPENROUTER_API_KEY") or os.environ.get("OPENROUTER_API_KEY", "")
@@ -95,8 +107,13 @@ def main() -> int:
     os.environ["DITTOBENCH_V8_CASE_CONCURRENCY"] = str(args.concurrency)
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    out_dir = args.out / f"{stamp}_{args.image.replace(':', '-').replace('/', '_')}_{args.run_size}"
+    out_dir = args.out / f"{stamp}_{args.image.replace(':', '-').replace('/', '_')}_{args.run_size}{'_rerun' if args.only_cases else ''}"
     out_dir.mkdir(parents=True, exist_ok=True)
+    if args.only_cases:
+        (out_dir / "only_cases.txt").write_text(args.only_cases.read_text())
+    if args.replay_writes:
+        (out_dir / "replay_writes.jsonl").write_text(args.replay_writes.read_text(encoding="utf-8"), encoding="utf-8")
+        args.env.append("HARNESS_REPLAY_WRITES=/trace/replay_writes.jsonl")
     api_port, broker_port, embed_port = lr.reserve_ports(3)
     harness_port = args.harness_port
     harness_url, api_url = f"http://127.0.0.1:{harness_port}", f"http://127.0.0.1:{api_port}"
@@ -123,8 +140,11 @@ def main() -> int:
                  args.image],
                 env=child_env, check=True, stdout=subprocess.DEVNULL)
             api_log = (out_dir / "scorer.log").open("wb")
-            api = subprocess.Popen([str(SCORER_BIN), "-port", str(api_port)], cwd=lr.API_DIR,
-                                   env=lr.scorer_environment(tmp, broker_port),
+            scorer_env = lr.scorer_environment(tmp, broker_port)
+            if args.only_cases:
+                scorer_env["DITTOBENCH_ONLY_CASES"] = str((out_dir / "only_cases.txt").resolve())
+            api = subprocess.Popen([str(scorer_bin), "-port", str(api_port)], cwd=lr.API_DIR,
+                                   env=scorer_env,
                                    stdout=api_log, stderr=subprocess.STDOUT)
             print("waiting for harness, scorer and embedding shim...", flush=True)
             wait_http(f"http://127.0.0.1:{embed_port}/health")

@@ -8,7 +8,9 @@ The hooks are tools/trace/trace.py, as in tools/add_trace.py for the Hades layou
 - per case: the lane, the events, the answer and final text, and the records each path put
   in front of the deciding model (records packet, action packet, topic notes or program notes).
 HARNESS_PROVIDER_PREFS (JSON) replaces the OpenRouter provider preferences, so two images can
-be run on one pinned provider. Copies for local practice images only.
+be run on one pinned provider. HARNESS_REPLAY_WRITES (app/replay.py) puts back an earlier
+run's tool-phase memory writes after the first seed, for re-running a few of its questions.
+Copies for local practice images only.
 """
 import re
 import shutil
@@ -43,6 +45,47 @@ async def _traced_chat(self, messages, tools, **kwargs):
 
 
 OpenAICompatLLM.chat = _traced_chat
+'''
+
+
+REPLAY = '''"""Re-run support (tools/add_trace_dan0l.py): put back the memory writes an earlier run's agent made.
+
+HARNESS_REPLAY_WRITES names a JSON-lines file from tools/replay_writes.py. Its writes are applied
+once, right after the first /seed (the tool-phase world), to that seed's user, as the original
+run's tool phase made them: save_memory adds a saved record, update_memory rewrites the record
+whose text matches. Record ids are blinded per run, so the original text is the key.
+"""
+import hashlib
+import json
+import logging
+import os
+
+from .tools import SAVED_PAIR_ID
+
+_applied = False
+
+
+def after_seed(store, user_id) -> None:
+    global _applied
+    path = os.environ.get("HARNESS_REPLAY_WRITES", "").strip()
+    if _applied or not path:
+        return
+    _applied = True
+    log = logging.getLogger("harness.replay")
+    by_text = {p.prompt: p.pair_id for p in store.all_pairs(user_id)}
+    for line in open(path, encoding="utf-8"):
+        write = json.loads(line)
+        if write["op"] == "save":
+            pair_id = SAVED_PAIR_ID.format(digest=hashlib.sha256(write["content"].encode()).hexdigest()[:16])
+            done = store.save_pair(user_id, pair_id, write["content"], write["timestamp"])
+        else:
+            pair_id = by_text.get(write["target"])
+            if pair_id is None:  # a shown record may have been cut short: take a unique prefix match
+                head = write["target"].rstrip(".\\u2026 ")
+                hits = [pid for text, pid in by_text.items() if text.startswith(head)]
+                pair_id = hits[0] if len(hits) == 1 else None
+            done = pair_id is not None and store.rewrite_pair(user_id, pair_id, write["content"])
+        log.info("replayed %s from case %s: %s", write["op"], write["case"], "applied" if done else "NOT APPLIED")
 '''
 
 
@@ -94,6 +137,11 @@ def failed(messages, tools, payload, error) -> None:
         (r"^(\s+)outcome\.events\.append\(f\"short path records=.*$", r"\g<0>\n\1trace.note(packet=[[p.pair_id, p.prompt[:160]] for p in records], path='program')"),
         (r"^(\s+)draft = await self\.latest_draft\(req, notes, ",
          r"\1trace.note(packet=[[p.pair_id, p.prompt[:160]] for p in notes], path='topic')\n\g<0>"),
+    ])
+    (app / "replay.py").write_text(REPLAY)
+    patch(app / "main.py", [
+        (r"^(\s+)return AsciiJSONResponse\(SeedResponse\(", r"\1replay.after_seed(app.state.store, body.user_id)\n\g<0>"),
+        (r"^from __future__ import annotations$", "\\g<0>\n\nfrom . import replay"),
     ])
     print(f"traced copy of {src} at {out}")
 
