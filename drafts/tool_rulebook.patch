@@ -1,0 +1,77 @@
+diff --git a/combined/app/action.py b/combined/app/action.py
+index 15ad327..350775d 100644
+--- a/combined/app/action.py
++++ b/combined/app/action.py
+@@ -11,7 +11,7 @@ from typing import Any, Callable
+ from .answer import parse_slot
+ from .llm import LLM, ChatResult, LLMError, Usage
+ from .lane import reads_state
+-from .ours.guidance import guide_block
++from .ours.guidance import guide_block, tool_rules
+ from .packet import Packet, compose, render_records
+ from .protocol import RunRequest
+ from .route import Route, route_by_catalog
+@@ -541,8 +541,10 @@ class ActionEngine:
+         guide = guide_block(req.user_input, req.tools)
+         if guide:
+             outcome.events.append("request guidance: " + ", ".join(note.split(":", 1)[0] for note in guide.split("\n")))
++        # the lane prompts carry the catalog's tool rules too; the reply check keeps only the request's notes
++        lane_guide = "\n\n".join(part for part in (tool_rules(req.tools), guide) if part)
+         messages: list[dict[str, Any]] = [
+-            {"role": "system", "content": system_prompt(with_guide(ACTION_LANE_PROMPT, guide), req.system_prompt)},
++            {"role": "system", "content": system_prompt(with_guide(ACTION_LANE_PROMPT, lane_guide), req.system_prompt)},
+             {"role": "user", "content": (f"{lead}\n\n" if lead else "") + compose(packet, req.user_input, precursor=focus_block(packet, req.user_input))},
+         ]
+         provider_rejections = 0
+@@ -610,7 +612,7 @@ class ActionEngine:
+                 messages.append(assistant)
+                 if uncalled:
+                     uncalled = False
+-                    messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, guide), req.system_prompt)}
++                    messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, lane_guide), req.system_prompt)}
+                 read_worthy = False
+                 linked = False
+                 for call in result.tool_calls:
+@@ -652,7 +654,7 @@ class ActionEngine:
+                         outcome.events.append("result read: link fact")
+                     reading = await ResultRead(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort)(req.user_input, self.executor.ledger)
+                     if reading:
+-                        messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, guide) + "\n\n" + read_note(reading, closing_for(verdict), linked), req.system_prompt)}
++                        messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, lane_guide) + "\n\n" + read_note(reading, closing_for(verdict), linked), req.system_prompt)}
+                 outcome.content = result.content or outcome.content
+                 if turns_left:
+                     continue
+diff --git a/combined/app/ours/guidance.py b/combined/app/ours/guidance.py
+index b53bfa4..141ff0b 100644
+--- a/combined/app/ours/guidance.py
++++ b/combined/app/ours/guidance.py
+@@ -119,3 +119,29 @@ def guidance(request: str, tools: Iterable) -> list[str]:
+ 
+ def guide_block(request: str, tools: Iterable) -> str:
+     return "\n".join(guidance(request, tools))
++
++
++# How the product's tools divide the work, shown on every action turn whatever the wording: one line
++# per kind of tool, kept when the catalog offers the tools it names. Advice for the model like the
++# notes above; it decides every call.
++TOOL_RULES = (
++    ({"list_schedules"}, "Which workflows run on a schedule or are set to run, when, how often and how many runs they have logged: list_schedules. list_workflows lists the saved workflows themselves."),
++    ({"create_workflow"}, "Something the user wants to happen again and again on its own (every Friday, each morning, on a repeat): create_workflow, with the steps the user describes. Not an agent job and not a saved note."),
++    ({"list_workflows", "run_workflow"}, "Running a saved workflow now: list_workflows, then run_workflow with the name exactly as listed."),
++    ({"execute_agent_job"}, "A piece of work the user wants carried out now, once (start it, kick it off, go ahead and do it, summarise this file): execute_agent_job with the task in the user's words. list_agent_jobs only shows jobs already running."),
++    ({"artifacts"}, "Something the user wants to see rendered or use on screen (a page, a game, an app, a mock-up, an interactive chart): artifacts. create_image is for a still picture."),
++    ({"edit_image"}, "A change to a picture made earlier in this conversation: edit_image on that picture, not a new image."),
++    ({"discover_capabilities"}, "What Ditto can do, what kinds of things to ask it, or which options a setting has: discover_capabilities, and answer from what it lists."),
++    ({"search_tools"}, "Which of your tools fits a job: search_tools, answer from what it finds and run nothing else."),
++    ({"discover_capabilities", "set_chat_font"}, "A setting value named loosely, misspelled or with -ish (a font, an accent colour, a theme): list the options with discover_capabilities, then call the setter with the listed option closest to what the user wrote. Both calls are needed."),
++    ({"update_memory"}, "A fact in one of the user's notes has changed: update_memory on that note's id, the content naming the thing as the user calls it and its new value (the handoff is Tuesday), not only the change (moved to Tuesday)."),
++    ({"search_web"}, "Something current in the world: one search_web, then answer with the figure as the result writes it. Search again only if the first search returned nothing useful."),
++    ({"search_web", "gmail_send"}, "A live figure to pass on to someone: search_web for the figure first, then gmail_send it to the address the user's records give for that person."),
++    ({"calendar_create_event", "calendar_search_events"}, "Putting a named event on the calendar: if a note says it is booked already, calendar_search_events finds it and nothing is created; if a note says its date is undecided, ask; otherwise calendar_create_event right away on the day given. If the request only says 'that' or 'it', ask what to add."),
++)
++
++
++def tool_rules(tools: Iterable) -> str:
++    offered = set(tool_names(tools))
++    lines = [text for needs, text in TOOL_RULES if needs <= offered]
++    return "How the tools divide the work:\n- " + "\n- ".join(lines) if lines else ""
