@@ -36,6 +36,7 @@ class Levers:
     route_mend: bool = True
     route_own: bool = True
     meaning_guards: bool = True
+    stored_topic: bool = True
 
     @classmethod
     def from_env(cls) -> "Levers":
@@ -56,6 +57,7 @@ class Levers:
             route_mend=_flag("HARNESS_ROUTE_MEND", True),
             route_own=_flag("HARNESS_ROUTE_OWN", True),
             meaning_guards=_flag("HARNESS_MEANING_GUARDS", True),
+            stored_topic=_flag("HARNESS_STORED_TOPIC", True),
         )
 
 

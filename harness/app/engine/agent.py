@@ -14,7 +14,7 @@ from app.engine.state import Outcome, TokenTally
 from app.engine.action import safe_run as run_action
 from app.config import Settings
 from app.routing.lane import ACTION, OVERRIDABLE_REASONS, OWN_THING, RECORDS, Lane, about_own_records, classify, elliptical, held_in_records, keeps_action, keeps_records
-from app.routing.lane import mend_cues, own_records_question, product_question, records_question, tells_without_asking, tokens
+from app.routing.lane import asks_stored_detail, mend_cues, own_records_question, product_question, records_question, tells_without_asking, tokens
 from app.routing.meaning import IntentBank
 from app.llm import LLM, build_llm, grow_call_gate
 from app.memory.deliberation import Deliberation
@@ -143,6 +143,20 @@ class CaseRunner:
         settings = self.settings
         return RecordsEngine(llm, executor, memory, tally, max_turns=settings.max_model_turns, max_tokens=settings.max_output_tokens, effort=settings.records_reasoning_effort, recall_max_tokens=settings.recall_max_tokens, recall_effort=settings.recall_reasoning_effort, packet_chars=settings.packet_char_budget, subject_discipline=settings.subject_discipline, arc=settings.arc_contiguous, worksheet=settings.worksheet, effort_high=settings.records_effort_high, thread_first=settings.thread_first, thread_reading=settings.thread_reading, closure=settings.evidence_closure, coverage=settings.coverage, link_hop=settings.link_hop, long_packet_chars=settings.long_packet_chars, meaning_records=settings.meaning_records, meaning_chars=settings.meaning_chars, meaning_order=settings.meaning_order, fused=fused, search_record_chars=settings.search_record_chars, search_long_records=settings.search_long_records, search_passes=settings.search_passes, search_temperature=settings.search_temperature, search_seed=int(settings.sampling_seed) if settings.sampling_seed else None, deliberation=Deliberation(settings.drafts, settings.draft_temperature, int(settings.sampling_seed) if settings.sampling_seed else None) if settings.deliberation else None, anchors=anchors, finder_order=settings.finder_order, follow_up=settings.follow_up, follow_up_retry=settings.follow_up_retry, extra=extra, widen_chars=settings.widen_chars, rank_orders=rank_orders, swap_top=settings.swap_top, select_mode=settings.select_mode)
 
+    async def stored_detail_topic(self, req: RunRequest, lane: Lane, routed: str, focus: list[Candidate], index: UserIndex, engine: RecordsEngine, deadline: float, outcome: Outcome) -> bool:
+        """A request for a contact detail on a thread ("Track down the current owner's current work email.") reads
+        that thread on the topic path, with the contact cards of its people, though its words do not ask a question."""
+        settings = self.settings
+        if not settings.levers.stored_topic or focus or lane.reason == "statement" or not asks_stored_detail(routed):
+            return False
+        pairs = [node.pair for node in index.nodes.values()]
+        found = find_topic(req.user_input, pairs, settings.story_min_density, settings.story_max_chars)
+        if found is None:
+            return False
+        outcome.events.append("topic path for a stored detail")
+        topic = TopicPath(engine, effort=settings.short_effort, max_tokens=settings.short_max_tokens, max_chars=settings.story_max_chars, draft=settings.topic_draft, decide_effort=settings.topic_decide_effort)
+        return await topic.answer(req, found, pairs, deadline, outcome)
+
     async def short_answer(self, req: RunRequest, lane: Lane, focus: list[Candidate], index: UserIndex, engine: RecordsEngine, deadline: float, outcome: Outcome) -> bool:
         settings = self.settings
         if lane.reason == "statement" or not own_records_question(req.user_input, req.tools):
@@ -200,6 +214,7 @@ class CaseRunner:
             lane, routed = self.choose_lane(req, ordered, index, focus)
             lane = await self.meaning_lane(req, lane, routed)
             handled = lane.name == RECORDS and await self.short_answer(req, lane, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome)
+            handled = handled or (lane.name == RECORDS and await self.stored_detail_topic(req, lane, routed, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome))
             if lane.name == RECORDS and not handled:
                 query = asked_part(req.user_input) if focus else req.user_input
                 lexical = ordered if query == req.user_input else self.retriever.rank(req.user_id, query)[0]

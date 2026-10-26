@@ -13,20 +13,21 @@ from __future__ import annotations
 
 import json
 import sys
+from types import SimpleNamespace
 
 from lab import data
 from lab.embed import Embedder
 from lab.meaning import Meaning
 from lab.route_ours import VARIANTS, Bank, World, route, settings_for
 
-from app.engine.agent import SWAP_TEXT_HITS  # noqa: E402
+from app.engine.agent import SWAP_TEXT_HITS, CaseRunner  # noqa: E402
 from app.engine.short import CONTACT_RE, find_topic, focus_token, record_size, short_records, topic_lead  # noqa: E402
 from app.memory.embedding import fuse  # noqa: E402
 from app.memory.packet import build_packet, fused_rank, identifier_focus, refill  # noqa: E402
 from app.memory.people import cards_for, full_names  # noqa: E402
 from app.memory.retrieval import asked_part  # noqa: E402
-from app.routing.lane import own_records_question  # noqa: E402
-from app.protocol import ToolDefinition  # noqa: E402
+from app.routing.lane import asks_stored_detail, own_records_question  # noqa: E402
+from app.protocol import RunRequest, ToolDefinition  # noqa: E402
 
 SETTINGS = settings_for(*VARIANTS["all@0.85"])
 
@@ -70,6 +71,14 @@ def select(case: data.Case, world: World, meaning: Meaning, sense) -> dict:
                     path, ids = "topic", [p.pair_id for p in notes]
             elif focus and s.short_programs and short_records(focus, s.short_max_chars) and focus_token(text, focus):
                 path, ids = "program", [c.pair.pair_id for c in focus]
+        if not path and s.levers.stored_topic and not focus and reason != "statement":
+            req = RunRequest(case_id=case.key, user_input=text, tools=tools, user_id=case.user)
+            _, routed = CaseRunner.choose_lane(SimpleNamespace(settings=s, retriever=retriever), req, ordered, index, focus)
+            if asks_stored_detail(routed):
+                found = find_topic(text, pairs, s.story_min_density, s.story_max_chars)
+                if found is not None and sum(record_size(p) for p in found.notes) <= s.story_max_chars:
+                    notes = with_cards(found.notes, pairs) if CONTACT_RE.search(text) else found.notes
+                    path, ids = "stored-topic", [p.pair_id for p in notes]
         if not path:
             query = asked_part(text) if focus else text
             lexical = ordered if query == text else retriever.rank(case.user, query)[0]

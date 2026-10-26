@@ -39,6 +39,15 @@ Questions missing at least one needed record: dan0l 72, ours 43, both 28.
 - **Topic paths:** 99% full recall. Ours shows 7.0 records against dan0l's 11.0 on our topic cases, because dan0l adds cards more often.
 - **Program paths:** 100%.
 
-## Next
+## Contact details on a thread, taken from dan0l (`stored_detail_topic`)
 
-Take dan0l's stored-detail topic path: a contact-detail request with a thread phrase goes to the topic path with contact cards. Our refill stays.
+A records-lane request with no identifier that asks for a contact detail, and that no short path took, now reads its thread on the topic path with contact cards. Our refill stays for everything else.
+
+| | recall | full recall | precision | records | chars |
+|---|---|---|---|---|---|
+| ours before | 98.7% | 97.0% | 32.4% | 24.8 | 16,183 |
+| **ours now** | **99.0%** | **97.9%** | **32.6%** | 24.6 | 16,092 |
+| dan0l v24 | 96.8% | 95.0% | 30.8% | 27.2 | 16,050 |
+
+- 15 questions changed path, all "current owner's work email". 13 gained full recall and none lost it.
+- On that question type, full recall went from 0.74 to 0.94 (dan0l 0.95), with fewer characters (14,875 against 16,878).

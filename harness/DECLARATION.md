@@ -82,6 +82,11 @@ components; the only model is the hosted one, called over HTTP through the reque
     with no verb of doing something, no sending phrase, no outside source, no listed tool named and no reading
     tool's word paired with a fetching verb in one sentence; a live cue needs an identifier or a thread. A question
     about how to do something in the product goes to the action lane (`product_question`).
+  - Contact details on a thread (`app/engine/agent.py` `stored_detail_topic`; `HARNESS_STORED_TOPIC`, on): a
+    records-lane request with no identifier that asks for a contact detail the user keeps (an email, address, phone
+    or handle) and that no short path took ("Track down the current owner's current work email.") goes to the topic
+    path when the records dwell on its thread phrase, with the contact cards of the thread's people, as dan0l v24's
+    released M46 does. The model reads the same records and decides as on any topic-path request.
   - Smaller rules: reference codes such as INV-5CCDC0 are not figures to compute with; "lately", "at the moment"
     and "people are saying" are live cues; "make sure" is not a verb of doing something; a contact noun beside a
     listed tool's full name does not make a stored-detail question.
