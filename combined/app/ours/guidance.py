@@ -58,6 +58,7 @@ AGREED = _rx(r"\b(?:per what we|as we (?:agreed|decided|settled|landed)|what we 
 # A piece of work to carry out now, not explain.
 DO_NOW = _rx(r"\b(?:start working|start it|get (?:it )?(?:going|started)|carry (?:it )?out|do (?:it|this) now|right away|kick it off|actually do|don't just tell me|i want it done)\b")
 EFFORT = _rx(r"\b(?:reasoning|rea\w{2,5}ing depth|how (?:hard|deeply|much) you think|think (?:hard|harder|deeply|it through|things through)|thinking (?:level|depth|effort)|deep as \w+ can)\b")
+TOOL_SWITCH = _rx(r"\b(?:disable|enable|turn (?:on|off)|switch (?:on|off)|stop using|don't use|do not use|allow|block|adjust|limit)\b[^.?!]{0,40}\b(?:tools?|web search|search(?:ing)? the web|image (?:making|generation))\b|\b(?:tools?|web search)\b[^.?!]{0,30}\b(?:off|disabled|enabled)\b")
 TOOL_ASK = _rx(r"\b(?:which (?:of your )?tools?|what tool|tool binding|right tool|tool for|search your tools)\b")
 CAPABILITY_ASK = _rx(r"\bhow (?:do|can) i (?:set up|connect|adjust|turn (?:on|off)|change|manage|switch|enable|disable|control)\b|\bwhere (?:do|can) i (?:find|change|set|turn|manage)\b|\bwhat (?:kinds? of )?\w+ can i ask\b|\bwhat can you (?:actually )?do\b|\bcapable of\b|\bwhat (?:features|options|abilities) do you have\b|\bis there a way to\b|\bwhat (?:this|the) (?:assistant|app) (?:can|does)\b")
 # Something to open and use on screen.
@@ -145,8 +146,11 @@ def guidance(request: str, tools: Iterable) -> list[str]:
         notes.append("Doing a task now: the message asks for a piece of work to be carried out now, not explained. Start it with execute_agent_job, the task in the user's words; do not ask for files or links and do not look up jobs or workflows first.")
     if "set_reasoning_effort" in offered and EFFORT.search(text):
         notes.append("Reasoning depth: how deeply you should think is set with set_reasoning_effort, once, with one of the values its schema lists: thinking hard, deep or thorough is high, balanced or moderate is medium, quick or minimal is low. If the message asks for the user's usual level, use the level their note names; if the note says they have not settled on one, ask which they want, naming the options the note mentions.")
+    tool_prefs = "set_chat_tool_preferences" in offered and bool(TOOL_SWITCH.search(text)) and not asks
+    if tool_prefs:
+        notes.append("Which tools you may use: turning tools on or off for this chat (web search, image making and the like) is a setting, changed with set_chat_tool_preferences. Call it with the change the message asks for; it is not a search for a tool.")
     # "how do I manage which tools you can use" is a question about Ditto itself, not a tool search
-    if "search_tools" in offered and TOOL_ASK.search(text) and not CAPABILITY_ASK.search(text):
+    if "search_tools" in offered and TOOL_ASK.search(text) and not CAPABILITY_ASK.search(text) and not tool_prefs:
         notes.append("Finding a tool: the message asks which of your tools fits a job. Look with search_tools and answer from what it finds; make no other call, not even a web search.")
     if "discover_capabilities" in offered and CAPABILITY_ASK.search(text):
         notes.append("Asking what Ditto can do: questions about Ditto's own settings, features and abilities are answered from discover_capabilities. Call it first and answer from what it returns, not from the notes, and do not describe menus or steps from what apps usually have.")
@@ -163,7 +167,7 @@ def guidance(request: str, tools: Iterable) -> list[str]:
     elif {"search_web", "read_links"} <= offered and READ_PAGE.search(text):
         notes.append("Reading a page: search once with search_web, then open the top result's link exactly as it was returned with read_links, and answer from the page itself, since search previews can carry different figures. One search and one read are enough.")
     if "discover_capabilities" in offered and any(name.startswith("set_") for name in offered) and LOOSE_NAME.search(text) and SETTING_WORD.search(text) and not setting:
-        notes.append("Choosing a listed option: the message names a setting's value loosely or misspelled (a font, a colour, a mode). List the options with discover_capabilities, choose the listed option closest to the message's spelling letter by letter (one carrying the variant when it names a cut or edition), and then call the setter with it: both calls are needed.")
+        notes.append("Choosing a listed option: the message names a setting's value loosely or misspelled (a font, a colour, a mode). List the options with discover_capabilities, choose the listed option closest to the message's spelling letter by letter, the one with the most letters the same and in the same places, not one that only starts the same way (one carrying the variant when it names a cut or edition), and then call the setter with it: both calls are needed.")
     if "run_code" in offered and FIGURE_LIST.search(text) and WORK_OUT.search(text) and not SANDBOX.search(text):
         notes.append("Working out figures: the message gives the figures and asks for a result worked out from them. Run the arithmetic once with run_code, even when the sum looks easy: the code tool is how calculations are done here. One run is enough whatever its output shows; then give the result.")
     add_ons = add_on_tools(request, names)
