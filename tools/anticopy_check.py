@@ -4,8 +4,10 @@
 
 Uses ditto-subnet apps/platform/ditto/api_server/fingerprint.py unchanged: 4-line windows and
 30+ character lines, starter-kit content subtracted, copy bars Jaccard 0.75 / containment 0.95.
-A match against a published release is withdrawn by the platform; one against an unpublished
-submission is held.
+A fired signal against a published release is withdrawn by the platform (the copy signal is
+dropped and recorded, the upload goes on: the subnet owner has confirmed building on a released
+agent is permitted, apps/platform/ditto/api_server/scoring_gate.py); one against a still-embargoed
+submission that no published artifact explains as well is held for human review.
 """
 import importlib.util
 import io
