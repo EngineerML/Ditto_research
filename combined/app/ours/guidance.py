@@ -44,7 +44,7 @@ CALENDAR_PUT = _rx(r"\b(?:on|onto|onfo|to|into|imto|in)\s+(?:my|the)\s+" + CALEN
 CALENDAR_LOOKUP = _rx(r"^\W*(?:find|search|look (?:up|for)|what's on|what is on|is there|when is|when's|do i have|have i got)\b")
 UNNAMED = _rx(r"\b(?:that|it|this|them)\s+(?:on|onto|to|into|in)\s+(?:my|the)\s+" + CALENDAR_WORD + r"\b")
 # Workflows that run by themselves, asked about.
-SCHEDULE_CUE = _rx(r"\b(?:schedul\w*|sc\w{2,3}ul\w*|recurring|repeating|on a timer|on a t\w{3,4}r|timed runs?|on their own|hands[- ]off|cadence|set to run|due to run|lined up to run|runs? (?:daily|weekly|twice|every))\b")
+SCHEDULE_CUE = _rx(r"\b(?:schedul\w*|sc\w{2,3}ul\w*|recurring|repeating|on a timer|on a t\w{3,4}r|timed runs?|on their own|hands[- ]off|on (?:a )?cadence|set to run|due to run|lined up to run|runs? (?:daily|weekly|twice|every))\b")
 SCHEDULE_ASK = _rx(r"\b(?:what|which|whatever|remind me|show|list|pull up|look at|check|tell me|run down|how many)\b|\?")
 WORKFLOW = _rx(r"\bworkflows?\b|\bw\w{2,4}flows?\b")
 RUN_VERB = _rx(r"\b(?:run|start|kick off|launch|trigger|fire)\b")
@@ -119,7 +119,7 @@ def guidance(request: str, tools: Iterable) -> list[str]:
         notes.append("Looking up a figure and sending it: the figure is live, not in the notes. Look it up with search_web first, then send it with gmail_send to the person the message describes, at the email address their records give (a later correction replaces an older address). Put the figure in the email exactly as the result writes it, and repeat it in your reply.")
     if "calendar_create_event" in offered and CALENDAR_PUT.search(text) and not UNNAMED.search(text) and not CALENDAR_LOOKUP.search(text):
         notes.append("Adding to the calendar: read the user's notes about this event first. If a note says the event is booked already, find it with calendar_search_events by its name and say where it is; do not add it again. Only if a note says its date is still undecided, add nothing and ask when, naming the event as the note does. In every other case create it right away with calendar_create_event, titled with the event's name: a day the message gives is used as given (the coming one), and when no day or time is given the time is left unscheduled; do not ask which day, week or time.")
-    scheduled = SCHEDULE_CUE.search(text) and (SCHEDULE_ASK.search(text) or WORKFLOW.search(text))
+    scheduled = SCHEDULE_CUE.search(text) and (SCHEDULE_ASK.search(text) or WORKFLOW.search(text)) and not EMAIL_ASK.search(text)
     run_saved = RUN_VERB.search(text) and WORKFLOW.search(text) and SAVED.search(text) and not asks
     if "list_schedules" in offered and scheduled and not run_saved and not CAPABILITY_ASK.search(text) and not (REPEAT_CUE.search(text) and not asks):
         notes.append("Workflows that run on their own: which saved workflows run on a schedule, when they run and how many runs they have logged is what list_schedules returns (list_workflows lists the workflows themselves, not their schedules). Call list_schedules and answer from it.")

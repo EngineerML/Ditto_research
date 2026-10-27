@@ -40,5 +40,33 @@ both fixed after the run (lookup gate, "the records above show it"). The other f
 (restraint calendar clarification without a record token, agent job as a workflow, a memory
 follow-up read, a theme set that listed and stopped): run-to-run variance.
 
-Screening: the local screen shows only the known app/ours/lane.py leads cleared by L1 earlier;
-generator n-gram scan clean after rewording two cues. L1 not re-run for v3.
+## Screening and L1 (commit ca5a988)
+
+- Local static screen: no malicious hits; the only leads are the known app/ours/lane.py ones
+  (router mender's typo-tolerant compare, inherited numeric constants), cleared by L1 before. No
+  lead and no generator n-gram hash in guidance.py, action.py or agent.py.
+- L1 (tools/l1_review_local.py, prompt source-review-v38-policy-v13, $0.78): risk low, category
+  none, clearance certified, confidence 0.89 (v2 notes: 0.84). All eight invariants pass; I5
+  "request-matched workflow notes remain advisory guidance to the model, with no reachable
+  deterministic answer-family writer"; I7 "guidance does not enforce a plan". 4 concerns along
+  the way (v2: 12), all closed. Observation: practice/l1_v3.json.
+
+## Full run, fresh seed 8372604497854494846 (ca5a988, platform providers, $0.95)
+
+Folder practice/20261027T004259Z_ditto-harness-combined-v3_full.
+
+| | composite | tool | memory | tool eff. | consistency | over-call | conversation |
+|---|---|---|---|---|---|---|---|
+| v3 (local) | 0.892 | 0.927 | 0.876 | 0.993 | 1 | 0.996 | 1 |
+| dan0l v25, official on this seed | 0.804 | 0.917 | 0.881 | | | | |
+
+The tool part repeated the tool-only run's 0.927 exactly. Memory is the records path, which v3
+does not touch; its misses are the usual world-story and parser-divergence families.
+
+The over-call gate below 1 is partly v3: a memory question naming a person "Cadence" ("I need to
+reach Cadence Baker ... Which email is current?") matched the schedules cue, was moved to the
+action lane and called list_schedules (it still scored 1). Fixed after the run: the cue is now
+"on a cadence", and the schedules note stays off "which email" questions; over five seeds no
+memory question gets a note. The other two memory questions with a non-memory call (a declared
+accent set with set_accent_color, a preference question answered with discover_capabilities)
+had no note and took the action lane through the existing router.
