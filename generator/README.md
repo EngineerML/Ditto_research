@@ -32,7 +32,7 @@ in one pack never collide.
 ```bash
 cd generator && go vet ./... && go test ./...      # every size 8..80 validates on several seeds
 cd repos/ditto-subnet/research/dittobench-datagen
-go run ./cmd/challenge rehearse -dir /home/bittensor/ditto/generator \
+go run ./cmd/challenge rehearse -dir ../../../../generator \
   -hotkey 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY -seeds 3 -cases 80
 ```
 

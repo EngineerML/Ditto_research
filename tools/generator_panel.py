@@ -112,7 +112,8 @@ def main() -> int:
     ap.add_argument("--seeds", type=int, default=1)
     ap.add_argument("--seed", type=int, default=1, help="first rehearsal seed")
     ap.add_argument("--cases", type=int, default=16)
-    ap.add_argument("--harness-port", type=int, default=8080)
+    ap.add_argument("--harness-port", type=int, default=8180,
+                    help="8080 is left to tools/practice_docker.py, so both can run at once")
     ap.add_argument("--env-file", type=Path, default=HERE / ".env.local")
     ap.add_argument("--summarize", type=Path, help="only print the table for an existing run.json")
     args = ap.parse_args()
