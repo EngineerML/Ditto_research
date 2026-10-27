@@ -13,6 +13,12 @@ on question instances never seen before (fresh seeds below 2^63); keep it or dro
 | 3 | Routing note runs the workflow by the note's name; v4d's "say so" suffix clause only when the user asked to be told a value | routing + decoy add-on questions, fresh seeds 5938014472610385517 and 3317946052817731099, v5d vs v5c | routing 18/20 both, decoys 20/20 both; the remaining give-up is decided at the last turn after the listing result, in dan0l's result-read closing | yes, neutral (5745fe3) |
 | 4a | The effort clarification names the setting and "the options exactly as the note words them" | restraint-effort + set-effort, fresh seeds 6202847719305518841 and 1590366248871024497, two passes, v5e vs v5d | 19/20 vs 20/20: v5d named the setting in all 10 clarifications (the omission is rarer than the review's sample), and "the note" was read as our own advisory note, so the options came from it instead of the user's record | no |
 | 6 | Listed-option note: qualifier rule first (variant/cut/edition/shade/version), closeness as fewest single-letter changes; drops v4c's "most letters in the same places" | discovery questions, fresh seeds 1203948576610294837 and 6874412098361759203, v5f vs v5d (a guard test: the expected gain is below what 16 questions show) | 15/16 both, the same miss (Itufit -> Fira Sans: the model does not count edits reliably); every variant and shade question right in both | yes, neutral (653ab20) |
+| 4b+4c | Setting checks move to the action lane like other noted requests (the records lane shows no notes and set the value even when it matched: horizon and v4b, 2 of 2); the setting-check note sets the value when no note keeps one | setting-check questions, fresh seeds 916284730551867203 and 4082731569920184613, two passes, v5g vs v5f (only 6 such questions on 5 seeds: a guard test) | 12/12 both; every question went to the action lane in both builds, so the records-lane case did not come up | yes, neutral |
+
+Checked on current builds before spending (horizon onward, all traced runs) and skipped, because the family
+already passes: the delete lure (51/55; the "email" phrasing 22/23, its 5/5 failure was on old builds), state
+dependent email (9/9 since the quoted-name cue in v4b), calendar duplicates, background work, misspelled tool
+names.
 
 Seen while testing, for later fixes: the "Scratch that ... same scratchpad note" update can be drawn to a
 newer plan or decision record about the project (v4d and v5a both, about 2 in 30 updates); the routing

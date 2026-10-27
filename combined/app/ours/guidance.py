@@ -89,7 +89,7 @@ WORK_OUT = _rx(r"\b(?:mean|me\w{1,3}n|average|sum|normali[sz]e|fractions?|percen
 CRAWL = _rx(r"\b(?:scrape|scr\w{2}pe|crawl)\b")
 JOB_LIST = _rx(r"\bjobs? list\b|\blist of (?:my )?jobs\b|\bmy [\w'-]+ (?:crawl|scrape|research|agent) job\b")
 
-STAYING = ("Checking a setting", "Doing what the message says", "Working out figures")
+STAYING = ("Doing what the message says", "Working out figures")
 GENERIC_HEADS = frozenset({"search", "list", "set", "run", "create", "edit", "read", "file", "save", "update", "delete", "fetch",
                            "calendar", "gmail", "execute", "discover", "apply", "artifacts", "get", "send", "add", "remove"})
 
@@ -117,7 +117,7 @@ def guidance(request: str, tools: Iterable) -> list[str]:
     notes: list[str] = []
     setting = bool(SETTING_ASK.search(text) and OWN_SETTING.search(text)) and bool(offered & {"set_accent_color", "set_chat_font", "set_theme"})
     if setting:
-        notes.append("Checking a setting: the message asks you to make sure one of the user's own settings (accent colour, chat font or colour mode) has a value. Read the user's note that keeps their value for that setting first. If it already keeps the value the message names, nothing needs changing: make no call at all, not even a lookup, and say it is already set, quoting the value as the note writes it. If the note keeps another value, call that setting's setter with the value the message names.")
+        notes.append("Checking a setting: the message asks you to make sure one of the user's own settings (accent colour, chat font or colour mode) has a value. Read the user's note that keeps their value for that setting first. If it already keeps the value the message names, nothing needs changing: make no call at all, not even a lookup, and say it is already set, quoting the value as the note writes it. If the note keeps another value, or no note keeps a value for that setting, call that setting's setter with the value the message names.")
     correcting = "update_memory" in offered and bool(CORRECTION.search(text) and NOTE_WORDS.search(text)) and not DELETE.search(text) and not asks and not CHANGED_SINCE.search(text)
     if correcting:
         notes.append("Correcting a saved note: change the note the message means with update_memory on its pair id; when the message names a kind of note (a scratchpad, a list, a note for a person), it is that note, not another record about the same project. The new content replaces the whole note, so start it with the note's own opening words up to its first colon, which say what the note is for (its project and client), then the corrected facts, a few words each: the thing as the message calls it and its new value (as in 'handoff is Thursday'), plus 'reviewer is <name>' or the like for any other fact the message changes. Leave out the rest of the old text, and do not add a second note or touch other records.")
@@ -184,8 +184,8 @@ def guide_block(request: str, tools: Iterable) -> str:
 
 
 def moves_to_action(request: str, tools: Iterable) -> bool:
-    """A request one of the notes is for belongs on the action lane, where the notes are shown. A
-    setting check is the exception: when the note already keeps the value, no call is the answer.
-    So are the two broad notes (an instruction, figures to work out): their cues alone are too
-    common in questions about the records to move a request off the records lane."""
+    """A request one of the notes is for belongs on the action lane, where the notes are shown. The two
+    broad notes (an instruction, figures to work out) are the exception: their cues alone are too
+    common in questions about the records to move a request off the records lane. Setting checks move
+    too: the records lane shows no notes and set the value even when it already matched."""
     return any(not note.startswith(STAYING) for note in guidance(request, tools))
