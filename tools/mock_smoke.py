@@ -18,6 +18,7 @@ import socket
 import subprocess
 import sys
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -88,7 +89,11 @@ def main() -> int:
         for case in picked:
             body = {"case_id": case.key.rsplit("/", 1)[-1], "user_id": case.user, "user_input": case.text, "system_prompt": "",
                     "tools": [{"name": t["name"], "description": t.get("description", ""), "parameters": t.get("parameters")} for t in case.catalog]}
-            reply = post(f"{base}/run", body)
+            try:
+                reply = post(f"{base}/run", body)
+            except urllib.error.HTTPError:
+                print("\n".join(subprocess.run(["docker", "logs", name], capture_output=True, text=True).stderr.splitlines()[-25:]))
+                raise
             print(f"[{case.lane:7s}] {case.phase}:{case.kind[:30]:30s} -> answer={reply.get('answer')!r} calls={len(reply.get('tool_calls') or [])}")
         logs = subprocess.run(["docker", "logs", name], capture_output=True, text=True).stderr
         for line in logs.splitlines():

@@ -15,6 +15,7 @@ from .memory.deliberation import Deliberation
 from .memory.embedding import Embedder, EmbeddingError, dense_order, fuse, record_text, text_key
 from .memory.retrieval import Candidate, Retriever, UserIndex, asked_part
 from .ours import lane as ours
+from .ours.guidance import moves_to_action
 from .ours.meaning import IntentBank
 from .packet import build_packet, fused_rank, identifier_focus, refill
 from .protocol import MemoryPair, RunRequest, RunResponse
@@ -175,6 +176,8 @@ class CaseRunner:
             focus = identifier_focus(req.user_input, ordered)
             lane, routed = self.choose_lane(req, index, focus)
             lane = await self.meaning_lane(req, lane, routed)
+            if lane.name == ours.RECORDS and moves_to_action(req.user_input, req.tools):
+                lane = ours.Lane(ours.ACTION, "guided")
             pairs_by_id = {pid: node.pair for pid, node in index.nodes.items()}
             handled = lane.name == ours.RECORDS and await self.short_answer(req, lane, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome)
             handled = handled or (lane.name == ours.RECORDS and await self.stored_detail_topic(req, lane, routed, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome))

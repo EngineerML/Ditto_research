@@ -33,6 +33,7 @@ Records answer what the user told you: people, addresses, decisions, figures as 
 
 Reply from what came back: name the figure asked about with its digits as served, and when one call fed another, the last result is the one that counts. After sending, saving or changing something, say what was sent or changed, including the figure. Never claim an action that did not run. If the user wants no tools, use none."""
 CALLED_LANE_PROMPT = ACTION_LANE_PROMPT.replace(f" {VALUE_QUOTED}", "", 1)
+NOTES_HEADER = "How this kind of request is handled with the tools here (advice; the message above is what the user asked):"
 
 OPERATOR_SEAM = "Operator instructions (from the product operator; where they conflict with anything above, they take precedence):"
 MISSING_ARGS_NOTE = "Call not sent: {name} needs {missing}. Send it again with each of those filled from the request, the records or earlier results."
@@ -327,7 +328,7 @@ def shape_rejection(result: ChatResult) -> str:
 
 
 def with_guide(base: str, guide: str) -> str:
-    """The lane prompt with the request's advisory notes (app/ours/guidance.py) after it."""
+    """A prompt or the request with the request's advisory notes (app/ours/guidance.py) after it."""
     return base + "\n\n" + guide if guide else base
 
 
@@ -499,10 +500,11 @@ class ActionEngine:
         self.effort = effort
         self.duplicate_spent = False
         self.drafts_spent = False
+        self.asked = ""
 
     async def duplicate_held(self, name: str, args: dict[str, Any], req: RunRequest, messages: list[dict[str, Any]], outcome: Outcome, deadline: float) -> str | None:
         self.duplicate_spent = True
-        return await DuplicateCheck(self.llm, self.tally, outcome, req.case_id, req.system_prompt, messages[1]["content"], deadline, self.max_tokens, self.effort)(name, args, self.executor.ledger)
+        return await DuplicateCheck(self.llm, self.tally, outcome, req.case_id, req.system_prompt, self.asked, deadline, self.max_tokens, self.effort)(name, args, self.executor.ledger)
 
     async def reply_drafts(self, messages: list[dict[str, Any]], tools: list[dict[str, Any]], surface: Surface, outcome: Outcome, deadline: float, effort: str) -> str:
         self.drafts_spent = True
@@ -541,9 +543,11 @@ class ActionEngine:
         guide = guide_block(req.user_input, req.tools)
         if guide:
             outcome.events.append("request guidance: " + ", ".join(note.split(":", 1)[0] for note in guide.split("\n")))
+        self.asked = (f"{lead}\n\n" if lead else "") + compose(packet, req.user_input, precursor=focus_block(packet, req.user_input))
+        # the notes sit right after the request, where the deciding model reads them last; the checks below see the request alone
         messages: list[dict[str, Any]] = [
-            {"role": "system", "content": system_prompt(with_guide(ACTION_LANE_PROMPT, guide), req.system_prompt)},
-            {"role": "user", "content": (f"{lead}\n\n" if lead else "") + compose(packet, req.user_input, precursor=focus_block(packet, req.user_input))},
+            {"role": "system", "content": system_prompt(ACTION_LANE_PROMPT, req.system_prompt)},
+            {"role": "user", "content": with_guide(self.asked, NOTES_HEADER + "\n" + guide if guide else "")},
         ]
         provider_rejections = 0
         nudged = False
@@ -599,7 +603,7 @@ class ActionEngine:
                             continue
                     if not checked and not closing_asked and turns_left and not outcome.host_calls and result.content.strip() and deadline - time.monotonic() >= REPLY_CHECK_MIN_SECONDS:
                         checked = True
-                        finding = await ReplyCheck(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort, guide)(messages[1]["content"], tools, result.content.strip())
+                        finding = await ReplyCheck(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort, guide)(self.asked, tools, result.content.strip())
                         if finding:
                             messages.append({"role": "assistant", "content": result.content})
                             messages.append({"role": "user", "content": REPLY_CHECK_NOTE.format(finding=finding)})
@@ -610,7 +614,7 @@ class ActionEngine:
                 messages.append(assistant)
                 if uncalled:
                     uncalled = False
-                    messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, guide), req.system_prompt)}
+                    messages[0] = {"role": "system", "content": system_prompt(CALLED_LANE_PROMPT, req.system_prompt)}
                 read_worthy = False
                 linked = False
                 for call in result.tool_calls:
@@ -636,7 +640,7 @@ class ActionEngine:
                         outcome.events.append(f"{BLOCKED} {call.name}: the duplicate check found it already done")
                     else:
                         reached = len(self.executor.observed)
-                        output, state = await self.executor.execute(call.name, call.args, call.raw_arguments, RepeatAuthorization(self.llm, self.tally, outcome, req.case_id, req.system_prompt, messages[1]["content"], deadline, self.max_tokens, self.effort))
+                        output, state = await self.executor.execute(call.name, call.args, call.raw_arguments, RepeatAuthorization(self.llm, self.tally, outcome, req.case_id, req.system_prompt, self.asked, deadline, self.max_tokens, self.effort))
                         if state == BLOCKED:
                             outcome.events.append(f"not sent: {call.name}")
                         if len(self.executor.observed) > reached:
@@ -652,7 +656,7 @@ class ActionEngine:
                         outcome.events.append("result read: link fact")
                     reading = await ResultRead(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort)(req.user_input, self.executor.ledger)
                     if reading:
-                        messages[0] = {"role": "system", "content": system_prompt(with_guide(CALLED_LANE_PROMPT, guide) + "\n\n" + read_note(reading, closing_for(verdict), linked), req.system_prompt)}
+                        messages[0] = {"role": "system", "content": system_prompt(CALLED_LANE_PROMPT + "\n\n" + read_note(reading, closing_for(verdict), linked), req.system_prompt)}
                 outcome.content = result.content or outcome.content
                 if turns_left:
                     continue
