@@ -20,14 +20,29 @@ var cities = []string{
 	"Limerick", "Belfast", "Glasgow", "Edinburgh", "Aberdeen", "Cardiff",
 	"Bristol", "Leeds", "Oslo", "Trondheim", "Stavanger", "Gothenburg", "Lund",
 	"Odense", "Aalborg", "Tampere", "Espoo", "Helsinki", "Reykjavik", "Akureyri",
+	"Osaka", "Kyoto", "Sapporo", "Fukuoka", "Nagoya", "Busan", "Daegu", "Incheon",
+	"Taipei", "Kaohsiung", "Hanoi", "Da Nang", "Bangkok", "Chiang Mai", "Penang",
+	"Ipoh", "Cebu", "Davao", "Jakarta", "Bandung", "Surabaya", "Yogyakarta",
+	"Kathmandu", "Pokhara", "Colombo", "Kandy", "Mumbai", "Pune", "Jaipur",
+	"Udaipur", "Kochi", "Mysore", "Chennai", "Hyderabad", "Lahore", "Karachi",
+	"Muscat", "Doha", "Amman", "Beirut", "Tunis", "Marrakesh", "Fez", "Casablanca",
+	"Dakar", "Accra", "Kumasi", "Lagos", "Nairobi", "Mombasa", "Arusha", "Kigali",
+	"Kampala", "Lusaka", "Harare", "Windhoek", "Durban", "Cape Town", "Montreal",
+	"Quebec City", "Halifax", "Calgary", "Winnipeg", "Vancouver", "Seattle",
+	"Portland", "Denver", "Memphis", "Boston", "Chicago", "Detroit", "Phoenix",
+	"Tucson", "Oaxaca", "Puebla", "Merida", "Guadalajara", "Havana", "Bogota",
+	"Medellin", "Cali", "Quito", "Cuenca", "Lima", "Cusco", "Arequipa", "La Paz",
+	"Santiago", "Valparaiso", "Mendoza", "Rosario", "Montevideo", "Asuncion",
+	"Recife", "Curitiba", "Manaus", "Auckland", "Wellington", "Hobart", "Perth",
+	"Adelaide", "Brisbane", "Darwin",
 }
 
 // Pool sizes bound MaxCases: each round of the four default families draws at
-// most 6 cities, 6 names, 3 drinks and 2 allergens, and Builder.Pick never
-// reuses a value within a pack. Events are drawn with Builder.Any, since a
-// reserved name already makes each question unique. MaxCases (80, twenty
-// rounds) therefore needs at least 120 cities, 120 names, 60 drinks and 40
-// allergens; TestPoolsFillMaxCases holds that. Values must also stay apart:
+// most 10 cities, 5 names and 2 drinks, and Builder.Pick never reuses a value
+// within a pack. Events are drawn with Builder.Any, since a reserved name
+// already makes each question unique. MaxCases (80, twenty rounds) therefore
+// needs at least 200 cities, 100 names and 40 drinks; TestPoolsFillMaxCases
+// holds that. Values must also stay apart:
 // no value may contain another value from any pool, so one case's gold can
 // never ground or decoy another's.
 
@@ -76,23 +91,6 @@ var drinksPool = []string{
 	"ginger beer", "kvass", "ayran", "chaga tea", "guayusa", "cascara", "bancha",
 	"kukicha", "gyokuro", "white tea", "drip coffee", "piccolo", "red eye",
 	"breve", "sikhye",
-}
-
-var allergens = []string{
-	"peanuts", "shellfish", "sesame", "kiwi", "walnuts", "mustard", "celery",
-	"lupin", "buckwheat", "mango", "soy", "cashews", "hazelnuts", "fennel",
-	"pistachios", "squid", "lentils", "avocado", "chickpeas", "anchovies",
-	"pecans", "papaya", "quinoa", "eggplant", "oysters", "macadamias", "almonds",
-	"crab", "pineapple", "peppers", "mussels", "coconut", "strawberries",
-	"tomatoes", "barley", "wheat", "eggs", "garlic", "onions", "cinnamon",
-	"nutmeg", "cloves", "saffron", "cumin", "coriander", "paprika", "cherries",
-	"peaches", "apricots", "plums", "bananas", "melons", "grapes", "figs",
-	"lychee", "blueberries", "raspberries", "oranges", "limes", "potatoes",
-	"cucumber", "zucchini", "spinach", "mushrooms", "sunflower seeds",
-	"poppy seeds", "flaxseed", "pumpkin seeds", "chestnuts", "brazil nuts",
-	"pine nuts", "clams", "scallops", "lobster", "shrimp", "salmon", "tuna",
-	"sardines", "mackerel", "gelatin", "millet", "sorghum", "tapioca", "vanilla",
-	"yeast",
 }
 
 var filler = [][2]string{

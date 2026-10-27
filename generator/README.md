@@ -38,3 +38,16 @@ go run ./cmd/challenge rehearse -dir /home/bittensor/ditto/generator \
 
 `tools/generator_panel.py` runs the packs against one of our agent images with the official
 challenge scorer (paid: OpenRouter) and prints solved/mean per family.
+
+## Results against our own agent (horizon v2 image, one seed, 80 cases)
+
+| Version | Family | Solved |
+|---|---|---|
+| v1 | elimination / swapped / picked | 20/20, 20/20, 19/20 (trivial: replaced) |
+| v1 | revert ("back to the very beginning" / "undo the last change") | 13/20 (misses are abstentions) |
+| v2 | revert / position | 16/20, 16/20 |
+| v2 | same-as / undo-revert | 20/20, 20/20 |
+
+About $0.25 per 80-case run. One agent cannot show what is discriminating (that needs two
+owners solving and at least one agent failing); the next step is a local panel of different
+agents.

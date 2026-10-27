@@ -24,7 +24,7 @@ import (
 // Name and Version identify this generator in the pack's provenance.
 const (
 	Name    = "horizon"
-	Version = "1"
+	Version = "2"
 )
 
 // MaxCases is the most cases the pools can fill without reusing a value. It

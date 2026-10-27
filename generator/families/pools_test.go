@@ -18,10 +18,9 @@ func TestPoolsFillMaxCases(t *testing.T) {
 		pool    []string
 		perPack int
 	}{
-		"cities":     {cities, 6},
-		"firstNames": {firstNames, 6},
-		"drinksPool": {drinksPool, 3},
-		"allergens":  {allergens, 2},
+		"cities":     {cities, 10},
+		"firstNames": {firstNames, 5},
+		"drinksPool": {drinksPool, 2},
 	}
 	for name, n := range need {
 		if got, want := len(n.pool), n.perPack*maxRounds; got < want {
@@ -34,7 +33,7 @@ func TestPoolsFillMaxCases(t *testing.T) {
 // another value of any pool. Such a pair lets one case's gold answer ground or
 // decoy another case's question.
 func TestPoolValuesStayApart(t *testing.T) {
-	pools := [][]string{cities, firstNames, events, drinksPool, allergens}
+	pools := [][]string{cities, firstNames, events, drinksPool}
 	var all []string
 	seen := map[string]bool{}
 	for _, pool := range pools {
