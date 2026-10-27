@@ -83,6 +83,7 @@ REPLY_DRAFTS_NOTE = "Before your reply above went to the user, drafts of the nex
 REPLY_DRAFT_STEP = "{index}. Call {calls}"
 REPLY_DRAFT_TEMPERATURE = 0.8
 REPLY_DRAFT_SEEDS = (101, 202)
+LENGTH_RETRY_MAX_TOKENS = 12000  # the short path's own limit, so the platform already takes it
 REPLY_DRAFTS_SECONDS = 60.0
 REPLY_DRAFTS_MIN_SECONDS = 20.0
 
@@ -553,7 +554,7 @@ class ActionEngine:
         ]
         provider_rejections = 0
         nudged = False
-        retried_length = False
+        retried_length = retrying_length = False
         wrapped = False
         closing_asked = False
         uncalled = True
@@ -567,9 +568,13 @@ class ActionEngine:
                 turns_left -= 1
                 tools = surface.visible()
                 started = time.monotonic()
-                effort = "low" if retried_length or wrapped or closing_asked else self.effort
+                # a turn cut off before it wrote anything is asked again at the same effort with more room;
+                # dropping to low here used to carry low effort into the drafts and every later turn
+                effort = "low" if wrapped or closing_asked else self.effort
+                room = max(self.max_tokens, LENGTH_RETRY_MAX_TOKENS) if retrying_length else self.max_tokens
+                retrying_length = False
                 try:
-                    result = await self.llm.chat(messages, tools, deadline=deadline, max_tokens=self.max_tokens, reasoning_effort=effort)
+                    result = await self.llm.chat(messages, tools, deadline=deadline, max_tokens=room, reasoning_effort=effort)
                 except LLMError as exc:
                     self.tally.add(exc.usage)
                     log.error("case=%s action lane turn failed: %s", req.case_id, exc)
@@ -585,7 +590,7 @@ class ActionEngine:
                         messages.append({"role": "user", "content": PROVIDER_SHAPE_NOTE.format(message=rejection)})
                         continue
                     if not result.content.strip() and result.finish_reason == "length" and not retried_length:
-                        retried_length = True
+                        retried_length = retrying_length = True
                         outcome.events.append("length retry")
                         continue
                     if not result.content.strip() and not nudged:
