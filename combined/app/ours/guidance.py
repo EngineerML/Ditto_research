@@ -59,13 +59,13 @@ AGREED = _rx(r"\b(?:per what we|as we (?:agreed|decided|settled|landed)|what we 
 DO_NOW = _rx(r"\b(?:start working|start it|get (?:it )?(?:going|started)|carry (?:it )?out|do (?:it|this) now|right away|kick it off|actually do|don't just tell me|i want it done)\b")
 EFFORT = _rx(r"\b(?:reasoning|rea\w{2,5}ing depth|how (?:hard|deeply|much) you think|think (?:hard|harder|deeply|it through|things through)|thinking (?:level|depth|effort)|deep as \w+ can)\b")
 TOOL_ASK = _rx(r"\b(?:which (?:of your )?tools?|what tool|tool binding|right tool|tool for|search your tools)\b")
-CAPABILITY_ASK = _rx(r"\bwhat (?:kinds? of )?\w+ can i ask\b|\bwhat can you (?:actually )?do\b|\bcapable of\b|\bwhat (?:features|options|abilities) do you have\b|\bis there a way to\b|\bwhat (?:this|the) (?:assistant|app) (?:can|does)\b")
+CAPABILITY_ASK = _rx(r"\bhow (?:do|can) i (?:set up|connect|adjust|turn (?:on|off)|change|manage|switch|enable|disable|control)\b|\bwhere (?:do|can) i (?:find|change|set|turn|manage)\b|\bwhat (?:kinds? of )?\w+ can i ask\b|\bwhat can you (?:actually )?do\b|\bcapable of\b|\bwhat (?:features|options|abilities) do you have\b|\bis there a way to\b|\bwhat (?:this|the) (?:assistant|app) (?:can|does)\b")
 # Something to open and use on screen.
 USABLE = _rx(r"\bi can (?:see|open|click|cl\w{1,3}k|try|play|use|preview|interact)\b|\brendered\b|\binteractive\b|\b(?:game|landing page|web page)\b")
 BUILD_VERB = _rx(r"\b(?:build|make|mock up|create|put together|draft)\b")
 LIVE = _rx(r"\b(?:latest|right now|currently|current|today|these days|at the moment|as of now|live|stands|at right now|where is)\b")
 PASS_ON = _rx(r"\b(?:get|send|email|forward|f\w{2}ward|pass|shoot)\b[^.?!]{0,40}\b(?:over to|along to|to)\s+(?:[A-Z][a-z]+|them|thm)\b|\bsent to [A-Z][a-z]+\b|\bfor [A-Z][a-z]+ —")
-DEVICE = _rx(r"\b(?:device|system setting|system|operating system|phone|laptop)\b")
+DEVICE = _rx(r"\b(?:device|system setting|operating system|phone|laptop)\b|\bsystem\b(?!\s+mode)")
 APPEARANCE = _rx(r"\b(?:accent|font|typeface|theme|colou?r m\w{2,3}|dark mode|light mode|appearance|light or dark|dark or light)\b")
 KEEP = _rx(r"\b(?:remember that|note (?:for later|it down|that)|keep in mind|for the record|hold on(?:to)? that|store this|save this)\b")
 SANDBOX = _rx(r"\b(?:code sandbox|sandbox|run the routine|execute the routine)\b")
@@ -76,7 +76,10 @@ LOOSE_NAME = _rx(r"\b(?:loosely|approximate|closest|matching option|my spelling|
                  r"|\b(?:check|verify|confirm|look up)\b[^.?!]{0,40}\b(?:options?|fonts?|f\w{3}s|accents?|list|configured|available)\b")
 SETTING_WORD = _rx(r"\b(?:accent|acc\w{2,4}t|font|f\w{2,3}t|f\w{3}s|typ\w{1,3}face|chat|colou?r|theme)\b")
 # asking which address or email a person has: a records question, not a figure to send
-EMAIL_ASK = _rx(r"\b(?:which|what|wh[a-z]{2,4})\b[^.?!]{0,60}\b(?:email|address)\b|\b(?:current|up-to-date|right) email\b|\bemail (?:reaches|belongs)\b")
+EMAIL_ASK = _rx(r"\b(?:which|what|wh[a-z]{2,4}|w[a-z]h[a-z]{1,3})\b[^.?!]{0,60}\b(?:email|address)\b|\b(?:current|up-to-date|right) email\b"
+                r"|\bemail (?:reaches|belongs|is current)\b|\bemail\b[^.?!]{0,30}\bthese days\b")
+# asking what has changed out in the world since an old note: a live lookup, not a note to correct
+CHANGED_SINCE = _rx(r"\bwhat(?:'s| has| have)?\b[^.?!]{0,20}\bchanged\b")
 
 GENERIC_HEADS = frozenset({"search", "list", "set", "run", "create", "edit", "read", "file", "save", "update", "delete", "fetch",
                            "calendar", "gmail", "execute", "discover", "apply", "artifacts", "get", "send", "add", "remove"})
@@ -106,9 +109,9 @@ def guidance(request: str, tools: Iterable) -> list[str]:
     setting = bool(SETTING_ASK.search(text) and OWN_SETTING.search(text)) and bool(offered & {"set_accent_color", "set_chat_font", "set_theme"})
     if setting:
         notes.append("Checking a setting: the message asks you to make sure one of the user's own settings (accent colour, chat font or colour mode) has a value. Read the user's note that keeps their value for that setting first. If it already keeps the value the message names, nothing needs changing: make no call at all, not even a lookup, and say it is already set, quoting the value as the note writes it. If the note keeps another value, call that setting's setter with the value the message names.")
-    correcting = "update_memory" in offered and bool(CORRECTION.search(text) and NOTE_WORDS.search(text)) and not DELETE.search(text) and not asks
+    correcting = "update_memory" in offered and bool(CORRECTION.search(text) and NOTE_WORDS.search(text)) and not DELETE.search(text) and not asks and not CHANGED_SINCE.search(text)
     if correcting:
-        notes.append("Correcting a saved note: change the note the message means with update_memory on its pair id. The content is only the corrected facts, a few words each: the thing as the message calls it and its new value (as in 'handoff is Thursday'), plus 'reviewer is <name>' or the like for any other fact the message changes. Do not copy the rest of the note into it, add a second note or touch other records.")
+        notes.append("Correcting a saved note: change the note the message means with update_memory on its pair id; when the message names a kind of note (a scratchpad, a list, a note for a person), it is that note, not another record about the same project. The content is only the corrected facts, a few words each: the thing as the message calls it and its new value (as in 'handoff is Thursday'), plus 'reviewer is <name>' or the like for any other fact the message changes. Do not copy the rest of the note into it, add a second note or touch other records.")
     if "delete_memory" in offered and DELETE.search(text) and DISPOSABLE.search(text):
         notes.append("Deleting one note: remove only the note the message points at, with delete_memory on that note's own pair id, which the records above show (do not ask the user for it). The person's other records (their contact, workplace or email notes) stay, even when the note mentions them.")
     if "edit_image" in offered and EARLIER_IMAGE.search(text):
@@ -133,7 +136,8 @@ def guidance(request: str, tools: Iterable) -> list[str]:
         notes.append("Doing a task now: the message asks for a piece of work to be carried out now, not explained. Start it with execute_agent_job, the task in the user's words; do not ask for files or links and do not look up jobs or workflows first.")
     if "set_reasoning_effort" in offered and EFFORT.search(text):
         notes.append("Reasoning depth: how deeply you should think is set with set_reasoning_effort: deep or thorough is high, balanced or moderate is medium, quick or minimal is low. If the message asks for the user's usual level, use the level their note names; if the note says they have not settled on one, ask which they want, naming the options the note mentions.")
-    if "search_tools" in offered and TOOL_ASK.search(text):
+    # "how do I manage which tools you can use" is a question about Ditto itself, not a tool search
+    if "search_tools" in offered and TOOL_ASK.search(text) and not CAPABILITY_ASK.search(text):
         notes.append("Finding a tool: the message asks which of your tools fits a job. Look with search_tools and answer from what it finds; make no other call, not even a web search.")
     if "discover_capabilities" in offered and CAPABILITY_ASK.search(text):
         notes.append("Asking what Ditto can do: look it up with discover_capabilities and answer from what it returns, not from the notes.")
