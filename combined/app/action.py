@@ -79,7 +79,7 @@ REPLY_CHECK_SECONDS = 30.0
 REPLY_CHECK_MIN_SECONDS = 10.0
 ACT = "ACT"
 REPLY_WORD = "REPLY"
-REPLY_DRAFTS_NOTE = "Your reply above makes no call. Before it went to the user, {agreed} of {total} drafts of the next step, made separately for this request, not checked and possibly wrong, made a call instead:\n{steps}\nIf the message asks for something to be done, changed, run or looked up, a call is how it gets done. You decide: take one of those steps or another, or send your reply as it is."
+REPLY_DRAFTS_NOTE = "Before your reply above went to the user, drafts of the next step made separately for this request, not checked and possibly wrong, took a different step:\n{steps}\nYou decide: take one of those steps or another, or send your reply as it is."
 REPLY_DRAFT_STEP = "{index}. Call {calls}"
 REPLY_DRAFT_TEMPERATURE = 0.8
 REPLY_DRAFT_SEEDS = (101, 202)
@@ -440,17 +440,13 @@ DUPLICATE_CHECK_SECONDS = 30.0
 DUPLICATE_CHECK_MIN_SECONDS = 10.0
 
 
-def drafted_steps(drafts: list[ChatResult], hosted: Callable[[str], bool]) -> tuple[str, int]:
-    """The distinct calls the drafts made, one line each, and how many drafts made a call at all."""
+def drafted_steps(drafts: list[ChatResult], hosted: Callable[[str], bool]) -> str:
     steps: dict[str, ChatResult] = {}
-    calling = 0
     for draft in drafts:
         named = next((call.name for call in draft.tool_calls if hosted(call.name)), "")
         if named:
-            calling += 1
             steps.setdefault(named, draft)
-    lines = "\n".join(REPLY_DRAFT_STEP.format(index=index, calls="; ".join(f"{call.name} {json.dumps(call.args, ensure_ascii=False)}" for call in draft.tool_calls)) for index, draft in enumerate(steps.values(), start=1))
-    return lines, calling
+    return "\n".join(REPLY_DRAFT_STEP.format(index=index, calls="; ".join(f"{call.name} {json.dumps(call.args, ensure_ascii=False)}" for call in draft.tool_calls)) for index, draft in enumerate(steps.values(), start=1))
 
 
 def after_bare_read(ledger: list[Receipt]) -> bool:
@@ -531,9 +527,9 @@ class ActionEngine:
             self.tally.add(reply)
             outcome.model_calls += 1
             drafts.append(reply)
-        steps, calling = drafted_steps(drafts, lambda name: surface.knows(name) and not self.memory.handles(name))
-        outcome.events.append(f"reply drafts: {len(drafts)} drafted, {f'{calling} made a call' if steps else 'no call'}")
-        return REPLY_DRAFTS_NOTE.format(agreed=calling, total=len(drafts), steps=steps) if steps else ""
+        steps = drafted_steps(drafts, lambda name: surface.knows(name) and not self.memory.handles(name))
+        outcome.events.append(f"reply drafts: {len(drafts)} drafted, {'a different step' if steps else 'no call'}")
+        return steps
 
     def route_for(self, req: RunRequest) -> Route:
         return route_by_catalog(req.user_input, req.tools)
@@ -602,10 +598,10 @@ class ActionEngine:
                         outcome.events.append("wrap-up turn")
                         continue
                     if not self.drafts_spent and uncalled and not closing_asked and turns_left and not outcome.host_calls and result.content.strip() and deadline - time.monotonic() >= REPLY_DRAFTS_MIN_SECONDS:
-                        drafted = await self.reply_drafts(messages, tools, surface, outcome, deadline, effort)
-                        if drafted:
+                        steps = await self.reply_drafts(messages, tools, surface, outcome, deadline, effort)
+                        if steps:
                             messages.append({"role": "assistant", "content": result.content})
-                            messages.append({"role": "user", "content": drafted})
+                            messages.append({"role": "user", "content": REPLY_DRAFTS_NOTE.format(steps=steps)})
                             continue
                     if not checked and not closing_asked and turns_left and not outcome.host_calls and result.content.strip() and deadline - time.monotonic() >= REPLY_CHECK_MIN_SECONDS:
                         checked = True
