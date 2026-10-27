@@ -45,3 +45,26 @@ Gains are the targeted failures (settings, capability, code compute, theme, memo
 calendar create, multi-web read, agent jobs). The losses carry no misread verdict or misfired
 note: a font set that stopped to ask, a setting check that reported instead of setting, a wrong
 recipient address, two runs of one agreed-work question that skipped a create.
+
+## v2 rejected under I3; v3fix (neutral note) measured (2026-10-27)
+
+horizon v2 (12547cb) was rejected by screening policy v13, L2 and L3: "I3 model dissent: a valid
+no-call model answer is not shipped when separate draft models propose catalog calls"
+(action.py:534, 604, 608). The machinery is dan0l's; the rejected part was the note's wording
+("Your reply above makes no call", "2 of 2 drafts", "a call is how it gets done"). b25920e puts
+dan0l v25's note back, keeping the guidance edits, the action-lane sentence and the ReplyCheck parse.
+
+Tool questions of seed 3126988865203959995 (100, platform providers):
+
+| Run | Tool |
+|---|---|
+| horizon v1 | 0.920 |
+| tool4 (rejected note) | 0.940 |
+| v3fix | 0.880 |
+
+Of the 14 questions that differ, capability_discovery, settings and code_compute_not_agent_job
+were solved only by tool4: that is what the rejected note bought (about 0.03). A recheck (two more
+runs) of the five v3fix lost that both others solved: contact_research_email and memory_delete 2/2
+(noise), declarative_preference 1/2, code_compute and state_dependent_email 0/2. In both of those
+the model kept a no-call reply through the neutral drafts note and the reply check. Adjusted for
+the noise, v3fix is about 0.90, level with horizon v1: no tool gain left worth a resubmission.
