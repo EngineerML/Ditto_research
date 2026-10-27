@@ -39,8 +39,8 @@ DISPOSABLE = _rx(r"\b(?:receipt|rece\w{2,4}|scratch note|throwaway|th\w{3,4}away
 EARLIER_IMAGE = _rx(r"\b(?:that|the|this)\s+" + PICTURE_WORD + r"\s+(?:you\s+\w{2,8}|from\s+(?:before|earlier)|we\s+made)\b"
                     r"|\b(?:last|latest|previous|earlier)\s+" + PICTURE_WORD + r"\b|\bthe one you (?:just )?made\b")
 SEND = _rx(r"\b(?:send|email|mail|forward|f\w{2}ward|pass|get|shoot|fire off|deliver|share)\b")
-TO_THEM = _rx(r"\b(?:over to them|back to them|along to them|out to them|them (?:my|the|our) (?:[\w'-]+ ){0,5}?(?:update|numbers|figures|summary|report|news))\b")
-CALENDAR_PUT = _rx(r"\b(?:on|onto|onfo|to|into|imto|in)\s+(?:my|the)\s+" + CALENDAR_WORD + r"\b|\bslot (?:it|that) in\b|\bslot it\b")
+TO_THEM = _rx(r"\b(?:over to them|back to them|along to them|out to them|them (?:my|the|our) (?:[\w'\x22“”-]+ ){0,5}?(?:update|numbers|figures|summary|report|news))\b")
+CALENDAR_PUT = _rx(r"\b(?:on|onto|onfo|to|into|imto|in)\s+(?:my|the)\s+" + CALENDAR_WORD + r"\b|\bslot (?:it|that) in\b|\bslot it\b|\bbl\w{2}k (?:out|off)\b")
 CALENDAR_LOOKUP = _rx(r"^\W*(?:find|search|look (?:up|for)|what's on|what is on|is there|when is|when's|do i have|have i got)\b")
 UNNAMED = _rx(r"\b(?:that|it|this|them)\s+(?:on|onto|to|into|in)\s+(?:my|the)\s+" + CALENDAR_WORD + r"\b")
 # Workflows that run by themselves, asked about.
@@ -80,7 +80,15 @@ EMAIL_ASK = _rx(r"\b(?:which|what|wh[a-z]{2,4}|w[a-z]h[a-z]{1,3})\b[^.?!]{0,60}\
                 r"|\bemail (?:reaches|belongs|is current)\b|\bemail\b[^.?!]{0,30}\bthese days\b")
 # asking what has changed out in the world since an old note: a live lookup, not a note to correct
 CHANGED_SINCE = _rx(r"\bwhat(?:'s| has| have)?\b[^.?!]{0,20}\bchanged\b")
+# an instruction that opens with the thing to do ("Make the app dark", "Send them the numbers now")
+INSTRUCTION = _rx(r"^\W*(?:please\s+)?(?:make|set|switch|turn|change|send|email|forward|put|book|block|bl\w{2}k|add|schedule|create|start|update|move)\b")
+# a run of figures the message itself lists ("312, 980, and 1510"), not dates or ids around a record
+FIGURE_LIST = re.compile(r"(?<![\w-])\d+(?:\.\d+)?\s*(?:,\s*(?:and\s+)?|\s+and\s+)\d+(?:\.\d+)?(?![\w-])")
+WORK_OUT = _rx(r"\b(?:mean|me\w{1,3}n|average|sum|normali[sz]e|fractions?|percent\w*|ratio|difference|how far apart|split|divide|multiply|add up|median|range|work (?:this|it) out)\b")
+CRAWL = _rx(r"\b(?:scrape|scr\w{2}pe|crawl)\b")
+JOB_LIST = _rx(r"\bjobs? list\b|\blist of (?:my )?jobs\b|\bmy [\w'-]+ (?:crawl|scrape|research|agent) job\b")
 
+STAYING = ("Checking a setting", "Doing what the message says", "Working out figures")
 GENERIC_HEADS = frozenset({"search", "list", "set", "run", "create", "edit", "read", "file", "save", "update", "delete", "fetch",
                            "calendar", "gmail", "execute", "discover", "apply", "artifacts", "get", "send", "add", "remove"})
 
@@ -124,7 +132,8 @@ def guidance(request: str, tools: Iterable) -> list[str]:
         notes.append("Adding to the calendar: read the user's notes about this event first. If a note says the event is booked already, find it with calendar_search_events by its name and say where it is; do not add it again. Only if a note says its date is still undecided, add nothing and ask when, naming the event as the note does. In every other case create it right away with calendar_create_event, titled with the event's name: a day the message gives is used as given (the coming one), and when no day or time is given the time is left unscheduled; do not ask which day, week or time.")
     scheduled = SCHEDULE_CUE.search(text) and (SCHEDULE_ASK.search(text) or WORKFLOW.search(text)) and not EMAIL_ASK.search(text)
     run_saved = RUN_VERB.search(text) and WORKFLOW.search(text) and SAVED.search(text) and not asks
-    if "list_schedules" in offered and scheduled and not run_saved and not CAPABILITY_ASK.search(text) and not (REPEAT_CUE.search(text) and not asks):
+    # "set up X on repeat" is a new workflow; "pull up whatever is set to run on repeat" is a listing
+    if "list_schedules" in offered and scheduled and not run_saved and not CAPABILITY_ASK.search(text) and not (REPEAT_CUE.search(text) and SETUP_VERB.search(text) and not asks):
         notes.append("Workflows that run on their own: which saved workflows run on a schedule, when they run and how many runs they have logged is what list_schedules returns (list_workflows lists the workflows themselves, not their schedules). Call list_schedules and answer from it.")
     if {"list_workflows", "run_workflow"} <= offered and run_saved:
         notes.append("Running a saved workflow: call list_workflows, pick the workflow whose name or schedule matches the message, then call run_workflow with its name exactly as listed (not its id).")
@@ -132,15 +141,15 @@ def guidance(request: str, tools: Iterable) -> list[str]:
         notes.append("Setting up something that repeats: the message wants it to happen again and again by itself. Create it now with create_workflow, with the schedule and the action the message states, filling anything it leaves open with a usual choice instead of asking. It is not a one-off job and not a note.")
     if AGREED.search(text) and offered & {"run_workflow", "create_workflow", "execute_agent_job"}:
         notes.append("Starting work agreed earlier: the user's note on this piece of work says how it was agreed to run: as one of their saved workflows (list_workflows, then run_workflow with the name it lists), as a new repeating workflow (create_workflow), or as a one-off job (execute_agent_job). Read that note and start it that way now.")
-    elif "execute_agent_job" in offered and DO_NOW.search(text):
+    elif "execute_agent_job" in offered and (DO_NOW.search(text) or (CRAWL.search(text) and not asks)):
         notes.append("Doing a task now: the message asks for a piece of work to be carried out now, not explained. Start it with execute_agent_job, the task in the user's words; do not ask for files or links and do not look up jobs or workflows first.")
     if "set_reasoning_effort" in offered and EFFORT.search(text):
-        notes.append("Reasoning depth: how deeply you should think is set with set_reasoning_effort: deep or thorough is high, balanced or moderate is medium, quick or minimal is low. If the message asks for the user's usual level, use the level their note names; if the note says they have not settled on one, ask which they want, naming the options the note mentions.")
+        notes.append("Reasoning depth: how deeply you should think is set with set_reasoning_effort, once, with one of the values its schema lists: thinking hard, deep or thorough is high, balanced or moderate is medium, quick or minimal is low. If the message asks for the user's usual level, use the level their note names; if the note says they have not settled on one, ask which they want, naming the options the note mentions.")
     # "how do I manage which tools you can use" is a question about Ditto itself, not a tool search
     if "search_tools" in offered and TOOL_ASK.search(text) and not CAPABILITY_ASK.search(text):
         notes.append("Finding a tool: the message asks which of your tools fits a job. Look with search_tools and answer from what it finds; make no other call, not even a web search.")
     if "discover_capabilities" in offered and CAPABILITY_ASK.search(text):
-        notes.append("Asking what Ditto can do: look it up with discover_capabilities and answer from what it returns, not from the notes.")
+        notes.append("Asking what Ditto can do: questions about Ditto's own settings, features and abilities are answered from discover_capabilities. Call it first and answer from what it returns, not from the notes, and do not describe menus or steps from what apps usually have.")
     if "artifacts" in offered and USABLE.search(text) and BUILD_VERB.search(text):
         notes.append("Something to open and use: the message wants a thing it can see, click or try on screen. Build it with the artifacts tool, not as an image.")
     if "set_theme" in offered and APPEARANCE.search(text) and DEVICE.search(text) and not setting:
@@ -149,13 +158,20 @@ def guidance(request: str, tools: Iterable) -> list[str]:
         notes.append("Saving a note: save what the user said with save_memory directly; there is no need to search the notes first. Then confirm what you saved, quoting it as the user wrote it.")
     if "run_code" in offered and SANDBOX.search(text):
         notes.append("Running code: run it once with run_code, a short snippet that calls the routine by the name the user gives, and report exactly what it prints; no web search or background job is needed.")
-    if {"search_web", "read_links"} <= offered and READ_PAGE.search(text):
+    if "list_agent_jobs" in offered and JOB_LIST.search(text):
+        notes.append("The user's jobs: how far a job the user started got, and what it found, is what list_agent_jobs returns. Call it, find the job by the name the message gives, and answer with the figure it lists; the web does not have it.")
+    elif {"search_web", "read_links"} <= offered and READ_PAGE.search(text):
         notes.append("Reading a page: search once with search_web, then open the top result's link exactly as it was returned with read_links, and answer from the page itself, since search previews can carry different figures. One search and one read are enough.")
     if "discover_capabilities" in offered and any(name.startswith("set_") for name in offered) and LOOSE_NAME.search(text) and SETTING_WORD.search(text) and not setting:
         notes.append("Choosing a listed option: the message names a setting's value loosely or misspelled (a font, a colour, a mode). List the options with discover_capabilities, choose the listed option closest to the message's spelling letter by letter (one carrying the variant when it names a cut or edition), and then call the setter with it: both calls are needed.")
+    if "run_code" in offered and FIGURE_LIST.search(text) and WORK_OUT.search(text) and not SANDBOX.search(text):
+        notes.append("Working out figures: the message gives the figures and asks for a result worked out from them. Run the arithmetic once with run_code, even when the sum looks easy: the code tool is how calculations are done here. One run is enough whatever its output shows; then give the result.")
     add_ons = add_on_tools(request, names)
     if add_ons:
         notes.append("Named add-on tool: the message names the listed tool " + " / ".join(add_ons) + ". Call it once, right away, with the subject the message gives; fill any field the message leaves open with a usual value instead of asking, and do not look anything up first. Then report the figure its result gives for that subject.")
+    # the broad note is for instructions no other note covers; next to a specific note it only dilutes it
+    if INSTRUCTION.search(text) and not asks and not notes:
+        notes.append("Doing what the message says: the message is an instruction for now. A stored setting, mode or status in the notes (a mode that follows the system, figures not ready yet, an earlier plan) tells you how things stood before this message, not a reason to decline: make the call the message asks for, taking any values it needs from the records. Only a note saying the user has not yet decided this thing, or that it is already done, changes that.")
     return notes
 
 
@@ -165,5 +181,7 @@ def guide_block(request: str, tools: Iterable) -> str:
 
 def moves_to_action(request: str, tools: Iterable) -> bool:
     """A request one of the notes is for belongs on the action lane, where the notes are shown. A
-    setting check is the exception: when the note already keeps the value, no call is the answer."""
-    return any(not note.startswith("Checking a setting") for note in guidance(request, tools))
+    setting check is the exception: when the note already keeps the value, no call is the answer.
+    So are the two broad notes (an instruction, figures to work out): their cues alone are too
+    common in questions about the records to move a request off the records lane."""
+    return any(not note.startswith(STAYING) for note in guidance(request, tools))
