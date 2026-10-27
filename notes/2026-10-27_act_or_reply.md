@@ -68,3 +68,24 @@ runs) of the five v3fix lost that both others solved: contact_research_email and
 (noise), declarative_preference 1/2, code_compute and state_dependent_email 0/2. In both of those
 the model kept a no-call reply through the neutral drafts note and the reply check. Adjusted for
 the noise, v3fix is about 0.90, level with horizon v1: no tool gain left worth a resubmission.
+
+## Pre-answer notes v4b..v4d on held-out seeds (2026-10-27)
+
+All 100 tool questions, platform providers. 3126 and 138 were seen while tuning; the last two
+seeds were not.
+
+| Seed | horizon v1 | v4b | v4d |
+|---|---|---|---|
+| 3126988865203959995 (tuned) | 0.920 | 0.951 | |
+| 138287359920490853 (tuned) | 0.930 | 0.929 | |
+| 7019583318866023713 (held out) | 0.948 | 0.928 | |
+| 5274190036118427761 (held out) | | | 0.915 |
+
+The gains on the tuned seeds did not carry over; on held-out seeds the v4 line is level with v1
+or below it, inside the run-to-run noise of about 0.03. One real, general fix stands: when a tool
+result does not hold the field asked for, give what it says about the named thing (decoy add-on
+questions 30/30 for v4d against 29/30 for v1 and 26/30 for v4b). Of v4d's eight misses on seed
+5274..., one is ours (the sharper listed-option wording chose "navy" over the "blue variant");
+the others are notes and lanes v1 shares (agreed-work routing x2, send-to-them, setting check,
+effort clarification without the slot name, the records-lane web loop, the follow-up read
+artifact).
