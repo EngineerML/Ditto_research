@@ -37,6 +37,9 @@ NOT_DELIVERED = "not_delivered"
 BLOCKED = "blocked_before_execution"
 SEND = "SEND"
 HOLD = "HOLD"
+# After a memory write went through, the reply should tell the user what was kept, not just "Got it".
+MEMORY_WRITES = frozenset({"save_memory", "update_memory"})
+KEPT_NOTE = "\n\n[Kept. Your reply tells the user in one short sentence of your own what you kept and its value; do not repeat their message back.]"
 REPEAT_OUTCOMES = {COMPLETED: "already ran (its result is above)", DELIVERY_UNKNOWN: "was already sent and no result came back (whether it ran is unknown)"}
 HELD_REPEAT_NOTE = "Not sent: an identical {name} call, with exactly these arguments, {outcome} earlier in this request, and the check made before sending found that the user's message does not ask for this exact call more times than it was already sent, so this one was held and nothing was sent."
 UNANSWERED_HELD_NOTE = "Not sent: an identical {name} call, with exactly these arguments, {outcome} earlier in this request, and the check made before sending could not be completed, so this one was held and nothing was sent. If the user's message asks for this exact call more times than it was already sent, sending it again puts it to that check again."

@@ -21,7 +21,7 @@ from .memory.retrieval import Candidate, UserIndex, asked_part, identifier_token
 from .memory.worksheet import render_worksheet
 from .packet import Packet, build_packet, compose, fused_rank, identifier_focus, person_cards, refill
 from .protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
-from .tools import BLOCKED, UNHELD_IDS_NOTE, MemoryTools, ToolExecutor, openai_tools
+from .tools import BLOCKED, COMPLETED, KEPT_NOTE, MEMORY_WRITES, UNHELD_IDS_NOTE, MemoryTools, ToolExecutor, openai_tools
 
 log = logging.getLogger("harness.records")
 
@@ -68,6 +68,8 @@ TIMELINE_BRIEF = "List every record that is about the subject the message names:
 VALUE_KINDS = frozenset("ecqnik")
 STATED_KINDS = frozenset("ecqn")
 ASSISTANT_WORD = "ditto"
+# A message that only tells the assistant something: a bare "Got it!" leaves the user unsure what was kept.
+STATEMENT_NOTE = "If the message only tells you something about the user to keep and asks for nothing, then once it is kept, reply in one short sentence of your own that names what you kept and its value; do not repeat their message back."
 TIMELINE_NOTE = "A separate reading pass over the same records listed what they say about the subject of the message, below. It has not been checked, and the records decide wherever they differ from it:\n{note}"
 
 
@@ -415,6 +417,8 @@ class RecordsEngine:
         if finder is not None:
             max_tokens = max(max_tokens, LONG_RECORDS_MAX_TOKENS)
         composed = compose(packet, req.user_input, precursor=block)
+        if statement:
+            composed += "\n\n" + STATEMENT_NOTE
         named = names_a_value(index, self.anchors, req.user_input)
         listed = await self.timeline(req, packet, composed, deadline, outcome) if self.timeline_shape(req, packet, statement, named) else []
         if listed and finder is not None:
@@ -572,6 +576,8 @@ class RecordsEngine:
                                 outcome.events.append(f"not sent: {call.name}")
                             if len(self.executor.observed) > reached:
                                 outcome.host_calls += 1
+                            if state == COMPLETED and call.name in MEMORY_WRITES:
+                                output += KEPT_NOTE
                     messages.append({"role": "tool", "tool_call_id": call.id, "content": output})
                 if not deliberating and not checking:
                     outcome.content = result.content or outcome.content

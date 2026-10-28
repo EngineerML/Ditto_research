@@ -16,7 +16,7 @@ from .packet import Packet, compose, render_records
 from .protocol import RunRequest
 from .route import Route, route_by_catalog
 from .surface import Surface
-from .tools import BLOCKED, COMPLETED, HOLD, REPEAT_OUTCOMES, SEND, MemoryTools, Receipt, ToolExecutor, call_identity
+from .tools import BLOCKED, COMPLETED, HOLD, KEPT_NOTE, MEMORY_WRITES, REPEAT_OUTCOMES, SEND, MemoryTools, Receipt, ToolExecutor, call_identity
 
 log = logging.getLogger("harness.action")
 
@@ -655,7 +655,7 @@ class ActionEngine:
                             read_worthy = read_worthy or (state == COMPLETED and len(output.split()) > BARE_RESULT_WORDS)
                             linked = linked or (state == COMPLETED and "://" in output)
                             if state == COMPLETED:
-                                output += TOOL_RESULT_SUFFIX
+                                output += TOOL_RESULT_SUFFIX + (KEPT_NOTE if call.name in MEMORY_WRITES else "")
                     messages.append({"role": "tool", "tool_call_id": call.id, "content": output})
                 if read_worthy and turns_left and lane_reason not in UNCHECKED_LANE_REASONS and deadline - time.monotonic() >= RESULT_READ_MIN_SECONDS:
                     verdict = await ResultVerdict(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort)(req.user_input, self.executor.ledger)
