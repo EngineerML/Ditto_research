@@ -10,6 +10,7 @@
 # SRC the image must already exist. REPEATS (default 1) runs every image that many times.
 # PREFS (OpenRouter provider preferences, JSON) defaults to the cheap pinned list; PREFS=platform
 # uses the platform relay's own default (fastest provider by throughput), as validators score.
+# BENCH (default 13) is the bench version the scorer generates and grades.
 source /etc/profile.d/zz-proxy.sh
 cd /home/bittensor/ditto || exit 1
 CASES=${1:?case list}; WRITES=${2:?replay writes}; shift 2
@@ -37,7 +38,7 @@ for round in $(seq 1 "$REPEATS"); do
     IFS='=' read -r label tag src <<< "$spec"
     $PY tools/key_usage.py --need 1 || { echo "balance under \$1, stopping"; exit 1; }
     echo "===== $label ($tag) round $round, $(wc -l < "$CASES") questions, providers $PREFS_NAME $(date -u +%H:%M) $($PY tools/key_usage.py)"
-    timeout 11000 python3 tools/practice_docker.py --image "ditto-harness:$tag" --run-size full --seed "$SEED" --trace --timeout 10800 \
+    timeout 11000 python3 tools/practice_docker.py --image "ditto-harness:$tag" --run-size full --seed "$SEED" --bench-version "${BENCH:-13}" --trace --timeout 10800 \
       --env "HARNESS_PROVIDER_PREFS=$PREFS" --only-cases "$CASES" --replay-writes "$WRITES" 2>&1 | grep -E "saved|stopped early|Error" | tail -2
     run=$(ls -td practice/*_ditto-harness-${tag}_full_rerun | head -1)
     echo "$PREFS" > "$run/provider_prefs.json"

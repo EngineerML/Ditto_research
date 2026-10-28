@@ -8,6 +8,7 @@ what validators build for the same seed and surface salt.
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 from dataclasses import dataclass
 from functools import cached_property
@@ -16,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 GENERATE = ROOT / ".cache" / "dittobench-generate"
 DATASETS = ROOT / ".cache" / "datasets"
-BENCH = 13
+BENCH = int(os.environ.get("DITTO_BENCH", "13"))  # 14 for the v14 rollout; datasets are cached per version
 
 MEMORY_READS = frozenset({"search_memories", "search_subjects", "fetch_memories", "search_memories_in_subjects"})
 MEMORY_WRITES = frozenset({"save_memory", "update_memory", "delete_memory"})
