@@ -32,7 +32,8 @@ from lab import data  # noqa: E402
 from trace_compare import dump, effort, evidence_in_packet, match, purpose  # noqa: E402
 
 
-def runs_by_seed(since: str) -> dict[int, list[tuple[str, Path]]]:
+def runs_by_seed(since: str, phase: str = "tool") -> dict[tuple[int, int], list[tuple[str, Path]]]:
+    """Traced runs that graded questions of this phase, by (seed, bench version)."""
     found = collections.defaultdict(list)
     for d in sorted(glob.glob(str(HERE / "practice" / "2026*"))):
         path = Path(d)
@@ -45,10 +46,11 @@ def runs_by_seed(since: str) -> dict[int, list[tuple[str, Path]]]:
         except ValueError:
             continue
         per = report.get("report", {}).get("per_case") or []
-        if not any(c.get("kind") == "tool" for c in per) or report.get("seed") is None:
+        if not any((c.get("kind") == "tool") == (phase == "tool") for c in per) or report.get("seed") is None:
             continue
         label = re.search(r"ditto-harness-([\w-]+?)_(?:full|small|medium)", path.name).group(1)
-        found[int(report["seed"])].append((f"{label} {path.name[:16]}", path))
+        bench = int(report.get("bench_version") or 13)
+        found[(int(report["seed"]), bench)].append((f"{label}{'' if bench == 13 else f'@v{bench}'} {path.name[:16]}", path))
     return found
 
 
@@ -85,13 +87,15 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("out", type=Path)
     ap.add_argument("--since", default="20261026")
+    ap.add_argument("--phase", choices=("tool", "memory"), default="tool")
     args = ap.parse_args()
     (args.out / "full").mkdir(parents=True, exist_ok=True)
     (args.out / "families").mkdir(parents=True, exist_ok=True)
     families: dict[str, list[str]] = collections.defaultdict(list)
     table: dict[str, dict[str, list[int]]] = collections.defaultdict(lambda: collections.defaultdict(lambda: [0, 0]))
-    for seed, runs in sorted(runs_by_seed(args.since).items()):
-        cases = [c for c in data.load(seed, 0, "full") if c.phase == "tool"]
+    for (seed, bench), runs in sorted(runs_by_seed(args.since, args.phase).items()):
+        data.BENCH = bench
+        cases = [c for c in data.load(seed, 0, "full") if (c.phase == "tool") == (args.phase == "tool")]
         loaded = []
         for name, path in runs:
             report = json.load(open(path / "report.json"))["report"]
