@@ -1,7 +1,7 @@
 """Run the screener's L2/L3 source review on a local tarball, built the way the platform's gate builds it.
 
     .cache/screener-venv/bin/python tools/l2l3_review_local.py TARBALL L1_OBSERVATION.json OUT.json \
-        [--max-cost-usd 25] [--dry-run]
+        [--lineage PACKET.json] [--max-cost-usd 25] [--dry-run]
 
 Mirrors workers/screener/ditto_screener/gate.py `_configure_source_reviewer` with the production
 defaults of config.py: L2 analyst openai/gpt-6-sol (fallback z-ai/glm-5.2), L3 critic openai/gpt-6-sol
@@ -13,6 +13,9 @@ L1 is not run again: the observation written by tools/l1_review_local.py for the
 sha256, production L1 settings) is handed to the layered agent's `resolve_lead`, as the platform does
 with its own L1 result. What a local run lacks: the platform's signed scorer runtime lease and any
 review-settings revision the operators applied on top of the defaults.
+
+--lineage passes a resubmission's lineage packet (tools/lineage_packet_local.py) to L2/L3 as the
+platform passes its own; it must be the packet the L1 observation was made with.
 
 --dry-run checks the tarball, the L1 binding, the analyzer image and the key file, prints the
 configuration, and stops before any model call.
@@ -43,6 +46,7 @@ from ditto_screener.l2_review import (  # noqa: E402
 )
 from ditto_screener.policy import SourceReviewObservation  # noqa: E402
 from ditto_screener.source_review import OpenRouterSourceReviewAgent  # noqa: E402
+from ditto_screening_protocol import ReviewLineagePacket  # noqa: E402
 
 IMAGE = "ditto-screener-l2-analyzer:local"
 # config.py production defaults (gate.py passes these to the agents)
@@ -112,24 +116,33 @@ def build(args, cost_cap: float) -> LayeredSourceReviewAgent:
         adjudicator=build_adjudicator(config), adjudicator_reserve_seconds=p["adjudicator_timeout"], always_escalate=True)
 
 
-def checks(args) -> tuple[str, SourceReviewObservation]:
+def checks(args) -> tuple[str, SourceReviewObservation, ReviewLineagePacket | None]:
     sha = sha256(args.tarball)
     observation = l1_observation(args.l1)
-    bound = (json.loads(args.l1.read_text()).get("finding") or {}).get("artifact_sha256")
+    raw = json.loads(args.l1.read_text())
+    bound = (raw.get("finding") or {}).get("artifact_sha256")
     print(f"tarball {args.tarball} sha256 {sha[:16]}; L1 bound to {str(bound)[:16]}; L1 risk {observation.risk_level}, certified {observation.clearance_certified}")
     if bound and bound != sha:
         raise SystemExit("the L1 observation belongs to another tarball; review that tarball, or rerun L1 on this one")
+    packet = ReviewLineagePacket.model_validate_json(args.lineage.read_text()) if args.lineage else None
+    if (packet.packet_sha256 if packet else None) != raw.get("lineage_packet_sha256"):
+        raise SystemExit("L1 was run with another lineage packet (or none); pass the same --lineage to both")
+    if packet is not None:
+        if packet.artifact_sha256 != sha:
+            raise SystemExit(f"the lineage packet was built for another tarball ({packet.artifact_sha256[:16]})")
+        print(f"lineage packet {packet.packet_sha256[:16]}: parent v{packet.parent.version}, scope {packet.scope.value}, "
+              f"{packet.changed_file_count} files changed, {len(packet.rulings)} rulings, {len(packet.findings)} findings")
     if not args.key_file.is_file():
         raise SystemExit(f"no key file at {args.key_file}")
     image = subprocess.run(["docker", "image", "inspect", IMAGE], capture_output=True)
     print(f"analyzer image {IMAGE}: {'present' if image.returncode == 0 else 'MISSING (docker build -f workers/screener/deploy/l2-analyzer.Dockerfile -t ' + IMAGE + ' workers/screener)'}")
     if image.returncode != 0:
         raise SystemExit(1)
-    return sha, observation
+    return sha, observation, packet
 
 
 async def run(args) -> int:
-    sha, observation = checks(args)
+    sha, observation, packet = checks(args)
     agent = build(args, args.max_cost_usd)
     print(f"configuration: L2 {PRODUCTION['l2_model']} (fallback {', '.join(PRODUCTION['l2_fallbacks'])}), L3 {PRODUCTION['l3_model']}, "
           f"adjudicator {PRODUCTION['adjudicator_model']}, cost cap ${args.max_cost_usd}, always escalate, mode enforce")
@@ -139,7 +152,7 @@ async def run(args) -> int:
     started = time.monotonic()
     deadline = asyncio.get_running_loop().time() + PRODUCTION["l2_timeout"] + PRODUCTION["adjudicator_timeout"]
     result = await agent.resolve_lead(str(args.tarball), artifact_sha256=sha, attempt_id=uuid.uuid4(),
-                                      l1_observation=observation, deadline=deadline, policy_version=13)
+                                      l1_observation=observation, deadline=deadline, policy_version=13, review_lineage=packet)
     out = plain(result)
     args.out.write_text(json.dumps(out, indent=1))
     finding = out.get("finding") or {}
@@ -156,6 +169,7 @@ def main() -> int:
     ap.add_argument("l1", type=Path)
     ap.add_argument("out", type=Path)
     ap.add_argument("--key-file", type=Path, default=HERE / ".cache" / "review_key")
+    ap.add_argument("--lineage", type=Path)
     ap.add_argument("--max-cost-usd", type=float, default=PRODUCTION["l2_cost"])
     ap.add_argument("--dry-run", action="store_true")
     return asyncio.run(run(ap.parse_args()))
