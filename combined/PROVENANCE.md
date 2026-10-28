@@ -18,8 +18,9 @@ it:
   people a request names, nicknames included).
 - `app/short.py`: the topic path's prompt and record choice, including a sentence asking for a
   worked-out figure alone on the answer line; on the program path, notes ordered by their filing
-  dates (the order pass only orders notes filed at the same moment), and one answer for the same
-  user asking the same question of the same notes again, the first request's own reply.
+  dates (the order pass only orders notes filed at the same moment), and, for the same user asking
+  the same question of the same notes again, the first request's reply shown to the deciding model
+  as a note it may give again or replace.
 - `app/action.py`: the notes' placement, the checks reading the request alone, and a cut-off
   turn asked again at the same effort with more room.
 - `app/tools.py`, `app/records.py`: after a note is kept or updated, and when the user only states
