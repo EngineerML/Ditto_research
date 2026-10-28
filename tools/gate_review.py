@@ -41,9 +41,9 @@ def norm(text: str) -> str:
 
 def runs_for(seed: int, since: str) -> list[Path]:
     out = []
-    for d in sorted(glob.glob(str(HERE / "practice" / "2026*_full_rerun"))):
+    for d in sorted(glob.glob(str(HERE / "practice" / "2026*_full*"))):
         path = Path(d)
-        if path.name < since or not (path / "report.json").is_file() or not (path / "trace.jsonl").is_file():
+        if path.name < since or "merged" in path.name or not path.name.endswith(("_full", "_full_rerun")) or not (path / "report.json").is_file() or not (path / "trace.jsonl").is_file():
             continue
         if int(json.load(open(path / "report.json")).get("seed") or 0) == seed:
             out.append(path)

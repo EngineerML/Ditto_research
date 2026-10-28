@@ -47,7 +47,6 @@ WRITE_VERBS = frozenset("create delete remove clear update change set send forwa
 SENDING_VERBS = frozenset("email mail text message".split())
 CODE_IDENTIFIER = re.compile(r"\b(?=[0-9a-z]*[0-9])(?=[0-9a-z]*[a-z])[0-9a-z]{12,}\b")
 STORED_DETAIL_REASONS = frozenset({"live", "read-capability", "imperative", "imperative-setter"})
-SUBORDINATE_LEAD = re.compile(r"^\s*(?:when|whenever|once|if)\s+(?:you|you're|you've|i|i'm|i've|we|we're)\b[^,?]*,\s*", re.I)
 POLITE_REQUEST = re.compile(r"^\s*(?:can|could|would|will)\s+you\s+(?:please\s+)?([a-z]+)\b", re.I)
 CAUSATIVE = re.compile(r"^\s*(?:please\s+)?(?:have|get)\s+((?:[a-z']+\s+){1,3}[a-z']+)", re.I)
 OUTSIDE_SOURCE = re.compile(r"\b(?:web|online|internet|google|browse|news|look (?:it|this|that) up)\b", re.I)
@@ -232,13 +231,6 @@ def asks_stored_detail(request: str) -> bool:
     return False
 
 
-def main_clause(request: str) -> str:
-    lead = SUBORDINATE_LEAD.match(request)
-    if not lead or "?" in request or not request[lead.end():].strip():
-        return request
-    return request[lead.end():]
-
-
 def requests_action(request: str) -> bool:
     polite = POLITE_REQUEST.match(request)
     if polite and polite.group(1).lower() in DO_VERBS:
@@ -345,12 +337,6 @@ def about_own_records(request: str, tools: list[ToolDefinition], lane: Lane, ind
     if not asks(request, clauses, tails) or acting(request) or unknown_name(request, index):
         return False
     return held_in_records(request, tools, index, anchors)
-
-
-def names_held_alias(request: str, tools: list[ToolDefinition], index: UserIndex, aliases: set[str]) -> bool:
-    if OUTSIDE_SOURCE.search(request) or names_listed_tool(request, tools) or fetching(request) or unknown_name(request, index):
-        return False
-    return any(re.search(r"\b" + re.escape(alias) + r"\b", request) for alias in aliases)
 
 
 def fetches_from_tool(request: str, tools: list[ToolDefinition], carried: bool = False) -> bool:

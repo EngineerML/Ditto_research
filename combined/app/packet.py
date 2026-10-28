@@ -76,11 +76,6 @@ def code_components(records: list[Candidate]) -> list[list[Candidate]]:
     return list(grouped.values())
 
 
-def held_identifier(message: str, ordered: list[Candidate]) -> bool:
-    tokens = set(identifier_tokens(message)) | {code.lower() for code in CODE_RE.findall(message)}
-    return any(token in (cand.pair.prompt + " " + cand.pair.response).lower() for token in tokens for cand in ordered)
-
-
 def identifier_focus(message: str, ordered: list[Candidate]) -> list[Candidate]:
     for token in identifier_tokens(message):
         carrying = [cand for cand in ordered if token in (cand.pair.prompt + " " + cand.pair.response).lower()]

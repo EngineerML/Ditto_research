@@ -16,8 +16,14 @@ it:
   full-text orders.
 - `app/packet.py`, `app/records.py`: `fused_rank`, `refill` and person cards (records of the
   people a request names, nicknames included).
-- `app/short.py`: the topic path's prompt and record choice.
-- `app/action.py`: the notes' placement and the checks reading the request alone.
+- `app/short.py`: the topic path's prompt and record choice, including a sentence asking for a
+  worked-out figure alone on the answer line; on the program path, notes ordered by their filing
+  dates (the order pass only orders notes filed at the same moment), and one answer for the same
+  user asking the same question of the same notes again, the first request's own reply.
+- `app/action.py`: the notes' placement, the checks reading the request alone, and a cut-off
+  turn asked again at the same effort with more room.
+- `app/tools.py`, `app/records.py`: after a note is kept or updated, and when the user only states
+  something to keep, the model is asked to say back in its own words what was kept.
 
 The model is the platform's (`openai/gpt-oss-20b` through the request's relay); no weights and no
 benchmark data ship with the harness.
