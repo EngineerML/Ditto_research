@@ -12,6 +12,8 @@ questions it touches, paired against the build before it, on fresh v14 seeds (BE
 | M3 | Topic path: owner = the person last handed the thread; "who has the ball" = the latest open action even when the thread is later done or dropped (THREAD_STATE, plus a clause in the latest-passages draft) | all world-story families, fresh seed 5989349192384850320, v7b (M3+M4+M5) vs v7a; $0.28 for 78 x 2 | owner-current 10/13 vs 9/13, next-action 10/13 both (+1 -1), x-owner-email 9/13 vs 10/13. The latest-passages draft still names the open-action holder for owner questions and the decide copies it; the next-action loss overrode a right draft | no |
 | M4 | Topic path: asked whether the notes agree, each one's status, then whether they agree | same run | status-disagree 0/2 both: the model listed every record's content, and in one said "no disagreement"; no conflict word on either ANSWER line | no |
 | M5 | Topic path: a figure the notes say how to work out: work it out, only the result on the ANSWER line | same run | quantity 7/9 vs 6/9 (+1 -0); weak evidence | yes |
+| M6 | Records lane decline (NO_RECORD_REPLY, withdrawn-value line): name each checked record by the details it gives (full names and nicknames, job, employer, place, what is awaited), still no figure, code or contact; a withdrawn value: say whose it was. The absence grader scores a decline 1 only when it holds one of the case's grounding tokens (grade/v13.go gradeDeclineV13) | all absence families, fresh seed 8800536709095711689, v7c vs v7b; $0.70 for 50 x 2 | 0.860 vs 0.840 (+5 -4), twins unchanged. One loss was M6's own: the decline quoted the records word for word, figures included, read as an asserted distractor | no (see M6b) |
+| M6b | M6 plus "in a few words of your own, not by quoting it" | the 25 decline questions of the same seed, v7d once; $0.18 | 0.760 vs v7c 0.800 vs v7b 0.760; 7 of 25 questions flip between v7c and v7d | no: no effect above the noise, both reverted |
 
 Seen while testing, for later: some real requests ("Walk me through the vendor changes, earliest first.")
 are routed as statements, which also skips deliberation; the records lane keeps effort low for every turn
@@ -26,6 +28,13 @@ both statuses plus a conflict word):
 - the ANSWER line drops an asked part that the prose gives ("Caden Ogden; email" without "share the
   final headcount"), 2 next-action misses on both builds;
 - x-owner-email: the owner is named right but the email held in other records is not joined.
+
+Absence questions are noise-dominated: about a quarter of them flip between two runs of nearly the
+same build (whether the decline happens to name a grounding token, whether the follow-up pass's
+nickname-with-full-name lands in the reply). A one-question effect needs repeats to see, so further
+absence wording is not worth the credits without them. The follow-up question is not a fabrication
+risk: the grader treats any sentence ending in "?" as an echo and never as an assertion (segment.echo
+in grade/v13_claims.go); it is where much of the decline grounding comes from.
 
 M2 costs v13 program questions (their dates are shuffled); v14 is the scoring version for any new upload.
 
