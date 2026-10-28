@@ -81,15 +81,13 @@ EMAIL_ASK = _rx(r"\b(?:which|what|wh[a-z]{2,4}|w[a-z]h[a-z]{1,3})\b[^.?!]{0,60}\
                 r"|\bemail (?:reaches|belongs|is current)\b|\bemail\b[^.?!]{0,30}\bthese days\b")
 # asking what has changed out in the world since an old note: a live lookup, not a note to correct
 CHANGED_SINCE = _rx(r"\bwhat(?:'s| has| have)?\b[^.?!]{0,20}\bchanged\b")
-# an instruction that opens with the thing to do ("Make the app dark", "Send them the numbers now")
-INSTRUCTION = _rx(r"^\W*(?:please\s+)?(?:make|set|switch|turn|change|send|email|forward|put|book|block|bl\w{2}k|add|schedule|create|start|update|move)\b")
 # a run of figures the message itself lists ("312, 980, and 1510"), not dates or ids around a record
 FIGURE_LIST = re.compile(r"(?<![\w-])\d+(?:\.\d+)?\s*(?:,\s*(?:and\s+)?|\s+and\s+)\d+(?:\.\d+)?(?![\w-])")
 WORK_OUT = _rx(r"\b(?:mean|me\w{1,3}n|average|sum|normali[sz]e|fractions?|percent\w*|ratio|difference|how far apart|split|divide|multiply|add up|median|range|work (?:this|it) out)\b")
 CRAWL = _rx(r"\b(?:scrape|scr\w{2}pe|crawl)\b")
 JOB_LIST = _rx(r"\bjobs? list\b|\blist of (?:my )?jobs\b|\bmy [\w'-]+ (?:crawl|scrape|research|agent) job\b")
 
-STAYING = ("Doing what the message says", "Working out figures")
+STAYING = ("Working out figures",)
 GENERIC_HEADS = frozenset({"search", "list", "set", "run", "create", "edit", "read", "file", "save", "update", "delete", "fetch",
                            "calendar", "gmail", "execute", "discover", "apply", "artifacts", "get", "send", "add", "remove"})
 
@@ -173,9 +171,6 @@ def guidance(request: str, tools: Iterable) -> list[str]:
     add_ons = add_on_tools(request, names)
     if add_ons:
         notes.append("Named add-on tool: the message names the listed tool " + " / ".join(add_ons) + ". Call it once, right away, with the subject the message gives; fill any field the message leaves open with a usual value instead of asking, and do not look anything up first. Then report the figure its result gives for that subject, quoted exactly, even when the result names it differently from the message (an id or number the message asks for may come back as the subject's figure); leave out figures it gives for other things.")
-    # the broad note is for instructions no other note covers; next to a specific note it only dilutes it
-    if INSTRUCTION.search(text) and not asks and not notes:
-        notes.append("Doing what the message says: the message is an instruction for now. A stored setting, mode or status in the notes (a mode that follows the system, figures not ready yet, an earlier plan) tells you how things stood before this message, not a reason to decline: make the call the message asks for, taking any values it needs from the records. Only a note saying the user has not yet decided this thing, or that it is already done, changes that.")
     return notes
 
 
@@ -184,8 +179,8 @@ def guide_block(request: str, tools: Iterable) -> str:
 
 
 def moves_to_action(request: str, tools: Iterable) -> bool:
-    """A request one of the notes is for belongs on the action lane, where the notes are shown. The two
-    broad notes (an instruction, figures to work out) are the exception: their cues alone are too
-    common in questions about the records to move a request off the records lane. Setting checks move
+    """A request one of the notes is for belongs on the action lane, where the notes are shown. The
+    broad note on figures to work out is the exception: its cues alone are too common in questions
+    about the records to move a request off the records lane. Setting checks move
     too: the records lane shows no notes and set the value even when it already matched."""
     return any(not note.startswith(STAYING) for note in guidance(request, tools))
