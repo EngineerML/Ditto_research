@@ -44,7 +44,7 @@ MIN_DENSE_NOTES = 3
 MIN_THREAD_NOTES = 2
 PARAGRAPH_BREAK = "\n\n"
 PASSAGES_HEADER = "Passages that name “{phrase}”, copied from the notes below:"
-LEAD_HEADER = "The statements of the notes below, in the order an earlier reading of their words put them:"
+LEAD_HEADER = "The statements of the notes below, in the order they were filed:"
 LEAD_MAX_STATEMENT_CHARS = 1000
 PROGRAM_MAX_RECORD_CHARS = 2000
 PERSON_BRIEF = "Before the message is answered: which person is it asking about? Reply with that person's full name as the notes give it, and nothing else."
@@ -212,7 +212,9 @@ class ShortPath:
         if reply is None:
             return None
         outcome.events.append(f"order pass: {first_line(reply)}")
-        return sequence_from(reply, shuffled)
+        # A case file is filed in the order things happened, so the filing dates come first; the
+        # reading of the words only orders notes filed at the same time.
+        return sorted(sequence_from(reply, shuffled), key=lambda group: group[0].timestamp)
 
     async def answer(self, req: RunRequest, records: list[MemoryPair], token: str, deadline: float, outcome: Outcome) -> bool:
         groups = await self.groups(req, records, token, deadline, outcome)
