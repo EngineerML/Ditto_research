@@ -214,8 +214,8 @@ class ShortPath:
         if reply is None:
             return None
         outcome.events.append(f"order pass: {first_line(reply)}")
-        # A case file is filed in the order things happened, so the filing dates come first; the
-        # reading of the words only orders notes filed at the same time.
+        # The date a note was filed is firmer evidence of order than a reading of its words, so the
+        # dates order the notes and the reading only orders notes filed at the same moment.
         return sorted(sequence_from(reply, shuffled), key=lambda group: group[0].timestamp)
 
     async def answer(self, req: RunRequest, records: list[MemoryPair], token: str, deadline: float, outcome: Outcome) -> bool:
@@ -229,8 +229,9 @@ class ShortPath:
         shown = f"{opening}{NOTES_HEADER}\n\n{notes}"
         asked = asked_part(req.user_input)
         key = hashlib.sha256(json.dumps([normalize_user_id(req.user_id), system, shown, asked]).encode()).hexdigest()
-        # Rewordings of one question over the same notes get one reply: the first to get here
-        # writes it, the rest ship it as it is.
+        # The same user asking the same question of the same notes again, while the first answer is
+        # still being written or just after, gets that answer rather than a second one that may
+        # differ. The key holds the user, the notes as shown and the question asked, nothing else.
         held = self.replies.get(key)
         if held is not None:
             shared = await self.earlier_reply(held, deadline, outcome)
@@ -262,9 +263,9 @@ class ShortPath:
         try:
             reply = await asyncio.wait_for(asyncio.shield(held), max(0.01, deadline - time.monotonic() - SHARED_WAIT_RESERVE))
         except TimeoutError:
-            outcome.events.append("shared reply: the reply for an earlier rewording over the same notes is not ready in time")
+            outcome.events.append("shared reply: the answer to the same question asked earlier is not ready in time")
             return None
-        outcome.events.append("shared reply: written for an earlier rewording over the same notes" if reply is not None else "shared reply: none")
+        outcome.events.append("shared reply: the answer to the same question asked earlier" if reply is not None else "shared reply: none")
         return reply
 
     async def shared_draft(self, req: RunRequest, key: str, messages: list[dict[str, Any]], deadline: float, outcome: Outcome) -> str | None:
