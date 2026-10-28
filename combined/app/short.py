@@ -60,6 +60,7 @@ RECUR_TYPO_WORD = 4
 LATEST_SYSTEM = "You are Ditto, the user's assistant with long-term memory. Below are the latest passages of a longer thread in the user's saved notes. Answer the message only if these passages settle it by themselves. If the answer depends on anything earlier in the thread, reply with one sentence saying that these passages do not settle it, and nothing else. Otherwise reply briefly, then end with one final line 'ANSWER: <only the value asked for, as short as the passages put it, in their words, with ordinary words spelled correctly>'; when several things are asked, give them on that line in the order asked, separated by ' ; '."
 LATEST_BRIEF = "Passages:\n{passages}\n\nMessage:\n{message}"
 SHARED_DRAFT_NOTE = "A draft reply, written once from these same notes for the question \"{asked}\"; it has not been checked, and the notes decide wherever they differ:\n{draft}\n\nCheck the draft against the notes, then reply to the message as asked at the start."
+SHARED_REPLY_NOTE = "A reply given earlier from these same notes to the question \"{asked}\"; the message below may word the request differently or add to it, and the notes and the message decide wherever they differ:\n{reply}\n\nCheck the reply against the notes and the message, then reply to the message as asked at the start."
 SHARED_WAIT_RESERVE = 60.0
 DRAFT_NOTE = "A draft reply, written from a reading of only the passages picked out above:\n\n{draft}\n\nCheck the draft against every note above, then reply to the message as asked at the start: briefly, ending with the line 'ANSWER: …', without mentioning the draft."
 
@@ -230,15 +231,13 @@ class ShortPath:
         asked = asked_part(req.user_input)
         key = hashlib.sha256(json.dumps([normalize_user_id(req.user_id), system, shown, asked]).encode()).hexdigest()
         # The same user asking the same question of the same notes again, while the first answer is
-        # still being written or just after, gets that answer rather than a second one that may
-        # differ. The key holds the user, the notes as shown and the question asked, nothing else.
+        # still being written or just after, has that answer shown to the deciding model as a note:
+        # the model reads the whole new message and gives the answer again or replaces it. The key
+        # holds the user, the notes as shown and the question asked, nothing else.
         held = self.replies.get(key)
         if held is not None:
-            shared = await self.earlier_reply(held, deadline, outcome)
-            if shared is not None:
-                outcome.content, outcome.answer = shared
-                return True
-            return await self.own_reply(req, key, system, shown, asked, records, groups, deadline, outcome)
+            earlier = await self.earlier_reply(held, deadline, outcome)
+            return await self.own_reply(req, key, system, shown, asked, records, groups, deadline, outcome, earlier)
         mine: asyncio.Future[tuple[str, str | None] | None] = asyncio.get_running_loop().create_future()
         self.replies[key] = mine
         while len(self.replies) > READINGS_HELD:
@@ -253,19 +252,22 @@ class ShortPath:
             mine.set_result(reply)
         return handled
 
-    async def own_reply(self, req: RunRequest, key: str, system: str, shown: str, asked: str, records: list[MemoryPair], groups: list[list[MemoryPair]], deadline: float, outcome: Outcome) -> bool:
-        draft = await self.shared_draft(req, key, program_messages(system, shown, "", req.user_input), deadline, outcome)
-        note = SHARED_DRAFT_NOTE.format(asked=asked, draft=draft.strip()) + "\n\n" if draft is not None else ""
-        outcome.events.append(f"short path records={len(records)} groups={len(groups)}{' shared draft' if note else ''}")
+    async def own_reply(self, req: RunRequest, key: str, system: str, shown: str, asked: str, records: list[MemoryPair], groups: list[list[MemoryPair]], deadline: float, outcome: Outcome, earlier: tuple[str, str | None] | None = None) -> bool:
+        if earlier is not None:
+            note = SHARED_REPLY_NOTE.format(asked=asked, reply=earlier[0].strip()) + "\n\n"
+        else:
+            draft = await self.shared_draft(req, key, program_messages(system, shown, "", req.user_input), deadline, outcome)
+            note = SHARED_DRAFT_NOTE.format(asked=asked, draft=draft.strip()) + "\n\n" if draft is not None else ""
+        outcome.events.append(f"short path records={len(records)} groups={len(groups)}{' earlier reply' if earlier is not None else ' shared draft' if note else ''}")
         return await decide(self.engine, req, program_messages(system, shown, note, req.user_input), self.effort, self.max_tokens, deadline, outcome)
 
     async def earlier_reply(self, held: asyncio.Future[tuple[str, str | None] | None], deadline: float, outcome: Outcome) -> tuple[str, str | None] | None:
         try:
             reply = await asyncio.wait_for(asyncio.shield(held), max(0.01, deadline - time.monotonic() - SHARED_WAIT_RESERVE))
         except TimeoutError:
-            outcome.events.append("shared reply: the answer to the same question asked earlier is not ready in time")
+            outcome.events.append("earlier reply: the answer to the same question asked earlier is not ready in time")
             return None
-        outcome.events.append("shared reply: the answer to the same question asked earlier" if reply is not None else "shared reply: none")
+        outcome.events.append("earlier reply: shown to the deciding model as a note" if reply is not None else "earlier reply: none")
         return reply
 
     async def shared_draft(self, req: RunRequest, key: str, messages: list[dict[str, Any]], deadline: float, outcome: Outcome) -> str | None:
