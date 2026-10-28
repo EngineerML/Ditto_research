@@ -13,7 +13,9 @@ if [ -n "$(git status --porcelain -- "$TREE")" ]; then
 fi
 STAGE=$(mktemp -d)
 trap 'rm -rf "$STAGE"' EXIT
-cp "$TREE/Dockerfile" "$TREE/requirements.txt" "$TREE/PROVENANCE.md" "$TREE/DECLARATION.md" "$STAGE/"
+# DECLARATION.md stays in the repository and is not shipped: it is optional, and horizon v1 cleared
+# screening without one.
+cp "$TREE/Dockerfile" "$TREE/requirements.txt" "$TREE/PROVENANCE.md" "$STAGE/"
 cp -r "$TREE/app" "$STAGE/app"
 find "$STAGE" -name __pycache__ -type d -prune -exec rm -rf {} +
 if grep -rIl -E 'sk-or-v1-|sk-[A-Za-z0-9]{32,}|BEGIN (RSA|OPENSSH|EC) PRIVATE' "$STAGE"; then
