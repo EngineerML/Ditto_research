@@ -46,6 +46,7 @@ class CaseRunner:
         self.intents = IntentBank()
         self.order_readings: dict[str, asyncio.Future[str | None]] = {}
         self.short_drafts: dict[str, asyncio.Future[str | None]] = {}
+        self.short_replies: dict[str, asyncio.Future[tuple[str, str | None] | None]] = {}
         self._default_llm: LLM | None = None
 
     async def embed_pairs(self, user_id: str | None, pairs: list[MemoryPair]) -> int:
@@ -142,7 +143,7 @@ class CaseRunner:
         token = focus_token(req.user_input, focus)
         if not token:
             return False
-        short = ShortPath(engine, effort=settings.short_effort, max_tokens=settings.short_max_tokens, readings=self.order_readings, order_max_tokens=settings.order_max_tokens, drafts=self.short_drafts)
+        short = ShortPath(engine, effort=settings.short_effort, max_tokens=settings.short_max_tokens, readings=self.order_readings, order_max_tokens=settings.order_max_tokens, drafts=self.short_drafts, replies=self.short_replies)
         return await short.answer(req, [cand.pair for cand in focus], token, deadline, outcome)
 
     async def stored_detail_topic(self, req: RunRequest, lane: ours.Lane, routed: str, focus: list[Candidate], index: UserIndex, engine: RecordsEngine, deadline: float, outcome: Outcome) -> bool:

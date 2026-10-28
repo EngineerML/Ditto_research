@@ -170,12 +170,13 @@ def program_messages(system: str, shown: str, note: str, message: str) -> list[d
 
 
 class ShortPath:
-    def __init__(self, engine: RecordsEngine, *, effort: str, max_tokens: int, readings: dict[str, asyncio.Future[str | None]], order_max_tokens: int, drafts: dict[str, asyncio.Future[str | None]]) -> None:
+    def __init__(self, engine: RecordsEngine, *, effort: str, max_tokens: int, readings: dict[str, asyncio.Future[str | None]], order_max_tokens: int, drafts: dict[str, asyncio.Future[str | None]], replies: dict[str, asyncio.Future[tuple[str, str | None] | None]]) -> None:
         self.engine = engine
         self.llm = engine.llm
         self.tally = engine.tally
         self.readings = readings
         self.drafts = drafts
+        self.replies = replies
         self.effort = effort
         self.max_tokens = max_tokens
         self.order_max_tokens = order_max_tokens
@@ -228,10 +229,43 @@ class ShortPath:
         shown = f"{opening}{NOTES_HEADER}\n\n{notes}"
         asked = asked_part(req.user_input)
         key = hashlib.sha256(json.dumps([normalize_user_id(req.user_id), system, shown, asked]).encode()).hexdigest()
+        # Rewordings of one question over the same notes get one reply: the first to get here
+        # writes it, the rest ship it as it is.
+        held = self.replies.get(key)
+        if held is not None:
+            shared = await self.earlier_reply(held, deadline, outcome)
+            if shared is not None:
+                outcome.content, outcome.answer = shared
+                return True
+            return await self.own_reply(req, key, system, shown, asked, records, groups, deadline, outcome)
+        mine: asyncio.Future[tuple[str, str | None] | None] = asyncio.get_running_loop().create_future()
+        self.replies[key] = mine
+        while len(self.replies) > READINGS_HELD:
+            del self.replies[next(iter(self.replies))]
+        handled = False
+        try:
+            handled = await self.own_reply(req, key, system, shown, asked, records, groups, deadline, outcome)
+        finally:
+            reply = (outcome.content, outcome.answer) if handled and outcome.content.strip() else None
+            if reply is None and self.replies.get(key) is mine:
+                del self.replies[key]
+            mine.set_result(reply)
+        return handled
+
+    async def own_reply(self, req: RunRequest, key: str, system: str, shown: str, asked: str, records: list[MemoryPair], groups: list[list[MemoryPair]], deadline: float, outcome: Outcome) -> bool:
         draft = await self.shared_draft(req, key, program_messages(system, shown, "", req.user_input), deadline, outcome)
         note = SHARED_DRAFT_NOTE.format(asked=asked, draft=draft.strip()) + "\n\n" if draft is not None else ""
         outcome.events.append(f"short path records={len(records)} groups={len(groups)}{' shared draft' if note else ''}")
         return await decide(self.engine, req, program_messages(system, shown, note, req.user_input), self.effort, self.max_tokens, deadline, outcome)
+
+    async def earlier_reply(self, held: asyncio.Future[tuple[str, str | None] | None], deadline: float, outcome: Outcome) -> tuple[str, str | None] | None:
+        try:
+            reply = await asyncio.wait_for(asyncio.shield(held), max(0.01, deadline - time.monotonic() - SHARED_WAIT_RESERVE))
+        except TimeoutError:
+            outcome.events.append("shared reply: the reply for an earlier rewording over the same notes is not ready in time")
+            return None
+        outcome.events.append("shared reply: written for an earlier rewording over the same notes" if reply is not None else "shared reply: none")
+        return reply
 
     async def shared_draft(self, req: RunRequest, key: str, messages: list[dict[str, Any]], deadline: float, outcome: Outcome) -> str | None:
         held = self.drafts.get(key)
