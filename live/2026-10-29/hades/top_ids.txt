@@ -1,0 +1,12 @@
+95534e25-052c-4dd4-943e-39b3cff95e13 dan0l-v30
+9e6111f1-3a92-4144-9511-e54330683d5e crown-v194-v1
+c8b23c9f-b3cf-4a19-abb0-154050a6c8ae horizon-v5
+f9f69045-20df-41b8-ac96-c9b1959366b7 Hades-v17
+d9a2dedd-ee9f-45df-acd0-d27e0870a4b5 nanodevs-v3
+8e3b03e6-eeb8-4ad0-ae3c-08199d935c19 mvkdata-v3
+d814f9cc-b8e4-4751-a619-eb9aaf3bf389 Omar-miner-v55
+7b096808-fd0e-48fa-8729-8814ddbb93f5 hfull-h3-v4
+294bf581-9e07-4e3e-8580-d1cfe458d165 ember-v9
+6caa821f-2df3-4c99-bf0f-ec022e897a89 Harry-v31
+16812170-a9d9-46f7-b75b-7504141f3ec4 lucas-v111-v1
+4cb11b7a-88c2-4ae2-9d41-dad11516e98e wonder-v5
