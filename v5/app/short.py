@@ -42,9 +42,8 @@ MIN_DENSE_NOTES = 3
 MIN_THREAD_NOTES = 2
 PARAGRAPH_BREAK = "\n\n"
 PASSAGES_HEADER = "Passages that name “{phrase}”, copied from the notes below:"
-LEAD_HEADER = "The statements of the notes below, in the order an earlier reading of their words put them:"
+LEAD_HEADER = "The statements of the notes below, in the order they were filed:"
 LEAD_MAX_STATEMENT_CHARS = 1000
-CURRENCY_LEAD_HEADER = "The statements of the notes below, those that mark themselves as a change after the others, otherwise in the order an earlier reading of their words put them:"
 PROGRAM_MAX_RECORD_CHARS = 2000
 PERSON_BRIEF = "Before the message is answered: which person is it asking about? Reply with that person's full name as the notes give it, and nothing else."
 RECENT_HEADER = "Picked out by code from the dates of the notes and the order of the passages within each note, leaving out passages that recur almost word for word in the notes about other things; not checked — the notes above decide wherever they differ:"
@@ -63,10 +62,6 @@ LATEST_SYSTEM = "You are Ditto, the user's assistant with long-term memory. Belo
 LATEST_BRIEF = "Passages:\n{passages}\n\nMessage:\n{message}"
 SHARED_DRAFT_NOTE = "A draft reply, written once from these same notes for the question \"{asked}\"; it has not been checked, and the notes decide wherever they differ:\n{draft}\n\nCheck the draft against the notes, then reply to the message as asked at the start."
 SHARED_WAIT_RESERVE = 60.0
-CHANGE_CUE_RE = re.compile(r"\b(?:now|instead|replac\w*|updat\w*|chang\w*|mov(?:e|ed|es)|reschedul\w*|rebook\w*|revis\w*|took over|taken over|swapp?\w*|going forward|from now on|as of today|after all|no longer|scrap\w*|ignore what|forget the|new plan|new date|final call|stepped back|earlier one|old slot|supersed\w*|correct(?:ed|ion))\b", re.IGNORECASE)
-BINDING = "="
-ASIDE_RE = re.compile(r"^(?:separately|unrelated)\b", re.IGNORECASE)
-CURRENCY_NOTE = "The notes above are shown without their filing dates: in this case file the filing dates do not show the order things were said. These statements say in their own words that they change, replace or update an earlier state:\n{changes}\nWhere one of them and a plain statement in the notes speak of the same thing, the statement that marks itself as a change is the one that holds now."
 DRAFT_NOTE = "A draft reply, written from a reading of only the passages picked out above:\n\n{draft}\n\nCheck the draft against every note above, then reply to the message as asked at the start: briefly, ending with the line 'ANSWER: …', without mentioning the draft."
 
 
@@ -118,10 +113,6 @@ def record_block(mark: int, pair: MemoryPair) -> str:
     return f"{head}\nUser: {pair.prompt}\nAssistant: {pair.response}"
 
 
-def undated_block(mark: int, pair: MemoryPair) -> str:
-    return f"[M{mark}]\nUser: {pair.prompt}\nAssistant: {pair.response}"
-
-
 def grouped_view(groups: list[list[MemoryPair]]) -> str:
     blocks: list[str] = []
     mark = 0
@@ -129,33 +120,9 @@ def grouped_view(groups: list[list[MemoryPair]]) -> str:
         lines = []
         for pair in group:
             mark += 1
-            lines.append(undated_block(mark, pair))
+            lines.append(record_block(mark, pair))
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)
-
-
-def marks_a_change(text: str) -> bool:
-    return not ASIDE_RE.match(text) and bool(CHANGE_CUE_RE.search(text))
-
-
-def change_marked(groups: list[list[MemoryPair]], token: str) -> list[bool] | None:
-    statements = [statement(group[0], token) for group in groups]
-    if any(BINDING in text for text in statements):
-        return None
-    marked = [marks_a_change(text) for text in statements]
-    plain = [not mark and not ASIDE_RE.match(text) for text, mark in zip(statements, marked)]
-    if not any(marked) or not any(plain):
-        return None
-    return marked
-
-
-def changes_last(groups: list[list[MemoryPair]], marked: list[bool]) -> list[list[MemoryPair]]:
-    return [group for group, mark in zip(groups, marked) if not mark] + [group for group, mark in zip(groups, marked) if mark]
-
-
-def currency_view(groups: list[list[MemoryPair]], token: str, marked: list[bool]) -> str:
-    changes = [statement(group[0], token) for group, mark in zip(groups, marked) if mark]
-    return CURRENCY_NOTE.format(changes="\n".join(f"- {text}" for text in changes))
 
 
 async def consult(llm: LLM, tally: TokenTally, req: RunRequest, messages: list[dict[str, Any]], max_tokens: int, effort: str, deadline: float, outcome: Outcome, what: str) -> str | None:
@@ -184,11 +151,11 @@ def short_system(operator: str, own: str) -> str:
     return own + "\n\n" + OPERATOR_SEAM + "\n" + operator.strip()
 
 
-def lead_view(groups: list[list[MemoryPair]], token: str, header: str = LEAD_HEADER) -> str:
+def lead_view(groups: list[list[MemoryPair]], token: str) -> str:
     statements = [statement(group[0], token) for group in groups]
     if len(statements) < 2 or any(len(text) > LEAD_MAX_STATEMENT_CHARS for text in statements):
         return ""
-    return header + "\n" + "\n".join(f"{mark}. {text}" for mark, text in enumerate(statements, start=1))
+    return LEAD_HEADER + "\n" + "\n".join(f"{mark}. {text}" for mark, text in enumerate(statements, start=1))
 
 
 async def decide(engine: RecordsEngine, req: RunRequest, messages: list[dict[str, Any]], effort: str, max_tokens: int, deadline: float, outcome: Outcome) -> bool:
@@ -255,22 +222,19 @@ class ShortPath:
         if reply is None:
             return None
         outcome.events.append(f"order pass: {first_line(reply)}")
-        return sequence_from(reply, shuffled)
+        # The date a note was filed is firmer evidence of order than a reading of its words, so the
+        # dates order the notes and the reading only orders notes filed at the same moment.
+        return sorted(sequence_from(reply, shuffled), key=lambda group: group[0].timestamp)
 
     async def answer(self, req: RunRequest, records: list[MemoryPair], token: str, deadline: float, outcome: Outcome) -> bool:
         groups = await self.groups(req, records, token, deadline, outcome)
         if groups is None:
             return False
-        marked = change_marked(groups, token)
-        if marked is not None:
-            groups = changes_last(groups, marked)
-            marked = sorted(marked)
         notes = grouped_view(groups)
-        lead = lead_view(groups, token, CURRENCY_LEAD_HEADER if marked is not None else LEAD_HEADER)
+        lead = lead_view(groups, token)
         opening = f"{lead}\n\n" if lead else ""
         system = short_system(req.system_prompt, " ".join([PROGRAM_SYSTEM, *guide_records.program_notes(req.user_input)]))
-        currency = currency_view(groups, token, marked) if marked is not None else ""
-        shown = f"{opening}{NOTES_HEADER}\n\n{notes}" + (f"\n\n{currency}" if currency else "")
+        shown = f"{opening}{NOTES_HEADER}\n\n{notes}"
         asked = asked_part(req.user_input)
         key = hashlib.sha256(json.dumps([normalize_user_id(req.user_id), system, shown, asked]).encode()).hexdigest()
         draft = await self.shared_draft(req, key, program_messages(system, shown, "", req.user_input), deadline, outcome)
