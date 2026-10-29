@@ -37,7 +37,13 @@ done
 for round in $(seq 1 "$REPEATS"); do
   for spec in "$@"; do
     IFS='=' read -r label tag src <<< "$spec"
-    $PY tools/key_usage.py --need 1 || { echo "balance under \$1, stopping"; exit 1; }
+    # a failed balance lookup (the proxy answers 429 now and then) is retried before it stops the run
+    funded=0
+    for try in 1 2 3 4; do
+      if $PY tools/key_usage.py --need 1 > /dev/null 2>&1; then funded=1; break; fi
+      sleep 20
+    done
+    [ $funded = 1 ] || { echo "balance under \$1 or unreadable after four tries, stopping"; exit 1; }
     echo "===== $label ($tag) round $round, $(wc -l < "$CASES") questions, providers $PREFS_NAME, concurrency ${CONCURRENCY:-2} $(date -u +%H:%M) $($PY tools/key_usage.py)"
     timeout 11000 python3 tools/practice_docker.py --image "ditto-harness:$tag" --run-size full --seed "$SEED" --bench-version "${BENCH:-13}" --concurrency "${CONCURRENCY:-2}" --trace --timeout 10800 \
       --env "HARNESS_PROVIDER_PREFS=$PREFS" --only-cases "$CASES" --replay-writes "$WRITES" 2>&1 | grep -E "saved|stopped early|Error" | tail -2
