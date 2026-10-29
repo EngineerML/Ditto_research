@@ -223,7 +223,10 @@ class ShortPath:
         messages = [{"role": "system", "content": short_system(req.system_prompt, ORDER_SYSTEM)}, {"role": "user", "content": ORDER_BRIEF.format(notes=listing(shuffled, token))}]
         reply = await self.read_order(req, messages, deadline, outcome)
         if reply is None:
-            return None
+            # The dates already give the order; without a reading, notes filed at the same moment keep
+            # the listing's order, and the request stays on this path like its rewordings.
+            outcome.events.append("order pass: no reading; notes in filing order")
+            return sorted(shuffled, key=lambda group: group[0].timestamp)
         outcome.events.append(f"order pass: {first_line(reply)}")
         # The date a note was filed is firmer evidence of order than a reading of its words, so the
         # dates order the notes and the reading only orders notes filed at the same moment.
