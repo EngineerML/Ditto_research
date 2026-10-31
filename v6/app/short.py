@@ -124,12 +124,12 @@ def filed_lead(notes: list[MemoryPair], token: str) -> str:
     return FILED_LEAD_HEADER + "\n" + "\n".join(f"{mark}. {pair.timestamp[:10]}: {text}" if pair.timestamp else f"{mark}. {text}" for mark, (pair, text) in enumerate(zip(notes, statements), start=1))
 
 
-async def decide(engine: RecordsEngine, req: RunRequest, messages: list[dict[str, Any]], effort: str, max_tokens: int, deadline: float, outcome: Outcome) -> bool:
+async def decide(engine: RecordsEngine, req: RunRequest, messages: list[dict[str, Any]], effort: str, max_tokens: int, deadline: float, outcome: Outcome, check_unanswered_only: bool = False) -> bool:
     if deadline - time.monotonic() < MIN_SECONDS:
         outcome.events.append("deciding call: no time left")
         return False
     start = len(messages)
-    await engine.converse(req, messages, None, effort, max_tokens, deadline, outcome, checkable=True)
+    await engine.converse(req, messages, None, effort, max_tokens, deadline, outcome, checkable=True, check_unanswered_only=check_unanswered_only)
     if outcome.content.strip():
         return True
     engine.carried.extend(made_calls(messages[start:]))
@@ -167,7 +167,7 @@ class ShortPath:
         draft = await self.shared_draft(req, key, program_messages(system, shown, "", asked), deadline, outcome)
         note = SHARED_DRAFT_NOTE.format(asked=asked, draft=draft.strip()) + "\n\n" if draft is not None else ""
         outcome.events.append(f"short path records={len(records)}{' shared draft' if note else ''}")
-        return await decide(self.engine, req, program_messages(system, shown, note, req.user_input), self.effort, self.max_tokens, deadline, outcome)
+        return await decide(self.engine, req, program_messages(system, shown, note, req.user_input), self.effort, self.max_tokens, deadline, outcome, check_unanswered_only=True)
 
     async def shared_draft(self, req: RunRequest, key: str, messages: list[dict[str, Any]], deadline: float, outcome: Outcome) -> str | None:
         held = self.drafts.get(key)

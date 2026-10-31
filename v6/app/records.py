@@ -458,7 +458,7 @@ class RecordsEngine:
 
         return await self.converse(req, messages, finder, effort, max_tokens, deadline, outcome, drafts_skipped)
 
-    async def converse(self, req: RunRequest, messages: list[dict[str, Any]], finder: RecordFinder | None, effort: str, max_tokens: int, deadline: float, outcome: Outcome, drafts_skipped: Callable[[int], str] | None = None, checkable: bool = False) -> Outcome:
+    async def converse(self, req: RunRequest, messages: list[dict[str, Any]], finder: RecordFinder | None, effort: str, max_tokens: int, deadline: float, outcome: Outcome, drafts_skipped: Callable[[int], str] | None = None, checkable: bool = False, check_unanswered_only: bool = False) -> Outcome:
         catalog = host_catalog(req.tools)
         granted = offered_memory(req.tools)
         offered = deciding_surface(req.tools, finder)
@@ -552,6 +552,12 @@ class RecordsEngine:
                             continue
                     outcome.content = result.content or outcome.content
                     if self.check_due(checkable, result, turns_left, deadline):
+                        # On the program path a reply that already gives its value ships as decided: the check
+                        # changed right program answers to wrong ones and split twin groups; it still adds a
+                        # missing ANSWER line.
+                        if check_unanswered_only and parse_slot(result.content)[1]:
+                            outcome.events.append("final check: not asked, the reply has its ANSWER line")
+                            break
                         checking = True
                         self.ask_check(messages, outcome, req.user_input)
                         continue
