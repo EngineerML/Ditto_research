@@ -274,7 +274,10 @@ class OpenAICompatLLM(LLM):
             try:
                 timeout = min(self.timeout_seconds, max(1.0, deadline - time.monotonic()))
                 response = await asyncio.wait_for(self._client.post(f"{self.base_url}/chat/completions", headers=self.headers, content=wire_body(payload), timeout=timeout), timeout=timeout)
-            except (httpx.TimeoutException, httpx.TransportError, asyncio.TimeoutError) as exc:
+            # Any failure of the request itself counts as a transport failure and is retried: a TLS
+            # handshake cut off mid-way raises anyio's ClosedResourceError, which httpx does not wrap,
+            # and letting it escape lost the whole case. Cancellation is not an Exception and still ends it.
+            except Exception as exc:
                 timed_out = isinstance(exc, (httpx.TimeoutException, asyncio.TimeoutError))
                 if timed_out or time.monotonic() - sent_at >= QUICK_FAILURE_SECONDS:
                     attempt += 1

@@ -27,7 +27,9 @@ class Settings:
     log_level: str = "INFO"
     case_budget_seconds: float = 285.0
     packet_char_budget: int = 24000
-    llm_timeout_seconds: float = 100.0
+    # A healthy call ends within 40 s (2,325 calls at case concurrency 8: p99 23 s, slowest 38.7 s); a request
+    # left hanging at the provider is given up at 60 s and retried while the case still has time.
+    llm_timeout_seconds: float = 60.0
     llm_max_attempts: int = 2
     tool_timeout_seconds: float = 20.0
     max_model_turns: int = 12
