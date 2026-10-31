@@ -8,6 +8,11 @@ below is dan0l's code as released. Our changes:
 - `app/llm.py`, `app/config.py`: any failure of a model request is retried like a transport failure,
   and a request hanging at the provider is given up after 60 s instead of 100 s.
 - `app/memory/final_check.py`: the final check's reply keeps its `ANSWER:` line.
+- `app/short.py`, `app/records.py`: on the program path the final check runs only when the decided
+  reply has no `ANSWER:` value; a reply that gives its value ships as the model decided it.
+- `app/guide_records.py`, `NEXT_NOTE`: a next-step answer gives the person, the task and the channel
+  even when the message names only the owner and the channel; the channel is the medium alone, and
+  ordinary words are written correctly spelled.
 
 The model is the platform's (`openai/gpt-oss-20b` through the request's relay); no weights and no
 benchmark data ship with the harness.
