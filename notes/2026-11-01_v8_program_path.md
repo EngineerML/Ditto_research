@@ -101,3 +101,35 @@ text, fridge list) wrap the same sentence, and `once_each` already merges them.
 
 **Next (proposed).** Key ledger items by subject and attribute (the allotment society's person in charge), never by
 the noun an entry uses. Check it with two graded replays.
+
+## s45: v8 on all 250 memory questions of three fresh seeds (practice/gates/run_s45.sh, $3.08)
+
+Fresh seeds 4140899197327149732, 5451784605348316629 and 8047062976504477843. Image `ditto-harness:v8` (308f078),
+concurrency 8, platform providers, one round.
+
+| seed | memory mean | program | splits (13 groups) | sanity | over-call | answer_in_prompt |
+|---|---|---|---|---|---|---|
+| 4140… | 0.940 | 40/40 | 0 | 1 | 1 | 0 |
+| 5451… | 0.928 | 37/40 | 1 program group | 1 | 1 | 0 |
+| 8047… | 0.928 | 36.5/40 | 1 enterprise group | 1 | 1 | 0 |
+
+v6 on its own three holdout seeds (s42): memory means 0.944, 0.925 and 0.908, no splits, all gates at 1. The seeds
+differ, so these two sets compare only roughly.
+
+**Both splits are outside the v8 program path.**
+1. **Routing.** "What did we settle on doing about the news subscription before it renews?" The word "news" makes
+   `classify` read the question as a live request. It still reaches the records lane through the case-file
+   identifier, but `short_answer` also requires `own_records_question`, which is False. The rewordings therefore
+   went through the general records lane and decided independently ("cancel it" against "now pause it"). This gate
+   is unchanged from v30 and v6.
+2. **Enterprise.** An enterprise-composed-program group ("At effective step 12, follow the team of …") went through
+   the general records lane like v6's, and one member counted 1 where the others counted 0. v6 had 0 such splits
+   in 12 groups at s42.
+
+Across all v8 testing, the program path itself has not split: 0 of 230 groups that reached it. Split risk now
+comes from questions that reach the path inconsistently, and from the enterprise groups on the old lane.
+
+**Possible fixes (not made):**
+- A question that names a case file the user's records hold, and is already routed to records, takes the program
+  path whatever its topic words.
+- The enterprise groups are a separate design question: decide once per twin group on the general lane too.

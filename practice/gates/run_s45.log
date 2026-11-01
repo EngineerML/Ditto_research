@@ -1,0 +1,22 @@
+/home/bittensor/ditto/.cache/datasets/v14_s4140899197327149732_salt0_full.json
+===== s45 seed 4140899197327149732, 250 memory questions, start 19:14
+===== v8m (v8) round 1, 250 questions, providers platform, concurrency 8 19:14 key usage $9.6145  account balance $4.4487
+saved /home/bittensor/ditto/practice/20261101T191502Z_ditto-harness-v8_full_rerun
+served by:    1491 Amazon Bedrock 
+replayed: 0 applied
+===== done 19:29 key usage $10.5315  account balance $3.5174
+/home/bittensor/ditto/.cache/datasets/v14_s5451784605348316629_salt0_full.json
+===== s45 seed 5451784605348316629, 250 memory questions, start 19:29
+===== v8m (v8) round 1, 250 questions, providers platform, concurrency 8 19:29 key usage $10.5458  account balance $3.5174
+saved /home/bittensor/ditto/practice/20261101T192927Z_ditto-harness-v8_full_rerun
+served by:    1379 Groq      97 Amazon Bedrock 
+replayed: 0 applied
+===== done 19:44 key usage $11.5800  account balance $2.4833
+/home/bittensor/ditto/.cache/datasets/v14_s8047062976504477843_salt0_full.json
+===== s45 seed 8047062976504477843, 250 memory questions, start 19:44
+===== v8m (v8) round 1, 250 questions, providers platform, concurrency 8 19:44 key usage $11.5800  account balance $2.4833
+saved /home/bittensor/ditto/practice/20261101T194414Z_ditto-harness-v8_full_rerun
+served by:    1444 Groq      80 Amazon Bedrock 
+replayed: 0 applied
+===== done 19:58 key usage $12.6821  account balance $1.3811
+===== all done 19:58
