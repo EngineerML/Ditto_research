@@ -51,14 +51,17 @@ LEDGER_RULES = (
     "those before, a contact as the handle or address the entries list for that person, found through the entry that "
     "says who they are when the message names them another way, and never the medium or channel it goes through.",
 )
-LEDGER_ASK = "Before replying, write the ledger of these entries: for every entry that sets or changes something the file tracks, one line '[mark] item: before -> after (what the entry did)'; then, for each item, one line 'NOW item: value'."
+LEDGER_ASK = "Before replying, write the ledger of these entries: for every entry that sets or changes something the file tracks, one line '[mark] item: before -> after (what the entry did)', and for every entry that defines a label, what the label means; then, for each item, one line 'NOW item: value', with values word for word as the entries write them."
 LEDGER_SYSTEM = "You keep the ledger of one case file in the user's saved notes. You read its entries and write down how each tracked value changed. You answer nothing else."
 LEDGER_BRIEF = (
     "{notes}\n\nThese are the case file's entries, earliest filed first. Go through them in that order. For every entry "
     "that sets or changes something the file tracks (a value, status, holder, channel, date, list, or a step of a plan), "
     "write one line: '[mark] item: before -> after (what the entry did)', where what it did is one of set, changed, "
-    "proposed, declined, withdrawn, struck as wrong, went back, added, removed, swapped, done, dropped or reopened. A "
-    "proposal changes nothing until an entry says it went ahead; a struck entry is cancelled and its 'before' stands again; "
+    "proposed, declined, withdrawn, struck as wrong, went back, added, removed, swapped, done, dropped or reopened. Write "
+    "each value with all of its own words as the entry gives them (an article or a qualifier that belongs to it stays), "
+    "and only the value: never the sentence around it, never shortened or reworded. An entry that "
+    "defines what a label or field means gets its own line: '[mark] label: means <what the entry says it means> (defined)'. "
+    "A proposal changes nothing until an entry says it went ahead; a struck entry is cancelled and its 'before' stands again; "
     "going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one "
     "line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
 )
@@ -71,7 +74,9 @@ CLOSING_NOTE = ("Before replying, apply every entry in order. The message asks f
 # names then sits in the served reply.
 REPLY_NOTE = (f"The ledger is a first reading, and the entries decide wherever it differs from them. {CLOSING_NOTE} Now reply "
               "to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger "
-              "out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks.")
+              "out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. "
+              "The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: "
+              "no sentence around it, and an action without when it is due.")
 REWORDED_NOTE = ("The same question, asked in other words over these same entries:\n{message}\n\nCheck the reply above against "
                  "the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same "
                  "value in the same words.")

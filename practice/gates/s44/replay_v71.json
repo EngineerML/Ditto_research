@@ -1,0 +1,1262 @@
+[
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert/free",
+  "relation": "distractor",
+  "expected": "cancel it",
+  "old": "cancel",
+  "graded": 1,
+  "new": "cancel it"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:error/announced",
+  "relation": "base",
+  "expected": "postponed",
+  "old": "postponed Aug\u202f16,\u202f2025",
+  "graded": 1,
+  "new": "My neighbour's wedding is postponed for Aug\u202f16,\u202f2025."
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:error/announced",
+  "relation": "counterfactual",
+  "expected": "tentative",
+  "old": "tentative",
+  "graded": 1,
+  "new": "tentative"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "as-of",
+  "relation": "base",
+  "expected": "video meeting",
+  "old": "video meeting",
+  "graded": 1,
+  "new": "video meeting"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "membership",
+  "relation": "distractor",
+  "expected": "packed lunch; spare socks; art smock; bus pass; torch",
+  "old": "packed lunch, spare socks, art smock, torch, bus pass",
+  "graded": 1,
+  "new": "packed lunch, art smock, water bottle"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "distractor",
+  "expected": "on hold",
+  "old": "tundra",
+  "graded": 1,
+  "new": "tundra"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert/free",
+  "relation": "distractor",
+  "expected": "Maximus Bennett",
+  "old": "Maximus Bennett",
+  "graded": 1,
+  "new": "Maximus Bennett"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "counterfactual",
+  "expected": "Wade Meza",
+  "old": "Wade Meza",
+  "graded": 1,
+  "new": "Wade Meza"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "membership",
+  "relation": "counterfactual",
+  "expected": "spare socks; art smock; water bottle; bus pass; torch",
+  "old": "spare socks, art smock, water bottle, torch, bus pass",
+  "graded": 1,
+  "new": "spare socks, art smock, water bottle, torch, bus pass"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:declined/misplaced",
+  "relation": "renderer",
+  "expected": "08:20",
+  "old": "08:20",
+  "graded": 1,
+  "new": "08:20"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "distractor",
+  "expected": "Joel Gonzalez",
+  "old": "Joel Gonzalez",
+  "graded": 1,
+  "new": "The person doing the dog walk returned to the previous arrangement."
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert/free",
+  "relation": "counterfactual",
+  "expected": "Orianna Allen",
+  "old": "Orianna Allen",
+  "graded": 1,
+  "new": "Orianna Allen"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "identity:contact/initials",
+  "relation": "counterfactual",
+  "expected": "@plinth-45",
+  "old": "Nicholas\u202fHaas",
+  "graded": 0,
+  "new": "Nicholas Haas"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:change-then-declined/announced",
+  "relation": "distractor",
+  "expected": "2026-02-20",
+  "old": "February\u202f20,\u202f2026",
+  "graded": 1,
+  "new": "February 20, 2026"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "identity:contact/initials",
+  "relation": "base",
+  "expected": "@corvid-31",
+  "old": "Nicholas\u202fHaas",
+  "graded": 0,
+  "new": "@corvid-31"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:declined/misplaced",
+  "relation": "counterfactual",
+  "expected": "12:35",
+  "old": "12:35pm",
+  "graded": 1,
+  "new": "12:35pm"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:change-then-declined/announced",
+  "relation": "counterfactual",
+  "expected": "2026-03-09",
+  "old": "9 March 2026",
+  "graded": 1,
+  "new": "March 9, 2026"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert/free",
+  "relation": "counterfactual",
+  "expected": "pause it",
+  "old": "pause",
+  "graded": 1,
+  "new": "Noting that the plan for the gym membership is to pause it."
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "counterfactual",
+  "expected": "in review",
+  "old": "ember",
+  "graded": 1,
+  "new": "ember"
+ },
+ {
+  "seed": 897500335867350922,
+  "label": "as-of",
+  "relation": "counterfactual",
+  "expected": "phone",
+  "old": "phone",
+  "graded": 1,
+  "new": "phone"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:declined/misplaced",
+  "relation": "counterfactual",
+  "expected": "Brandy Petty",
+  "old": "Brandy Petty",
+  "graded": 1,
+  "new": "Brandy Petty"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert/free",
+  "relation": "renderer",
+  "expected": "2025-11-15",
+  "old": "15 November 2025",
+  "graded": 1,
+  "new": "2025-11-15"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:change-then-declined/free",
+  "relation": "renderer",
+  "expected": "cancelled",
+  "old": "cancelled",
+  "graded": 1,
+  "new": "cancelled"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:change-then-declined/announced",
+  "relation": "base",
+  "expected": "19:15",
+  "old": "7:15 pm",
+  "graded": 1,
+  "new": "7:15pm"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert/free",
+  "relation": "counterfactual",
+  "expected": "2026-03-08",
+  "old": "2026-03-08",
+  "graded": 1,
+  "new": "2026-03-08"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "renderer",
+  "expected": "in review",
+  "old": "amber",
+  "graded": 1,
+  "new": "amber"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "identity:contact/initials",
+  "relation": "distractor",
+  "expected": "plinth.40@deck.example.invalid",
+  "old": "plinth.40@deck.example.invalid",
+  "graded": 1,
+  "new": "plinth.40@deck.example.invalid"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "membership",
+  "relation": "base",
+  "expected": "swim goggles; torch; art smock; PE kit; sunscreen",
+  "old": "swim goggles, torch, art smock, PE kit, sunscreen",
+  "graded": 1,
+  "new": "swim goggles, torch, art smock, PE kit, sunscreen"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "distractor",
+  "expected": "upgrade it",
+  "old": "upgrade",
+  "graded": 1,
+  "new": "to now upgrade it"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:change-then-declined/free",
+  "relation": "counterfactual",
+  "expected": "tentative",
+  "old": "tentative",
+  "graded": 1,
+  "new": "tentative"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "counterfactual",
+  "expected": "switch it to annual billing",
+  "old": "switch it to annual billing",
+  "graded": 1,
+  "new": "the plan for the language app is to now switch it to annual billing"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "membership",
+  "relation": "counterfactual",
+  "expected": "torch; art smock; sleeping bag; PE kit; sunscreen",
+  "old": "torch, art smock, sleeping bag, sunscreen, PE kit",
+  "graded": 1,
+  "new": "PE kit, torch, art smock, sleeping bag, sunscreen"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "counterfactual",
+  "expected": "superseded",
+  "old": "harbour",
+  "graded": 1,
+  "new": "harbour"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "sequence:before/5-events",
+  "relation": "distractor",
+  "expected": "audit",
+  "old": "audit",
+  "graded": 1,
+  "new": "audit"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:declined/misplaced",
+  "relation": "distractor",
+  "expected": "Connor Manning",
+  "old": "Connor Manning",
+  "graded": 1,
+  "new": "Connor Manning organises the book club."
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert/announced",
+  "relation": "distractor",
+  "expected": "Joshua Ruiz",
+  "old": "Joshua Ruiz",
+  "graded": 1,
+  "new": "Joshua Ruiz"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:revert/announced",
+  "relation": "counterfactual",
+  "expected": "Serinity Garcia",
+  "old": "Serinity Garcia",
+  "graded": 1,
+  "new": "Serinity Garcia"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "chain:change-then-declined/announced",
+  "relation": "counterfactual",
+  "expected": "07:50",
+  "old": "7:50 am",
+  "graded": 1,
+  "new": "7:50am"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "identity:contact/initials",
+  "relation": "counterfactual",
+  "expected": "dunlin.18@deck.example.invalid",
+  "old": "dunlin.18@deck.example.invalid",
+  "graded": 1,
+  "new": "dunlin.18@deck.example.invalid"
+ },
+ {
+  "seed": 2330430686809638580,
+  "label": "sequence:before/5-events",
+  "relation": "counterfactual",
+  "expected": "pricing workshop",
+  "old": "pricing workshop",
+  "graded": 1,
+  "new": "pricing workshop"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "membership",
+  "relation": "distractor",
+  "expected": "sunscreen; packed lunch; reading log; PE kit; torch",
+  "old": "sunscreen, packed lunch, reading log, torch, PE kit",
+  "graded": 1,
+  "new": "sunscreen, packed lunch, reading log, PE kit, torch"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert/announced",
+  "relation": "counterfactual",
+  "expected": "2026-09-14",
+  "old": "14 September 2026",
+  "graded": 1,
+  "new": "Sep\u202f14,\u202f2026"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:change-then-declined/free",
+  "relation": "counterfactual",
+  "expected": "cancelled",
+  "old": "cancelled",
+  "graded": 1,
+  "new": "cancelled"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:declined/misplaced",
+  "relation": "renderer",
+  "expected": "pause it",
+  "old": "Renew on 15 January 2026.",
+  "graded": 0,
+  "new": "The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "identity:name",
+  "relation": "renderer",
+  "expected": "Marian Lowe",
+  "old": "Marian Lowe",
+  "graded": 1,
+  "new": "Marian Lowe"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert/free",
+  "relation": "counterfactual",
+  "expected": "Audrie Martin",
+  "old": "Audrie Martin",
+  "graded": 1,
+  "new": "Audrie Martin"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "distractor",
+  "expected": "active",
+  "old": "velvet",
+  "graded": 1,
+  "new": "velvet"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert/free",
+  "relation": "distractor",
+  "expected": "Luis Carver",
+  "old": "Luis Carver",
+  "graded": 1,
+  "new": "Luis Carver"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:change-then-declined/announced",
+  "relation": "distractor",
+  "expected": "18:10",
+  "old": "6:10\u202fpm",
+  "graded": 1,
+  "new": "6:10pm"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:change-then-declined/free",
+  "relation": "distractor",
+  "expected": "tentative",
+  "old": "tentative",
+  "graded": 1,
+  "new": "tentative"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert/announced",
+  "relation": "distractor",
+  "expected": "2026-02-01",
+  "old": "1 February 2026",
+  "graded": 1,
+  "new": "Feb 1, 2026"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "identity:name",
+  "relation": "counterfactual",
+  "expected": "Bianca Nagle",
+  "old": "Bianca Nagle",
+  "graded": 1,
+  "new": "Bianca Nagle"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "sequence:before/7-events",
+  "relation": "distractor",
+  "expected": "handoff",
+  "old": "handoff",
+  "graded": 1,
+  "new": "handoff"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "membership",
+  "relation": "counterfactual",
+  "expected": "packed lunch; reading log; library book; PE kit; torch",
+  "old": "PE kit, packed lunch, reading log, library book, torch",
+  "graded": 1,
+  "new": "PE kit, packed lunch, reading log, library book, torch"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "renderer",
+  "expected": "David Tarin",
+  "old": "David Tarin",
+  "graded": 1,
+  "new": "David Tarin, replacing the earlier entry"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "counterfactual",
+  "expected": "approved",
+  "old": "amber",
+  "graded": 1,
+  "new": "amber"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:declined/misplaced",
+  "relation": "counterfactual",
+  "expected": "switch it to annual billing",
+  "old": "Renew on Jan\u202f15\u202f2026",
+  "graded": 0,
+  "new": "switch it to annual billing"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "sequence:before/7-events",
+  "relation": "counterfactual",
+  "expected": "contract renewal",
+  "old": "contract renewal",
+  "graded": 1,
+  "new": "contract renewal"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "counterfactual",
+  "expected": "Xiomara Dennis",
+  "old": "Xiomara Dennis",
+  "graded": 1,
+  "new": "Xiomara Dennis"
+ },
+ {
+  "seed": 9174290677768307797,
+  "label": "chain:change-then-declined/announced",
+  "relation": "counterfactual",
+  "expected": "17:45",
+  "old": "5:45pm",
+  "graded": 1,
+  "new": "5:45pm"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:declined/misplaced",
+  "relation": "base",
+  "expected": "pause it",
+  "old": "pause before renewal",
+  "graded": 0,
+  "new": "pause it before then"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:second-error/announced",
+  "relation": "distractor",
+  "expected": "Dalia Cannon",
+  "old": "Dalia Cannon",
+  "graded": 1,
+  "new": "Dalia Cannon"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "renderer",
+  "expected": "Kathryn Choate",
+  "old": "Nicholas Floyd",
+  "graded": 0,
+  "new": "Nicholas Floyd"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "membership",
+  "relation": "base",
+  "expected": "raincoat; water bottle; bus pass; spare socks",
+  "old": "raincoat, water bottle, spare socks, bus pass",
+  "graded": 1,
+  "new": "raincoat, water bottle, spare socks, bus pass"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:error/free",
+  "relation": "distractor",
+  "expected": "18:00",
+  "old": "coach departure 6:00 pm",
+  "graded": 1,
+  "new": "6:00 pm"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:change-then-declined/announced",
+  "relation": "base",
+  "expected": "Lorenzo Colvin",
+  "old": "Lorenzo\u202fColvin",
+  "graded": 1,
+  "new": "Lorenzo Colvin"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:second-error/announced",
+  "relation": "counterfactual",
+  "expected": "Jonathan Pearson",
+  "old": "Jonathan Pearson",
+  "graded": 1,
+  "new": "Jonathan Pearson"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:change-then-declined/announced",
+  "relation": "counterfactual",
+  "expected": "2025-11-01",
+  "old": "November 1, 2025",
+  "graded": 1,
+  "new": "November 1, 2025"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:declined/misplaced",
+  "relation": "counterfactual",
+  "expected": "cancelled",
+  "old": "tundra",
+  "graded": 1,
+  "new": "tundra"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:change-then-declined/announced",
+  "relation": "renderer",
+  "expected": "2025-09-26",
+  "old": "26\u202fSeptember\u202f2025",
+  "graded": 1,
+  "new": "September 26, 2025"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "membership",
+  "relation": "counterfactual",
+  "expected": "raincoat; water bottle; sunscreen; spare socks",
+  "old": "raincoat, water bottle, sunscreen, spare socks",
+  "graded": 1,
+  "new": "raincoat, water bottle, sunscreen, spare socks"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "sequence:before/5-events",
+  "relation": "base",
+  "expected": "quote revision",
+  "old": "quote revision",
+  "graded": 1,
+  "new": "quote revision"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "sequence:before/5-events",
+  "relation": "counterfactual",
+  "expected": "kickoff",
+  "old": "kickoff",
+  "graded": 1,
+  "new": "kickoff"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:declined/misplaced",
+  "relation": "base",
+  "expected": "in review",
+  "old": "quartz",
+  "graded": 1,
+  "new": "in review"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:error/free",
+  "relation": "counterfactual",
+  "expected": "11:40",
+  "old": "11:40 am",
+  "graded": 1,
+  "new": "11.40 am"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:change-then-declined/announced",
+  "relation": "counterfactual",
+  "expected": "Jonathan Stanton",
+  "old": "Jonathan Stanton",
+  "graded": 1,
+  "new": "Jonathan Stanton"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "counterfactual",
+  "expected": "Reginald Thao",
+  "old": "Reginald Thao",
+  "graded": 1,
+  "new": "Reginald Thao"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "client-vs-vendor",
+  "relation": "counterfactual",
+  "expected": "Ravenscar Analytics",
+  "old": "Ravenscar Analytics",
+  "graded": 1,
+  "new": "Ravenscar Analytics"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "chain:declined/misplaced",
+  "relation": "counterfactual",
+  "expected": "upgrade it",
+  "old": "upgrade",
+  "graded": 1,
+  "new": "upgrade it"
+ },
+ {
+  "seed": 4249690561755544879,
+  "label": "client-vs-vendor",
+  "relation": "base",
+  "expected": "Oakhurst Logistics",
+  "old": "Kestrel Studio",
+  "graded": 0,
+  "new": "Oakhurst Logistics"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:revert/free",
+  "relation": "base",
+  "expected": "2026-04-13",
+  "old": "Apr\u202f13,\u202f2026",
+  "graded": 1,
+  "new": "Apr\u202f13,\u202f2026"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "client-vs-vendor",
+  "relation": "counterfactual",
+  "expected": "Ashgrove Studio",
+  "old": "Ashgrove Studio",
+  "graded": 1,
+  "new": "Ashgrove Studio"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:second-error/announced",
+  "relation": "renderer",
+  "expected": "postponed",
+  "old": "postponed",
+  "graded": 1,
+  "new": "the status of my brother's housewarming is now postponed"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:second-error/announced",
+  "relation": "counterfactual",
+  "expected": "confirmed",
+  "old": "confirmed",
+  "graded": 1,
+  "new": "confirmed"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:error/free",
+  "relation": "counterfactual",
+  "expected": "cancelled",
+  "old": "velvet",
+  "graded": 1,
+  "new": "velvet"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "process:reopened/3-steps",
+  "relation": "counterfactual",
+  "expected": "collect the signatures; Shawn Lawrence",
+  "old": "collect signatures; Shawn Lawrence",
+  "graded": 0.5,
+  "new": "collect the signatures ; Shawn Lawrence"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:second-error/announced",
+  "relation": "distractor",
+  "expected": "Kaleb Wolf",
+  "old": "Kaleb Wolf",
+  "graded": 1,
+  "new": "Kaleb Wolf"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:error/announced",
+  "relation": "counterfactual",
+  "expected": "14:45",
+  "old": "2:45 pm",
+  "graded": 1,
+  "new": "2:45pm"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:second-error/announced",
+  "relation": "counterfactual",
+  "expected": "Hunter Collins",
+  "old": "Hunter Collins",
+  "graded": 1,
+  "new": "Hunter Collins"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "membership",
+  "relation": "counterfactual",
+  "expected": "signed permission slip; bus pass; library book; spare socks",
+  "old": "signed permission slip, bus pass, spare socks, library book",
+  "graded": 1,
+  "new": "signed permission slip, bus pass, library book, spare socks"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "membership",
+  "relation": "base",
+  "expected": "signed permission slip; bus pass; PE kit; spare socks",
+  "old": "signed permission slip, bus pass, PE kit, spare socks",
+  "graded": 1,
+  "new": "signed permission slip, bus pass, PE kit, spare socks"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:error/announced",
+  "relation": "renderer",
+  "expected": "08:00",
+  "old": "8.00 am",
+  "graded": 1,
+  "new": "8.00\u202fam"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:error/free",
+  "relation": "distractor",
+  "expected": "on hold",
+  "old": "amber",
+  "graded": 1,
+  "new": "amber"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:second-error/misplaced",
+  "relation": "distractor",
+  "expected": "Nicholas Kim",
+  "old": "Nicholas Kim",
+  "graded": 1,
+  "new": "Nicholas Kim"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:revert/free",
+  "relation": "counterfactual",
+  "expected": "2025-07-23",
+  "old": "Jul 23, 2025",
+  "graded": 1,
+  "new": "Jul 23, 2025"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "process:reopened/3-steps",
+  "relation": "renderer",
+  "expected": "draft the proposal; Ella Sheldon",
+  "old": "draft the proposal; Ella Sheldon",
+  "graded": 1,
+  "new": "draft the proposal ; Ella Sheldon"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "client-vs-vendor",
+  "relation": "renderer",
+  "expected": "Pemberley Analytics",
+  "old": "Pemberley Analytics",
+  "graded": 1,
+  "new": "Pemberley Analytics"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:declined/misplaced",
+  "relation": "base",
+  "expected": "Madeleine Hickey",
+  "old": "Madeleine Hickey",
+  "graded": 1,
+  "new": "Madeleine Hickey organises the running group"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:second-error/misplaced",
+  "relation": "counterfactual",
+  "expected": "Isaac Joseph",
+  "old": "Isaac Joseph",
+  "graded": 1,
+  "new": "Isaac Joseph"
+ },
+ {
+  "seed": 4137466957291471344,
+  "label": "chain:declined/misplaced",
+  "relation": "counterfactual",
+  "expected": "Ryan Marshall",
+  "old": "Ryan Marshall",
+  "graded": 1,
+  "new": "Ryan Marshall"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:declined/misplaced",
+  "relation": "renderer",
+  "expected": "2025-12-19",
+  "old": "19 December 2025",
+  "graded": 1,
+  "new": "19 December 2025"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "membership",
+  "relation": "counterfactual",
+  "expected": "art smock; packed lunch; bus pass; sleeping bag; sunscreen",
+  "old": "art smock, packed lunch, sleeping bag, bus pass, sunscreen",
+  "graded": 1,
+  "new": "Packing list for our youngest's field trip \u2014 art smock, packed lunch, sleeping bag, bus pass, sunscreen"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "base",
+  "expected": "Ariana Wilcox",
+  "old": "Vincent Nelson",
+  "graded": 0,
+  "new": "Ariana\u202fWilcox"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "membership",
+  "relation": "base",
+  "expected": "art smock; spare socks; bus pass; sleeping bag; sunscreen",
+  "old": "art smock, sleeping bag, spare socks, bus pass, sunscreen",
+  "graded": 1,
+  "new": "art smock, sleeping bag, spare socks, bus pass, sunscreen"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:change-then-declined/announced",
+  "relation": "distractor",
+  "expected": "pause it",
+  "old": "pause",
+  "graded": 1,
+  "new": "pause it"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "process:reopened/3-steps",
+  "relation": "renderer",
+  "expected": "test the backup restore; Skyler Robertson",
+  "old": "test the backup restore ; Skyler Robertson",
+  "graded": 1,
+  "new": "test the backup restore ; Skyler Robertson"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "client-vs-vendor",
+  "relation": "counterfactual",
+  "expected": "Tidewater Supply",
+  "old": "Tidewater Supply",
+  "graded": 1,
+  "new": "Tidewater Supply"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:error/announced",
+  "relation": "renderer",
+  "expected": "active",
+  "old": "tundra",
+  "graded": 1,
+  "new": "tundra"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:declined/announced",
+  "relation": "distractor",
+  "expected": "Kaylee Vicente",
+  "old": "Kaylee Vicente",
+  "graded": 1,
+  "new": "Kaylee Vicente organises the choir"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:change-then-declined/free",
+  "relation": "counterfactual",
+  "expected": "postponed",
+  "old": "postponed",
+  "graded": 1,
+  "new": "postponed"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "client-vs-vendor",
+  "relation": "renderer",
+  "expected": "Brightwater Logistics",
+  "old": "Brightwater Logistics",
+  "graded": 1,
+  "new": "Brightwater Logistics"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:revert-to-middle/announced",
+  "relation": "counterfactual",
+  "expected": "Sheridan Kenney",
+  "old": "Sheridan Kenney",
+  "graded": 1,
+  "new": "Sheridan Kenney"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:change-then-declined/free",
+  "relation": "renderer",
+  "expected": "tentative",
+  "old": "tentative",
+  "graded": 1,
+  "new": "tentative"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:declined/announced",
+  "relation": "counterfactual",
+  "expected": "Adrian Briggs",
+  "old": "Adrian Briggs",
+  "graded": 1,
+  "new": "Adrian Briggs"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:change-then-declined/announced",
+  "relation": "counterfactual",
+  "expected": "upgrade it",
+  "old": "upgrade",
+  "graded": 1,
+  "new": "upgrade it"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:second-error/misplaced",
+  "relation": "distractor",
+  "expected": "Isabel Palmer",
+  "old": "Isabel Palmer",
+  "graded": 1,
+  "new": "Isabel Palmer"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:declined/misplaced",
+  "relation": "counterfactual",
+  "expected": "2026-01-13",
+  "old": "13 January 2026",
+  "graded": 1,
+  "new": "13 January 2026"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:second-error/misplaced",
+  "relation": "counterfactual",
+  "expected": "Andrew Pearson",
+  "old": "Andrew Pearson",
+  "graded": 1,
+  "new": "Andrew Pearson"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "chain:error/announced",
+  "relation": "counterfactual",
+  "expected": "approved",
+  "old": "quartz",
+  "graded": 1,
+  "new": "quartz"
+ },
+ {
+  "seed": 3374597426558320626,
+  "label": "process:reopened/3-steps",
+  "relation": "counterfactual",
+  "expected": "book the venue; Joshua Patton",
+  "old": "book venue \u2013 Joshua Patton",
+  "graded": 0.5,
+  "new": "book the venue ; Joshua Patton"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:error/announced",
+  "relation": "base",
+  "expected": "Edgar Barnhart",
+  "old": "none",
+  "graded": 0,
+  "new": "None"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:error/announced",
+  "relation": "counterfactual",
+  "expected": "confirmed",
+  "old": "confirmed",
+  "graded": 1,
+  "new": "confirmed"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:error/announced",
+  "relation": "counterfactual",
+  "expected": "Stephanie Malinowski",
+  "old": "Stephanie Malinowski",
+  "graded": 1,
+  "new": "Stephanie Malinowski"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:change-then-declined/free",
+  "relation": "distractor",
+  "expected": "2026-03-20",
+  "old": "March\u202f20,\u202f2026",
+  "graded": 1,
+  "new": "March\u202f20,\u202f2026"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "process:untouched/4-steps",
+  "relation": "renderer",
+  "expected": "file the permit; Jared Napier",
+  "old": "file the permit, Jared Napier",
+  "graded": 1,
+  "new": "approve the budget line ; Maria Alfaro"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:second-error/announced",
+  "relation": "base",
+  "expected": "Kobe Keyes",
+  "old": "Kobe Keyes",
+  "graded": 1,
+  "new": "Kobe Keyes"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:error/announced",
+  "relation": "renderer",
+  "expected": "tentative",
+  "old": "tentative",
+  "graded": 1,
+  "new": "My brother-in-law has the graduation party down as tentative on Oct 11, 2025"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "distractor",
+  "expected": "Lauren Rivera",
+  "old": "Lauren Rivera",
+  "graded": 1,
+  "new": "Lauren Rivera"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:error/free",
+  "relation": "counterfactual",
+  "expected": "cancelled",
+  "old": "quartz",
+  "graded": 1,
+  "new": "quartz"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:second-error/misplaced",
+  "relation": "base",
+  "expected": "upgrade it",
+  "old": "upgrade",
+  "graded": 1,
+  "new": "upgrade it"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:second-error/misplaced",
+  "relation": "counterfactual",
+  "expected": "switch it to annual billing",
+  "old": "switch it to annual billing",
+  "graded": 1,
+  "new": "now switch it to annual billing"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "membership",
+  "relation": "renderer",
+  "expected": "torch; PE kit; reading log; packed lunch; signed permission slip",
+  "old": "torch, PE kit, reading log, packed lunch, permission slip",
+  "graded": 0.8,
+  "new": "torch, PE kit, reading log, packed lunch, signed permission slip"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:error/free",
+  "relation": "distractor",
+  "expected": "superseded",
+  "old": "cobalt",
+  "graded": 1,
+  "new": "cobalt"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:second-error/announced",
+  "relation": "counterfactual",
+  "expected": "Mallory Mason",
+  "old": "Mallory Mason",
+  "graded": 1,
+  "new": "Mallory Mason"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:change-then-declined/free",
+  "relation": "counterfactual",
+  "expected": "2025-06-24",
+  "old": "June\u202f24,\u202f2025",
+  "graded": 1,
+  "new": "June 24, 2025"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "process:untouched/4-steps",
+  "relation": "counterfactual",
+  "expected": "approve the budget line; Maria Alfaro",
+  "old": "approve the budget line ; Maria Alfaro",
+  "graded": 1,
+  "new": "approve the budget line ; Maria Alfaro"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "identity:name",
+  "relation": "counterfactual",
+  "expected": "Julian Hughey",
+  "old": "Julian Hughey",
+  "graded": 1,
+  "new": "Julian Hughey"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "identity:name",
+  "relation": "base",
+  "expected": "Robby Bailey",
+  "old": "Robby\u202fBailey",
+  "graded": 1,
+  "new": "Robby\u202fBailey"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "chain:revert-to-middle/misplaced",
+  "relation": "counterfactual",
+  "expected": "Alexa Crabtree",
+  "old": "Alexa Crabtree",
+  "graded": 1,
+  "new": "Alexa Crabtree"
+ },
+ {
+  "seed": 5704156236337906855,
+  "label": "membership",
+  "relation": "counterfactual",
+  "expected": "torch; PE kit; water bottle; packed lunch; signed permission slip",
+  "old": "torch, water bottle, signed permission slip, PE kit, packed lunch",
+  "graded": 1,
+  "new": "torch, PE kit, packed lunch, water bottle, signed permission slip"
+ }
+]
