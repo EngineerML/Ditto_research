@@ -1,0 +1,38 @@
+===== s44 v7p2 start 20261101T171958Z, v7-prog2 from b5abbd9, 1 rounds
+=== built ditto-harness:v7-prog2
+===== v7p2 (v7-prog2) round 1, 40 questions, providers platform, concurrency 8 17:20 key usage $8.4442  account balance $5.6191
+saved /home/bittensor/ditto/practice/20261101T172006Z_ditto-harness-v7-prog2_full_rerun
+served by:      51 Groq       9 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:22 key usage $8.4696  account balance $5.5937
+===== v7p2 (v7-prog2) round 1, 40 questions, providers platform, concurrency 8 17:22 key usage $8.4696  account balance $5.5937
+saved /home/bittensor/ditto/practice/20261101T172212Z_ditto-harness-v7-prog2_full_rerun
+served by:      54 Groq       7 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:24 key usage $8.4875  account balance $5.5643
+===== v7p2 (v7-prog2) round 1, 40 questions, providers platform, concurrency 8 17:24 key usage $8.4989  account balance $5.5643
+saved /home/bittensor/ditto/practice/20261101T172441Z_ditto-harness-v7-prog2_full_rerun
+served by:      59 Groq       2 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:26 key usage $8.5218  account balance $5.5415
+===== v7p2 (v7-prog2) round 1, 40 questions, providers platform, concurrency 8 17:26 key usage $8.5310  account balance $5.5323
+saved /home/bittensor/ditto/practice/20261101T172653Z_ditto-harness-v7-prog2_full_rerun
+served by:      56 Groq       6 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:29 key usage $8.5627  account balance $5.5005
+===== v7p2 (v7-prog2) round 1, 40 questions, providers platform, concurrency 8 17:29 key usage $8.5640  account balance $5.4993
+saved /home/bittensor/ditto/practice/20261101T172918Z_ditto-harness-v7-prog2_full_rerun
+served by:      54 Groq       7 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:31 key usage $8.5849  account balance $5.4708
+===== v7p2 (v7-prog2) round 1, 40 questions, providers platform, concurrency 8 17:31 key usage $8.5924  account balance $5.4708
+saved /home/bittensor/ditto/practice/20261101T173135Z_ditto-harness-v7-prog2_full_rerun
+served by:      52 Groq       9 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:33 key usage $8.6216  account balance $5.4417
+===== v7p2 (v7-prog2) round 1, 40 questions, providers platform, concurrency 8 17:34 key usage $8.6216  account balance $5.4417
+saved /home/bittensor/ditto/practice/20261101T173404Z_ditto-harness-v7-prog2_full_rerun
+served by:      45 Groq      18 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:36 key usage $8.6506  account balance $5.4126
+===== all done 17:36

@@ -1,0 +1,18 @@
+===== s44 v7p start 20261101T171028Z, v7-prog from 07fe76a, 2 rounds
+=== built ditto-harness:v7-prog
+===== v7p (v7-prog) round 1, 40 questions, providers platform, concurrency 8 17:10 key usage $8.3225  account balance $5.7407
+saved /home/bittensor/ditto/practice/20261101T171035Z_ditto-harness-v7-prog_full_rerun
+served by:      53 Groq      13 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:12 key usage $8.3570  account balance $5.7063
+===== v7p (v7-prog) round 1, 40 questions, providers platform, concurrency 8 17:12 key usage $8.3570  account balance $5.7063
+saved /home/bittensor/ditto/practice/20261101T171243Z_ditto-harness-v7-prog_full_rerun
+served by:      51 Groq      19 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:15 key usage $8.3914  account balance $5.6719
+===== v7p (v7-prog) round 1, 40 questions, providers platform, concurrency 8 17:15 key usage $8.3914  account balance $5.6719
+saved /home/bittensor/ditto/practice/20261101T171538Z_ditto-harness-v7-prog_full_rerun
+served by:      60 Groq       6 Amazon Bedrock 
+replayed: 0 applied
+===== done 17:17 key usage $8.4390  account balance $5.6243
+===== v7p (v7-prog) round 1, 40 questions, providers platform, concurrency 8 17:17 key usage $8.4390  account balance $5.6243
