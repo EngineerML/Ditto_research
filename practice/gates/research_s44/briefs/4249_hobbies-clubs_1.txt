@@ -1,0 +1,155 @@
+##### NOTES (tw) expected='Kathryn Choate' distractors=['Skylyn Espinoza']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-22: The person behind the book club is Lauren Cox
+2. 2025-01-22: The person behind the book club is Lauren Cox
+3. 2025-01-22: The person behind the book club is Lauren Cox
+4. 2025-01-23: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry
+5. 2025-01-23: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry
+6. 2025-01-23: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry
+7. 2025-01-27: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands
+8. 2025-01-27: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands
+9. 2025-01-27: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands
+10. 2025-01-31: From now on the organiser of the book club reverts to the previous entry instead; the newest entry governs
+11. 2025-01-31: From now on the organiser of the book club reverts to the previous entry instead; the newest entry governs
+12. 2025-01-31: From now on the organiser of the book club reverts to the previous entry instead; the newest entry governs
+13. 2025-02-03: My mum asked me to remind everyone about the family calendar on Sunday evenings
+14. 2025-02-03: My mum asked me to remind everyone about the family calendar on Sunday evenings
+15. 2025-02-03: My mum asked me to remind everyone about the family calendar on Sunday evenings
+16. 2025-02-06: Separately, the choir is run by Skylyn Espinoza
+
+-- v6-hold 034315 base score=0 ans='Nicholas Floyd' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cf3a6ce0396cb7dac. From my household notes: Who runs the book club now? Give me the person.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cf3a6ce0396cb7dac. From my household notes: Who runs the book club now? Give me the person.'
+      REPLY: 'ANSWER: Nicholas Floyd'
+   FINAL: 'ANSWER: Nicholas Floyd'
+##### NOTES (cf) expected='Reginald Thao' distractors=['Skylyn Espinoza']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-22: The person behind the book club is Lauren Cox
+2. 2025-01-23: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry
+3. 2025-01-27: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands
+4. 2025-01-31: From now on the organiser of the book club is Reginald Thao instead; the newest entry governs
+5. 2025-02-03: My mum asked me to remind everyone about the family calendar on Sunday evenings
+
+-- v6-hold 034315 caus score=1 ans='Reginald Thao' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ca39b921dc13508ad. Looking back at what I saved: Who runs the book club now? Name only.
+   ev: ['shared draft: written here', 'short path records=5 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the book club now?'
+      REPLY: 'Reginald Thao\n\nANSWER: Reginald Thao'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ca39b921dc13508ad. Looking back at what I saved: Who runs the book club now? Name only.'
+      REPLY: 'Reginald Thao\n\nANSWER: Reginald Thao'
+   FINAL: 'Reginald Thao\n\nANSWER: Reginald Thao'
+-- v6-hold 034315 dist score=0 ans='Nicholas Floyd' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cf3a6ce0396cb7dac. Before I forget — Who runs the book club now? Just the name.
+   ev: ['shared draft: written here', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the book club now?'
+      REPLY: 'ANSWER: Nicholas Floyd'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cf3a6ce0396cb7dac. Before I forget — Who runs the book club now? Just the name.'
+      REPLY: 'ANSWER: Nicholas Floyd'
+   FINAL: 'ANSWER: Nicholas Floyd'
+-- v6-hold 034315 rend score=0 ans='Nicholas Floyd' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cf3a6ce0396cb7dac. Help me keep the family logistics straight. Who runs the book club now? Just the name.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cf3a6ce0396cb7dac. Help me keep the family logistics straight. Who runs the book club now? Just the name.'
+      REPLY: 'ANSWER: Nicholas Floyd'
+   FINAL: 'ANSWER: Nicholas Floyd'
+##### NOTES (tw) expected='Kathryn Choate' distractors=['Skylyn Espinoza']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-22: The person behind the book club is Lauren Cox
+2. 2025-01-23: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry
+3. 2025-01-27: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands
+4. 2025-01-31: From now on the organiser of the book club reverts to the previous entry instead; the newest entry governs
+5. 2025-02-03: My mum asked me to remind everyone about the family calendar on Sunday evenings
+6. 2025-02-06: Separately, the choir is run by Skylyn Espinoza
+
+-- v7-prog2 172653 base score=0 ans='Nicholas Floyd' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cf3a6ce0396cb7dac. From my household notes: Who runs the book club now? Give me the person.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='over these same entries:\nUse only case file cf3a6ce0396cb7dac. From my household notes: Who runs the book club now? Give me the person.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] organiser of the book club: none -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (changed)  \n[M6] choir run by: none -> Skylyn Espinoza (set)  \n\nNOW organiser of the book club: Kathryn Choate  \nNOW choir run by: Skylyn Espinoza'
+      [assistant-in] 'The book club is currently run by Nicholas Floyd.  \nANSWER: Nicholas Floyd'
+      REPLY: 'The book club is currently run by Nicholas Floyd.  \nANSWER: Nicholas Floyd'
+   FINAL: 'The book club is currently run by Nicholas Floyd.  \nANSWER: Nicholas Floyd'
+##### NOTES (cf) expected='Reginald Thao' distractors=['Skylyn Espinoza']
+[M1] 2025-01-22 | User: Case file ca39b921dc13508ad: The person behind the book club is Lauren Cox.
+[M2] 2025-01-23 | User: Remember this: Case file ca39b921dc13508ad: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry.
+[M3] 2025-01-27 | User: Adding to my notes — Case file ca39b921dc13508ad: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands.
+[M4] 2025-01-31 | User: Remember this: Case file ca39b921dc13508ad: From now on the organiser of the book club is Reginald Thao instead; the newest entry governs.
+[M5] 2025-02-03 | User: Note for you: Case file ca39b921dc13508ad: My mum asked me to remind everyone about the family calendar on Sunday evenings.
+
+-- v7-prog2 172653 caus score=1 ans='Reginald Thao' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ca39b921dc13508ad. Looking back at what I saved: Who runs the book club now? Name only.
+   ev: ['ledger: written here, 8 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] organiser of the book club: none -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Reginald Thao (changed)  \n[M5] family calendar reminder: none -> remind everyone about the family calendar on Sunday evenings (set)  \n\nNOW organiser of the book club: Reginald Thao  \nNOW family calendar reminder: remind everyone about the family calendar on Sunday evenings'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] organiser of the book club: none -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Reginald Thao (changed)  \n[M5] family calendar reminder: none -> remind everyone about the family calendar on Sunday evenings (set)  \n\nNOW organiser of the book club: Reginald Thao  \nNOW family calendar reminder: remind everyone about the family calendar on Sunday evenings'
+      REPLY: 'The book club is currently run by Reginald\u202fThao.  \nANSWER: Reginald Thao'
+   FINAL: 'The book club is currently run by Reginald\u202fThao.  \nANSWER: Reginald Thao'
+-- v7-prog2 172653 dist score=0 ans='Nicholas Floyd' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cf3a6ce0396cb7dac. Before I forget — Who runs the book club now? Just the name.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='other words over these same entries:\nUse only case file cf3a6ce0396cb7dac. Before I forget — Who runs the book club now? Just the name.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] organiser of the book club: none -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (changed)  \n[M6] choir run by: none -> Skylyn Espinoza (set)  \n\nNOW organiser of the book club: Kathryn Choate  \nNOW choir run by: Skylyn Espinoza'
+      [assistant-in] 'The book club is currently run by Nicholas Floyd.  \nANSWER: Nicholas Floyd'
+      REPLY: 'Nicholas Floyd  \nANSWER: Nicholas Floyd'
+   FINAL: 'Nicholas Floyd  \nANSWER: Nicholas Floyd'
+##### NOTES (tw) expected='Kathryn Choate' distractors=['Skylyn Espinoza']
+[M1] 2025-01-22 | User: Shared calendar entry 2 | Case file cf3a6ce0396cb7dac: The person behind the book club is Lauren Cox.
+[M2] 2025-01-23 | User: Forwarding a text I got: "Case file cf3a6ce0396cb7dac: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry."
+[M3] 2025-01-27 | User: Shared calendar entry 4 | Case file cf3a6ce0396cb7dac: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands.
+[M4] 2025-01-31 | User: Shared calendar entry 1 | Case file cf3a6ce0396cb7dac: From now on the organiser of the book club reverts to the previous entry instead; the newest entry governs.
+[M5] 2025-02-03 | User: Shared calendar entry 3 | Case file cf3a6ce0396cb7dac: My mum asked me to remind everyone about the family calendar on Sunday evenings.
+[M6] 2025-02-06 | User: From the fridge list (photo transcription, line 5): Case file cf3a6ce0396cb7dac: Separately, the choir is run by Skylyn Espinoza.
+
+-- v7-prog2 172653 rend score=0 ans='Nicholas Floyd' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cf3a6ce0396cb7dac. Help me keep the family logistics straight. Who runs the book club now? Just the name.
+   ev: ['ledger: written here, 8 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] organiser of the book club: none -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (changed)  \n[M6] choir run by: none -> Skylyn Espinoza (set)  \n\nNOW organiser of the book club: Kathryn Choate  \nNOW choir run by: Skylyn Espinoza'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] organiser of the book club: none -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (changed)  \n[M6] choir run by: none -> Skylyn Espinoza (set)  \n\nNOW organiser of the book club: Kathryn Choate  \nNOW choir run by: Skylyn Espinoza'
+      REPLY: 'The book club is currently run by Nicholas Floyd.  \nANSWER: Nicholas Floyd'
+   FINAL: 'The book club is currently run by Nicholas Floyd.  \nANSWER: Nicholas Floyd'
+-- v7-1 175534 base score=0 ans='Nicholas Floyd' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cf3a6ce0396cb7dac. From my household notes: Who runs the book club now? Give me the person.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='over these same entries:\nUse only case file cf3a6ce0396cb7dac. From my household notes: Who runs the book club now? Give me the person.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] person behind the book club:  -> Lauren Cox (set)  \n[M2] organiser of the book club:  -> Kathryn Choate (set)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (went back)  \n[M5] family calendar reminder:  -> My mum asked me to remind everyone about the family calendar on Sunday evenings (set)  \n[M6] choir:  -> Skylyn Espinoza (set)  \n\nNOW person behind the book club: Lauren Cox  \nNOW organiser of the book club: Kathryn Choate  \nNOW family calendar reminder: My mum asked me to remind everyone about the family calendar on Sunday evenings  \nNOW choir: Skylyn Espinoza'
+      [assistant-in] 'Kathryn Choate\n\nANSWER: Kathryn Choate'
+      REPLY: 'The book club is currently run by Nicholas Floyd.\n\nANSWER: Nicholas Floyd'
+   FINAL: 'The book club is currently run by Nicholas Floyd.\n\nANSWER: Nicholas Floyd'
+-- v7-1 175534 caus score=1 ans='Reginald Thao' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ca39b921dc13508ad. Looking back at what I saved: Who runs the book club now? Name only.
+   ev: ['ledger: written here, 8 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] organiser of the book club: None -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Reginald Thao (changed)  \n[M5] family calendar reminder: None -> Sunday evenings (set)  \n\nNOW organiser of the book club: Reginald Thao  \nNOW family calendar reminder: Sunday evenings'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] organiser of the book club: None -> Lauren Cox (set)  \n[M2] organiser of the book club: Lauren Cox -> Kathryn Choate (changed)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Reginald Thao (changed)  \n[M5] family calendar reminder: None -> Sunday evenings (set)  \n\nNOW organiser of the book club: Reginald Thao  \nNOW family calendar reminder: Sunday evenings'
+      REPLY: 'The current organiser of the book club is Reginald Thao.  \nANSWER: Reginald Thao'
+   FINAL: 'The current organiser of the book club is Reginald Thao.  \nANSWER: Reginald Thao'
+-- v7-1 175534 dist score=1 ans='Kathryn Choate' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cf3a6ce0396cb7dac. Before I forget — Who runs the book club now? Just the name.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='other words over these same entries:\nUse only case file cf3a6ce0396cb7dac. Before I forget — Who runs the book club now? Just the name.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] person behind the book club:  -> Lauren Cox (set)  \n[M2] organiser of the book club:  -> Kathryn Choate (set)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (went back)  \n[M5] family calendar reminder:  -> My mum asked me to remind everyone about the family calendar on Sunday evenings (set)  \n[M6] choir:  -> Skylyn Espinoza (set)  \n\nNOW person behind the book club: Lauren Cox  \nNOW organiser of the book club: Kathryn Choate  \nNOW family calendar reminder: My mum asked me to remind everyone about the family calendar on Sunday evenings  \nNOW choir: Skylyn Espinoza'
+      [assistant-in] 'Kathryn Choate\n\nANSWER: Kathryn Choate'
+      REPLY: 'Kathryn Choate runs the book club.\n\nANSWER: Kathryn Choate'
+   FINAL: 'Kathryn Choate runs the book club.\n\nANSWER: Kathryn Choate'
+##### NOTES (tw) expected='Kathryn Choate' distractors=['Skylyn Espinoza']
+[M1] 2025-01-22 | User: Forwarding a text I got: "Case file cf3a6ce0396cb7dac: The person behind the book club is Lauren Cox."
+[M2] 2025-01-23 | User: From the fridge list (photo transcription, line 6): Case file cf3a6ce0396cb7dac: Update: the organiser of the book club is now Kathryn Choate, replacing the earlier entry.
+[M3] 2025-01-27 | User: Shared calendar entry 4 | Case file cf3a6ce0396cb7dac: Change logged: the organiser of the book club is now Nicholas Floyd, and the previous entry no longer stands.
+[M4] 2025-01-31 | User: From the fridge list (photo transcription, line 4): Case file cf3a6ce0396cb7dac: From now on the organiser of the book club reverts to the previous entry instead; the newest entry governs.
+[M5] 2025-02-03 | User: Forwarding a text I got: "Case file cf3a6ce0396cb7dac: My mum asked me to remind everyone about the family calendar on Sunday evenings."
+[M6] 2025-02-06 | User: From the fridge list (photo transcription, line 5): Case file cf3a6ce0396cb7dac: Separately, the choir is run by Skylyn Espinoza.
+
+-- v7-1 175534 rend score=1 ans='Kathryn Choate' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cf3a6ce0396cb7dac. Help me keep the family logistics straight. Who runs the book club now? Just the name.
+   ev: ['ledger: written here, 11 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] person behind the book club:  -> Lauren Cox (set)  \n[M2] organiser of the book club:  -> Kathryn Choate (set)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (went back)  \n[M5] family calendar reminder:  -> My mum asked me to remind everyone about the family calendar on Sunday evenings (set)  \n[M6] choir:  -> Skylyn Espinoza (set)  \n\nNOW person behind the book club: Lauren Cox  \nNOW organiser of the book club: Kathryn Choate  \nNOW family calendar reminder: My mum asked me to remind everyone about the family calendar on Sunday evenings  \nNOW choir: Skylyn Espinoza'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] person behind the book club:  -> Lauren Cox (set)  \n[M2] organiser of the book club:  -> Kathryn Choate (set)  \n[M3] organiser of the book club: Kathryn Choate -> Nicholas Floyd (changed)  \n[M4] organiser of the book club: Nicholas Floyd -> Kathryn Choate (went back)  \n[M5] family calendar reminder:  -> My mum asked me to remind everyone about the family calendar on Sunday evenings (set)  \n[M6] choir:  -> Skylyn Espinoza (set)  \n\nNOW person behind the book club: Lauren Cox  \nNOW organiser of the book club: Kathryn Choate  \nNOW family calendar reminder: My mum asked me to remind everyone about the family calendar on Sunday evenings  \nNOW choir: Skylyn Espinoza'
+      REPLY: 'Kathryn Choate\n\nANSWER: Kathryn Choate'
+   FINAL: 'Kathryn Choate\n\nANSWER: Kathryn Choate'

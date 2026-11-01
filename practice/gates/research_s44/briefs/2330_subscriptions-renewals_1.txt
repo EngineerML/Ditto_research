@@ -1,0 +1,202 @@
+##### NOTES (tw) expected='upgrade it' distractors=['pause it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-16: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it
+2. 2025-04-16: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it
+3. 2025-04-16: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it
+4. 2025-04-18: Update: the plan for the language app is to now upgrade it, replacing the earlier entry
+5. 2025-04-18: Update: the plan for the language app is to now upgrade it, replacing the earlier entry
+6. 2025-04-18: Update: the plan for the language app is to now upgrade it, replacing the earlier entry
+7. 2025-04-21: Update: the plan for the language app is to now cancel it, replacing the earlier entry
+8. 2025-04-21: Update: the plan for the language app is to now cancel it, replacing the earlier entry
+9. 2025-04-21: Update: the plan for the language app is to now cancel it, replacing the earlier entry
+10. 2025-04-22: Change logged: the plan for the language app is back to the previous entry, and the last change no longer stands
+11. 2025-04-22: Change logged: the plan for the language app is back to the previous entry, and the last change no longer stands
+12. 2025-04-22: Change logged: the plan for the language app is back to the previous entry, and the last change no longer stands
+13. 2025-04-23: Our youngest asked me to remind everyone about the family calendar on Sunday evenings
+14. 2025-04-23: Our youngest asked me to remind everyone about the family calendar on Sunday evenings
+15. 2025-04-23: Our youngest asked me to remind everyone about the family calendar on Sunday evenings
+16. 2025-04-29: Separately, for the news subscription the plan is to pause it
+
+-- v6-hold 031425 base score=1 ans='to now upgrade it' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.
+   ev: ['shared draft: written here', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='What did we settle on doing about the language app before it renews?'
+      REPLY: 'ANSWER: to now upgrade it'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.'
+      REPLY: 'ANSWER: to now upgrade it'
+   FINAL: 'ANSWER: to now upgrade it'
+##### NOTES (cf) expected='switch it to annual billing' distractors=['pause it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-16: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it
+2. 2025-04-18: Update: the plan for the language app is to now upgrade it, replacing the earlier entry
+3. 2025-04-21: Update: the plan for the language app is to now cancel it, replacing the earlier entry
+4. 2025-04-22: Change logged: the plan for the language app is to now switch it to annual billing, and the previous entry no longer stands
+5. 2025-04-23: Our youngest asked me to remind everyone about the family calendar on Sunday evenings
+
+-- v6-hold 031425 caus score=1 ans='switch it to annual billing' grader=['claim 0 (action): 1.000']
+   Q: Use only case file c2d4871ad2704fdd6. Help me keep the family logistics straight. What did we settle on doing about the language app before it renews? Just the action.
+   ev: ['shared draft: written here', 'short path records=5 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='What did we settle on doing about the language app before it renews?'
+      REPLY: 'ANSWER: switch it to annual billing'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file c2d4871ad2704fdd6. Help me keep the family logistics straight. What did we settle on doing about the language app before it renews? Just the action.'
+      REPLY: 'switch it to annual billing\n\nANSWER: switch it to annual billing'
+   FINAL: 'switch it to annual billing\n\nANSWER: switch it to annual billing'
+-- v6-hold 031425 dist score=1 ans='to now upgrade it' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. From my household notes: What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ca83875a3092c6ceb. From my household notes: What did we settle on doing about the language app before it renews? The decision, not the history.'
+      REPLY: 'ANSWER: to now upgrade it'
+   FINAL: 'ANSWER: to now upgrade it'
+-- v6-hold 031425 rend score=1 ans='to now upgrade it' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. Checking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ca83875a3092c6ceb. Checking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.'
+      REPLY: 'Got it.\n\nANSWER: to now upgrade it'
+   FINAL: 'Got it.\n\nANSWER: to now upgrade it'
+##### NOTES (tw) expected='upgrade it' distractors=['pause it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-16: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it
+2. 2025-04-18: Update: the plan for the language app is to now upgrade it, replacing the earlier entry
+3. 2025-04-21: Update: the plan for the language app is to now cancel it, replacing the earlier entry
+4. 2025-04-22: Change logged: the plan for the language app is back to the previous entry, and the last change no longer stands
+5. 2025-04-23: Our youngest asked me to remind everyone about the family calendar on Sunday evenings
+6. 2025-04-29: Separately, for the news subscription the plan is to pause it
+
+-- v7-prog 171243 base score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail=' ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause  \n\nANSWER: upgrade'
+      REPLY: 'upgrade'
+   call1 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="ent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not - ending with its 'ANSWER:' line."
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause  \n\nANSWER: upgrade'
+      [assistant-in] 'upgrade'
+      REPLY: 'upgrade\n\nANSWER: upgrade'
+   FINAL: 'upgrade\n\nANSWER: upgrade'
+##### NOTES (cf) expected='switch it to annual billing' distractors=['pause it']
+[M1] 2025-04-16 | User: Remember this: Case file c2d4871ad2704fdd6: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it.
+[M2] 2025-04-18 | User: Remember this: Case file c2d4871ad2704fdd6: Update: the plan for the language app is to now upgrade it, replacing the earlier entry.
+[M3] 2025-04-21 | User: Adding to my notes — Case file c2d4871ad2704fdd6: Update: the plan for the language app is to now cancel it, replacing the earlier entry.
+[M4] 2025-04-22 | User: Note for you: Case file c2d4871ad2704fdd6: Change logged: the plan for the language app is to now switch it to annual billing, and the previous entry no longer stands.
+[M5] 2025-04-23 | User: Case file c2d4871ad2704fdd6: Our youngest asked me to remind everyone about the family calendar on Sunday evenings.
+
+-- v7-prog 171243 caus score=1 ans='switch it to annual billing' grader=['claim 0 (action): 1.000']
+   Q: Use only case file c2d4871ad2704fdd6. Help me keep the family logistics straight. What did we settle on doing about the language app before it renews? Just the action.
+   ev: ['ledger: written here, 10 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] Renewal for the language app lands 2025-11-08: none -> 2025-11-08 (set)  \n[M1] plan for the language app: none -> downgrade (set)  \n[M2] plan for the language app: downgrade -> upgrade (changed)  \n[M3] plan for the language app: upgrade -> cancel (changed)  \n[M4] plan for the language app: cancel -> annual billing (changed)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n\nNOW Renewal for the language app lands 2025-11-08: 2025-11-08  \nNOW plan for the language app: annual billing  \nNOW family calendar reminder: Sunday evenings'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] Renewal for the language app lands 2025-11-08: none -> 2025-11-08 (set)  \n[M1] plan for the language app: none -> downgrade (set)  \n[M2] plan for the language app: downgrade -> upgrade (changed)  \n[M3] plan for the language app: upgrade -> cancel (changed)  \n[M4] plan for the language app: cancel -> annual billing (changed)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n\nNOW Renewal for the language app lands 2025-11-08: 2025-11-08  \nNOW plan for the language app: annual billing  \nNOW family calendar reminder: Sunday evenings'
+      REPLY: 'ANSWER: switch it to annual billing'
+   FINAL: 'ANSWER: switch it to annual billing'
+##### NOTES (tw) expected='upgrade it' distractors=['pause it']
+[M1] 2025-04-16 | User: From the fridge list (photo transcription, line 1): Case file ca83875a3092c6ceb: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it.
+[M2] 2025-04-18 | User: From the fridge list (photo transcription, line 3): Case file ca83875a3092c6ceb: Update: the plan for the language app is to now upgrade it, replacing the earlier entry.
+[M3] 2025-04-21 | User: Forwarding a text I got: "Case file ca83875a3092c6ceb: Update: the plan for the language app is to now cancel it, replacing the earlier entry."
+[M4] 2025-04-22 | User: From the fridge list (photo transcription, line 6): Case file ca83875a3092c6ceb: Change logged: the plan for the language app is back to the previous entry, and the last change no longer stands.
+[M5] 2025-04-23 | User: From the fridge list (photo transcription, line 4): Case file ca83875a3092c6ceb: Our youngest asked me to remind everyone about the family calendar on Sunday evenings.
+[M6] 2025-04-29 | User: From the fridge list (photo transcription, line 5): Case file ca83875a3092c6ceb: Separately, for the news subscription the plan is to pause it.
+
+-- v7-prog 171243 dist score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. From my household notes: What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['ledger: written here, 12 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+      REPLY: '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause  \n\nANSWER: upgrade'
+   FINAL: '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause  \n\nANSWER: upgrade'
+-- v7-prog 171243 rend score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. Checking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='cking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause  \n\nANSWER: upgrade'
+      REPLY: 'ANSWER: upgrade'
+   FINAL: 'ANSWER: upgrade'
+-- v7-prog2 172212 base score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail=' ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] language app plan: none -> downgrade (set)  \n[M1] renewal date: none -> 2025-11-08 (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> remind everyone about the family calendar on Sunday evenings (added)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app plan: upgrade  \nNOW renewal date: 2025-11-08  \nNOW family calendar reminder: remind everyone about the family calendar on Sunday evenings  \nNOW news subscription plan: pause'
+      [assistant-in] 'We decided to upgrade the language app before its renewal.  \nANSWER: upgrade'
+      REPLY: 'We decided to upgrade the language app before its renewal.  \nANSWER: upgrade'
+   FINAL: 'We decided to upgrade the language app before its renewal.  \nANSWER: upgrade'
+-- v7-prog2 172212 caus score=1 ans='switch it to annual billing' grader=['claim 0 (action): 1.000']
+   Q: Use only case file c2d4871ad2704fdd6. Help me keep the family logistics straight. What did we settle on doing about the language app before it renews? Just the action.
+   ev: ['ledger: written here, 14 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] Renewal for the language app lands 2025-11-08: none -> 2025-11-08 (set)  \n[M1] plan for the language app: none -> downgrade (set)  \n\n[M2] plan for the language app: downgrade -> upgrade (changed)  \n\n[M3] plan for the language app: upgrade -> cancel (changed)  \n\n[M4] plan for the language app: cancel -> switch it to annual billing (changed)  \n\n[M5] family calendar reminder: none -> Sunday evenings (set)  \n\nNOW Renewal for the language app lands 2025-11-08: 2025-11-08  \nNOW plan for the language app: switch it to annual billing  \nNOW family calendar reminder: Sunday evenings'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] Renewal for the language app lands 2025-11-08: none -> 2025-11-08 (set)  \n[M1] plan for the language app: none -> downgrade (set)  \n\n[M2] plan for the language app: downgrade -> upgrade (changed)  \n\n[M3] plan for the language app: upgrade -> cancel (changed)  \n\n[M4] plan for the language app: cancel -> switch it to annual billing (changed)  \n\n[M5] family calendar reminder: none -> Sunday evenings (set)  \n\nNOW Renewal for the language app lands 2025-11-08: 2025-11-08  \nNOW plan for the language app: switch it to annual billing  \nNOW family calendar reminder: Sunday evenings'
+      REPLY: 'We decided to switch the language app to annual billing before it renews.  \nANSWER: switch it to annual billing'
+   FINAL: 'We decided to switch the language app to annual billing before it renews.  \nANSWER: switch it to annual billing'
+##### NOTES (tw) expected='upgrade it' distractors=['pause it']
+[M1] 2025-04-16 | User: Forwarding a text I got: "Case file ca83875a3092c6ceb: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it."
+[M2] 2025-04-18 | User: From the fridge list (photo transcription, line 3): Case file ca83875a3092c6ceb: Update: the plan for the language app is to now upgrade it, replacing the earlier entry.
+[M3] 2025-04-21 | User: Shared calendar entry 4 | Case file ca83875a3092c6ceb: Update: the plan for the language app is to now cancel it, replacing the earlier entry.
+[M4] 2025-04-22 | User: Forwarding a text I got: "Case file ca83875a3092c6ceb: Change logged: the plan for the language app is back to the previous entry, and the last change no longer stands."
+[M5] 2025-04-23 | User: From the fridge list (photo transcription, line 4): Case file ca83875a3092c6ceb: Our youngest asked me to remind everyone about the family calendar on Sunday evenings.
+[M6] 2025-04-29 | User: From the fridge list (photo transcription, line 5): Case file ca83875a3092c6ceb: Separately, for the news subscription the plan is to pause it.
+
+-- v7-prog2 172212 dist score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. From my household notes: What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['ledger: written here, 12 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] language app plan: none -> downgrade (set)  \n[M1] renewal date: none -> 2025-11-08 (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> remind everyone about the family calendar on Sunday evenings (added)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app plan: upgrade  \nNOW renewal date: 2025-11-08  \nNOW family calendar reminder: remind everyone about the family calendar on Sunday evenings  \nNOW news subscription plan: pause'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] language app plan: none -> downgrade (set)  \n[M1] renewal date: none -> 2025-11-08 (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> remind everyone about the family calendar on Sunday evenings (added)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app plan: upgrade  \nNOW renewal date: 2025-11-08  \nNOW family calendar reminder: remind everyone about the family calendar on Sunday evenings  \nNOW news subscription plan: pause'
+      REPLY: 'We decided to upgrade the language app before its renewal.  \nANSWER: upgrade'
+   FINAL: 'We decided to upgrade the language app before its renewal.  \nANSWER: upgrade'
+-- v7-prog2 172212 rend score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. Checking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='cking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] language app plan: none -> downgrade (set)  \n[M1] renewal date: none -> 2025-11-08 (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> remind everyone about the family calendar on Sunday evenings (added)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app plan: upgrade  \nNOW renewal date: 2025-11-08  \nNOW family calendar reminder: remind everyone about the family calendar on Sunday evenings  \nNOW news subscription plan: pause'
+      [assistant-in] 'We decided to upgrade the language app before its renewal.  \nANSWER: upgrade'
+      REPLY: 'We settled on upgrading the language app before its renewal.  \nANSWER: upgrade'
+   FINAL: 'We settled on upgrading the language app before its renewal.  \nANSWER: upgrade'
+-- v7-1 175044 base score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail=' ca83875a3092c6ceb. Quick one from my own notes. What did we settle on doing about the language app before it renews? One short phrase.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+      [assistant-in] 'We settled on upgrading the language app before it renews.  \nANSWER: upgrade'
+      REPLY: 'ANSWER: upgrade'
+   FINAL: 'ANSWER: upgrade'
+-- v7-1 175044 caus score=1 ans='switch it to annual billing' grader=['claim 0 (action): 1.000']
+   Q: Use only case file c2d4871ad2704fdd6. Help me keep the family logistics straight. What did we settle on doing about the language app before it renews? Just the action.
+   ev: ['ledger: written here, 8 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] Renewal for the language app: before -> 2025-11-08 (set)  \n[M1] plan for the language app: before -> downgrade (set)  \n[M2] plan for the language app: downgrade -> upgrade (changed)  \n[M3] plan for the language app: upgrade -> cancel (changed)  \n[M4] plan for the language app: cancel -> switch it to annual billing (changed)  \n\nNOW Renewal for the language app: 2025-11-08  \nNOW plan for the language app: switch it to annual billing'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] Renewal for the language app: before -> 2025-11-08 (set)  \n[M1] plan for the language app: before -> downgrade (set)  \n[M2] plan for the language app: downgrade -> upgrade (changed)  \n[M3] plan for the language app: upgrade -> cancel (changed)  \n[M4] plan for the language app: cancel -> switch it to annual billing (changed)  \n\nNOW Renewal for the language app: 2025-11-08  \nNOW plan for the language app: switch it to annual billing'
+      REPLY: 'We decided to switch the language app to annual billing.  \nANSWER: switch it to annual billing'
+   FINAL: 'We decided to switch the language app to annual billing.  \nANSWER: switch it to annual billing'
+##### NOTES (tw) expected='upgrade it' distractors=['pause it']
+[M1] 2025-04-16 | User: Shared calendar entry 5 | Case file ca83875a3092c6ceb: Renewal for the language app lands 2025-11-08 — I'd decided to downgrade it.
+[M2] 2025-04-18 | User: Forwarding a text I got: "Case file ca83875a3092c6ceb: Update: the plan for the language app is to now upgrade it, replacing the earlier entry."
+[M3] 2025-04-21 | User: Shared calendar entry 4 | Case file ca83875a3092c6ceb: Update: the plan for the language app is to now cancel it, replacing the earlier entry.
+[M4] 2025-04-22 | User: Forwarding a text I got: "Case file ca83875a3092c6ceb: Change logged: the plan for the language app is back to the previous entry, and the last change no longer stands."
+[M5] 2025-04-23 | User: Forwarding a text I got: "Case file ca83875a3092c6ceb: Our youngest asked me to remind everyone about the family calendar on Sunday evenings."
+[M6] 2025-04-29 | User: From the fridge list (photo transcription, line 5): Case file ca83875a3092c6ceb: Separately, for the news subscription the plan is to pause it.
+
+-- v7-1 175044 dist score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ca83875a3092c6ceb. From my household notes: What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['ledger: written here, 12 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+      REPLY: 'We settled on upgrading the language app before it renews.  \nANSWER: upgrade'
+   FINAL: 'We settled on upgrading the language app before it renews.  \nANSWER: upgrade'
+-- v7-1 175044 rend score=0 ans='cancel' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file ca83875a3092c6ceb. Checking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='cking something I told you earlier. What did we settle on doing about the language app before it renews? The decision, not the history.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] language app renewal date: none -> 2025-11-08 (set)  \n[M1] language app plan: none -> downgrade (set)  \n[M2] language app plan: downgrade -> upgrade (changed)  \n[M3] language app plan: upgrade -> cancel (changed)  \n[M4] language app plan: cancel -> upgrade (went back)  \n[M5] family calendar reminder: none -> Sunday evenings (set)  \n[M6] news subscription plan: none -> pause (set)  \n\nNOW language app renewal date: 2025-11-08  \nNOW language app plan: upgrade  \nNOW family calendar reminder: Sunday evenings  \nNOW news subscription plan: pause'
+      [assistant-in] 'We settled on upgrading the language app before it renews.  \nANSWER: upgrade'
+      REPLY: 'We decided to cancel the language app before it renews.  \nANSWER: cancel'
+   FINAL: 'We decided to cancel the language app before it renews.  \nANSWER: cancel'

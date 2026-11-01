@@ -1,0 +1,197 @@
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-21: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then
+2. 2025-01-21: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then
+3. 2025-01-21: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then
+4. 2025-01-24: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry
+5. 2025-01-24: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry
+6. 2025-01-24: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry
+7. 2025-01-28: The proposal to change the plan for the audiobook plan to switch it to annual billing was turned down
+8. 2025-01-28: The proposal to change the plan for the audiobook plan to switch it to annual billing was turned down
+9. 2025-01-28: The proposal to change the plan for the audiobook plan to switch it to annual billing was turned down
+10. 2025-02-03: My mum wants the car booked for the MOT before the end of the month
+11. 2025-02-03: My mum wants the car booked for the MOT before the end of the month
+12. 2025-02-03: My mum wants the car booked for the MOT before the end of the month
+13. 2025-02-05: Separately, for the meal-kit box the plan is to cancel it
+
+-- v6-hold 032842 base score=0 ans='pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Quick one from my own notes. What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['shared draft: none written', 'short path records=13', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the next action on the audiobook plan, as it stands?"
+      REPLY: 'pause it before then'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file cc169f6b90a1c7994. Quick one from my own notes. What's the next action on the audiobook plan, as it stands? Just the action."
+      REPLY: 'The next action is to pause it before then.  \nANSWER: pause it before then'
+   FINAL: 'The next action is to pause it before then.  \nANSWER: pause it before then'
+##### NOTES (cf) expected='switch it to annual billing' distractors=['cancel it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-21: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then
+2. 2025-01-24: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry
+3. 2025-01-28: The proposal to change the plan for the audiobook plan to switch it to annual billing was accepted
+4. 2025-02-03: My mum wants the car booked for the MOT before the end of the month
+
+-- v6-hold 032842 caus score=1 ans='switch it to annual billing' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ccd56f2b7d449b987. Looking back at what I saved: What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the next action on the audiobook plan, as it stands?"
+      REPLY: 'ANSWER: switch it to annual billing'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file ccd56f2b7d449b987. Looking back at what I saved: What's the next action on the audiobook plan, as it stands? Just the action."
+      REPLY: 'The next action is to switch it to annual billing.  \nANSWER: switch it to annual billing'
+   FINAL: 'The next action is to switch it to annual billing.  \nANSWER: switch it to annual billing'
+-- v6-hold 032842 dist score=0 ans='pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history.
+   ev: ['shared draft: none written', 'short path records=13', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the next action on the audiobook plan, as it stands?"
+      REPLY: 'pause it before then'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history."
+      REPLY: 'The next action is to pause it before then.  \nANSWER: pause it before then'
+   FINAL: 'The next action is to pause it before then.  \nANSWER: pause it before then'
+-- v6-hold 032842 rend score=0 ans='Pause it before then.' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Checking something I told you earlier. What's the next action on the audiobook plan, as it stands? One short phrase.
+   ev: ['shared draft: none written', 'short path records=13', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the next action on the audiobook plan, as it stands?"
+      REPLY: 'pause it before then'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file cc169f6b90a1c7994. Checking something I told you earlier. What's the next action on the audiobook plan, as it stands? One short phrase."
+      REPLY: 'The next action is to pause it before then.  \nANSWER: Pause it before then.'
+   FINAL: 'The next action is to pause it before then.  \nANSWER: Pause it before then.'
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+[M1] 2025-01-21 | User: From the fridge list (photo transcription, line 4): Case file cc169f6b90a1c7994: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then.
+[M2] 2025-01-24 | User: From the fridge list (photo transcription, line 1): Case file cc169f6b90a1c7994: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry.
+[M3] 2025-01-28 | User: Shared calendar entry 2 | Case file cc169f6b90a1c7994: The proposal to change the plan for the audiobook plan to switch it to annual billing was turned down.
+[M4] 2025-02-03 | User: Shared calendar entry 4 | Case file cc169f6b90a1c7994: My mum wants the car booked for the MOT before the end of the month.
+[M5] 2025-02-05 | User: From the fridge list (photo transcription, line 5): Case file cc169f6b90a1c7994: Separately, for the meal-kit box the plan is to cancel it.
+
+-- v7-prog 171538 base score=1 ans='pause' grader=['claim 0 (action): 1.000']
+   Q: Use only case file cc169f6b90a1c7994. Quick one from my own notes. What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['ledger: written here, 10 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] Audiobook renewal date: none → Jan\u202f15\u202f2026 (set)  \n[M1] Audiobook plan: none → pause (set)  \n[M2] Audiobook plan: pause → annual billing (proposed)  \n[M4] Car booking: none → booked for MOT before end of month (set)  \n[M5] Meal‑kit box plan: none → cancel (set)  \n\nNOW Audiobook renewal date: Jan\u202f15\u202f2026  \nNOW Audiobook plan: pause  \nNOW Car booking: booked for MOT before end of month  \nNOW Meal‑kit box plan: cancel'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] Audiobook renewal date: none → Jan\u202f15\u202f2026 (set)  \n[M1] Audiobook plan: none → pause (set)  \n[M2] Audiobook plan: pause → annual billing (proposed)  \n[M4] Car booking: none → booked for MOT before end of month (set)  \n[M5] Meal‑kit box plan: none → cancel (set)  \n\nNOW Audiobook renewal date: Jan\u202f15\u202f2026  \nNOW Audiobook plan: pause  \nNOW Car booking: booked for MOT before end of month  \nNOW Meal‑kit box plan: cancel'
+      REPLY: 'ANSWER: pause'
+   FINAL: 'ANSWER: pause'
+##### NOTES (cf) expected='switch it to annual billing' distractors=['cancel it']
+[M1] 2025-01-21 | User: Note for you: Case file ccd56f2b7d449b987: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then.
+[M2] 2025-01-24 | User: Remember this: Case file ccd56f2b7d449b987: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry.
+[M3] 2025-01-28 | User: Adding to my notes — Case file ccd56f2b7d449b987: The proposal to change the plan for the audiobook plan to switch it to annual billing was accepted.
+[M4] 2025-02-03 | User: Case file ccd56f2b7d449b987: My mum wants the car booked for the MOT before the end of the month.
+
+-- v7-prog 171538 caus score=0 ans='renew on Jan 15, 2026' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file ccd56f2b7d449b987. Looking back at what I saved: What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['ledger: written here, 13 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] audiobook plan renewal date: none -> 2026-01-15 (set)  \n[M1] audiobook plan status: none -> paused (set)  \n\n[M2] audiobook plan billing type: none -> annual (proposed)  \n\n[M3] audiobook plan billing type: proposed annual -> annual (changed)  \n\n[M4] car MOT booking date: none -> before end of month (set)  \n\nNOW audiobook plan renewal date: 2026-01-15  \nNOW audiobook plan status: paused  \nNOW audiobook plan billing type: annual  \nNOW car MOT booking date: before end of month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] audiobook plan renewal date: none -> 2026-01-15 (set)  \n[M1] audiobook plan status: none -> paused (set)  \n\n[M2] audiobook plan billing type: none -> annual (proposed)  \n\n[M3] audiobook plan billing type: proposed annual -> annual (changed)  \n\n[M4] car MOT booking date: none -> before end of month (set)  \n\nNOW audiobook plan renewal date: 2026-01-15  \nNOW audiobook plan status: paused  \nNOW audiobook plan billing type: annual  \nNOW car MOT booking date: before end of month'
+      REPLY: 'ANSWER: renew on Jan 15, 2026'
+   FINAL: 'ANSWER: renew on Jan 15, 2026'
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-21: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then
+2. 2025-01-24: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry
+3. 2025-01-28: The proposal to change the plan for the audiobook plan to switch it to annual billing was turned down
+4. 2025-02-03: My mum wants the car booked for the MOT before the end of the month
+5. 2025-02-05: Separately, for the meal-kit box the plan is to cancel it
+
+-- v7-prog 171538 dist score=1 ans='pause' grader=['claim 0 (action): 1.000']
+   Q: Use only case file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="se file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] Audiobook renewal date: none → Jan\u202f15\u202f2026 (set)  \n[M1] Audiobook plan: none → pause (set)  \n[M2] Audiobook plan: pause → annual billing (proposed)  \n[M4] Car booking: none → booked for MOT before end of month (set)  \n[M5] Meal‑kit box plan: none → cancel (set)  \n\nNOW Audiobook renewal date: Jan\u202f15\u202f2026  \nNOW Audiobook plan: pause  \nNOW Car booking: booked for MOT before end of month  \nNOW Meal‑kit box plan: cancel'
+      [assistant-in] 'ANSWER: pause'
+      REPLY: 'ANSWER: pause'
+   FINAL: 'ANSWER: pause'
+-- v7-prog 171538 rend score=1 ans='pause' grader=['claim 0 (action): 1.000']
+   Q: Use only case file cc169f6b90a1c7994. Checking something I told you earlier. What's the next action on the audiobook plan, as it stands? One short phrase.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="cc169f6b90a1c7994. Checking something I told you earlier. What's the next action on the audiobook plan, as it stands? One short phrase.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] Audiobook renewal date: none → Jan\u202f15\u202f2026 (set)  \n[M1] Audiobook plan: none → pause (set)  \n[M2] Audiobook plan: pause → annual billing (proposed)  \n[M4] Car booking: none → booked for MOT before end of month (set)  \n[M5] Meal‑kit box plan: none → cancel (set)  \n\nNOW Audiobook renewal date: Jan\u202f15\u202f2026  \nNOW Audiobook plan: pause  \nNOW Car booking: booked for MOT before end of month  \nNOW Meal‑kit box plan: cancel'
+      [assistant-in] 'ANSWER: pause'
+      REPLY: 'pause'
+   call1 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="dy follows them, or the reply put right where it does not - ending with its 'ANSWER:' line. In the values the reply gives, write each ordinary word correctly spelled, even where a note misspells it, and change nothing else in them: names, codes, addresses and figures keep every character as written."
+      [assistant-in] '[M1] Audiobook renewal date: none → Jan\u202f15\u202f2026 (set)  \n[M1] Audiobook plan: none → pause (set)  \n[M2] Audiobook plan: pause → annual billing (proposed)  \n[M4] Car booking: none → booked for MOT before end of month (set)  \n[M5] Meal‑kit box plan: none → cancel (set)  \n\nNOW Audiobook renewal date: Jan\u202f15\u202f2026  \nNOW Audiobook plan: pause  \nNOW Car booking: booked for MOT before end of month  \nNOW Meal‑kit box plan: cancel'
+      [assistant-in] 'ANSWER: pause'
+      [assistant-in] 'pause'
+      REPLY: 'pause\nANSWER: pause'
+   FINAL: 'pause\nANSWER: pause'
+-- v7-prog2 172441 base score=0 ans='Pause it before renewal.' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Quick one from my own notes. What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail=" case file cc169f6b90a1c7994. Quick one from my own notes. What's the next action on the audiobook plan, as it stands? Just the action.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] audiobook plan renewal date: none -> Jan 15, 2026 (set)  \n[M1] audiobook plan pause: none -> paused (set)  \n[M2] audiobook plan billing: paused -> annual billing (proposed)  \n[M3] audiobook plan billing: paused -> paused (declined)  \n[M4] car MOT booking: none -> before end of month (set)  \n[M5] meal-kit box plan: none -> cancelled (set)  \n\nNOW audiobook plan renewal date: Jan 15, 2026  \nNOW audiobook plan pause: paused  \nNOW audiobook plan billing: paused  \nNOW car MOT booking: before end of month  \nNOW meal-kit box plan: cancelled'
+      [assistant-in] 'Renew on 15 January 2026.  \nANSWER: Renew on 15 January 2026.'
+      REPLY: 'Pause it before renewal.  \nANSWER: Pause it before renewal.'
+   FINAL: 'Pause it before renewal.  \nANSWER: Pause it before renewal.'
+-- v7-prog2 172441 caus score=0 ans='Renew on Jan\u202f15\u202f2026' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file ccd56f2b7d449b987. Looking back at what I saved: What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['ledger: written here, 10 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] audiobook renewal date: none -> Jan 15, 2026 (set)  \n[M1] audiobook status: none -> paused (set)  \n[M2] audiobook billing type: none -> annual (proposed)  \n[M3] audiobook billing type: proposed annual -> annual (changed)  \n[M4] car MOT booking date: none -> before the end of the month (set)  \n\nNOW audiobook renewal date: Jan 15, 2026  \nNOW audiobook status: paused  \nNOW audiobook billing type: annual  \nNOW car MOT booking date: before the end of the month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] audiobook renewal date: none -> Jan 15, 2026 (set)  \n[M1] audiobook status: none -> paused (set)  \n[M2] audiobook billing type: none -> annual (proposed)  \n[M3] audiobook billing type: proposed annual -> annual (changed)  \n[M4] car MOT booking date: none -> before the end of the month (set)  \n\nNOW audiobook renewal date: Jan 15, 2026  \nNOW audiobook status: paused  \nNOW audiobook billing type: annual  \nNOW car MOT booking date: before the end of the month'
+      REPLY: 'The next action is to renew the audiobook plan on Jan\u202f15\u202f2026.  \nANSWER: Renew on Jan\u202f15\u202f2026'
+   FINAL: 'The next action is to renew the audiobook plan on Jan\u202f15\u202f2026.  \nANSWER: Renew on Jan\u202f15\u202f2026'
+-- v7-prog2 172441 dist score=0 ans='Renew on 15 January 2026.' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="se file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] audiobook plan renewal date: none -> Jan 15, 2026 (set)  \n[M1] audiobook plan pause: none -> paused (set)  \n[M2] audiobook plan billing: paused -> annual billing (proposed)  \n[M3] audiobook plan billing: paused -> paused (declined)  \n[M4] car MOT booking: none -> before end of month (set)  \n[M5] meal-kit box plan: none -> cancelled (set)  \n\nNOW audiobook plan renewal date: Jan 15, 2026  \nNOW audiobook plan pause: paused  \nNOW audiobook plan billing: paused  \nNOW car MOT booking: before end of month  \nNOW meal-kit box plan: cancelled'
+      [assistant-in] 'Renew on 15 January 2026.  \nANSWER: Renew on 15 January 2026.'
+      REPLY: 'The next action is to renew the audiobook plan on 15\u202fJanuary\u202f2026.  \nANSWER: Renew on 15 January 2026.'
+   FINAL: 'The next action is to renew the audiobook plan on 15\u202fJanuary\u202f2026.  \nANSWER: Renew on 15 January 2026.'
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+[M1] 2025-01-21 | User: From the fridge list (photo transcription, line 4): Case file cc169f6b90a1c7994: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then.
+[M2] 2025-01-24 | User: Forwarding a text I got: "Case file cc169f6b90a1c7994: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry."
+[M3] 2025-01-28 | User: Forwarding a text I got: "Case file cc169f6b90a1c7994: The proposal to change the plan for the audiobook plan to switch it to annual billing was turned down."
+[M4] 2025-02-03 | User: From the fridge list (photo transcription, line 3): Case file cc169f6b90a1c7994: My mum wants the car booked for the MOT before the end of the month.
+[M5] 2025-02-05 | User: From the fridge list (photo transcription, line 5): Case file cc169f6b90a1c7994: Separately, for the meal-kit box the plan is to cancel it.
+
+-- v7-prog2 172441 rend score=0 ans='Renew on 15 January 2026.' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Checking something I told you earlier. What's the next action on the audiobook plan, as it stands? One short phrase.
+   ev: ['ledger: written here, 12 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] audiobook plan renewal date: none -> Jan 15, 2026 (set)  \n[M1] audiobook plan pause: none -> paused (set)  \n[M2] audiobook plan billing: paused -> annual billing (proposed)  \n[M3] audiobook plan billing: paused -> paused (declined)  \n[M4] car MOT booking: none -> before end of month (set)  \n[M5] meal-kit box plan: none -> cancelled (set)  \n\nNOW audiobook plan renewal date: Jan 15, 2026  \nNOW audiobook plan pause: paused  \nNOW audiobook plan billing: paused  \nNOW car MOT booking: before end of month  \nNOW meal-kit box plan: cancelled'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] audiobook plan renewal date: none -> Jan 15, 2026 (set)  \n[M1] audiobook plan pause: none -> paused (set)  \n[M2] audiobook plan billing: paused -> annual billing (proposed)  \n[M3] audiobook plan billing: paused -> paused (declined)  \n[M4] car MOT booking: none -> before end of month (set)  \n[M5] meal-kit box plan: none -> cancelled (set)  \n\nNOW audiobook plan renewal date: Jan 15, 2026  \nNOW audiobook plan pause: paused  \nNOW audiobook plan billing: paused  \nNOW car MOT booking: before end of month  \nNOW meal-kit box plan: cancelled'
+      REPLY: 'Renew on 15 January 2026.  \nANSWER: Renew on 15 January 2026.'
+   FINAL: 'Renew on 15 January 2026.  \nANSWER: Renew on 15 January 2026.'
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+[M1] 2025-01-21 | User: Forwarding a text I got: "Case file cc169f6b90a1c7994: The audiobook plan renews on Jan 15, 2026; the plan was to pause it before then."
+[M2] 2025-01-24 | User: Shared calendar entry 3 | Case file cc169f6b90a1c7994: Draft update for sign-off: the plan for the audiobook plan is to now switch it to annual billing, replacing the current entry.
+[M3] 2025-01-28 | User: From the fridge list (photo transcription, line 2): Case file cc169f6b90a1c7994: The proposal to change the plan for the audiobook plan to switch it to annual billing was turned down.
+[M4] 2025-02-03 | User: Forwarding a text I got: "Case file cc169f6b90a1c7994: My mum wants the car booked for the MOT before the end of the month."
+[M5] 2025-02-05 | User: From the fridge list (photo transcription, line 5): Case file cc169f6b90a1c7994: Separately, for the meal-kit box the plan is to cancel it.
+
+-- v7-1 175316 base score=0 ans='pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Quick one from my own notes. What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['ledger: written here, 12 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: 'M1 audiobook plan renewal date: none -> renews on Jan 15, 2026 (set)  \nM1 audiobook plan pause: none -> pause before then (set)  \nM2 audiobook plan proposal: none -> switch to annual billing (proposed)  \nM3 audiobook plan proposal: switch to annual billing -> switch to annual billing (declined)  \nM4 car booking: none -> book car for MOT before the end of the month (set)  \nM5 meal-kit box: none -> cancel it (set)  \n\nNOW audiobook plan renewal date: renews on Jan 15, 2026  \nNOW audiobook plan pause: pause before then  \nNOW audiobook plan proposal: switch to annual billing  \nNOW car booking: book car for MOT before the end of the month  \nNOW meal-kit box: cancel it'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] 'M1 audiobook plan renewal date: none -> renews on Jan 15, 2026 (set)  \nM1 audiobook plan pause: none -> pause before then (set)  \nM2 audiobook plan proposal: none -> switch to annual billing (proposed)  \nM3 audiobook plan proposal: switch to annual billing -> switch to annual billing (declined)  \nM4 car booking: none -> book car for MOT before the end of the month (set)  \nM5 meal-kit box: none -> cancel it (set)  \n\nNOW audiobook plan renewal date: renews on Jan 15, 2026  \nNOW audiobook plan pause: pause before then  \nNOW audiobook plan proposal: switch to annual billing  \nNOW car booking: book car for MOT before the end of the month  \nNOW meal-kit box: cancel it'
+      REPLY: 'The next action on the audiobook plan is to pause it before then.  \nANSWER: pause it before then'
+   FINAL: 'The next action on the audiobook plan is to pause it before then.  \nANSWER: pause it before then'
+-- v7-1 175316 caus score=1 ans='switch it to annual billing' grader=['claim 0 (action): 1.000']
+   Q: Use only case file ccd56f2b7d449b987. Looking back at what I saved: What's the next action on the audiobook plan, as it stands? Just the action.
+   ev: ['ledger: written here, 8 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] Jan 15, 2026: none -> Jan 15, 2026 (set)  \n[M1] pause: none -> pause (set)  \n[M2] annual billing: pause -> annual billing (changed)  \n[M4] MOT before end of month: none -> MOT before end of month (set)  \n\nNOW Jan 15, 2026: Jan 15, 2026  \nNOW annual billing: annual billing  \nNOW MOT before end of month: MOT before end of month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] Jan 15, 2026: none -> Jan 15, 2026 (set)  \n[M1] pause: none -> pause (set)  \n[M2] annual billing: pause -> annual billing (changed)  \n[M4] MOT before end of month: none -> MOT before end of month (set)  \n\nNOW Jan 15, 2026: Jan 15, 2026  \nNOW annual billing: annual billing  \nNOW MOT before end of month: MOT before end of month'
+      REPLY: 'The next action on the audiobook plan is to switch it to annual billing.  \n\nANSWER: switch it to annual billing'
+   FINAL: 'The next action on the audiobook plan is to switch it to annual billing.  \n\nANSWER: switch it to annual billing'
+-- v7-1 175316 dist score=0 ans='pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="se file cc169f6b90a1c7994. Before I forget — What's the next action on the audiobook plan, as it stands? The decision, not the history.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] 'M1 audiobook plan renewal date: none -> renews on Jan 15, 2026 (set)  \nM1 audiobook plan pause: none -> pause before then (set)  \nM2 audiobook plan proposal: none -> switch to annual billing (proposed)  \nM3 audiobook plan proposal: switch to annual billing -> switch to annual billing (declined)  \nM4 car booking: none -> book car for MOT before the end of the month (set)  \nM5 meal-kit box: none -> cancel it (set)  \n\nNOW audiobook plan renewal date: renews on Jan 15, 2026  \nNOW audiobook plan pause: pause before then  \nNOW audiobook plan proposal: switch to annual billing  \nNOW car booking: book car for MOT before the end of the month  \nNOW meal-kit box: cancel it'
+      [assistant-in] 'The next action on the audiobook plan is to pause it before then.  \nANSWER: pause it before then'
+      REPLY: 'The next action on the audiobook plan is to pause it before then.  \nANSWER: pause it before then'
+   FINAL: 'The next action on the audiobook plan is to pause it before then.  \nANSWER: pause it before then'
+-- v7-1 175316 rend score=0 ans='pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc169f6b90a1c7994. Checking something I told you earlier. What's the next action on the audiobook plan, as it stands? One short phrase.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="cc169f6b90a1c7994. Checking something I told you earlier. What's the next action on the audiobook plan, as it stands? One short phrase.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] 'M1 audiobook plan renewal date: none -> renews on Jan 15, 2026 (set)  \nM1 audiobook plan pause: none -> pause before then (set)  \nM2 audiobook plan proposal: none -> switch to annual billing (proposed)  \nM3 audiobook plan proposal: switch to annual billing -> switch to annual billing (declined)  \nM4 car booking: none -> book car for MOT before the end of the month (set)  \nM5 meal-kit box: none -> cancel it (set)  \n\nNOW audiobook plan renewal date: renews on Jan 15, 2026  \nNOW audiobook plan pause: pause before then  \nNOW audiobook plan proposal: switch to annual billing  \nNOW car booking: book car for MOT before the end of the month  \nNOW meal-kit box: cancel it'
+      [assistant-in] 'The next action on the audiobook plan is to pause it before then.  \nANSWER: pause it before then'
+      REPLY: 'ANSWER: pause it before then'
+   FINAL: 'ANSWER: pause it before then'

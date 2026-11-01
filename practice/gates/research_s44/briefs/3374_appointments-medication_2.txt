@@ -1,0 +1,255 @@
+##### NOTES (tw) expected='2025-12-19' distractors=['2026-07-23', 'July 23', 'July 23, 2026', 'Jul 23', 'Jul 23, 2026', '23 July', '23 July 2026', '23 Jul', 'July 23rd', 'Jul 23rd', '23rd July', '23rd of July']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-06-05: Our youngest's orthodontist fitting was booked for 19 December 2025
+2. 2025-06-05: Our youngest's orthodontist fitting was booked for 19 December 2025
+3. 2025-06-05: Our youngest's orthodontist fitting was booked for 19 December 2025
+4. 2025-06-06: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry
+5. 2025-06-06: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry
+6. 2025-06-06: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry
+7. 2025-06-09: The request to switch the date of our youngest's orthodontist fitting to January 13, 2026 was dropped
+8. 2025-06-09: The request to switch the date of our youngest's orthodontist fitting to January 13, 2026 was dropped
+9. 2025-06-09: The request to switch the date of our youngest's orthodontist fitting to January 13, 2026 was dropped
+10. 2025-06-12: Our youngest wants the car booked for the MOT before the end of the month
+11. 2025-06-12: Our youngest wants the car booked for the MOT before the end of the month
+12. 2025-06-12: Our youngest wants the car booked for the MOT before the end of the month
+13. 2025-06-13: Unrelated: Cristian Wehner's allergy clinic visit is on 2026-07-23
+
+-- v30-released 013056 base score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: 'The date is 19 December 2025.  \nANSWER: 19 December 2025'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+      REPLY: '19 December 2025  \nANSWER: 19 December 2025'
+   FINAL: '19 December 2025  \nANSWER: 19 December 2025'
+##### NOTES (cf) expected='2026-01-13' distractors=['2026-07-23', 'July 23', 'July 23, 2026', 'Jul 23', 'Jul 23, 2026', '23 July', '23 July 2026', '23 Jul', 'July 23rd', 'Jul 23rd', '23rd July', '23rd of July']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-06-05: Our youngest's orthodontist fitting was booked for 19 December 2025
+2. 2025-06-06: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry
+3. 2025-06-09: The proposal to change the date of our youngest's orthodontist fitting to 13 January 2026 was accepted
+4. 2025-06-12: Our youngest wants the car booked for the MOT before the end of the month
+
+-- v30-released 013056 caus score=1 ans='13 January 2026' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+      REPLY: 'ANSWER: 13 January 2026'
+   FINAL: 'ANSWER: 13 January 2026'
+-- v30-released 013056 dist score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough."
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+      REPLY: '19 December 2025.  \nANSWER: 19 December 2025'
+   FINAL: '19 December 2025.  \nANSWER: 19 December 2025'
+-- v30-released 013056 rend score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine."
+      REPLY: 'The fitting is still scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The fitting is still scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   FINAL: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+-- v6-f123 022253 base score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: 'The fitting is scheduled for 19\u202fDecember\u202f2025.  \nANSWER: 19 December 2025'
+   FINAL: 'The fitting is scheduled for 19\u202fDecember\u202f2025.  \nANSWER: 19 December 2025'
+-- v6-f123 022253 caus score=1 ans='13 January 2026' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   FINAL: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+-- v6-f123 022253 dist score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough."
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   FINAL: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+-- v6-f123 022253 rend score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine."
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   FINAL: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+-- v30-released 022515 base score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   FINAL: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+-- v30-released 022515 caus score=1 ans='13 January 2026' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+      REPLY: '13 January 2026  \nANSWER: 13 January 2026'
+   FINAL: '13 January 2026  \nANSWER: 13 January 2026'
+-- v30-released 022515 dist score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough."
+      REPLY: 'Here is the date.  \nANSWER: 19 December 2025'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Here is the date.  \nANSWER: 19 December 2025'
+      REPLY: 'ANSWER: 19 December 2025'
+   FINAL: 'ANSWER: 19 December 2025'
+-- v30-released 022515 rend score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine."
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+      REPLY: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+   FINAL: 'The fitting is scheduled for 19 December 2025.  \nANSWER: 19 December 2025'
+-- v6-f123 023640 base score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: '19 December 2025\n\nANSWER: 19 December 2025'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: '19 December 2025\n\nANSWER: 19 December 2025'
+   FINAL: '19 December 2025\n\nANSWER: 19 December 2025'
+-- v6-f123 023640 caus score=1 ans='13 January 2026' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Which day is our youngest's orthodontist fitting, as it stands?"
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date."
+      REPLY: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   FINAL: 'The fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+-- v6-f123 023640 dist score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough."
+      REPLY: 'Here is the date.\n\nANSWER: 19 December 2025'
+   FINAL: 'Here is the date.\n\nANSWER: 19 December 2025'
+-- v6-f123 023640 rend score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine."
+      REPLY: 'The fitting is still scheduled for 19 December 2025.  \n\nANSWER: 19 December 2025'
+   FINAL: 'The fitting is still scheduled for 19 December 2025.  \n\nANSWER: 19 December 2025'
+##### NOTES (tw) expected='2025-12-19' distractors=['2026-07-23', 'July 23', 'July 23, 2026', 'Jul 23', 'Jul 23, 2026', '23 July', '23 July 2026', '23 Jul', 'July 23rd', 'Jul 23rd', '23rd July', '23rd of July']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-06-05: Our youngest's orthodontist fitting was booked for 19 December 2025
+2. 2025-06-06: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry
+3. 2025-06-09: The request to switch the date of our youngest's orthodontist fitting to January 13, 2026 was dropped
+4. 2025-06-12: Our youngest wants the car booked for the MOT before the end of the month
+5. 2025-06-13: Unrelated: Cristian Wehner's allergy clinic visit is on 2026-07-23
+
+-- v7-prog2 173135 base score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="ly case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] orthodontist fitting date: none -> 2025-12-19 (set)  \n[M2] orthodontist fitting date: 2025-12-19 -> 2026-01-13 (changed)  \n[M3] orthodontist fitting date: 2026-01-13 -> 2025-12-19 (dropped)  \n[M4] car MOT booking date: none -> before end of month (set)  \n[M5] allergy clinic visit date: none -> 2026-07-23 (set)  \n\nNOW orthodontist fitting date: 2025-12-19  \nNOW car MOT booking date: before end of month  \nNOW allergy clinic visit date: 2026-07-23'
+      [assistant-in] 'The fitting is scheduled for 19\u202fDecember\u202f2025.  \nANSWER: 19 December 2025'
+      REPLY: '19 December 2025  \nANSWER: 19 December 2025'
+   FINAL: '19 December 2025  \nANSWER: 19 December 2025'
+##### NOTES (cf) expected='2026-01-13' distractors=['2026-07-23', 'July 23', 'July 23, 2026', 'Jul 23', 'Jul 23, 2026', '23 July', '23 July 2026', '23 Jul', 'July 23rd', 'Jul 23rd', '23rd July', '23rd of July']
+[M1] 2025-06-05 | User: Shared calendar entry 1 | Case file c896694ed145dc829: Our youngest's orthodontist fitting was booked for 19 December 2025.
+[M2] 2025-06-06 | User: Shared calendar entry 3 | Case file c896694ed145dc829: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry.
+[M3] 2025-06-09 | User: Shared calendar entry 2 | Case file c896694ed145dc829: The proposal to change the date of our youngest's orthodontist fitting to 13 January 2026 was accepted.
+[M4] 2025-06-12 | User: Shared calendar entry 4 | Case file c896694ed145dc829: Our youngest wants the car booked for the MOT before the end of the month.
+
+-- v7-prog2 173135 caus score=1 ans='13 January 2026' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['ledger: written here, 7 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] orthodontist fitting date: none -> 19 December 2025 (set)  \n[M2] orthodontist fitting date: 19 December 2025 -> 13 January 2026 (proposed)  \n[M3] orthodontist fitting date: 19 December 2025 -> 13 January 2026 (done)  \n[M4] car MOT booking: none -> before end of month (set)  \n\nNOW orthodontist fitting date: 13 January 2026  \nNOW car MOT booking: before end of month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] orthodontist fitting date: none -> 19 December 2025 (set)  \n[M2] orthodontist fitting date: 19 December 2025 -> 13 January 2026 (proposed)  \n[M3] orthodontist fitting date: 19 December 2025 -> 13 January 2026 (done)  \n[M4] car MOT booking: none -> before end of month (set)  \n\nNOW orthodontist fitting date: 13 January 2026  \nNOW car MOT booking: before end of month'
+      REPLY: 'The orthodontist fitting is scheduled for 13\u202fJanuary\u202f2026.  \nANSWER: 13 January 2026'
+   FINAL: 'The orthodontist fitting is scheduled for 13\u202fJanuary\u202f2026.  \nANSWER: 13 January 2026'
+-- v7-prog2 173135 dist score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail=" only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] orthodontist fitting date: none -> 2025-12-19 (set)  \n[M2] orthodontist fitting date: 2025-12-19 -> 2026-01-13 (changed)  \n[M3] orthodontist fitting date: 2026-01-13 -> 2025-12-19 (dropped)  \n[M4] car MOT booking date: none -> before end of month (set)  \n[M5] allergy clinic visit date: none -> 2026-07-23 (set)  \n\nNOW orthodontist fitting date: 2025-12-19  \nNOW car MOT booking date: before end of month  \nNOW allergy clinic visit date: 2026-07-23'
+      [assistant-in] 'The fitting is scheduled for 19\u202fDecember\u202f2025.  \nANSWER: 19 December 2025'
+      REPLY: '19 December 2025  \nANSWER: 19 December 2025'
+   FINAL: '19 December 2025  \nANSWER: 19 December 2025'
+##### NOTES (tw) expected='2025-12-19' distractors=['2026-07-23', 'July 23', 'July 23, 2026', 'Jul 23', 'Jul 23, 2026', '23 July', '23 July 2026', '23 Jul', 'July 23rd', 'Jul 23rd', '23rd July', '23rd of July']
+[M1] 2025-06-05 | User: Case file c5a73d63d9b8bce07: Our youngest's orthodontist fitting was booked for 19 December 2025.
+[M2] 2025-06-06 | User: Remember this: Case file c5a73d63d9b8bce07: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry.
+[M3] 2025-06-09 | User: Forwarding a text I got: "Case file c5a73d63d9b8bce07: The request to switch the date of our youngest's orthodontist fitting to January 13, 2026 was dropped."
+[M4] 2025-06-12 | User: From the fridge list (photo transcription, line 4): Case file c5a73d63d9b8bce07: Our youngest wants the car booked for the MOT before the end of the month.
+[M5] 2025-06-13 | User: Note for you: Case file c5a73d63d9b8bce07: Unrelated: Cristian Wehner's allergy clinic visit is on 2026-07-23.
+
+-- v7-prog2 173135 rend score=1 ans='19 December 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine.
+   ev: ['ledger: written here, 9 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] orthodontist fitting date: none -> 2025-12-19 (set)  \n[M2] orthodontist fitting date: 2025-12-19 -> 2026-01-13 (changed)  \n[M3] orthodontist fitting date: 2026-01-13 -> 2025-12-19 (dropped)  \n[M4] car MOT booking date: none -> before end of month (set)  \n[M5] allergy clinic visit date: none -> 2026-07-23 (set)  \n\nNOW orthodontist fitting date: 2025-12-19  \nNOW car MOT booking date: before end of month  \nNOW allergy clinic visit date: 2026-07-23'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] orthodontist fitting date: none -> 2025-12-19 (set)  \n[M2] orthodontist fitting date: 2025-12-19 -> 2026-01-13 (changed)  \n[M3] orthodontist fitting date: 2026-01-13 -> 2025-12-19 (dropped)  \n[M4] car MOT booking date: none -> before end of month (set)  \n[M5] allergy clinic visit date: none -> 2026-07-23 (set)  \n\nNOW orthodontist fitting date: 2025-12-19  \nNOW car MOT booking date: before end of month  \nNOW allergy clinic visit date: 2026-07-23'
+      REPLY: 'The fitting is scheduled for 19\u202fDecember\u202f2025.  \nANSWER: 19 December 2025'
+   FINAL: 'The fitting is scheduled for 19\u202fDecember\u202f2025.  \nANSWER: 19 December 2025'
+-- v7-1 180013 base score=0 ans='13 January 2026' grader=['critical claim 0 (date) not satisfied (scored 0)', 'counterfactual_insensitive', 'v13 twin post-pass: counterfactual member answered with the base answer (group cf429c76c79903eb2); base+counterfactual pair score retained (observe posture)']
+   Q: Use only case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="ly case file c5a73d63d9b8bce07. From my household notes: Which day is our youngest's orthodontist fitting, as it stands? Just the date.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] Our youngest's orthodontist fitting: none -> 19 December 2025 (set)  \n[M2] Our youngest's orthodontist fitting: 19 December 2025 -> 13 January 2026 (changed)  \n[M3] The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: none -> dropped (dropped)  \n[M4] Our youngest wants the car booked for the MOT before the end of the month: none -> Our youngest wants the car booked for the MOT before the end of the month (set)  \n[M5] Cristian Wehner's allergy clinic visit: none -> 2026-07-23 (set)  \n\nNOW Our youngest's orthodontist fitting: 13 January 2026  \nNOW The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: dropped  \nNOW "
+      [assistant-in] 'Our youngest’s orthodontist fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+      REPLY: 'ANSWER: 13 January 2026'
+   FINAL: 'ANSWER: 13 January 2026'
+-- v7-1 180013 caus score=1 ans='13 January 2026' grader=['claim 0 (date): 1.000', 'counterfactual_insensitive', 'v13 twin post-pass: counterfactual member answered with the base answer (group cf429c76c79903eb2); base+counterfactual pair score retained (observe posture)']
+   Q: Use only case file c896694ed145dc829. Looking back at what I saved: Which day is our youngest's orthodontist fitting, as it stands? Just the date.
+   ev: ['ledger: written here, 6 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] orthodontist fitting date: -> 19 December 2025 (set)  \n[M3] orthodontist fitting date: 19 December 2025 -> 13 January 2026 (changed)  \n[M4] car MOT booking: -> before the end of the month (set)  \n\nNOW orthodontist fitting date: 13 January 2026  \nNOW car MOT booking: before the end of the month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] orthodontist fitting date: -> 19 December 2025 (set)  \n[M3] orthodontist fitting date: 19 December 2025 -> 13 January 2026 (changed)  \n[M4] car MOT booking: -> before the end of the month (set)  \n\nNOW orthodontist fitting date: 13 January 2026  \nNOW car MOT booking: before the end of the month'
+      REPLY: 'The orthodontist fitting is scheduled for 13\u202fJanuary\u202f2026.  \nANSWER: 13 January 2026'
+   FINAL: 'The orthodontist fitting is scheduled for 13\u202fJanuary\u202f2026.  \nANSWER: 13 January 2026'
+##### NOTES (tw) expected='2025-12-19' distractors=['2026-07-23', 'July 23', 'July 23, 2026', 'Jul 23', 'Jul 23, 2026', '23 July', '23 July 2026', '23 Jul', 'July 23rd', 'Jul 23rd', '23rd July', '23rd of July']
+[M1] 2025-06-05 | User: From the fridge list (photo transcription, line 1): Case file c5a73d63d9b8bce07: Our youngest's orthodontist fitting was booked for 19 December 2025.
+[M2] 2025-06-06 | User: Remember this: Case file c5a73d63d9b8bce07: Draft update for sign-off: the date of our youngest's orthodontist fitting is now 13 January 2026, replacing the current entry.
+[M3] 2025-06-09 | User: Note for you: Case file c5a73d63d9b8bce07: The request to switch the date of our youngest's orthodontist fitting to January 13, 2026 was dropped.
+[M4] 2025-06-12 | User: Adding to my notes — Case file c5a73d63d9b8bce07: Our youngest wants the car booked for the MOT before the end of the month.
+[M5] 2025-06-13 | User: Note for you: Case file c5a73d63d9b8bce07: Unrelated: Cristian Wehner's allergy clinic visit is on 2026-07-23.
+
+-- v7-1 180013 dist score=0 ans='13 January 2026' grader=['critical claim 0 (date) not satisfied (scored 0)']
+   Q: Use only case file c5a73d63d9b8bce07. Before I forget — Which day is our youngest's orthodontist fitting, as it stands? The day is enough.
+   ev: ['ledger: written here, 10 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: "[M1] Our youngest's orthodontist fitting: none -> 19 December 2025 (set)  \n[M2] Our youngest's orthodontist fitting: 19 December 2025 -> 13 January 2026 (changed)  \n[M3] The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: none -> dropped (dropped)  \n[M4] Our youngest wants the car booked for the MOT before the end of the month: none -> Our youngest wants the car booked for the MOT before the end of the month (set)  \n[M5] Cristian Wehner's allergy clinic visit: none -> 2026-07-23 (set)  \n\nNOW Our youngest's orthodontist fitting: 13 January 2026  \nNOW The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: dropped  \nNOW Our youngest wants the car booked for the MOT before the end of the month: Our youngest wants the car booked for the MOT before the end of the month  \nNOW Cristian Wehner's allergy clinic visit: 2026-"
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] "[M1] Our youngest's orthodontist fitting: none -> 19 December 2025 (set)  \n[M2] Our youngest's orthodontist fitting: 19 December 2025 -> 13 January 2026 (changed)  \n[M3] The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: none -> dropped (dropped)  \n[M4] Our youngest wants the car booked for the MOT before the end of the month: none -> Our youngest wants the car booked for the MOT before the end of the month (set)  \n[M5] Cristian Wehner's allergy clinic visit: none -> 2026-07-23 (set)  \n\nNOW Our youngest's orthodontist fitting: 13 January 2026  \nNOW The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: dropped  \nNOW "
+      REPLY: 'Our youngest’s orthodontist fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+   FINAL: 'Our youngest’s orthodontist fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+-- v7-1 180013 rend score=0 ans='13 January 2026' grader=['critical claim 0 (date) not satisfied (scored 0)']
+   Q: Use only case file c5a73d63d9b8bce07. Help me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="p me keep the family logistics straight. Which day is our youngest's orthodontist fitting, as it stands? Any clear date format is fine.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] Our youngest's orthodontist fitting: none -> 19 December 2025 (set)  \n[M2] Our youngest's orthodontist fitting: 19 December 2025 -> 13 January 2026 (changed)  \n[M3] The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: none -> dropped (dropped)  \n[M4] Our youngest wants the car booked for the MOT before the end of the month: none -> Our youngest wants the car booked for the MOT before the end of the month (set)  \n[M5] Cristian Wehner's allergy clinic visit: none -> 2026-07-23 (set)  \n\nNOW Our youngest's orthodontist fitting: 13 January 2026  \nNOW The request to switch the date of our youngest's orthodontist fitting to January 13, 2026: dropped  \nNOW "
+      [assistant-in] 'Our youngest’s orthodontist fitting is scheduled for 13 January 2026.  \nANSWER: 13 January 2026'
+      REPLY: 'ANSWER: 13 January 2026'
+   FINAL: 'ANSWER: 13 January 2026'

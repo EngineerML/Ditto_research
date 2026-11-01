@@ -1,0 +1,258 @@
+##### NOTES (tw) expected='Joel Gonzalez' distractors=['Lauren Aguilar']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-21: Mercedes Dooley has the dog walk on the chores rota
+2. 2025-01-21: Mercedes Dooley has the dog walk on the chores rota
+3. 2025-01-21: Mercedes Dooley has the dog walk on the chores rota
+4. 2025-01-24: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry
+5. 2025-01-24: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry
+6. 2025-01-24: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry
+7. 2025-01-27: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry
+8. 2025-01-27: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry
+9. 2025-01-27: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry
+10. 2025-01-30: The person doing the dog walk returned to the previous arrangement
+11. 2025-01-30: The person doing the dog walk returned to the previous arrangement
+12. 2025-01-30: The person doing the dog walk returned to the previous arrangement
+13. 2025-02-03: We agreed with my flatmate to keep the shared shopping list on the fridge tablet
+14. 2025-02-03: We agreed with my flatmate to keep the shared shopping list on the fridge tablet
+15. 2025-02-03: We agreed with my flatmate to keep the shared shopping list on the fridge tablet
+16. 2025-02-05: Separately, mowing the lawn is Lauren Aguilar's job
+
+-- v6-hold 122624 base score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+##### NOTES (cf) expected='Wade Meza' distractors=['Lauren Aguilar']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-21: Mercedes Dooley has the dog walk on the chores rota
+2. 2025-01-24: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry
+3. 2025-01-27: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry
+4. 2025-01-30: Noting that the person doing the dog walk is Wade Meza
+5. 2025-02-03: We agreed with my flatmate to keep the shared shopping list on the fridge tablet
+
+-- v6-hold 122624 caus score=1 ans='Wade Meza' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.
+   ev: ['shared draft: written here', 'short path records=5 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Whose job is the dog walk these days?'
+      REPLY: 'The dog walk is currently assigned to Wade Meza.  \nANSWER: Wade Meza'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.'
+      REPLY: 'ANSWER: Wade Meza'
+   FINAL: 'ANSWER: Wade Meza'
+-- v6-hold 122624 dist score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.'
+      REPLY: 'Joel Gonzalez  \nANSWER: Joel Gonzalez'
+   FINAL: 'Joel Gonzalez  \nANSWER: Joel Gonzalez'
+-- v6-hold 122624 rend score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.
+   ev: ['shared draft: written here', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Whose job is the dog walk these days?'
+      REPLY: 'The dog walk is currently assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.'
+      REPLY: 'Joel Gonzalez  \nANSWER: Joel Gonzalez'
+   FINAL: 'Joel Gonzalez  \nANSWER: Joel Gonzalez'
+-- v6-hold 122826 base score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+-- v6-hold 122826 caus score=1 ans='Wade Meza' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.
+   ev: ['shared draft: written here', 'short path records=5 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Whose job is the dog walk these days?'
+      REPLY: 'Wade Meza\n\nANSWER: Wade Meza'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.'
+      REPLY: 'Wade Meza\n\nANSWER: Wade Meza'
+   FINAL: 'Wade Meza\n\nANSWER: Wade Meza'
+-- v6-hold 122826 dist score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+-- v6-hold 122826 rend score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.
+   ev: ['shared draft: written here', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Whose job is the dog walk these days?'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+-- v6-hold 123027 base score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+-- v6-hold 123027 caus score=1 ans='Wade Meza' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.
+   ev: ['shared draft: written here', 'short path records=5 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Whose job is the dog walk these days?'
+      REPLY: 'The dog walk is currently assigned to Wade Meza.  \nANSWER: Wade Meza'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.'
+      REPLY: 'Wade Meza  \nANSWER: Wade Meza'
+   FINAL: 'Wade Meza  \nANSWER: Wade Meza'
+-- v6-hold 123027 dist score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.
+   ev: ['shared draft: written here', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Whose job is the dog walk these days?'
+      REPLY: 'The dog walk is currently assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+-- v6-hold 123027 rend score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=16 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.'
+      REPLY: 'The dog walk is currently assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+   FINAL: 'The dog walk is currently assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+##### NOTES (tw) expected='Joel Gonzalez' distractors=['Lauren Aguilar']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-21: Mercedes Dooley has the dog walk on the chores rota
+2. 2025-01-24: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry
+3. 2025-01-27: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry
+4. 2025-01-30: The person doing the dog walk returned to the previous arrangement
+5. 2025-02-03: We agreed with my flatmate to keep the shared shopping list on the fridge tablet
+6. 2025-02-05: Separately, mowing the lawn is Lauren Aguilar's job
+
+-- v7-prog 171035 base score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='s over these same entries:\nUse only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar'
+      [assistant-in] '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar  \n\nANSWER: Joel Gonzalez'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+##### NOTES (cf) expected='Wade Meza' distractors=['Lauren Aguilar']
+[M1] 2025-01-21 | User: Case file cdf2e65e9bb885795: Mercedes Dooley has the dog walk on the chores rota.
+[M2] 2025-01-24 | User: Note for you: Case file cdf2e65e9bb885795: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry.
+[M3] 2025-01-27 | User: Note for you: Case file cdf2e65e9bb885795: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry.
+[M4] 2025-01-30 | User: Remember this: Case file cdf2e65e9bb885795: Noting that the person doing the dog walk is Wade Meza.
+[M5] 2025-02-03 | User: Adding to my notes — Case file cdf2e65e9bb885795: We agreed with my flatmate to keep the shared shopping list on the fridge tablet.
+
+-- v7-prog 171035 caus score=1 ans='Wade Meza' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.
+   ev: ['ledger: written here, 8 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] dog walk person: None -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Wade Meza (changed)  \n[M5] shared shopping list location: None -> fridge tablet (set)  \n\nNOW dog walk person: Wade Meza  \nNOW shared shopping list location: fridge tablet'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] dog walk person: None -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Wade Meza (changed)  \n[M5] shared shopping list location: None -> fridge tablet (set)  \n\nNOW dog walk person: Wade Meza  \nNOW shared shopping list location: fridge tablet'
+      REPLY: 'ANSWER: Wade Meza'
+   FINAL: 'ANSWER: Wade Meza'
+##### NOTES (tw) expected='Joel Gonzalez' distractors=['Lauren Aguilar']
+[M1] 2025-01-21 | User: Forwarding a text I got: "Case file cac87f96610552b43: Mercedes Dooley has the dog walk on the chores rota."
+[M2] 2025-01-24 | User: From the fridge list (photo transcription, line 4): Case file cac87f96610552b43: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry.
+[M3] 2025-01-27 | User: From the fridge list (photo transcription, line 5): Case file cac87f96610552b43: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry.
+[M4] 2025-01-30 | User: From the fridge list (photo transcription, line 6): Case file cac87f96610552b43: The person doing the dog walk returned to the previous arrangement.
+[M5] 2025-02-03 | User: From the fridge list (photo transcription, line 3): Case file cac87f96610552b43: We agreed with my flatmate to keep the shared shopping list on the fridge tablet.
+[M6] 2025-02-05 | User: From the fridge list (photo transcription, line 2): Case file cac87f96610552b43: Separately, mowing the lawn is Lauren Aguilar's job.
+
+-- v7-prog 171035 dist score=0 ans='Joel Gonzalez' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.
+   ev: ['ledger: written here, 10 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar'
+      REPLY: '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar  \n\nANSWER: Joel Gonzalez'
+   FINAL: '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar  \n\nANSWER: Joel Gonzalez'
+-- v7-prog 171035 rend score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='e entries:\nUse only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar'
+      [assistant-in] '[M1] dog walk person: none -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: none -> fridge tablet (set)  \n[M6] mowing lawn person: none -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn person: Lauren Aguilar  \n\nANSWER: Joel Gonzalez'
+      REPLY: 'ANSWER: Joel Gonzalez'
+   FINAL: 'ANSWER: Joel Gonzalez'
+-- v7-prog2 172006 base score=0 ans='Natalie Alanis' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='s over these same entries:\nUse only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] person doing the dog walk: (none) -> Mercedes Dooley (set)  \n[M2] person doing the dog walk: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] person doing the dog walk: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] person doing the dog walk: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list on the fridge tablet: (none) -> keep the shared shopping list on the fridge tablet (set)  \n[M6] mowing the lawn: (none) -> Lauren Aguilar (set)  \n\nNOW person doing the dog walk: Joel Gonzalez  \nNOW shared shopping list on the fridge tablet: keep the shared shopping list on the fridge tablet  \nNOW mowing the lawn: Lauren Aguilar'
+      [assistant-in] 'The dog walk is now Joel Gonzalez’s job.  \nANSWER: Joel Gonzalez'
+      REPLY: 'The dog walk is Natalie Alanis’s job.  \nANSWER: Natalie Alanis'
+   FINAL: 'The dog walk is Natalie Alanis’s job.  \nANSWER: Natalie Alanis'
+-- v7-prog2 172006 caus score=1 ans='Wade Meza' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.
+   ev: ['ledger: written here, 8 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '- dog walk person: none -> Mercedes Dooley (set)  \n- dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n- dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n- dog walk person: Natalie Alanis -> Wade Meza (changed)  \n- shared shopping list location: none -> fridge tablet (set)  \n\nNOW dog walk person: Wade Meza  \nNOW shared shopping list location: fridge tablet'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '- dog walk person: none -> Mercedes Dooley (set)  \n- dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n- dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n- dog walk person: Natalie Alanis -> Wade Meza (changed)  \n- shared shopping list location: none -> fridge tablet (set)  \n\nNOW dog walk person: Wade Meza  \nNOW shared shopping list location: fridge tablet'
+      REPLY: 'The dog walk is currently assigned to Wade Meza.  \nANSWER: Wade Meza'
+   FINAL: 'The dog walk is currently assigned to Wade Meza.  \nANSWER: Wade Meza'
+##### NOTES (tw) expected='Joel Gonzalez' distractors=['Lauren Aguilar']
+[M1] 2025-01-21 | User: Forwarding a text I got: "Case file cac87f96610552b43: Mercedes Dooley has the dog walk on the chores rota."
+[M2] 2025-01-24 | User: Forwarding a text I got: "Case file cac87f96610552b43: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry."
+[M3] 2025-01-27 | User: Shared calendar entry 5 | Case file cac87f96610552b43: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry.
+[M4] 2025-01-30 | User: From the fridge list (photo transcription, line 6): Case file cac87f96610552b43: The person doing the dog walk returned to the previous arrangement.
+[M5] 2025-02-03 | User: From the fridge list (photo transcription, line 3): Case file cac87f96610552b43: We agreed with my flatmate to keep the shared shopping list on the fridge tablet.
+[M6] 2025-02-05 | User: From the fridge list (photo transcription, line 2): Case file cac87f96610552b43: Separately, mowing the lawn is Lauren Aguilar's job.
+
+-- v7-prog2 172006 dist score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.
+   ev: ['ledger: written here, 10 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] person doing the dog walk: (none) -> Mercedes Dooley (set)  \n[M2] person doing the dog walk: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] person doing the dog walk: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] person doing the dog walk: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list on the fridge tablet: (none) -> keep the shared shopping list on the fridge tablet (set)  \n[M6] mowing the lawn: (none) -> Lauren Aguilar (set)  \n\nNOW person doing the dog walk: Joel Gonzalez  \nNOW shared shopping list on the fridge tablet: keep the shared shopping list on the fridge tablet  \nNOW mowing the lawn: Lauren Aguilar'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] person doing the dog walk: (none) -> Mercedes Dooley (set)  \n[M2] person doing the dog walk: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] person doing the dog walk: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] person doing the dog walk: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list on the fridge tablet: (none) -> keep the shared shopping list on the fridge tablet (set)  \n[M6] mowing the lawn: (none) -> Lauren Aguilar (set)  \n\nNOW person doing the dog walk: Joel Gonzalez  \nNOW shared shopping list on the fridge tablet: keep the shared shopping list on the fridge tablet  \nNOW mowing the lawn: Lauren Aguilar'
+      REPLY: 'The dog walk is now Joel Gonzalez’s job.  \nANSWER: Joel Gonzalez'
+   FINAL: 'The dog walk is now Joel Gonzalez’s job.  \nANSWER: Joel Gonzalez'
+-- v7-prog2 172006 rend score=0 ans='Natalie Alanis' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='e entries:\nUse only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] person doing the dog walk: (none) -> Mercedes Dooley (set)  \n[M2] person doing the dog walk: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] person doing the dog walk: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] person doing the dog walk: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list on the fridge tablet: (none) -> keep the shared shopping list on the fridge tablet (set)  \n[M6] mowing the lawn: (none) -> Lauren Aguilar (set)  \n\nNOW person doing the dog walk: Joel Gonzalez  \nNOW shared shopping list on the fridge tablet: keep the shared shopping list on the fridge tablet  \nNOW mowing the lawn: Lauren Aguilar'
+      [assistant-in] 'The dog walk is now Joel Gonzalez’s job.  \nANSWER: Joel Gonzalez'
+      REPLY: 'The dog walk is Natalie Alanis’s job.  \nANSWER: Natalie Alanis'
+   FINAL: 'The dog walk is Natalie Alanis’s job.  \nANSWER: Natalie Alanis'
+-- v7-1 174832 base score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='s over these same entries:\nUse only case file cac87f96610552b43. Before I forget — Whose job is the dog walk these days? Just the name.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] dog walk person: (none) -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: (none) -> fridge tablet (set)  \n[M6] mowing lawn job: (none) -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn job: Lauren Aguilar'
+      [assistant-in] 'The dog walk is now assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+      REPLY: 'Joel Gonzalez  \nANSWER: Joel Gonzalez'
+   FINAL: 'Joel Gonzalez  \nANSWER: Joel Gonzalez'
+-- v7-1 174832 caus score=1 ans='Wade Meza' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cdf2e65e9bb885795. Help me keep the family logistics straight. Whose job is the dog walk these days? Just the name.
+   ev: ['ledger: written here, 8 lines', 'short path records=5 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] person doing the dog walk: none -> Mercedes Dooley (set)  \n[M2] person doing the dog walk: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] person doing the dog walk: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] person doing the dog walk: Natalie Alanis -> Wade Meza (changed)  \n[M5] shared shopping list location: none -> the fridge tablet (set)  \n\nNOW person doing the dog walk: Wade Meza  \nNOW shared shopping list location: the fridge tablet'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] person doing the dog walk: none -> Mercedes Dooley (set)  \n[M2] person doing the dog walk: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] person doing the dog walk: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] person doing the dog walk: Natalie Alanis -> Wade Meza (changed)  \n[M5] shared shopping list location: none -> the fridge tablet (set)  \n\nNOW person doing the dog walk: Wade Meza  \nNOW shared shopping list location: the fridge tablet'
+      REPLY: 'The current dog‑walking duty belongs to Wade Meza.  \n\nANSWER: Wade Meza'
+   FINAL: 'The current dog‑walking duty belongs to Wade Meza.  \n\nANSWER: Wade Meza'
+##### NOTES (tw) expected='Joel Gonzalez' distractors=['Lauren Aguilar']
+[M1] 2025-01-21 | User: Forwarding a text I got: "Case file cac87f96610552b43: Mercedes Dooley has the dog walk on the chores rota."
+[M2] 2025-01-24 | User: Forwarding a text I got: "Case file cac87f96610552b43: Update: the person doing the dog walk is now Joel Gonzalez, replacing the earlier entry."
+[M3] 2025-01-27 | User: From the fridge list (photo transcription, line 5): Case file cac87f96610552b43: Update: the person doing the dog walk is now Natalie Alanis, replacing the earlier entry.
+[M4] 2025-01-30 | User: From the fridge list (photo transcription, line 6): Case file cac87f96610552b43: The person doing the dog walk returned to the previous arrangement.
+[M5] 2025-02-03 | User: From the fridge list (photo transcription, line 3): Case file cac87f96610552b43: We agreed with my flatmate to keep the shared shopping list on the fridge tablet.
+[M6] 2025-02-05 | User: From the fridge list (photo transcription, line 2): Case file cac87f96610552b43: Separately, mowing the lawn is Lauren Aguilar's job.
+
+-- v7-1 174832 dist score=1 ans='Joel Gonzalez' grader=['claim 0 (person): 1.000']
+   Q: Use only case file cac87f96610552b43. From my household notes: Whose job is the dog walk these days? Give me the person.
+   ev: ['ledger: written here, 10 lines', 'short path records=16 shown=6 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] dog walk person: (none) -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: (none) -> fridge tablet (set)  \n[M6] mowing lawn job: (none) -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn job: Lauren Aguilar'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] dog walk person: (none) -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: (none) -> fridge tablet (set)  \n[M6] mowing lawn job: (none) -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn job: Lauren Aguilar'
+      REPLY: 'The dog walk is now assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+   FINAL: 'The dog walk is now assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+-- v7-1 174832 rend score=0 ans='Natalie Alanis' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=16 shown=6 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='e entries:\nUse only case file cac87f96610552b43. Looking back at what I saved: Whose job is the dog walk these days? Name only, please.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] dog walk person: (none) -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: (none) -> fridge tablet (set)  \n[M6] mowing lawn job: (none) -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn job: Lauren Aguilar'
+      [assistant-in] 'The dog walk is now assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+      REPLY: 'Joel Gonzalez'
+   call1 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="ent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not - ending with its 'ANSWER:' line."
+      [assistant-in] '[M1] dog walk person: (none) -> Mercedes Dooley (set)  \n[M2] dog walk person: Mercedes Dooley -> Joel Gonzalez (changed)  \n[M3] dog walk person: Joel Gonzalez -> Natalie Alanis (changed)  \n[M4] dog walk person: Natalie Alanis -> Joel Gonzalez (went back)  \n[M5] shared shopping list location: (none) -> fridge tablet (set)  \n[M6] mowing lawn job: (none) -> Lauren Aguilar (set)  \n\nNOW dog walk person: Joel Gonzalez  \nNOW shared shopping list location: fridge tablet  \nNOW mowing lawn job: Lauren Aguilar'
+      [assistant-in] 'The dog walk is now assigned to Joel Gonzalez.  \nANSWER: Joel Gonzalez'
+      [assistant-in] 'Joel Gonzalez'
+      REPLY: 'The dog walk is assigned to Natalie Alanis.  \nANSWER: Natalie Alanis'
+   FINAL: 'The dog walk is assigned to Natalie Alanis.  \nANSWER: Natalie Alanis'

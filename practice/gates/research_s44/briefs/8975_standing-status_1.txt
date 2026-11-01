@@ -1,0 +1,350 @@
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+2. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+3. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step, joraelfin is how the two sides communicate, ulmaojor means that the later value supersedes the earlier one, haroumpath names a workstream, cyrilwire is its everyday alias. }
+4. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+5. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it, kestilora is its standing status, seloifin marks something that happened on a given day, lumaawire is the organisation that commissions it and pays us, weraartier names the outside party we pay, seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved. }
+6. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+7. 2025-01-22: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+8. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+9. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+10. 2025-01-28: fennadset's kestilora opened as amber. }
+11. 2025-01-28: fennadset's kestilora opened as amber
+12. 2025-01-28: fennadset's kestilora opened as amber
+13. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+14. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+15. 2025-01-30: From now on the kestilora of fennadset is tundra instead, the newest entry governs. }
+16. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+17. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+18. 2025-02-04: From now on the kestilora of fennadset is harbour instead, the newest entry governs. }
+19. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead, the newest entry governs. }
+20. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+21. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+22. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+23. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+24. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025. }
+
+-- v6-hold 122624 base score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.'
+      REPLY: 'ANSWER: harbour'
+   FINAL: 'ANSWER: harbour'
+##### NOTES (cf) expected='in review' distractors=['active', 'cobalt']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+2. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+3. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+4. 2025-01-28: fennadset's kestilora opened as amber
+5. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+6. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+7. 2025-02-07: From now on the kestilora of fennadset is ember instead; the newest entry governs
+8. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+
+-- v6-hold 122624 caus score=1 ans='ember' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine.
+   ev: ['shared draft: written here', 'short path records=8 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now?'
+      REPLY: 'The current status is ember.  \nANSWER: ember'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine."
+      REPLY: 'The current kestilora for the cross‑border cash‑flow review account is ember.  \nANSWER: ember'
+   FINAL: 'The current kestilora for the cross‑border cash‑flow review account is ember.  \nANSWER: ember'
+-- v6-hold 122624 dist score=1 ans='tundra' grader=['claim 0 (status): 1.000']
+   Q: Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['shared draft: written here', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now?'
+      REPLY: 'ANSWER: harbour'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.'
+      REPLY: 'ANSWER: tundra'
+   FINAL: 'ANSWER: tundra'
+-- v6-hold 122624 rend score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status."
+      REPLY: 'ANSWER: harbour'
+   FINAL: 'ANSWER: harbour'
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step, joraelfin is how the two sides communicate, ulmaojor means that the later value supersedes the earlier one, haroumpath names a workstream, cyrilwire is its everyday alias. }
+2. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+3. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+4. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+5. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it, kestilora is its standing status, seloifin marks something that happened on a given day, lumaawire is the organisation that commissions it and pays us, weraartier names the outside party we pay, seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved. }
+6. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+7. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+8. 2025-01-22: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+9. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+10. 2025-01-28: fennadset's kestilora opened as amber
+11. 2025-01-28: fennadset's kestilora opened as amber. }
+12. 2025-01-28: fennadset's kestilora opened as amber
+13. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+14. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+15. 2025-01-30: From now on the kestilora of fennadset is tundra instead, the newest entry governs. }
+16. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+17. 2025-02-04: From now on the kestilora of fennadset is harbour instead, the newest entry governs. }
+18. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+19. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+20. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+21. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead, the newest entry governs. }
+22. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025. }
+23. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+24. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+
+-- v6-hold 122826 base score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.
+   ev: ['shared draft: written here', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now?'
+      REPLY: 'ANSWER: harbour'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.'
+      REPLY: 'ANSWER: harbour'
+   FINAL: 'ANSWER: harbour'
+-- v6-hold 122826 caus score=1 ans='ember' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine.
+   ev: ['shared draft: written here', 'short path records=8 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now?'
+      REPLY: 'The current kestilora is ember.  \nANSWER: ember'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine."
+      REPLY: 'The current kestilora is ember.  \nANSWER: ember'
+   FINAL: 'The current kestilora is ember.  \nANSWER: ember'
+-- v6-hold 122826 dist score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.'
+      REPLY: 'The latest entry sets the status to harbour.  \nANSWER: harbour'
+   FINAL: 'The latest entry sets the status to harbour.  \nANSWER: harbour'
+-- v6-hold 122826 rend score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status."
+      REPLY: 'ANSWER: harbour'
+   FINAL: 'ANSWER: harbour'
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step, joraelfin is how the two sides communicate, ulmaojor means that the later value supersedes the earlier one, haroumpath names a workstream, cyrilwire is its everyday alias. }
+2. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+3. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+4. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+5. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+6. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it, kestilora is its standing status, seloifin marks something that happened on a given day, lumaawire is the organisation that commissions it and pays us, weraartier names the outside party we pay, seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved. }
+7. 2025-01-22: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+8. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+9. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+10. 2025-01-28: fennadset's kestilora opened as amber
+11. 2025-01-28: fennadset's kestilora opened as amber. }
+12. 2025-01-28: fennadset's kestilora opened as amber
+13. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+14. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+15. 2025-01-30: From now on the kestilora of fennadset is tundra instead, the newest entry governs. }
+16. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+17. 2025-02-04: From now on the kestilora of fennadset is harbour instead, the newest entry governs. }
+18. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+19. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+20. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+21. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead, the newest entry governs. }
+22. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+23. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+24. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025. }
+
+-- v6-hold 123027 base score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.
+   ev: ['shared draft: written here', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now?'
+      REPLY: 'ANSWER: harbour'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.'
+      REPLY: 'The current status for the cross‑border cash‑flow review account is harbour.  \nANSWER: harbour'
+   FINAL: 'The current status for the cross‑border cash‑flow review account is harbour.  \nANSWER: harbour'
+-- v6-hold 123027 caus score=1 ans='ember' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine.
+   ev: ['shared draft: written here', 'short path records=8 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now?'
+      REPLY: 'ANSWER: ember'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine."
+      REPLY: 'ANSWER: ember'
+   FINAL: 'ANSWER: ember'
+-- v6-hold 123027 dist score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.'
+      REPLY: 'The current kestilora for the cross‑border cash‑flow review account is harbour.  \nANSWER: harbour'
+   FINAL: 'The current kestilora for the cross‑border cash‑flow review account is harbour.  \nANSWER: harbour'
+-- v6-hold 123027 rend score=1 ans='tundra' grader=['claim 0 (status): 1.000']
+   Q: Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=24 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status."
+      REPLY: 'ANSWER: tundra'
+   FINAL: 'ANSWER: tundra'
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+2. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+3. 2025-01-22: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+4. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+5. 2025-01-28: fennadset's kestilora opened as amber
+6. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+7. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+8. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+9. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+
+-- v7-prog 171035 base score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=24 shown=9 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[set] haroumpath of fennadset: none -> fennadset (set)  \n[set] cyrilwire of fennadset: none -> fennadset (set)  \n[set] kestilora of fennadset: none -> amber (set)  \n[changed] kestilora of fennadset: amber -> tundra (changed)  \n[changed] kestilora of fennadset: tundra -> harbour (changed)  \n[changed] kestilora of fennadset: harbour -> tundra (changed)  \n[set] kestilora of fenneelle: none -> cobalt (set)  \n[set] milestone review date of fennadset: none -> 20 July 2025 (set)  \n\nNOW haroumpath of fennadset: fennadset  \nNOW cyrilwire of fennadset: fennadset  \nNOW kestilora of fennadset: tundra  \nNOW kestilora of fenneelle: cobalt  \nNOW milestone review date of fennadset: 20 July 2025'
+      [assistant-in] 'ANSWER: tundra'
+      REPLY: 'ANSWER: harbour'
+   FINAL: 'ANSWER: harbour'
+##### NOTES (cf) expected='in review' distractors=['active', 'cobalt']
+[M1] 2025-01-14 | User: Here is another entry for the batch: Case file c896b2797e851fb08: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath na
+[M2] 2025-01-16 | User: Adding a workspace record — read it with our local glossary: Case file c896b2797e851fb08: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lu
+[M3] 2025-01-22 | User: Here is another entry for the batch: Case file c896b2797e851fb08: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review.
+[M4] 2025-01-28 | User: Filing this under the same workstream set: Case file c896b2797e851fb08: fennadset's kestilora opened as amber.
+[M5] 2025-01-30 | User: One more line from our custom workspace schema: Case file c896b2797e851fb08: From now on the kestilora of fennadset is tundra instead; the newest entry governs.
+[M6] 2025-02-04 | User: One more line from our custom workspace schema: Case file c896b2797e851fb08: From now on the kestilora of fennadset is harbour instead; the newest entry governs.
+[M7] 2025-02-07 | User: Filing this under the same workstream set: Case file c896b2797e851fb08: From now on the kestilora of fennadset is ember instead; the newest entry governs.
+[M8] 2025-02-10 | User: Adding a workspace record — read it with our local glossary: Case file c896b2797e851fb08: The first milestone review for fennadset is pencilled in for 20 July 2025.
+
+-- v7-prog 171035 caus score=1 ans='ember' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine.
+   ev: ['ledger: written here, 14 lines', 'short path records=8 shown=8 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M3] haroumpath: null -> fennadset (set)  \n[M3] cyrilwire: null -> fennadset (set)  \n[M3] remit: null -> cross-border cash‑flow review (set)  \n[M4] kestilora: null -> amber (set)  \n[M5] kestilora: amber -> tundra (changed)  \n[M6] kestilora: tundra -> harbour (changed)  \n[M7] kestilora: harbour -> ember (changed)  \n[M8] milestone review date: null -> 20 July 2025 (set)  \n\nNOW haroumpath: fennadset  \nNOW cyrilwire: fennadset  \nNOW remit: cross-border cash‑flow review  \nNOW kestilora: ember  \nNOW milestone review date: 20 July 2025'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M3] haroumpath: null -> fennadset (set)  \n[M3] cyrilwire: null -> fennadset (set)  \n[M3] remit: null -> cross-border cash‑flow review (set)  \n[M4] kestilora: null -> amber (set)  \n[M5] kestilora: amber -> tundra (changed)  \n[M6] kestilora: tundra -> harbour (changed)  \n[M7] kestilora: harbour -> ember (changed)  \n[M8] milestone review date: null -> 20 July 2025 (set)  \n\nNOW haroumpath: fennadset  \nNOW cyrilwire: fennadset  \nNOW remit: cross-border cash‑flow review  \nNOW kestilora: ember  \nNOW milestone review date: 20 July 2025'
+      REPLY: 'The current kestilora is ember.\n\nANSWER: ember'
+   FINAL: 'The current kestilora is ember.\n\nANSWER: ember'
+-- v7-prog 171035 dist score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=24 shown=9 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail=' then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[set] haroumpath of fennadset: none -> fennadset (set)  \n[set] cyrilwire of fennadset: none -> fennadset (set)  \n[set] kestilora of fennadset: none -> amber (set)  \n[changed] kestilora of fennadset: amber -> tundra (changed)  \n[changed] kestilora of fennadset: tundra -> harbour (changed)  \n[changed] kestilora of fennadset: harbour -> tundra (changed)  \n[set] kestilora of fenneelle: none -> cobalt (set)  \n[set] milestone review date of fennadset: none -> 20 July 2025 (set)  \n\nNOW haroumpath of fennadset: fennadset  \nNOW cyrilwire of fennadset: fennadset  \nNOW kestilora of fennadset: tundra  \nNOW kestilora of fenneelle: cobalt  \nNOW milestone review date of fennadset: 20 July 2025'
+      [assistant-in] 'ANSWER: tundra'
+      REPLY: 'ANSWER: harbour'
+   FINAL: 'ANSWER: harbour'
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+[M1] 2025-01-14 | User: Pasted table row 1 | | payload | | |---| | | Case file ca5ee9c73cd262d78: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; harou
+[M2] 2025-01-16 | User: Pasted table row 2 | | payload | | |---| | | Case file ca5ee9c73cd262d78: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the o
+[M3] 2025-01-22 | User: operations_dump[4] { Case file ca5ee9c73cd262d78: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+[M4] 2025-01-22 | User: Subject: workstream note 5 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review.
+[M5] 2025-01-28 | User: Subject: workstream note 8 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: fennadset's kestilora opened as amber.
+[M6] 2025-01-30 | User: Subject: workstream note 3 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset is tundra instead; the newest entry governs.
+[M7] 2025-02-04 | User: Subject: workstream note 7 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset is harbour instead; the newest entry governs.
+[M8] 2025-02-07 | User: Pasted table row 4 | | payload | | |---| | | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs. |
+[M9] 2025-02-10 | User: Pasted table row 6 | | payload | | |---| | | Case file ca5ee9c73cd262d78: The first milestone review for fennadset is pencilled in for 20 July 2025. |
+
+-- v7-prog 171035 rend score=1 ans='tundra' grader=['claim 0 (status): 1.000']
+   Q: Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['ledger: written here, 14 lines', 'short path records=24 shown=9 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[set] haroumpath of fennadset: none -> fennadset (set)  \n[set] cyrilwire of fennadset: none -> fennadset (set)  \n[set] kestilora of fennadset: none -> amber (set)  \n[changed] kestilora of fennadset: amber -> tundra (changed)  \n[changed] kestilora of fennadset: tundra -> harbour (changed)  \n[changed] kestilora of fennadset: harbour -> tundra (changed)  \n[set] kestilora of fenneelle: none -> cobalt (set)  \n[set] milestone review date of fennadset: none -> 20 July 2025 (set)  \n\nNOW haroumpath of fennadset: fennadset  \nNOW cyrilwire of fennadset: fennadset  \nNOW kestilora of fennadset: tundra  \nNOW kestilora of fenneelle: cobalt  \nNOW milestone review date of fennadset: 20 July 2025'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[set] haroumpath of fennadset: none -> fennadset (set)  \n[set] cyrilwire of fennadset: none -> fennadset (set)  \n[set] kestilora of fennadset: none -> amber (set)  \n[changed] kestilora of fennadset: amber -> tundra (changed)  \n[changed] kestilora of fennadset: tundra -> harbour (changed)  \n[changed] kestilora of fennadset: harbour -> tundra (changed)  \n[set] kestilora of fenneelle: none -> cobalt (set)  \n[set] milestone review date of fennadset: none -> 20 July 2025 (set)  \n\nNOW haroumpath of fennadset: fennadset  \nNOW cyrilwire of fennadset: fennadset  \nNOW kestilora of fennadset: tundra  \nNOW kestilora of fenneelle: cobalt  \nNOW milestone review date of fennadset: 20 July 2025'
+      REPLY: 'ANSWER: tundra'
+   FINAL: 'ANSWER: tundra'
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-14: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes the earlier one; haroumpath names a workstream; cyrilwire is its everyday alias
+2. 2025-01-16: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the organisation that commissions it and pays us; weraartier names the outside party we pay; seloynquin names what happens next. Status shorthand in this workspace: ember means in review, cobalt means active, harbour means superseded, tundra means on hold, amber means approved
+3. 2025-01-22: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review
+4. 2025-01-22: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+5. 2025-01-28: fennadset's kestilora opened as amber
+6. 2025-01-30: From now on the kestilora of fennadset is tundra instead; the newest entry governs
+7. 2025-02-04: From now on the kestilora of fennadset is harbour instead; the newest entry governs
+8. 2025-02-07: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs
+9. 2025-02-10: The first milestone review for fennadset is pencilled in for 20 July 2025
+
+-- v7-prog2 172006 base score=1 ans='tundra' grader=['claim 0 (status): 1.000']
+   Q: Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=24 shown=9 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] schema: None -> (orinynpath, joraelfin, ulmaojor, haroumpath, cyrilwire) (set)  \n[M2] reading_guide: None -> (belorvale, kestilora, seloifin, lumaawire, weraartier, seloynquin, status_shorthand) (set)  \n[M3] fennadset haroumpath: None -> fennadset (set)  \n[M3] fennadset cyrilwire: None -> fennadset (set)  \n[M4] fenneelle haroumpath: None -> fenneelle (set)  \n[M4] fenneelle status: None -> cobalt (set)  \n[M5] fennadset status: None -> amber (set)  \n[M6] fennadset status: amber -> tundra (changed)  \n[M7] fennadset status: tundra -> harbour (changed)  \n[M8] fennadset status: harbour -> tundra (went back)  \n[M9] fennadset milestone: None -> 20 July 2025 (set)  \n\nNOW schema: (orinynpath, jor'
+      [assistant-in] 'The cross‑border cash‑flow review account is currently on hold.  \nANSWER: tundra'
+      REPLY: 'The cross‑border cash‑flow review account is currently on hold.  \nANSWER: tundra'
+   FINAL: 'The cross‑border cash‑flow review account is currently on hold.  \nANSWER: tundra'
+-- v7-prog2 172006 caus score=1 ans='ember' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine.
+   ev: ['ledger: written here, 14 lines', 'short path records=8 shown=8 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M3] haroumpath: null → fennadset (set)  \n[M3] cyrilwire: null → fennadset (set)  \n[M3] remit of fennadset: null → cross‑border cash‑flow review (set)  \n[M4] kestilora of fennadset: null → amber (set)  \n[M5] kestilora of fennadset: amber → tundra (changed)  \n[M6] kestilora of fennadset: tundra → harbour (changed)  \n[M7] kestilora of fennadset: harbour → ember (changed)  \n[M8] milestone review date of fennadset: null → 20\u202fJuly\u202f2025 (set)  \n\nNOW haroumpath: fennadset  \nNOW cyrilwire: fennadset  \nNOW remit of fennadset: cross‑border cash‑flow review  \nNOW kestilora of fennadset: ember  \nNOW milestone review date of fennadset: 20\u202fJuly\u202f2025'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M3] haroumpath: null → fennadset (set)  \n[M3] cyrilwire: null → fennadset (set)  \n[M3] remit of fennadset: null → cross‑border cash‑flow review (set)  \n[M4] kestilora of fennadset: null → amber (set)  \n[M5] kestilora of fennadset: amber → tundra (changed)  \n[M6] kestilora of fennadset: tundra → harbour (changed)  \n[M7] kestilora of fennadset: harbour → ember (changed)  \n[M8] milestone review date of fennadset: null → 20\u202fJuly\u202f2025 (set)  \n\nNOW haroumpath: fennadset  \nNOW cyrilwire: fennadset  \nNOW remit of fennadset: cross‑border cash‑flow review  \nNOW kestilora of fennadset: ember  \nNOW milestone review date of fennadset: 20\u202fJuly\u202f2025'
+      REPLY: 'The cross‑border cash‑flow review account is currently in review.  \nANSWER: ember'
+   FINAL: 'The cross‑border cash‑flow review account is currently in review.  \nANSWER: ember'
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+[M1] 2025-01-14 | User: Subject: workstream note 1 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes 
+[M2] 2025-01-16 | User: Pasted table row 2 | | payload | | |---| | | Case file ca5ee9c73cd262d78: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given day; lumaawire is the o
+[M3] 2025-01-22 | User: Subject: workstream note 5 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review.
+[M4] 2025-01-22 | User: operations_dump[4] { Case file ca5ee9c73cd262d78: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+[M5] 2025-01-28 | User: Pasted table row 8 | | payload | | |---| | | Case file ca5ee9c73cd262d78: fennadset's kestilora opened as amber. |
+[M6] 2025-01-30 | User: Subject: workstream note 3 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset is tundra instead; the newest entry governs.
+[M7] 2025-02-04 | User: Subject: workstream note 7 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset is harbour instead; the newest entry governs.
+[M8] 2025-02-07 | User: Subject: workstream note 4 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs.
+[M9] 2025-02-10 | User: Subject: workstream note 6 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: The first milestone review for fennadset is pencilled in for 20 July 2025.
+
+-- v7-prog2 172006 dist score=1 ans='tundra' grader=['claim 0 (status): 1.000']
+   Q: Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['ledger: written here, 20 lines', 'short path records=24 shown=9 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] schema: None -> (orinynpath, joraelfin, ulmaojor, haroumpath, cyrilwire) (set)  \n[M2] reading_guide: None -> (belorvale, kestilora, seloifin, lumaawire, weraartier, seloynquin, status_shorthand) (set)  \n[M3] fennadset haroumpath: None -> fennadset (set)  \n[M3] fennadset cyrilwire: None -> fennadset (set)  \n[M4] fenneelle haroumpath: None -> fenneelle (set)  \n[M4] fenneelle status: None -> cobalt (set)  \n[M5] fennadset status: None -> amber (set)  \n[M6] fennadset status: amber -> tundra (changed)  \n[M7] fennadset status: tundra -> harbour (changed)  \n[M8] fennadset status: harbour -> tundra (went back)  \n[M9] fennadset milestone: None -> 20 July 2025 (set)  \n\nNOW schema: (orinynpath, joraelfin, ulmaojor, haroumpath, cyrilwire)  \nNOW reading_guide: (belorvale, kestilora, seloifin, lumaawire, weraartier, seloynquin, status_shorthand)  \nNOW fennadset haroumpath: fennadset  \nNOW fennadse'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] schema: None -> (orinynpath, joraelfin, ulmaojor, haroumpath, cyrilwire) (set)  \n[M2] reading_guide: None -> (belorvale, kestilora, seloifin, lumaawire, weraartier, seloynquin, status_shorthand) (set)  \n[M3] fennadset haroumpath: None -> fennadset (set)  \n[M3] fennadset cyrilwire: None -> fennadset (set)  \n[M4] fenneelle haroumpath: None -> fenneelle (set)  \n[M4] fenneelle status: None -> cobalt (set)  \n[M5] fennadset status: None -> amber (set)  \n[M6] fennadset status: amber -> tundra (changed)  \n[M7] fennadset status: tundra -> harbour (changed)  \n[M8] fennadset status: harbour -> tundra (went back)  \n[M9] fennadset milestone: None -> 20 July 2025 (set)  \n\nNOW schema: (orinynpath, jor'
+      REPLY: 'The cross‑border cash‑flow review account is currently on hold.  \nANSWER: tundra'
+   FINAL: 'The cross‑border cash‑flow review account is currently on hold.  \nANSWER: tundra'
+-- v7-prog2 172006 rend score=1 ans='tundra' grader=['claim 0 (status): 1.000']
+   Q: Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=24 shown=9 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='eld meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] schema: None -> (orinynpath, joraelfin, ulmaojor, haroumpath, cyrilwire) (set)  \n[M2] reading_guide: None -> (belorvale, kestilora, seloifin, lumaawire, weraartier, seloynquin, status_shorthand) (set)  \n[M3] fennadset haroumpath: None -> fennadset (set)  \n[M3] fennadset cyrilwire: None -> fennadset (set)  \n[M4] fenneelle haroumpath: None -> fenneelle (set)  \n[M4] fenneelle status: None -> cobalt (set)  \n[M5] fennadset status: None -> amber (set)  \n[M6] fennadset status: amber -> tundra (changed)  \n[M7] fennadset status: tundra -> harbour (changed)  \n[M8] fennadset status: harbour -> tundra (went back)  \n[M9] fennadset milestone: None -> 20 July 2025 (set)  \n\nNOW schema: (orinynpath, jor'
+      [assistant-in] 'The cross‑border cash‑flow review account is currently on hold.  \nANSWER: tundra'
+      REPLY: 'The current kestilora for the cross‑border cash‑flow review account is tundra.  \nANSWER: tundra'
+   FINAL: 'The current kestilora for the cross‑border cash‑flow review account is tundra.  \nANSWER: tundra'
+-- v7-1 174832 base score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Read the local glossary before naming any field. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=24 shown=9 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Answer with the status term.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] orinynpath: means the person carrying the next step (defined)  \n[M1] joraelfin: means how the two sides communicate (defined)  \n[M1] ulmaojor: means that the later value supersedes the earlier one (defined)  \n[M1] haroumpath: means names a workstream (defined)  \n[M1] cyrilwire: means its everyday alias (defined)  \n\n[M2] belorvale: means identifies the person on the hook for it (defined)  \n[M2] kestilora: means its standing status (defined)  \n[M2] seloifin: marks something that happened on a given day (defined)  \n[M2] lumaawire: is the organisation that commissions it and pays us (defined)  \n[M2] weraartier: names the outside party we pay (defined)  \n[M2] seloynquin: names what happens n'
+      [assistant-in] 'The cross‑border cash‑flow review workstream’s current status is “harbour”.\n\nANSWER: harbour'
+      REPLY: 'harbour'
+   call1 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="ent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not - ending with its 'ANSWER:' line."
+      [assistant-in] '[M1] orinynpath: means the person carrying the next step (defined)  \n[M1] joraelfin: means how the two sides communicate (defined)  \n[M1] ulmaojor: means that the later value supersedes the earlier one (defined)  \n[M1] haroumpath: means names a workstream (defined)  \n[M1] cyrilwire: means its everyday alias (defined)  \n\n[M2] belorvale: means identifies the person on the hook for it (defined)  \n[M2] kestilora: means its standing status (defined)  \n[M2] seloifin: marks something that happened on a given day (defined)  \n[M2] lumaawire: is the organisation that commissions it and pays us (defined)  \n[M2] weraartier: names the outside party we pay (defined)  \n[M2] seloynquin: names what happens n'
+      [assistant-in] 'The cross‑border cash‑flow review workstream’s current status is “harbour”.\n\nANSWER: harbour'
+      [assistant-in] 'harbour'
+      REPLY: 'The current kestilora for the cross‑border cash‑flow review account is harbour.  \nANSWER: harbour'
+   FINAL: 'The current kestilora for the cross‑border cash‑flow review account is harbour.  \nANSWER: harbour'
+-- v7-1 174832 caus score=1 ans='ember' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c896b2797e851fb08. Ground every label in this workspace's conventions. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Plain English or the workspace term is fine.
+   ev: ['ledger: written here, 26 lines', 'short path records=8 shown=8 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] orinynpath: means the person carrying the next step (defined)  \n[M1] joraelfin: means how the two sides communicate (defined)  \n[M1] ulmaojor: means that the later value supersedes the earlier one (defined)  \n[M1] haroumpath: means a workstream (defined)  \n[M1] cyrilwire: means its everyday alias (defined)  \n\n[M2] ember: means in review (defined)  \n[M2] cobalt: means active (defined)  \n[M2] harbour: means superseded (defined)  \n[M2] tundra: means on hold (defined)  \n[M2] amber: means approved (defined)  \n\n[M3] haroumpath: none -> fennadset (set)  \n[M3] cyrilwire: none -> fennadset (set)  \n\n[M4] fennadset status: none -> amber (set)  \n[M5] fennadset status: amber -> tundra (changed)  \n[M6] fennadset status: tundra -> harbour (changed)  \n[M7] fennadset status: harbour -> ember (changed)  \n\n[M8] fennadset milestone review: none -> 20 July 2025 (set)  \n\nNOW haroumpath: fennadset  \nNOW c'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] orinynpath: means the person carrying the next step (defined)  \n[M1] joraelfin: means how the two sides communicate (defined)  \n[M1] ulmaojor: means that the later value supersedes the earlier one (defined)  \n[M1] haroumpath: means a workstream (defined)  \n[M1] cyrilwire: means its everyday alias (defined)  \n\n[M2] ember: means in review (defined)  \n[M2] cobalt: means active (defined)  \n[M2] harbour: means superseded (defined)  \n[M2] tundra: means on hold (defined)  \n[M2] amber: means approved (defined)  \n\n[M3] haroumpath: none -> fennadset (set)  \n[M3] cyrilwire: none -> fennadset (set)  \n\n[M4] fennadset status: none -> amber (set)  \n[M5] fennadset status: amber -> tundra (changed)  \n[M'
+      REPLY: 'The current kestilora for the cross‑border cash‑flow review account is ember.  \nANSWER: ember'
+   FINAL: 'The current kestilora for the cross‑border cash‑flow review account is ember.  \nANSWER: ember'
+##### NOTES (tw) expected='on hold' distractors=['active', 'cobalt']
+[M1] 2025-01-14 | User: Subject: workstream note 1 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: Schema note for this workstream set: orinynpath names the person carrying the next step; joraelfin is how the two sides communicate; ulmaojor means that the later value supersedes 
+[M2] 2025-01-16 | User: Subject: workstream note 2 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: Reading guide for the entries that follow: belorvale identifies the person on the hook for it; kestilora is its standing status; seloifin marks something that happened on a given d
+[M3] 2025-01-22 | User: operations_dump[4] { Case file ca5ee9c73cd262d78: haroumpath=fennadset, cyrilwire=fennadset. Its remit is the cross-border cash-flow review. Separately, an unrelated workstream haroumpath=fenneelle handles the quarter-end vendor consolidation. Its kestilora is cobalt. }
+[M4] 2025-01-22 | User: Subject: workstream note 5 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: haroumpath=fennadset; cyrilwire=fennadset. Its remit is the cross-border cash-flow review.
+[M5] 2025-01-28 | User: Pasted table row 8 | | payload | | |---| | | Case file ca5ee9c73cd262d78: fennadset's kestilora opened as amber. |
+[M6] 2025-01-30 | User: Pasted table row 3 | | payload | | |---| | | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset is tundra instead; the newest entry governs. |
+[M7] 2025-02-04 | User: Subject: workstream note 7 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset is harbour instead; the newest entry governs.
+[M8] 2025-02-07 | User: Subject: workstream note 4 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: From now on the kestilora of fennadset reverts to the previous entry instead; the newest entry governs.
+[M9] 2025-02-10 | User: Subject: workstream note 6 | From: operations@example.invalid |  | Case file ca5ee9c73cd262d78: The first milestone review for fennadset is pencilled in for 20 July 2025.
+
+-- v7-1 174832 dist score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Resolve the workstream by its remit, then answer. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['ledger: written here, 36 lines', 'short path records=24 shown=9 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] orinynpath: means the person carrying the next step (defined)  \n[M1] joraelfin: means how the two sides communicate (defined)  \n[M1] ulmaojor: means that the later value supersedes the earlier one (defined)  \n[M1] haroumpath: means names a workstream (defined)  \n[M1] cyrilwire: means its everyday alias (defined)  \n\n[M2] belorvale: means identifies the person on the hook for it (defined)  \n[M2] kestilora: means its standing status (defined)  \n[M2] seloifin: marks something that happened on a given day (defined)  \n[M2] lumaawire: is the organisation that commissions it and pays us (defined)  \n[M2] weraartier: names the outside party we pay (defined)  \n[M2] seloynquin: names what happens next (defined)  \n[M2] ember: means in review (defined)  \n[M2] cobalt: means active (defined)  \n[M2] harbour: means superseded (defined)  \n[M2] tundra: means on hold (defined)  \n[M2] amber: means approv'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] orinynpath: means the person carrying the next step (defined)  \n[M1] joraelfin: means how the two sides communicate (defined)  \n[M1] ulmaojor: means that the later value supersedes the earlier one (defined)  \n[M1] haroumpath: means names a workstream (defined)  \n[M1] cyrilwire: means its everyday alias (defined)  \n\n[M2] belorvale: means identifies the person on the hook for it (defined)  \n[M2] kestilora: means its standing status (defined)  \n[M2] seloifin: marks something that happened on a given day (defined)  \n[M2] lumaawire: is the organisation that commissions it and pays us (defined)  \n[M2] weraartier: names the outside party we pay (defined)  \n[M2] seloynquin: names what happens n'
+      REPLY: 'The cross‑border cash‑flow review workstream’s current status is “harbour”.\n\nANSWER: harbour'
+   FINAL: 'The cross‑border cash‑flow review workstream’s current status is “harbour”.\n\nANSWER: harbour'
+-- v7-1 174832 rend score=0 ans='harbour' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file ca5ee9c73cd262d78. Work only from this batch's own field meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=24 shown=9 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='eld meanings. For the account in this batch set up for the cross-border cash-flow review, which kestilora governs now? Name the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] orinynpath: means the person carrying the next step (defined)  \n[M1] joraelfin: means how the two sides communicate (defined)  \n[M1] ulmaojor: means that the later value supersedes the earlier one (defined)  \n[M1] haroumpath: means names a workstream (defined)  \n[M1] cyrilwire: means its everyday alias (defined)  \n\n[M2] belorvale: means identifies the person on the hook for it (defined)  \n[M2] kestilora: means its standing status (defined)  \n[M2] seloifin: marks something that happened on a given day (defined)  \n[M2] lumaawire: is the organisation that commissions it and pays us (defined)  \n[M2] weraartier: names the outside party we pay (defined)  \n[M2] seloynquin: names what happens n'
+      [assistant-in] 'The cross‑border cash‑flow review workstream’s current status is “harbour”.\n\nANSWER: harbour'
+      REPLY: 'ANSWER: harbour'
+   FINAL: 'ANSWER: harbour'

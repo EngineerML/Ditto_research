@@ -1,0 +1,188 @@
+##### NOTES (tw) expected='2025-11-15' distractors=['2026-04-27', 'April 27', 'April 27, 2026', 'Apr 27', 'Apr 27, 2026', '27 April', '27 April 2026', '27 Apr', 'April 27th', 'Apr 27th', '27th April', '27th of April']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-05-21: The physio session for my dad: Nov 15, 2025
+2. 2025-05-21: The physio session for my dad: Nov 15, 2025
+3. 2025-05-21: The physio session for my dad: Nov 15, 2025
+4. 2025-05-23: Noting that the date of my dad's physio session is 19 January 2026
+5. 2025-05-23: Noting that the date of my dad's physio session is 19 January 2026
+6. 2025-05-23: Noting that the date of my dad's physio session is 19 January 2026
+7. 2025-05-27: For the record, the date of my dad's physio session is 2025-11-15
+8. 2025-05-27: For the record, the date of my dad's physio session is 2025-11-15
+9. 2025-05-27: For the record, the date of my dad's physio session is 2025-11-15
+10. 2025-05-29: My dad wants the car booked for the MOT before the end of the month
+11. 2025-05-29: My dad wants the car booked for the MOT before the end of the month
+12. 2025-05-29: My dad wants the car booked for the MOT before the end of the month
+13. 2025-06-02: Unrelated: Lily Alexander's vaccination booster is on April 27, 2026
+
+-- v6-hold 031425 base score=1 ans='15 November 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Which day is my dad's physio session, as it stands?"
+      REPLY: 'The current date for your dad’s physio session is 15 November 2025.  \nANSWER: 15 November 2025'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date."
+      REPLY: 'The current date for your dad’s physio session is 15 November 2025.  \nANSWER: 15 November 2025'
+   FINAL: 'The current date for your dad’s physio session is 15 November 2025.  \nANSWER: 15 November 2025'
+##### NOTES (cf) expected='2026-03-08' distractors=['2026-04-27', 'April 27', 'April 27, 2026', 'Apr 27', 'Apr 27, 2026', '27 April', '27 April 2026', '27 Apr', 'April 27th', 'Apr 27th', '27th April', '27th of April']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-05-21: The physio session for my dad: Nov 15, 2025
+2. 2025-05-23: Noting that the date of my dad's physio session is 19 January 2026
+3. 2025-05-27: For the record, the date of my dad's physio session is 2026-03-08
+4. 2025-05-29: My dad wants the car booked for the MOT before the end of the month
+
+-- v6-hold 031425 caus score=1 ans='2026-03-08' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c9167fbe5e375f35b. Quick one from my own notes. Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Which day is my dad's physio session, as it stands?"
+      REPLY: 'ANSWER: 8 March 2026'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c9167fbe5e375f35b. Quick one from my own notes. Which day is my dad's physio session, as it stands? Just the date."
+      REPLY: '2026-03-08\n\nANSWER: 2026-03-08'
+   FINAL: '2026-03-08\n\nANSWER: 2026-03-08'
+-- v6-hold 031425 dist score=1 ans='2025-11-15' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Checking something I told you earlier. Which day is my dad's physio session, as it stands? Any clear date format is fine.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file ce7f37609b48187e5. Checking something I told you earlier. Which day is my dad's physio session, as it stands? Any clear date format is fine."
+      REPLY: 'The current date for your dad’s physio session is 2025-11-15.  \nANSWER: 2025-11-15'
+   FINAL: 'The current date for your dad’s physio session is 2025-11-15.  \nANSWER: 2025-11-15'
+-- v6-hold 031425 rend score=1 ans='2025-11-15' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Before I forget — Which day is my dad's physio session, as it stands? The day is enough.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file ce7f37609b48187e5. Before I forget — Which day is my dad's physio session, as it stands? The day is enough."
+      REPLY: 'Your dad’s physio session is scheduled for 2025-11-15.  \nANSWER: 2025-11-15'
+   FINAL: 'Your dad’s physio session is scheduled for 2025-11-15.  \nANSWER: 2025-11-15'
+##### NOTES (tw) expected='2025-11-15' distractors=['2026-04-27', 'April 27', 'April 27, 2026', 'Apr 27', 'Apr 27, 2026', '27 April', '27 April 2026', '27 Apr', 'April 27th', 'Apr 27th', '27th April', '27th of April']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-05-21: The physio session for my dad: Nov 15, 2025
+2. 2025-05-23: Noting that the date of my dad's physio session is 19 January 2026
+3. 2025-05-27: For the record, the date of my dad's physio session is 2025-11-15
+4. 2025-05-29: My dad wants the car booked for the MOT before the end of the month
+5. 2025-06-02: Unrelated: Lily Alexander's vaccination booster is on April 27, 2026
+
+-- v7-prog 171243 base score=1 ans='2025-11-15' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="\nUse only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27'
+      [assistant-in] '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27  \n\nANSWER: 2025-11-15'
+      REPLY: 'ANSWER: 2025-11-15'
+   FINAL: 'ANSWER: 2025-11-15'
+##### NOTES (cf) expected='2026-03-08' distractors=['2026-04-27', 'April 27', 'April 27, 2026', 'Apr 27', 'Apr 27, 2026', '27 April', '27 April 2026', '27 Apr', 'April 27th', 'Apr 27th', '27th April', '27th of April']
+[M1] 2025-05-21 | User: From the fridge list (photo transcription, line 2): Case file c9167fbe5e375f35b: The physio session for my dad: Nov 15, 2025.
+[M2] 2025-05-23 | User: From the fridge list (photo transcription, line 1): Case file c9167fbe5e375f35b: Noting that the date of my dad's physio session is 19 January 2026.
+[M3] 2025-05-27 | User: From the fridge list (photo transcription, line 4): Case file c9167fbe5e375f35b: For the record, the date of my dad's physio session is 2026-03-08.
+[M4] 2025-05-29 | User: From the fridge list (photo transcription, line 3): Case file c9167fbe5e375f35b: My dad wants the car booked for the MOT before the end of the month.
+
+-- v7-prog 171243 caus score=1 ans='2026-03-08' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c9167fbe5e375f35b. Quick one from my own notes. Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['ledger: written here, 7 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] physio session date: none -> Nov 15, 2025 (set)  \n[M2] physio session date: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session date: 19 January 2026 -> 2026-03-08 (changed)  \n[M4] car MOT booking: none -> My dad wants the car booked for the MOT before the end of the month. (set)  \n\nNOW physio session date: 2026-03-08  \nNOW car MOT booking: My dad wants the car booked for the MOT before the end of the month.'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] physio session date: none -> Nov 15, 2025 (set)  \n[M2] physio session date: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session date: 19 January 2026 -> 2026-03-08 (changed)  \n[M4] car MOT booking: none -> My dad wants the car booked for the MOT before the end of the month. (set)  \n\nNOW physio session date: 2026-03-08  \nNOW car MOT booking: My dad wants the car booked for the MOT before the end of the month.'
+      REPLY: 'ANSWER: 2026-03-08'
+   FINAL: 'ANSWER: 2026-03-08'
+##### NOTES (tw) expected='2025-11-15' distractors=['2026-04-27', 'April 27', 'April 27, 2026', 'Apr 27', 'Apr 27, 2026', '27 April', '27 April 2026', '27 Apr', 'April 27th', 'Apr 27th', '27th April', '27th of April']
+[M1] 2025-05-21 | User: Shared calendar entry 2 | Case file ce7f37609b48187e5: The physio session for my dad: Nov 15, 2025.
+[M2] 2025-05-23 | User: Case file ce7f37609b48187e5: Noting that the date of my dad's physio session is 19 January 2026.
+[M3] 2025-05-27 | User: Shared calendar entry 4 | Case file ce7f37609b48187e5: For the record, the date of my dad's physio session is 2025-11-15.
+[M4] 2025-05-29 | User: Adding to my notes — Case file ce7f37609b48187e5: My dad wants the car booked for the MOT before the end of the month.
+[M5] 2025-06-02 | User: Forwarding a text I got: "Case file ce7f37609b48187e5: Unrelated: Lily Alexander's vaccination booster is on April 27, 2026."
+
+-- v7-prog 171243 dist score=0 ans='2025-11-15' grader=['critical claim 0 (date) not satisfied (scored 0)']
+   Q: Use only case file ce7f37609b48187e5. Checking something I told you earlier. Which day is my dad's physio session, as it stands? Any clear date format is fine.
+   ev: ['ledger: written here, 9 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27'
+      REPLY: '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27  \n\nANSWER: 2025-11-15'
+   FINAL: '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27  \n\nANSWER: 2025-11-15'
+-- v7-prog 171243 rend score=1 ans='2025-11-15' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Before I forget — Which day is my dad's physio session, as it stands? The day is enough.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="entries:\nUse only case file ce7f37609b48187e5. Before I forget — Which day is my dad's physio session, as it stands? The day is enough.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27'
+      [assistant-in] '[M1] physio session date: none -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking date: none -> 2025-05-31 (set)  \n[M5] Lily Alexander vaccination booster date: none -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking date: 2025-05-31  \nNOW Lily Alexander vaccination booster date: 2026-04-27  \n\nANSWER: 2025-11-15'
+      REPLY: 'ANSWER: 2025-11-15'
+   FINAL: 'ANSWER: 2025-11-15'
+-- v7-prog2 172212 base score=1 ans='15 November 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="\nUse only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] physio session date: None -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking: None -> before end of month (set)  \n[M5] Lily Alexander vaccination booster: None -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking: before end of month  \nNOW Lily Alexander vaccination booster: 2026-04-27'
+      [assistant-in] 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+      REPLY: 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+   FINAL: 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+-- v7-prog2 172212 caus score=1 ans='2026-03-08' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c9167fbe5e375f35b. Quick one from my own notes. Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['ledger: written here, 7 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] Case file c9167fbe5e375f35b: The physio session for my dad: none -> Nov 15, 2025 (set)  \n[M2] Case file c9167fbe5e375f35b: The physio session for my dad: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] Case file c9167fbe5e375f35b: The physio session for my dad: 19 January 2026 -> 2026-03-08 (changed)  \n[M4] Case file c9167fbe5e375f35b: My dad wants the car booked for the MOT: none -> before the end of the month (set)  \n\nNOW Case file c9167fbe5e375f35b: The physio session for my dad: 2026-03-08  \nNOW Case file c9167fbe5e375f35b: My dad wants the car booked for the MOT: before the end of the month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] Case file c9167fbe5e375f35b: The physio session for my dad: none -> Nov 15, 2025 (set)  \n[M2] Case file c9167fbe5e375f35b: The physio session for my dad: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] Case file c9167fbe5e375f35b: The physio session for my dad: 19 January 2026 -> 2026-03-08 (changed)  \n[M4] Case file c9167fbe5e375f35b: My dad wants the car booked for the MOT: none -> before the end of the month (set)  \n\nNOW Case file c9167fbe5e375f35b: The physio session for my dad: 2026-03-08  \nNOW Case file c9167fbe5e375f35b: My dad wants the car booked for the MOT: before the end of the month'
+      REPLY: 'Your dad’s physio session is scheduled for 2026‑03‑08.  \nANSWER: 2026-03-08'
+   FINAL: 'Your dad’s physio session is scheduled for 2026‑03‑08.  \nANSWER: 2026-03-08'
+-- v7-prog2 172212 dist score=1 ans='15 November 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Checking something I told you earlier. Which day is my dad's physio session, as it stands? Any clear date format is fine.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="7609b48187e5. Checking something I told you earlier. Which day is my dad's physio session, as it stands? Any clear date format is fine.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] physio session date: None -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking: None -> before end of month (set)  \n[M5] Lily Alexander vaccination booster: None -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking: before end of month  \nNOW Lily Alexander vaccination booster: 2026-04-27'
+      [assistant-in] 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+      REPLY: 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+   FINAL: 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+##### NOTES (tw) expected='2025-11-15' distractors=['2026-04-27', 'April 27', 'April 27, 2026', 'Apr 27', 'Apr 27, 2026', '27 April', '27 April 2026', '27 Apr', 'April 27th', 'Apr 27th', '27th April', '27th of April']
+[M1] 2025-05-21 | User: Remember this: Case file ce7f37609b48187e5: The physio session for my dad: Nov 15, 2025.
+[M2] 2025-05-23 | User: Shared calendar entry 1 | Case file ce7f37609b48187e5: Noting that the date of my dad's physio session is 19 January 2026.
+[M3] 2025-05-27 | User: Forwarding a text I got: "Case file ce7f37609b48187e5: For the record, the date of my dad's physio session is 2025-11-15."
+[M4] 2025-05-29 | User: Forwarding a text I got: "Case file ce7f37609b48187e5: My dad wants the car booked for the MOT before the end of the month."
+[M5] 2025-06-02 | User: Forwarding a text I got: "Case file ce7f37609b48187e5: Unrelated: Lily Alexander's vaccination booster is on April 27, 2026."
+
+-- v7-prog2 172212 rend score=1 ans='15 November 2025' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Before I forget — Which day is my dad's physio session, as it stands? The day is enough.
+   ev: ['ledger: written here, 9 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] physio session date: None -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking: None -> before end of month (set)  \n[M5] Lily Alexander vaccination booster: None -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking: before end of month  \nNOW Lily Alexander vaccination booster: 2026-04-27'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] physio session date: None -> 2025-11-15 (set)  \n[M2] physio session date: 2025-11-15 -> 2026-01-19 (changed)  \n[M3] physio session date: 2026-01-19 -> 2025-11-15 (changed)  \n[M4] car MOT booking: None -> before end of month (set)  \n[M5] Lily Alexander vaccination booster: None -> 2026-04-27 (set)  \n\nNOW physio session date: 2025-11-15  \nNOW car MOT booking: before end of month  \nNOW Lily Alexander vaccination booster: 2026-04-27'
+      REPLY: 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+   FINAL: 'The physio session is scheduled for 15 November 2025.  \nANSWER: 15 November 2025'
+-- v7-1 175044 base score=1 ans='2025-11-15' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="\nUse only case file ce7f37609b48187e5. Looking back at what I saved: Which day is my dad's physio session, as it stands? Just the date.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] physio session:  -> Nov 15, 2025 (set)  \n[M2] physio session: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session: 19 January 2026 -> 2025-11-15 (changed)  \n[M4] car booking:  -> before the end of the month (set)  \n[M5] Lily Alexander's vaccination booster:  -> April 27, 2026 (set)  \nNOW physio session: 2025-11-15  \nNOW car booking: before the end of the month  \nNOW Lily Alexander's vaccination booster: April 27, 2026"
+      [assistant-in] 'Your dad’s physio session is scheduled for 2025‑11‑15.  \nANSWER: 2025-11-15'
+      REPLY: 'Your dad’s physio session is on 2025‑11‑15.  \nANSWER: 2025-11-15'
+   FINAL: 'Your dad’s physio session is on 2025‑11‑15.  \nANSWER: 2025-11-15'
+-- v7-1 175044 caus score=1 ans='2026-03-08' grader=['claim 0 (date): 1.000']
+   Q: Use only case file c9167fbe5e375f35b. Quick one from my own notes. Which day is my dad's physio session, as it stands? Just the date.
+   ev: ['ledger: written here, 7 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] physio session date: none -> Nov 15, 2025 (set)  \n[M2] physio session date: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session date: 19 January 2026 -> 2026-03-08 (changed)  \n[M4] car MOT booking: none -> before the end of the month (set)  \n\nNOW physio session date: 2026-03-08  \nNOW car MOT booking: before the end of the month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] physio session date: none -> Nov 15, 2025 (set)  \n[M2] physio session date: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session date: 19 January 2026 -> 2026-03-08 (changed)  \n[M4] car MOT booking: none -> before the end of the month (set)  \n\nNOW physio session date: 2026-03-08  \nNOW car MOT booking: before the end of the month'
+      REPLY: 'Your dad’s physio session is scheduled for 2026‑03‑08.  \nANSWER: 2026-03-08'
+   FINAL: 'Your dad’s physio session is scheduled for 2026‑03‑08.  \nANSWER: 2026-03-08'
+-- v7-1 175044 dist score=1 ans='2025-11-15' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Checking something I told you earlier. Which day is my dad's physio session, as it stands? Any clear date format is fine.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="7609b48187e5. Checking something I told you earlier. Which day is my dad's physio session, as it stands? Any clear date format is fine.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] physio session:  -> Nov 15, 2025 (set)  \n[M2] physio session: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session: 19 January 2026 -> 2025-11-15 (changed)  \n[M4] car booking:  -> before the end of the month (set)  \n[M5] Lily Alexander's vaccination booster:  -> April 27, 2026 (set)  \nNOW physio session: 2025-11-15  \nNOW car booking: before the end of the month  \nNOW Lily Alexander's vaccination booster: April 27, 2026"
+      [assistant-in] 'Your dad’s physio session is scheduled for 2025‑11‑15.  \nANSWER: 2025-11-15'
+      REPLY: 'Your dad’s physio session is scheduled for 2025‑11‑15.  \nANSWER: 2025-11-15'
+   FINAL: 'Your dad’s physio session is scheduled for 2025‑11‑15.  \nANSWER: 2025-11-15'
+##### NOTES (tw) expected='2025-11-15' distractors=['2026-04-27', 'April 27', 'April 27, 2026', 'Apr 27', 'Apr 27, 2026', '27 April', '27 April 2026', '27 Apr', 'April 27th', 'Apr 27th', '27th April', '27th of April']
+[M1] 2025-05-21 | User: Forwarding a text I got: "Case file ce7f37609b48187e5: The physio session for my dad: Nov 15, 2025."
+[M2] 2025-05-23 | User: Case file ce7f37609b48187e5: Noting that the date of my dad's physio session is 19 January 2026.
+[M3] 2025-05-27 | User: Shared calendar entry 4 | Case file ce7f37609b48187e5: For the record, the date of my dad's physio session is 2025-11-15.
+[M4] 2025-05-29 | User: Shared calendar entry 3 | Case file ce7f37609b48187e5: My dad wants the car booked for the MOT before the end of the month.
+[M5] 2025-06-02 | User: Forwarding a text I got: "Case file ce7f37609b48187e5: Unrelated: Lily Alexander's vaccination booster is on April 27, 2026."
+
+-- v7-1 175044 rend score=1 ans='2025-11-15' grader=['claim 0 (date): 1.000']
+   Q: Use only case file ce7f37609b48187e5. Before I forget — Which day is my dad's physio session, as it stands? The day is enough.
+   ev: ['ledger: written here, 8 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: "[M1] physio session:  -> Nov 15, 2025 (set)  \n[M2] physio session: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session: 19 January 2026 -> 2025-11-15 (changed)  \n[M4] car booking:  -> before the end of the month (set)  \n[M5] Lily Alexander's vaccination booster:  -> April 27, 2026 (set)  \nNOW physio session: 2025-11-15  \nNOW car booking: before the end of the month  \nNOW Lily Alexander's vaccination booster: April 27, 2026"
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] "[M1] physio session:  -> Nov 15, 2025 (set)  \n[M2] physio session: Nov 15, 2025 -> 19 January 2026 (changed)  \n[M3] physio session: 19 January 2026 -> 2025-11-15 (changed)  \n[M4] car booking:  -> before the end of the month (set)  \n[M5] Lily Alexander's vaccination booster:  -> April 27, 2026 (set)  \nNOW physio session: 2025-11-15  \nNOW car booking: before the end of the month  \nNOW Lily Alexander's vaccination booster: April 27, 2026"
+      REPLY: 'Your dad’s physio session is scheduled for 2025‑11‑15.  \nANSWER: 2025-11-15'
+   FINAL: 'Your dad’s physio session is scheduled for 2025‑11‑15.  \nANSWER: 2025-11-15'

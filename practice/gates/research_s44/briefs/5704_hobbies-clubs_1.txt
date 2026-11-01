@@ -1,0 +1,214 @@
+##### NOTES (tw) expected='Edgar Barnhart' distractors=['Cameron Quintana']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-18: The person behind the allotment society is Edgar Barnhart
+2. 2025-04-18: The person behind the allotment society is Edgar Barnhart
+3. 2025-04-18: The person behind the allotment society is Edgar Barnhart
+4. 2025-04-22: From now on the organiser of the allotment society is Stephanie Malinowski instead; the newest entry governs
+5. 2025-04-22: From now on the organiser of the allotment society is Stephanie Malinowski instead; the newest entry governs
+6. 2025-04-22: From now on the organiser of the allotment society is Stephanie Malinowski instead; the newest entry governs
+7. 2025-04-28: That entry about the organiser of the allotment society being Stephanie Malinowski was wrong and has been struck
+8. 2025-04-28: That entry about the organiser of the allotment society being Stephanie Malinowski was wrong and has been struck
+9. 2025-04-28: That entry about the organiser of the allotment society being Stephanie Malinowski was wrong and has been struck
+10. 2025-05-01: Our eldest wants the car booked for the MOT before the end of the month
+11. 2025-05-01: Our eldest wants the car booked for the MOT before the end of the month
+12. 2025-05-01: Our eldest wants the car booked for the MOT before the end of the month
+13. 2025-05-06: Separately, the book club is run by Cameron Quintana
+
+-- v30-released 014850 base score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   FINAL: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+##### NOTES (cf) expected='Stephanie Malinowski' distractors=['Cameron Quintana']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-18: The person behind the allotment society is Edgar Barnhart
+2. 2025-04-22: From now on the organiser of the allotment society is Stephanie Malinowski instead; the newest entry governs
+3. 2025-04-28: The note that the organiser of the allotment society is Stephanie Malinowski was checked and stands
+4. 2025-05-01: Our eldest wants the car booked for the MOT before the end of the month
+
+-- v30-released 014850 caus score=1 ans='Stephanie Malinowski' grader=['claim 0 (person): 1.000']
+   Q: Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.'
+      REPLY: 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+      REPLY: 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+   FINAL: 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+-- v30-released 014850 dist score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.'
+      REPLY: 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+      REPLY: 'Edgar Barnhart\nANSWER: Edgar Barnhart'
+   FINAL: 'Edgar Barnhart\nANSWER: Edgar Barnhart'
+-- v30-released 014850 rend score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.'
+      REPLY: 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+      REPLY: 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+   FINAL: 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+-- v6-f123 022757 base score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.'
+      REPLY: 'Here’s the current information.  \nANSWER: Edgar Barnhart'
+   FINAL: 'Here’s the current information.  \nANSWER: Edgar Barnhart'
+-- v6-f123 022757 caus score=1 ans='Stephanie Malinowski' grader=['claim 0 (person): 1.000']
+   Q: Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser of the allotment society is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.'
+      REPLY: 'The current organiser is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+   FINAL: 'The current organiser is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+-- v6-f123 022757 dist score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.'
+      REPLY: 'Edgar Barnhart  \nANSWER: Edgar Barnhart'
+   FINAL: 'Edgar Barnhart  \nANSWER: Edgar Barnhart'
+-- v6-f123 022757 rend score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.'
+      REPLY: 'Here is the answer:  \nANSWER: Edgar Barnhart'
+   FINAL: 'Here is the answer:  \nANSWER: Edgar Barnhart'
+-- v30-released 023027 base score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   FINAL: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+-- v30-released 023027 caus score=1 ans='Stephanie Malinowski' grader=['claim 0 (person): 1.000']
+   Q: Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.'
+      REPLY: 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+      REPLY: 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+   FINAL: 'Stephanie Malinowski  \nANSWER: Stephanie Malinowski'
+-- v30-released 023027 dist score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.'
+      REPLY: 'Here is the current organiser:\nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Here is the current organiser:\nANSWER: Edgar Barnhart'
+      REPLY: 'ANSWER: Edgar Barnhart'
+   FINAL: 'ANSWER: Edgar Barnhart'
+-- v30-released 023027 rend score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.'
+      REPLY: 'Here is the name:  \nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Here is the name:  \nANSWER: Edgar Barnhart'
+      REPLY: 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+   FINAL: 'Edgar Barnhart\n\nANSWER: Edgar Barnhart'
+-- v6-f123 023915 base score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   FINAL: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+-- v6-f123 023915 caus score=1 ans='Stephanie Malinowski' grader=['claim 0 (person): 1.000']
+   Q: Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser of the allotment society is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.'
+      REPLY: 'The current organiser is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+   FINAL: 'The current organiser is Stephanie Malinowski.  \nANSWER: Stephanie Malinowski'
+-- v6-f123 023915 dist score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.'
+      REPLY: 'ANSWER: Edgar Barnhart'
+   FINAL: 'ANSWER: Edgar Barnhart'
+-- v6-f123 023915 rend score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Who runs the allotment society now?'
+      REPLY: 'The current organiser is Edgar Barnhart.  \nANSWER: Edgar Barnhart'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.'
+      REPLY: 'Edgar Barnhart  \nANSWER: Edgar Barnhart'
+   FINAL: 'Edgar Barnhart  \nANSWER: Edgar Barnhart'
+##### NOTES (tw) expected='Edgar Barnhart' distractors=['Cameron Quintana']
+[M1] 2025-04-18 | User: Forwarding a text I got: "Case file ce161f160297cf714: The person behind the allotment society is Edgar Barnhart."
+[M2] 2025-04-22 | User: From the fridge list (photo transcription, line 2): Case file ce161f160297cf714: From now on the organiser of the allotment society is Stephanie Malinowski instead; the newest entry governs.
+[M3] 2025-04-28 | User: From the fridge list (photo transcription, line 1): Case file ce161f160297cf714: That entry about the organiser of the allotment society being Stephanie Malinowski was wrong and has been struck.
+[M4] 2025-05-01 | User: Shared calendar entry 3 | Case file ce161f160297cf714: Our eldest wants the car booked for the MOT before the end of the month.
+[M5] 2025-05-06 | User: From the fridge list (photo transcription, line 4): Case file ce161f160297cf714: Separately, the book club is run by Cameron Quintana.
+
+-- v7-prog2 173404 base score=0 ans='none' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file ce161f160297cf714. Checking something I told you earlier. Who runs the allotment society now? Give me the person.
+   ev: ['ledger: written here, 10 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[set] person behind the allotment society: none -> Edgar Barnhart (set)  \n[set] organiser of the allotment society: none -> Stephanie Malinowski (set)  \n[struck] organiser of the allotment society: Stephanie Malinowski -> none (struck)  \n[set] car booked for the MOT: none -> booked before end of month (set)  \n[set] book club run by: none -> Cameron Quintana (set)  \n\nNOW person behind the allotment society: Edgar Barnhart  \nNOW organiser of the allotment society: none  \nNOW car booked for the MOT: booked before end of month  \nNOW book club run by: Cameron Quintana'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[set] person behind the allotment society: none -> Edgar Barnhart (set)  \n[set] organiser of the allotment society: none -> Stephanie Malinowski (set)  \n[struck] organiser of the allotment society: Stephanie Malinowski -> none (struck)  \n[set] car booked for the MOT: none -> booked before end of month (set)  \n[set] book club run by: none -> Cameron Quintana (set)  \n\nNOW person behind the allotment society: Edgar Barnhart  \nNOW organiser of the allotment society: none  \nNOW car booked for the MOT: booked before end of month  \nNOW book club run by: Cameron Quintana'
+      REPLY: 'The allotment society currently has no organiser.  \nANSWER: none'
+   FINAL: 'The allotment society currently has no organiser.  \nANSWER: none'
+##### NOTES (cf) expected='Stephanie Malinowski' distractors=['Cameron Quintana']
+[M1] 2025-04-18 | User: Remember this: Case file c7ea73f4dbc14e986: The person behind the allotment society is Edgar Barnhart.
+[M2] 2025-04-22 | User: Adding to my notes — Case file c7ea73f4dbc14e986: From now on the organiser of the allotment society is Stephanie Malinowski instead; the newest entry governs.
+[M3] 2025-04-28 | User: Note for you: Case file c7ea73f4dbc14e986: The note that the organiser of the allotment society is Stephanie Malinowski was checked and stands.
+[M4] 2025-05-01 | User: Case file c7ea73f4dbc14e986: Our eldest wants the car booked for the MOT before the end of the month.
+
+-- v7-prog2 173404 caus score=1 ans='Stephanie Malinowski' grader=['claim 0 (person): 1.000']
+   Q: Use only case file c7ea73f4dbc14e986. From my household notes: Who runs the allotment society now? Just the name.
+   ev: ['ledger: written here, 9 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] person behind the allotment society: None -> Edgar Barnhart (set)  \n[M2] organiser of the allotment society: None -> Stephanie Malinowski (set)  \n[M3] organiser note status: None -> checked (set)  \n[M4] eldest wants the car booked for the MOT before the end of the month: None -> booked before end of month (set)  \n\nNOW person behind the allotment society: Edgar Barnhart  \nNOW organiser of the allotment society: Stephanie Malinowski  \nNOW organiser note status: checked  \nNOW eldest wants the car booked for the MOT before the end of the month: booked before end of month'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] person behind the allotment society: None -> Edgar Barnhart (set)  \n[M2] organiser of the allotment society: None -> Stephanie Malinowski (set)  \n[M3] organiser note status: None -> checked (set)  \n[M4] eldest wants the car booked for the MOT before the end of the month: None -> booked before end of month (set)  \n\nNOW person behind the allotment society: Edgar Barnhart  \nNOW organiser of the allotment society: Stephanie Malinowski  \nNOW organiser note status: checked  \nNOW eldest wants the car booked for the MOT before the end of the month: booked before end of month'
+      REPLY: 'The allotment society is now run by Stephanie\u202fMalinowski.  \nANSWER: Stephanie Malinowski'
+   FINAL: 'The allotment society is now run by Stephanie\u202fMalinowski.  \nANSWER: Stephanie Malinowski'
+##### NOTES (tw) expected='Edgar Barnhart' distractors=['Cameron Quintana']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-18: The person behind the allotment society is Edgar Barnhart
+2. 2025-04-22: From now on the organiser of the allotment society is Stephanie Malinowski instead; the newest entry governs
+3. 2025-04-28: That entry about the organiser of the allotment society being Stephanie Malinowski was wrong and has been struck
+4. 2025-05-01: Our eldest wants the car booked for the MOT before the end of the month
+5. 2025-05-06: Separately, the book club is run by Cameron Quintana
+
+-- v7-prog2 173404 dist score=1 ans='Edgar Barnhart' grader=['claim 0 (person): 1.000']
+   Q: Use only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='tries:\nUse only case file ce161f160297cf714. Help me keep the family logistics straight. Who runs the allotment society now? Name only.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[set] person behind the allotment society: none -> Edgar Barnhart (set)  \n[set] organiser of the allotment society: none -> Stephanie Malinowski (set)  \n[struck] organiser of the allotment society: Stephanie Malinowski -> none (struck)  \n[set] car booked for the MOT: none -> booked before end of month (set)  \n[set] book club run by: none -> Cameron Quintana (set)  \n\nNOW person behind the allotment society: Edgar Barnhart  \nNOW organiser of the allotment society: none  \nNOW car booked for the MOT: booked before end of month  \nNOW book club run by: Cameron Quintana'
+      [assistant-in] 'The allotment society currently has no organiser.  \nANSWER: none'
+      REPLY: 'Edgar Barnhart  \nANSWER: Edgar Barnhart'
+   FINAL: 'Edgar Barnhart  \nANSWER: Edgar Barnhart'
+-- v7-prog2 173404 rend score=0 ans='none' grader=['critical claim 0 (person) not satisfied (scored 0)']
+   Q: Use only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='r these same entries:\nUse only case file ce161f160297cf714. Quick one from my own notes. Who runs the allotment society now? Name only.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[set] person behind the allotment society: none -> Edgar Barnhart (set)  \n[set] organiser of the allotment society: none -> Stephanie Malinowski (set)  \n[struck] organiser of the allotment society: Stephanie Malinowski -> none (struck)  \n[set] car booked for the MOT: none -> booked before end of month (set)  \n[set] book club run by: none -> Cameron Quintana (set)  \n\nNOW person behind the allotment society: Edgar Barnhart  \nNOW organiser of the allotment society: none  \nNOW car booked for the MOT: booked before end of month  \nNOW book club run by: Cameron Quintana'
+      [assistant-in] 'The allotment society currently has no organiser.  \nANSWER: none'
+      REPLY: 'There is currently no organiser listed for the allotment society.  \nANSWER: none'
+   FINAL: 'There is currently no organiser listed for the allotment society.  \nANSWER: none'

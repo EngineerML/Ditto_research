@@ -1,0 +1,238 @@
+##### NOTES (tw) expected='torch; PE kit; reading log; packed lunch; signed permission slip' distractors=['water bottle', 'library book', 'spare socks']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-10: Packing list for my niece's swim gala — torch, PE kit, reading log, water bottle
+2. 2025-04-10: Packing list for my niece's swim gala — torch, PE kit, reading log, water bottle
+3. 2025-04-10: Packing list for my niece's swim gala — torch, PE kit, reading log, water bottle
+4. 2025-04-11: The school took the PE kit off the swim gala list
+5. 2025-04-11: The school took the PE kit off the swim gala list
+6. 2025-04-11: The school took the PE kit off the swim gala list
+7. 2025-04-14: The school says no spare socks for the swim gala; it was never on our list anyway, so nothing changes
+8. 2025-04-14: The school says no spare socks for the swim gala; it was never on our list anyway, so nothing changes
+9. 2025-04-14: The school says no spare socks for the swim gala; it was never on our list anyway, so nothing changes
+10. 2025-04-17: The school added a signed permission slip to the swim gala list
+11. 2025-04-17: The school added a signed permission slip to the swim gala list
+12. 2025-04-17: The school added a signed permission slip to the swim gala list
+13. 2025-04-18: We agreed with my niece to keep the shared shopping list on the fridge tablet
+14. 2025-04-18: We agreed with my niece to keep the shared shopping list on the fridge tablet
+15. 2025-04-18: We agreed with my niece to keep the shared shopping list on the fridge tablet
+16. 2025-04-24: Scratch the earlier change for the swim gala: the PE kit is back on the list
+17. 2025-04-24: Scratch the earlier change for the swim gala: the PE kit is back on the list
+18. 2025-04-24: Scratch the earlier change for the swim gala: the PE kit is back on the list
+19. 2025-04-28: For the swim gala, swap the water bottle for a packed lunch
+20. 2025-04-28: For the swim gala, swap the water bottle for a packed lunch
+21. 2025-04-28: For the swim gala, swap the water bottle for a packed lunch
+22. 2025-04-29: Separately, Lanaya Skinner's residential list is just a library book
+
+-- v30-released 014850 base score=1 ans='torch, PE kit, reading log, packed lunch, signed permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please."
+      REPLY: 'Here’s what’s on the list right now:  \n\nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Here’s what’s on the list right now:  \n\nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+      REPLY: 'Here’s what’s on the list right now:  \n\nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+   FINAL: 'Here’s what’s on the list right now:  \n\nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+##### NOTES (cf) expected='torch; PE kit; water bottle; packed lunch; signed permission slip' distractors=['reading log', 'library book', 'spare socks']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-10: Packing list for my niece's swim gala — torch, PE kit, reading log, water bottle
+2. 2025-04-11: The school took the PE kit off the swim gala list
+3. 2025-04-14: The school says no spare socks for the swim gala; it was never on our list anyway, so nothing changes
+4. 2025-04-17: The school added a signed permission slip to the swim gala list
+5. 2025-04-18: We agreed with my niece to keep the shared shopping list on the fridge tablet
+6. 2025-04-24: Scratch the earlier change for the swim gala: the PE kit is back on the list
+7. 2025-04-28: For the swim gala, swap the reading log for a packed lunch
+
+-- v30-released 014850 caus score=1 ans='torch, water bottle, signed permission slip, PE kit, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items.
+   ev: ['shared draft: written here', 'short path records=7 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'Here is the current list:  \nANSWER: torch, packed lunch, water bottle, signed permission slip, PE kit'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items."
+      REPLY: 'Here are the items on the list:  \nANSWER: torch, water bottle, signed permission slip, PE kit, packed lunch'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Here are the items on the list:  \nANSWER: torch, water bottle, signed permission slip, PE kit, packed lunch'
+      REPLY: 'Here are the items on the list:\nANSWER: torch, water bottle, signed permission slip, PE kit, packed lunch'
+   FINAL: 'Here are the items on the list:\nANSWER: torch, water bottle, signed permission slip, PE kit, packed lunch'
+-- v30-released 014850 dist score=1 ans='torch, PE kit, reading log, packed lunch, signed permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'ANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'ANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+      REPLY: 'ANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+   FINAL: 'ANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+-- v30-released 014850 rend score=1 ans='torch, PE kit, reading log, packed lunch, signed permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written here', 'short path records=22 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'ANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Here is the current list:  \nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+      REPLY: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+   FINAL: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, packed lunch, signed permission slip'
+-- v6-f123 022757 base score=1 ans='torch, PE kit, reading log, signed permission slip, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please.
+   ev: ['shared draft: written here', 'short path records=22 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'The current swim gala list is: torch, PE kit, reading log, signed permission slip, packed lunch.  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please."
+      REPLY: 'torch, PE kit, reading log, signed permission slip, packed lunch'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail="ent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not - ending with its 'ANSWER:' line."
+      [assistant-in] 'torch, PE kit, reading log, signed permission slip, packed lunch'
+      REPLY: 'The current swim gala list is: torch, PE kit, reading log, signed permission slip, packed lunch.  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   FINAL: 'The current swim gala list is: torch, PE kit, reading log, signed permission slip, packed lunch.  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+-- v6-f123 022757 caus score=1 ans='torch, PE kit, packed lunch, water bottle, signed permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items.
+   ev: ['shared draft: written here', 'short path records=7 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'ANSWER: torch, PE kit, packed lunch, water bottle, signed permission slip'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items."
+      REPLY: 'Here is the current list.  \nANSWER: torch, PE kit, packed lunch, water bottle, signed permission slip'
+   FINAL: 'Here is the current list.  \nANSWER: torch, PE kit, packed lunch, water bottle, signed permission slip'
+-- v6-f123 022757 dist score=1 ans='torch, PE kit, reading log, signed permission slip, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   FINAL: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+-- v6-f123 022757 rend score=1 ans='torch, PE kit, reading log, signed permission slip, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'Here is the current list: torch, PE kit, reading log, signed permission slip, packed lunch.  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   FINAL: 'Here is the current list: torch, PE kit, reading log, signed permission slip, packed lunch.  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+-- v30-released 023027 base score=1 ans='torch, reading log, signed permission slip, PE kit, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please."
+      REPLY: 'Here’s the current list: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'Here’s the current list: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+      REPLY: 'Here’s the current list: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+   FINAL: 'Here’s the current list: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+-- v30-released 023027 caus score=1 ans='torch, packed lunch, water bottle, signed permission slip, PE kit' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items.
+   ev: ['shared draft: written here', 'short path records=7 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'The current swim‑gala list is: torch, packed lunch, water bottle, signed permission slip, PE kit.  \nANSWER: torch, packed lunch, water bottle, signed permission slip, PE kit'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items."
+      REPLY: 'The current swim‑gala list is: torch, packed lunch, water bottle, signed permission slip, PE kit.  \nANSWER: torch, packed lunch, water bottle, signed permission slip, PE kit'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The current swim‑gala list is: torch, packed lunch, water bottle, signed permission slip, PE kit.  \nANSWER: torch, packed lunch, water bottle, signed permission slip, PE kit'
+      REPLY: 'The current swim‑gala list is: torch, packed lunch, water bottle, signed permission slip, PE kit.  \nANSWER: torch, packed lunch, water bottle, signed permission slip, PE kit'
+   FINAL: 'The current swim‑gala list is: torch, packed lunch, water bottle, signed permission slip, PE kit.  \nANSWER: torch, packed lunch, water bottle, signed permission slip, PE kit'
+-- v30-released 023027 dist score=1 ans='torch, reading log, signed permission slip, PE kit, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written here', 'short path records=22 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'The current list for your niece’s swim gala is: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'ANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+   call2 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'ANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+      REPLY: 'The current list for your niece’s swim gala is: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+   FINAL: 'The current list for your niece’s swim gala is: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+-- v30-released 023027 rend score=1 ans='torch, reading log, signed permission slip, PE kit, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: asked', 'final check: shipped']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'The current list for your niece’s swim gala is: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='last check before this reply is sent: read it through against the instructions at the start of this conversation and against the message, its last line first. Then write the reply the user will get - the same reply, word for word, if it already follows them, or the reply put right where it does not.'
+      [assistant-in] 'The current list for your niece’s swim gala is: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+      REPLY: 'The current list for your niece’s swim gala is: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+   FINAL: 'The current list for your niece’s swim gala is: torch, reading log, signed permission slip, PE kit, packed lunch.  \nANSWER: torch, reading log, signed permission slip, PE kit, packed lunch'
+-- v6-f123 023915 base score=1 ans='torch, PE kit, reading log, signed permission slip, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please.
+   ev: ['shared draft: written here', 'short path records=22 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'ANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please."
+      REPLY: 'Here’s what’s on the list right now: torch, PE kit, reading log, signed permission slip, packed lunch.  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   FINAL: 'Here’s what’s on the list right now: torch, PE kit, reading log, signed permission slip, packed lunch.  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+-- v6-f123 023915 caus score=1 ans='torch, PE kit, packed lunch, water bottle, signed permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items.
+   ev: ['shared draft: written here', 'short path records=7 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What is on my niece's swim gala list now?"
+      REPLY: 'The current swim‑gala packing list is: torch, PE kit, packed lunch, water bottle, signed permission slip.  \nANSWER: torch, PE kit, packed lunch, water bottle, signed permission slip'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items."
+      REPLY: 'Here’s the current list:\n\nANSWER: torch, PE kit, packed lunch, water bottle, signed permission slip'
+   FINAL: 'Here’s the current list:\n\nANSWER: torch, PE kit, packed lunch, water bottle, signed permission slip'
+-- v6-f123 023915 dist score=1 ans='torch, PE kit, reading log, signed permission slip, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   FINAL: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+-- v6-f123 023915 rend score=1 ans='torch, PE kit, reading log, signed permission slip, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=22 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list."
+      REPLY: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+   FINAL: 'Here is the current list:  \nANSWER: torch, PE kit, reading log, signed permission slip, packed lunch'
+##### NOTES (tw) expected='torch; PE kit; reading log; packed lunch; signed permission slip' distractors=['water bottle', 'library book', 'spare socks']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-04-10: Packing list for my niece's swim gala — torch, PE kit, reading log, water bottle
+2. 2025-04-11: The school took the PE kit off the swim gala list
+3. 2025-04-14: The school says no spare socks for the swim gala; it was never on our list anyway, so nothing changes
+4. 2025-04-17: The school added a signed permission slip to the swim gala list
+5. 2025-04-18: We agreed with my niece to keep the shared shopping list on the fridge tablet
+6. 2025-04-24: Scratch the earlier change for the swim gala: the PE kit is back on the list
+7. 2025-04-28: For the swim gala, swap the water bottle for a packed lunch
+8. 2025-04-29: Separately, Lanaya Skinner's residential list is just a library book
+
+-- v7-prog2 173404 base score=0.8 ans='torch, PE kit, reading log, packed lunch, permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 0.000']
+   Q: Use only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=22 shown=8 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="ese same entries:\nUse only case file c7dd82b3738012261. Before I forget — What is on my niece's swim gala list now? Every item, please.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] swim gala list: none -> torch, PE kit, reading log, water bottle (set)  \n[M2] swim gala list: torch, PE kit, reading log, water bottle -> torch, reading log, water bottle (removed)  \n[M4] swim gala list: torch, reading log, water bottle -> torch, reading log, water bottle, permission slip (added)  \n[M5] channel: none -> fridge tablet (set)  \n[M6] swim gala list: torch, reading log, water bottle, permission slip -> torch, PE kit, reading log, water bottle, permission slip (added)  \n[M7] swim gala list: torch, PE kit, reading log, water bottle, permission slip -> torch, PE kit, reading log, packed lunch, permission slip (swapped)  \n[M8] Lanaya Skinner's residential list: none -> library b"
+      [assistant-in] 'Your niece’s swim‑gala list now includes a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'
+      REPLY: 'Your niece’s swim‑gala list currently contains a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'
+   FINAL: 'Your niece’s swim‑gala list currently contains a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'
+##### NOTES (cf) expected='torch; PE kit; water bottle; packed lunch; signed permission slip' distractors=['reading log', 'library book', 'spare socks']
+[M1] 2025-04-10 | User: Shared calendar entry 4 | Case file c8a9ff68959000ab4: Packing list for my niece's swim gala — torch, PE kit, reading log, water bottle.
+[M2] 2025-04-11 | User: Shared calendar entry 5 | Case file c8a9ff68959000ab4: The school took the PE kit off the swim gala list.
+[M3] 2025-04-14 | User: Shared calendar entry 6 | Case file c8a9ff68959000ab4: The school says no spare socks for the swim gala; it was never on our list anyway, so nothing changes.
+[M4] 2025-04-17 | User: Shared calendar entry 2 | Case file c8a9ff68959000ab4: The school added a signed permission slip to the swim gala list.
+[M5] 2025-04-18 | User: Shared calendar entry 1 | Case file c8a9ff68959000ab4: We agreed with my niece to keep the shared shopping list on the fridge tablet.
+[M6] 2025-04-24 | User: Shared calendar entry 3 | Case file c8a9ff68959000ab4: Scratch the earlier change for the swim gala: the PE kit is back on the list.
+[M7] 2025-04-28 | User: Shared calendar entry 7 | Case file c8a9ff68959000ab4: For the swim gala, swap the reading log for a packed lunch.
+
+-- v7-prog2 173404 caus score=1 ans='torch, water bottle, signed permission slip, PE kit, packed lunch' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 1.000']
+   Q: Use only case file c8a9ff68959000ab4. Help me keep the family logistics straight. What is on my niece's swim gala list now? All of the items.
+   ev: ['ledger: written here, 9 lines', 'short path records=7 shown=7 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] packing list: [] -> [torch, PE kit, reading log, water bottle] (set)  \n[M2] packing list: [torch, PE kit, reading log, water bottle] -> [torch, reading log, water bottle] (removed)  \n[M4] packing list: [torch, reading log, water bottle] -> [torch, reading log, water bottle, signed permission slip] (added)  \n[M5] holder: None -> fridge tablet (set)  \n[M6] packing list: [torch, reading log, water bottle, signed permission slip] -> [torch, reading log, water bottle, signed permission slip, PE kit] (added)  \n[M7] packing list: [torch, reading log, water bottle, signed permission slip, PE kit] -> [torch, water bottle, signed permission slip, PE kit, packed lunch] (swapped)  \n\nNOW packing list: [torch, water bottle, signed permission slip, PE kit, packed lunch]  \nNOW holder: fridge tablet'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] packing list: [] -> [torch, PE kit, reading log, water bottle] (set)  \n[M2] packing list: [torch, PE kit, reading log, water bottle] -> [torch, reading log, water bottle] (removed)  \n[M4] packing list: [torch, reading log, water bottle] -> [torch, reading log, water bottle, signed permission slip] (added)  \n[M5] holder: None -> fridge tablet (set)  \n[M6] packing list: [torch, reading log, water bottle, signed permission slip] -> [torch, reading log, water bottle, signed permission slip, PE kit] (added)  \n[M7] packing list: [torch, reading log, water bottle, signed permission slip, PE kit] -> [torch, water bottle, signed permission slip, PE kit, packed lunch] (swapped)  \n\nNOW packing lis'
+      REPLY: 'Your niece’s swim‑gala list now includes the torch, water bottle, signed permission slip, PE kit, and a packed lunch.  \n\nANSWER: torch, water bottle, signed permission slip, PE kit, packed lunch'
+   FINAL: 'Your niece’s swim‑gala list now includes the torch, water bottle, signed permission slip, PE kit, and a packed lunch.  \n\nANSWER: torch, water bottle, signed permission slip, PE kit, packed lunch'
+-- v7-prog2 173404 dist score=0.8 ans='torch, PE kit, reading log, packed lunch, permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 0.000']
+   Q: Use only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=22 shown=8 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="s:\nUse only case file c7dd82b3738012261. From my household notes: What is on my niece's swim gala list now? Give the full current list.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] swim gala list: none -> torch, PE kit, reading log, water bottle (set)  \n[M2] swim gala list: torch, PE kit, reading log, water bottle -> torch, reading log, water bottle (removed)  \n[M4] swim gala list: torch, reading log, water bottle -> torch, reading log, water bottle, permission slip (added)  \n[M5] channel: none -> fridge tablet (set)  \n[M6] swim gala list: torch, reading log, water bottle, permission slip -> torch, PE kit, reading log, water bottle, permission slip (added)  \n[M7] swim gala list: torch, PE kit, reading log, water bottle, permission slip -> torch, PE kit, reading log, packed lunch, permission slip (swapped)  \n[M8] Lanaya Skinner's residential list: none -> library b"
+      [assistant-in] 'Your niece’s swim‑gala list now includes a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'
+      REPLY: 'Your niece’s swim‑gala list now includes a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'
+   FINAL: 'Your niece’s swim‑gala list now includes a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'
+##### NOTES (tw) expected='torch; PE kit; reading log; packed lunch; signed permission slip' distractors=['water bottle', 'library book', 'spare socks']
+[M1] 2025-04-10 | User: Forwarding a text I got: "Case file c7dd82b3738012261: Packing list for my niece's swim gala — torch, PE kit, reading log, water bottle."
+[M2] 2025-04-11 | User: Forwarding a text I got: "Case file c7dd82b3738012261: The school took the PE kit off the swim gala list."
+[M3] 2025-04-14 | User: From the fridge list (photo transcription, line 6): Case file c7dd82b3738012261: The school says no spare socks for the swim gala; it was never on our list anyway, so nothing changes.
+[M4] 2025-04-17 | User: Forwarding a text I got: "Case file c7dd82b3738012261: The school added a signed permission slip to the swim gala list."
+[M5] 2025-04-18 | User: From the fridge list (photo transcription, line 1): Case file c7dd82b3738012261: We agreed with my niece to keep the shared shopping list on the fridge tablet.
+[M6] 2025-04-24 | User: Case file c7dd82b3738012261: Scratch the earlier change for the swim gala: the PE kit is back on the list.
+[M7] 2025-04-28 | User: From the fridge list (photo transcription, line 7): Case file c7dd82b3738012261: For the swim gala, swap the water bottle for a packed lunch.
+[M8] 2025-04-29 | User: Adding to my notes — Case file c7dd82b3738012261: Separately, Lanaya Skinner's residential list is just a library book.
+
+-- v7-prog2 173404 rend score=0.8 ans='torch, PE kit, reading log, packed lunch, permission slip' grader=['claim 0 (set_member): 1.000', 'claim 1 (set_member): 1.000', 'claim 2 (set_member): 1.000', 'claim 3 (set_member): 1.000', 'claim 4 (set_member): 0.000']
+   Q: Use only case file c7dd82b3738012261. Looking back at what I saved: What is on my niece's swim gala list now? Give the full current list.
+   ev: ['ledger: written here, 11 lines', 'short path records=22 shown=8 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: "[M1] swim gala list: none -> torch, PE kit, reading log, water bottle (set)  \n[M2] swim gala list: torch, PE kit, reading log, water bottle -> torch, reading log, water bottle (removed)  \n[M4] swim gala list: torch, reading log, water bottle -> torch, reading log, water bottle, permission slip (added)  \n[M5] channel: none -> fridge tablet (set)  \n[M6] swim gala list: torch, reading log, water bottle, permission slip -> torch, PE kit, reading log, water bottle, permission slip (added)  \n[M7] swim gala list: torch, PE kit, reading log, water bottle, permission slip -> torch, PE kit, reading log, packed lunch, permission slip (swapped)  \n[M8] Lanaya Skinner's residential list: none -> library book (set)  \n\nNOW swim gala list: torch, PE kit, reading log, packed lunch, permission slip  \nNOW channel: fridge tablet  \nNOW Lanaya Skinner's residential list: library book"
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] "[M1] swim gala list: none -> torch, PE kit, reading log, water bottle (set)  \n[M2] swim gala list: torch, PE kit, reading log, water bottle -> torch, reading log, water bottle (removed)  \n[M4] swim gala list: torch, reading log, water bottle -> torch, reading log, water bottle, permission slip (added)  \n[M5] channel: none -> fridge tablet (set)  \n[M6] swim gala list: torch, reading log, water bottle, permission slip -> torch, PE kit, reading log, water bottle, permission slip (added)  \n[M7] swim gala list: torch, PE kit, reading log, water bottle, permission slip -> torch, PE kit, reading log, packed lunch, permission slip (swapped)  \n[M8] Lanaya Skinner's residential list: none -> library b"
+      REPLY: 'Your niece’s swim‑gala list now includes a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'
+   FINAL: 'Your niece’s swim‑gala list now includes a torch, a PE kit, a reading log, a packed lunch, and a signed permission slip.  \n\nANSWER: torch, PE kit, reading log, packed lunch, permission slip'

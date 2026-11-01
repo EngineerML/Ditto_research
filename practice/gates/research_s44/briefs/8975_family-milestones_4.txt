@@ -1,0 +1,244 @@
+##### NOTES (tw) expected='postponed' distractors=['cancelled']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-02-28: My neighbour's wedding is postponed for Aug 16, 2025
+2. 2025-02-28: My neighbour's wedding is postponed for Aug 16, 2025
+3. 2025-02-28: My neighbour's wedding is postponed for Aug 16, 2025
+4. 2025-03-05: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands
+5. 2025-03-05: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands
+6. 2025-03-05: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands
+7. 2025-03-06: That entry about the status of my neighbour's wedding being tentative was wrong and has been struck
+8. 2025-03-06: That entry about the status of my neighbour's wedding being tentative was wrong and has been struck
+9. 2025-03-06: That entry about the status of my neighbour's wedding being tentative was wrong and has been struck
+10. 2025-03-10: My neighbour asked me to remind everyone about the family calendar on Sunday evenings
+11. 2025-03-10: My neighbour asked me to remind everyone about the family calendar on Sunday evenings
+12. 2025-03-10: My neighbour asked me to remind everyone about the family calendar on Sunday evenings
+13. 2025-03-12: Separately, Conor Magana's graduation party is cancelled
+
+-- v6-hold 122624 base score=1 ans="My neighbour's wedding is postponed for Aug 16, 2025" grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the status of my neighbour's wedding now?"
+      REPLY: "ANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine."
+      REPLY: "It is postponed for Aug\u202f16,\u202f2025.  \n\nANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+   FINAL: "It is postponed for Aug\u202f16,\u202f2025.  \n\nANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+##### NOTES (cf) expected='tentative' distractors=['cancelled']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-02-28: My neighbour's wedding is postponed for Aug 16, 2025
+2. 2025-03-05: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands
+3. 2025-03-06: That entry about the status of my neighbour's wedding being tentative was verified and holds
+4. 2025-03-10: My neighbour asked me to remind everyone about the family calendar on Sunday evenings
+
+-- v6-hold 122624 caus score=1 ans='tentative' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the status of my neighbour's wedding now?"
+      REPLY: 'The wedding is tentative.  \nANSWER: tentative'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine."
+      REPLY: 'The wedding is tentative.  \nANSWER: tentative'
+   FINAL: 'The wedding is tentative.  \nANSWER: tentative'
+-- v6-hold 122624 dist score=1 ans='postponed for Aug 16, 2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status."
+      REPLY: 'postponed for Aug 16, 2025\n\nANSWER: postponed for Aug 16, 2025'
+   FINAL: 'postponed for Aug 16, 2025\n\nANSWER: postponed for Aug 16, 2025'
+-- v6-hold 122624 rend score=1 ans="My neighbour's wedding is postponed for Aug 16, 2025" grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status."
+      REPLY: "ANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+   FINAL: "ANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+-- v6-hold 122826 base score=1 ans="My neighbour's wedding is postponed for Aug 16, 2025" grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the status of my neighbour's wedding now?"
+      REPLY: 'ANSWER: No status'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine."
+      REPLY: "Here’s the current status:  \nANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+   FINAL: "Here’s the current status:  \nANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+-- v6-hold 122826 caus score=1 ans='tentative' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the status of my neighbour's wedding now?"
+      REPLY: 'The wedding is now marked as tentative.  \nANSWER: tentative'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine."
+      REPLY: 'Tentative.  \nANSWER: tentative'
+   FINAL: 'Tentative.  \nANSWER: tentative'
+-- v6-hold 122826 dist score=1 ans='postponed for Aug\u202f16,\u202f2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status."
+      REPLY: 'The status is: postponed for Aug\u202f16,\u202f2025.  \nANSWER: postponed for Aug\u202f16,\u202f2025'
+   FINAL: 'The status is: postponed for Aug\u202f16,\u202f2025.  \nANSWER: postponed for Aug\u202f16,\u202f2025'
+-- v6-hold 122826 rend score=1 ans='postponed for Aug 16, 2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status."
+      REPLY: 'ANSWER: postponed for Aug 16, 2025'
+   FINAL: 'ANSWER: postponed for Aug 16, 2025'
+-- v6-hold 123027 base score=1 ans="My neighbour's wedding is postponed for Aug 16, 2025" grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the status of my neighbour's wedding now?"
+      REPLY: "ANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine."
+      REPLY: "The wedding is still postponed for Aug\u202f16,\u202f2025.  \nANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+   FINAL: "The wedding is still postponed for Aug\u202f16,\u202f2025.  \nANSWER: My neighbour's wedding is postponed for Aug 16, 2025"
+-- v6-hold 123027 caus score=1 ans='tentative' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="What's the status of my neighbour's wedding now?"
+      REPLY: 'The wedding is tentative.  \nANSWER: tentative'
+   call1 roles=['system', 'user'] last_user_tail="Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine."
+      REPLY: 'tentative  \nANSWER: tentative'
+   FINAL: 'tentative  \nANSWER: tentative'
+-- v6-hold 123027 dist score=0 ans='not stated' grader=['abstained on an answerable question (scored 0)']
+   Q: Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status."
+      REPLY: 'ANSWER: not stated'
+   FINAL: 'ANSWER: not stated'
+-- v6-hold 123027 rend score=0 ans='No status' grader=['critical claim 0 (status) not satisfied (scored 0)']
+   Q: Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status."
+      REPLY: 'ANSWER: No status'
+   FINAL: 'ANSWER: No status'
+##### NOTES (tw) expected='postponed' distractors=['cancelled']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-02-28: My neighbour's wedding is postponed for Aug 16, 2025
+2. 2025-03-05: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands
+3. 2025-03-06: That entry about the status of my neighbour's wedding being tentative was wrong and has been struck
+4. 2025-03-10: My neighbour asked me to remind everyone about the family calendar on Sunday evenings
+5. 2025-03-12: Separately, Conor Magana's graduation party is cancelled
+
+-- v7-prog 171035 base score=1 ans='postponed' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail=" c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] status of my neighbour's wedding: none -> postponed (set)  \n[M2] status of my neighbour's wedding: postponed -> tentative (changed)  \n[M3] status of my neighbour's wedding: tentative -> postponed (struck)  \n[M4] reminder about the family calendar on Sunday evenings: none -> requested (set)  \n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of my neighbour's wedding: postponed  \nNOW reminder about the family calendar on Sunday evenings: requested  \nNOW status of Conor Magana's graduation party: cancelled"
+      [assistant-in] 'postponed\n\nANSWER: postponed'
+      REPLY: 'postponed\n\nANSWER: postponed'
+   FINAL: 'postponed\n\nANSWER: postponed'
+##### NOTES (cf) expected='tentative' distractors=['cancelled']
+[M1] 2025-02-28 | User: From the fridge list (photo transcription, line 4): Case file c5d742704eda256b1: My neighbour's wedding is postponed for Aug 16, 2025.
+[M2] 2025-03-05 | User: From the fridge list (photo transcription, line 1): Case file c5d742704eda256b1: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands.
+[M3] 2025-03-06 | User: From the fridge list (photo transcription, line 3): Case file c5d742704eda256b1: That entry about the status of my neighbour's wedding being tentative was verified and holds.
+[M4] 2025-03-10 | User: From the fridge list (photo transcription, line 2): Case file c5d742704eda256b1: My neighbour asked me to remind everyone about the family calendar on Sunday evenings.
+
+-- v7-prog 171035 caus score=1 ans='tentative' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine.
+   ev: ['ledger: written here, 9 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug\u202f16,\u202f2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug\u202f16,\u202f2025 -> none (removed)  \n[M4] reminder: none -> family calendar reminder on Sunday evenings (added)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: family calendar reminder on Sunday evenings'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug\u202f16,\u202f2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug\u202f16,\u202f2025 -> none (removed)  \n[M4] reminder: none -> family calendar reminder on Sunday evenings (added)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: family calendar reminder on Sunday evenings'
+      REPLY: '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug\u202f16,\u202f2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug\u202f16,\u202f2025 -> none (removed)  \n[M3] status: tentative -> tentative (verified)  \n[M4] reminder: none -> family calendar reminder on Sunday evenings (added)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: family calendar reminder on Sunday evenings  \n\nANSWER: tentative'
+   FINAL: '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug\u202f16,\u202f2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug\u202f16,\u202f2025 -> none (removed)  \n[M3] status: tentative -> tentative (verified)  \n[M4] reminder: none -> family calendar reminder on Sunday evenings (added)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: family calendar reminder on Sunday evenings  \n\nANSWER: tentative'
+-- v7-prog 171035 dist score=1 ans='postponed' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="y case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] status of my neighbour's wedding: none -> postponed (set)  \n[M2] status of my neighbour's wedding: postponed -> tentative (changed)  \n[M3] status of my neighbour's wedding: tentative -> postponed (struck)  \n[M4] reminder about the family calendar on Sunday evenings: none -> requested (set)  \n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of my neighbour's wedding: postponed  \nNOW reminder about the family calendar on Sunday evenings: requested  \nNOW status of Conor Magana's graduation party: cancelled"
+      [assistant-in] 'postponed\n\nANSWER: postponed'
+      REPLY: 'postponed\n\nANSWER: postponed'
+   FINAL: 'postponed\n\nANSWER: postponed'
+##### NOTES (tw) expected='postponed' distractors=['cancelled']
+[M1] 2025-02-28 | User: Shared calendar entry 4 | Case file c3884fdc51f594a0e: My neighbour's wedding is postponed for Aug 16, 2025.
+[M2] 2025-03-05 | User: Adding to my notes — Case file c3884fdc51f594a0e: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands.
+[M3] 2025-03-06 | User: Shared calendar entry 3 | Case file c3884fdc51f594a0e: That entry about the status of my neighbour's wedding being tentative was wrong and has been struck.
+[M4] 2025-03-10 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: My neighbour asked me to remind everyone about the family calendar on Sunday evenings."
+[M5] 2025-03-12 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: Separately, Conor Magana's graduation party is cancelled."
+
+-- v7-prog 171035 rend score=1 ans='postponed' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.
+   ev: ['ledger: written here, 9 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: "[M1] status of my neighbour's wedding: none -> postponed (set)  \n[M2] status of my neighbour's wedding: postponed -> tentative (changed)  \n[M3] status of my neighbour's wedding: tentative -> postponed (struck)  \n[M4] reminder about the family calendar on Sunday evenings: none -> requested (set)  \n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of my neighbour's wedding: postponed  \nNOW reminder about the family calendar on Sunday evenings: requested  \nNOW status of Conor Magana's graduation party: cancelled"
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail='for what stands after the last entry, with every change applied: one value, or the whole list, not one value per change. Going back to the previous entry restores the value before the latest change still standing (A, then B, then C, then back: B); an entry struck as wrong leaves the value before it.'
+      [assistant-in] "[M1] status of my neighbour's wedding: none -> postponed (set)  \n[M2] status of my neighbour's wedding: postponed -> tentative (changed)  \n[M3] status of my neighbour's wedding: tentative -> postponed (struck)  \n[M4] reminder about the family calendar on Sunday evenings: none -> requested (set)  \n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of my neighbour's wedding: postponed  \nNOW reminder about the family calendar on Sunday evenings: requested  \nNOW status of Conor Magana's graduation party: cancelled"
+      REPLY: 'postponed\n\nANSWER: postponed'
+   FINAL: 'postponed\n\nANSWER: postponed'
+##### NOTES (tw) expected='postponed' distractors=['cancelled']
+[M1] 2025-02-28 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: My neighbour's wedding is postponed for Aug 16, 2025."
+[M2] 2025-03-05 | User: Shared calendar entry 1 | Case file c3884fdc51f594a0e: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands.
+[M3] 2025-03-06 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: That entry about the status of my neighbour's wedding being tentative was wrong and has been struck."
+[M4] 2025-03-10 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: My neighbour asked me to remind everyone about the family calendar on Sunday evenings."
+[M5] 2025-03-12 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: Separately, Conor Magana's graduation party is cancelled."
+
+-- v7-prog2 172006 base score=1 ans='postponed Aug\u202f16,\u202f2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine.
+   ev: ['ledger: written here, 9 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] wedding status: none -> postponed Aug\u202f16,\u202f2025 (set)  \n[M2] wedding status: postponed Aug\u202f16,\u202f2025 -> tentative (changed)  \n[M3] wedding status: tentative -> postponed Aug\u202f16,\u202f2025 (struck as wrong)  \n[M4] reminder: none -> family calendar on Sunday evenings (set)  \n[M5] graduation party status: none -> cancelled (set)  \n\nNOW wedding status: postponed Aug\u202f16,\u202f2025  \nNOW reminder: family calendar on Sunday evenings  \nNOW graduation party status: cancelled'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] wedding status: none -> postponed Aug\u202f16,\u202f2025 (set)  \n[M2] wedding status: postponed Aug\u202f16,\u202f2025 -> tentative (changed)  \n[M3] wedding status: tentative -> postponed Aug\u202f16,\u202f2025 (struck as wrong)  \n[M4] reminder: none -> family calendar on Sunday evenings (set)  \n[M5] graduation party status: none -> cancelled (set)  \n\nNOW wedding status: postponed Aug\u202f16,\u202f2025  \nNOW reminder: family calendar on Sunday evenings  \nNOW graduation party status: cancelled'
+      REPLY: 'The wedding is postponed to Aug\u202f16,\u202f2025.  \nANSWER: postponed Aug\u202f16,\u202f2025'
+   FINAL: 'The wedding is postponed to Aug\u202f16,\u202f2025.  \nANSWER: postponed Aug\u202f16,\u202f2025'
+-- v7-prog2 172006 caus score=1 ans='tentative' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine.
+   ev: ['ledger: written here, 9 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug 16, 2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug 16, 2025 -> none (removed)  \n[M4] reminder: none -> Sunday evenings (added)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: Sunday evenings'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug 16, 2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug 16, 2025 -> none (removed)  \n[M4] reminder: none -> Sunday evenings (added)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: Sunday evenings'
+      REPLY: 'The wedding is now marked as tentative.  \nANSWER: tentative'
+   FINAL: 'The wedding is now marked as tentative.  \nANSWER: tentative'
+-- v7-prog2 172006 dist score=1 ans='postponed Aug\u202f16,\u202f2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="y case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] wedding status: none -> postponed Aug\u202f16,\u202f2025 (set)  \n[M2] wedding status: postponed Aug\u202f16,\u202f2025 -> tentative (changed)  \n[M3] wedding status: tentative -> postponed Aug\u202f16,\u202f2025 (struck as wrong)  \n[M4] reminder: none -> family calendar on Sunday evenings (set)  \n[M5] graduation party status: none -> cancelled (set)  \n\nNOW wedding status: postponed Aug\u202f16,\u202f2025  \nNOW reminder: family calendar on Sunday evenings  \nNOW graduation party status: cancelled'
+      [assistant-in] 'The wedding is postponed to Aug\u202f16,\u202f2025.  \nANSWER: postponed Aug\u202f16,\u202f2025'
+      REPLY: 'postponed Aug\u202f16,\u202f2025  \nANSWER: postponed Aug\u202f16,\u202f2025'
+   FINAL: 'postponed Aug\u202f16,\u202f2025  \nANSWER: postponed Aug\u202f16,\u202f2025'
+-- v7-prog2 172006 rend score=1 ans='postponed Aug\u202f16,\u202f2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="tries:\nUse only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] '[M1] wedding status: none -> postponed Aug\u202f16,\u202f2025 (set)  \n[M2] wedding status: postponed Aug\u202f16,\u202f2025 -> tentative (changed)  \n[M3] wedding status: tentative -> postponed Aug\u202f16,\u202f2025 (struck as wrong)  \n[M4] reminder: none -> family calendar on Sunday evenings (set)  \n[M5] graduation party status: none -> cancelled (set)  \n\nNOW wedding status: postponed Aug\u202f16,\u202f2025  \nNOW reminder: family calendar on Sunday evenings  \nNOW graduation party status: cancelled'
+      [assistant-in] 'The wedding is postponed to Aug\u202f16,\u202f2025.  \nANSWER: postponed Aug\u202f16,\u202f2025'
+      REPLY: 'postponed Aug\u202f16,\u202f2025  \nANSWER: postponed Aug\u202f16,\u202f2025'
+   FINAL: 'postponed Aug\u202f16,\u202f2025  \nANSWER: postponed Aug\u202f16,\u202f2025'
+##### NOTES (tw) expected='postponed' distractors=['cancelled']
+[M1] 2025-02-28 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: My neighbour's wedding is postponed for Aug 16, 2025."
+[M2] 2025-03-05 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: Change logged: the status of my neighbour's wedding is now tentative, and the previous entry no longer stands."
+[M3] 2025-03-06 | User: Case file c3884fdc51f594a0e: That entry about the status of my neighbour's wedding being tentative was wrong and has been struck.
+[M4] 2025-03-10 | User: Shared calendar entry 2 | Case file c3884fdc51f594a0e: My neighbour asked me to remind everyone about the family calendar on Sunday evenings.
+[M5] 2025-03-12 | User: Forwarding a text I got: "Case file c3884fdc51f594a0e: Separately, Conor Magana's graduation party is cancelled."
+
+-- v7-1 174832 base score=1 ans='postponed for Aug 16, 2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Help me keep the family logistics straight. What's the status of my neighbour's wedding now? Plain English is fine.
+   ev: ['ledger: written here, 15 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: "[M1] status of neighbour's wedding: none -> postponed for Aug 16, 2025 (set)  \n[M1] label: none -> family logistics (set)  \n\n[M2] status of neighbour's wedding: postponed for Aug 16, 2025 -> tentative (changed)  \n\n[M3] status of neighbour's wedding: tentative -> postponed for Aug 16, 2025 (struck, went back)  \n\n[M4] calendar reminders: none -> family calendar on Sunday evenings (added)  \n\n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of neighbour's wedding: postponed for Aug 16, 2025  \nNOW label: family logistics  \nNOW calendar reminders: family calendar on Sunday evenings  \nNOW status of Conor Magana's graduation party: cancelled"
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] "[M1] status of neighbour's wedding: none -> postponed for Aug 16, 2025 (set)  \n[M1] label: none -> family logistics (set)  \n\n[M2] status of neighbour's wedding: postponed for Aug 16, 2025 -> tentative (changed)  \n\n[M3] status of neighbour's wedding: tentative -> postponed for Aug 16, 2025 (struck, went back)  \n\n[M4] calendar reminders: none -> family calendar on Sunday evenings (added)  \n\n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of neighbour's wedding: postponed for Aug 16, 2025  \nNOW label: family logistics  \nNOW calendar reminders: family calendar on Sunday evenings  \nNOW status of Conor Magana's graduation party: cancelled"
+      REPLY: "Your neighbour's wedding is postponed for Aug\u202f16,\u202f2025.  \nANSWER: postponed for Aug 16, 2025"
+   FINAL: "Your neighbour's wedding is postponed for Aug\u202f16,\u202f2025.  \nANSWER: postponed for Aug 16, 2025"
+-- v7-1 174832 caus score=1 ans='tentative' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c5d742704eda256b1. Quick one from my own notes. What's the status of my neighbour's wedding now? A word or two is fine.
+   ev: ['ledger: written here, 9 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug 16, 2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug 16, 2025 -> none (removed)  \n[M4] reminder: none -> family calendar on Sunday evenings (set)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: family calendar on Sunday evenings'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] status: none -> postponed (set)  \n[M1] date: none -> Aug 16, 2025 (set)  \n[M2] status: postponed -> tentative (changed)  \n[M2] date: Aug 16, 2025 -> none (removed)  \n[M4] reminder: none -> family calendar on Sunday evenings (set)  \n\nNOW status: tentative  \nNOW date: none  \nNOW reminder: family calendar on Sunday evenings'
+      REPLY: 'The wedding is now tentative.  \nANSWER: tentative'
+   FINAL: 'The wedding is now tentative.  \nANSWER: tentative'
+-- v7-1 174832 dist score=1 ans='postponed for Aug 16, 2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="y case file c3884fdc51f594a0e. Checking something I told you earlier. What's the status of my neighbour's wedding now? Just the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] status of neighbour's wedding: none -> postponed for Aug 16, 2025 (set)  \n[M1] label: none -> family logistics (set)  \n\n[M2] status of neighbour's wedding: postponed for Aug 16, 2025 -> tentative (changed)  \n\n[M3] status of neighbour's wedding: tentative -> postponed for Aug 16, 2025 (struck, went back)  \n\n[M4] calendar reminders: none -> family calendar on Sunday evenings (added)  \n\n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of neighbour's wedding: postponed for Aug 16, 2025  \nNOW label: family logistics  \nNOW calendar reminders: family calendar on Sunday evenings  \nNOW status of Conor Magana's graduation party: cancelled"
+      [assistant-in] "Your neighbour's wedding is postponed for Aug\u202f16,\u202f2025.  \nANSWER: postponed for Aug 16, 2025"
+      REPLY: 'ANSWER: postponed for Aug 16, 2025'
+   FINAL: 'ANSWER: postponed for Aug 16, 2025'
+-- v7-1 174832 rend score=1 ans='postponed for Aug 16, 2025' grader=['claim 0 (status): 1.000']
+   Q: Use only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail="tries:\nUse only case file c3884fdc51f594a0e. From my household notes: What's the status of my neighbour's wedding now? Just the status.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words."
+      [assistant-in] "[M1] status of neighbour's wedding: none -> postponed for Aug 16, 2025 (set)  \n[M1] label: none -> family logistics (set)  \n\n[M2] status of neighbour's wedding: postponed for Aug 16, 2025 -> tentative (changed)  \n\n[M3] status of neighbour's wedding: tentative -> postponed for Aug 16, 2025 (struck, went back)  \n\n[M4] calendar reminders: none -> family calendar on Sunday evenings (added)  \n\n[M5] status of Conor Magana's graduation party: none -> cancelled (set)  \n\nNOW status of neighbour's wedding: postponed for Aug 16, 2025  \nNOW label: family logistics  \nNOW calendar reminders: family calendar on Sunday evenings  \nNOW status of Conor Magana's graduation party: cancelled"
+      [assistant-in] "Your neighbour's wedding is postponed for Aug\u202f16,\u202f2025.  \nANSWER: postponed for Aug 16, 2025"
+      REPLY: 'postponed for Aug 16, 2025  \nANSWER: postponed for Aug 16, 2025'
+   FINAL: 'postponed for Aug 16, 2025  \nANSWER: postponed for Aug 16, 2025'

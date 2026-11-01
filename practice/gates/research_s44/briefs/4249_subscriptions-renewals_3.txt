@@ -1,0 +1,147 @@
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-30: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then
+2. 2025-01-30: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then
+3. 2025-01-30: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then
+4. 2025-02-03: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file
+5. 2025-02-03: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file
+6. 2025-02-03: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file
+7. 2025-02-07: We did not go ahead with changing the plan for the streaming bundle to upgrade it
+8. 2025-02-07: We did not go ahead with changing the plan for the streaming bundle to upgrade it
+9. 2025-02-07: We did not go ahead with changing the plan for the streaming bundle to upgrade it
+10. 2025-02-13: We agreed with our youngest to keep the shared shopping list on the fridge tablet
+11. 2025-02-13: We agreed with our youngest to keep the shared shopping list on the fridge tablet
+12. 2025-02-13: We agreed with our youngest to keep the shared shopping list on the fridge tablet
+13. 2025-02-19: Separately, for the cloud storage plan the plan is to cancel it
+
+-- v6-hold 034315 base score=0 ans='The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc57facf47faba431. From my household notes: Remind me — what are we doing with the streaming bundle? The decision, not the history.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cc57facf47faba431. From my household notes: Remind me — what are we doing with the streaming bundle? The decision, not the history.'
+      REPLY: 'We’re still planning to pause it before it renews.  \nANSWER: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then'
+   FINAL: 'We’re still planning to pause it before it renews.  \nANSWER: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then'
+##### NOTES (cf) expected='upgrade it' distractors=['cancel it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-30: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then
+2. 2025-02-03: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file
+3. 2025-02-07: We went ahead with changing the plan for the streaming bundle to upgrade it
+4. 2025-02-13: We agreed with our youngest to keep the shared shopping list on the fridge tablet
+
+-- v6-hold 034315 caus score=1 ans='upgrade it' grader=['claim 0 (action): 1.000']
+   Q: Use only case file c5da5d1126258545f. Checking something I told you earlier. Remind me — what are we doing with the streaming bundle? The decision, not the history.
+   ev: ['shared draft: written here', 'short path records=4 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Remind me — what are we doing with the streaming bundle?'
+      REPLY: "You're upgrading it.  \nANSWER: upgrade it"
+   call1 roles=['system', 'user'] last_user_tail='Use only case file c5da5d1126258545f. Checking something I told you earlier. Remind me — what are we doing with the streaming bundle? The decision, not the history.'
+      REPLY: 'ANSWER: upgrade it'
+   FINAL: 'ANSWER: upgrade it'
+-- v6-hold 034315 dist score=0 ans='The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc57facf47faba431. Quick one from my own notes. Remind me — what are we doing with the streaming bundle? One short phrase.
+   ev: ['shared draft: written for an earlier rewording over the same notes', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Use only case file cc57facf47faba431. Quick one from my own notes. Remind me — what are we doing with the streaming bundle? One short phrase.'
+      REPLY: 'ANSWER: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then'
+   FINAL: 'ANSWER: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then'
+-- v6-hold 034315 rend score=0 ans='Pause it before then' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc57facf47faba431. Help me keep the family logistics straight. Remind me — what are we doing with the streaming bundle? Just the action.
+   ev: ['shared draft: written here', 'short path records=13 shared draft', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail='Remind me — what are we doing with the streaming bundle?'
+      REPLY: 'We’re keeping the plan to pause the streaming bundle before it renews on Aug\u202f13,\u202f2025.  \nANSWER: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then'
+   call1 roles=['system', 'user'] last_user_tail='Use only case file cc57facf47faba431. Help me keep the family logistics straight. Remind me — what are we doing with the streaming bundle? Just the action.'
+      REPLY: 'ANSWER: Pause it before then'
+   FINAL: 'ANSWER: Pause it before then'
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+[M1] 2025-01-30 | User: Note for you: Case file cc57facf47faba431: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then.
+[M2] 2025-02-03 | User: Shared calendar entry 3 | Case file cc57facf47faba431: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file.
+[M3] 2025-02-07 | User: Shared calendar entry 1 | Case file cc57facf47faba431: We did not go ahead with changing the plan for the streaming bundle to upgrade it.
+[M4] 2025-02-13 | User: Case file cc57facf47faba431: We agreed with our youngest to keep the shared shopping list on the fridge tablet.
+[M5] 2025-02-19 | User: Shared calendar entry 4 | Case file cc57facf47faba431: Separately, for the cloud storage plan the plan is to cancel it.
+
+-- v7-prog2 172653 base score=0 ans='pause before renewal' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc57facf47faba431. From my household notes: Remind me — what are we doing with the streaming bundle? The decision, not the history.
+   ev: ['ledger: written here, 11 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] streaming bundle renewal date: unknown -> Aug\u202f13,\u202f2025 (set)  \n[M1] streaming bundle plan: unknown -> pause before renewal (set)  \n[M2] streaming bundle plan: pause before renewal -> upgrade (proposed)  \n[M3] streaming bundle plan: pause before renewal -> pause before renewal (declined)  \n[M4] shared shopping list location: unknown -> fridge tablet (set)  \n[M5] cloud storage plan: unknown -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug\u202f13,\u202f2025  \nNOW streaming bundle plan: pause before renewal  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan: cancel'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] streaming bundle renewal date: unknown -> Aug\u202f13,\u202f2025 (set)  \n[M1] streaming bundle plan: unknown -> pause before renewal (set)  \n[M2] streaming bundle plan: pause before renewal -> upgrade (proposed)  \n[M3] streaming bundle plan: pause before renewal -> pause before renewal (declined)  \n[M4] shared shopping list location: unknown -> fridge tablet (set)  \n[M5] cloud storage plan: unknown -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug\u202f13,\u202f2025  \nNOW streaming bundle plan: pause before renewal  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan: cancel'
+      REPLY: 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+   FINAL: 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+##### NOTES (cf) expected='upgrade it' distractors=['cancel it']
+[M1] 2025-01-30 | User: Forwarding a text I got: "Case file c5da5d1126258545f: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then."
+[M2] 2025-02-03 | User: Forwarding a text I got: "Case file c5da5d1126258545f: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file."
+[M3] 2025-02-07 | User: Forwarding a text I got: "Case file c5da5d1126258545f: We went ahead with changing the plan for the streaming bundle to upgrade it."
+[M4] 2025-02-13 | User: Forwarding a text I got: "Case file c5da5d1126258545f: We agreed with our youngest to keep the shared shopping list on the fridge tablet."
+
+-- v7-prog2 172653 caus score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file c5da5d1126258545f. Checking something I told you earlier. Remind me — what are we doing with the streaming bundle? The decision, not the history.
+   ev: ['ledger: written here, 9 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] streaming bundle renewal date: none -> Aug 13, 2025 (set)  \n[M1] streaming bundle plan: none -> pause (set)  \n[M2] streaming bundle plan: pause -> upgrade (proposed)  \n[M3] streaming bundle plan: pause -> upgrade (changed)  \n[M4] shared shopping list location: none -> fridge tablet (set)  \n\nNOW streaming bundle renewal date: Aug 13, 2025  \nNOW streaming bundle plan: upgrade  \nNOW shared shopping list location: fridge tablet'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=" back: B); an entry struck as wrong leaves the value before it. Now reply to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks."
+      [assistant-in] '[M1] streaming bundle renewal date: none -> Aug 13, 2025 (set)  \n[M1] streaming bundle plan: none -> pause (set)  \n[M2] streaming bundle plan: pause -> upgrade (proposed)  \n[M3] streaming bundle plan: pause -> upgrade (changed)  \n[M4] shared shopping list location: none -> fridge tablet (set)  \n\nNOW streaming bundle renewal date: Aug 13, 2025  \nNOW streaming bundle plan: upgrade  \nNOW shared shopping list location: fridge tablet'
+      REPLY: 'We’re upgrading the streaming bundle.  \nANSWER: upgrade'
+   FINAL: 'We’re upgrading the streaming bundle.  \nANSWER: upgrade'
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+The statements of the notes below, oldest first, each after the day its note was filed:
+1. 2025-01-30: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then
+2. 2025-02-03: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file
+3. 2025-02-07: We did not go ahead with changing the plan for the streaming bundle to upgrade it
+4. 2025-02-13: We agreed with our youngest to keep the shared shopping list on the fridge tablet
+5. 2025-02-19: Separately, for the cloud storage plan the plan is to cancel it
+
+-- v7-prog2 172653 dist score=0 ans='pause before renewal' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc57facf47faba431. Quick one from my own notes. Remind me — what are we doing with the streaming bundle? One short phrase.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='ly case file cc57facf47faba431. Quick one from my own notes. Remind me — what are we doing with the streaming bundle? One short phrase.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] streaming bundle renewal date: unknown -> Aug\u202f13,\u202f2025 (set)  \n[M1] streaming bundle plan: unknown -> pause before renewal (set)  \n[M2] streaming bundle plan: pause before renewal -> upgrade (proposed)  \n[M3] streaming bundle plan: pause before renewal -> pause before renewal (declined)  \n[M4] shared shopping list location: unknown -> fridge tablet (set)  \n[M5] cloud storage plan: unknown -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug\u202f13,\u202f2025  \nNOW streaming bundle plan: pause before renewal  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan: cancel'
+      [assistant-in] 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+      REPLY: 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+   FINAL: 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+-- v7-prog2 172653 rend score=0 ans='pause before renewal' grader=['critical claim 0 (action) not satisfied (scored 0)']
+   Q: Use only case file cc57facf47faba431. Help me keep the family logistics straight. Remind me — what are we doing with the streaming bundle? Just the action.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='c57facf47faba431. Help me keep the family logistics straight. Remind me — what are we doing with the streaming bundle? Just the action.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] streaming bundle renewal date: unknown -> Aug\u202f13,\u202f2025 (set)  \n[M1] streaming bundle plan: unknown -> pause before renewal (set)  \n[M2] streaming bundle plan: pause before renewal -> upgrade (proposed)  \n[M3] streaming bundle plan: pause before renewal -> pause before renewal (declined)  \n[M4] shared shopping list location: unknown -> fridge tablet (set)  \n[M5] cloud storage plan: unknown -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug\u202f13,\u202f2025  \nNOW streaming bundle plan: pause before renewal  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan: cancel'
+      [assistant-in] 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+      REPLY: 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+   FINAL: 'We’re still planning to pause the streaming bundle before it renews on\u202fAug\u202f13\u202f2025.  \nANSWER: pause before renewal'
+##### NOTES (tw) expected='pause it' distractors=['cancel it']
+[M1] 2025-01-30 | User: From the fridge list (photo transcription, line 1): Case file cc57facf47faba431: The streaming bundle renews on Aug 13, 2025; the plan was to pause it before then.
+[M2] 2025-02-03 | User: Shared calendar entry 3 | Case file cc57facf47faba431: Update requested: the plan for the streaming bundle to become upgrade it, superseding what is on file.
+[M3] 2025-02-07 | User: Shared calendar entry 1 | Case file cc57facf47faba431: We did not go ahead with changing the plan for the streaming bundle to upgrade it.
+[M4] 2025-02-13 | User: From the fridge list (photo transcription, line 4): Case file cc57facf47faba431: We agreed with our youngest to keep the shared shopping list on the fridge tablet.
+[M5] 2025-02-19 | User: Shared calendar entry 4 | Case file cc57facf47faba431: Separately, for the cloud storage plan the plan is to cancel it.
+
+-- v7-1 175534 base score=1 ans='pause' grader=['claim 0 (action): 1.000']
+   Q: Use only case file cc57facf47faba431. From my household notes: Remind me — what are we doing with the streaming bundle? The decision, not the history.
+   ev: ['ledger: written here, 11 lines', 'short path records=13 shown=5 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] streaming bundle renewal date: none -> Aug 13, 2025 (set)  \n[M1] streaming bundle plan: none -> pause (set)  \n[M2] streaming bundle plan: pause -> upgrade (proposed)  \n[M3] streaming bundle plan: upgrade -> pause (declined)  \n[M4] shared shopping list location: none -> fridge tablet (set)  \n[M5] cloud storage plan status: none -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug 13, 2025  \nNOW streaming bundle plan: pause  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan status: cancel'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] streaming bundle renewal date: none -> Aug 13, 2025 (set)  \n[M1] streaming bundle plan: none -> pause (set)  \n[M2] streaming bundle plan: pause -> upgrade (proposed)  \n[M3] streaming bundle plan: upgrade -> pause (declined)  \n[M4] shared shopping list location: none -> fridge tablet (set)  \n[M5] cloud storage plan status: none -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug 13, 2025  \nNOW streaming bundle plan: pause  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan status: cancel'
+      REPLY: 'We’re keeping the streaming bundle paused until its renewal.  \nANSWER: pause'
+   FINAL: 'We’re keeping the streaming bundle paused until its renewal.  \nANSWER: pause'
+-- v7-1 175534 caus score=1 ans='upgrade' grader=['claim 0 (action): 1.000']
+   Q: Use only case file c5da5d1126258545f. Checking something I told you earlier. Remind me — what are we doing with the streaming bundle? The decision, not the history.
+   ev: ['ledger: written here, 9 lines', 'short path records=4 shown=4 ledger', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user'] last_user_tail="ead; a struck entry is cancelled and its 'before' stands again; going back undoes the latest change still standing, so that change's 'before' holds again. Then, for each item, one line 'NOW item: value' with what stands after the last entry, a list given whole. Use the entries' own words and labels."
+      REPLY: '[M1] renewal date: none -> Aug 13, 2025 (set)  \n[M1] plan: none -> pause (set)  \n[M2] plan: pause -> upgrade (proposed)  \n[M3] plan: pause -> upgrade (changed)  \n[M4] shared shopping list: none -> on the fridge tablet (set)  \n\nNOW renewal date: Aug 13, 2025  \nNOW plan: upgrade  \nNOW shared shopping list: on the fridge tablet'
+   call1 roles=['system', 'user', 'assistant', 'user'] last_user_tail=' the ledger out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks. The ANSWER line holds the value alone, with its words taken from the entries, since the ledger may shorten it: no sentence around it, and an action without when it is due.'
+      [assistant-in] '[M1] renewal date: none -> Aug 13, 2025 (set)  \n[M1] plan: none -> pause (set)  \n[M2] plan: pause -> upgrade (proposed)  \n[M3] plan: pause -> upgrade (changed)  \n[M4] shared shopping list: none -> on the fridge tablet (set)  \n\nNOW renewal date: Aug 13, 2025  \nNOW plan: upgrade  \nNOW shared shopping list: on the fridge tablet'
+      REPLY: 'We’re upgrading the streaming bundle.  \nANSWER: upgrade'
+   FINAL: 'We’re upgrading the streaming bundle.  \nANSWER: upgrade'
+-- v7-1 175534 dist score=1 ans='pause' grader=['claim 0 (action): 1.000']
+   Q: Use only case file cc57facf47faba431. Quick one from my own notes. Remind me — what are we doing with the streaming bundle? One short phrase.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='ly case file cc57facf47faba431. Quick one from my own notes. Remind me — what are we doing with the streaming bundle? One short phrase.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] streaming bundle renewal date: none -> Aug 13, 2025 (set)  \n[M1] streaming bundle plan: none -> pause (set)  \n[M2] streaming bundle plan: pause -> upgrade (proposed)  \n[M3] streaming bundle plan: upgrade -> pause (declined)  \n[M4] shared shopping list location: none -> fridge tablet (set)  \n[M5] cloud storage plan status: none -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug 13, 2025  \nNOW streaming bundle plan: pause  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan status: cancel'
+      [assistant-in] 'We’re keeping the streaming bundle paused until its renewal.  \nANSWER: pause'
+      REPLY: 'ANSWER: pause'
+   FINAL: 'ANSWER: pause'
+-- v7-1 175534 rend score=1 ans='pause' grader=['claim 0 (action): 1.000']
+   Q: Use only case file cc57facf47faba431. Help me keep the family logistics straight. Remind me — what are we doing with the streaming bundle? Just the action.
+   ev: ['ledger: from an earlier request over the same notes', 'short path records=13 shown=5 ledger', 'earlier reply: from an earlier request over the same notes', 'final check: not asked, the reply has its ANSWER line']
+   call0 roles=['system', 'user', 'assistant', 'user', 'assistant', 'user'] last_user_tail='c57facf47faba431. Help me keep the family logistics straight. Remind me — what are we doing with the streaming bundle? Just the action.\n\nCheck the reply above against the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same value in the same words.'
+      [assistant-in] '[M1] streaming bundle renewal date: none -> Aug 13, 2025 (set)  \n[M1] streaming bundle plan: none -> pause (set)  \n[M2] streaming bundle plan: pause -> upgrade (proposed)  \n[M3] streaming bundle plan: upgrade -> pause (declined)  \n[M4] shared shopping list location: none -> fridge tablet (set)  \n[M5] cloud storage plan status: none -> cancel (set)  \n\nNOW streaming bundle renewal date: Aug 13, 2025  \nNOW streaming bundle plan: pause  \nNOW shared shopping list location: fridge tablet  \nNOW cloud storage plan status: cancel'
+      [assistant-in] 'We’re keeping the streaming bundle paused until its renewal.  \nANSWER: pause'
+      REPLY: 'ANSWER: pause'
+   FINAL: 'ANSWER: pause'
