@@ -13,11 +13,21 @@ below is dan0l's code as released. Our changes:
 - `app/short.py`, program path (one case file's entries):
   - copies of one statement filed in the same minute are shown once (`once_each`);
   - a ledger call reads the entries alone, without the message, and writes how each tracked value
-    changed; it goes beside the entries as unchecked text, and requests over the same notes share it;
+    changed; requests over the same notes share it, and it goes into the deciding conversation as the
+    assistant turn it was written as, after a request for it, with the entries deciding wherever it differs;
   - our own reading rules for change records (`LEDGER_RULES`) and a closing note after the message
     replace the release's chain note and its shared draft;
-  - a later rewording of a question over the same notes reads the first decided reply beside the
-    notes, as text; the model writes every reply, and the host never compares, retries or substitutes.
+  - a later rewording of a question over the same notes reads the first rewording's question and its
+    decided reply as the earlier turns of its conversation, then its own question; the model writes
+    every reply, and the host never compares, retries or substitutes.
+
+This is the shape of the 2026-10-29 ruling on reused drafts (precedent
+`october-29-reused-draft-no-disagree-clause`): a model-sampled reply enters the prompt only as text the
+model reads.
+
+Horizon v6 (agent b55c19f0-329d-459f-8de3-a887b8286606) is this harness without the program-path
+changes above; it was held as a near-duplicate of dan0l v28 and released by the operator on
+2026-11-01 after review against its PROVENANCE.md.
 - `app/guide_records.py`, `NEXT_NOTE`: a next-step answer gives the person, the task and the channel
   even when the message names only the owner and the channel; the channel is the medium alone, and
   ordinary words are written correctly spelled.

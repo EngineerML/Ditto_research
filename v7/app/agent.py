@@ -37,7 +37,7 @@ class CaseRunner:
         self.http = http
         self.retriever = Retriever(store, coverage_floor=settings.coverage_floor)
         self.embedder = Embedder(settings.ollama_base_url, http, settings.embed_timeout_seconds)
-        self.short_shared: dict[str, asyncio.Future[str | None]] = {}
+        self.short_shared: dict[str, asyncio.Future[object]] = {}
         self._default_llm: LLM | None = None
 
     async def embed_pairs(self, user_id: str | None, pairs: list[MemoryPair]) -> int:

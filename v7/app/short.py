@@ -51,7 +51,7 @@ LEDGER_RULES = (
     "those before, a contact as the handle or address the entries list for that person, found through the entry that "
     "says who they are when the message names them another way, and never the medium or channel it goes through.",
 )
-LEDGER_HEADER = "A ledger of these entries, written by a separate reading of the notes alone before the message was read; it is not checked, and the entries decide wherever they differ:"
+LEDGER_ASK = "Before replying, write the ledger of these entries: for every entry that sets or changes something the file tracks, one line '[mark] item: before -> after (what the entry did)'; then, for each item, one line 'NOW item: value'."
 LEDGER_SYSTEM = "You keep the ledger of one case file in the user's saved notes. You read its entries and write down how each tracked value changed. You answer nothing else."
 LEDGER_BRIEF = (
     "{notes}\n\nThese are the case file's entries, earliest filed first. Go through them in that order. For every entry "
@@ -67,9 +67,10 @@ CLOSING_NOTE = ("Before replying, apply every entry in order. The message asks f
                 "change applied: one value, or the whole list, not one value per change. Going back to the previous entry "
                 "restores the value before the latest change still standing (A, then B, then C, then back: B); an entry "
                 "struck as wrong leaves the value before it.")
-EARLIER_REPLY_NOTE = ("An earlier reply to this same question, asked in other words over these same entries, already checked "
-                      "against them:\n{reply}\n\nRead the entries, then reply to the message as it is asked; where the entries "
-                      "bear the earlier reply out, give the same value in the same words.")
+REPLY_NOTE = f"Now reply to the message. The ledger is a first reading, and the entries decide wherever it differs from them. {CLOSING_NOTE}"
+REWORDED_NOTE = ("The same question, asked in other words over these same entries:\n{message}\n\nCheck the reply above against "
+                 "the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same "
+                 "value in the same words.")
 COPY_RATIO = 0.75
 TOPIC_SYSTEM = f"{SHORT_OPENING} {NOTES_TOGETHER} {VALUE_VERBATIM} {SHORT_ANSWER_LINE} Write any date in full, with day, month and year. If the notes do not state it, say so."
 NOTES_HEADER = "Saved notes:"
@@ -216,19 +217,29 @@ def made_calls(messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [message for message in messages if message.get("role") == "tool" or (message.get("role") == "assistant" and message.get("tool_calls"))]
 
 
-def program_messages(system: str, shown: str, beside: str, message: str) -> list[dict[str, Any]]:
-    return [{"role": "system", "content": system}, {"role": "user", "content": f"{shown}{beside}\n\n{MESSAGE_HEADER}\n{message}\n\n{CLOSING_NOTE}"}]
+def program_messages(system: str, shown: str, message: str, ledger: str | None = None, earlier: tuple[str, str] | None = None) -> list[dict[str, Any]]:
+    """The deciding conversation. The ledger and an earlier rewording's reply go in as the assistant turns they were
+    written as, after the request they answered; the first user turn always holds the notes and a message."""
+    first = earlier[0] if earlier else message
+    asked = f"{shown}\n\n{MESSAGE_HEADER}\n{first}"
+    if ledger:
+        turns = [{"role": "user", "content": f"{asked}\n\n{LEDGER_ASK}"}, {"role": "assistant", "content": ledger}, {"role": "user", "content": REPLY_NOTE}]
+    else:
+        turns = [{"role": "user", "content": f"{asked}\n\n{CLOSING_NOTE}"}]
+    if earlier:
+        turns += [{"role": "assistant", "content": earlier[1]}, {"role": "user", "content": REWORDED_NOTE.format(message=message)}]
+    return [{"role": "system", "content": system}, *turns]
 
 
 class ShortPath:
     """The program path: one case file's entries, read once into a ledger, then decided per message.
 
-    Two things are shared between requests, both as text the deciding model reads and never as an answer the host
-    gives: the ledger, written from the notes alone (no message), so every request over the same notes gets the same
-    one; and the first decided reply to a question, which a later rewording of it over the same notes reads beside
-    the notes. The model writes every reply."""
+    Two things are shared between requests, both as model-written turns the deciding model reads and never as an
+    answer the host gives: the ledger, written from the notes alone (no message), so every request over the same
+    notes gets the same one; and the first decided reply to a question, which a later rewording of it over the same
+    notes reads after its own question. The model writes every reply."""
 
-    def __init__(self, engine: RecordsEngine, *, effort: str, max_tokens: int, shared: dict[str, asyncio.Future[str | None]]) -> None:
+    def __init__(self, engine: RecordsEngine, *, effort: str, max_tokens: int, shared: dict[str, asyncio.Future[Any]]) -> None:
         self.engine = engine
         self.llm = engine.llm
         self.tally = engine.tally
@@ -247,20 +258,18 @@ class ShortPath:
         shown = f"{opening}{NOTES_HEADER}\n\n{record_view(notes)}"
         user = normalize_user_id(req.user_id)
         ledger = await self.ledger(req, notes, shared_key("ledger", user, req.system_prompt, shown), deadline, outcome)
-        beside = f"\n\n{LEDGER_HEADER}\n{ledger.strip()}" if ledger else ""
         key = shared_key("reply", user, system, shown, asked_part(req.user_input))
         held = self.shared.get(key)
         outcome.events.append(f"short path records={len(records)} shown={len(notes)}{' ledger' if ledger else ''}")
         if held is not None:
             earlier = await self.wait_for(held, deadline, outcome, "earlier reply")
-            note = f"\n\n{EARLIER_REPLY_NOTE.format(reply=earlier.strip())}" if earlier else ""
-            return await decide(self.engine, req, program_messages(system, shown, beside + note, req.user_input), self.effort, self.max_tokens, deadline, outcome, check_unanswered_only=True)
+            return await decide(self.engine, req, program_messages(system, shown, req.user_input, ledger, earlier), self.effort, self.max_tokens, deadline, outcome, check_unanswered_only=True)
         mine = self.hold(key)
         decided = False
         try:
-            decided = await decide(self.engine, req, program_messages(system, shown, beside, req.user_input), self.effort, self.max_tokens, deadline, outcome, check_unanswered_only=True)
+            decided = await decide(self.engine, req, program_messages(system, shown, req.user_input, ledger), self.effort, self.max_tokens, deadline, outcome, check_unanswered_only=True)
         finally:
-            self.release(key, mine, outcome.content if decided and drafted(outcome.content) else None)
+            self.release(key, mine, (req.user_input, outcome.content) if decided and drafted(outcome.content) else None)
         return decided
 
     async def ledger(self, req: RunRequest, notes: list[MemoryPair], key: str, deadline: float, outcome: Outcome) -> str | None:
@@ -279,20 +288,20 @@ class ShortPath:
         outcome.events.append(f"ledger: written here, {len(written.splitlines())} lines" if written else "ledger: none written")
         return written
 
-    def hold(self, key: str) -> asyncio.Future[str | None]:
-        held: asyncio.Future[str | None] = asyncio.get_running_loop().create_future()
+    def hold(self, key: str) -> asyncio.Future[Any]:
+        held: asyncio.Future[Any] = asyncio.get_running_loop().create_future()
         self.shared[key] = held
         while len(self.shared) > SHARED_HELD:
             del self.shared[next(iter(self.shared))]
         return held
 
-    def release(self, key: str, held: asyncio.Future[str | None], text: str | None) -> None:
+    def release(self, key: str, held: asyncio.Future[Any], text: Any) -> None:
         if text is None and self.shared.get(key) is held:
             del self.shared[key]
         if not held.done():
             held.set_result(text)
 
-    async def wait_for(self, held: asyncio.Future[str | None], deadline: float, outcome: Outcome, what: str) -> str | None:
+    async def wait_for(self, held: asyncio.Future[Any], deadline: float, outcome: Outcome, what: str) -> Any:
         try:
             text = await asyncio.wait_for(asyncio.shield(held), max(0.01, deadline - time.monotonic() - SHARED_WAIT_RESERVE))
         except TimeoutError:
