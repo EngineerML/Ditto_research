@@ -67,7 +67,11 @@ CLOSING_NOTE = ("Before replying, apply every entry in order. The message asks f
                 "change applied: one value, or the whole list, not one value per change. Going back to the previous entry "
                 "restores the value before the latest change still standing (A, then B, then C, then back: B); an entry "
                 "struck as wrong leaves the value before it.")
-REPLY_NOTE = f"Now reply to the message. The ledger is a first reading, and the entries decide wherever it differs from them. {CLOSING_NOTE}"
+# The reply that follows the ledger turn tends to repeat the ledger; every earlier value and every other item it
+# names then sits in the served reply.
+REPLY_NOTE = (f"The ledger is a first reading, and the entries decide wherever it differs from them. {CLOSING_NOTE} Now reply "
+              "to the message itself: a sentence or two giving what it asks for, then the line 'ANSWER: …'. Leave the ledger "
+              "out of the reply: none of its lines, none of the earlier values, and nothing about the other things the file tracks.")
 REWORDED_NOTE = ("The same question, asked in other words over these same entries:\n{message}\n\nCheck the reply above against "
                  "the entries, then reply to this message as it is asked; where the entries bear that reply out, give the same "
                  "value in the same words.")

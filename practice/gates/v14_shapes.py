@@ -27,7 +27,7 @@ def label(run: str) -> str:
 
 
 def runs(prefixes: list[str]):
-    for d in sorted(glob.glob(f"{ROOT}/practice/202610*")):
+    for d in sorted(glob.glob(f"{ROOT}/practice/2026[01][01]*")):
         try:
             rep = json.load(open(f"{d}/report.json"))
         except (OSError, ValueError):
