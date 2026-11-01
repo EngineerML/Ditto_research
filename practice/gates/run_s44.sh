@@ -1,5 +1,5 @@
 #!/bin/bash
-# s44: v7 program path (ledger + earlier reply as assistant turns) on the 40 program questions of seven seeds:
+# s44: a harness's program path (DIR, default v7) on the 40 program questions of seven seeds:
 # v6's live run 3 seed, the three holdout seeds and the three king seeds, which all have v6 traces to compare.
 # Two rounds, concurrency 8, platform providers. Compare with practice/gates/v14_shapes.py.
 cd /home/bittensor/ditto || exit 1

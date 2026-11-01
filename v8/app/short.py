@@ -43,10 +43,12 @@ READING_RULES = (
     "Labels: where an entry defines what a label, code or field name means, every use of it is read by that meaning, and a "
     "thing described by its purpose is the one whose entries carry that description, however it is spelled.",
     "Separate matters: an entry that says it concerns a separate or unrelated matter changes nothing about the others.",
+    "Items: one thing is one item however the entries word it (the plan, the decision, what is being done about it; who "
+    "runs it, the organiser, the person behind it), so every entry about it changes that one item.",
     "Changes: a value set or changed holds until a later entry changes it. A change only proposed or suggested holds once "
     "an entry says it went ahead; one declined, turned down, withdrawn or dropped changes nothing. An entry saying an "
     "earlier one was wrong, a mistake, struck or to be disregarded cancels that earlier change, and the value before it "
-    "holds again; an entry saying an earlier one was checked and stands changes nothing.",
+    "holds again, so the item is never left empty; an entry saying an earlier one was checked and stands changes nothing.",
     "Going back: an entry that goes back to the previous entry or arrangement is itself the latest change, and it undoes "
     "the change before it, so the value before that change holds again: after A, then B, then C, going back gives B. "
     "Going back to the original gives the first value; going back to a named value gives that value.",
@@ -54,14 +56,15 @@ READING_RULES = (
     "holds is the whole list after the last entry.",
     "Plans: a step marked done or dropped is closed until an entry reopens it; the step that holds is the earliest open "
     "one in the plan's order, with the owner the latest entry gives it.",
-    "Roles: whoever something was last handed to holds it, and whoever performed a step is its actor; the party that "
-    "commissions the work and pays is the client, and the party paid for supplying it is the vendor.",
+    "Roles: whoever something was last handed to holds it, and whoever performed a step is its actor. Money runs from "
+    "client to vendor: the party that commissions the work and pays us is the client, and a party that bills us, or that "
+    "we pay for supplying something, is a vendor.",
     "Dates: what held as of a date is the latest change dated on or before it, and events are put in order by their dates, "
     "worked out where an entry dates one relative to another.",
     "People: a person named another way (initials, a role, a nickname) is the one the entries say it stands for, and a "
     "contact is the handle or address the entries list for that person, exactly as written there.",
     "Values: each value is written with all of its own words exactly as the entry gives it, and nothing more: no timing, "
-    "reason or sentence around it.",
+    "reason or sentence around it, so an action is the action alone, without when it is due or what it comes before.",
 )
 LEDGER_SYSTEM = "You keep the ledger of one case file in the user's saved notes. You read its entries and write down what each tracked thing is and how it changed. You answer nothing else."
 LEDGER_BRIEF = (
@@ -69,7 +72,7 @@ LEDGER_BRIEF = (
     "'LABEL label: what it means'. Then go through the entries in filing order and, for every entry that sets or changes "
     "something tracked, one line '[mark] item: before -> after (what the entry did)'. For an event an entry dates, one "
     "line 'DATED item: value (date)'. Last, for each item, one line 'NOW item: value' with what holds after the last "
-    "entry: a list whole, a plan's first open step with its owner."
+    "entry: a list whole, a plan's first open step with its owner; one NOW line per thing."
 )
 LEDGER_MAX_TOKENS = 8000
 LEDGER_ASK = "Before replying, write the ledger of these entries."
