@@ -6,7 +6,7 @@ cd /home/bittensor/ditto || exit 1
 LABEL=${LABEL:-v7p}; TAG=${TAG:-v7-prog}; ROUNDS=${ROUNDS:-2}
 rev=$(git -c safe.directory='*' rev-parse --short HEAD)
 rm -rf /tmp/variants/$TAG && mkdir -p /tmp/variants/$TAG
-git -c safe.directory='*' archive "$rev" v7 | tar -x -C /tmp/variants/$TAG --strip-components=1 || exit 1
+git -c safe.directory='*' archive "$rev" ${DIR:-v7} | tar -x -C /tmp/variants/$TAG --strip-components=1 || exit 1
 SRC=/tmp/variants/$TAG
 echo "===== s44 $LABEL start $(date -u +%Y%m%dT%H%M%SZ), $TAG from $rev, $ROUNDS rounds"
 first=1
