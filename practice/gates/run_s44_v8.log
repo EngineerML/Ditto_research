@@ -1,0 +1,38 @@
+===== s44 v8 start 20261101T184742Z, v8 from bcd3312, 1 rounds
+=== built ditto-harness:v8
+===== v8 (v8) round 1, 40 questions, providers platform, concurrency 8 18:47 key usage $9.3942  account balance $4.6691
+saved /home/bittensor/ditto/practice/20261101T184753Z_ditto-harness-v8_full_rerun
+served by:      61 Groq 
+replayed: 0 applied
+===== done 18:50 key usage $9.4247  account balance $4.6385
+===== v8 (v8) round 1, 40 questions, providers platform, concurrency 8 18:50 key usage $9.4247  account balance $4.6385
+saved /home/bittensor/ditto/practice/20261101T185011Z_ditto-harness-v8_full_rerun
+served by:      61 Groq 
+replayed: 0 applied
+===== done 18:52 key usage $9.4623  account balance $4.6010
+===== v8 (v8) round 1, 40 questions, providers platform, concurrency 8 18:52 key usage $9.4666  account balance $4.5967
+saved /home/bittensor/ditto/practice/20261101T185239Z_ditto-harness-v8_full_rerun
+served by:      60 Groq 
+replayed: 0 applied
+===== done 18:54 key usage $9.4842  account balance $4.5648
+===== v8 (v8) round 1, 40 questions, providers platform, concurrency 8 18:54 key usage $9.5049  account balance $4.5583
+saved /home/bittensor/ditto/practice/20261101T185500Z_ditto-harness-v8_full_rerun
+served by:      35 Groq      27 Amazon Bedrock 
+replayed: 0 applied
+===== done 18:57 key usage $9.5369  account balance $4.5264
+===== v8 (v8) round 1, 40 questions, providers platform, concurrency 8 18:57 key usage $9.5369  account balance $4.5264
+saved /home/bittensor/ditto/practice/20261101T185716Z_ditto-harness-v8_full_rerun
+served by:      53 Amazon Bedrock       9 Groq 
+replayed: 0 applied
+===== done 18:59 key usage $9.5622  account balance $4.5011
+===== v8 (v8) round 1, 40 questions, providers platform, concurrency 8 18:59 key usage $9.5622  account balance $4.5011
+saved /home/bittensor/ditto/practice/20261101T185927Z_ditto-harness-v8_full_rerun
+served by:      61 Amazon Bedrock       1 Groq 
+replayed: 0 applied
+===== done 19:01 key usage $9.5757  account balance $4.4748
+===== v8 (v8) round 1, 40 questions, providers platform, concurrency 8 19:01 key usage $9.5884  account balance $4.4748
+saved /home/bittensor/ditto/practice/20261101T190139Z_ditto-harness-v8_full_rerun
+served by:      54 Amazon Bedrock       8 Groq 
+replayed: 0 applied
+===== done 19:03 key usage $9.6096  account balance $4.4536
+===== all done 19:03

@@ -57,3 +57,47 @@ three ways: plain chat, no tools, no final check.
 5. **One revert-to-middle status in a glossary file** was still read wrong.
 
 Replay outputs: practice/gates/s44/replay_v8_a.json (ledgers, replies, scores).
+
+## A: reading rules for item identity, struck changes, money direction and bare actions (308f078)
+
+Graded replay B (`replay_v8_b.json`, $0.12) against replay A on the same seven seeds:
+
+| | score /40 | splits | all-wrong groups |
+|---|---|---|---|
+| replay A | 37.71 | 0.00 | 0.57 |
+| replay B | 36.14 | 0.00 | 1.00 |
+
+- **Fixed:** client-vs-vendor 12/12 (was 9/12), revert-to-middle announced 20/20 (was 17/20).
+- **New misses in groups the change did not touch:** a time written "7.15pm", a dated sequence, an untouched
+  plan step, a list with a swapped item, a struck entry still read as "none".
+- **Conclusion:** the ledger varies between samples. On one seed the same design scored 34, 37 and 40, so one
+  replay per design cannot resolve differences of about 1.5 points. Compare designs on two or three samples.
+
+## B: real s44 round of v8 (bcd3312, one round, $0.34)
+
+| design (runs) | score /40 | splits | all-wrong groups |
+|---|---|---|---|
+| v6 (12) | 36.75 | 0.42 | 0.75 |
+| v7.1 (7) | 36.86 | 0.71 | 0.71 |
+| v8 real (7) | 35.79 | 0.00 | 1.14 |
+| v8, all three samples (21) | 36.55 | 0.00 | 0.90 |
+
+**Splits.** v8 has no split in 210 group samples (two replays and one real round). At ≈3.1 % a split, that is
+worth about +1.3 % composite per run against v6. The accuracy difference (−0.2 questions, ≈ −0.04 %) is within
+noise.
+
+**What the real v8 run lost.** Mostly the same thing tracked as two items. The generator words one slot differently
+from entry to entry:
+- the allotment society: "The person behind … is Edgar Barnhart", then "the organiser … is Stephanie Malinowski
+  instead", then "that entry about the organiser … was wrong";
+- the language app: "plan" and "decision";
+- the client-vs-vendor file: two glossary labels.
+
+The ledger keys items by those words, so a strike or a revert lands on one name only, and the reply picks the wrong
+NOW line. The right value is often in the ledger ("NOW person behind the allotment society: Edgar Barnhart").
+
+Renderer copies are not the cause: grouped by timestamp, the three copies of an event (calendar entry, forwarded
+text, fridge list) wrap the same sentence, and `once_each` already merges them.
+
+**Next (proposed).** Key ledger items by subject and attribute (the allotment society's person in charge), never by
+the noun an entry uses. Check it with two graded replays.
