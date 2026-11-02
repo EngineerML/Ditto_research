@@ -1,5 +1,11 @@
 # Pipeline declaration
 
+## Changes from DrPresident v22 (agent eeb26552, publicly released)
+
+| Change | File and function | Policy reading |
+|---|---|---|
+| Unlinked tools are left out: a listed tool whose own description says it needs a connector or integration linked or connected (for example "Needs the Asana connector to be linked in Settings.") is removed from the request's catalog when the request arrives, so lane routing and every menu the model sees use only the tools this workspace can run. Every other tool keeps its name, description, schema and order. The case's events record how many were left out | `app/available.py` UNLINKED, unlinked, usable; `app/agent.py` CaseRunner.run | W4: availability and configuration restrict a capability class, and nothing in a request links a connector (the tool endpoint answers such a call "not connected" and performs nothing); I7 is not engaged, as no unlinked tool is an available capability; W10: kept tools are unchanged. The test reads each tool's own description, never a tool name, an app list or `bench_version`. Where this declaration says the whole catalog reaches the model, it means the catalog after this step |
+
 ## Changes since DrPresident v21 (agent 872028c6-48e2-46c5-b0a6-d635b4c61fb9, build e250)
 
 | Change | File and function | Policy reading |
