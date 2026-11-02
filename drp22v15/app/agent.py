@@ -126,10 +126,11 @@ class CaseRunner:
     async def run(self, req: RunRequest) -> RunResponse:
         started = time.monotonic()
         deadline = started + self.settings.case_budget_seconds
-        tools, left_out = usable(req.tools)
+        tools, left_out, stayed = usable(req)
         if left_out:
             req = req.model_copy(update={"tools": tools})
-            log.info("case=%s catalog: %d tools kept, %d unlinked left out", req.case_id, len(tools), left_out)
+        if left_out or stayed:
+            log.info("case=%s catalog: %d tools kept, %d unlinked left out, %d kept as linked by the request", req.case_id, len(tools), left_out, stayed)
         CaseRunner.active_cases += 1
         gate_limit = grow_call_gate(max(self.settings.max_inflight_calls, CaseRunner.active_cases))
         memory = MemoryTools(self.store, req.user_id)
