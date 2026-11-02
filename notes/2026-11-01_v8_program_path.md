@@ -136,12 +136,12 @@ comes from questions that reach the path inconsistently, and from the enterprise
 
 ## v8.1: routing fix (branch harness/v8.1; v8 itself stays as is on harness/v8)
 
- refuses any request with an outside-source word (web, online, news, ...). With the new
- flag, that word check is skipped when the request names a case file the user's records hold. Only
- sets the flag. Every other check (a listed tool named, a fetch from a tool, an effecting request) still
-applies. The diff is 2 lines in  and .
+`own_records_question` refuses any request with an outside-source word (web, online, news, ...). With the new
+`held` flag, that word check is skipped when the request names a case file the user's records hold. Only
+`short_answer` sets the flag. Every other check (a listed tool named, a fetch from a tool, an effecting request)
+still applies. The diff is 2 lines in `lane.py` and `agent.py`.
 
-Offline check, no model calls:  runs the  gate of the saved v8 and of
+Offline check, no model calls: `practice/gates/gate_diff.py` runs the `short_answer` gate of the saved v8 and of
 v8.1 on traced requests. It rebuilds focus from the seed's dataset notes the way the harness does.
 - The 10 v8 runs (s44 and s45): all 396 program-path questions stay on the path. The only change is the 4
   "news subscription" questions (3 rewordings and the counterfactual), which move from the records lane to the
