@@ -163,3 +163,33 @@ v8.1 on traced requests. It rebuilds focus from the seed's dataset notes the way
 | rewording "Before I forget…" | program, ledger and reply reused | 1 | cancel | 1 |
 
 The group that split at s45 ("cancel it" against "now pause it") now decides once and is right on all 4 questions.
+
+## v8.1 screening (local, 2026-11-02)
+
+`practice/gates/screen_v8.1.sh` and the L1 (`tools/l1_review_local.py` with the lineage packet, parent v6; screener
+at 14e093c3, prompt source-review-v40-policy-v13; $0.94, 200 steps).
+- Package `practice/submission_v8.1.tgz` (sha256 1d4e1c42…, 35 files). `ditto verify` passes. Against the uploaded
+  v6: 4 files and 248 lines (PROVENANCE.md, agent.py, lane.py, short.py), so the review is diff-scoped.
+- Static: malicious 0, fingerprints 0, generator n-gram leads the same as dan0l v30. One new advisory lead,
+  positional-number-extraction at short.py:40-41. It is the words "number" and "first" in the READING_RULES prose,
+  and the screener marks this rule as never a finding on its own.
+- L1: risk medium, benchmark_emulation, clearance certified, no violation certified; confidence 0.91 (v6 0.76).
+
+| invariant | v6 L1 | v8.1 L1 |
+|---|---|---|
+| I1 model invocation | pass | pass |
+| I2 evidence retention | pass | inconclusive |
+| I3 model dissent | pass | inconclusive |
+| I4 derived-value authority | pass | **breach** |
+| I5 production engine | breach (guide_records family notes) | **breach** (READING_RULES and the ledger schema) |
+| I6, I7, I8 | pass | inconclusive |
+
+- v5 and v6 also had a local I5 breach and cleared live screening (the routed-guidance safe harbor, where the model
+  writes the value).
+- The I4 breach is new. It points at REPLY_NOTE (short.py:85): the ledger is "already applies every entry" and the
+  reply "takes what it holds". The reviewer reads this as model output treated as settled, without labelling it a
+  candidate the deciding turn may reject.
+- Almost every concern is on the v8 program path (short.py:39, 71, 85). The routing fix appears only as evidence
+  of how a request reaches that path (agent.py:80).
+- The nearest precedent is october-29-reused-draft-no-disagree-clause: a reused model draft in the prompt, without
+  a disagree clause, was allowed.
