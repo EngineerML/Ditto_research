@@ -152,4 +152,14 @@ v8.1 on traced requests. It rebuilds focus from the seed's dataset notes the way
   This fix does not touch them.
 - v8 unit tests pass.
 
-Not yet measured: what the program path answers for this group. Expected answer: "cancel it".
+**s46, real run of that group** (`practice/gates/run_s46.sh`, image `ditto-harness:v8.1` from 258dcf3, seed
+5451784605348316629, one round, platform providers; run 20261102T010835Z). It cost about $0.002.
+
+| question | path | calls | reply | score |
+|---|---|---|---|---|
+| counterfactual, case file c57e1f… (expected "downgrade it") | program | 2 | downgrade | 1 |
+| rewording "Checking something…" (expected "cancel it") | program, decided first | 2 | cancel | 1 |
+| rewording "Looking back…" | program, ledger and reply reused | 1 | cancel | 1 |
+| rewording "Before I forget…" | program, ledger and reply reused | 1 | cancel | 1 |
+
+The group that split at s45 ("cancel it" against "now pause it") now decides once and is right on all 4 questions.
