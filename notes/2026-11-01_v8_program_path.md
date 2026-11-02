@@ -193,3 +193,28 @@ at 14e093c3, prompt source-review-v40-policy-v13; $0.94, 200 steps).
   of how a request reaches that path (agent.py:80).
 - The nearest precedent is october-29-reused-draft-no-disagree-clause: a reused model draft in the prompt, without
   a disagree clause, was allowed.
+
+## Reply-note A/B for the I4 lead (practice/gates/replay_reply.py, $0.075)
+
+The candidate wording (v8.2, a temporary copy, not on a branch): "Answer the message. The ledger above is your own
+working reading of the entries, and you decide the answer: where an entry plainly says otherwise, follow the entry.
+Take what the ledger holds …". The rest of the note is unchanged.
+
+Both arms reuse replay B's ledgers for the seven s44 seeds (280 questions), so only the reply turns differ; one
+sample each. Outputs: `practice/gates/s44/reply_v81.json` and `reply_v82.json`.
+
+| arm | score /40 | splits (7 seeds) | all-wrong groups (7 seeds) |
+|---|---|---|---|
+| replay B as recorded | 36.14 | 0 | 7 |
+| v8.1 note, same ledgers | 37.64 | 0 | 4 |
+| v8.2 note, same ledgers | 35.50 | 1 | 8 |
+
+- The same note on the same ledgers moved 1.5 points between replay B and this run, so reply sampling alone accounts
+  for about 1.5.
+- v8.2 is 2.14 below v8.1. Its losses are the misreadings the ledger was built to stop. With leave to follow the
+  entries, the reply re-read them and took the wrong item list (twice), the wrong client ("Kestrel Studio"), a
+  glossary label in place of the handle, "none" for a struck organiser, and a bare "draft proposal".
+- It added a split and doubled the all-wrong groups.
+
+The wording that lets the reply overrule the ledger is rejected: it brings back the failure the program path exists
+to prevent.
