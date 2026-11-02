@@ -9,6 +9,7 @@ import httpx
 
 from .action import ActionEngine, Outcome, TokenTally
 from .action import safe_run as run_action
+from .available import usable
 from .typography import plain_type
 from .config import Settings
 from .lane import ACTION, RECORDS, Lane, about_own_records, classify, names_held_alias, own_records_question, passes_on, within_records
@@ -125,6 +126,11 @@ class CaseRunner:
     async def run(self, req: RunRequest) -> RunResponse:
         started = time.monotonic()
         deadline = started + self.settings.case_budget_seconds
+        tools, left_out, stayed = usable(req)
+        if left_out:
+            req = req.model_copy(update={"tools": tools})
+        if left_out or stayed:
+            log.info("case=%s catalog: %d tools kept, %d unlinked left out, %d kept as linked by the request", req.case_id, len(tools), left_out, stayed)
         CaseRunner.active_cases += 1
         gate_limit = grow_call_gate(max(self.settings.max_inflight_calls, CaseRunner.active_cases))
         memory = MemoryTools(self.store, req.user_id)

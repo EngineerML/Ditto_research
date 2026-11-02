@@ -1,5 +1,14 @@
 # Pipeline declaration
 
+## Changes from DrPresident v23 (publicly released base)
+
+Base: DrPresident v23, agent 8474358a-0592-40f6-8c70-4cec0212513c, artifact sha256
+9f3f21bc438352f690bb1e58994bdde02e032cd324e77e80a61a7d754eecfdeb. Every file not named below is that artifact's.
+
+| Change | File and function | Policy reading |
+|---|---|---|
+| Unlinked tools are left out: a listed tool whose own description says it needs a connector or integration linked or connected (for example "Needs the Asana connector to be linked in Settings.") is removed from the request's catalog when the request arrives, unless the request's own text (system text or message) says in one sentence, without negating it, that this app is linked or connected; then the tool stays. Lane routing and every menu the model sees use only the tools that remain. Every other tool keeps its name, description, schema and order. The harness log records per case how many were left out and how many stayed as linked | `app/available.py` UNLINKED, needed_link, says_linked, usable; `app/agent.py` CaseRunner.run | W4: availability restricts a capability class, and the restriction is decided for the exact request and state. The availability source is the request's own tool description (authoritative under W10) together with the public tool contract: `services/dittobench-api/PROTOCOL.md` ("200 unlinked connector tools … The tool endpoint refuses every connector call with a 'not connected' error and performs nothing") and the starter-kit README ("connector tools the workspace has not linked"). I7: no available capability is removed, since a connector the request says is linked stays, and no plan, singleton or forced call is made; the model chooses among every remaining tool. W10: kept tools are unchanged. The test reads each tool's own description and the request's own words, never a tool name, an app list or `bench_version`. Where this declaration says the whole catalog reaches the model, it means the catalog after this step |
+
 ## Changes since DrPresident v22 (agent eeb26552-3719-42dd-91f1-c1aab7353f33, build e253)
 
 | Change | File and function | Policy reading |
