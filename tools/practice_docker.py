@@ -90,8 +90,10 @@ def main() -> int:
                     help="re-run only these canonical case ids (needs the subset scorer, tools/build_subset_scorer.py)")
     ap.add_argument("--replay-writes", type=Path,
                     help="memory writes from tools/replay_writes.py for the harness to put back after the first seed (with --trace)")
+    ap.add_argument("--scorer-bin", type=Path,
+                    help="scorer binary to run instead of the default, e.g. one from tools/build_scorer_rev.sh for a new bench version")
     args = ap.parse_args()
-    scorer_bin = SUBSET_SCORER_BIN if args.only_cases else SCORER_BIN
+    scorer_bin = args.scorer_bin or (SUBSET_SCORER_BIN if args.only_cases else SCORER_BIN)
     if args.only_cases and not scorer_bin.is_file():
         print(f"{scorer_bin} missing: run tools/build_subset_scorer.py", file=sys.stderr)
         return 2
