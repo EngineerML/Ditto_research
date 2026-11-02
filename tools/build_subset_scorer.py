@@ -1,6 +1,7 @@
 """Build a copy of the official scorer that re-runs only chosen cases of a practice run.
 
     python3 tools/build_subset_scorer.py [REV]       # writes .cache/dittobench-api-subset
+    python3 tools/build_subset_scorer.py REV OUT     # e.g. .cache/dittobench-api-subset-v15 for a new bench version
 
 The copy is the upstream dittobench-api source at REV (default: the commit the practice
 scorer .cache/dittobench-api was built from) with one change, active only when
@@ -166,6 +167,11 @@ def scorer_revision() -> str:
 
 def main() -> int:
     rev = sys.argv[1] if len(sys.argv) > 1 else scorer_revision()
+    out, rescore = OUT, RESCORE
+    if len(sys.argv) > 2:
+        # a second scorer beside the default one; its rescore tool gets the same suffix
+        out = HERE / sys.argv[2]
+        rescore = RESCORE.with_name(RESCORE.name + out.name.removeprefix(OUT.name))
     if WORK.exists():
         shutil.rmtree(WORK)
     WORK.mkdir(parents=True)
@@ -185,9 +191,9 @@ def main() -> int:
     (cmd.parent / "ditto-rescore").mkdir()
     (cmd.parent / "ditto-rescore" / "main.go").write_text(RESCORE_GO)
     api = WORK / "services" / "dittobench-api"
-    subprocess.run(["go", "build", "-o", str(OUT), "./cmd/dittobench-api"], cwd=api, check=True)
-    subprocess.run(["go", "build", "-o", str(RESCORE), "./cmd/ditto-rescore"], cwd=api, check=True)
-    print(f"built {OUT} and {RESCORE}")
+    subprocess.run(["go", "build", "-o", str(out), "./cmd/dittobench-api"], cwd=api, check=True)
+    subprocess.run(["go", "build", "-o", str(rescore), "./cmd/ditto-rescore"], cwd=api, check=True)
+    print(f"built {out} and {rescore}")
     return 0
 
 
