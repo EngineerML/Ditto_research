@@ -3,6 +3,7 @@
 # no trace hooks (the tree is packed as it is in git; practice builds add tracing elsewhere).
 #
 #   bash tools/pack_submission.sh [TREE] [OUT]      (default: combined -> practice/submission.tgz)
+#   SHIP_DECLARATION=1 bash tools/pack_submission.sh drp22v15 OUT    (a released king's DECLARATION.md goes too)
 set -euo pipefail
 cd /home/bittensor/ditto
 TREE=${1:-combined}
@@ -16,6 +17,10 @@ trap 'rm -rf "$STAGE"' EXIT
 # DECLARATION.md stays in the repository and is not shipped: it is optional, and horizon v1 cleared
 # screening without one.
 cp "$TREE/Dockerfile" "$TREE/requirements.txt" "$TREE/PROVENANCE.md" "$STAGE/"
+# A tree built on a released king that shipped its own declaration keeps shipping it, with our rows added.
+if [ -n "${SHIP_DECLARATION:-}" ]; then
+  cp "$TREE/DECLARATION.md" "$STAGE/"
+fi
 cp -r "$TREE/app" "$STAGE/app"
 find "$STAGE" -name __pycache__ -type d -prune -exec rm -rf {} +
 if grep -rIl -E 'sk-or-v1-|sk-[A-Za-z0-9]{32,}|BEGIN (RSA|OPENSSH|EC) PRIVATE' "$STAGE"; then
