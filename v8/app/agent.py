@@ -77,7 +77,7 @@ class CaseRunner:
 
     async def short_answer(self, req: RunRequest, lane: Lane, focus: list[Candidate], index: UserIndex, engine: RecordsEngine, deadline: float, outcome: Outcome) -> bool:
         settings = self.settings
-        if lane.reason == "statement" or not own_records_question(req.user_input, req.tools, carried=bool(focus)):
+        if lane.reason == "statement" or not own_records_question(req.user_input, req.tools, carried=bool(focus), held=bool(focus)):
             return False
         if not focus:
             pairs = [node.pair for node in index.nodes.values()]

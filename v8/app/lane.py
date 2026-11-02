@@ -402,8 +402,8 @@ def fetches_from_tool(request: str, tools: list[ToolDefinition], carried: bool =
     return any(fetching(part) and near_reading_tool(part, tools) for part in parts)
 
 
-def own_records_question(request: str, tools: list[ToolDefinition], working: bool = False, carried: bool = False) -> bool:
-    if OUTSIDE_SOURCE.search(request) or names_listed_tool(request, tools) or fetches_from_tool(request, tools, carried):
+def own_records_question(request: str, tools: list[ToolDefinition], working: bool = False, carried: bool = False, held: bool = False) -> bool:
+    if (OUTSIDE_SOURCE.search(request) and not held) or names_listed_tool(request, tools) or fetches_from_tool(request, tools, carried):
         return False
     clauses = [clause for clause in CLAUSE_SPLIT.split(request) if clause and clause.strip()] or [request]
     tails = QUESTION_TAIL.findall(request) if "?" in request else []

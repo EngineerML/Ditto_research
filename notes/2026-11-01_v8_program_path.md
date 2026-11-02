@@ -133,3 +133,23 @@ comes from questions that reach the path inconsistently, and from the enterprise
 - A question that names a case file the user's records hold, and is already routed to records, takes the program
   path whatever its topic words.
 - The enterprise groups are a separate design question: decide once per twin group on the general lane too.
+
+## v8.1: routing fix (branch harness/v8.1; v8 itself stays as is on harness/v8)
+
+ refuses any request with an outside-source word (web, online, news, ...). With the new
+ flag, that word check is skipped when the request names a case file the user's records hold. Only
+ sets the flag. Every other check (a listed tool named, a fetch from a tool, an effecting request) still
+applies. The diff is 2 lines in  and .
+
+Offline check, no model calls:  runs the  gate of the saved v8 and of
+v8.1 on traced requests. It rebuilds focus from the seed's dataset notes the way the harness does.
+- The 10 v8 runs (s44 and s45): all 396 program-path questions stay on the path. The only change is the 4
+  "news subscription" questions (3 rewordings and the counterfactual), which move from the records lane to the
+  program path, so that group now decides once.
+- All 174 traced practice runs with a cached v14 dataset (about 8,000 records-lane requests): the same 4 questions
+  move, and nothing else does.
+- The 36 enterprise questions still go to the records lane, because their notes are too long for the program path.
+  This fix does not touch them.
+- v8 unit tests pass.
+
+Not yet measured: what the program path answers for this group. Expected answer: "cancel it".
