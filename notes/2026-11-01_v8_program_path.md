@@ -218,3 +218,20 @@ sample each. Outputs: `practice/gates/s44/reply_v81.json` and `reply_v82.json`.
 
 The wording that lets the reply overrule the ledger is rejected: it brings back the failure the program path exists
 to prevent.
+
+**Milder wording (v8.3, $0.04).** The only change is "Answer the message from the ledger, which already applies
+every entry:" becoming "Answer the message from your ledger above:". Same ledgers, one sample
+(`practice/gates/s44/reply_v83.json`).
+
+| arm | score /40 | splits (7 seeds) | all-wrong groups (7 seeds) |
+|---|---|---|---|
+| v8.1 note, two samples (replay B, reply_v81) | 36.14, 37.64 (mean 36.89) | 0, 0 | 7, 4 |
+| v8.3 note, one sample | 36.57 | 1 | 5 |
+
+- Against the mean of v8.1's two samples, v8.3 is −0.32, within noise.
+- Against the paired v8.1 sample it gained 1 question and lost about 8.5. The losses are the same kinds v8.2 had:
+  "Kestrel Studio" for the client, which split that group 1 of 3; "None" for the struck allotment organiser, on all
+  three rewordings; "draft proposal"; "booked the venue"; one item list.
+- Reading: "already applies every entry" is doing work. It keeps the reply from re-deciding what the ledger
+  settled. Without it the reply drifts a little toward v8.2's re-reading.
+- Not adopted on this evidence. A second sample of each arm (about $0.08) would tell whether the −0.3 to −1.1 is real.
