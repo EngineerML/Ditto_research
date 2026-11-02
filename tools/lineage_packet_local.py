@@ -4,6 +4,10 @@
         --history live/2026-10-28/lineage --version 1=practice/submission.tgz \
         --version 2=practice/submission_v2.tgz --version 3=practice/submission_v3.tgz
 
+With --reference-kind released_base the --version entries are a declared released base and its owner's
+earlier versions (for example DrPresident v23 and v22), and the packet is the one the platform builds when its
+queue runs in released_base mode and the candidate's DECLARATION names that base.
+
 The packet is assembled by the platform's own code (apps/platform/ditto/api_server/review_lineage.py:
 the diff, the full-review reasons, the finding text and the sealing), loaded with its database and
 storage imports stubbed out; only the rows it would read from the database are rebuilt here, from the
@@ -128,6 +132,9 @@ def main() -> int:
     ap.add_argument("--history", type=Path, required=True)
     ap.add_argument("--version", action="append", required=True, help="N=TARBALL of an earlier version, its upload")
     ap.add_argument("--policy-version", type=int, default=13)
+    ap.add_argument("--reference-kind", choices=("same_owner_version", "released_base"), default="same_owner_version",
+                    help="released_base: the --version entries are the declared base's own versions (another owner's), "
+                         "as the platform reads them when the queue runs in released_base mode")
     args = ap.parse_args()
     mod = platform_lineage()
 
@@ -155,12 +162,13 @@ def main() -> int:
         agent_id=candidate_id, attempt_id=uuid.uuid5(candidate_id, "local-attempt"), artifact_sha256=candidate_sha,
         policy_version=args.policy_version, candidate=mod._ArtifactRef(candidate_id, candidate_sha),
         parent=mod._ArtifactRef(uuid.UUID(parent_summary["agent_id"]), parent_sha), parent_row=history[0], history=history,
-        rulings=rulings(mod, [(p, s) for p, s, _ in versions]), findings=findings(mod, parent_pipeline, parent_summary))
+        rulings=rulings(mod, [(p, s) for p, s, _ in versions]), findings=findings(mod, parent_pipeline, parent_summary),
+        reference_kind=args.reference_kind)
     packet = asyncio.run(mod.assemble_review_lineage_packet(context, None))
     args.out.write_text(packet.model_dump_json(indent=1))
 
     print(f"candidate {args.candidate} sha256 {candidate_sha[:16]}; parent v{parent_summary['version']} {parent_summary['agent_id'][:8]} sha256 {parent_sha[:16]}")
-    print(f"scope {packet.scope.value}{' (' + ', '.join(r.value for r in packet.full_review_reasons) + ')' if packet.full_review_reasons else ''}; "
+    print(f"reference {packet.reference_kind or 'same_owner_version'}; scope {packet.scope.value}{' (' + ', '.join(r.value for r in packet.full_review_reasons) + ')' if packet.full_review_reasons else ''}; "
           f"{packet.changed_file_count} files changed, {packet.unchanged_file_count} unchanged, {packet.changed_line_count} lines")
     for change in packet.changes:
         print(f"  {change.change:8s} {change.path} +{change.added_lines} -{change.removed_lines}{' (truncated)' if change.truncated else ''}")
