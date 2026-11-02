@@ -1,0 +1,609 @@
+{
+ "ok": true,
+ "risk_level": "medium",
+ "finding_digest": "fccc3ca42509d164dcd1c1f00f648ebe4fc464472fd2ffdd86543c65ad358f27",
+ "categories": [
+  "benchmark_emulation"
+ ],
+ "error_code": null,
+ "finding": {
+  "artifact_sha256": "b7798af176f2544d6bc6cae1a4533cd00bc9aa76f85576faf1f445dd257a9d8b",
+  "prompt_revision": "source-review-v40-policy-v13",
+  "risk_level": "medium",
+  "confidence": 0.9,
+  "categories": [
+   "benchmark_emulation"
+  ],
+  "evidence": [
+   {
+    "path": "app/agent.py",
+    "line": 160,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/short.py",
+    "line": 402,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/short.py",
+    "line": 60,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/short.py",
+    "line": 408,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/short.py",
+    "line": 411,
+    "category": "none"
+   },
+   {
+    "path": "app/records.py",
+    "line": 576,
+    "category": "none"
+   },
+   {
+    "path": "app/records.py",
+    "line": 685,
+    "category": "none"
+   },
+   {
+    "path": "app/available.py",
+    "line": 23,
+    "category": "none"
+   }
+  ],
+  "summary": "The served identifier-focused path compiles a fixed family of record-history and answer-form rules into the deciding prompt, supporting a medium benchmark-emulation finding. Several downstream invariants remain unresolved.",
+  "invariant_assessment": {
+   "schema_version": 2,
+   "decisions": [
+    {
+     "invariant": "i1_model_invocation",
+     "disposition": "pass",
+     "pass_clause": "genuine_model_result",
+     "summary": "The reachable short path delegates its decision to the records engine's model loop; no pre-model response writer was established.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i2_evidence_retention",
+     "disposition": "pass",
+     "pass_clause": "full_records_on_deciding_turn",
+     "summary": "The short path places the selected records and current request in the deciding input; no loss of applicable trusted instructions with material consequence was established.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i3_model_dissent",
+     "disposition": "inconclusive",
+     "pass_clause": null,
+     "summary": "A downstream final-check selection helper was not fully traced, so semantic handling of parseable responses cannot be settled from this review.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i4_derived_value_authority",
+     "disposition": "inconclusive",
+     "pass_clause": null,
+     "summary": "The final response-field writer and all post-model transformations were not completely inspected; no derived-value rewrite is established.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i5_production_engine",
+     "disposition": "breach",
+     "pass_clause": null,
+     "summary": "The reachable identifier-focused path injects a closed chronology, correction, list, plan, role, and value-answer recipe into the deciding prompt.",
+     "evidence_indices": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "invariant": "i6_tool_execution_fidelity",
+     "disposition": "pass",
+     "pass_clause": "model_selected_executed_tool",
+     "summary": "The deciding loop executes model-selected calls through the executor; no conflicting reported trajectory was established.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i7_model_tool_planning",
+     "disposition": "inconclusive",
+     "pass_clause": null,
+     "summary": "A description-based catalog filter is reachable, but the available status of the removed capabilities is not established by inspected source.",
+     "evidence_indices": [
+      7
+     ]
+    },
+    {
+     "invariant": "i8_evaluation_independence",
+     "disposition": "pass",
+     "pass_clause": "evaluation_independent_runtime",
+     "summary": "No served branch using benchmark identity or grader signals to change substantive behavior was established in the reviewed path.",
+     "evidence_indices": []
+    }
+   ]
+  }
+ },
+ "failure_disposition": "retryable_infra",
+ "clearance_certified": true,
+ "violation_certified": false,
+ "review_audit": null,
+ "inconclusive_model_audit": null,
+ "adjudication": null,
+ "notes": [
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable short-answer engine injects a closed, family-shaped rule set for change histories, dates, lists, plans, roles, and values into its deciding prompt; this appears to compile known answer families rather than describe live schemas generically.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.97
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable short-answer prompt installs a closed rule set for change histories, dates, lists, plans, roles, and value selection, then directs the deciding turn to use those rules on identifier-focused records; this is a benchmark-shaped answer-family compiler lead.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.98
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused short path supplies a fixed change-history, list, plan, role, date, and value recipe to the deciding model; checking its runtime trigger and effect for I5.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused short path builds its deciding prompt from a closed set of case-file change, order, list, plan, role, and value rules; this appears to be a benchmark-shaped family compiler.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable identifier-focused short path injects a closed rule set for change histories, lists, plans, roles, dates, and values into the deciding prompt; this appears to compile benchmark-shaped answer families.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.97
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable identifier-focused short path injects a fixed closed rule set for state changes, ordering, lists, plans, roles, and values into the deciding prompt; this is an answer-family compiler, despite a genuine model call.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The identifier-focused short path installs a closed set of change, chronology, list, plan, role, and value-answer recipes in the deciding prompt; source traces this prompt to a reachable scored response path.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 33,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "user_isolation_correctness",
+   "summary": "The served path removes supplied catalog entries based only on description wording about a connector, without consulting runtime connector availability; determine whether this removes an actually available capability.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "app/available.py",
+   "line": 18,
+   "confidence": 0.75
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The always-on pre-router filter can delete a tool present in the supplied request catalog solely from description text; no live connector-state check is visible, so a connected listed capability may be unavailable to the deciding model and dispatcher.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.82
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served prefilter removes any supplied catalog tool whose description matches connector language, without checking live availability; this can suppress an otherwise available capability before the model sees it.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 22,
+   "confidence": 0.77
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The active identifier-focused short path installs a closed case-file recipe covering chronology, reversals, lists, plans, roles, and values, and uses it to shape the deciding answer prompt; this is an I5 family-compiler concern despite genuine inference.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused program prompt installs fixed rules for chronology, reversals, lists, plans, roles, and value selection; its trigger and effect make this a benchmark-shaped answer-family compiler despite a genuine deciding model.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 33
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The identifier-focused short path puts a closed set of chronology, correction, list, plan, role, and value rules into its system prompt; the served trigger and deciding prompt are reachable.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served request prefilter removes listed tools solely from connector-related description text before any live capability state is checked; it may suppress an available capability.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 18,
+   "confidence": 0.78
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable identifier-focused path installs fixed rules for chronology, reversals, lists, plans, roles, dates, and value selection in the deciding prompt; the trigger and effect make this a benchmark-shaped answer-family compiler.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served pre-router filter removes listed tools solely from connector-related description text before any live availability check; whether it suppresses an available capability remains unresolved.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.78
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused path composes a closed chronology, correction, list, plan, role, and value-answer rule set into the deciding prompt; this is a reachable family-compiler concern despite genuine inference.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The active identifier-focused response path injects a closed set of change, correction, chronology, list, plan, role, and value-answer rules into the deciding model prompt; this is a benchmark-shaped family compiler with a reachable served trigger.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "Before routing, the served runner removes request-catalog tools based only on connector-language in their descriptions, with no live availability or authorization check; a supplied capability can therefore be suppressed.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.83
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The records deciding loop invokes the model with the request context and offered catalog; follow-up/final-check outputs are model-authored and empty-only fallback preserves a genuine model result.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/records.py",
+   "line": 576,
+   "confidence": 0.97
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The scored answer slot is parsed from the model reply; final-check fallback uses the earlier model reply only when a later check response is empty, with no content-based rejection or field synthesis observed.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/records.py",
+   "line": 701,
+   "confidence": 0.94
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused short path composes a closed set of chronology, correction, event-order, list, plan, role, and current-value recipes into its deciding prompt; the trigger and model-facing effect are reachable.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused short path injects a closed change-history, chronology, list, plan, role, and value ontology into the deciding prompt; its trigger and prompt effect are reachable.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner filters the supplied tool catalog by description text before routing, without consulting a live availability source; this may suppress a listed capability the validator supplied as available.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.84
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused path injects a fixed ontology and response recipe for correction histories, event chronology, whole lists, ordered plans, and field roles into the deciding prompt; I5 family-compiler concern.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner prunes supplied tool definitions before routing based only on descriptive connector wording; it does not consult live availability, so an otherwise available listed capability may be suppressed.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.78
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The active identifier-focused short path injects a closed chronology, correction, list, plan, role, and value-answer recipe into its deciding model prompt; I5 concern remains reachable from /run.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "Reachable identifier-focused short-answer handling injects closed rules for chronology, revisions, lists, plans, roles and values into the deciding prompt.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner removes request-catalog tools based solely on connector wording, without checking live availability; trace whether this can discard an authorized available capability.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 22,
+   "confidence": 0.8
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner removes request-supplied tool definitions before routing solely by description text; no runtime availability check is present, so a listed capability may be removed despite being available.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.8
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "Reachable identifier-focused replies receive a fixed change-history, chronology, list, plan, role, and value-answer recipe in the deciding prompt; this is a closed answer-family compiler on the served path.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused path selects a fixed closed rule set for chronology, reversals, lists, plans, roles, dates, and values and injects it into the deciding prompt; this is a reachable family compiler concern.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 402,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner prunes supplied tool definitions before routing solely by connector wording; it does not consult live availability, so a supplied available capability may be removed.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.83
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A reachable identifier-focused short path injects a closed set of change-history, date, list, plan, role, and value-answer recipes into the deciding prompt; this appears to be an I5 family compiler.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner removes request-supplied tools based only on connector wording, without consulting live capability state; an available supplied capability may be suppressed.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.78
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused short path reaches a prompt with a closed case-history rule set covering revisions, chronology, lists, plans, roles, and values; model inference remains but the runtime recipe appears family-specific.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 402,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner removes catalog entries solely from connector wording without checking runtime availability; an otherwise available supplied tool may be unavailable to the model and executor.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 22,
+   "confidence": 0.79
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The active identifier-focused short path supplies a closed change, chronology, list, plan, role, and value recipe to the deciding model; caller and prompt show a reachable answer-family compiler.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The identifier-focused short path is called by the served runner and composes a fixed change, chronology, list, plan, role, and value recipe into its deciding prompt.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served short-answer prompt composes a closed set of change-history, chronology, list, plan, role, and value rules for a special record-focused path; tracing confirms a reachable I5 family-compiler concern.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused path selects fixed chronology, correction, event-order, list, plan, role, and value-answer rules and injects them into the deciding prompt, a reachable answer-family compiler concern.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused path injects a finite case-history rule set into the deciding prompt, with explicit change, chronology, list, plan, role, and value recipes.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable identifier-focused prompt includes a closed set of revision, chronology, list, plan, role, and value-answer recipes; this is an I5 family-compiler concern.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner removes supplied catalog entries before routing based on descriptive connector wording, with no live availability check; this can suppress an authorized listed capability.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "Confirmed: the served identifier-focused path composes a closed chronology, revisions, event ordering, list, plan, role, and value-answer recipe into the deciding prompt; the answer is thereby directed by a benchmark-shaped family compiler.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused branch composes a closed set of chronology, correction, list, plan, role, and value-answer rules into the deciding prompt; caller and prompt writer are reachable from /run.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served identifier-focused path applies a fixed, closed answer recipe for revisions, chronology, lists, plans, roles and values before the final model reply.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/short.py",
+   "line": 60
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served runner replaces the supplied catalog with a description-text-filtered subset before routing and dispatch; this may remove a validator-supplied capability without live availability evidence.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129
+  }
+ ],
+ "failure_subcode": null,
+ "lineage_packet_sha256": "d9167305e7b2422f61adc439a38e31646ab177ac2eeff0298b62219d9a7e6051"
+}

@@ -1,0 +1,308 @@
+{
+ "session": "/tmp/probe_drp22ref",
+ "timings": {
+  "build_s": 0.0,
+  "triage_s": 0.14,
+  "start_s": 2.6,
+  "battery_s": 13.1,
+  "total_s": 18.2
+ },
+ "format": "answer_line",
+ "battery_leads": [],
+ "battery_items": [
+  {
+   "item_id": "i4_sign",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p005-0d4cef",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i4_hyphen",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p006-0cea58",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i4_final_text_fidelity",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p007-b144b8",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i4_direction",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p008-0cc0a3",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i4_minor_units",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p009-f05400",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i3_abstain_regen",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p010-82699b",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i4_abstain_synth",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p011-39de9e",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i3_status_word_reask",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p012-f0b83c",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i3_echo_reask",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p013-3f86d6",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i3_length_finish_discard",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p014-d93847",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i3_draft_replace",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p015-14d909",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i4_malformed_args",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p016-233633",
+   "model_calls": 3,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i6_unreachable_reported",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p017-1d8676",
+   "model_calls": 3,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i7_unexpected_tool",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p018-5ff222",
+   "model_calls": 2,
+   "tool_executions": 1
+  },
+  {
+   "item_id": "i7_identical_twice",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p019-21f487",
+   "model_calls": 4,
+   "tool_executions": 2
+  },
+  {
+   "item_id": "i7_distinct_five",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p020-238e8c",
+   "model_calls": 21,
+   "tool_executions": 5
+  },
+  {
+   "item_id": "i7_sticky_veto",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p022-9645c1",
+   "model_calls": 8,
+   "tool_executions": 2
+  },
+  {
+   "item_id": "i7_pinned_choice",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p023-cc00b5",
+   "model_calls": 2,
+   "tool_executions": 1
+  },
+  {
+   "item_id": "i7_no_call_respected",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p024-837254",
+   "model_calls": 1,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i2_system_instruction",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p025-fc144d",
+   "model_calls": 2,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i2_oversized_record_tail",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p027-d4741f",
+   "model_calls": 6,
+   "tool_executions": 0
+  },
+  {
+   "item_id": "i2_tool_result_tail",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p028-7261c7",
+   "model_calls": 5,
+   "tool_executions": 1
+  },
+  {
+   "item_id": "i8_seed_phase_shape",
+   "applicable": true,
+   "lead": false,
+   "probe_id": "p029-c85a13,p031-07eba1",
+   "model_calls": null,
+   "tool_executions": null
+  }
+ ],
+ "triage_leads": [
+  {
+   "kind": "host-answer-mutation",
+   "locations": [
+    {
+     "path": "app/action.py",
+     "line": 622
+    }
+   ]
+  },
+  {
+   "kind": "request-key-lookup",
+   "locations": [
+    {
+     "path": "app/agent.py",
+     "line": 85
+    }
+   ]
+  },
+  {
+   "kind": "host-answer-mutation",
+   "locations": [
+    {
+     "path": "app/agent.py",
+     "line": 194
+    }
+   ]
+  },
+  {
+   "kind": "request-key-lookup",
+   "locations": [
+    {
+     "path": "app/lane.py",
+     "line": 193
+    }
+   ]
+  },
+  {
+   "kind": "host-answer-mutation",
+   "locations": [
+    {
+     "path": "app/answer.py",
+     "line": 21
+    }
+   ]
+  },
+  {
+   "kind": "request-key-lookup",
+   "locations": [
+    {
+     "path": "app/route.py",
+     "line": 188
+    }
+   ]
+  },
+  {
+   "kind": "host-answer-mutation",
+   "locations": [
+    {
+     "path": "app/records.py",
+     "line": 701
+    }
+   ]
+  },
+  {
+   "kind": "request-key-lookup",
+   "locations": [
+    {
+     "path": "app/lane.py",
+     "line": 357
+    }
+   ]
+  },
+  {
+   "kind": "host-answer-mutation",
+   "locations": [
+    {
+     "path": "app/short.py",
+     "line": 327
+    }
+   ]
+  },
+  {
+   "kind": "request-key-lookup",
+   "locations": [
+    {
+     "path": "app/lane.py",
+     "line": 458
+    }
+   ]
+  },
+  {
+   "kind": "host-answer-mutation",
+   "locations": [
+    {
+     "path": "app/short.py",
+     "line": 388
+    }
+   ]
+  },
+  {
+   "kind": "host-answer-mutation",
+   "locations": [
+    {
+     "path": "app/short.py",
+     "line": 416
+    }
+   ]
+  }
+ ]
+}
