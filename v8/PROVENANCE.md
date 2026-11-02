@@ -25,10 +25,24 @@ below is dan0l's code as released. Our changes:
   - a later rewording of a question over the same notes reads the first rewording's question and its
     decided reply as the earlier turns of its conversation, then its own question; the model writes
     every reply, and the host never compares, retries or substitutes.
+- `app/lane.py`, `app/agent.py`: a question that names a case file the user's records hold may take the
+  program path even when it contains a word such as "news" or "web" (`own_records_question(held=...)`,
+  set only by `short_answer`). The other checks are unchanged: naming a listed tool, a fetch from a tool, and a
+  request that asks for an action.
 
 The reused reply is the shape of the 2026-10-29 ruling on reused drafts (precedent
 `october-29-reused-draft-no-disagree-clause`): a model-sampled reply enters the prompt only as text the
 model reads.
+
+The case-file ledger works the same way. It is a model completion written earlier for the same request,
+from the case file's entries alone. It is carried as the assistant turn it was. No code reads, parses or selects
+anything from it, and it is unrelated to the executor's tool-call receipts, which dan0l's code also calls a ledger.
+`REPLY_NOTE` asks the model to answer from the ledger it wrote, and the `ANSWER:` value is parsed only from the
+deciding reply, which the model writes in full. We ask for this because the alternative measured worse. On our
+practice runs, a reply told it could follow an entry over its own ledger re-read the raw sentences and repeated
+the misreadings the ledger had resolved. It lost about two questions in forty and gave different answers to
+rewordings of one question. Dropping only "which already applies every entry" moved the reply partway toward the
+same errors.
 
 Horizon v6 (agent b55c19f0-329d-459f-8de3-a887b8286606) is this harness without the program-path
 changes above; it was held as a near-duplicate of dan0l v28 and released by the operator on
