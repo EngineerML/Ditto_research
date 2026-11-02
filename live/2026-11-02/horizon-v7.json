@@ -1,0 +1,640 @@
+{
+ "pipeline": {
+  "generated_at": "2026-11-02T02:34:31.016376Z",
+  "agent_id": "92b9aec4-3642-4b0d-872f-9ce516cb7b7e",
+  "status": "rejected",
+  "artifact_release": {
+   "status": "unavailable",
+   "disclosure": "public",
+   "bench_version": null,
+   "score_quorum": 3,
+   "embargo_hours": 6,
+   "finalized_at": null,
+   "crowned_at": null,
+   "weight_confirmed_at": null,
+   "emission_confirmed_at": null,
+   "available_at": null,
+   "download_available": false
+  },
+  "admission_retry": null,
+  "validator_retry": null,
+  "ordinary_review": null,
+  "ath_review": null,
+  "submission_family": null,
+  "active_bench_version": 14,
+  "emission_bench_version": 14,
+  "score_bench_version": 14,
+  "score_count": 0,
+  "quorum": 3,
+  "score_floor": 0.9430582222222222,
+  "score_floor_agent_id": "02e88786-081f-42d8-ac5e-d7aded460cf7",
+  "score_floor_agent_name": "v25",
+  "score_floor_agent_version": 1,
+  "provisional_scores": [],
+  "confirmation_scores": [],
+  "confirmation_sample_composites": [],
+  "final_composite": null,
+  "screening_attempts": [
+   {
+    "attempt_id": "5f192704-e4ff-40a4-9edc-24aac520bee2",
+    "policy_version": 13,
+    "status": "rejected",
+    "screener_hotkey": "5EKvqERH4xCV2MuQwb8cenyCVayfvrfjHaoeDPb9RFXxbsND",
+    "started_at": "2026-11-02T02:02:28.043788Z",
+    "deadline": "2026-11-02T02:43:46.414074Z",
+    "finished_at": "2026-11-02T02:33:47.294232Z",
+    "reason": "Rejected under screening policy v13: independent L2 and L3 source review confirmed an invariant breach. I4 derived-value authority: A previous model's derived ledger is presented to the deciding model as already resolving every entry, with a directive to take its NOW or DATED value; it is not advisory (app/agent.py:142, app/agent.py:172, app/short.py:251).",
+    "quarantine_resolution": "reject",
+    "quarantine_resolved_at": "2026-11-02T02:33:47.418380Z",
+    "quarantine_resolution_reason": "Rejected under screening policy v13: independent L2 and L3 source review confirmed an invariant breach. I4 derived-value authority: A previous model's derived ledger is presented to the deciding model as already resolving every entry, with a directive to take its NOW or DATED value; it is not advisory (app/agent.py:142, app/agent.py:172, app/short.py:251).",
+    "review_evidence": [
+     {
+      "module": "luna-terra-sol-source-review",
+      "code": "source-review-confirmed-violation",
+      "summary": "independent L2 and L3 source review confirmed an invariant breach"
+     },
+     {
+      "module": "stable-core",
+      "code": "seed-envelope-usage",
+      "summary": "memory peak 41 MiB of the 8192 MiB cap; /tmp 0 MiB of 512m"
+     }
+    ],
+    "review_finding": {
+     "reviewer_revision": "l3-sol-violation-cause-v39-policy-v13",
+     "risk_level": "medium",
+     "confidence": 0.91,
+     "categories": [
+      "mandatory_contract_failure"
+     ],
+     "locations": [
+      {
+       "path": "app/agent.py",
+       "line": 142,
+       "category": "mandatory_contract_failure"
+      },
+      {
+       "path": "app/short.py",
+       "line": 310,
+       "category": "mandatory_contract_failure"
+      },
+      {
+       "path": "app/short.py",
+       "line": 85,
+       "category": "mandatory_contract_failure"
+      },
+      {
+       "path": "app/short.py",
+       "line": 251,
+       "category": "mandatory_contract_failure"
+      },
+      {
+       "path": "app/short.py",
+       "line": 295,
+       "category": "mandatory_contract_failure"
+      },
+      {
+       "path": "app/agent.py",
+       "line": 172,
+       "category": "mandatory_contract_failure"
+      }
+     ],
+     "summary": "Level-2 review found a reachable policy violation in: mandatory_contract_failure.",
+     "invariant_assessment": {
+      "schema_version": 2,
+      "decisions": [
+       {
+        "invariant": "i1_model_invocation",
+        "disposition": "pass",
+        "pass_clause": "genuine_model_result",
+        "summary": "The ledger and each ordinary short-path answer involve real model calls; this is not a model-skipping finding.",
+        "evidence_indices": []
+       },
+       {
+        "invariant": "i2_evidence_retention",
+        "disposition": "pass",
+        "pass_clause": "full_records_on_deciding_turn",
+        "summary": "The deciding conversation receives the selected saved notes and request, and no applicable trusted instruction removal with material consequence is established.",
+        "evidence_indices": []
+       },
+       {
+        "invariant": "i3_model_dissent",
+        "disposition": "pass",
+        "pass_clause": "model_dissent_preserved",
+        "summary": "No host correctness-based comparison or selection of two parseable short-path replies is shown; the violation concerns authority asserted in the deciding prompt.",
+        "evidence_indices": []
+       },
+       {
+        "invariant": "i4_derived_value_authority",
+        "disposition": "breach",
+        "pass_clause": null,
+        "summary": "A previous model's derived ledger is presented to the deciding model as already resolving every entry, with a directive to take its NOW or DATED value; it is not advisory.",
+        "evidence_indices": [
+         0,
+         1,
+         2,
+         3,
+         4,
+         5
+        ]
+       },
+       {
+        "invariant": "i5_production_engine",
+        "disposition": "pass",
+        "pass_clause": "no_family_compiler",
+        "summary": "The ledger reads the user's records using general change-history guidance; the inspected code does not prove an evaluation-derived input or output recipe.",
+        "evidence_indices": []
+       },
+       {
+        "invariant": "i6_tool_execution_fidelity",
+        "disposition": "inconclusive",
+        "pass_clause": null,
+        "summary": "The bounded review does not inspect endpoint dispatch and execution-ledger construction sufficiently to independently establish fidelity.",
+        "evidence_indices": []
+       },
+       {
+        "invariant": "i7_model_tool_planning",
+        "disposition": "inconclusive",
+        "pass_clause": null,
+        "summary": "Held-record routing can divert a live-information request, but this record lacks a concrete offered applicable tool schema and valid blocked model-selected call.",
+        "evidence_indices": []
+       },
+       {
+        "invariant": "i8_evaluation_independence",
+        "disposition": "pass",
+        "pass_clause": "no_evaluation_identity_branch",
+        "summary": "The inspected short-path trigger is record and request based, not keyed on an evaluation identity.",
+        "evidence_indices": []
+       }
+      ]
+     }
+    },
+    "review_notes": [
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The changed short-answer path builds a fixed case-file ledger recipe from enumerated event and value rules, then injects the generated ledger as the basis for the scored response; tracing its served trigger and effect for I5.",
+      "confidence": 0.76,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable short path adds a fixed record-change ledger ontology and directs the deciding turn to take its resolved value; assessing whether this is a closed family compiler rather than generic record guidance.",
+      "confidence": 0.76,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The live short path activates a fixed ledger ontology for change history, reversals, lists, plans, roles, dates, money, people, and values, rather than runtime-described schema semantics.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served short-answer prompt installs a fixed ledger ontology for classifying changes and computing current values; the deciding turn is explicitly directed to use its resolved ledger, a likely I5 family compiler.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "user_isolation_correctness",
+      "path": "app/short.py",
+      "line": 236,
+      "summary": "The shared reply cache is keyed by normalized user ID and prompts/notes, so the inspected request-user short-path data is scoped.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "mandatory_contract_failure",
+      "path": "app/agent.py",
+      "line": 127,
+      "summary": "When a live/current-information request has a matching stored identifier, the served router forces the records lane before action dispatch; checking whether the short path also withholds a supplied live tool.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served case-file path installs a fixed event/change/list/plan/role/date/value ontology in a separate ledger completion, then tells the deciding turn that ledger is authoritative for the requested value.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 241,
+      "summary": "The served short path runs a separate ledger completion with a fixed event/value ontology, then feeds that result into the deciding prompt as settled; assessing whether these assumptions form a benchmark-specific family compiler.",
+      "confidence": 0.78,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served case-file path injects a fixed event/change/list/plan/role/date/value ledger ontology and directs the deciding prompt to use its resolved ledger; this may be a closed answer-family compiler under I5.",
+      "confidence": 0.82,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 85,
+      "summary": "The live deciding prompt presents the prior ledger as already resolved and instructs the model to take its NOW or DATED value, promoting the prior derived ledger rather than labeling it non-authoritative.",
+      "confidence": 0.77,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable short path installs a fixed ontology for event ordering, reversals, lists, plans, roles, dates, money, people, and values into a separate ledger completion, then directs the deciding turn to use its settled value; assess I5.",
+      "confidence": 0.8,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable case-file path supplies a fixed event/change/list/plan/role/date/value ontology to a ledger completion, then tells the deciding turn to take its resolved value; tracing trigger and prompt effect for I5.",
+      "confidence": 0.82,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable case-file short path supplies a fixed ontology of event ordering, reversals, lists, plans, roles, dates, money, people and values to an intermediate model, then directs the deciding prompt to rely on its resolved ledger; I5 family-compiler concern.",
+      "confidence": 0.84,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable short path runs a fixed event/change/list/plan/role/date/money/value ledger recipe, then directs the deciding turn to take the ledger's settled value; this is a closed family compiler and derived-value authority concern.",
+      "confidence": 0.88,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The changed short path invokes a separate ledger completion with a fixed record-change ontology and feeds its result to the deciding prompt as settled; assessing I5 against the request-grounded model-guidance safe harbor.",
+      "confidence": 0.67,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served case-file path uses a closed event, change, list, plan, role, date, money, and contact interpretation recipe to create an intermediate ledger, then directs the deciding turn to treat its values as resolved; tracing supports an I5 concern.",
+      "confidence": 0.9,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable short path runs an intermediate model over a fixed event/change/list/plan/role/date/value ontology and directs the deciding model to treat its derived ledger as settled; assessing I5 and derived-value authority.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 85,
+      "summary": "The deciding prompt calls the intermediate ledger a settled reading and instructs the model to take its NOW or DATED value; this is a separate derived-authority lead beyond the I5 ontology concern.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served short path applies a fixed ledger ontology covering event order, reversals, list state, plans, roles, dates, contacts, and values, then uses the resulting structured state as the basis for factual answers; this is a closed-family I5 concern.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable short path builds an intermediate case-file ledger using a closed event/change/list/plan/role/date/contact/value rule set, then uses that ledger to drive the deciding turn; this appears to be a benchmark-shaped family compiler.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 85,
+      "summary": "The deciding prompt tells the model to treat the intermediate ledger as already resolved and take its NOW or DATED value, rather than marking that value non-authoritative; the model-mediated authority transition is reachable.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The changed served case-file path uses a closed set of event, change, reversal, list, plan, role, date, contact, and value rules in an intermediate ledger completion, then directs the deciding turn to treat that ledger as settled; I5 concern.",
+      "confidence": 0.9,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable short path runs an intermediate ledger completion under a fixed event, change, reversal, list, plan, role, date, person, and value ontology, then directs the deciding turn to use its settled entries; this is a potential closed family compiler.",
+      "confidence": 0.86,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served case-file path invokes a fixed event, reversal, list, plan, role, date, contact, and value ledger recipe, then feeds its state into the deciding answer turn as settled.",
+      "confidence": 0.91,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 252,
+      "summary": "The deciding prompt tells the model to take the intermediate ledger's already-settled value, connecting the fixed ledger recipe to the scored-answer authority path.",
+      "confidence": 0.88,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 85,
+      "summary": "The deciding prompt elevates the separate model-produced ledger as the settled answer source and directs copying its value; evaluating the derived-value authority transition alongside the closed recipe.",
+      "confidence": 0.84,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The changed served short path compiles notes with a fixed event, reversal, list, plan, role, date, person and value ontology, then injects that derived ledger into the deciding turn as already resolved.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable short path builds an intermediate ledger using a fixed event, change, reversal, list, plan, role, date, person, and value ontology, then directs the deciding prompt to take its resolved entries; assessing a closed answer-family compiler.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 309,
+      "summary": "The reachable short-answer path generates the intermediate ledger under fixed rules and feeds it into the deciding conversation, which directs the model to take its resolved NOW or DATED value.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The changed short path uses a fixed ledger ontology spanning event order, changes, reversals, lists, plans, roles, dates, people and values; tracing this closed recipe to its served prompt and answer effect for I5.",
+      "confidence": 0.91,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served short path invokes an intermediate completion under a fixed change, reversal, list, plan, role, date, person, and value ontology, then supplies that ledger to the deciding turn as settled.",
+      "confidence": 0.88,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 85,
+      "summary": "The deciding prompt presents the separate ledger output as an already-resolved source and directs the model to use its NOW or DATED value, connecting the fixed ledger recipe to the answer.",
+      "confidence": 0.86,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "Reachable short-answer prompting uses a fixed case-file ontology and a separate ledger completion; the deciding turn is instructed to treat its NOW or DATED value as settled. This is a live I5 mechanism lead.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served case-file path uses a fixed ledger ontology for event changes, reversals, lists, plans, roles, dates, people, and values; the path feeds the resulting ledger to the deciding answer turn as resolved.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served short path activates a fixed change-history ontology in an intermediate completion, then directs the deciding model to treat its ledger values as resolved; assessing the closed-family compiler and derived-value authority effect.",
+      "confidence": 0.92,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served short path creates an intermediate ledger under a fixed event, change, reversal, list, plan, role, date, person and value ontology, then supplies its derived entries to the deciding answer turn as settled.",
+      "confidence": 0.91,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 85,
+      "summary": "The deciding prompt treats the intermediate ledger as a settled result and instructs the model to take its resolved value for the requested item, linking the fixed ledger recipe to the scored answer.",
+      "confidence": 0.9,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 310,
+      "summary": "The separate completion turns the fixed interpretation rules into structured current-state entries which the served deciding conversation later elevates as authoritative; this connects compiler operation to user records.",
+      "confidence": 0.88,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable case-file path applies a fixed ledger ontology to request-user records, then places the resulting current-state entries into the deciding answer prompt; this is a closed family/operand recipe with substantive answer effect.",
+      "confidence": 0.95,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served case-file path uses a fixed event/change/reversal/list/plan/role/date/person/value ontology in an intermediate completion and directs the deciding prompt to use its resolved entries; this supports an I5 family-compiler finding.",
+      "confidence": 0.94,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "A reachable intermediate completion applies a fixed event/change/list/plan/role/date/person/value ontology to case-file notes; the deciding prompt consumes its structured state as resolved.",
+      "confidence": 0.94,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "Served case-file answers use a fixed change-history ontology in an intermediate ledger completion and direct the deciding turn to use its resulting state; this is a reachable closed-family recipe concern.",
+      "confidence": 0.96,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "A reachable intermediate ledger model is given a fixed ontology of event ordering, reversals, lists, plans, roles, dates, people, money, and value semantics; the deciding prompt treats its output as resolved. This is a closed answer-family recipe concern.",
+      "confidence": 0.94,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The served case-file branch gives an intermediate model a fixed change-history ontology and structured state format, then tells the deciding prompt to treat that state as resolved; this is a reachable answer-family recipe.",
+      "confidence": 0.96,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The reachable case-file short path uses a closed ledger ontology and structured current-state recipe, then supplies the result as settled context for the deciding answer turn; this is a substantive I5 concern.",
+      "confidence": 0.94,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The changed served short branch runs a fixed-domain ledger interpretation pass and directs the deciding model to take its ledger value; this is a reachable closed answer-family recipe.",
+      "confidence": null,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 39,
+      "summary": "The changed case-file branch supplies a fixed change-history ontology and structured ledger instructions to an intermediate completion; the served deciding prompt then directs the model to use that ledger's resolved values.",
+      "confidence": 0.94,
+      "stage": "l1"
+     },
+     {
+      "kind": "concern",
+      "category": "benchmark_emulation",
+      "path": "app/short.py",
+      "line": 85,
+      "summary": "A separate ledger completion is framed as a resolved source, and the deciding prompt is instructed to take its NOW or DATED value; this gives the intermediate result authoritative influence in the served answer path.",
+      "confidence": 0.85,
+      "stage": "l1"
+     }
+    ]
+   }
+  ],
+  "validation_attempts": [],
+  "inference_runs": [],
+  "dispute": null
+ },
+ "summary": {
+  "generated_at": "2026-11-02T02:34:33.181924Z",
+  "agent_id": "92b9aec4-3642-4b0d-872f-9ce516cb7b7e",
+  "miner_hotkey": "5EHrQx5wHz356YJcumkej4yTcADHZKmAAdKseSJ7PWA4uk4t",
+  "name": "horizon",
+  "name_handle": null,
+  "avatar_url": null,
+  "version": 7,
+  "status": "rejected",
+  "submitted_at": "2026-11-02T02:02:27.377109Z",
+  "last_scored_at": null,
+  "score_count": 0,
+  "score_composite": null,
+  "quorum": 3,
+  "screening_reason": "Rejected under screening policy v13: independent L2 and L3 source review confirmed an invariant breach. I4 derived-value authority: A previous model's derived ledger is presented to the deciding model as already resolving every entry, with a directive to take its NOW or DATED value; it is not advisory (app/agent.py:142, app/agent.py:172, app/short.py:251).",
+  "duplicate_of": null,
+  "duplicate_name": null,
+  "duplicate_version": null,
+  "duplicate_hotkey": null,
+  "review_reason": null,
+  "review_event": null,
+  "review_event_at": null,
+  "review_original_reason": null,
+  "review_opened_at": null,
+  "deferred_review_triggers": [],
+  "review_conclusion": null,
+  "preserved_composite": null,
+  "active_benchmarks": []
+ }
+}

@@ -235,3 +235,37 @@ every entry:" becoming "Answer the message from your ledger above:". Same ledger
 - Reading: "already applies every entry" is doing work. It keeps the reply from re-deciding what the ledger
   settled. Without it the reply drifts a little toward v8.2's re-reading.
 - Not adopted on this evidence. A second sample of each arm (about $0.08) would tell whether the −0.3 to −1.1 is real.
+
+## Horizon v7 (v8.1, afe9a60) rejected under I4 (2026-11-02 02:33 UTC)
+
+Uploaded 02:02 UTC as agent 92b9aec4-3642-4b0d-872f-9ce516cb7b7e and rejected at 02:33 by L2 and L3 (reviewer
+l3-sol-violation-cause-v39-policy-v13, confidence 0.91). Full record: `live/2026-11-02/horizon-v7.json`.
+
+> I4 derived-value authority: A previous model's derived ledger is presented to the deciding model as already
+> resolving every entry, with a directive to take its NOW or DATED value; it is not advisory (app/agent.py:142,
+> app/agent.py:172, app/short.py:251).
+
+| invariant | L2/L3 decision |
+|---|---|
+| I1 model invocation | pass (genuine model result) |
+| I2 evidence retention | pass (full records on the deciding turn) |
+| I3 model dissent | pass |
+| **I4 derived-value authority** | **breach** |
+| I5 production engine | pass ("general change-history guidance", no family compiler) |
+| I6, I7 | inconclusive. I7 notes that held-record routing "can divert a live-information request" (the news fix), without a concrete blocked tool call |
+| I8 evaluation independence | pass |
+
+**What the ruling means.**
+- A value an earlier model call derived may enter the deciding prompt only as advisory, checked against the
+  records.
+- Carrying it as an assistant turn does not change this. What is judged is how the prompt frames it ("already
+  applies every entry") and what it directs ("take what it holds").
+- The local L1 had flagged exactly this I4 lead. The PROVENANCE paragraph did not change the outcome.
+- The same reading applies to REWORDED_NOTE ("with the same value in the same words as the reply above"). It was
+  not cited this time, but it is also a directive to take a previous model's value.
+- The released form that passed screening (v6, from dan0l v30) frames its shared draft as advisory: "it has not
+  been checked, and the notes decide wherever they differ … Check the draft against the notes".
+- The reading rules themselves (I5) passed.
+
+**The trade-off measured above now binds.** Advisory framing of the ledger (v8.2) cost about 2 questions per seed
+in the replay.
