@@ -1,0 +1,417 @@
+2026/11/03 04:44:58 release identity: software_version="" (none) source_revision="" (none)
+2026/11/03 04:44:58 WARNING: DITTOBENCH_ALLOW_PRIVATE_HARNESS set — SSRF guard relaxed (local/dev only)
+2026/11/03 04:44:58 pprof: listener starting service=dittobench-api addr=127.0.0.1:37457
+2026/11/03 04:44:59 control-plane auth: mode=shadow, NO CREDENTIAL CONFIGURED — every protected route would be rejected under enforcement. Set DITTOBENCH_BROKER_CONTROL_TOKEN to a per-host secret.
+2026/11/03 04:44:59 dittobench-api (off-chain practice validator) listening on :34457
+2026/11/03 04:44:59 trusted inference broker listening on 0.0.0.0:41757
+2026/11/03 04:44:59 GET /health 0s
+2026/11/03 04:44:59 control-plane auth (shadow, would reject): GET /v1/capabilities from 127.0.0.1: server has no control credential configured
+2026/11/03 04:44:59 GET /v1/capabilities 0s
+2026/11/03 04:44:59 control-plane auth (shadow, would reject): POST /v1/submit from 127.0.0.1: server has no control credential configured
+2026/11/03 04:44:59 run 1f2774f8-9dfc-4029-822a-2f977d87b4e9: run_size=full bench_version=15 seed=2497187654609273566 tools=100 mem=224
+2026/11/03 04:44:59 POST /v1/submit 0s
+2026/11/03 04:44:59 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:44:59 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:00 run 1f2774f8-9dfc-4029-822a-2f977d87b4e9 generated: 100 tool cases, 250 memory cases, 316 haystack pairs (0 subjects) across 5 wave(s), 0 Tier-B cases; paraphrase attempted=0 applied=0 retried=0 fallback=0
+2026/11/03 04:45:00 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:00 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:01 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:01 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:02 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:02 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:03 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:03 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:04 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:04 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:05 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:05 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:06 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:06 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:07 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:07 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:08 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:08 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:09 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:09 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:10 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:10 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:11 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:11 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:12 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:12 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:13 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:13 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:14 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:14 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:15 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:15 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:16 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:16 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:17 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:17 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:18 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:18 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:19 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:19 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:20 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:20 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:21 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:21 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:22 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:22 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:23 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:23 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:24 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:24 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:25 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:25 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:26 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:26 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:27 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:27 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:28 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:28 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:29 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:29 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:30 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:30 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:31 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:31 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:32 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:32 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:33 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:33 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:35 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:35 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:36 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:36 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:37 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:37 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:38 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:38 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:39 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:39 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:40 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:40 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:41 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:41 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:42 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:42 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:43 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:43 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:44 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:44 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:45 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:45 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:46 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:46 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:47 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:47 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:48 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:48 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:49 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:49 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:50 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:50 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:51 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:51 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:52 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:52 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:53 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:53 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:54 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:54 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:55 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:55 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:56 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:56 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:57 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:57 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:58 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:58 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:45:59 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:45:59 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:00 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:00 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:01 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:01 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:02 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:02 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:03 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:03 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:03 only-cases: c9070361b69ef7efd runs after c11f25de6af4af805, keeping both
+2026/11/03 04:46:03 only-cases: running 22 tool and 0 memory cases
+2026/11/03 04:46:03 run 1f2774f8-9dfc-4029-822a-2f977d87b4e9: 2 tool case(s) gated on an earlier mutation (v13 run-after)
+2026/11/03 04:46:04 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:04 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:05 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:05 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:06 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:06 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:07 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:07 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:08 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:08 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:09 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:09 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:10 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:10 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:11 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:11 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:12 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:12 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:13 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:13 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:14 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:14 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:15 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:15 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:16 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:16 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:17 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:17 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:18 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:18 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:19 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:19 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:20 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:20 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:21 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:21 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:22 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:22 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:23 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:23 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:24 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:24 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:25 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:25 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:26 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:26 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:27 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:27 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:28 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:28 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:29 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:29 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:30 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:30 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:31 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:31 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:32 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:32 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:33 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:33 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:34 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:34 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:35 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:35 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:36 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:36 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:37 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:37 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:38 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:38 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:39 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:39 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:40 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:40 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:41 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:41 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:42 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:42 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:43 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:43 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:44 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:44 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:45 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:45 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:46 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:46 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:47 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:47 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:46:48 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:48 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:49 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:49 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:50 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:50 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:51 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:51 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:52 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:52 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:53 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:53 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:54 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:54 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:55 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:55 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:56 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:56 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:46:57 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:57 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:58 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:58 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:46:59 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:46:59 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:00 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:00 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:01 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:01 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:02 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:02 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:03 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:03 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:04 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:04 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:05 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:05 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:06 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:06 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:07 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:07 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:08 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:08 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:09 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:09 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:10 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:10 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:11 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:11 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:12 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:12 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:13 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:13 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:14 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:14 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:15 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:15 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:16 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:16 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:17 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:17 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:18 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:18 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:19 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:19 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:20 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:20 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:21 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:21 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:22 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:22 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:23 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:23 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:24 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:24 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:25 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:25 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:26 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:26 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:27 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:27 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:28 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:28 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:29 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:29 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:30 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:30 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:31 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:31 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:32 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:32 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:33 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:33 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:34 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:34 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:35 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:35 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:36 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:36 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:37 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:37 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:38 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:38 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:39 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:39 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:40 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:40 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:41 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:41 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:42 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:42 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:43 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:43 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:44 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:44 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:45 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:45 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:46 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:46 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:47 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:47 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:48 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:48 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:49 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:49 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:50 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:50 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:51 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:51 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:47:52 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:52 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:53 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:53 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:54 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:54 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:55 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:55 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:56 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:56 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:57 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:57 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:58 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:58 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:47:59 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:47:59 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:00 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:00 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:01 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:01 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:02 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:02 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:03 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:03 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms
+2026/11/03 04:48:04 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:04 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:05 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:05 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:06 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:06 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:07 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:07 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:08 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:08 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:09 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:09 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:10 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:10 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:11 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:11 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:12 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:12 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:13 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:13 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:14 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:14 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:15 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:15 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:16 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:16 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:17 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:17 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 0s
+2026/11/03 04:48:17 v13 catalog gate: run 1f2774f8-9dfc-4029-822a-2f977d87b4e9 attributed 0 of 22 tool cases (completions=0 unattributed=0 lower_bound=0); the harness sends no X-Ditto-Case-Id under concurrent /run, so catalog telemetry is blank for this run
+2026/11/03 04:48:17 run 1f2774f8-9dfc-4029-822a-2f977d87b4e9: transcript_sha256=90d69a116abcb41578cb4541abc2d8fecd931e07c71e88647712654dd06af777 (22 cases)
+2026/11/03 04:48:17 run 1f2774f8-9dfc-4029-822a-2f977d87b4e9 done: bench_version=15 composite=0.955 tool_mean=0.955 memory_mean=0.000 observed=22 capped=0
+2026/11/03 04:48:18 control-plane auth (shadow, would reject): GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 from 127.0.0.1: server has no control credential configured
+2026/11/03 04:48:18 GET /v1/runs/1f2774f8-9dfc-4029-822a-2f977d87b4e9 1ms

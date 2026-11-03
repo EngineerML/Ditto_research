@@ -1,0 +1,2555 @@
+{
+  "bench_version": 15,
+  "created_at": "2026-11-03T04:48:24.556619916-05:00",
+  "mode": "run_size",
+  "n": 324,
+  "partial": [
+    {
+      "allow_extra_tools": true,
+      "called": [
+        "update_memory"
+      ],
+      "case_id": "c11f25de6af4af805",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "world_memory_update",
+      "expected": [
+        "update_memory"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 10728,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "allow_extra_tools": true,
+      "called": [
+        "delete_memory"
+      ],
+      "case_id": "c7cf7797135bddc9e",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "world_memory_delete",
+      "expected": [
+        "delete_memory"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 11012,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "allow_extra_tools": true,
+      "called": [
+        "delete_memory"
+      ],
+      "case_id": "cc26191906bab3711",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "world_memory_delete",
+      "expected": [
+        "delete_memory"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 12599,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "allow_extra_tools": true,
+      "called": [
+        "delete_memory"
+      ],
+      "case_id": "c0637c8cd91dd4603",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "world_memory_delete",
+      "expected": [
+        "delete_memory"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 12615,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "firir_docs_search"
+      ],
+      "case_id": "c23ce53ca7ad160aa",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_docs_search_result_usage",
+      "expected": [
+        "firir_docs_search"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 15043,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "bitot_tracker_issue"
+      ],
+      "case_id": "c6daf8e8d4e3b998c",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_issue_create_result_usage",
+      "expected": [
+        "bitot_tracker_issue"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 15532,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "daviven_reminders"
+      ],
+      "case_id": "cce1a8036e0eff3ad",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_reminders_list_result_usage",
+      "expected": [
+        "daviven_reminders"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 18382,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "borimi_video_digest"
+      ],
+      "case_id": "cc731351bd1347fd1",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_video_summarize_result_usage",
+      "expected": [
+        "borimi_video_digest"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 20865,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "borimi_video_digest"
+      ],
+      "case_id": "cbf3d0279fb1badc6",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_video_summarize_result_usage",
+      "expected": [
+        "borimi_video_digest"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 19633,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "run_code"
+      ],
+      "case_id": "ce6ea2da980bb90ed",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "code_compute_not_agent_job",
+      "expected": [
+        "run_code"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 15087,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "fedas_address_book"
+      ],
+      "case_id": "c6fd9202facac3f0f",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_contact_lookup_result_usage",
+      "expected": [
+        "fedas_address_book"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 18187,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "allow_extra_tools": true,
+      "called": [
+        "discover_capabilities"
+      ],
+      "case_id": "c7bd6e9902c3e9660",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "discovery_accent_set",
+      "expected": [
+        "discover_capabilities",
+        "set_accent_color"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 2560,
+        "choices_total": 0,
+        "class": "tool_chain",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 24218,
+      "notes": [
+        "v8 fuzzy trajectory: a required capability was not observed \u2014 case scored 0",
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 0,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c648190d63e825c18",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "capability_discovery",
+      "expected": [
+        "discover_capabilities"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 10651,
+      "notes": [
+        "no expected tool was called",
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 0,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "firir_docs_search"
+      ],
+      "case_id": "c3ecbff0bdd843e41",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_docs_search_result_usage",
+      "expected": [
+        "firir_docs_search"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 10479,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "search_web",
+        "create_image"
+      ],
+      "case_id": "ccea5e90301853734",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "parallel_web_image",
+      "expected": [
+        "search_web",
+        "create_image"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 2560,
+        "choices_total": 0,
+        "class": "tool_chain",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 28566,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "allow_extra_tools": true,
+      "called": [
+        "discover_capabilities",
+        "set_accent_color"
+      ],
+      "case_id": "cb5b7d429bf7d5ee8",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "discovery_accent_set",
+      "expected": [
+        "discover_capabilities",
+        "set_accent_color"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 2560,
+        "choices_total": 0,
+        "class": "tool_chain",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 26013,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c9070361b69ef7efd",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "v13_mutation_follow_up_read",
+      "expected": [
+        "search_memories"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 37034,
+      "notes": [
+        "asserted the planted end state without a stale assertion",
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "fedas_address_book"
+      ],
+      "case_id": "c10f1fb46d6d9dad9",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_contact_lookup_result_usage",
+      "expected": [
+        "fedas_address_book"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 14813,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "daviven_reminders"
+      ],
+      "case_id": "c8f94d48c794b4bbf",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_reminders_list_result_usage",
+      "expected": [
+        "daviven_reminders"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 13121,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "bitot_tracker_issue"
+      ],
+      "case_id": "c8c405b3d33cb980c",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "decoy_issue_create_result_usage",
+      "expected": [
+        "bitot_tracker_issue"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 16150,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)",
+        "answer incorporated the served tool result"
+      ],
+      "observed": true,
+      "result_usage": 1,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "allow_extra_tools": true,
+      "called": [
+        "discover_capabilities",
+        "set_accent_color"
+      ],
+      "case_id": "cb43a0f6f223f6a0f",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "discovery_accent_set",
+      "expected": [
+        "discover_capabilities",
+        "set_accent_color"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 2560,
+        "choices_total": 0,
+        "class": "tool_chain",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 32351,
+      "notes": [
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cfa4c288f51369edd",
+      "catalog": {
+        "catalog_present": false,
+        "complete": false,
+        "completions_after_last_tool_result": 0,
+        "completions_total": null,
+        "completions_with_catalog": 0,
+        "findings": [
+          "catalog_evidence_unavailable"
+        ]
+      },
+      "category": "v13_mutation_follow_up_read",
+      "expected": [
+        "search_memories"
+      ],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "single_tool",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "tool",
+      "latency_ms": 45996,
+      "notes": [
+        "asserted the planted end state without a stale assertion",
+        "trajectory observed via tool_endpoint (authoritative)"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 1
+    }
+  ],
+  "progress": {
+    "done": 22,
+    "stage": "scoring",
+    "total": 350
+  },
+  "report": {
+    "composite": 0.909091,
+    "composite_stderr": 0.062733,
+    "details": {
+      "bench_version": 15,
+      "catalog_gate": {
+        "attributed_cases": 0,
+        "attribution_coverage_bps": 0,
+        "catalog_absent_cases": 0,
+        "catalog_suppression_rate": 0,
+        "completions_total": 0,
+        "completions_unattributed": 0,
+        "posture": "shadow",
+        "tool_cases": 22
+      },
+      "claim_provenance": {
+        "answer_in_prompt_cases": 0,
+        "applicable_cases": 0,
+        "attributed_cases": 0,
+        "attribution_coverage_bps": 0,
+        "memory_cases": 0,
+        "no_model_completion_cases": 0,
+        "not_model_emitted_cases": 0,
+        "posture": "shadow",
+        "settled_cases": 0,
+        "unattributed_call_cases": 0,
+        "unsettled_cases": 0,
+        "zeroed_cases": 0
+      },
+      "dataset_sha256": "2309f0a2c15e7a01db2c88f8fe5ad391ff68b2e3098ead312a05532d4e3a7d48",
+      "inference_cost": {
+        "applied": false,
+        "attributed_cases": 0,
+        "attributed_share": 0,
+        "budgets": [
+          {
+            "class": "memory",
+            "completions": 3,
+            "output_tokens": 1536
+          },
+          {
+            "class": "single_tool",
+            "completions": 3,
+            "output_tokens": 1536
+          },
+          {
+            "class": "tool_chain",
+            "completions": 5,
+            "output_tokens": 2560
+          }
+        ],
+        "cases": 22,
+        "cases_below_full_factor": 0,
+        "cases_by_attribution": {
+          "unattributed": 22
+        },
+        "choices_total": 0,
+        "completion_equivalent_tokens": 512,
+        "completions": 0,
+        "floor_bps": 6000,
+        "mean_factor_bps": 10000,
+        "output_tokens": 0,
+        "posture": "shadow",
+        "reasoning_tokens": 0,
+        "unattributed_choices": 0,
+        "unattributed_completions": 0,
+        "unattributed_output_tokens": 0
+      },
+      "isolation_cases": 9,
+      "memory_mean": 0,
+      "memory_over_call": 1,
+      "models": {
+        "harness": "openai/gpt-oss-20b"
+      },
+      "observed_tool_cases": 22,
+      "paraphrase": {
+        "applied": 0,
+        "attempted": 0,
+        "fallback": 0,
+        "retried": 0
+      },
+      "per_category": [
+        {
+          "category": "decoy_reminders_list_result_usage",
+          "count": 2,
+          "mean": 1
+        },
+        {
+          "category": "world_memory_update",
+          "count": 1,
+          "mean": 1
+        },
+        {
+          "category": "decoy_video_summarize_result_usage",
+          "count": 2,
+          "mean": 1
+        },
+        {
+          "category": "world_memory_delete",
+          "count": 3,
+          "mean": 1
+        },
+        {
+          "category": "decoy_issue_create_result_usage",
+          "count": 2,
+          "mean": 1
+        },
+        {
+          "category": "decoy_docs_search_result_usage",
+          "count": 2,
+          "mean": 1
+        },
+        {
+          "category": "discovery_accent_set",
+          "count": 3,
+          "mean": 0.666667,
+          "std_err": 0.333333
+        },
+        {
+          "category": "v13_mutation_follow_up_read",
+          "count": 2,
+          "mean": 1
+        },
+        {
+          "category": "parallel_web_image",
+          "count": 1,
+          "mean": 1
+        },
+        {
+          "category": "decoy_contact_lookup_result_usage",
+          "count": 2,
+          "mean": 1
+        },
+        {
+          "category": "code_compute_not_agent_job",
+          "count": 1,
+          "mean": 1
+        },
+        {
+          "category": "capability_discovery",
+          "count": 1,
+          "mean": 0
+        }
+      ],
+      "run_size": "full",
+      "seeding_waves": 5,
+      "token_efficiency": {
+        "adjusted_composite": 0.909091,
+        "adjusted_composite_stderr": 0.062733,
+        "budget_percentile": 0,
+        "decision_reason": "v7_quality_only_contract",
+        "excess_ratio": 0,
+        "formula_version": "v7-quality-only-v1",
+        "maximum_penalty": 0,
+        "minimum_multiplier": 1,
+        "multiplier": 1,
+        "observed_completion_tokens": 0,
+        "observed_prompt_tokens": 0,
+        "observed_total_tokens": 0,
+        "penalty_applied": false,
+        "raw_composite": 0.909091,
+        "raw_composite_stderr": 0.062733
+      },
+      "tool_efficiency": 1,
+      "tool_mean": 0.9090909090909091,
+      "tool_provenance": {
+        "cases": 22,
+        "endpoint_attempts": 0,
+        "incomplete_cases": 22,
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "twin_post_pass": {
+        "applied": false,
+        "cases_affected": 0,
+        "counterfactual_insensitive": 0,
+        "counterfactual_pairs": 0,
+        "posture": "observe",
+        "rule": "concordant_zero",
+        "rule_requested": "concordant_zero",
+        "twin_groups": 0,
+        "twin_groups_concordant": 0
+      }
+    },
+    "generated_at": "2026-01-01T00:00:00Z",
+    "median_ms": 15841,
+    "memory_mean": 0,
+    "n": 22,
+    "per_case": [
+      {
+        "called": [
+          "daviven_reminders"
+        ],
+        "case_id": "cce1a8036e0eff3ad",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_reminders_list_result_usage",
+        "expected": [
+          "daviven_reminders"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 18382,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "allow_extra_tools": true,
+        "called": [
+          "update_memory"
+        ],
+        "case_id": "c11f25de6af4af805",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "world_memory_update",
+        "expected": [
+          "update_memory"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 10728,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "borimi_video_digest"
+        ],
+        "case_id": "cc731351bd1347fd1",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_video_summarize_result_usage",
+        "expected": [
+          "borimi_video_digest"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 20865,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "allow_extra_tools": true,
+        "called": [
+          "delete_memory"
+        ],
+        "case_id": "c7cf7797135bddc9e",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "world_memory_delete",
+        "expected": [
+          "delete_memory"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 11012,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "bitot_tracker_issue"
+        ],
+        "case_id": "c6daf8e8d4e3b998c",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_issue_create_result_usage",
+        "expected": [
+          "bitot_tracker_issue"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 15532,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "allow_extra_tools": true,
+        "called": [
+          "delete_memory"
+        ],
+        "case_id": "c0637c8cd91dd4603",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "world_memory_delete",
+        "expected": [
+          "delete_memory"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 12615,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "allow_extra_tools": true,
+        "called": [
+          "delete_memory"
+        ],
+        "case_id": "cc26191906bab3711",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "world_memory_delete",
+        "expected": [
+          "delete_memory"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 12599,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "firir_docs_search"
+        ],
+        "case_id": "c23ce53ca7ad160aa",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_docs_search_result_usage",
+        "expected": [
+          "firir_docs_search"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 15043,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "borimi_video_digest"
+        ],
+        "case_id": "cbf3d0279fb1badc6",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_video_summarize_result_usage",
+        "expected": [
+          "borimi_video_digest"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 19633,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "allow_extra_tools": true,
+        "called": [
+          "discover_capabilities"
+        ],
+        "case_id": "c7bd6e9902c3e9660",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "discovery_accent_set",
+        "expected": [
+          "discover_capabilities",
+          "set_accent_color"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 2560,
+          "choices_total": 0,
+          "class": "tool_chain",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 24218,
+        "notes": [
+          "v8 fuzzy trajectory: a required capability was not observed \u2014 case scored 0",
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 0,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c9070361b69ef7efd",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "v13_mutation_follow_up_read",
+        "expected": [
+          "search_memories"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 37034,
+        "notes": [
+          "asserted the planted end state without a stale assertion",
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "search_web",
+          "create_image"
+        ],
+        "case_id": "ccea5e90301853734",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "parallel_web_image",
+        "expected": [
+          "search_web",
+          "create_image"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 2560,
+          "choices_total": 0,
+          "class": "tool_chain",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 28566,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "fedas_address_book"
+        ],
+        "case_id": "c6fd9202facac3f0f",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_contact_lookup_result_usage",
+        "expected": [
+          "fedas_address_book"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 18187,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "run_code"
+        ],
+        "case_id": "ce6ea2da980bb90ed",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "code_compute_not_agent_job",
+        "expected": [
+          "run_code"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 15087,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "allow_extra_tools": true,
+        "called": [
+          "discover_capabilities",
+          "set_accent_color"
+        ],
+        "case_id": "cb5b7d429bf7d5ee8",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "discovery_accent_set",
+        "expected": [
+          "discover_capabilities",
+          "set_accent_color"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 2560,
+          "choices_total": 0,
+          "class": "tool_chain",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 26013,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cfa4c288f51369edd",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "v13_mutation_follow_up_read",
+        "expected": [
+          "search_memories"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 45996,
+        "notes": [
+          "asserted the planted end state without a stale assertion",
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c648190d63e825c18",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "capability_discovery",
+        "expected": [
+          "discover_capabilities"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 10651,
+        "notes": [
+          "no expected tool was called",
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 0,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "firir_docs_search"
+        ],
+        "case_id": "c3ecbff0bdd843e41",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_docs_search_result_usage",
+        "expected": [
+          "firir_docs_search"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 10479,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "allow_extra_tools": true,
+        "called": [
+          "discover_capabilities",
+          "set_accent_color"
+        ],
+        "case_id": "cb43a0f6f223f6a0f",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "discovery_accent_set",
+        "expected": [
+          "discover_capabilities",
+          "set_accent_color"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 2560,
+          "choices_total": 0,
+          "class": "tool_chain",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 32351,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "fedas_address_book"
+        ],
+        "case_id": "c10f1fb46d6d9dad9",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_contact_lookup_result_usage",
+        "expected": [
+          "fedas_address_book"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 14813,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "daviven_reminders"
+        ],
+        "case_id": "c8f94d48c794b4bbf",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_reminders_list_result_usage",
+        "expected": [
+          "daviven_reminders"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 13121,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      },
+      {
+        "called": [
+          "bitot_tracker_issue"
+        ],
+        "case_id": "c8c405b3d33cb980c",
+        "catalog": {
+          "catalog_present": false,
+          "complete": false,
+          "completions_after_last_tool_result": 0,
+          "completions_total": null,
+          "completions_with_catalog": 0,
+          "findings": [
+            "catalog_evidence_unavailable"
+          ]
+        },
+        "category": "decoy_issue_create_result_usage",
+        "expected": [
+          "bitot_tracker_issue"
+        ],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "single_tool",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "tool",
+        "latency_ms": 16150,
+        "notes": [
+          "trajectory observed via tool_endpoint (authoritative)",
+          "answer incorporated the served tool result"
+        ],
+        "observed": true,
+        "result_usage": 1,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 1
+      }
+    ],
+    "per_category": [
+      {
+        "category": "decoy_reminders_list_result_usage",
+        "count": 2,
+        "mean": 1
+      },
+      {
+        "category": "world_memory_update",
+        "count": 1,
+        "mean": 1
+      },
+      {
+        "category": "decoy_video_summarize_result_usage",
+        "count": 2,
+        "mean": 1
+      },
+      {
+        "category": "world_memory_delete",
+        "count": 3,
+        "mean": 1
+      },
+      {
+        "category": "decoy_issue_create_result_usage",
+        "count": 2,
+        "mean": 1
+      },
+      {
+        "category": "decoy_docs_search_result_usage",
+        "count": 2,
+        "mean": 1
+      },
+      {
+        "category": "discovery_accent_set",
+        "count": 3,
+        "mean": 0.666667,
+        "std_err": 0.333333
+      },
+      {
+        "category": "v13_mutation_follow_up_read",
+        "count": 2,
+        "mean": 1
+      },
+      {
+        "category": "parallel_web_image",
+        "count": 1,
+        "mean": 1
+      },
+      {
+        "category": "decoy_contact_lookup_result_usage",
+        "count": 2,
+        "mean": 1
+      },
+      {
+        "category": "code_compute_not_agent_job",
+        "count": 1,
+        "mean": 1
+      },
+      {
+        "category": "capability_discovery",
+        "count": 1,
+        "mean": 0
+      }
+    ],
+    "raw_composite": 0.909091,
+    "run_id": "304bd3fc-db17-4947-9b83-030beb7de582",
+    "seed": 2497187654609273566,
+    "tool_mean": 0.9090909090909091
+  },
+  "run_id": "304bd3fc-db17-4947-9b83-030beb7de582",
+  "run_size": "full",
+  "seed": 2497187654609273566,
+  "status": "done",
+  "transcript_sha256": "aa7d8483aa16298ae62c4666332faed13b23b19645963c64014ac080d2b1dbbb",
+  "updated_at": "2026-11-03T04:51:30.367894939-05:00"
+}
