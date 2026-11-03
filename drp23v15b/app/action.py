@@ -341,21 +341,11 @@ def allows_null(spec: Any) -> bool:
     return any(allows_null(option) for option in (spec.get("anyOf") or []) + (spec.get("oneOf") or []) if isinstance(option, dict))
 
 
-def unfilled(value: Any, spec: Any) -> bool:
-    """An empty string, or a list of empty strings, leaves a required property unfilled (dan0l v30's rule), unless the
-    property's own description calls it optional ("optional reminder filter"): there an empty value is a value."""
-    if isinstance(spec, dict) and "optional" in str(spec.get("description") or "").lower():
-        return False
-    if isinstance(value, list):
-        return bool(value) and all(item == "" for item in value)
-    return value == ""
-
-
 def missing_required(args: dict[str, Any], required: list[str], schema: dict[str, Any] | None = None) -> list[str]:
-    """Required keys the call leaves out, sets to null where the property's schema does not admit null, or leaves
-    unfilled with an empty string."""
+    """Required keys the call leaves out, or sets to null where the property's schema does not admit null. An empty
+    string or a list of empty strings is a value and is sent as written."""
     properties = (schema or {}).get("properties") or {}
-    return [key for key in required if key not in args or (args[key] is None and not allows_null(properties.get(key))) or unfilled(args[key], properties.get(key))]
+    return [key for key in required if key not in args or (args[key] is None and not allows_null(properties.get(key)))]
 
 
 JSON_TYPES = {"string": str, "integer": int, "number": (int, float), "boolean": bool, "array": list, "object": dict}

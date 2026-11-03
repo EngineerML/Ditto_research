@@ -37,8 +37,8 @@ in those files is DrPresident's released and screened code, not a change made he
 | `app/available.py` | new: the unlinked-tool step described below | 55 lines |
 | `app/agent.py` | `CaseRunner.run` calls that step before anything else, and logs one line per case | 1 import, 5 lines |
 | `app/thint.py` | `product_tool` needs a capitalised word to name a product; `live_lookup` added (dan0l v30's live pattern) | 16 lines added, 3 changed |
-| `app/action.py` | live lookups skip the result verdict and link note and run at low effort once looked up; an empty required argument counts as missing unless its description says optional | 24 lines added, 8 changed |
-| `DECLARATION.md` | one section added at the top, naming this base and the changes; DrPresident's text below it is unchanged | 12 lines |
+| `app/action.py` | live lookups skip the result verdict and link note and run at low effort once looked up | 11 lines added, 5 changed |
+| `DECLARATION.md` | one section added at the top, naming this base and the changes; DrPresident's text below it is unchanged | 10 lines |
 | `PROVENANCE.md` | this file | new |
 
 No routing rule, model setting, dependency or build file changes. To check, unpack both artifacts and run `diff -r`:
@@ -48,12 +48,11 @@ only the six files above differ.
 
 - **Product names.** v23 read any word one edit off a coined tool's name as that tool, so "right" read as the product
   "Rigut" and the host note asked for a call the message never named. A product is now named only by a capitalised
-  word, the name itself or one slip off it when that word is not a real word. Over 43 generated bench-15 seeds this
-  removed 36 false product notes and kept all 400 true ones.
+  word, the name itself or one slip off it when that word is not a real word. Over the served text of 200 generated
+  bench-15 seeds (70,000 requests) product notes on a tool the request does not name fell from 71 to 4, and correct
+  ones went from 1,998 to 2,000.
 - **Live lookups**, taken from dan0l v30 (released): a request for what is current in the world, with no other request
   kind, skips the result verdict and the link note after a completed lookup and runs its later turns at low effort.
-- **Empty required arguments**, taken from dan0l v30: an empty string in a required property is reported as missing
-  so the model fills it, except where the property's own description says it is optional.
 
 ## The change: tools that need an unlinked connector
 
