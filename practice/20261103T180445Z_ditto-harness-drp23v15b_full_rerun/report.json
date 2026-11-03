@@ -1,0 +1,4711 @@
+{
+  "bench_version": 15,
+  "created_at": "2026-11-03T13:04:47.256310337-05:00",
+  "mode": "run_size",
+  "n": 324,
+  "partial": [
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "ccdb108caa9a677c5",
+      "category": "record-quantity-cf-base",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 36366,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "base",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "ceeb9fe55cf430ab6",
+      "category": "record-quantity-cf-base",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 41349,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "base",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c995fe1779e5581b7",
+      "category": "absence-twin-cross-user",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 43639,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cb8416edf5aea2670",
+      "category": "absence-twin-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 48110,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c926fa87537e177af",
+      "category": "absence-pure-absence",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 48493,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c6d8dbd0a2d8ccf6c",
+      "category": "absence-insufficient-composition",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 48951,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "caa7c51b8696b5663",
+      "category": "record-quantity-cf-variant",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 52192,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "causal_counterfactual",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c8c16387d229e5b89",
+      "category": "absence-twin-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 54015,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c7746ef6314347d0b",
+      "category": "absence-false-premise",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 14388,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "caada47c48339265e",
+      "category": "absence-stale-removed",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 42974,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c177ecffc0c5dfbae",
+      "category": "record-quantity-cf-variant",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 49688,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "causal_counterfactual",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "caf32732b1e710d98",
+      "category": "record-quantity-cf-variant",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 46588,
+      "notes": [
+        "claim 0 (direction): 1.000",
+        "claim 1 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "causal_counterfactual",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c3d369013b9f4ae41",
+      "category": "absence-stale-removed",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 52435,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cc4c6878797785b96",
+      "category": "absence-false-premise",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 43745,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c6618554887311baf",
+      "category": "absence-twin-cross-user",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 64656,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c558b94ae5cfd361c",
+      "category": "absence-cross-user",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 66419,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c23e56d26500434dd",
+      "category": "absence-pure-absence",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 48515,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c7c87cf6431530a83",
+      "category": "absence-false-premise",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 61354,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cf974f89c77223186",
+      "category": "absence-pure-absence",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 115431,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cbfcf50b39b908260",
+      "category": "record-quantity-cf-variant",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 61270,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "causal_counterfactual",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cf47e56136a4710a7",
+      "category": "absence-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 53620,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c741e5b38b28315d1",
+      "category": "absence-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 44992,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c8e1109e0a445000c",
+      "category": "absence-insufficient-composition",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 45287,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cbc2d6d22d2514f30",
+      "category": "absence-cross-user",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 50724,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c2e1a11661f5018f0",
+      "category": "record-quantity-cf-base",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 41181,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "base",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c33ef5dcc2519b2ed",
+      "category": "record-quantity-cf-variant",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 38624,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "causal_counterfactual",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c8eee1836b99baa37",
+      "category": "absence-insufficient-composition",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 36476,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c5335050511cdac1a",
+      "category": "absence-twin-cross-user",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 53933,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c78028d8dacdb4826",
+      "category": "absence-insufficient-composition",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 45020,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cf04c5660bba9fbaf",
+      "category": "absence-stale-removed",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 56207,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c4687e4e456a36e9b",
+      "category": "absence-pure-absence",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 57042,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cc52d991eb154ead8",
+      "category": "absence-cross-user",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 70197,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c924f3cc1b01cc81e",
+      "category": "absence-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 35845,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c6bfc2b1b04d37219",
+      "category": "record-quantity-cf-base",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 42255,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "base",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "ceebe03d5b80d2f67",
+      "category": "record-quantity-cf-base",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 52876,
+      "notes": [
+        "claim 0 (direction): 1.000",
+        "claim 1 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "base",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cc6441f1d85fbdc6a",
+      "category": "absence-stale-removed",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 41125,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c3d207d994abe7e84",
+      "category": "record-quantity-cf-variant",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 49736,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "causal_counterfactual",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c4d367b6f8925614e",
+      "category": "absence-twin-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 39057,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c5b8962f473452810",
+      "category": "absence-pure-absence",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_not_applicable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 45180,
+      "notes": [
+        "asserted a pool value on an unanswerable question (scored 0)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 0,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c8b2a1760135b04bf",
+      "category": "absence-twin-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 54062,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c5e787a8ad0c6bc90",
+      "category": "absence-false-premise",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 43420,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cb4b23edd76bda071",
+      "category": "absence-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_not_applicable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 39683,
+      "notes": [
+        "asserted a pool value on an unanswerable question (scored 0)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 0,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "c209085d341b2930b",
+      "category": "absence-twin-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 37964,
+      "notes": [
+        "deterministic value match (one asserted candidate)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cccecdbbc32b70d42",
+      "category": "absence-near-miss",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 48046,
+      "notes": [
+        "deterministic absence match (grounded decline)",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    },
+    {
+      "called": [
+        "search_memories"
+      ],
+      "case_id": "cf46f89b5c7fd0b08",
+      "category": "record-quantity-cf-base",
+      "claim_provenance": {
+        "claim_tokens": 0,
+        "complete": false,
+        "findings": [
+          "claim_provenance_unavailable"
+        ],
+        "posture": "shadow",
+        "tool_results": 0
+      },
+      "correct": true,
+      "expected": [],
+      "inference_cost": {
+        "attributed": false,
+        "attribution": "unattributed",
+        "budget_tokens": 1536,
+        "choices_total": 0,
+        "class": "memory",
+        "completions": 0,
+        "excess_tokens": 0,
+        "factor_bps": 10000,
+        "output_tokens": 0
+      },
+      "kind": "memory",
+      "latency_ms": 136928,
+      "notes": [
+        "claim 0 (quantity): 1.000",
+        "called reflects the validator-observed trajectory"
+      ],
+      "observed": true,
+      "relation": "base",
+      "score": 1,
+      "tool_provenance": {
+        "complete": false,
+        "endpoint_attempts": 0,
+        "findings": [
+          "tool_provenance_unavailable"
+        ],
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "tool_score": 0
+    }
+  ],
+  "progress": {
+    "done": 45,
+    "stage": "scoring",
+    "total": 350
+  },
+  "report": {
+    "composite": 0.955556,
+    "composite_stderr": 0.031068,
+    "details": {
+      "bench_version": 15,
+      "catalog_gate": {
+        "attributed_cases": 0,
+        "attribution_coverage_bps": 0,
+        "catalog_absent_cases": 0,
+        "catalog_suppression_rate": 0,
+        "completions_total": 0,
+        "completions_unattributed": 0,
+        "posture": "shadow",
+        "tool_cases": 0
+      },
+      "claim_provenance": {
+        "answer_in_prompt_cases": 0,
+        "applicable_cases": 0,
+        "attributed_cases": 0,
+        "attribution_coverage_bps": 0,
+        "memory_cases": 45,
+        "no_model_completion_cases": 0,
+        "not_model_emitted_cases": 0,
+        "posture": "shadow",
+        "settled_cases": 0,
+        "unattributed_call_cases": 0,
+        "unsettled_cases": 43,
+        "zeroed_cases": 0
+      },
+      "dataset_sha256": "17dc6b98f513756a0bad86c06f3dac84e7cfd4856225aedfa6a04f53a42e2d85",
+      "inference_cost": {
+        "applied": false,
+        "attributed_cases": 0,
+        "attributed_share": 0,
+        "budgets": [
+          {
+            "class": "memory",
+            "completions": 3,
+            "output_tokens": 1536
+          },
+          {
+            "class": "single_tool",
+            "completions": 3,
+            "output_tokens": 1536
+          },
+          {
+            "class": "tool_chain",
+            "completions": 5,
+            "output_tokens": 2560
+          }
+        ],
+        "cases": 45,
+        "cases_below_full_factor": 0,
+        "cases_by_attribution": {
+          "unattributed": 45
+        },
+        "choices_total": 0,
+        "completion_equivalent_tokens": 512,
+        "completions": 0,
+        "floor_bps": 6000,
+        "mean_factor_bps": 10000,
+        "output_tokens": 0,
+        "posture": "shadow",
+        "reasoning_tokens": 0,
+        "unattributed_choices": 0,
+        "unattributed_completions": 0,
+        "unattributed_output_tokens": 0
+      },
+      "isolation_cases": 9,
+      "memory_mean": 0.9555555555555556,
+      "memory_over_call": 1,
+      "models": {
+        "harness": "openai/gpt-oss-20b"
+      },
+      "paraphrase": {
+        "applied": 0,
+        "attempted": 0,
+        "fallback": 0,
+        "retried": 0
+      },
+      "per_category": [
+        {
+          "category": "record-quantity-cf-base",
+          "count": 6,
+          "mean": 1
+        },
+        {
+          "category": "record-quantity-cf-variant",
+          "count": 6,
+          "mean": 1
+        },
+        {
+          "category": "absence-insufficient-composition",
+          "count": 4,
+          "mean": 1
+        },
+        {
+          "category": "absence-twin-cross-user",
+          "count": 3,
+          "mean": 1
+        },
+        {
+          "category": "absence-pure-absence",
+          "count": 5,
+          "mean": 0.8,
+          "std_err": 0.2
+        },
+        {
+          "category": "absence-twin-near-miss",
+          "count": 5,
+          "mean": 1
+        },
+        {
+          "category": "absence-stale-removed",
+          "count": 4,
+          "mean": 1
+        },
+        {
+          "category": "absence-cross-user",
+          "count": 3,
+          "mean": 1
+        },
+        {
+          "category": "absence-false-premise",
+          "count": 4,
+          "mean": 1
+        },
+        {
+          "category": "absence-near-miss",
+          "count": 5,
+          "mean": 0.8,
+          "std_err": 0.2
+        }
+      ],
+      "run_size": "full",
+      "seeding_waves": 5,
+      "token_efficiency": {
+        "adjusted_composite": 0.955556,
+        "adjusted_composite_stderr": 0.031068,
+        "budget_percentile": 0,
+        "decision_reason": "v7_quality_only_contract",
+        "excess_ratio": 0,
+        "formula_version": "v7-quality-only-v1",
+        "maximum_penalty": 0,
+        "minimum_multiplier": 1,
+        "multiplier": 1,
+        "observed_completion_tokens": 0,
+        "observed_prompt_tokens": 0,
+        "observed_total_tokens": 0,
+        "penalty_applied": false,
+        "raw_composite": 0.955556,
+        "raw_composite_stderr": 0.031068
+      },
+      "tool_efficiency": 1,
+      "tool_mean": 0,
+      "tool_provenance": {
+        "cases": 45,
+        "endpoint_attempts": 0,
+        "incomplete_cases": 45,
+        "matched": 0,
+        "model_emitted": 0,
+        "model_selected_not_executed": 0,
+        "unmatched": 0
+      },
+      "twin_post_pass": {
+        "applied": false,
+        "cases_affected": 0,
+        "counterfactual_insensitive": 0,
+        "counterfactual_pairs": 6,
+        "per_relation": [
+          {
+            "count": 6,
+            "mean": 1,
+            "relation": "base"
+          },
+          {
+            "count": 6,
+            "mean": 1,
+            "relation": "causal_counterfactual"
+          },
+          {
+            "count": 33,
+            "mean": 0.939394,
+            "relation": "decision_twin"
+          }
+        ],
+        "posture": "observe",
+        "rule": "concordant_zero",
+        "rule_requested": "concordant_zero",
+        "twin_groups": 8,
+        "twin_groups_concordant": 0
+      }
+    },
+    "generated_at": "2026-01-01T00:00:00Z",
+    "median_ms": 48110,
+    "memory_mean": 0.9555555555555556,
+    "n": 45,
+    "per_case": [
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "ccdb108caa9a677c5",
+        "category": "record-quantity-cf-base",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 36366,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "base",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "caa7c51b8696b5663",
+        "category": "record-quantity-cf-variant",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 52192,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "causal_counterfactual",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c6d8dbd0a2d8ccf6c",
+        "category": "absence-insufficient-composition",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 48951,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c995fe1779e5581b7",
+        "category": "absence-twin-cross-user",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 43639,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c926fa87537e177af",
+        "category": "absence-pure-absence",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 48493,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "ceeb9fe55cf430ab6",
+        "category": "record-quantity-cf-base",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 41349,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "base",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c8c16387d229e5b89",
+        "category": "absence-twin-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 54015,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cb8416edf5aea2670",
+        "category": "absence-twin-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 48110,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cf974f89c77223186",
+        "category": "absence-pure-absence",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 115431,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c177ecffc0c5dfbae",
+        "category": "record-quantity-cf-variant",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 49688,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "causal_counterfactual",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "caada47c48339265e",
+        "category": "absence-stale-removed",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 42974,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c6618554887311baf",
+        "category": "absence-twin-cross-user",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 64656,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c558b94ae5cfd361c",
+        "category": "absence-cross-user",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 66419,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c3d369013b9f4ae41",
+        "category": "absence-stale-removed",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 52435,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "caf32732b1e710d98",
+        "category": "record-quantity-cf-variant",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 46588,
+        "notes": [
+          "claim 0 (direction): 1.000",
+          "claim 1 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "causal_counterfactual",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c7746ef6314347d0b",
+        "category": "absence-false-premise",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 14388,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cc4c6878797785b96",
+        "category": "absence-false-premise",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 43745,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c7c87cf6431530a83",
+        "category": "absence-false-premise",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 61354,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cbfcf50b39b908260",
+        "category": "record-quantity-cf-variant",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 61270,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "causal_counterfactual",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c23e56d26500434dd",
+        "category": "absence-pure-absence",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 48515,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cf47e56136a4710a7",
+        "category": "absence-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 53620,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cbc2d6d22d2514f30",
+        "category": "absence-cross-user",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 50724,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c741e5b38b28315d1",
+        "category": "absence-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 44992,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c8e1109e0a445000c",
+        "category": "absence-insufficient-composition",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 45287,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c5335050511cdac1a",
+        "category": "absence-twin-cross-user",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 53933,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c2e1a11661f5018f0",
+        "category": "record-quantity-cf-base",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 41181,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "base",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cc52d991eb154ead8",
+        "category": "absence-cross-user",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 70197,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c33ef5dcc2519b2ed",
+        "category": "record-quantity-cf-variant",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 38624,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "causal_counterfactual",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c8eee1836b99baa37",
+        "category": "absence-insufficient-composition",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 36476,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cf04c5660bba9fbaf",
+        "category": "absence-stale-removed",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 56207,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c78028d8dacdb4826",
+        "category": "absence-insufficient-composition",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 45020,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c4687e4e456a36e9b",
+        "category": "absence-pure-absence",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 57042,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "ceebe03d5b80d2f67",
+        "category": "record-quantity-cf-base",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 52876,
+        "notes": [
+          "claim 0 (direction): 1.000",
+          "claim 1 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "base",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c6bfc2b1b04d37219",
+        "category": "record-quantity-cf-base",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 42255,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "base",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c924f3cc1b01cc81e",
+        "category": "absence-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 35845,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c3d207d994abe7e84",
+        "category": "record-quantity-cf-variant",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 49736,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "causal_counterfactual",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cc6441f1d85fbdc6a",
+        "category": "absence-stale-removed",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 41125,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c8b2a1760135b04bf",
+        "category": "absence-twin-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 54062,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c4d367b6f8925614e",
+        "category": "absence-twin-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 39057,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c5b8962f473452810",
+        "category": "absence-pure-absence",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_not_applicable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 45180,
+        "notes": [
+          "asserted a pool value on an unanswerable question (scored 0)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 0,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c5e787a8ad0c6bc90",
+        "category": "absence-false-premise",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 43420,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cb4b23edd76bda071",
+        "category": "absence-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_not_applicable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 39683,
+        "notes": [
+          "asserted a pool value on an unanswerable question (scored 0)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 0,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "c209085d341b2930b",
+        "category": "absence-twin-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 37964,
+        "notes": [
+          "deterministic value match (one asserted candidate)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cf46f89b5c7fd0b08",
+        "category": "record-quantity-cf-base",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 136928,
+        "notes": [
+          "claim 0 (quantity): 1.000",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "relation": "base",
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      },
+      {
+        "called": [
+          "search_memories"
+        ],
+        "case_id": "cccecdbbc32b70d42",
+        "category": "absence-near-miss",
+        "claim_provenance": {
+          "claim_tokens": 0,
+          "complete": false,
+          "findings": [
+            "claim_provenance_unavailable"
+          ],
+          "posture": "shadow",
+          "tool_results": 0
+        },
+        "correct": true,
+        "expected": [],
+        "inference_cost": {
+          "attributed": false,
+          "attribution": "unattributed",
+          "budget_tokens": 1536,
+          "choices_total": 0,
+          "class": "memory",
+          "completions": 0,
+          "excess_tokens": 0,
+          "factor_bps": 10000,
+          "output_tokens": 0
+        },
+        "kind": "memory",
+        "latency_ms": 48046,
+        "notes": [
+          "deterministic absence match (grounded decline)",
+          "called reflects the validator-observed trajectory"
+        ],
+        "observed": true,
+        "score": 1,
+        "tool_provenance": {
+          "complete": false,
+          "endpoint_attempts": 0,
+          "findings": [
+            "tool_provenance_unavailable"
+          ],
+          "matched": 0,
+          "model_emitted": 0,
+          "model_selected_not_executed": 0,
+          "unmatched": 0
+        },
+        "tool_score": 0
+      }
+    ],
+    "per_category": [
+      {
+        "category": "record-quantity-cf-base",
+        "count": 6,
+        "mean": 1
+      },
+      {
+        "category": "record-quantity-cf-variant",
+        "count": 6,
+        "mean": 1
+      },
+      {
+        "category": "absence-insufficient-composition",
+        "count": 4,
+        "mean": 1
+      },
+      {
+        "category": "absence-twin-cross-user",
+        "count": 3,
+        "mean": 1
+      },
+      {
+        "category": "absence-pure-absence",
+        "count": 5,
+        "mean": 0.8,
+        "std_err": 0.2
+      },
+      {
+        "category": "absence-twin-near-miss",
+        "count": 5,
+        "mean": 1
+      },
+      {
+        "category": "absence-stale-removed",
+        "count": 4,
+        "mean": 1
+      },
+      {
+        "category": "absence-cross-user",
+        "count": 3,
+        "mean": 1
+      },
+      {
+        "category": "absence-false-premise",
+        "count": 4,
+        "mean": 1
+      },
+      {
+        "category": "absence-near-miss",
+        "count": 5,
+        "mean": 0.8,
+        "std_err": 0.2
+      }
+    ],
+    "raw_composite": 0.955556,
+    "run_id": "693ba67b-22ac-4ecd-9b49-b00b1e88cf1c",
+    "seed": 2190058953981709433,
+    "tool_mean": 0
+  },
+  "run_id": "693ba67b-22ac-4ecd-9b49-b00b1e88cf1c",
+  "run_size": "full",
+  "seed": 2190058953981709433,
+  "status": "done",
+  "transcript_sha256": "a1de6febf3e4691b1cfb93f640c37e9ad4d98a6ebe3ae74596ef64042c32bc9b",
+  "updated_at": "2026-11-03T13:14:27.893397384-05:00"
+}

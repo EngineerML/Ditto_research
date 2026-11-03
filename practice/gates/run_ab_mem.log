@@ -1,0 +1,25 @@
+=== built ditto-harness:drp23v15b
+5119792693744740612 45 cases
+2190058953981709433 45 cases
+key usage $22.6202  account balance $1.4431
+===== drp23v15 seed 5119792693744740612 (45 cases) 17:44
+composite:           0.933
+memory_mean:         0.933
+saved /home/bittensor/ditto/practice/20261103T174423Z_ditto-harness-drp23v15_full_rerun
+key usage $22.9176  account balance $1.1374
+===== drp23v15b seed 5119792693744740612 (45 cases) 17:51
+composite:           0.862
+memory_mean:         0.867
+saved /home/bittensor/ditto/practice/20261103T175103Z_ditto-harness-drp23v15b_full_rerun
+key usage $23.2422  account balance $0.8210
+===== drp23v15 seed 2190058953981709433 (45 cases) 17:58
+composite:           0.989
+memory_mean:         0.989
+saved /home/bittensor/ditto/practice/20261103T175821Z_ditto-harness-drp23v15_full_rerun
+key usage $23.4990  account balance $0.5643
+===== drp23v15b seed 2190058953981709433 (45 cases) 18:04
+composite:           0.956
+memory_mean:         0.956
+saved /home/bittensor/ditto/practice/20261103T180445Z_ditto-harness-drp23v15b_full_rerun
+key usage $23.8216  account balance $0.2397
+===== A/B done 18:14
