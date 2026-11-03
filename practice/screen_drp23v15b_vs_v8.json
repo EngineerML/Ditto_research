@@ -1,0 +1,162 @@
+{
+ "tree": {
+  "files": 37,
+  "malicious": [],
+  "fingerprints": [],
+  "review_leads": [
+   {
+    "kind": "numeric-candidate-shotgun",
+    "locations": [
+     {
+      "path": "app/lane.py",
+      "line": 16,
+      "role": "computed-answer"
+     },
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "multi-numeric-emit"
+     }
+    ]
+   },
+   {
+    "kind": "numeric-candidate-shotgun",
+    "locations": [
+     {
+      "path": "app/lane.py",
+      "line": 17,
+      "role": "computed-answer"
+     },
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "multi-numeric-emit"
+     }
+    ]
+   },
+   {
+    "kind": "numeric-candidate-shotgun",
+    "locations": [
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "computed-answer"
+     },
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "multi-numeric-emit"
+     }
+    ]
+   }
+  ],
+  "generator_ngrams": {
+   "authority": "none",
+   "candidate_policy_version": 14,
+   "incomplete": false,
+   "files_scanned": 33,
+   "leads": [
+    {
+     "path": "app/thint.py",
+     "lines": [
+      61,
+      84,
+      89,
+      90,
+      92,
+      94,
+      99,
+      124,
+      269,
+      281,
+      284,
+      309,
+      406,
+      407
+     ],
+     "matched_grams": 18,
+     "kind": "fixture-generator-ngram"
+    }
+   ]
+  }
+ },
+ "ref": {
+  "files": 37,
+  "malicious": [],
+  "fingerprints": [],
+  "review_leads": [
+   {
+    "kind": "numeric-candidate-shotgun",
+    "locations": [
+     {
+      "path": "app/lane.py",
+      "line": 16,
+      "role": "computed-answer"
+     },
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "multi-numeric-emit"
+     }
+    ]
+   },
+   {
+    "kind": "numeric-candidate-shotgun",
+    "locations": [
+     {
+      "path": "app/lane.py",
+      "line": 17,
+      "role": "computed-answer"
+     },
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "multi-numeric-emit"
+     }
+    ]
+   },
+   {
+    "kind": "numeric-candidate-shotgun",
+    "locations": [
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "computed-answer"
+     },
+     {
+      "path": "app/lane.py",
+      "line": 20,
+      "role": "multi-numeric-emit"
+     }
+    ]
+   }
+  ],
+  "generator_ngrams": {
+   "authority": "none",
+   "candidate_policy_version": 14,
+   "incomplete": false,
+   "files_scanned": 33,
+   "leads": [
+    {
+     "path": "app/thint.py",
+     "lines": [
+      61,
+      84,
+      89,
+      90,
+      92,
+      94,
+      99,
+      124,
+      269,
+      281,
+      284,
+      309
+     ],
+     "matched_grams": 16,
+     "kind": "fixture-generator-ngram"
+    }
+   ]
+  }
+ }
+}
