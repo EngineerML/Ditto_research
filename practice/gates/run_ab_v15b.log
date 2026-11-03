@@ -1,0 +1,50 @@
+key usage $21.5005  account balance $2.5628
+===== drp23v15 seed 5119792693744740612 (23 cases) 11:46
+composite:           0.944
+tool_mean:           0.889
+memory_mean:         1.000
+saved /home/bittensor/ditto/practice/20261103T114647Z_ditto-harness-drp23v15_full_rerun
+key usage $21.5522  account balance $2.5084
+===== drp23v15b seed 5119792693744740612 (23 cases) 11:49
+composite:           1.000
+tool_mean:           1.000
+memory_mean:         1.000
+saved /home/bittensor/ditto/practice/20261103T114940Z_ditto-harness-drp23v15b_full_rerun
+key usage $21.6035  account balance $2.4597
+===== drp23v15 seed 2190058953981709433 (19 cases) 11:52
+composite:           0.941
+tool_mean:           0.985
+memory_mean:         0.000
+saved /home/bittensor/ditto/practice/20261103T115250Z_ditto-harness-drp23v15_full_rerun
+key usage $21.6403  account balance $2.4229
+===== drp23v15b seed 2190058953981709433 (19 cases) 11:54
+composite:           1.000
+tool_mean:           1.000
+memory_mean:         0.000
+saved /home/bittensor/ditto/practice/20261103T115457Z_ditto-harness-drp23v15b_full_rerun
+key usage $21.6708  account balance $2.3925
+===== drp23v15 seed 6007065558233246269 (18 cases) 11:57
+composite:           0.976
+tool_mean:           0.976
+memory_mean:         0.000
+saved /home/bittensor/ditto/practice/20261103T115721Z_ditto-harness-drp23v15_full_rerun
+key usage $21.7110  account balance $2.3523
+===== drp23v15b seed 6007065558233246269 (18 cases) 12:01
+composite:           1.000
+tool_mean:           1.000
+memory_mean:         0.000
+saved /home/bittensor/ditto/practice/20261103T120111Z_ditto-harness-drp23v15b_full_rerun
+key usage $21.7433  account balance $2.3200
+===== drp23v15 seed 2497187654609273566 (18 cases) 12:03
+composite:           1.000
+tool_mean:           1.000
+memory_mean:         0.000
+saved /home/bittensor/ditto/practice/20261103T120321Z_ditto-harness-drp23v15_full_rerun
+key usage $21.7758  account balance $2.2874
+===== drp23v15b seed 2497187654609273566 (18 cases) 12:05
+composite:           1.000
+tool_mean:           1.000
+memory_mean:         0.000
+saved /home/bittensor/ditto/practice/20261103T120550Z_ditto-harness-drp23v15b_full_rerun
+key usage $21.8059  account balance $2.2574
+===== A/B done 12:08

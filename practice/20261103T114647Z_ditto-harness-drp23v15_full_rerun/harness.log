@@ -1,0 +1,366 @@
+INFO:     127.0.0.1:41070 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "POST /seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42038 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42054 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42072 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42066 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42070 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42038 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42032 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42064 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42066 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42054 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42038 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42032 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41074 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42072 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42070 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42064 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42064 - "POST /seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42064 - "POST /seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36034 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36036 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36032 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42064 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36050 - "POST /run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36050 - "POST /seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36050 - "POST /seed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37998 - "GET /router/health HTTP/1.1" 404 Not Found
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2026-11-03 11:46:54,319 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:46:57,485 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:00,650 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:04,252 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:07,664 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:10,804 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:13,959 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:17,228 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:20,596 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:23,488 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:26,604 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:30,151 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:30,167 INFO harness.agent case=e080a826-b0ed-40c7-90df-af36eeb52cea catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:30,310 INFO harness.agent case=5f93d4fe-4b35-4eb1-be32-0b15dd2871f3 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:30,351 INFO harness.agent case=d9cdf378-3976-4338-bb83-a552f1671d42 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:30,480 INFO harness.agent case=02bbf39e-f2bd-4d5e-ab07-c941aab9d898 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:30,499 INFO harness.agent case=366035a4-2194-4bd5-bb72-99004335516d catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:30,551 INFO harness.agent case=3bfab4f2-0dd0-4d7f-af60-7430b70054ae catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:30,579 INFO harness.agent case=e9e951ac-6ef3-4cf6-bea3-a20f9e96ef3d catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:30,800 INFO harness.agent case=ed47f499-9dae-4563-903d-1667c7f67162 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:32,686 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:33,233 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,306 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,341 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,430 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,473 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:33,473 INFO harness.action case=366035a4-2194-4bd5-bb72-99004335516d lane=action turn=1 ms=2925 finish=tool_calls out=55 tools=['search_web{"queries": ["Image alloy latest figure"], "num_results": 10, "search_mode": "news"}']
+2026-11-03 11:47:33,475 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,490 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:33,490 INFO harness.action case=e9e951ac-6ef3-4cf6-bea3-a20f9e96ef3d lane=action turn=1 ms=2693 finish=tool_calls out=189 tools=['search_web{"queries": ["current average life expectancy"], "num_results": 10, "search_mode": "news"}']
+2026-11-03 11:47:33,491 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,597 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,672 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:33,672 INFO harness.action case=5f93d4fe-4b35-4eb1-be32-0b15dd2871f3 lane=action turn=1 ms=3325 finish=tool_calls out=449 tools=['search_web{"queries": ["climate policy changes"], "num_results": 10, "search_mode": "news"}']
+2026-11-03 11:47:33,674 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,684 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:33,924 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:33,924 INFO harness.action case=3bfab4f2-0dd0-4d7f-af60-7430b70054ae lane=action turn=1 ms=3348 finish=stop out=257 tools=[]
+2026-11-03 11:47:33,999 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:34,000 INFO harness.action case=e080a826-b0ed-40c7-90df-af36eeb52cea lane=action turn=1 ms=3695 finish=tool_calls out=456 tools=['gmail_send{"body": "Hey — email them my update on pilot bank plan.", "subject": "Pilot bank plan update", "to": "nathan.w@yonsei.c']
+2026-11-03 11:47:34,001 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:34,134 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:34,148 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:34,148 INFO harness.action case=ed47f499-9dae-4563-903d-1667c7f67162 lane=action turn=1 ms=3333 finish=stop out=274 tools=[]
+2026-11-03 11:47:34,632 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:34,632 INFO harness.action case=02bbf39e-f2bd-4d5e-ab07-c941aab9d898 lane=action turn=1 ms=4137 finish=tool_calls out=372 tools=['calendar_create_event{"title": "my quarterly review", "when": "2026-11-29T14:00:00"}']
+2026-11-03 11:47:34,634 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:34,934 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:34,977 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:34,977 INFO harness.records case=d9cdf378-3976-4338-bb83-a552f1671d42 lane=records recall ms=2281 finish=stop calls=[]
+2026-11-03 11:47:35,408 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:35,627 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:35,796 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:35,796 INFO harness.action case=e9e951ac-6ef3-4cf6-bea3-a20f9e96ef3d result verdict: DONE finish=stop out=420
+2026-11-03 11:47:36,357 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:36,606 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:36,617 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:36,661 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:36,661 INFO harness.action case=366035a4-2194-4bd5-bb72-99004335516d lane=action turn=2 ms=3186 finish=tool_calls out=43 tools=['search_web{"queries": ["Image alloy latest figure"], "num_results": 10, "search_mode": "news"}']
+2026-11-03 11:47:36,663 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:36,759 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:36,759 INFO harness.action case=5f93d4fe-4b35-4eb1-be32-0b15dd2871f3 result verdict: OPEN finish=stop out=241
+2026-11-03 11:47:36,985 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:37,385 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:37,391 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:37,524 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:37,524 INFO harness.records case=d9cdf378-3976-4338-bb83-a552f1671d42 lane=records turn=2 ms=2535 finish=stop out=109 tools=[]
+2026-11-03 11:47:37,525 INFO harness.agent case=d9cdf378-3976-4338-bb83-a552f1671d42 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=records:question observed=0 host=0 memory=0 model_calls=2 answer=None ms=7175 gate=4 events=['packet records=23 chars=8206 pins=0', 'deliberation skipped: the message names no value its records hold, and no full name, address, code or quoted words']
+2026-11-03 11:47:37,532 INFO harness.agent case=69982406-4736-495c-a4c2-b2f9e975dddb catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:37,910 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:37,910 INFO harness.action case=02bbf39e-f2bd-4d5e-ab07-c941aab9d898 lane=action turn=2 ms=3275 finish=stop out=450 tools=[]
+2026-11-03 11:47:37,910 INFO harness.agent case=02bbf39e-f2bd-4d5e-ab07-c941aab9d898 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:read-capability observed=1 host=1 memory=0 model_calls=2 answer=None ms=7432 gate=4 events=['route catalog: calendar_create_event', 'tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint']
+2026-11-03 11:47:37,916 INFO harness.agent case=388deb8c-ab37-42d8-9dc7-a34b19f5019e catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:37,992 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:37,992 INFO harness.action case=e080a826-b0ed-40c7-90df-af36eeb52cea lane=action turn=2 ms=3990 finish=stop out=439 tools=[]
+2026-11-03 11:47:37,992 INFO harness.agent case=e080a826-b0ed-40c7-90df-af36eeb52cea user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:imperative observed=1 host=1 memory=0 model_calls=2 answer=None ms=7832 gate=4 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint']
+2026-11-03 11:47:37,997 INFO harness.agent case=07478b1d-4b93-4ece-b59c-c3111547bd9e catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:38,027 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:38,570 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:38,828 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:38,923 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:38,923 INFO harness.action case=e9e951ac-6ef3-4cf6-bea3-a20f9e96ef3d result read: chars=399 finish=stop out=597
+2026-11-03 11:47:38,985 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:38,985 INFO harness.action case=366035a4-2194-4bd5-bb72-99004335516d result verdict: DONE finish=stop out=378
+2026-11-03 11:47:39,305 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:39,305 INFO harness.action case=ed47f499-9dae-4563-903d-1667c7f67162 reply check: REPLY finish=stop out=1688
+2026-11-03 11:47:39,305 INFO harness.agent case=ed47f499-9dae-4563-903d-1667c7f67162 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:read-capability observed=0 host=0 memory=0 model_calls=2 answer=None ms=8507 gate=8 events=['route catalog: calendar_create_event', 'tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'reply check: REPLY']
+2026-11-03 11:47:39,311 INFO harness.agent case=836a5ce0-9a27-4e8a-b66b-310f6fa1f7ef catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:40,079 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:40,440 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:40,440 INFO harness.action case=69982406-4736-495c-a4c2-b2f9e975dddb lane=action turn=1 ms=2743 finish=tool_calls out=445 tools=['rigut_sidebar_palette{"palette": "the number I am thinking of right now"}']
+2026-11-03 11:47:40,442 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:40,683 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:40,683 INFO harness.action case=3bfab4f2-0dd0-4d7f-af60-7430b70054ae reply check: REPLY finish=stop out=4483
+2026-11-03 11:47:40,683 INFO harness.agent case=3bfab4f2-0dd0-4d7f-af60-7430b70054ae user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:default observed=0 host=0 memory=0 model_calls=2 answer=None ms=10134 gate=6 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'reply check: REPLY']
+2026-11-03 11:47:40,688 INFO harness.agent case=d244cd20-99d8-49ac-bc4d-469da53c3bf0 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:40,748 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:40,904 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:40,906 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:41,085 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:41,085 INFO harness.action case=5f93d4fe-4b35-4eb1-be32-0b15dd2871f3 result read: chars=225 finish=stop out=1004
+2026-11-03 11:47:41,345 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:41,464 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:41,465 INFO harness.action case=e9e951ac-6ef3-4cf6-bea3-a20f9e96ef3d lane=action turn=4 ms=2541 finish=stop out=251 tools=[]
+2026-11-03 11:47:41,465 INFO harness.agent case=e9e951ac-6ef3-4cf6-bea3-a20f9e96ef3d user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:look-up observed=1 host=1 memory=0 model_calls=4 answer=None ms=10887 gate=7 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'result verdict: DONE', 'result read: link fact', 'result read']
+2026-11-03 11:47:41,469 INFO harness.agent case=64da3ecc-76a5-4ab7-b642-53087729c8d6 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:41,567 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:41,567 INFO harness.action case=07478b1d-4b93-4ece-b59c-c3111547bd9e lane=action turn=1 ms=3545 finish=stop out=245 tools=[]
+2026-11-03 11:47:42,270 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:42,827 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:43,375 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:47:43,566 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:43,765 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:44,031 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:44,051 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:44,051 INFO harness.action case=388deb8c-ab37-42d8-9dc7-a34b19f5019e lane=action turn=1 ms=6110 finish=tool_calls out=827 tools=['gmail_send{"to": "hchaidez@avtovaz.com", "subject": "emlyon cross rollout update", "body": "Here is the emlyon cross rollout updat']
+2026-11-03 11:47:44,052 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:44,241 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:44,241 INFO harness.action case=d244cd20-99d8-49ac-bc4d-469da53c3bf0 lane=action turn=1 ms=3538 finish=stop out=195 tools=[]
+2026-11-03 11:47:44,374 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:44,374 INFO harness.action case=366035a4-2194-4bd5-bb72-99004335516d result read: chars=383 finish=stop out=2715
+2026-11-03 11:47:44,431 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:44,431 INFO harness.action case=69982406-4736-495c-a4c2-b2f9e975dddb lane=action turn=2 ms=3989 finish=stop out=675 tools=[]
+2026-11-03 11:47:44,432 INFO harness.agent case=69982406-4736-495c-a4c2-b2f9e975dddb user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:live observed=1 host=1 memory=0 model_calls=2 answer=None ms=6901 gate=8 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint']
+2026-11-03 11:47:44,440 INFO harness.agent case=f71efb45-0062-442c-b560-2f4ea37aad44 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:44,587 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:44,587 INFO harness.action case=5f93d4fe-4b35-4eb1-be32-0b15dd2871f3 lane=action turn=4 ms=3501 finish=stop out=495 tools=[]
+2026-11-03 11:47:44,587 INFO harness.agent case=5f93d4fe-4b35-4eb1-be32-0b15dd2871f3 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:imperative observed=1 host=1 memory=0 model_calls=4 answer=None ms=14279 gate=4 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'result verdict: OPEN', 'result read: link fact', 'result read']
+2026-11-03 11:47:44,609 INFO harness.agent case=dd194a29-db0b-4955-9fc1-7df5b8e09da8 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:44,647 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:44,647 INFO harness.action case=07478b1d-4b93-4ece-b59c-c3111547bd9e reply check: REPLY finish=stop out=445
+2026-11-03 11:47:44,648 INFO harness.agent case=07478b1d-4b93-4ece-b59c-c3111547bd9e user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:default observed=0 host=0 memory=0 model_calls=2 answer=None ms=6652 gate=8 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'reply check: REPLY']
+2026-11-03 11:47:44,656 INFO harness.agent case=2a64ffbb-52aa-4022-97e3-c7bed544818c catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:45,539 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:45,581 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:45,581 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records recall ms=2196 finish=tool_calls calls=['search_memories{"queries": ["sister mad", "secretly mad"]}']
+2026-11-03 11:47:45,582 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:46,731 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:46,884 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:47,010 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:47,053 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:47,053 INFO harness.action case=366035a4-2194-4bd5-bb72-99004335516d lane=action turn=5 ms=2678 finish=stop out=105 tools=[]
+2026-11-03 11:47:47,053 INFO harness.agent case=366035a4-2194-4bd5-bb72-99004335516d user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:look-up observed=2 host=2 memory=0 model_calls=5 answer=None ms=16556 gate=5 events=['route catalog: search_web', 'tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'result verdict: DONE', 'result read: link fact', 'result read']
+2026-11-03 11:47:47,059 INFO harness.agent case=77a1a0fa-e081-42e3-b7bc-6693f64bb3ec catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:47:47,282 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:47,625 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:47,650 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:47,851 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:47,851 INFO harness.action case=f71efb45-0062-442c-b560-2f4ea37aad44 lane=action turn=1 ms=3380 finish=stop out=227 tools=[]
+2026-11-03 11:47:47,982 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:48,165 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:48,165 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=1 finish=tool_calls out=154 calls=['find_in_records{"texts": ["M3"]}']
+2026-11-03 11:47:48,183 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:48,183 INFO harness.action case=d244cd20-99d8-49ac-bc4d-469da53c3bf0 reply check: REPLY finish=stop out=592
+2026-11-03 11:47:48,183 INFO harness.agent case=d244cd20-99d8-49ac-bc4d-469da53c3bf0 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:read-capability observed=0 host=0 memory=0 model_calls=2 answer=None ms=7497 gate=8 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'reply check: REPLY']
+2026-11-03 11:47:48,309 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:48,309 INFO harness.action case=388deb8c-ab37-42d8-9dc7-a34b19f5019e lane=action turn=2 ms=4257 finish=stop out=502 tools=[]
+2026-11-03 11:47:48,309 INFO harness.agent case=388deb8c-ab37-42d8-9dc7-a34b19f5019e user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:default observed=1 host=1 memory=0 model_calls=2 answer=None ms=10395 gate=8 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint']
+2026-11-03 11:47:48,734 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:48,734 INFO harness.action case=dd194a29-db0b-4955-9fc1-7df5b8e09da8 lane=action turn=1 ms=4111 finish=tool_calls out=403 tools=['calendar_create_event{"title": "my furnace inspection", "when": "Monday at 8am"}']
+2026-11-03 11:47:48,735 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:48,810 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:48,810 INFO harness.action case=2a64ffbb-52aa-4022-97e3-c7bed544818c lane=action turn=1 ms=4134 finish=tool_calls out=360 tools=['gmail_send{"to": "iking@laika.com", "subject": "Pilot Bank Plan Update", "body": "Pilot bank plan update."}']
+2026-11-03 11:47:48,811 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:49,397 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:49,441 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:49,442 INFO harness.action case=77a1a0fa-e081-42e3-b7bc-6693f64bb3ec lane=action turn=1 ms=2357 finish=tool_calls out=54 tools=['search_web{"queries": ["honey ever spoil"], "num_results": 5, "search_mode": "news"}']
+2026-11-03 11:47:49,444 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:50,271 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:50,524 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:50,544 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:50,544 INFO harness.action case=f71efb45-0062-442c-b560-2f4ea37aad44 reply check: REPLY finish=stop out=338
+2026-11-03 11:47:50,544 INFO harness.agent case=f71efb45-0062-442c-b560-2f4ea37aad44 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:request observed=0 host=0 memory=0 model_calls=2 answer=None ms=6105 gate=8 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'reply check: REPLY']
+2026-11-03 11:47:50,565 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:50,566 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=1 finish=tool_calls out=153 calls=['find_in_records{"texts": ["M3"]}']
+2026-11-03 11:47:51,116 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:51,116 WARNING harness.llm llm empty content finish=length completion_tokens=6000 reasoning_chars=0 error=None
+2026-11-03 11:47:51,116 INFO harness.action case=836a5ce0-9a27-4e8a-b66b-310f6fa1f7ef lane=action turn=1 ms=11776 finish=length out=6000 tools=[]
+2026-11-03 11:47:51,385 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:51,551 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:51,568 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:51,657 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:51,658 INFO harness.action case=dd194a29-db0b-4955-9fc1-7df5b8e09da8 lane=action turn=2 ms=2922 finish=stop out=187 tools=[]
+2026-11-03 11:47:51,658 INFO harness.agent case=dd194a29-db0b-4955-9fc1-7df5b8e09da8 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:read-capability observed=1 host=1 memory=0 model_calls=2 answer=None ms=7050 gate=8 events=['route catalog: calendar_create_event', 'tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint']
+2026-11-03 11:47:52,030 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:52,030 INFO harness.action case=2a64ffbb-52aa-4022-97e3-c7bed544818c lane=action turn=2 ms=3218 finish=stop out=223 tools=[]
+2026-11-03 11:47:52,030 INFO harness.agent case=2a64ffbb-52aa-4022-97e3-c7bed544818c user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:imperative observed=1 host=1 memory=0 model_calls=2 answer=None ms=7377 gate=8 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint']
+2026-11-03 11:47:53,032 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:53,320 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:53,321 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=1 finish=tool_calls out=124 calls=['find_in_records{"texts": ["sister"]}']
+2026-11-03 11:47:53,848 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:54,307 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:54,308 INFO harness.action case=836a5ce0-9a27-4e8a-b66b-310f6fa1f7ef lane=action turn=2 ms=3191 finish=tool_calls out=250 tools=['rigut_sidebar_palette{"palette": "rigut_sidebar_palette"}']
+2026-11-03 11:47:54,309 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:47:55,769 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:56,304 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:56,304 WARNING harness.llm llm empty content finish=length completion_tokens=6000 reasoning_chars=0 error=None
+2026-11-03 11:47:56,304 INFO harness.action case=77a1a0fa-e081-42e3-b7bc-6693f64bb3ec result verdict: None finish=length out=6000
+2026-11-03 11:47:56,720 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:56,721 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=1 finish=stop out=406 calls=[]
+2026-11-03 11:47:57,028 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:57,233 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:57,234 INFO harness.action case=836a5ce0-9a27-4e8a-b66b-310f6fa1f7ef lane=action turn=3 ms=2924 finish=stop out=284 tools=[]
+2026-11-03 11:47:57,234 INFO harness.agent case=836a5ce0-9a27-4e8a-b66b-310f6fa1f7ef user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:read-capability observed=1 host=1 memory=0 model_calls=3 answer=None ms=17925 gate=8 events=['tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'length retry']
+2026-11-03 11:47:58,212 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:59,080 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:59,169 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:59,255 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:59,255 INFO harness.action case=77a1a0fa-e081-42e3-b7bc-6693f64bb3ec result verdict: DONE finish=stop out=642
+2026-11-03 11:47:59,259 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:47:59,411 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:47:59,411 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=5 finish=tool_calls out=162 calls=['find_in_records{"texts": ["sister", "sister-in-law", "mad"]}']
+2026-11-03 11:47:59,459 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:00,033 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:00,033 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=4 finish=stop out=450 calls=[]
+2026-11-03 11:48:00,509 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:00,509 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=3 finish=stop out=693 calls=[]
+2026-11-03 11:48:00,929 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:00,929 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=2 finish=stop out=856 calls=[]
+2026-11-03 11:48:01,239 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:01,807 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:03,037 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:03,037 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records search=5 finish=stop out=780 calls=[]
+2026-11-03 11:48:03,953 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:03,953 INFO harness.action case=77a1a0fa-e081-42e3-b7bc-6693f64bb3ec result read: chars=184 finish=stop out=1016
+2026-11-03 11:48:06,060 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:06,105 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:06,105 INFO harness.records case=64da3ecc-76a5-4ab7-b642-53087729c8d6 lane=records turn=11 ms=3067 finish=stop out=107 tools=[]
+2026-11-03 11:48:06,105 INFO harness.agent case=64da3ecc-76a5-4ab7-b642-53087729c8d6 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=records:question observed=1 host=0 memory=1 model_calls=11 answer='I have no record of your sister being secretly mad at you.' ms=24637 gate=8 events=["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", 'packet records=47 chars=24684 pins=3', 'search pass 1: 3 searches, note=yes', 'search pass 4: 0 searches, note=yes', 'search pass 3: 0 searches, note=yes', 'search pass 2: 0 searches, note=yes', 'search pass 5: 1 searches, note=yes', 'deliberation skipped: the message names no value its records hold, and no full name, address, code or quoted words']
+2026-11-03 11:48:06,352 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:06,940 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:06,940 INFO harness.action case=77a1a0fa-e081-42e3-b7bc-6693f64bb3ec lane=action turn=5 ms=2986 finish=stop out=523 tools=[]
+2026-11-03 11:48:06,940 INFO harness.agent case=77a1a0fa-e081-42e3-b7bc-6693f64bb3ec user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=action:look-up observed=1 host=1 memory=0 model_calls=5 answer=None ms=19883 gate=8 events=['route catalog: search_web', 'tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image', 'request hint', 'result verdict: no answer', 'result verdict: DONE', 'result read: link fact', 'result read']
+2026-11-03 11:48:10,839 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:14,477 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:17,966 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:21,053 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:24,549 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:27,629 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:31,143 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:34,702 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:38,063 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:41,232 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:44,492 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:48,573 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:53,147 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:53,190 INFO harness.agent case=eea54382-505e-496d-91cf-60b059d9cdc2 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:48:53,412 INFO harness.agent case=db8c564c-439c-44d2-b842-4c3c2de779e2 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:48:53,870 INFO harness.agent case=18557b2a-cf81-4a11-98b8-279e88c2749b catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:48:54,017 INFO harness.agent case=5a853525-e342-4e87-9217-826ac1ae123b catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:48:54,410 INFO harness.agent case=470954ef-9b4b-4862-b417-6e19f748b8e5 catalog: 35 tools kept, 200 unlinked left out, 0 kept as linked by the request
+2026-11-03 11:48:56,260 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:56,899 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:56,910 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:56,943 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:57,033 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:48:58,547 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:58,590 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:58,590 INFO harness.records case=470954ef-9b4b-4862-b417-6e19f748b8e5 lane=records recall ms=2312 finish=tool_calls calls=['search_memories{"queries": ["Daniel Cho email", "Daniel Cho Rickenbacker Group"]}']
+2026-11-03 11:48:58,594 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:48:58,858 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:59,166 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:59,196 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:48:59,210 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:59,210 INFO harness.records case=eea54382-505e-496d-91cf-60b059d9cdc2 lane=records recall ms=2252 finish=tool_calls calls=['search_memories{"queries": ["James Martinez Guerrilla Digital email"]}']
+2026-11-03 11:48:59,213 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:48:59,239 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:48:59,239 INFO harness.records case=18557b2a-cf81-4a11-98b8-279e88c2749b lane=records recall ms=2189 finish=tool_calls calls=['search_memories{"queries": ["accent color", "accent colour", "Ditto workspace accent"]}']
+2026-11-03 11:48:59,240 INFO httpx HTTP Request: POST http://127.0.0.1:34311/tool "HTTP/1.1 200 OK"
+2026-11-03 11:48:59,336 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:01,283 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:01,457 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:01,689 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:01,822 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:01,914 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:01,914 INFO harness.records case=18557b2a-cf81-4a11-98b8-279e88c2749b lane=records turn=2 ms=2665 finish=stop out=257 tools=[]
+2026-11-03 11:49:01,914 INFO harness.agent case=18557b2a-cf81-4a11-98b8-279e88c2749b user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=records:question observed=1 host=0 memory=1 model_calls=2 answer='"marine blue"' ms=8045 gate=8 events=["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", 'packet records=33 chars=11040 pins=8', 'answer-form hint', 'deliberation skipped: the message names no value its records hold, and no full name, address, code or quoted words']
+2026-11-03 11:49:01,973 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:02,125 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:02,126 INFO harness.records case=db8c564c-439c-44d2-b842-4c3c2de779e2 lane=records turn=2 ms=3093 finish=stop out=635 tools=[]
+2026-11-03 11:49:02,214 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:02,214 INFO harness.records case=5a853525-e342-4e87-9217-826ac1ae123b lane=records turn=2 ms=2808 finish=stop out=407 tools=[]
+2026-11-03 11:49:03,600 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:04,833 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:04,890 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:05,428 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:05,428 INFO harness.records case=5a853525-e342-4e87-9217-826ac1ae123b lane=records turn=3 ms=3211 finish=stop out=529 tools=[]
+2026-11-03 11:49:05,429 INFO harness.agent case=5a853525-e342-4e87-9217-826ac1ae123b user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=records:stored-detail observed=0 host=0 memory=0 model_calls=3 answer='Marilyn Cogswell; marilyn.c@toei.com' ms=11413 gate=8 events=['thread reading named 1', 'person index 2', "topic path phrase='rosneft road ledger' records=23", 'final check: asked', 'final check: shipped']
+2026-11-03 11:49:05,821 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:05,821 INFO harness.records case=db8c564c-439c-44d2-b842-4c3c2de779e2 lane=records turn=3 ms=3691 finish=stop out=615 tools=[]
+2026-11-03 11:49:05,822 INFO harness.agent case=db8c564c-439c-44d2-b842-4c3c2de779e2 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=records:stored-detail observed=0 host=0 memory=0 model_calls=3 answer='Aiden Zhang ; aiden.z@autobianchi.com' ms=12411 gate=8 events=['thread reading named 1', 'person index 2', "topic path phrase='shein lane ledger' records=16", 'final check: asked', 'final check: shipped']
+2026-11-03 11:49:06,647 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:06,693 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:06,693 INFO harness.records case=eea54382-505e-496d-91cf-60b059d9cdc2 lane=records turn=3 ms=3093 finish=stop out=160 tools=[]
+2026-11-03 11:49:09,507 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:09,549 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:09,557 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:09,601 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:09,601 INFO harness.deliberation case=eea54382-505e-496d-91cf-60b059d9cdc2 lane=records draft=2 finish=stop out=103 shape=text
+2026-11-03 11:49:09,601 INFO harness.deliberation case=eea54382-505e-496d-91cf-60b059d9cdc2 lane=records draft=3 finish=stop out=100 shape=text
+2026-11-03 11:49:09,813 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:12,442 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:12,486 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:12,486 INFO harness.records case=eea54382-505e-496d-91cf-60b059d9cdc2 lane=records turn=6 ms=2885 finish=stop out=188 tools=[]
+2026-11-03 11:49:12,586 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:12,637 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:12,637 INFO harness.records case=470954ef-9b4b-4862-b417-6e19f748b8e5 lane=records turn=3 ms=2823 finish=stop out=159 tools=[]
+2026-11-03 11:49:15,284 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:15,406 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:15,471 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:15,565 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:15,595 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:16,143 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:16,143 INFO harness.deliberation case=470954ef-9b4b-4862-b417-6e19f748b8e5 lane=records draft=2 finish=stop out=192 shape=text
+2026-11-03 11:49:16,143 INFO harness.deliberation case=470954ef-9b4b-4862-b417-6e19f748b8e5 lane=records draft=3 finish=stop out=324 shape=text
+2026-11-03 11:49:18,352 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:18,625 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:18,625 INFO harness.records case=eea54382-505e-496d-91cf-60b059d9cdc2 lane=records turn=8 ms=3059 finish=stop out=384 tools=[]
+2026-11-03 11:49:18,625 INFO harness.agent case=eea54382-505e-496d-91cf-60b059d9cdc2 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=records:stored-detail observed=1 host=0 memory=1 model_calls=8 answer='jmartinez@guerrilla.com' ms=25437 gate=8 events=["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", 'packet records=39 chars=29904 pins=8', 'named people 2', 'timeline pass: note=yes', 'search passes not run: the timeline pass read this packet', 'deliberation: 3 drafts', 'draft 2: text', 'draft 3: text', 'decide: text', 'follow-up question: asked', 'rewrite: shipped']
+2026-11-03 11:49:18,986 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:19,163 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:19,163 INFO harness.records case=470954ef-9b4b-4862-b417-6e19f748b8e5 lane=records turn=6 ms=3020 finish=stop out=213 tools=[]
+2026-11-03 11:49:23,592 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:24,562 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:27,314 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-03 11:49:32,134 INFO harness.llm llm provider=Amazon Bedrock model=openai/gpt-oss-20b
+2026-11-03 11:49:32,134 WARNING harness.llm llm empty content finish=length completion_tokens=6000 reasoning_chars=0 error=None
+2026-11-03 11:49:32,134 INFO harness.records case=470954ef-9b4b-4862-b417-6e19f748b8e5 lane=records turn=8 ms=7571 finish=length out=6000 tools=[]
+2026-11-03 11:49:32,134 INFO harness.agent case=470954ef-9b4b-4862-b417-6e19f748b8e5 user=b76e6f0e-2b5a-46b8-867e-1a6b49c477ab lane=records:stored-detail observed=1 host=0 memory=1 model_calls=8 answer='daniel.c@rickenbacker.com' ms=37726 gate=8 events=["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", 'packet records=58 chars=25118 pins=10', 'named people 2', 'timeline pass: note=yes', 'deliberation: 3 drafts', 'draft 2: text', 'draft 3: text', 'decide: text', 'follow-up question: asked', 'rewrite: kept the reply before the note (empty)']
+2026-11-03 11:49:33,999 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
+2026-11-03 11:49:35,884 INFO httpx HTTP Request: POST http://127.0.0.1:34823/api/embed "HTTP/1.0 200 OK"
