@@ -19,13 +19,14 @@ from one section added at the top.
 
 ## What is inherited
 
-31 of the 35 files in the v23 artifact are byte-identical to it. That covers almost the whole served path:
+29 of the 35 files in the v23 artifact are byte-identical to it. That covers almost the whole served path:
 - lane routing (`app/lane.py`);
 - the records, topic and program paths (`app/records.py`, `app/short.py`);
-- memory and retrieval (`app/memory/`), the one-time final check, and every prompt and advisory line;
+- memory and retrieval (`app/memory/` except one sentence of `deliberation.py`), the one-time final check;
 - model settings, the `Dockerfile` and `requirements.txt`.
 
-The action lane (`app/action.py`) and the request hints (`app/thint.py`) are v23's with the small changes listed below.
+The action lane (`app/action.py`), the request hints (`app/thint.py`), the question-type hints (`app/qtype.py`) and
+the decline sentence (`app/memory/deliberation.py`) are v23's with the small changes listed below.
 
 DrPresident's own declaration rows describe this code, and they still apply word for word. Anything a reviewer finds
 in those files is DrPresident's released and screened code, not a change made here.
@@ -38,11 +39,13 @@ in those files is DrPresident's released and screened code, not a change made he
 | `app/agent.py` | `CaseRunner.run` calls that step before anything else, and logs one line per case | 1 import, 5 lines |
 | `app/thint.py` | `product_tool` needs a capitalised word to name a product; `live_lookup` added (dan0l v30's live pattern) | 16 lines added, 3 changed |
 | `app/action.py` | live lookups skip the result verdict and link note and run at low effort once looked up | 11 lines added, 5 changed |
-| `DECLARATION.md` | one section added at the top, naming this base and the changes; DrPresident's text below it is unchanged | 10 lines |
+| `app/qtype.py` | account-figure questions get the existing quantity hint; the direction hint asks for the calculate tool | 5 lines added, 1 changed |
+| `app/memory/deliberation.py` | the decline sentence names what the checked records hold beyond the message's own words | 4 lines added, 1 changed |
+| `DECLARATION.md` | one section added at the top, naming this base and the changes; DrPresident's text below it is unchanged | 12 lines |
 | `PROVENANCE.md` | this file | new |
 
 No routing rule, model setting, dependency or build file changes. To check, unpack both artifacts and run `diff -r`:
-only the six files above differ.
+only the eight files above differ.
 
 ## Smaller changes (one row each in `DECLARATION.md`)
 
@@ -53,6 +56,13 @@ only the six files above differ.
   ones went from 1,998 to 2,000.
 - **Live lookups**, taken from dan0l v30 (released): a request for what is current in the world, with no other request
   kind, skips the result verdict and the link note after a completed lookup and runs its later turns at low effort.
+- **Grounded declines.** v23's decline sentence asked the model to name the records it checked "without repeating
+  its contents", and the model often named only the person the message asked about. It now names them by a detail
+  they give that the message does not (the full name behind a nickname, a role, city, relation or former workplace,
+  the places or amounts a plan holds), and still repeats no address, handle or figure the message asks for.
+- **Account figures.** Questions about a figure kept on an account and changed by later notes ("what is currently owed
+  on X's account", "how many seats remain for X") had no question-type hint and were worked out in the head; they now
+  get v23's own quantity hint, and the direction hint asks for the calculate tool too.
 
 ## The change: tools that need an unlinked connector
 

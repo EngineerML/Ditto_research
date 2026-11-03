@@ -11,7 +11,10 @@ from ..tools import BLOCKED
 
 log = logging.getLogger("harness.deliberation")
 
-DECLINE_GROUNDS = "say plainly that you have no record of it, and say which records you did check by naming who or what each one is about — not by its label, and without repeating its contents or figures"
+DECLINE_GROUNDS = ("say plainly that you have no record of it, and say which records you did check: name who or what each one "
+                   "is about by a detail it gives that the message does not (the full name of someone the message calls by a "
+                   "nickname, or their role, city, relation or former workplace; the places or amounts a plan holds), not by "
+                   "its label, and without repeating any address, handle or figure the message asks for")
 DELIBERATION_BRIEF = """Before you reply, here are {count} drafts of a reply to the message above, each written separately from the same records. They have not been checked, and any of them may be wrong.
 
 {drafts}

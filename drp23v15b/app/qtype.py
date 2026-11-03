@@ -84,6 +84,8 @@ PAYMENT = re.compile(r"\b(payment|paid|pay|partial|invoice|p[a-z]{2,4}ial|p[a-z]
 PLACE_DAYS = re.compile(r"\b([Hh]ow m\w{2,4} days (?:did|do|are|were|is|was) (?:we|it|our)\b.* in (?:the )?[A-Z]|how long was the [A-Z]\w+ stay|days (?:in|is the) (?:the )?[A-Z]|(?:the )?changed [A-Z]\w+ (?:stay|part|leg|p\w{0,2}rt|prat|s\w{1,3}y)\b|s\w{1,3}y in (?:the )?[A-Z]|had us in (?:the )?[A-Z]|the [A-Z]\w+ (?:part|stay|leg|p\w{0,2}rt|prat|s\w{1,3}y)\b)")
 TRIP_LENGTH = re.compile(r"\b(full length|full len\w+|how long is the trip|(?:whole|wgole|entire) trip|trip altogether|altogether now|how long [\w ]{1,30} is now|length of|how many days is (?!the chang)[\w ]{1,40} now"
                          r"|add up the current l\w{1,3}s|f\w{1,3} l\w{2,5}h of|how m\w{1,3}y days in total|w\w{2,4}e trip now|how m\w{1,3}y days is (?!the chang)[\w ]{1,40} now)\b")
+# A figure kept on an account and changed by later notes: what is owed on it now, or how many of something remain.
+ACCOUNT_FIGURE = re.compile(r"\b(what is currently owed on|currently owed on [\w' ]{1,40} account|how many \w+ remains? for)\b")
 QUANTITY = re.compile(r"\b(figure (?:come|cmoe|comme|comes)|work out to|after the change described|apply the stated change|total now|resulting \w+ amount|final \w+ figure|arrive at|figure after the change|once you apply|follow the notes|what are the \w+ now"
                       r"|figure l\w{1,3}d after|after the a\w{4,9}t th\w{0,3} s\w{3,6}d out|t\w{2,3}e the s\w{2,4}d? change|after the change t\w{1,4} d\w{4,8}d"
                       r"|resul\w{2,5}g \w+ amount|current \w+ n\w{3,5}r once|once you a\w{1,4}y|figure c\w{2,4}e to|w\w{1,3}k out to|following the o\w{5,9}n in the notes)\b")
@@ -91,7 +93,7 @@ QUANTITY = re.compile(r"\b(figure (?:come|cmoe|comme|comes)|work out to|after th
 # one set against the one after it (which came first and which replaced it, the original and its replacement, who we
 # started with and who took over). "In order to" is a purpose, not an order.
 HINTS = {
-    "direction": "What this asks for: whether it went up, down or stayed the same, as one of increase, decrease or unchanged, then the figure asked for, the two separated by ' ; ' on the ANSWER line.",
+    "direction": "What this asks for: whether it went up, down or stayed the same, as one of increase, decrease or unchanged, then the figure asked for, the two separated by ' ; ' on the ANSWER line. Work the figure out with the calculate tool from the amounts the notes give, each counted the way the notes say it counts, not in your head.",
     "asof": "What this asks for: the value as the records stood on that date: the latest record dated on or before it, even when a later record changed it. A record dated after that date can still tell you which trip, project or person the message means (a name given to it later); only the value is read as it stood on that date.",
     "handle": "Give the handle only if it is still on record. If a later note says the handle itself was dropped, removed, retired or closed, reply that you no longer have a Signal handle on record for them because it was removed, naming them by the nickname and the workplace the notes give, and do not give the old one. A note that only tidies or reconciles another of their details (an address or an email) leaves the handle on record.",
     "balance": "Work it out only from amounts the notes give, and give only the resulting balance. If an amount it needs is mentioned but never given, such as a payment with no figure, say you have no record of that amount and, in the ANSWER line itself, name the record the notes say holds it, as the notes call it (for example 'ANSWER: no record of the partial payment amount; it is in the bank export, which the notes do not give'), without asking for it, estimating it or quoting the other amounts.",
@@ -161,6 +163,8 @@ def asked_kind(text: str, whole: str) -> str:
         return "disagree"
     if DIRECTION.search(whole) and re.search(r"\b(?:raise|lower|leave)\w*\b", whole):
         return "direction"
+    if ACCOUNT_FIGURE.search(text):
+        return "quantity"
     if EMAIL.search(text) and OWNER.search(text):
         return "owner-email"
     if NEXT.search(text):
