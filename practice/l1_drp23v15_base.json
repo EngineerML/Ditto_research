@@ -1,0 +1,607 @@
+{
+ "ok": true,
+ "risk_level": "high",
+ "finding_digest": "2f8af434e3e863e78e7e16ed5e1e5a5ad2900e636a653500cbfcab8d710cfadc",
+ "categories": [
+  "benchmark_emulation"
+ ],
+ "error_code": null,
+ "finding": {
+  "artifact_sha256": "a3803d6e952b8713dbea77625f97b024d8c449a7981385a2b5aff40e08e666d8",
+  "prompt_revision": "source-review-v40-policy-v13",
+  "risk_level": "high",
+  "confidence": 0.9,
+  "categories": [
+   "benchmark_emulation"
+  ],
+  "evidence": [
+   {
+    "path": "app/qtype.py",
+    "line": 93,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/qtype.py",
+    "line": 97,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/qtype.py",
+    "line": 101,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/qtype.py",
+    "line": 103,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/qtype.py",
+    "line": 181,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/records.py",
+    "line": 527,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/records.py",
+    "line": 532,
+    "category": "benchmark_emulation"
+   },
+   {
+    "path": "app/agent.py",
+    "line": 182,
+    "category": "benchmark_emulation"
+   }
+  ],
+  "summary": "Reachable request-family classification injects closed, prescriptive answer-family recipes into the deciding prompt, establishing a family-specific production compiler. Connector-availability filtering remains unresolved.",
+  "invariant_assessment": {
+   "schema_version": 2,
+   "decisions": [
+    {
+     "invariant": "i1_model_invocation",
+     "disposition": "pass",
+     "pass_clause": "genuine_model_result",
+     "summary": "The served records answer path reaches a genuine deciding model call; the response is downstream of its result.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i2_evidence_retention",
+     "disposition": "pass",
+     "pass_clause": "full_records_on_deciding_turn",
+     "summary": "The request instructions and selected record context are retained in the deciding conversation; no material loss of an applicable trusted restriction was established.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i3_model_dissent",
+     "disposition": "pass",
+     "pass_clause": "model_dissent_preserved",
+     "summary": "The inspected final-check and rewrite paths forward a nonempty deciding-model result; host recovery is limited to empty output.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i4_derived_value_authority",
+     "disposition": "pass",
+     "pass_clause": "no_derived_value",
+     "summary": "No host-derived substantive answer value or post-model scorer-slot rewrite was established on the inspected response path.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i5_production_engine",
+     "disposition": "breach",
+     "pass_clause": null,
+     "summary": "A finite question-family classifier selects detailed semantic, evidence, and exact-answer recipes that are appended to the served deciding prompt, making the live engine family-specific.",
+     "evidence_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    {
+     "invariant": "i6_tool_execution_fidelity",
+     "disposition": "pass",
+     "pass_clause": "model_selected_executed_tool",
+     "summary": "Inspected calls originate from model selections and are dispatched through the executor; no fabricated self-reported call was established.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i7_model_tool_planning",
+     "disposition": "inconclusive",
+     "pass_clause": null,
+     "summary": "The added pre-routing heuristic removes supplied tools based on description wording and request text, but source does not establish whether each removed connector capability is actually available.",
+     "evidence_indices": []
+    },
+    {
+     "invariant": "i8_evaluation_independence",
+     "disposition": "pass",
+     "pass_clause": "no_evaluation_identity_branch",
+     "summary": "The inspected family guidance is selected from request phrasing; no live case, seed, grader identity, or benchmark-version branch was found in that path.",
+     "evidence_indices": []
+    }
+   ]
+  }
+ },
+ "failure_disposition": "retryable_infra",
+ "clearance_certified": true,
+ "violation_certified": false,
+ "review_audit": null,
+ "inconclusive_model_audit": null,
+ "adjudication": null,
+ "notes": [
+  {
+   "kind": "concern",
+   "category": "user_isolation_correctness",
+   "summary": "New request-driven catalog filter removes any tool matching connector-language patterns unless request text asserts a link; verify whether this wrongly removes usable capabilities.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served filter removes catalog entries based on regexes and request text rather than a separately observed connection state; verify whether removed tools are actually unavailable.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "Request-text heuristic removes tools before routing unless text claims an integration is linked; determining whether this wrongly drops an actually available authorized tool.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served filter drops tool definitions based on description grammar and a textual linked-state assertion; this is a capability-removal lead, with actual connector availability not established by this source alone.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 46,
+   "confidence": 0.73
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "A served request-text heuristic removes supplied catalog tools before routing based on description grammar; whether these tools are actually unavailable must be established before treating the removal as valid capability filtering.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 47,
+   "confidence": 0.68
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served catalog filter removes supplied tools when connector wording is detected unless request prose asserts a link; source does not consult a connection-state field, so whether this excludes available capabilities remains unresolved.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41,
+   "confidence": 0.73
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served pre-routing filter can remove a supplied tool unless request prose appears to confirm a link; the repository does not provide an independent connection-state input, so whether removal is valid remains unresolved.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 50,
+   "confidence": 0.78
+  },
+  {
+   "kind": "observation",
+   "category": "none",
+   "summary": "The answer parser trims wrapper punctuation around a model-authored slot; no substantive post-model value synthesis is indicated by the inspected implementation.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/answer.py",
+   "line": 21,
+   "confidence": 0.93
+  },
+  {
+   "kind": "observation",
+   "category": "none",
+   "summary": "The added decision depends on current request text and supplied tool descriptions; it does not read case identity, seed state, benchmark version, or another user's records.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "app/available.py",
+   "line": 43,
+   "confidence": 0.9
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The reachable pre-routing filter deletes catalog entries from description wording unless request text asserts a link; repository evidence does not independently establish actual connection state for each removed tool.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41,
+   "confidence": 0.72
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "Model-selected calls are validated against the post-filter request catalog and dispatched to the supplied endpoint; observed calls follow actual endpoint delivery.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/tools.py",
+   "line": 111,
+   "confidence": 0.91
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The served slot parser extracts only a model-authored answer line and trims wrapper characters; it does not synthesize substantive values.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/answer.py",
+   "line": 14,
+   "confidence": 0.91
+  },
+  {
+   "kind": "observation",
+   "category": "none",
+   "summary": "The deciding action turn receives the modified tool catalog with the request and context; later calls remain model-authored and executor checks catalog membership.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/action.py",
+   "line": 525,
+   "confidence": 0.89
+  },
+  {
+   "kind": "observation",
+   "category": "none",
+   "summary": "The added filter runs at the start of every served request and replaces the tool list used in routing, model prompts, and execution.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "app/agent.py",
+   "line": 129,
+   "confidence": 0.92
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The image installs the declared requirements, copies the committed application, and starts the FastAPI module; no fetched runtime replacement is visible.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "Dockerfile",
+   "line": 4,
+   "confidence": 0.91
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "Routing changes only presentation order; every post-filter tool remains known to the executor and visible to each deciding turn, with no pinned count or forced order.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/surface.py",
+   "line": 49,
+   "confidence": 0.94
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The reachable filter removes tools based on description grammar and whether request prose claims a link, while the protocol request schema exposes no independent connector-state field; the removed tool's actual availability remains unproven.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41,
+   "confidence": 0.78
+  },
+  {
+   "kind": "observation",
+   "category": "none",
+   "summary": "The changed filter is executed at the start of each served run; when it removes entries, the replacement request catalog drives lane selection and subsequent engine setup.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 129
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The live filter removes supplied tools from description grammar unless request prose asserts a link; source lacks an independent state field, and actual availability semantics need verification.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41,
+   "confidence": 0.74
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The executor handles model-selected calls through the request tool catalog and endpoint, recording delivery-based observations; this does not itself fabricate or rewrite calls.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/tools.py",
+   "line": 111
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "A served pre-routing heuristic deletes supplied tool capabilities based on description wording and request-text assertions; repository source does not independently establish actual connector availability, so the material I7 effect remains unresolved.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 41,
+   "confidence": 0.78
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The new filter is reachable before routing on each served request and replaces the catalog used downstream only when it removes entries; this is ordinary request-scoped processing, not an identity or benchmark branch.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "app/agent.py",
+   "line": 126,
+   "confidence": 0.94
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The inspected action path sends the user request and context to a genuine deciding model with the post-filter catalog; no new pre-model answer writer is present in this delta.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/action.py",
+   "line": 525,
+   "confidence": 0.9
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The unchanged executor sends selected tool calls to the supplied endpoint and records execution delivery; the catalog change does not itself fabricate a call.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/tools.py",
+   "line": 141,
+   "confidence": 0.9
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The effective image copies committed app code and launches the application module; no mutable fetched runtime replacement is visible.",
+   "stage": "l1",
+   "area": "served_entrypoint",
+   "path": "Dockerfile",
+   "line": 4,
+   "confidence": 0.91
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The response answer slot is extracted from a model-authored line and only edge wrappers are trimmed; response typography is general formatting, with no request-keyed rewrite observed.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/answer.py",
+   "line": 14,
+   "confidence": 0.93
+  },
+  {
+   "kind": "cleared",
+   "category": "none",
+   "summary": "The runtime constructs a model client from the request-scoped inference broker when provided and returns genuine completion content and tool calls; no unrelated credential sink is indicated.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/llm.py",
+   "line": 369,
+   "confidence": 0.9
+  },
+  {
+   "kind": "cleared",
+   "category": "user_isolation_correctness",
+   "summary": "Request user identity is passed to memory tools and the executor; the new filter uses only the current request text and catalog and introduces no cross-user content path.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/agent.py",
+   "line": 136,
+   "confidence": 0.92
+  },
+  {
+   "kind": "observation",
+   "category": "none",
+   "summary": "For each supplied capability the filter retains other tools and any matching tool whose app is asserted linked in one request sentence; omitted entries cannot be selected by later model turns.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 46,
+   "confidence": 0.9
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served question classifier selects from a finite family-specific guidance table containing detailed operand, interpretation, abstention and exact answer-format recipes; tracing its model-prompt sink for I5.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93,
+   "confidence": 0.91
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A request-text classifier selects a finite set of detailed family-specific answer recipes; records and short-answer paths append these recipes to deciding-model inputs, so assess the served trigger-to-model guidance path.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A finite question-family classifier selects detailed interpretation, evidence-ordering, abstention, and exact answer-format recipes that are appended to deciding-model inputs; tracing confirms a served model-guidance compiler rather than mere retrieval.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93,
+   "confidence": 0.94
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable records decision appends answer_hint to the model input; the finite hint registry supplies family-specific interpretation, operand, abstention, and output rules, establishing an I5 compiler path.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/records.py",
+   "line": 527,
+   "confidence": 0.99
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable classifier selects a closed set of question-specific operand and answer-format recipes; the records path appends these instructions before a deciding model call. Assess whether the recipe set mirrors scored families beyond permitted routed guidance.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93,
+   "confidence": 0.76
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A finite request-family classifier selects detailed semantic and answer-format rules; the records engine appends this guidance before the deciding model turn. Assess whether its closed rules are evaluation-specific rather than permitted routed guidance.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93,
+   "confidence": 0.82
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served request classifier selects from a finite ontology of answer families and detailed family-specific operand, evidence, and exact-slot instructions; records/short answer paths append these to deciding model prompts.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A finite request-family classifier selects detailed operand and output recipes that are appended to the served deciding-model input; this is a reachable family-compiler lead.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable classifier maps request phrasing to a closed set of unusually detailed answer-family recipes; records and topic paths append the selected recipe to a deciding-model input. Assess whether this is benchmark-specific compilation rather than permissible routed guidance.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93,
+   "confidence": 0.78
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A served request classifier selects a finite set of unusually detailed answer-family instructions, including interpretations and exact slot formats; the records path appends the selected hint before the deciding model call. Assess under v13 routed-guidance safe harbor and whether any benchmark-speci",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93,
+   "confidence": 0.7
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The new filter removes matching supplied tools unless request prose affirms a link; source does not establish the actual connector state, so whether this blocks an available capability remains unresolved.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 46,
+   "confidence": 0.7
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A finite request classifier selects extensive answer-family-specific operand, evidence-order, abstention, and exact-slot recipes that are appended to the served model input; this is a reachable family compiler.",
+   "stage": "l1",
+   "area": "answer_construction",
+   "path": "app/qtype.py",
+   "line": 93,
+   "confidence": 0.97
+  },
+  {
+   "kind": "concern",
+   "category": "mandatory_contract_failure",
+   "summary": "The served catalog drops a supplied capability based on its description and an affirmative phrase in request text, not an observed connection-state input; availability of removed capabilities is not established.",
+   "stage": "l1",
+   "area": "tool_dispatch",
+   "path": "app/available.py",
+   "line": 50
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The reachable family classifier selects detailed family-specific interpretation and answer-format guidance; records prompts append the selected recipe, requiring review under I5 despite a genuine model call.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/qtype.py",
+   "line": 93
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served request classifier maps a closed set of question families to detailed family-specific operand and output instructions, which records and topic model prompts append before the deciding turn.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/qtype.py",
+   "line": 93
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A reachable finite classifier selects detailed operand, state, ordering, and exact-slot recipes; the records path appends the selected instruction before the deciding model turn. This is an I5 family-compiler concern, not merely generic retrieval.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/qtype.py",
+   "line": 93
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The served records engine appends a request-classified, finite answer-form hint to the model input before the deciding conversation; inspect whether the hint content exceeds ordinary routed guidance.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/records.py",
+   "line": 527
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "A finite request classifier selects detailed family-specific semantic and output recipes; records code passes the selected hint into the deciding model prompt.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/qtype.py",
+   "line": 93
+  },
+  {
+   "kind": "concern",
+   "category": "benchmark_emulation",
+   "summary": "The topic path adds the finite question-family hint to both an earlier model draft prompt and the deciding prompt; this is a second reachable sink for the family-specific guidance concern, though retrieval and a real deciding model remain present.",
+   "stage": "l1",
+   "area": "model_call",
+   "path": "app/short.py",
+   "line": 627,
+   "confidence": 0.93
+  }
+ ],
+ "failure_subcode": null,
+ "lineage_packet_sha256": "a9603f75ae1384461916c6e396389204cc20d4d02691ec3e73cb6f06aa7c0a4f"
+}

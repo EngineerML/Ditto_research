@@ -1,0 +1,32 @@
+reviewing practice/submission_drp23v15.tgz as uploaded (copied to practice/l1_drp23v15_base.tar.gz) sha256 a3803d6e952b8713
+lineage packet a9603f75ae138446: parent v23, scope diff, 4 files changed, 4 rulings, 0 findings
+  review step 10/200
+  review step 20/200
+  review step 30/200
+  review step 40/200
+  review step 50/200
+source review model transport fault; retrying same turn: fault=520 signature=http-status=520 attempt=1/2 delay_s=1.0
+  review step 60/200
+  review step 70/200
+  review step 80/200
+  review step 90/200
+  review step 100/200
+  review step 110/200
+  review step 120/200
+  review step 130/200
+  review step 140/200
+  review step 150/200
+  review step 160/200
+  review step 170/200
+  review step 180/200
+  review step 190/200
+  review step 200/200
+{
+ "risk_level": "high",
+ "categories": [
+  "benchmark_emulation"
+ ],
+ "clearance_certified": true,
+ "reason_code": null
+}
+notes: 48; full observation in practice/l1_drp23v15_base.json
