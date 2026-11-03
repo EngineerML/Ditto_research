@@ -1,0 +1,927 @@
+==============================================================================================================
+discovery_accent_set  score 1  lane action:imperative  model_calls 7  secs 20.62
+PROMPT: Switch Ditto's accent calor to something like taue — look up the configured appearance options first in case I missepelled it.
+EXPECTED: ['discover_capabilities', 'set_accent_color']  max_calls 15  allow_extra True  behavior: list the workspace's configured appearance options, resolve the user's approximate spelling against them, and apply the listed option; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_accent_color']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_accent_color", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note", "result verdict: OPEN", "result read", "result verdict: DONE", "result read"]
+FINAL: Accent color set to “taupe”.
+==============================================================================================================
+world_business_workflow  score 1  lane action:read-capability  model_calls 5  secs 17.25
+PROMPT: Do I already have a workflow for "emlyon cross rollout" (the Five Logistics project)? If there isn't one, create it under the formal project name, with Blue's current address as the internal reviewer in the review step.
+EXPECTED: ['list_workflows', 'create_workflow']  max_calls 15  allow_extra True  behavior: resolve the project, its formal name, and current reviewer contact; then check existing workflows and create the requested reusable workflow; tool order and harmless exploratory reads are not prescribed
+CALLED: ['list_workflows', 'create_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: create_workflow", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: You didn’t have a workflow for “emlyon cross rollout.” I’ve created a new one named “Program Emlyon Court” with a review step that uses Blue’s current email address, “cray@armavia.com.”
+==============================================================================================================
+v13_restraint_abstention_web  score 0  lane action:live  model_calls 2  secs 11.26
+PROMPT: Telll me what number I am thinking of right now?
+EXPECTED: []  max_calls 0  allow_extra False  behavior: the question is unknowable: answer honestly without calling any tool
+CALLED: ['rigut_sidebar_palette']
+NOTES: ['v13 restraint: acted instead of restraining (rigut_sidebar_palette) — case scored 0', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: I’m sorry, but I can’t retrieve that number right now because the Rigut sidebar palette tool isn’t available in this workspace.
+==============================================================================================================
+world_theme_discover_set  score 1  lane action:imperative-setter  model_calls 3  secs 10.46
+PROMPT: My accent should be the merine blue-ish one I always use — mine, not a client color. Review what apppeeranze options eixst before applynig it.
+EXPECTED: ['discover_capabilities', 'set_accent_color']  max_calls 15  allow_extra True  behavior: discover the available appearance setting and apply the user's personal accent; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_accent_color']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_accent_color", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note"]
+FINAL: Your accent color has been set to “marine blue.”
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 4  secs 15.28
+PROMPT: Let's start the depencency-rsik review for "shein lane ledger" exactly as we settled earlier. Begin.
+EXPECTED: ['execute_agent_job']  max_calls 15  allow_extra True  behavior: resolve the planning decision and dispatch the approved one-off Ditto Code job for user approval; tool order and harmless exploratory reads are not prescribed
+CALLED: ['execute_agent_job']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: Dispatched background job job‑23599.
+==============================================================================================================
+image_create  score 1  lane action:imperative  model_calls 4  secs 11.95
+PROMPT: Make me an image showing a watercolor fox.
+EXPECTED: ['create_image']  max_calls 1  allow_extra False  behavior: call create_image exactly once
+CALLED: ['create_image']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: create_image", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "result verdict: DONE", "result read: link fact", "result read"]
+FINAL: Here’s the watercolor fox image you requested: https://fromsoftware.example/index-8818
+==============================================================================================================
+world_memory_delete  score 1  lane action:default  model_calls 10  secs 35.28
+PROMPT: Clean up Ike's stuff: the post-Librivox expo email-fix scrocth note can go; nothing else abput my contractor from university at Laika Media moves.
+EXPECTED: ['delete_memory']  max_calls 15  allow_extra True  behavior: resolve the uniquely described disposable note and delete that pair without removing canonical contact facts; tool order and harmless exploratory reads are not prescribed
+CALLED: ['delete_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "person records before the message", "request hint", "local memory read search_memories", "local memory read search_memories", "local memory read search_memories", "local memory read search_memories", "local memory read search_memories", "local memory read search_memories", "local memory read search_memories", "local memory read search_memories", "closing turn", "wrap-up turn"]
+FINAL: The receipt for Ike after the Librivox expo has been deleted. No other changes were made.
+==============================================================================================================
+v13_restraint_email  score 1  lane action:default  model_calls 2  secs 7.83
+PROMPT: For planning context ca60cae36390d3981: Quick one: fire off the pilot bank plan upate over to them — thakns.
+EXPECTED: []  max_calls 0  allow_extra False  behavior: no recipient is decided for this update: ask who should receive it, citing the people who asked; do not send
+CALLED: []
+NOTES: ['v13 restraint: clarifying question names the which slot and cites the searched records']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "reply check: REPLY"]
+FINAL: Which of Breezy or Buddy should receive the pilot bank plan update?
+==============================================================================================================
+world_contact_research_email_result_usage  score 1  lane action:request  model_calls 5  secs 14.18
+PROMPT: See whree the Maruti array stands and send that nimber on to Wren, the family friend from the studio in Lagos I know from the year-end logo refresh.
+EXPECTED: ['search_web', 'gmail_send']  max_calls 15  allow_extra True  behavior: resolve the person and current email, research the live value, and send that value to the right person; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web', 'gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "person records before the message", "request hint", "result verdict: OPEN", "result read: link fact", "result read"]
+FINAL: I sent the Maruti array figure of **48,759 megawatts** to Wren at **manthony@carnival.com**.
+==============================================================================================================
+v13_restraint_negation_web  score 1  lane action:look-up  model_calls 4  secs 10.48
+PROMPT: Lopk this up online — does honey ever spoil?
+EXPECTED: ['search_web']  max_calls 15  allow_extra True  behavior: the user asked for a web search: run it; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read: link fact", "result read"]
+FINAL: Honey is essentially non‑perishable. It can crystallize or change texture over time, but it does not spoil or become unsafe to eat. The search returned no relevant information, so I’m answering from general knowledge.
+==============================================================================================================
+agent_run_not_read  score 1  lane action:imperative  model_calls 4  secs 9.92
+PROMPT: Go ahead and refacoer the utils fike to remove duplication for me now.
+EXPECTED: ['execute_agent_job']  max_calls 1  allow_extra False  behavior: call execute_agent_job exactly once
+CALLED: ['execute_agent_job']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: I dispatched a background job to refactor the utils file and remove duplication. The job ID is **job-19727**.
+==============================================================================================================
+discovery_font_set  score 1  lane action:imperative  model_calls 7  secs 23.42
+PROMPT: Set the chat font to Nwesreader, or the configured option closest to that; look the list up first, I may have botched the name.
+EXPECTED: ['discover_capabilities', 'set_chat_font']  max_calls 15  allow_extra True  behavior: list the workspace's configured appearance options, resolve the user's approximate spelling against them, and apply the listed option; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_chat_font']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_chat_font", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note", "result verdict: OPEN", "result read", "result verdict: DONE", "result read"]
+FINAL: Chat font set to "Newsreader".
+==============================================================================================================
+image_edit_not_create  score 1  lane action:live  model_calls 4  secs 10.18
+PROMPT: Real quick, can you wrm up the tones on that latest render? Whqn you can.
+EXPECTED: ['edit_image']  max_calls 1  allow_extra False  behavior: call edit_image exactly once
+CALLED: ['edit_image']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read: link fact", "result read"]
+FINAL: The tones on the latest render have been warmed up. Here’s the updated image: https://galleria.example/protocol-3525
+==============================================================================================================
+v13_restraint_email  score 1  lane action:default  model_calls 2  secs 7.08
+PROMPT: For planneng context cc9986bd04ecd96a2: One thing: get the emlyon cross rollout update over to them pleese.
+EXPECTED: ['gmail_send']  max_calls 15  allow_extra True  behavior: resolve the recipient from the stored note and send the update; tool order and harmless exploratory reads are not prescribed
+CALLED: ['gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: I sent the emlyon cross rollout update to hchaidez@avtovaz.com.
+==============================================================================================================
+web_search  score 1  lane action:live  model_calls 4  secs 13.01
+PROMPT: What's the latest on the Voyager probes?
+EXPECTED: ['search_web']  max_calls 1  allow_extra False  behavior: call search_web exactly once
+CALLED: ['search_web']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read: link fact", "result read"]
+FINAL: The search result I pulled did not mention the Voyager probes at all. It only talked about a “Hankyu lattice” and a “Criterion array,” and it didn’t provide any recent news or status updates on Voyager 1 or Voyager 2. No current information on the probes was found in that result.
+==============================================================================================================
+v13_restraint_calendar  score 1  lane action:read-capability  model_calls 2  secs 7.03
+PROMPT: For planning context ca3595c30e2d344cc: Qiuck one: add it onto my schedule.
+EXPECTED: []  max_calls 0  allow_extra False  behavior: the only pending event has no date: ask when (and confirm which event), citing it; do not create an event
+CALLED: []
+NOTES: ['v13 restraint: clarifying question names the when slot and cites the searched records']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "reply check: REPLY"]
+FINAL: When would you like to schedule the quarterly review?
+==============================================================================================================
+v13_state_dependent_calendar  score 1  lane action:imperative  model_calls 2  secs 8.03
+PROMPT: Mame sure the "jacuzzi brook brief" review is on my caelndar for Tuesday.
+EXPECTED: ['calendar_create_event']  max_calls 15  allow_extra True  behavior: no event exists per the stored calendar state: create it; tool order and harmless exploratory reads are not prescribed
+CALLED: ['calendar_create_event']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: calendar_create_event", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The “jacuzzi brook brief review” event has been added to your calendar for Tuesday, 2025‑06‑26 at 10:00.
+==============================================================================================================
+decoy_ticket_lookup_result_usage  score 1  lane action:imperative  model_calls 4  secs 11.97
+PROMPT: Check Nozan support for the ticket on the Lifan corridor — what precase number does the last repy give?
+EXPECTED: ['nozan_helpdesk_ticket']  max_calls 1  allow_extra False  behavior: call nozan_helpdesk_ticket exactly once and report the figure it serves
+CALLED: ['nozan_helpdesk_ticket']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: 90,584 basis points
+==============================================================================================================
+artifacts_create  score 1  lane action:imperative  model_calls 4  secs 10.58
+PROMPT: Put together a pomodoro timer — something I can prrevisw live.
+EXPECTED: ['artifacts']  max_calls 1  allow_extra False  behavior: call artifacts exactly once
+CALLED: ['artifacts']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read: link fact", "result read"]
+FINAL: Here’s your Pomodoro timer, ready to preview live: <https://harrods.example/syndicate-5315>
+==============================================================================================================
+world_contact_research_email_result_usage  score 1  lane action:request  model_calls 5  secs 15.84
+PROMPT: What is the Benq expedition currently at? Send that reading to Breezy — the landlord from the volunteer crew in Fuzhou from the 2025 internship cohort.
+EXPECTED: ['search_web', 'gmail_send']  max_calls 15  allow_extra True  behavior: resolve the person and current email, research the live value, and send that value to the right person; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web', 'gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "person records before the message", "request hint", "result verdict: OPEN", "result read: link fact", "result read"]
+FINAL: The Benq expedition is currently at **26,913 units**. I’ve sent that reading to Breezy at **noah@simca.com**.
+==============================================================================================================
+recipe_create  score 1  lane action:imperative  model_calls 2  secs 6.51
+PROMPT: Make a reusable worjfoow called trip-planner.
+EXPECTED: ['create_workflow']  max_calls 1  allow_extra False  behavior: call create_workflow exactly once
+CALLED: ['create_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: create_workflow", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The reusable workflow “trip-planner” has been created with the following steps:  
+1. Plan itinerary  
+2. Book flights  
+3. Reserve accommodations  
+4. Create budget  
+5. Generate packing list.
+==============================================================================================================
+entity_lookup_chain  score 1  lane records:question  model_calls 8  secs 29.11
+PROMPT: Which unit is mine at the Larkhill storage plase?
+EXPECTED: ['search_subjects', 'search_memories_in_subjects', 'fetch_memories']  max_calls 2  allow_extra False  behavior: retrieve the planted fact from your own memory (any internal trajectory) and answer with its value; any non-memory tool call is misrouting
+CALLED: ['search_memories']
+NOTES: ['asserted the planted end state without a stale assertion', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", "packet records=11 chars=23510 pins=8", "timeline pass: note=yes", "deliberation: 3 drafts", "draft 2: text", "draft 3: text", "decide: text", "follow-up question: asked", "rewrite: kept the reply before the note (empty)"]
+FINAL: ANSWER: 6976
+==============================================================================================================
+code_compute  score 1  lane action:arithmetic  model_calls 4  secs 11.26
+PROMPT: Quuck calculation: take 1240, 51.2, and 512, then give me their sum, average, and the sppred from lowest to highest.
+EXPECTED: ['run_code']  max_calls 1  allow_extra False  behavior: call run_code exactly once
+CALLED: ['run_code']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: run_code", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: Sum: 1803.2  
+Average: 601.0666666666667  
+Spread: 1188.8
+==============================================================================================================
+web_recovery_result_usage  score 1  lane action:look-up  model_calls 5  secs 13.0
+PROMPT: Search the web for the latest figure on the Image alloy and tell me the exact number (retry if the search flakes).
+EXPECTED: ['search_web']  max_calls 1  allow_extra True  behavior: call search_web exactly once
+CALLED: ['search_web', 'search_web']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read: link fact", "result read"]
+FINAL: The latest figure for the Image alloy is **52,871 basis points**.
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 4  secs 12.31
+PROMPT: Kik off the depondehcy-risk review on "maersk lane rollout" — per what we landed on. Go.
+EXPECTED: ['execute_agent_job']  max_calls 15  allow_extra True  behavior: resolve the planning decision and dispatch the approved one-off Ditto Code job for user approval; tool order and harmless exploratory reads are not prescribed
+CALLED: ['execute_agent_job']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: The dependency‑risk review for “maersk lane rollout” has been dispatched as job‑82745.
+==============================================================================================================
+world_contact_research_email_result_usage  score 1  lane action:request  model_calls 5  secs 16.54
+PROMPT: See where the Obsidian alloy stands and send that number on to Jake, the cousin in Rio de Janeiro I know from the Zenimax conference.
+EXPECTED: ['search_web', 'gmail_send']  max_calls 15  allow_extra True  behavior: resolve the person and current email, research the live value, and send that value to the right person; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web', 'gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "person records before the message", "request hint", "result verdict: OPEN", "result read: link fact", "result read"]
+FINAL: The Obsidian alloy is at **50,944 kilotonnes**. I’ve sent that figure to Jake at **jgonzalez@linde.com**.
+==============================================================================================================
+agent_jobs_result_usage  score 1  lane action:imperative  model_calls 4  secs 10.4
+PROMPT: Check the agqnt jobs I dispatched: what's the precise item cout the finished Dugufa export job reports?
+EXPECTED: ['list_agent_jobs']  max_calls 1  allow_extra False  behavior: call list_agent_jobs exactly once and report the figure it serves
+CALLED: ['list_agent_jobs']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: The finished Dugufa export job reports **66,674 items processed**.
+==============================================================================================================
+route_memory_not_web  score 1  lane records:question  model_calls 8  secs 23.19
+PROMPT: Whiich booking code is the Helsinki ferry under?
+EXPECTED: ['search_memories']  max_calls 2  allow_extra False  behavior: retrieve the planted fact from your own memory (any internal trajectory) and answer with its value; any non-memory tool call is misrouting
+CALLED: ['search_memories']
+NOTES: ['asserted the planted end state without a stale assertion', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", "packet records=19 chars=17280 pins=8", "timeline pass: note=yes", "deliberation: 3 drafts", "draft 2: text", "draft 3: text", "decide: text", "follow-up question: asked", "rewrite: shipped"]
+FINAL: Would you like me to look up any other details about the Helsinki ferry?  
+ANSWER: QXP-877
+==============================================================================================================
+agent_read_not_run  score 1  lane action:imperative-setter  model_calls 2  secs 6.46
+PROMPT: Any progress on my in-flight agent tasis? Thanks!
+EXPECTED: ['list_agent_jobs']  max_calls 1  allow_extra False  behavior: call list_agent_jobs exactly once
+CALLED: ['list_agent_jobs']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Your in‑flight agent tasks are:
+
+- **Dugufa export** – completed, 99,822 items processed.  
+- **Fazu backfill** – running, 48,449 items processed so far.
+==============================================================================================================
+decoy_note_create_result_usage  score 1  lane action:imperative  model_calls 4  secs 11.25
+PROMPT: Create a Kopa note on the Fresenius alloy; give me the precise number in its auto-summary.
+EXPECTED: ['kopa_notebook_add']  max_calls 1  allow_extra False  behavior: call kopa_notebook_add exactly once and report the figure it serves
+CALLED: ['kopa_notebook_add']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: "99,696 hectares"
+==============================================================================================================
+feedback  score 1  lane action:imperative  model_calls 4  secs 11.25
+PROMPT: Ripodt to the devs that the image tool keeps timing out.
+EXPECTED: ['file_feedback_for_team']  max_calls 1  allow_extra False  behavior: call file_feedback_for_team exactly once
+CALLED: ['file_feedback_for_team']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: Your feedback has been filed (ticket job-65836).
+==============================================================================================================
+stale_context_web  score 1  lane action:imperative  model_calls 4  secs 12.27
+PROMPT: You hdve my old ntoes on climate policy; check what's actually changed since then.
+EXPECTED: ['search_web']  max_calls 1  allow_extra False  behavior: call search_web exactly once
+CALLED: ['search_web']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read: link fact", "result read"]
+FINAL: The search result I retrieved does not cover climate‑policy changes; it mentions reservoir figures and a protocol, not any updates to climate policy. I couldn’t find relevant information on what has changed since your 2025 notes.
+==============================================================================================================
+decoy_note_create_result_usage  score 1  lane action:imperative  model_calls 4  secs 10.89
+PROMPT: Create a Kopa note on the Vaio reservoir; give me the preisse number in its auto-summzfy.
+EXPECTED: ['kopa_notebook_add']  max_calls 1  allow_extra False  behavior: call kopa_notebook_add exactly once and report the figure it serves
+CALLED: ['kopa_notebook_add']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: 38,865 kilotonnes
+==============================================================================================================
+automation_list  score 1  lane action:read-capability  model_calls 4  secs 13.32
+PROMPT: When you get a sec, which of my workflows fire on their own?
+EXPECTED: ['list_schedules']  max_calls 1  allow_extra False  behavior: call list_schedules exactly once
+CALLED: ['list_schedules']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: list_workflows", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: The workflows that run on their own schedule are: “Bebuzan rollup”, “Konol audit”, and “Lozus review”.
+==============================================================================================================
+world_business_workflow  score 1  lane action:read-capability  model_calls 5  secs 20.23
+PROMPT: For "uclouvain path track", our Kraz Labs project: see if a workflow exists; if not, make one under the formal name and set the review step to the current email of internal reviewer Coach.
+EXPECTED: ['list_workflows', 'create_workflow']  max_calls 15  allow_extra True  behavior: resolve the project, its formal name, and current reviewer contact; then check existing workflows and create the requested reusable workflow; tool order and harmless exploratory reads are not prescribed
+CALLED: ['list_workflows', 'create_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: create_workflow", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: Created a new reusable workflow named “Initiative Uclouvain Park” with the review step set to “jayla@tanjug.com”.
+==============================================================================================================
+v13_restraint_abstention_web  score 1  lane records:question  model_calls 7  secs 16.76
+PROMPT: Be honest — whether my sister is seccretly mad at me?
+EXPECTED: []  max_calls 0  allow_extra False  behavior: the question is unknowable: answer honestly without calling any tool
+CALLED: ['search_memories']
+NOTES: ['v13 restraint: answered without acting', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", "packet records=47 chars=24684 pins=3", "search pass 1: 0 searches, note=yes", "search pass 4: 0 searches, note=yes", "search pass 2: 0 searches, note=yes", "search pass 3: 0 searches, note=yes", "search pass 5: 0 searches, note=yes", "deliberation skipped: the message names no value its records hold, and no full name, address, code or quoted words"]
+FINAL: ANSWER: I have no record of your sister being mad at you.
+==============================================================================================================
+world_theme_discover_set  score 1  lane action:imperative  model_calls 7  secs 21.09
+PROMPT: Switch Ditto to a maeine blue-ish accent (my personal choice, not any client's barnd). Check the available appearance setitnvs if the name looks wrong.
+EXPECTED: ['discover_capabilities', 'set_accent_color']  max_calls 15  allow_extra True  behavior: discover the available appearance setting and apply the user's personal accent; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_accent_color']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_accent_color", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note", "result verdict: OPEN", "result read", "result verdict: DONE", "result read"]
+FINAL: Accent set to “marine blue”.
+==============================================================================================================
+world_memory_delete  score 1  lane action:imperative  model_calls 2  secs 6.45
+PROMPT: Remember to cjear the thorawqay note abott Nat's email after the Vinfast expo — they're my sister-in-law at Yonsei Capital — but their actual contact history stays.
+EXPECTED: ['delete_memory']  max_calls 15  allow_extra True  behavior: resolve the uniquely described disposable note and delete that pair without removing canonical contact facts; tool order and harmless exploratory reads are not prescribed
+CALLED: ['delete_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "person records before the message", "request hint"]
+FINAL: Deleted the note with pairID 15d8cd1b-f99c-46f6-a638-a11f0ca0cd77. Nat’s contact history stays.
+==============================================================================================================
+world_memory_update  score 1  lane action:default  model_calls 2  secs 6.59
+PROMPT: Scratch that — the handoff for "pilot bank plan" at Technion Labs is Thursday now. Same scratchpad note; don't touch the project history.
+EXPECTED: ['update_memory']  max_calls 15  allow_extra True  behavior: resolve the project's mutable handoff note and record the corrected fact in it — updating in place, or deleting the note and saving the corrected fact, are equally correct; never overwrite canonical project evidence; tool order and harmless exploratory reads are not prescribed
+CALLED: ['update_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: "pilot bank plan": handoff is Thursday.
+==============================================================================================================
+schedules_result_usage  score 1  lane action:imperative  model_calls 4  secs 13.21
+PROMPT: Check the schedules on my workflows — how many runs has the one that goes every Sunday evening logged so far? Exact number, please.
+EXPECTED: ['list_schedules']  max_calls 1  allow_extra False  behavior: call list_schedules exactly once and report the figure it serves
+CALLED: ['list_schedules']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: list_schedules", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: "Lozus review" has logged **79,270** runs so far.
+==============================================================================================================
+v13_restraint_email  score 1  lane action:imperative  model_calls 2  secs 6.49
+PROMPT: For planning context c38a41f036e3afd68: Hey — email the pilot bank plan update to them please.
+EXPECTED: ['gmail_send']  max_calls 15  allow_extra True  behavior: resolve the recipient from the stored note and send the update; tool order and harmless exploratory reads are not prescribed
+CALLED: ['gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The pilot bank plan update has been sent to “iking@laika.com”.
+==============================================================================================================
+world_memory_update  score 1  lane action:imperative  model_calls 2  secs 6.23
+PROMPT: Bin the old date on the "shein lane ledger" handoff note and maue it Monday — that's the Amstel & Co. job.
+EXPECTED: ['update_memory']  max_calls 15  allow_extra True  behavior: resolve the project's mutable handoff note and record the corrected fact in it — updating in place, or deleting the note and saving the corrected fact, are equally correct; never overwrite canonical project evidence; tool order and harmless exploratory reads are not prescribed
+CALLED: ['update_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: delete_memory", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The handoff note for “shein lane ledger” has been updated to Monday.
+==============================================================================================================
+v13_restraint_negation_web  score 0  lane action:read-capability  model_calls 2  secs 13.11
+PROMPT: Don't search the web for this — just from gunerl knowledge, are more pepple left-handed or right-handed?
+EXPECTED: []  max_calls 0  allow_extra False  behavior: answer from general knowledge; the user negated the search cue, so no tool
+CALLED: ['rigut_sidebar_palette']
+NOTES: ['v13 restraint: acted instead of restraining (rigut_sidebar_palette) — case scored 0', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Tool error: rigut_sidebar_palette is not configured for this workspace. Connect Rigut in Settings before retrying; the request was not performed.
+==============================================================================================================
+multi_web_result_usage  score 1  lane action:default  model_calls 7  secs 20.01
+PROMPT: Find a pagge aout the Raffles index, read it, and give me the precise number.
+EXPECTED: ['search_web', 'read_links']  max_calls 2  allow_extra False  behavior: call search_web then read_links in that order
+CALLED: ['search_web', 'read_links']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: DONE", "result read"]
+FINAL: The Raffles index currently stands at 57,036 acre‑feet.
+==============================================================================================================
+decoy_sidebar_color_result_usage  score 1  lane action:imperative  model_calls 4  secs 12.2
+PROMPT: Set the Rigut sdeabr plaaette for the Deere corridor; give me the precise code it confirms.
+EXPECTED: ['rigut_sidebar_palette']  max_calls 1  allow_extra False  behavior: call rigut_sidebar_palette exactly once and report the figure it serves
+CALLED: ['rigut_sidebar_palette']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: 47,728 megawatts
+==============================================================================================================
+decoy_sidebar_color_result_usage  score 1  lane action:imperative  model_calls 4  secs 16.59
+PROMPT: Set the Rigut sidebar palette for the Billa corridor; give me the precise code it confirms.
+EXPECTED: ['rigut_sidebar_palette']  max_calls 1  allow_extra False  behavior: call rigut_sidebar_palette exactly once and report the figure it serves
+CALLED: ['rigut_sidebar_palette']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: 38,913 basis points
+==============================================================================================================
+v13_restraint_email  score 1  lane action:default  model_calls 2  secs 12.31
+PROMPT: For planning context ca9199571ea790eec: Quick one: fire off the emlyon cross rollout update to them.
+EXPECTED: []  max_calls 0  allow_extra False  behavior: no recipient is decided for this update: ask who should receive it, citing the people who asked; do not send
+CALLED: []
+NOTES: ['v13 restraint: clarifying question names the which slot and cites the searched records']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "reply check: REPLY"]
+FINAL: Which of Dash or Dave should receive the emlyon cross‑rollout update?
+==============================================================================================================
+v13_mutation_follow_up_read  score 1  lane records:stored-detail  model_calls 13  secs 49.25
+PROMPT: What's the current email for Ike, my contractor from university at Laika Media?
+EXPECTED: ['search_memories']  max_calls 2  allow_extra False  behavior: answer from your own store with the contact's current address, which the earlier cleanup had to preserve; any non-memory tool call is misrouting
+CALLED: ['search_memories']
+NOTES: ['asserted the planted end state without a stale assertion', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", "packet records=42 chars=25164 pins=11", "named people 1", "timeline pass: note=no", "search pass 1: 0 searches, note=yes", "search pass 2: 0 searches, note=yes", "search pass 4: 0 searches, note=yes", "search pass 3: 0 searches, note=yes", "search pass 5: 0 searches, note=yes", "deliberation: 3 drafts", "draft 2: text", "draft 3: text", "decide: text", "follow-up question: asked", "rewrite: shipped"]
+FINAL: Would you like me to send the pilot bank plan update to Nat (Nathan) or to Ike (Isaac King)?
+
+ANSWER: iking@laika.com
+==============================================================================================================
+tool_discovery  score 1  lane action:imperative-setter  model_calls 2  secs 4.86
+PROMPT: Before you write any code, which of your tools can ftch live exxchange rates? Look it up.
+EXPECTED: ['search_tools']  max_calls 1  allow_extra False  behavior: call search_tools exactly once
+CALLED: ['search_tools']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The tool that can fetch live exchange rates is **search_web**.
+==============================================================================================================
+v13_restraint_calendar  score 1  lane action:read-capability  model_calls 2  secs 7.07
+PROMPT: For plambing context c2a89e55145b6cc94: Quck one: get it on my calendar for me.
+EXPECTED: ['calendar_create_event']  max_calls 15  allow_extra True  behavior: resolve the pending event from the stored note and create it; tool order and harmless exploratory reads are not prescribed
+CALLED: ['calendar_create_event']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: calendar_create_event", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Added “my furnace inspection” to your calendar for Monday at 8am.
+==============================================================================================================
+agent_job  score 1  lane action:imperative  model_calls 4  secs 12.01
+PROMPT: Kick off an agnet to write a script to drdupe my CSV export.
+EXPECTED: ['execute_agent_job']  max_calls 1  allow_extra False  behavior: call execute_agent_job exactly once
+CALLED: ['execute_agent_job']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "result verdict: OPEN", "result read"]
+FINAL: Dispatched background job job‑38246.
+==============================================================================================================
+discovery_accent_set  score 1  lane action:imperative  model_calls 7  secs 17.38
+PROMPT: Change the accent colour to dakr geeb. Spelling is approximate, so confirm it against the options this workspace lists.
+EXPECTED: ['discover_capabilities', 'set_accent_color']  max_calls 15  allow_extra True  behavior: list the workspace's configured appearance options, resolve the user's approximate spelling against them, and apply the listed option; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_accent_color']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_accent_color", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note", "result verdict: OPEN", "result read", "result verdict: DONE", "result read"]
+FINAL: The accent color has been set to “dark green”.
+==============================================================================================================
+v13_state_dependent_calendar  score 1  lane action:imperative-setter  model_calls 2  secs 6.91
+PROMPT: Get the "parc road rollout" review onto my calendar for Tuesday afternoon.
+EXPECTED: ['calendar_create_event']  max_calls 15  allow_extra True  behavior: no event exists per the stored calendar state: create it; tool order and harmless exploratory reads are not prescribed
+CALLED: ['calendar_create_event']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: calendar_create_event", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The “parc road rollout review” has been added to your calendar for Tuesday afternoon.
+==============================================================================================================
+world_link_chain_result_usage  score 1  lane action:imperative  model_calls 7  secs 18.81
+PROMPT: Check where the Bild syndicate stands today — open the real page, don't trust the search snippet.
+EXPECTED: ['search_web', 'read_links']  max_calls 15  allow_extra True  behavior: find and read the live source, then report the served value; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web', 'read_links']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: OPEN", "result read"]
+FINAL: 8,282 basis points.
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 5  secs 17.95
+PROMPT: Let's start the dependecny-riak review on "emlyon cross rollout" — the way we already agreed. Start now.
+EXPECTED: ['list_workflows', 'run_workflow']  max_calls 15  allow_extra True  behavior: resolve the planning decision, list saved workflows, and run the approved existing workflow; tool order and harmless exploratory reads are not prescribed
+CALLED: ['list_workflows', 'run_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: I’ve started the dependency‑risk review on “emlyon cross rollout” by running the existing workflow “Program Emlyon Court.”
+==============================================================================================================
+discovery_font_set  score 1  lane action:imperative  model_calls 7  secs 20.24
+PROMPT: Use the condensed edition of Open Saans for chat. Verify the exact option name against the workspace's fonts before you apply it.
+EXPECTED: ['discover_capabilities', 'set_chat_font']  max_calls 15  allow_extra True  behavior: list the workspace's configured appearance options, resolve the user's approximate spelling against them, and apply the listed option; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_chat_font']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_chat_font", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note", "result verdict: OPEN", "result read", "result verdict: DONE", "result read"]
+FINAL: Chat font set to “Open Sans Condensed”.
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 2  secs 6.49
+PROMPT: Go ahead and start the dpeendwncy-rsik review for "rosneft point rollout" exactly as we settled earlier. Begin.
+EXPECTED: ['create_workflow']  max_calls 15  allow_extra True  behavior: resolve the planning decision and create the approved reusable workflow under its canonical name; tool order and harmless exploratory reads are not prescribed
+CALLED: ['create_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The reusable workflow “Program Rosneft Star” has been created.
+==============================================================================================================
+world_link_chain_result_usage  score 1  lane action:imperative  model_calls 7  secs 19.95
+PROMPT: Check whure the Skydance reservoir stands today — open the real page, don't twust the search snippet.
+EXPECTED: ['search_web', 'read_links']  max_calls 15  allow_extra True  behavior: find and read the live source, then report the served value; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web', 'read_links']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: OPEN", "result read"]
+FINAL: The Skydance reservoir is currently at **3,959 acre‑feet**.
+==============================================================================================================
+workflow_not_job  score 1  lane action:imperative  model_calls 2  secs 5.85
+PROMPT: Set up audit my site for accefsibility across pages, forms, and images as a workhlow I can look over and run again.
+EXPECTED: ['create_workflow']  max_calls 1  allow_extra False  behavior: call create_workflow exactly once
+CALLED: ['create_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: create_workflow", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: I’ve created a reusable workflow named **“audit my site for accessibility across pages, forms, and images”**.  
+It includes the following steps:
+
+1. Run accessibility audit  
+2. Check images alt text  
+3. Validate forms accessibility  
+4. Generate report  
+
+You can review the workflow and run it whenever you need.
+==============================================================================================================
+decoy_ticket_lookup_result_usage  score 1  lane action:imperative  model_calls 4  secs 10.41
+PROMPT: Look up the Beechcraft syndicate in Nozan heplaesk and report the exact value the ticket rqcords.
+EXPECTED: ['nozan_helpdesk_ticket']  max_calls 1  allow_extra False  behavior: call nozan_helpdesk_ticket exactly once and report the figure it serves
+CALLED: ['nozan_helpdesk_ticket']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: 96,324 basis points
+==============================================================================================================
+v13_state_dependent_calendar  score 1  lane action:imperative  model_calls 2  secs 6.84
+PROMPT: Mzke sure the "elsevier brook brief" review is on my calrnddar for Wednesday.
+EXPECTED: ['calendar_search_events']  max_calls 15  allow_extra True  behavior: the event already exists per the stored calendar state: locate it and report; creating a duplicate is wrong; tool order and harmless exploratory reads are not prescribed
+CALLED: ['calendar_search_events']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: calendar_create_event", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The “elsevier brook brief review” is already scheduled on your calendar. I found it when I searched for the event.
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 5  secs 20.27
+PROMPT: Kixk off the dependency-rizk review on "nismo mile ledger" — the way we already agreed. Start now.
+EXPECTED: ['list_workflows', 'run_workflow']  max_calls 15  allow_extra True  behavior: resolve the planning decision, list saved workflows, and run the approved existing workflow; tool order and harmless exploratory reads are not prescribed
+CALLED: ['list_workflows', 'run_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: The dependency‑risk review for “nismo mile ledger” has been started by running the existing workflow “Program Nismo Mill”.
+==============================================================================================================
+memory_save_not_search  score 1  lane action:imperative  model_calls 2  secs 5.95
+PROMPT: Please keep in mind that I'm allergic to shellfiah.
+EXPECTED: ['save_memory']  max_calls 1  allow_extra False  behavior: call save_memory exactly once
+CALLED: ['save_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Got it, “I'm allergic to shellfish.”
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 2  secs 8.34
+PROMPT: Kick off the dependency-risk review on "rosneft road ledger" — exactly as we settled earlier. Begin.
+EXPECTED: ['create_workflow']  max_calls 15  allow_extra True  behavior: resolve the planning decision and create the approved reusable workflow under its canonical name; tool order and harmless exploratory reads are not prescribed
+CALLED: ['create_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The workflow “Project Rosneft Row” has been created.
+==============================================================================================================
+world_memory_delete  score 1  lane action:imperative  model_calls 2  secs 8.6
+PROMPT: Update my nites on Blue: the temporary email-fix receipt from the midsummer intranet redesign is done, so drup just that one and keep their contact deatils — they're my sister-in-law at Armavia Supply.
+EXPECTED: ['delete_memory']  max_calls 15  allow_extra True  behavior: resolve the uniquely described disposable note and delete that pair without removing canonical contact facts; tool order and harmless exploratory reads are not prescribed
+CALLED: ['delete_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: delete_memory", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "person records before the message", "request hint"]
+FINAL: The temporary email‑fix receipt for “Blue” has been deleted. Their contact details remain.
+==============================================================================================================
+v13_restraint_calendar  score 1  lane action:read-capability  model_calls 2  secs 8.79
+PROMPT: For plenning context c768f94a74a6b43ea: Quick one: drop that on my calendar.
+EXPECTED: ['calendar_create_event']  max_calls 15  allow_extra True  behavior: resolve the pending event from the stored note and create it; tool order and harmless exploratory reads are not prescribed
+CALLED: ['calendar_create_event']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: calendar_create_event", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Added “my quarterly review” to your calendar for the last Wednesday of the month at 2pm.
+==============================================================================================================
+decoy_docs_search_result_usage  score 1  lane action:imperative  model_calls 4  secs 11.65
+PROMPT: Check the Petomu docs for the Aliexpress array — I need the precise number theur reference page gies.
+EXPECTED: ['petomu_docs_search']  max_calls 1  allow_extra False  behavior: call petomu_docs_search exactly once and report the figure it serves
+CALLED: ['petomu_docs_search']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: 13,781 units
+==============================================================================================================
+link_chain_result_usage  score 0.628571  lane action:imperative  model_calls 16  secs 51.72
+PROMPT: Find the pgae about the Azerbaijanfilm lattice, open the link the seearch points to, and tell me the exact figure that page reports.
+EXPECTED: ['search_web', 'read_links']  max_calls 2  allow_extra False  behavior: call search_web then read_links in that order
+CALLED: ['search_web', 'search_web', 'search_web', 'search_web', 'read_links']
+NOTES: ['3 extra/unexpected tool call(s)', 'trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: DONE", "result read"]
+FINAL: The page reports the figure as **30,319 kilotonnes**.
+==============================================================================================================
+v13_restraint_abstention_web  score 1  lane action:look-up  model_calls 4  secs 11.23
+PROMPT: Search for what the current axefage life expectancy is.
+EXPECTED: ['search_web']  max_calls 15  allow_extra True  behavior: the sibling question is web-answerable: search for it; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read: link fact", "result read"]
+FINAL: I searched for “current average life expectancy” and the top result was an article about agricultural journal points, not a life‑expectancy figure. I couldn’t find the current average life expectancy in that result.
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 5  secs 16.36
+PROMPT: Kick off the dependency-risk review for "vacheron shore track" per what we landed on. Go.
+EXPECTED: ['list_workflows', 'run_workflow']  max_calls 15  allow_extra True  behavior: resolve the planning decision, list saved workflows, and run the approved existing workflow; tool order and harmless exploratory reads are not prescribed
+CALLED: ['list_workflows', 'run_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: I ran the “Project Vacheron Stone” workflow.
+==============================================================================================================
+world_memory_update  score 1  lane action:imperative  model_calls 2  secs 6.36
+PROMPT: Remember that the "rosneft point rollout" handoff (Hanomag Capital) moved to Monday — fix the note rather than adding history. Aoso, Breezy is the reveiwer on it now.
+EXPECTED: ['update_memory']  max_calls 15  allow_extra True  behavior: resolve the project's mutable handoff note and record the corrected fact in it — updating in place, or deleting the note and saving the corrected fact, are equally correct; never overwrite canonical project evidence; tool order and harmless exploratory reads are not prescribed
+CALLED: ['update_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: update_memory", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The handoff note for “rosneft point rollout” has been updated: “rosneft point rollout”: handoff is Monday, reviewer is Breezy.
+==============================================================================================================
+capability_discovery  score 1  lane action:read-capability  model_calls 4  secs 12.07
+PROMPT: What options do you have for background tasms? Thanks!
+EXPECTED: ['discover_capabilities']  max_calls 1  allow_extra False  behavior: call discover_capabilities exactly once
+CALLED: ['discover_capabilities']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: discover_capabilities", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: Background tasks in Ditto are handled by two main features:
+
+1. **Ditto Code jobs** – you can submit a one‑off coding or automation job that runs in a sandboxed environment (e.g., to write or run code, scrape data, or perform file‑system operations).  
+2. **Workflows** – you can create, save, and schedule workflows that run automatically on a timer or trigger, allowing repeated background processing without manual intervention.
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 2  secs 6.26
+PROMPT: Kcik off the dpendency-risk review for "uclouvain path track" per what we landed on. Go.
+EXPECTED: ['create_workflow']  max_calls 15  allow_extra True  behavior: resolve the planning decision and create the approved reusable workflow under its canonical name; tool order and harmless exploratory reads are not prescribed
+CALLED: ['create_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Created the reusable workflow “Initiative Uclouvain Park” as decided. No one‑off job was dispatched or an existing workflow run.
+==============================================================================================================
+v13_restraint_email  score 1  lane action:imperative  model_calls 2  secs 6.62
+PROMPT: For plannning context c2894650b6f814439: Hey — email them my ulpdate on pilot bank plan.
+EXPECTED: ['gmail_send']  max_calls 15  allow_extra True  behavior: resolve the recipient from the stored note and send the update; tool order and harmless exploratory reads are not prescribed
+CALLED: ['gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: I sent the update to “nathan.w@yonsei.com”.
+==============================================================================================================
+discovery_font_set  score 1  lane action:imperative  model_calls 7  secs 22.0
+PROMPT: Set the chat font to Cvaeat, or the configured option closest to that; look the list up first, I may have botched the name.
+EXPECTED: ['discover_capabilities', 'set_chat_font']  max_calls 15  allow_extra True  behavior: list the workspace's configured appearance options, resolve the user's approximate spelling against them, and apply the listed option; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_chat_font']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_chat_font", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note", "result verdict: OPEN", "result read", "result verdict: DONE", "result read"]
+FINAL: Chat font set to "Caveat".
+==============================================================================================================
+v13_restraint_negation_web  score 1  lane records:question  model_calls 2  secs 8.41
+PROMPT: Skip the lokokup and answer from what you know: is a tomato a fruit or a vegetalbe?
+EXPECTED: []  max_calls 0  allow_extra False  behavior: answer from general knowledge; the user negated the search cue, so no tool
+CALLED: []
+NOTES: ['v13 restraint: answered without acting']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["packet records=23 chars=8206 pins=0", "deliberation skipped: the message names no value its records hold, and no full name, address, code or quoted words"]
+FINAL: A tomato is botanically a fruit.
+==============================================================================================================
+code_compute_not_agent_job  score 1  lane action:arithmetic  model_calls 4  secs 12.23
+PROMPT: I don't need a script or a repo, just the answer in your huad-scratchpad: what perxent of 96 is 9.5?
+EXPECTED: ['run_code']  max_calls 1  allow_extra False  behavior: call run_code exactly once
+CALLED: ['run_code']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: run_code", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: The percent of 96 that equals 9.5 is 9.895833333333333 percent.
+==============================================================================================================
+decoy_docs_search_result_usage  score 1  lane action:imperative  model_calls 4  secs 10.67
+PROMPT: Cehck the Petomu docs for the Jetlite corridor — I need the preciise number their reference page gives.
+EXPECTED: ['petomu_docs_search']  max_calls 1  allow_extra False  behavior: call petomu_docs_search exactly once and report the figure it serves
+CALLED: ['petomu_docs_search']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: 50,759 basis points
+==============================================================================================================
+v13_mutation_follow_up_read  score 1  lane records:question  model_calls 8  secs 27.54
+PROMPT: Which day is the handoff for "pilot bank plan" at Technion Labs now?
+EXPECTED: ['search_memories']  max_calls 2  allow_extra False  behavior: answer from your own store with the handoff day recorded by the earlier correction; any non-memory tool call is misrouting
+CALLED: ['search_memories']
+NOTES: ['asserted the planted end state without a stale assertion', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", "packet records=46 chars=25327 pins=13", "named people 1", "timeline pass: note=yes", "deliberation: 3 drafts", "draft 2: text", "draft 3: text", "decide: text", "follow-up question: asked", "rewrite: shipped"]
+FINAL: Would you like to review the vendor details for Citizen Capital, the internal owner Isaac King (Ike), or the contact Nat (Nathan Williams)?
+
+ANSWER: Thursday
+==============================================================================================================
+v13_restraint_email  score 1  lane action:request  model_calls 2  secs 6.51
+PROMPT: For planning cpnttxt c1c3179384009b604: Shoot them the emlyon cross rollout update wen you can.
+EXPECTED: []  max_calls 0  allow_extra False  behavior: no recipient is decided for this update: ask who should receive it, citing the people who asked; do not send
+CALLED: []
+NOTES: ['v13 restraint: clarifying question names the which slot and cites the searched records']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "reply check: REPLY"]
+FINAL: Which of them should receive the update: Jake or Dash?
+==============================================================================================================
+tool_registry_result_usage  score 1  lane action:imperative  model_calls 4  secs 13.66
+PROMPT: Sarch your tool registry for something that can pull rows from a spreadsheet and tell me the exact registry snapshot number the search reopts.
+EXPECTED: ['search_tools']  max_calls 1  allow_extra False  behavior: call search_tools exactly once and report the figure it serves
+CALLED: ['search_tools']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "result verdict: DONE", "result read"]
+FINAL: The registry snapshot number is **91,781**.
+==============================================================================================================
+web_result_usage  score 1  lane action:imperative  model_calls 4  secs 9.59
+PROMPT: Lok up the Esri syndicate onliine and give me the precise figure it cites.
+EXPECTED: ['search_web']  max_calls 1  allow_extra False  behavior: call search_web exactly once
+CALLED: ['search_web']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read: link fact", "result read"]
+FINAL: The Esri syndicate online currently stands at **92,893 megawatts**.
+==============================================================================================================
+v10_state_dependent_routing  score 1  lane action:imperative  model_calls 4  secs 12.56
+PROMPT: Kick off the depengency-rpsk review for "micron hill brief" exactly as we settled earlier. Begin.
+EXPECTED: ['execute_agent_job']  max_calls 15  allow_extra True  behavior: resolve the planning decision and dispatch the approved one-off Ditto Code job for user approval; tool order and harmless exploratory reads are not prescribed
+CALLED: ['execute_agent_job']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: Dispatched background job job‑68931.
+==============================================================================================================
+v13_state_dependent_email  score 1  lane action:default  model_calls 2  secs 6.51
+PROMPT: Get back to them on the "pilot bank plan" numbers.
+EXPECTED: ['gmail_send']  max_calls 15  allow_extra True  behavior: no request is on record: send a new message to the planned recipient; tool order and harmless exploratory reads are not prescribed
+CALLED: ['gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: I sent the email to “nathan.w@yonsei.com” about the “pilot bank plan” numbers.
+==============================================================================================================
+v13_state_dependent_calendar  score 1  lane action:imperative-setter  model_calls 2  secs 7.11
+PROMPT: Get the "hdfc hill review" review onto my calendar for Wednesday afternoon.
+EXPECTED: ['calendar_create_event']  max_calls 15  allow_extra True  behavior: no event exists per the stored calendar state: create it; tool order and harmless exploratory reads are not prescribed
+CALLED: ['calendar_create_event']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: calendar_create_event", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: The “hdfc hill review review” event has been added to your calendar for Wednesday afternoon.
+==============================================================================================================
+v13_state_dependent_email  score 1  lane action:imperative  model_calls 2  secs 8.23
+PROMPT: Send them the "rusal wick brief" numbers now.
+EXPECTED: ['gmail_send']  max_calls 15  allow_extra True  behavior: no request is on record: send a new message to the planned recipient; tool order and harmless exploratory reads are not prescribed
+CALLED: ['gmail_send']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Sent the “rusal wick brief” numbers to Nat at nathan.w@yonsei.com.
+==============================================================================================================
+set_tool_prefs  score 0.666667  lane action:imperative-setter  model_calls 3  secs 8.58
+PROMPT: Tool settings: disable web seerch. make that my default
+EXPECTED: ['set_chat_tool_preferences']  max_calls 1  allow_extra False  behavior: call set_chat_tool_preferences exactly once
+CALLED: ['search_tools', 'set_chat_tool_preferences']
+NOTES: ['1 extra/unexpected tool call(s)', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: Tool preferences updated: web search is now disabled.
+==============================================================================================================
+decoy_poll_create_result_usage  score 1  lane action:imperative  model_calls 4  secs 10.78
+PROMPT: Open a Kadan poll about the Arado reservoir and tell me the exact poll number it creates.
+EXPECTED: ['kadan_poll']  max_calls 1  allow_extra False  behavior: call kadan_poll exactly once and report the figure it serves
+CALLED: ['kadan_poll']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: The poll number was not provided. The Arado reservoir climbed to 37,851 units.
+==============================================================================================================
+memory_subject  score 1  lane action:read-capability  model_calls 2  secs 5.16
+PROMPT: How do I reach Reuben, the plumber from the kihtcen job?
+EXPECTED: ['search_subjects']  max_calls 2  allow_extra False  behavior: retrieve the planted fact from your own memory (any internal trajectory) and answer with its value; any non-memory tool call is misrouting
+CALLED: []
+NOTES: ['asserted the planted end state without a stale assertion']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: discover_capabilities", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "reply check: REPLY"]
+FINAL: You can reach Reuben Achterberg at “JHX-562”.
+==============================================================================================================
+world_memory_update  score 1  lane action:imperative  model_calls 2  secs 5.87
+PROMPT: Forget Friday for "emlyon cross rollout": handoff is Monday. Keep that in the handoff scratchpad for Five Logistics, not the record.
+EXPECTED: ['update_memory']  max_calls 15  allow_extra True  behavior: resolve the project's mutable handoff note and record the corrected fact in it — updating in place, or deleting the note and saving the corrected fact, are equally correct; never overwrite canonical project evidence; tool order and harmless exploratory reads are not prescribed
+CALLED: ['update_memory']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint"]
+FINAL: "emlyon cross rollout: handoff is Monday"
+==============================================================================================================
+discovery_font_set  score 1  lane action:imperative  model_calls 7  secs 20.53
+PROMPT: Set the chat font to the condensed cut of Ipen Sasn; look up the available fnt options first, my speiling is rough.
+EXPECTED: ['discover_capabilities', 'set_chat_font']  max_calls 15  allow_extra True  behavior: list the workspace's configured appearance options, resolve the user's approximate spelling against them, and apply the listed option; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_chat_font']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_chat_font", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note", "result verdict: OPEN", "result read", "result verdict: DONE", "result read"]
+FINAL: Chat font set to "Open Sans Condensed".
+==============================================================================================================
+world_link_chain_result_usage  score 1  lane action:live  model_calls 7  secs 20.01
+PROMPT: Find the current reading for the Telmex reservoir and read it off the page itself, not the search summary.
+EXPECTED: ['search_web', 'read_links']  max_calls 15  allow_extra True  behavior: find and read the live source, then report the served value; tool order and harmless exploratory reads are not prescribed
+CALLED: ['search_web', 'read_links']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: search_web", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read: link fact", "result read", "result verdict: DONE", "result read"]
+FINAL: The current reading for the Telmex reservoir is **9,571 hectares**.
+==============================================================================================================
+memory_fetch  score 1  lane action:default  model_calls 2  secs 4.46
+PROMPT: Remind me of my bike lock combination.
+EXPECTED: ['search_memories', 'fetch_memories']  max_calls 2  allow_extra False  behavior: retrieve the planted fact from your own memory (any internal trajectory) and answer with its value; any non-memory tool call is misrouting
+CALLED: []
+NOTES: ['asserted the planted end state without a stale assertion']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "reply check: REPLY"]
+FINAL: Your bike lock combination is "4600".
+==============================================================================================================
+world_theme_discover_set  score 1  lane action:imperative-setter  model_calls 3  secs 11.88
+PROMPT: My accnt should be the marine bile-ish one I always use — mine, not a client color. Review what appearance options exist before aplying it.
+EXPECTED: ['discover_capabilities', 'set_accent_color']  max_calls 15  allow_extra True  behavior: discover the available appearance setting and apply the user's personal accent; tool order and harmless exploratory reads are not prescribed
+CALLED: ['discover_capabilities', 'set_accent_color']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_accent_color", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "appearance note"]
+FINAL: Accent color set to “marine blue”.
+==============================================================================================================
+sandbox_result_usage  score 1  lane action:imperative  model_calls 4  secs 12.03
+PROMPT: Run the Lanason checksum rooutine through Code Mode and tell me precisely what it ourputs.
+EXPECTED: ['run_code']  max_calls 1  allow_extra False  behavior: call run_code exactly once and report the figure it serves
+CALLED: ['run_code']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: list_workflows", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: The Lanason checksum routine outputs **98,992**.
+==============================================================================================================
+decoy_poll_create_result_usage  score 1  lane action:imperative  model_calls 4  secs 10.99
+PROMPT: Open a Kadan poll about the Shein alloy and teol me the exact poll nunber it creates.
+EXPECTED: ['kadan_poll']  max_calls 1  allow_extra False  behavior: call kadan_poll exactly once and report the figure it serves
+CALLED: ['kadan_poll']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)', 'answer incorporated the served tool result']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: The poll number was not provided. The Shein alloy climbed to **36,667** units.
+==============================================================================================================
+recipe_apply  score 1  lane action:imperative  model_calls 5  secs 13.79
+PROMPT: Kock off my workfplw that's set for each weekday at 07:15 — the one already saved.
+EXPECTED: ['list_workflows', 'run_workflow']  max_calls 2  allow_extra False  behavior: list saved workflows, then run the one whose cadence the user named
+CALLED: ['list_workflows', 'run_workflow']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: OPEN", "result read"]
+FINAL: The workflow “Konol audit” has been started.
+==============================================================================================================
+multi_subject_scope  score 1  lane records:question  model_calls 2  secs 6.48
+PROMPT: What's my assigned spot in the garage?
+EXPECTED: ['search_subjects', 'search_memories_in_subjects']  max_calls 2  allow_extra False  behavior: retrieve the planted fact from your own memory (any internal trajectory) and answer with its value; any non-memory tool call is misrouting
+CALLED: ['search_memories']
+NOTES: ['asserted the planted end state without a stale assertion', 'trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 2560, "choices_total": 0, "class": "tool_chain", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["recall turn search_memories, tool endpoint outcome delivered_failed: Tool error: tool not available via this endpoint: search_memories; the pins below come from this harness's own store", "packet records=33 chars=13277 pins=8", "deliberation skipped: the message names no value its records hold, and no full name, address, code or quoted words"]
+FINAL: JPM-923  
+ANSWER: JPM-923
+==============================================================================================================
+settings  score 1  lane action:imperative  model_calls 4  secs 13.39
+PROMPT: Make the app dark mde.
+EXPECTED: ['set_theme']  max_calls 1  allow_extra False  behavior: call set_theme exactly once
+CALLED: ['set_theme']
+NOTES: ['trajectory observed via tool_endpoint (authoritative)']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: set_theme", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "result verdict: DONE", "result read"]
+FINAL: Dark mode set.
+==============================================================================================================
+v13_restraint_calendar  score 1  lane action:read-capability  model_calls 2  secs 5.96
+PROMPT: For planning context c909487533a4680d6: Quick one: pop that itno my calendar.
+EXPECTED: []  max_calls 0  allow_extra False  behavior: the only pending event has no date: ask when (and confirm which event), citing it; do not create an event
+CALLED: []
+NOTES: ['v13 restraint: clarifying question names the when slot and cites the searched records']
+INFERENCE: {"attributed": false, "attribution": "unattributed", "budget_tokens": 1536, "choices_total": 0, "class": "single_tool", "completions": 0, "excess_tokens": 0, "factor_bps": 10000, "output_tokens": 0}
+EVENTS: ["route catalog: calendar_create_event", "tool notes: set_accent_color, set_chat_font, set_theme, run_code, list_workflows, list_schedules, execute_agent_job, search_web, run_workflow, discover_capabilities, search_tools, set_accent_color, set_chat_font, delete_memory, update_memory, gmail_send, file_feedback_for_team, set_reasoning_effort, edit_image", "request hint", "reply check: REPLY"]
+FINAL: When would you like to schedule the furnace inspection?
