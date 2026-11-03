@@ -1,0 +1,35 @@
+{
+  "agent_id": "31ad3a16-e7d6-47c2-bfd0-801bd7766fd7",
+  "miner_hotkey": "5EHrQx5wHz356YJcumkej4yTcADHZKmAAdKseSJ7PWA4uk4t",
+  "agent_status": "evaluating",
+  "attempts": [
+    {
+      "validator_hotkey": "5HEouuDaDASnWdqDwYtwQATS5z916W9DyDAtK6WyB2jPRReb",
+      "bench_version": 15,
+      "status": "scored",
+      "attempt_count": 1,
+      "issued_at": "2026-11-03T06:21:45.702220Z",
+      "deadline": "2026-11-03T09:21:45.702220Z",
+      "failed_at": null,
+      "failure_reason": null,
+      "failure_detail": null,
+      "container_log_tail": null,
+      "log_tail_attempt": null,
+      "stale": false
+    },
+    {
+      "validator_hotkey": "5HT9U1J85fyNVudFAHuhYSGajRth8r3kYo7hTvkUXFEEDhQD",
+      "bench_version": 15,
+      "status": "scored",
+      "attempt_count": 1,
+      "issued_at": "2026-11-03T06:21:30.789427Z",
+      "deadline": "2026-11-03T09:21:30.789427Z",
+      "failed_at": null,
+      "failure_reason": null,
+      "failure_detail": null,
+      "container_log_tail": null,
+      "log_tail_attempt": null,
+      "stale": false
+    }
+  ]
+}
