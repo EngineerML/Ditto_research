@@ -1,0 +1,1725 @@
+{
+ "conversational-declarative": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 120,
+  "lanes": {
+   "action:setting-statement": 120
+  },
+  "paths": {
+   "action": 120
+  },
+  "hint": 120
+ },
+ "parser-divergence-hypothetical": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 120,
+  "lanes": {
+   "action:read-capability": 120
+  },
+  "paths": {
+   "action": 120
+  },
+  "hint": 0
+ },
+ "world-canary": {
+  "kind": "memory",
+  "n": 40,
+  "unexpected": 40,
+  "lanes": {
+   "action:read-capability": 32,
+   "action:imperative-setter": 8
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 0
+ },
+ "conversational-chitchat": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 33,
+  "lanes": {
+   "records:question": 87,
+   "action:read-capability": 19
+  },
+  "paths": {
+   "records": 87,
+   "action": 33
+  },
+  "hint": 0
+ },
+ "injection-data-inside-envelope": {
+  "kind": "memory",
+  "n": 80,
+  "unexpected": 15,
+  "lanes": {
+   "records:question": 65,
+   "action:imperative-setter": 15
+  },
+  "paths": {
+   "records": 65,
+   "action": 15
+  },
+  "hint": 0
+ },
+ "world-project-lead-current": {
+  "kind": "memory",
+  "n": 9,
+  "unexpected": 1,
+  "lanes": {
+   "records:stored-detail": 6,
+   "records:answer-form": 2
+  },
+  "paths": {
+   "records": 8,
+   "action": 1
+  },
+  "hint": 0
+ },
+ "capability_discovery": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 2,
+  "lanes": {
+   "action:read-capability": 19,
+   "action:capability-question": 12
+  },
+  "paths": {
+   "action": 38,
+   "records": 2
+  },
+  "hint": 38
+ },
+ "record-quantity-cf-variant": {
+  "kind": "memory",
+  "n": 240,
+  "unexpected": 5,
+  "lanes": {
+   "records:question": 234,
+   "action:imperative-setter": 5
+  },
+  "paths": {
+   "records": 235,
+   "action": 5
+  },
+  "hint": 5
+ },
+ "record-quantity-cf-base": {
+  "kind": "memory",
+  "n": 240,
+  "unexpected": 4,
+  "lanes": {
+   "records:question": 233,
+   "action:imperative-setter": 4
+  },
+  "paths": {
+   "records": 236,
+   "action": 4
+  },
+  "hint": 2
+ },
+ "absence-twin-insufficient-composition": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 2,
+  "lanes": {
+   "records:question": 118,
+   "records:stored-figure": 35
+  },
+  "paths": {
+   "records": 158,
+   "action": 2
+  },
+  "hint": 0
+ },
+ "world-isolation-contact-current": {
+  "kind": "memory",
+  "n": 360,
+  "unexpected": 3,
+  "lanes": {
+   "records:stored-detail": 279,
+   "records:question": 78
+  },
+  "paths": {
+   "records": 357,
+   "action": 3
+  },
+  "hint": 2
+ },
+ "absence-twin-stale-removed": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 1,
+  "lanes": {
+   "records:stored-detail": 82,
+   "records:question": 74
+  },
+  "paths": {
+   "records": 159,
+   "action": 1
+  },
+  "hint": 0
+ },
+ "absence-near-miss": {
+  "kind": "memory",
+  "n": 200,
+  "unexpected": 1,
+  "lanes": {
+   "records:question": 158,
+   "records:stored-detail": 41
+  },
+  "paths": {
+   "records": 199,
+   "action": 1
+  },
+  "hint": 0
+ },
+ "absence-twin-pure-absence": {
+  "kind": "memory",
+  "n": 200,
+  "unexpected": 1,
+  "lanes": {
+   "records:stored-detail": 150,
+   "records:question": 49
+  },
+  "paths": {
+   "records": 199,
+   "action": 1
+  },
+  "hint": 0
+ },
+ "absence-cross-user": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 77,
+   "records:stored-detail": 43
+  },
+  "paths": {
+   "records": 113,
+   "topic": 7
+  },
+  "hint": 0
+ },
+ "absence-false-premise": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 158,
+   "records:answer-form": 2
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "absence-insufficient-composition": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 116,
+   "records:stored-figure": 44
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "absence-pure-absence": {
+  "kind": "memory",
+  "n": 200,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 194,
+   "records:stored-detail": 6
+  },
+  "paths": {
+   "records": 199,
+   "topic": 1
+  },
+  "hint": 0
+ },
+ "absence-stale-removed": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 111,
+   "records:stored-detail": 49
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "absence-twin-cross-user": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 0,
+  "lanes": {
+   "records:stored-detail": 96,
+   "records:question": 24
+  },
+  "paths": {
+   "records": 120
+  },
+  "hint": 0
+ },
+ "absence-twin-false-premise": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 160
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "absence-twin-near-miss": {
+  "kind": "memory",
+  "n": 200,
+  "unexpected": 0,
+  "lanes": {
+   "records:stored-detail": 153,
+   "records:question": 47
+  },
+  "paths": {
+   "records": 200
+  },
+  "hint": 0
+ },
+ "declarative-behavior": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 82,
+   "records:answer-form": 25
+  },
+  "paths": {
+   "records": 120
+  },
+  "hint": 0
+ },
+ "enterprise-composed-program": {
+  "kind": "memory",
+  "n": 480,
+  "unexpected": 0,
+  "lanes": {
+   "records:identifier": 320,
+   "records:question": 160
+  },
+  "paths": {
+   "records": 480
+  },
+  "hint": 0
+ },
+ "injection-classic": {
+  "kind": "memory",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 40
+  },
+  "paths": {
+   "records": 40
+  },
+  "hint": 0
+ },
+ "injection-envelope-free": {
+  "kind": "memory",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "records:stored-detail": 40
+  },
+  "paths": {
+   "records": 40
+  },
+  "hint": 0
+ },
+ "parser-divergence-negation": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 0,
+  "lanes": {
+   "records:own-records": 120
+  },
+  "paths": {
+   "records": 120
+  },
+  "hint": 0
+ },
+ "parser-divergence-reported-speech": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 120
+  },
+  "paths": {
+   "records": 120
+  },
+  "hint": 0
+ },
+ "parser-divergence-retraction": {
+  "kind": "memory",
+  "n": 120,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 120
+  },
+  "paths": {
+   "records": 120
+  },
+  "hint": 0
+ },
+ "point-in-time-contact": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 136,
+   "records:stored-detail": 24
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "point-in-time-invoice": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 144,
+   "records:answer-form": 16
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "point-in-time-trip-leg": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 159,
+   "records:answer-form": 1
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "record-quantity-direction": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 140,
+   "records:answer-form": 20
+  },
+  "paths": {
+   "records": 160
+  },
+  "hint": 0
+ },
+ "v13-open-program": {
+  "kind": "memory",
+  "n": 640,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 456,
+   "records:identifier": 104
+  },
+  "paths": {
+   "program": 640
+  },
+  "hint": 0
+ },
+ "v13-personal-program": {
+  "kind": "memory",
+  "n": 960,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 750,
+   "records:identifier": 146
+  },
+  "paths": {
+   "program": 952,
+   "records": 8
+  },
+  "hint": 0
+ },
+ "world-contact-current": {
+  "kind": "memory",
+  "n": 1,
+  "unexpected": 0,
+  "lanes": {
+   "records:stored-detail": 1
+  },
+  "paths": {
+   "records": 1
+  },
+  "hint": 0
+ },
+ "world-project-lead-previous": {
+  "kind": "memory",
+  "n": 13,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 12,
+   "records:stored-detail": 1
+  },
+  "paths": {
+   "records": 13
+  },
+  "hint": 0
+ },
+ "world-project-outstanding": {
+  "kind": "memory",
+  "n": 3,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 2,
+   "records:stored-figure": 1
+  },
+  "paths": {
+   "records": 3
+  },
+  "hint": 0
+ },
+ "world-story-lesson-claims": {
+  "kind": "memory",
+  "n": 160,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 156,
+   "records:topic": 4
+  },
+  "paths": {
+   "topic": 160
+  },
+  "hint": 0
+ },
+ "world-story-next-action": {
+  "kind": "memory",
+  "n": 520,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 354,
+   "records:topic": 84
+  },
+  "paths": {
+   "topic": 520
+  },
+  "hint": 0
+ },
+ "world-story-order": {
+  "kind": "memory",
+  "n": 520,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 259,
+   "records:answer-form": 134
+  },
+  "paths": {
+   "topic": 520
+  },
+  "hint": 0
+ },
+ "world-story-owner-current": {
+  "kind": "memory",
+  "n": 520,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 362,
+   "records:own-records": 139
+  },
+  "paths": {
+   "topic": 520
+  },
+  "hint": 0
+ },
+ "world-story-quantity": {
+  "kind": "memory",
+  "n": 360,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 344,
+   "records:topic": 16
+  },
+  "paths": {
+   "topic": 360
+  },
+  "hint": 0
+ },
+ "world-story-status-current": {
+  "kind": "memory",
+  "n": 440,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 250,
+   "records:own-records": 141
+  },
+  "paths": {
+   "topic": 440
+  },
+  "hint": 0
+ },
+ "world-story-status-disagree": {
+  "kind": "memory",
+  "n": 80,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 41,
+   "records:topic": 15
+  },
+  "paths": {
+   "topic": 80
+  },
+  "hint": 0
+ },
+ "world-story-x-owner-email": {
+  "kind": "memory",
+  "n": 520,
+  "unexpected": 0,
+  "lanes": {
+   "records:stored-detail": 405,
+   "records:question": 103
+  },
+  "paths": {
+   "topic": 519,
+   "records": 1
+  },
+  "hint": 0
+ },
+ "world-trip-changed-leg-current": {
+  "kind": "memory",
+  "n": 2,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 2
+  },
+  "paths": {
+   "records": 2
+  },
+  "hint": 0
+ },
+ "world-trip-changed-leg-previous": {
+  "kind": "memory",
+  "n": 5,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 5
+  },
+  "paths": {
+   "records": 5
+  },
+  "hint": 0
+ },
+ "world-trip-current": {
+  "kind": "memory",
+  "n": 242,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 198,
+   "records:asked": 44
+  },
+  "paths": {
+   "records": 242
+  },
+  "hint": 0
+ },
+ "world-trip-longest-current": {
+  "kind": "memory",
+  "n": 5,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 4,
+   "records:own-records": 1
+  },
+  "paths": {
+   "records": 5
+  },
+  "hint": 0
+ },
+ "agent_job": {
+  "kind": "tool",
+  "n": 21,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 12,
+   "action:read-capability": 3
+  },
+  "paths": {
+   "action": 21
+  },
+  "hint": 13
+ },
+ "agent_jobs_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 28,
+   "action:read-capability": 12
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 21
+ },
+ "agent_read_not_run": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 32,
+   "action:imperative-setter": 7
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 38
+ },
+ "agent_run_not_read": {
+  "kind": "tool",
+  "n": 24,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 12,
+   "action:default": 7
+  },
+  "paths": {
+   "action": 24
+  },
+  "hint": 24
+ },
+ "agent_workflow": {
+  "kind": "tool",
+  "n": 25,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 18,
+   "action:imperative-setter": 6
+  },
+  "paths": {
+   "action": 25
+  },
+  "hint": 22
+ },
+ "artifacts_create": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 29,
+   "action:request": 5
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 39
+ },
+ "automation_list": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 17,
+   "action:live": 9
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "automation_not_job": {
+  "kind": "tool",
+  "n": 21,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 18,
+   "action:tool-hint": 3
+  },
+  "paths": {
+   "action": 21
+  },
+  "hint": 21
+ },
+ "calendar_create": {
+  "kind": "tool",
+  "n": 27,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 20,
+   "action:read-capability": 5
+  },
+  "paths": {
+   "action": 27
+  },
+  "hint": 27
+ },
+ "calendar_search": {
+  "kind": "tool",
+  "n": 29,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 12,
+   "action:imperative": 9
+  },
+  "paths": {
+   "action": 29
+  },
+  "hint": 8
+ },
+ "code_compute": {
+  "kind": "tool",
+  "n": 25,
+  "unexpected": 0,
+  "lanes": {
+   "action:arithmetic": 25
+  },
+  "paths": {
+   "action": 25
+  },
+  "hint": 25
+ },
+ "code_compute_not_agent_job": {
+  "kind": "tool",
+  "n": 23,
+  "unexpected": 0,
+  "lanes": {
+   "action:arithmetic": 14,
+   "action:live": 6
+  },
+  "paths": {
+   "action": 23
+  },
+  "hint": 23
+ },
+ "decoy_chat_message_result_usage": {
+  "kind": "tool",
+  "n": 23,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative-setter": 16,
+   "action:imperative": 7
+  },
+  "paths": {
+   "action": 23
+  },
+  "hint": 23
+ },
+ "decoy_contact_lookup_result_usage": {
+  "kind": "tool",
+  "n": 7,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 7
+  },
+  "paths": {
+   "action": 7
+  },
+  "hint": 7
+ },
+ "decoy_crm_lookup_result_usage": {
+  "kind": "tool",
+  "n": 12,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 12
+  },
+  "paths": {
+   "action": 12
+  },
+  "hint": 12
+ },
+ "decoy_docs_search_result_usage": {
+  "kind": "tool",
+  "n": 27,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 27
+  },
+  "paths": {
+   "action": 27
+  },
+  "hint": 27
+ },
+ "decoy_file_convert_result_usage": {
+  "kind": "tool",
+  "n": 17,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 17
+  },
+  "paths": {
+   "action": 17
+  },
+  "hint": 17
+ },
+ "decoy_inbox_triage_result_usage": {
+  "kind": "tool",
+  "n": 9,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative-setter": 8,
+   "action:imperative": 1
+  },
+  "paths": {
+   "action": 9
+  },
+  "hint": 9
+ },
+ "decoy_issue_create_result_usage": {
+  "kind": "tool",
+  "n": 15,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 15
+  },
+  "paths": {
+   "action": 15
+  },
+  "hint": 15
+ },
+ "decoy_map_route_result_usage": {
+  "kind": "tool",
+  "n": 19,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative-setter": 14,
+   "action:imperative": 5
+  },
+  "paths": {
+   "action": 19
+  },
+  "hint": 19
+ },
+ "decoy_note_create_result_usage": {
+  "kind": "tool",
+  "n": 22,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 22
+  },
+  "paths": {
+   "action": 22
+  },
+  "hint": 22
+ },
+ "decoy_poll_create_result_usage": {
+  "kind": "tool",
+  "n": 19,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 19
+  },
+  "paths": {
+   "action": 19
+  },
+  "hint": 19
+ },
+ "decoy_price_quote_result_usage": {
+  "kind": "tool",
+  "n": 16,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative-setter": 11,
+   "action:imperative": 5
+  },
+  "paths": {
+   "action": 16
+  },
+  "hint": 16
+ },
+ "decoy_reminders_list_result_usage": {
+  "kind": "tool",
+  "n": 25,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 25
+  },
+  "paths": {
+   "action": 25
+  },
+  "hint": 25
+ },
+ "decoy_sidebar_color_result_usage": {
+  "kind": "tool",
+  "n": 22,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 14,
+   "action:imperative-setter": 8
+  },
+  "paths": {
+   "action": 22
+  },
+  "hint": 22
+ },
+ "decoy_spreadsheet_read_result_usage": {
+  "kind": "tool",
+  "n": 11,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 11
+  },
+  "paths": {
+   "action": 11
+  },
+  "hint": 11
+ },
+ "decoy_stock_quote_result_usage": {
+  "kind": "tool",
+  "n": 32,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 23,
+   "action:imperative-setter": 9
+  },
+  "paths": {
+   "action": 32
+  },
+  "hint": 32
+ },
+ "decoy_thesaurus_lookup_result_usage": {
+  "kind": "tool",
+  "n": 4,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 4
+  },
+  "paths": {
+   "action": 4
+  },
+  "hint": 4
+ },
+ "decoy_ticket_lookup_result_usage": {
+  "kind": "tool",
+  "n": 16,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 16
+  },
+  "paths": {
+   "action": 16
+  },
+  "hint": 16
+ },
+ "decoy_timer_start_result_usage": {
+  "kind": "tool",
+  "n": 32,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 32
+  },
+  "paths": {
+   "action": 32
+  },
+  "hint": 32
+ },
+ "decoy_translate_text_result_usage": {
+  "kind": "tool",
+  "n": 5,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 4,
+   "action:imperative-setter": 1
+  },
+  "paths": {
+   "action": 5
+  },
+  "hint": 5
+ },
+ "decoy_unit_convert_result_usage": {
+  "kind": "tool",
+  "n": 22,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 22
+  },
+  "paths": {
+   "action": 22
+  },
+  "hint": 22
+ },
+ "decoy_video_summarize_result_usage": {
+  "kind": "tool",
+  "n": 9,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative-setter": 5,
+   "action:imperative": 4
+  },
+  "paths": {
+   "action": 9
+  },
+  "hint": 9
+ },
+ "decoy_weather_lookup_result_usage": {
+  "kind": "tool",
+  "n": 18,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 10,
+   "action:names-tool": 8
+  },
+  "paths": {
+   "action": 18
+  },
+  "hint": 18
+ },
+ "decoy_wiki_search_result_usage": {
+  "kind": "tool",
+  "n": 18,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 18
+  },
+  "paths": {
+   "action": 18
+  },
+  "hint": 18
+ },
+ "discovery_accent_set": {
+  "kind": "tool",
+  "n": 112,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 112
+  },
+  "paths": {
+   "action": 112
+  },
+  "hint": 112
+ },
+ "discovery_font_set": {
+  "kind": "tool",
+  "n": 128,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 128
+  },
+  "paths": {
+   "action": 128
+  },
+  "hint": 128
+ },
+ "entity_lookup_chain": {
+  "kind": "tool",
+  "n": 35,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 21,
+   "action:default": 11
+  },
+  "paths": {
+   "records": 24,
+   "action": 11
+  },
+  "hint": 0
+ },
+ "feedback": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 28,
+   "action:imperative-setter": 9
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "image_create": {
+  "kind": "tool",
+  "n": 25,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 25
+  },
+  "paths": {
+   "action": 25
+  },
+  "hint": 0
+ },
+ "image_edit_not_create": {
+  "kind": "tool",
+  "n": 27,
+  "unexpected": 0,
+  "lanes": {
+   "action:request": 7,
+   "action:default": 6
+  },
+  "paths": {
+   "action": 27
+  },
+  "hint": 27
+ },
+ "link_chain_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 21,
+   "action:look-up": 19
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "memory_fetch": {
+  "kind": "tool",
+  "n": 33,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 15,
+   "action:default": 12
+  },
+  "paths": {
+   "action": 17,
+   "records": 15
+  },
+  "hint": 0
+ },
+ "memory_lookup": {
+  "kind": "tool",
+  "n": 23,
+  "unexpected": 0,
+  "lanes": {
+   "action:default": 11,
+   "records:question": 11
+  },
+  "paths": {
+   "records": 12,
+   "action": 11
+  },
+  "hint": 0
+ },
+ "memory_save_not_search": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 31,
+   "action:request": 6
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 37
+ },
+ "memory_subject": {
+  "kind": "tool",
+  "n": 30,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 22,
+   "action:default": 6
+  },
+  "paths": {
+   "records": 23,
+   "action": 7
+  },
+  "hint": 0
+ },
+ "multi_image_edit": {
+  "kind": "tool",
+  "n": 24,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 24
+  },
+  "paths": {
+   "action": 24
+  },
+  "hint": 0
+ },
+ "multi_subject_scope": {
+  "kind": "tool",
+  "n": 24,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 16,
+   "action:default": 6
+  },
+  "paths": {
+   "records": 17,
+   "action": 7
+  },
+  "hint": 0
+ },
+ "multi_web_read": {
+  "kind": "tool",
+  "n": 25,
+  "unexpected": 0,
+  "lanes": {
+   "action:default": 7,
+   "action:read-capability": 7
+  },
+  "paths": {
+   "action": 25
+  },
+  "hint": 25
+ },
+ "multi_web_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 26,
+   "action:default": 13
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "parallel_web_image": {
+  "kind": "tool",
+  "n": 29,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 9,
+   "action:read-capability": 9
+  },
+  "paths": {
+   "action": 29
+  },
+  "hint": 13
+ },
+ "recipe_apply": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 40
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "recipe_create": {
+  "kind": "tool",
+  "n": 24,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 20,
+   "action:read-capability": 4
+  },
+  "paths": {
+   "action": 24
+  },
+  "hint": 24
+ },
+ "route_memory_not_web": {
+  "kind": "tool",
+  "n": 27,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 16,
+   "action:default": 10
+  },
+  "paths": {
+   "records": 16,
+   "action": 10
+  },
+  "hint": 0
+ },
+ "route_web_not_memory": {
+  "kind": "tool",
+  "n": 27,
+  "unexpected": 0,
+  "lanes": {
+   "action:live": 18,
+   "action:imperative": 9
+  },
+  "paths": {
+   "action": 27
+  },
+  "hint": 19
+ },
+ "sandbox_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 28,
+   "action:imperative-setter": 12
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "schedules_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 40
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "set_effort": {
+  "kind": "tool",
+  "n": 28,
+  "unexpected": 0,
+  "lanes": {
+   "action:default": 16,
+   "action:imperative-setter": 8
+  },
+  "paths": {
+   "action": 28
+  },
+  "hint": 28
+ },
+ "set_tool_prefs": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 21,
+   "action:imperative-setter": 16
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "settings": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 20,
+   "action:imperative": 15
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "stale_context_web": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:live": 21,
+   "action:imperative": 19
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "tool_discovery": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 17,
+   "action:imperative-setter": 13
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 40
+ },
+ "tool_registry_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 26,
+   "action:imperative-setter": 14
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 14
+ },
+ "v10_state_dependent_routing": {
+  "kind": "tool",
+  "n": 336,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 301,
+   "action:default": 35
+  },
+  "paths": {
+   "action": 336
+  },
+  "hint": 336
+ },
+ "v13_mutation_follow_up_read": {
+  "kind": "tool",
+  "n": 80,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 53,
+   "records:stored-detail": 27
+  },
+  "paths": {
+   "records": 80
+  },
+  "hint": 0
+ },
+ "v13_restraint_abstention_web": {
+  "kind": "tool",
+  "n": 112,
+  "unexpected": 0,
+  "lanes": {
+   "records:question": 45,
+   "action:live": 32
+  },
+  "paths": {
+   "action": 67,
+   "records": 45
+  },
+  "hint": 30
+ },
+ "v13_restraint_calendar": {
+  "kind": "tool",
+  "n": 148,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 132,
+   "action:imperative-setter": 9
+  },
+  "paths": {
+   "action": 148
+  },
+  "hint": 148
+ },
+ "v13_restraint_declarative_preference": {
+  "kind": "tool",
+  "n": 115,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 72,
+   "action:imperative-setter": 23
+  },
+  "paths": {
+   "action": 115
+  },
+  "hint": 115
+ },
+ "v13_restraint_effort": {
+  "kind": "tool",
+  "n": 90,
+  "unexpected": 0,
+  "lanes": {
+   "action:request": 53,
+   "action:default": 30
+  },
+  "paths": {
+   "action": 90
+  },
+  "hint": 90
+ },
+ "v13_restraint_email": {
+  "kind": "tool",
+  "n": 96,
+  "unexpected": 0,
+  "lanes": {
+   "action:default": 45,
+   "action:request": 40
+  },
+  "paths": {
+   "action": 96
+  },
+  "hint": 96
+ },
+ "v13_restraint_negation_web": {
+  "kind": "tool",
+  "n": 79,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 23,
+   "action:look-up": 21
+  },
+  "paths": {
+   "action": 72,
+   "records": 7
+  },
+  "hint": 64
+ },
+ "v13_state_dependent_calendar": {
+  "kind": "tool",
+  "n": 109,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 37,
+   "action:imperative-setter": 37
+  },
+  "paths": {
+   "action": 109
+  },
+  "hint": 109
+ },
+ "v13_state_dependent_email": {
+  "kind": "tool",
+  "n": 114,
+  "unexpected": 0,
+  "lanes": {
+   "action:default": 80,
+   "action:imperative": 34
+  },
+  "paths": {
+   "action": 114
+  },
+  "hint": 114
+ },
+ "web_recovery_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:look-up": 17,
+   "action:imperative": 12
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 37
+ },
+ "web_result_usage": {
+  "kind": "tool",
+  "n": 40,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 19,
+   "action:look-up": 9
+  },
+  "paths": {
+   "action": 40
+  },
+  "hint": 30
+ },
+ "web_search": {
+  "kind": "tool",
+  "n": 23,
+  "unexpected": 0,
+  "lanes": {
+   "action:live": 9,
+   "action:imperative": 6
+  },
+  "paths": {
+   "action": 23
+  },
+  "hint": 23
+ },
+ "workflow_not_job": {
+  "kind": "tool",
+  "n": 26,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 13,
+   "action:imperative-setter": 12
+  },
+  "paths": {
+   "action": 26
+  },
+  "hint": 26
+ },
+ "world_business_workflow": {
+  "kind": "tool",
+  "n": 93,
+  "unexpected": 0,
+  "lanes": {
+   "action:read-capability": 48,
+   "action:imperative": 44
+  },
+  "paths": {
+   "action": 93
+  },
+  "hint": 93
+ },
+ "world_contact_research_email_result_usage": {
+  "kind": "tool",
+  "n": 139,
+  "unexpected": 0,
+  "lanes": {
+   "action:request": 95,
+   "action:imperative": 20
+  },
+  "paths": {
+   "action": 131,
+   "action+topic": 8
+  },
+  "hint": 139
+ },
+ "world_link_chain_result_usage": {
+  "kind": "tool",
+  "n": 128,
+  "unexpected": 0,
+  "lanes": {
+   "action:live": 72,
+   "action:imperative": 56
+  },
+  "paths": {
+   "action": 126,
+   "action+topic": 2
+  },
+  "hint": 128
+ },
+ "world_memory_delete": {
+  "kind": "tool",
+  "n": 126,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 100,
+   "action:default": 24
+  },
+  "paths": {
+   "action": 124,
+   "action+topic": 2
+  },
+  "hint": 126
+ },
+ "world_memory_update": {
+  "kind": "tool",
+  "n": 128,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 108,
+   "action:default": 19
+  },
+  "paths": {
+   "action": 128
+  },
+  "hint": 128
+ },
+ "world_theme_discover_set": {
+  "kind": "tool",
+  "n": 82,
+  "unexpected": 0,
+  "lanes": {
+   "action:imperative": 43,
+   "action:imperative-setter": 23
+  },
+  "paths": {
+   "action": 82
+  },
+  "hint": 82
+ }
+}

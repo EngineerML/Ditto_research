@@ -1,0 +1,4072 @@
+{
+ "meta": {
+  "bench_version": 15,
+  "generator": "research/dittobench-datagen (checkout under /home/bittensor/ditto/repos/ditto-subnet)",
+  "corpus": "60 seeds (30 with salts 0-3 from .cache/datasets, 30 more salt-0); served text regenerated with /tmp/atlas_surf/servedgen (pre-surface-pass generator output, the exact text dittobench-api sends)",
+  "served_dump_verified": "practice run 20261102T094901Z drp22v15 seed 5451784605348316629: 350/350 trace user_inputs byte-identical to servedgen; 118/350 identical to the dataset artifact; dataset_sha256 a53f3d70... matches local salt-0 generation",
+  "date": "2026-11-03"
+ },
+ "typo_model_v2": {
+  "source": "internal/textnoise/v2.go; driver gen/v13_surface.go:125-204",
+  "selection_share_per_class_bps": 7000,
+  "classes": [
+   "tool prompts",
+   "memory questions (chitchat excluded)",
+   "seeded pair prompts (waves + tool prerequisites)"
+  ],
+  "never_projected": [
+   "assistant responses",
+   "catalog",
+   "expected answers / args",
+   "enterprise-revision questions and their evidence pairs (restored verbatim, v13_surface.go:234-269)",
+   "answer_kind=chitchat questions"
+  ],
+  "token_budget": "ceil(words/12) clamped [1,4] per surface (v13_surface.go:82-92); story default budget 6 (universe/story.go:516)",
+  "per_token_edit_bound": "floor(letters/3) clamped [1,3] OSA distance (v2.go:72-87)",
+  "edit_mechanism_draw_percent": {
+   "keyboard_neighbor": 30,
+   "transposition": 20,
+   "omission": 18,
+   "duplication": 12,
+   "phonetic_digraph": 12,
+   "autocorrect_vowel_swap": 8
+  },
+  "phonetic_rules": [
+   "ph>f",
+   "ck>k",
+   "ie>ei",
+   "ei>ie",
+   "ea>ee",
+   "ee>ea",
+   "ou>ow",
+   "tion>shun",
+   "sion>shun",
+   "er>ur",
+   "ll>l",
+   "ss>s",
+   "ai>ay",
+   "igh>i",
+   "ough>uff",
+   "que>k",
+   "ce>se",
+   "ci>si",
+   "mm>m",
+   "tt>t",
+   "rr>r",
+   "nn>n",
+   "pp>p",
+   "oo>u"
+  ],
+  "layouts": [
+   "qwerty",
+   "azerty",
+   "qwertz",
+   "mobile (reach 2)"
+  ],
+  "layout_choice": "hash(seed, salt) mod 4 per dataset (v2.go:89-92)",
+  "acceptance": [
+   "first and last letter unchanged",
+   "result not in realWords (1171 words) nor protected nor meaning-critical",
+   "OSA distance <= bound",
+   "up to 6 retries else token left alone"
+  ],
+  "eligibility_exclusions": [
+   "< 4 or > 22 letters",
+   "protected value words (>=3 letters) from every graded value in the whole run + ditto/dittocode/code",
+   "meaning-critical set (177 words)",
+   "contractions",
+   "ALL-CAPS tokens",
+   "whitespace segment containing a digit or any of @ / $ = \\\\ _ % # < > [ ] { } | or ://",
+   "inside \"...\" or curly quotes",
+   "capitalised token mid-sentence, or adjacent to another capitalised token (proper-noun proxy)"
+  ],
+  "tokenizer": "ASCII letters and apostrophe only ([A-Za-z']+); non-ASCII splits words",
+  "meaning_critical_words": [
+   "not",
+   "never",
+   "none",
+   "nothing",
+   "nobody",
+   "without",
+   "except",
+   "only",
+   "dont",
+   "doesnt",
+   "didnt",
+   "isnt",
+   "wasnt",
+   "arent",
+   "werent",
+   "cannot",
+   "cant",
+   "wont",
+   "before",
+   "after",
+   "earlier",
+   "later",
+   "previous",
+   "prior",
+   "current",
+   "currently",
+   "latest",
+   "original",
+   "originally",
+   "first",
+   "last",
+   "older",
+   "newer",
+   "former",
+   "initial",
+   "final",
+   "earliest",
+   "afterward",
+   "afterwards",
+   "since",
+   "until",
+   "increase",
+   "increased",
+   "decrease",
+   "decreased",
+   "raise",
+   "raised",
+   "lower",
+   "lowered",
+   "higher",
+   "highest",
+   "lowest",
+   "more",
+   "less",
+   "most",
+   "least",
+   "longer",
+   "longest",
+   "shorter",
+   "shortest",
+   "larger",
+   "largest",
+   "smaller",
+   "smallest",
+   "above",
+   "below",
+   "add",
+   "added",
+   "adding",
+   "subtract",
+   "subtracted",
+   "minus",
+   "plus",
+   "gain",
+   "gaining",
+   "loss",
+   "losing",
+   "remove",
+   "removed",
+   "delete",
+   "deleted",
+   "keep",
+   "instead",
+   "rather",
+   "than",
+   "then",
+   "still",
+   "already",
+   "again",
+   "once",
+   "twice",
+   "each",
+   "every",
+   "all",
+   "both",
+   "either",
+   "neither",
+   "other",
+   "another",
+   "same",
+   "different",
+   "changed",
+   "unchanged",
+   "replace",
+   "replaced",
+   "replacing",
+   "corrected",
+   "correction",
+   "approved",
+   "paid",
+   "unpaid",
+   "owed",
+   "outstanding",
+   "remaining",
+   "remains",
+   "left",
+   "total",
+   "net",
+   "cents",
+   "dollars",
+   "days",
+   "hours",
+   "minutes",
+   "weeks",
+   "actually",
+   "actual",
+   "real",
+   "really",
+   "exact",
+   "exactly",
+   "between",
+   "within",
+   "against",
+   "across",
+   "through",
+   "throughout",
+   "whether",
+   "unless",
+   "while",
+   "during",
+   "because",
+   "though",
+   "although",
+   "however",
+   "otherwise",
+   "yes",
+   "true",
+   "false",
+   "yesterday",
+   "today",
+   "tomorrow",
+   "friday",
+   "monday",
+   "tuesday",
+   "wednesday",
+   "thursday",
+   "saturday",
+   "sunday",
+   "yours",
+   "mine",
+   "theirs",
+   "ours",
+   "own",
+   "someone",
+   "anyone",
+   "ignore",
+   "skip",
+   "stop",
+   "cancel",
+   "start",
+   "begin",
+   "personal",
+   "business",
+   "internal",
+   "external",
+   "private",
+   "public"
+  ],
+  "protected_value_words_per_run": {
+   "min": 619,
+   "max": 666,
+   "mean": 644.7
+  },
+  "harness_keywords_in_protected_set_seeds_of_30": {
+   "email": 30,
+   "note": 30,
+   "send": 30,
+   "contact": 30,
+   "what": 30,
+   "find": 30,
+   "remember": 30,
+   "handoff": 30,
+   "value": 30,
+   "figure": 30,
+   "latest": 30,
+   "change": 30,
+   "light": 30,
+   "dark": 30,
+   "phone": 30,
+   "quote": 30,
+   "approved": 29,
+   "project": 28,
+   "current": 25,
+   "address": 25,
+   "move": 21,
+   "meeting": 16,
+   "open": 7,
+   "dentist": 3
+  },
+  "measured_artifact_salt0_60_seeds": {
+   "tool": {
+    "items": 6000,
+    "changed_share": 0.6912,
+    "typo_item_share": 0.6912,
+    "phrase_change_item_share": 0.0,
+    "typo_tokens": 7487,
+    "tokens": 100867,
+    "word_distortion_rate_all_tokens": 0.07423,
+    "word_distortion_rate_eligible_4plus": 0.12406,
+    "typos_per_typoed_item": 1.805,
+    "per_item_typo_count_hist": {
+     "1": 1328,
+     "2": 2384,
+     "3": 349,
+     "4": 86
+    },
+    "edit_distance_hist": {
+     "1": 5646,
+     "2": 1647,
+     "3": 194
+    },
+    "top_distorted_words": [
+     [
+      "risk",
+      231
+     ],
+     [
+      "dependency",
+      196
+     ],
+     [
+      "number",
+      168
+     ],
+     [
+      "look",
+      134
+     ],
+     [
+      "calendar",
+      132
+     ],
+     [
+      "search",
+      128
+     ],
+     [
+      "them",
+      124
+     ],
+     [
+      "context",
+      118
+     ],
+     [
+      "make",
+      113
+     ],
+     [
+      "tell",
+      110
+     ],
+     [
+      "planning",
+      103
+     ],
+     [
+      "workflow",
+      103
+     ],
+     [
+      "give",
+      97
+     ],
+     [
+      "please",
+      92
+     ],
+     [
+      "check",
+      90
+     ],
+     [
+      "page",
+      86
+     ],
+     [
+      "name",
+      82
+     ],
+     [
+      "accent",
+      79
+     ],
+     [
+      "precise",
+      78
+     ],
+     [
+      "about",
+      78
+     ],
+     [
+      "reviewer",
+      77
+     ],
+     [
+      "font",
+      75
+     ],
+     [
+      "when",
+      71
+     ],
+     [
+      "just",
+      68
+     ],
+     [
+      "landed",
+      65
+     ]
+    ]
+   },
+   "pair": {
+    "items": 37739,
+    "changed_share": 0.6583,
+    "typo_item_share": 0.6583,
+    "phrase_change_item_share": 0.0,
+    "typo_tokens": 56510,
+    "tokens": 3303606,
+    "word_distortion_rate_all_tokens": 0.01711,
+    "word_distortion_rate_eligible_4plus": 0.03287,
+    "typos_per_typoed_item": 2.275,
+    "per_item_typo_count_hist": {
+     "1": 3798,
+     "2": 13037,
+     "3": 5394,
+     "4": 2614
+    },
+    "edit_distance_hist": {
+     "1": 43818,
+     "2": 11040,
+     "3": 1652
+    },
+    "top_distorted_words": [
+     [
+      "case",
+      3038
+     ],
+     [
+      "work",
+      2107
+     ],
+     [
+      "they",
+      1936
+     ],
+     [
+      "forwarding",
+      1260
+     ],
+     [
+      "text",
+      1154
+     ],
+     [
+      "this",
+      1126
+     ],
+     [
+      "with",
+      1086
+     ],
+     [
+      "everyone",
+      836
+     ],
+     [
+      "calendar",
+      817
+     ],
+     [
+      "invoice",
+      809
+     ],
+     [
+      "these",
+      795
+     ],
+     [
+      "when",
+      781
+     ],
+     [
+      "list",
+      719
+     ],
+     [
+      "used",
+      688
+     ],
+     [
+      "payment",
+      655
+     ],
+     [
+      "ended",
+      646
+     ],
+     [
+      "handling",
+      645
+     ],
+     [
+      "have",
+      644
+     ],
+     [
+      "pasted",
+      636
+     ],
+     [
+      "receipt",
+      627
+     ],
+     [
+      "update",
+      616
+     ],
+     [
+      "were",
+      592
+     ],
+     [
+      "subject",
+      572
+     ],
+     [
+      "payload",
+      562
+     ],
+     [
+      "payable",
+      547
+     ]
+    ]
+   },
+   "resp": {
+    "items": 42944,
+    "changed_share": 0.3371,
+    "typo_item_share": 0.0,
+    "phrase_change_item_share": 0.3371,
+    "typo_tokens": 0,
+    "tokens": 568756,
+    "word_distortion_rate_all_tokens": 0.0,
+    "word_distortion_rate_eligible_4plus": 0.0,
+    "typos_per_typoed_item": 0.0,
+    "per_item_typo_count_hist": {
+     "0": 14478
+    },
+    "edit_distance_hist": {},
+    "top_distorted_words": []
+   },
+   "pair_story": {
+    "items": 5205,
+    "changed_share": 0.5353,
+    "typo_item_share": 0.5353,
+    "phrase_change_item_share": 0.0,
+    "typo_tokens": 11144,
+    "tokens": 4640117,
+    "word_distortion_rate_all_tokens": 0.0024,
+    "word_distortion_rate_eligible_4plus": 0.00474,
+    "typos_per_typoed_item": 4.0,
+    "per_item_typo_count_hist": {
+     "4": 2786
+    },
+    "edit_distance_hist": {
+     "1": 8724,
+     "2": 2185,
+     "3": 235
+    },
+    "top_distorted_words": [
+     [
+      "this",
+      348
+     ],
+     [
+      "which",
+      289
+     ],
+     [
+      "with",
+      170
+     ],
+     [
+      "kept",
+      146
+     ],
+     [
+      "background",
+      130
+     ],
+     [
+      "notes",
+      126
+     ],
+     [
+      "about",
+      123
+     ],
+     [
+      "want",
+      110
+     ],
+     [
+      "early",
+      107
+     ],
+     [
+      "here",
+      105
+     ],
+     [
+      "home",
+      101
+     ],
+     [
+      "night",
+      99
+     ],
+     [
+      "neighbours",
+      88
+     ],
+     [
+      "long",
+      88
+     ],
+     [
+      "matters",
+      86
+     ],
+     [
+      "properly",
+      85
+     ],
+     [
+      "thread",
+      83
+     ],
+     [
+      "battery",
+      82
+     ],
+     [
+      "finally",
+      80
+     ],
+     [
+      "enough",
+      79
+     ],
+     [
+      "needed",
+      78
+     ],
+     [
+      "their",
+      76
+     ],
+     [
+      "aside",
+      70
+     ],
+     [
+      "rescuing",
+      69
+     ],
+     [
+      "messages",
+      68
+     ]
+    ]
+   },
+   "question": {
+    "items": 15000,
+    "changed_share": 0.6558,
+    "typo_item_share": 0.6558,
+    "phrase_change_item_share": 0.0,
+    "typo_tokens": 23353,
+    "tokens": 363071,
+    "word_distortion_rate_all_tokens": 0.06432,
+    "word_distortion_rate_eligible_4plus": 0.10725,
+    "typos_per_typoed_item": 2.374,
+    "per_item_typo_count_hist": {
+     "1": 962,
+     "2": 5202,
+     "3": 2705,
+     "4": 968
+    },
+    "edit_distance_hist": {
+     "1": 19011,
+     "2": 3981,
+     "3": 361
+    },
+    "top_distorted_words": [
+     [
+      "which",
+      913
+     ],
+     [
+      "with",
+      783
+     ],
+     [
+      "work",
+      598
+     ],
+     [
+      "this",
+      583
+     ],
+     [
+      "case",
+      580
+     ],
+     [
+      "many",
+      566
+     ],
+     [
+      "have",
+      459
+     ],
+     [
+      "about",
+      436
+     ],
+     [
+      "answer",
+      420
+     ],
+     [
+      "thread",
+      377
+     ],
+     [
+      "handle",
+      329
+     ],
+     [
+      "need",
+      268
+     ],
+     [
+      "want",
+      252
+     ],
+     [
+      "they",
+      251
+     ],
+     [
+      "where",
+      232
+     ],
+     [
+      "them",
+      231
+     ],
+     [
+      "name",
+      228
+     ],
+     [
+      "list",
+      218
+     ],
+     [
+      "just",
+      212
+     ],
+     [
+      "save",
+      211
+     ],
+     [
+      "looking",
+      205
+     ],
+     [
+      "payment",
+      203
+     ],
+     [
+      "quick",
+      202
+     ],
+     [
+      "give",
+      202
+     ],
+     [
+      "follow",
+      201
+     ]
+    ]
+   }
+  },
+  "measured_artifact_salt1_30_seeds": {
+   "tool": {
+    "items": 3000,
+    "changed_share": 0.692,
+    "typo_item_share": 0.692,
+    "phrase_change_item_share": 0.0,
+    "typo_tokens": 3716,
+    "tokens": 50292,
+    "word_distortion_rate_all_tokens": 0.07389,
+    "word_distortion_rate_eligible_4plus": 0.12333,
+    "typos_per_typoed_item": 1.79,
+    "per_item_typo_count_hist": {
+     "1": 681,
+     "2": 1187,
+     "3": 171,
+     "4": 37
+    },
+    "edit_distance_hist": {
+     "1": 2794,
+     "2": 850,
+     "3": 72
+    }
+   },
+   "pair": {
+    "items": 18899,
+    "changed_share": 0.6515,
+    "typo_item_share": 0.6511,
+    "phrase_change_item_share": 0.0016,
+    "typo_tokens": 27999,
+    "tokens": 1692196,
+    "word_distortion_rate_all_tokens": 0.01655,
+    "word_distortion_rate_eligible_4plus": 0.03191,
+    "typos_per_typoed_item": 2.275,
+    "per_item_typo_count_hist": {
+     "0": 7,
+     "1": 1865,
+     "2": 6470,
+     "3": 2690,
+     "4": 1281
+    },
+    "edit_distance_hist": {
+     "1": 21789,
+     "2": 5373,
+     "3": 837
+    }
+   },
+   "resp": {
+    "items": 21457,
+    "changed_share": 0.338,
+    "typo_item_share": 0.0,
+    "phrase_change_item_share": 0.338,
+    "typo_tokens": 0,
+    "tokens": 283900,
+    "word_distortion_rate_all_tokens": 0.0,
+    "word_distortion_rate_eligible_4plus": 0.0,
+    "typos_per_typoed_item": 0.0,
+    "per_item_typo_count_hist": {
+     "0": 7252
+    },
+    "edit_distance_hist": {}
+   },
+   "pair_story": {
+    "items": 2558,
+    "changed_share": 0.5629,
+    "typo_item_share": 0.5629,
+    "phrase_change_item_share": 0.0,
+    "typo_tokens": 5760,
+    "tokens": 2236743,
+    "word_distortion_rate_all_tokens": 0.00258,
+    "word_distortion_rate_eligible_4plus": 0.00506,
+    "typos_per_typoed_item": 4.0,
+    "per_item_typo_count_hist": {
+     "4": 1440
+    },
+    "edit_distance_hist": {
+     "1": 4507,
+     "2": 1154,
+     "3": 99
+    }
+   },
+   "question": {
+    "items": 7500,
+    "changed_share": 0.6553,
+    "typo_item_share": 0.6553,
+    "phrase_change_item_share": 0.0,
+    "typo_tokens": 11656,
+    "tokens": 181598,
+    "word_distortion_rate_all_tokens": 0.06419,
+    "word_distortion_rate_eligible_4plus": 0.10698,
+    "typos_per_typoed_item": 2.372,
+    "per_item_typo_count_hist": {
+     "1": 483,
+     "2": 2614,
+     "3": 1327,
+     "4": 491
+    },
+    "edit_distance_hist": {
+     "1": 9579,
+     "2": 1885,
+     "3": 192
+    }
+   }
+  },
+  "keyword_distortion_prompts_questions_salt0": [
+   {
+    "word": "remind",
+    "occurrences": 421,
+    "distorted": 189,
+    "rate": 0.4489
+   },
+   {
+    "word": "translate",
+    "occurrences": 9,
+    "distorted": 4,
+    "rate": 0.4444
+   },
+   {
+    "word": "save",
+    "occurrences": 541,
+    "distorted": 226,
+    "rate": 0.4177
+   },
+   {
+    "word": "reply",
+    "occurrences": 5,
+    "distorted": 2,
+    "rate": 0.4
+   },
+   {
+    "word": "draft",
+    "occurrences": 61,
+    "distorted": 23,
+    "rate": 0.377
+   },
+   {
+    "word": "conditions",
+    "occurrences": 8,
+    "distorted": 3,
+    "rate": 0.375
+   },
+   {
+    "word": "invoice",
+    "occurrences": 431,
+    "distorted": 160,
+    "rate": 0.3712
+   },
+   {
+    "word": "article",
+    "occurrences": 14,
+    "distorted": 5,
+    "rate": 0.3571
+   },
+   {
+    "word": "calendar",
+    "occurrences": 378,
+    "distorted": 132,
+    "rate": 0.3492
+   },
+   {
+    "word": "many",
+    "occurrences": 1731,
+    "distorted": 580,
+    "rate": 0.3351
+   },
+   {
+    "word": "forecast",
+    "occurrences": 15,
+    "distorted": 5,
+    "rate": 0.3333
+   },
+   {
+    "word": "make",
+    "occurrences": 561,
+    "distorted": 180,
+    "rate": 0.3209
+   },
+   {
+    "word": "create",
+    "occurrences": 181,
+    "distorted": 55,
+    "rate": 0.3039
+   },
+   {
+    "word": "existing",
+    "occurrences": 54,
+    "distorted": 16,
+    "rate": 0.2963
+   },
+   {
+    "word": "where",
+    "occurrences": 931,
+    "distorted": 272,
+    "rate": 0.2922
+   },
+   {
+    "word": "update",
+    "occurrences": 330,
+    "distorted": 96,
+    "rate": 0.2909
+   },
+   {
+    "word": "status",
+    "occurrences": 388,
+    "distorted": 112,
+    "rate": 0.2887
+   },
+   {
+    "word": "result",
+    "occurrences": 73,
+    "distorted": 21,
+    "rate": 0.2877
+   },
+   {
+    "word": "workflow",
+    "occurrences": 360,
+    "distorted": 103,
+    "rate": 0.2861
+   },
+   {
+    "word": "results",
+    "occurrences": 7,
+    "distorted": 2,
+    "rate": 0.2857
+   },
+   {
+    "word": "link",
+    "occurrences": 32,
+    "distorted": 9,
+    "rate": 0.2812
+   },
+   {
+    "word": "which",
+    "occurrences": 3467,
+    "distorted": 970,
+    "rate": 0.2798
+   },
+   {
+    "word": "look",
+    "occurrences": 496,
+    "distorted": 138,
+    "rate": 0.2782
+   },
+   {
+    "word": "font",
+    "occurrences": 375,
+    "distorted": 104,
+    "rate": 0.2773
+   },
+   {
+    "word": "notes",
+    "occurrences": 852,
+    "distorted": 234,
+    "rate": 0.2746
+   },
+   {
+    "word": "price",
+    "occurrences": 11,
+    "distorted": 3,
+    "rate": 0.2727
+   },
+   {
+    "word": "when",
+    "occurrences": 434,
+    "distorted": 118,
+    "rate": 0.2719
+   },
+   {
+    "word": "source",
+    "occurrences": 78,
+    "distorted": 21,
+    "rate": 0.2692
+   },
+   {
+    "word": "amount",
+    "occurrences": 41,
+    "distorted": 11,
+    "rate": 0.2683
+   },
+   {
+    "word": "schedule",
+    "occurrences": 56,
+    "distorted": 15,
+    "rate": 0.2679
+   },
+   {
+    "word": "please",
+    "occurrences": 1017,
+    "distorted": 271,
+    "rate": 0.2665
+   },
+   {
+    "word": "tell",
+    "occurrences": 495,
+    "distorted": 131,
+    "rate": 0.2646
+   },
+   {
+    "word": "saved",
+    "occurrences": 681,
+    "distorted": 180,
+    "rate": 0.2643
+   },
+   {
+    "word": "list",
+    "occurrences": 953,
+    "distorted": 249,
+    "rate": 0.2613
+   },
+   {
+    "word": "turn",
+    "occurrences": 27,
+    "distorted": 7,
+    "rate": 0.2593
+   },
+   {
+    "word": "receipt",
+    "occurrences": 152,
+    "distorted": 39,
+    "rate": 0.2566
+   },
+   {
+    "word": "mail",
+    "occurrences": 4,
+    "distorted": 1,
+    "rate": 0.25
+   },
+   {
+    "word": "generate",
+    "occurrences": 36,
+    "distorted": 9,
+    "rate": 0.25
+   },
+   {
+    "word": "weather",
+    "occurrences": 53,
+    "distorted": 13,
+    "rate": 0.2453
+   },
+   {
+    "word": "search",
+    "occurrences": 566,
+    "distorted": 128,
+    "rate": 0.2261
+   },
+   {
+    "word": "color",
+    "occurrences": 169,
+    "distorted": 38,
+    "rate": 0.2249
+   },
+   {
+    "word": "reminder",
+    "occurrences": 32,
+    "distorted": 7,
+    "rate": 0.2188
+   },
+   {
+    "word": "page",
+    "occurrences": 393,
+    "distorted": 86,
+    "rate": 0.2188
+   },
+   {
+    "word": "message",
+    "occurrences": 302,
+    "distorted": 65,
+    "rate": 0.2152
+   },
+   {
+    "word": "accent",
+    "occurrences": 521,
+    "distorted": 110,
+    "rate": 0.2111
+   },
+   {
+    "word": "summary",
+    "occurrences": 124,
+    "distorted": 25,
+    "rate": 0.2016
+   },
+   {
+    "word": "directions",
+    "occurrences": 10,
+    "distorted": 2,
+    "rate": 0.2
+   },
+   {
+    "word": "online",
+    "occurrences": 116,
+    "distorted": 23,
+    "rate": 0.1983
+   },
+   {
+    "word": "mode",
+    "occurrences": 245,
+    "distorted": 47,
+    "rate": 0.1918
+   },
+   {
+    "word": "options",
+    "occurrences": 273,
+    "distorted": 50,
+    "rate": 0.1832
+   },
+   {
+    "word": "setting",
+    "occurrences": 115,
+    "distorted": 21,
+    "rate": 0.1826
+   },
+   {
+    "word": "read",
+    "occurrences": 325,
+    "distorted": 58,
+    "rate": 0.1785
+   },
+   {
+    "word": "settings",
+    "occurrences": 76,
+    "distorted": 12,
+    "rate": 0.1579
+   },
+   {
+    "word": "check",
+    "occurrences": 1161,
+    "distorted": 179,
+    "rate": 0.1542
+   },
+   {
+    "word": "show",
+    "occurrences": 39,
+    "distorted": 6,
+    "rate": 0.1538
+   },
+   {
+    "word": "report",
+    "occurrences": 374,
+    "distorted": 54,
+    "rate": 0.1444
+   },
+   {
+    "word": "memory",
+    "occurrences": 57,
+    "distorted": 8,
+    "rate": 0.1404
+   },
+   {
+    "word": "picture",
+    "occurrences": 50,
+    "distorted": 7,
+    "rate": 0.14
+   },
+   {
+    "word": "moved",
+    "occurrences": 45,
+    "distorted": 6,
+    "rate": 0.1333
+   },
+   {
+    "word": "dentist",
+    "occurrences": 199,
+    "distorted": 26,
+    "rate": 0.1307
+   },
+   {
+    "word": "image",
+    "occurrences": 112,
+    "distorted": 14,
+    "rate": 0.125
+   },
+   {
+    "word": "progress",
+    "occurrences": 8,
+    "distorted": 1,
+    "rate": 0.125
+   },
+   {
+    "word": "flight",
+    "occurrences": 27,
+    "distorted": 3,
+    "rate": 0.1111
+   },
+   {
+    "word": "agent",
+    "occurrences": 58,
+    "distorted": 6,
+    "rate": 0.1034
+   },
+   {
+    "word": "video",
+    "occurrences": 39,
+    "distorted": 4,
+    "rate": 0.1026
+   },
+   {
+    "word": "address",
+    "occurrences": 801,
+    "distorted": 82,
+    "rate": 0.1024
+   },
+   {
+    "word": "morning",
+    "occurrences": 30,
+    "distorted": 3,
+    "rate": 0.1
+   },
+   {
+    "word": "colour",
+    "occurrences": 51,
+    "distorted": 5,
+    "rate": 0.098
+   },
+   {
+    "word": "route",
+    "occurrences": 109,
+    "distorted": 9,
+    "rate": 0.0826
+   },
+   {
+    "word": "news",
+    "occurrences": 42,
+    "distorted": 2,
+    "rate": 0.0476
+   },
+   {
+    "word": "open",
+    "occurrences": 541,
+    "distorted": 19,
+    "rate": 0.0351
+   },
+   {
+    "word": "switch",
+    "occurrences": 144,
+    "distorted": 3,
+    "rate": 0.0208
+   },
+   {
+    "word": "trip",
+    "occurrences": 1525,
+    "distorted": 12,
+    "rate": 0.0079
+   },
+   {
+    "word": "email",
+    "occurrences": 3177,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "current",
+    "occurrences": 2662,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "meeting",
+    "occurrences": 19,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "note",
+    "occurrences": 937,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "remember",
+    "occurrences": 718,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "send",
+    "occurrences": 1042,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "photo",
+    "occurrences": 16,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "latest",
+    "occurrences": 618,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "phone",
+    "occurrences": 8,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "project",
+    "occurrences": 657,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "handoff",
+    "occurrences": 295,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "appointment",
+    "occurrences": 3,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "find",
+    "occurrences": 297,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "job",
+    "occurrences": 303,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "run",
+    "occurrences": 573,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "contact",
+    "occurrences": 1450,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "booking",
+    "occurrences": 49,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "value",
+    "occurrences": 234,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "exact",
+    "occurrences": 743,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "figure",
+    "occurrences": 685,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "website",
+    "occurrences": 14,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "what",
+    "occurrences": 7679,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "who",
+    "occurrences": 2576,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "how",
+    "occurrences": 2722,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "much",
+    "occurrences": 5,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "subject",
+    "occurrences": 2,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "dark",
+    "occurrences": 141,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "light",
+    "occurrences": 358,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "language",
+    "occurrences": 153,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "french",
+    "occurrences": 4,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "weekend",
+    "occurrences": 263,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "evening",
+    "occurrences": 48,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "change",
+    "occurrences": 613,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "move",
+    "occurrences": 523,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "approved",
+    "occurrences": 122,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "quote",
+    "occurrences": 162,
+    "distorted": 0,
+    "rate": 0.0
+   },
+   {
+    "word": "quoted",
+    "occurrences": 8,
+    "distorted": 0,
+    "rate": 0.0
+   }
+  ],
+  "story_double_noise_note": "v15 session ids are opaque hex, so v13SkipPairNoise (prefix \"story-\", v13_surface.go:274) never fires: artifact stories get the story pass (6 tokens) plus the artifact pass (budget 4)",
+  "examples_salt0": [
+   [
+    "pair",
+    "when",
+    "wehn"
+   ],
+   [
+    "pair",
+    "were",
+    "wure"
+   ],
+   [
+    "pair",
+    "work",
+    "wrk"
+   ],
+   [
+    "pair",
+    "These",
+    "Tese"
+   ],
+   [
+    "pair",
+    "they",
+    "tehy"
+   ],
+   [
+    "pair",
+    "work",
+    "wodk"
+   ],
+   [
+    "pair",
+    "when",
+    "wehn"
+   ],
+   [
+    "pair",
+    "they",
+    "thzy"
+   ],
+   [
+    "pair",
+    "used",
+    "ued"
+   ],
+   [
+    "pair",
+    "These",
+    "Thsse"
+   ],
+   [
+    "pair",
+    "ended",
+    "enxed"
+   ],
+   [
+    "pair",
+    "work",
+    "wprk"
+   ],
+   [
+    "pair",
+    "calls",
+    "caols"
+   ],
+   [
+    "pair",
+    "when",
+    "whsn"
+   ],
+   [
+    "pair",
+    "were",
+    "wrre"
+   ],
+   [
+    "pair",
+    "maintenance",
+    "mintenace"
+   ],
+   [
+    "pair",
+    "reviewed",
+    "reviswed"
+   ],
+   [
+    "pair",
+    "work",
+    "wkrk"
+   ],
+   [
+    "pair",
+    "when",
+    "wten"
+   ],
+   [
+    "pair",
+    "they",
+    "thy"
+   ],
+   [
+    "pair",
+    "receipt",
+    "recepit"
+   ],
+   [
+    "pair",
+    "reviewed",
+    "reivewed"
+   ],
+   [
+    "pair",
+    "work",
+    "wrok"
+   ],
+   [
+    "pair",
+    "Everyone",
+    "Evuruone"
+   ],
+   [
+    "pair",
+    "them",
+    "tbem"
+   ],
+   [
+    "pair",
+    "This",
+    "Thhis"
+   ],
+   [
+    "pair",
+    "reviewed",
+    "reveiwed"
+   ],
+   [
+    "pair",
+    "work",
+    "wrok"
+   ],
+   [
+    "pair",
+    "they",
+    "tgey"
+   ],
+   [
+    "pair",
+    "ended",
+    "ened"
+   ],
+   [
+    "pair",
+    "work",
+    "wrk"
+   ],
+   [
+    "pair",
+    "everyone",
+    "everryone"
+   ],
+   [
+    "pair",
+    "calls",
+    "clals"
+   ],
+   [
+    "pair",
+    "were",
+    "werre"
+   ],
+   [
+    "pair",
+    "work",
+    "woek"
+   ],
+   [
+    "pair",
+    "reconciling",
+    "reconsiling"
+   ],
+   [
+    "pair",
+    "receipt",
+    "resseipt"
+   ],
+   [
+    "pair",
+    "work",
+    "wrk"
+   ],
+   [
+    "pair",
+    "they",
+    "tehy"
+   ],
+   [
+    "pair",
+    "ended",
+    "endid"
+   ],
+   [
+    "pair",
+    "work",
+    "wkrk"
+   ],
+   [
+    "pair",
+    "everyone",
+    "everyyone"
+   ],
+   [
+    "pair",
+    "they",
+    "thzy"
+   ],
+   [
+    "pair",
+    "were",
+    "wefe"
+   ],
+   [
+    "pair",
+    "reconciling",
+    "reconcliing"
+   ],
+   [
+    "pair",
+    "This",
+    "Tihs"
+   ],
+   [
+    "pair",
+    "work",
+    "wrok"
+   ],
+   [
+    "pair",
+    "everyone",
+    "evuryone"
+   ],
+   [
+    "pair",
+    "when",
+    "wehn"
+   ],
+   [
+    "pair",
+    "they",
+    "tehy"
+   ],
+   [
+    "pair",
+    "receipt",
+    "recuipt"
+   ],
+   [
+    "pair",
+    "receipt",
+    "rediept"
+   ],
+   [
+    "pair",
+    "work",
+    "wok"
+   ],
+   [
+    "pair",
+    "they",
+    "thdy"
+   ],
+   [
+    "pair",
+    "work",
+    "wkrk"
+   ],
+   [
+    "pair",
+    "used",
+    "uwed"
+   ],
+   [
+    "pair",
+    "work",
+    "wlrk"
+   ],
+   [
+    "pair",
+    "handling",
+    "hqndling"
+   ],
+   [
+    "pair",
+    "work",
+    "wrok"
+   ],
+   [
+    "pair",
+    "goes",
+    "geos"
+   ]
+  ]
+ },
+ "v1_projector_live_paths": {
+  "source": "internal/textnoise/textnoise.go; gen/v8noise.go; gen/isolation.go:358; datagen/datagen.go:1755-1778",
+  "isolation": "25% (2500 bps per domain) of isolation questions and secondary-wave pair prompts, MaxEdits 1, Grammar on (32% chance the single edit is a grammar rule), QWERTY, first/last letter kept",
+  "grammar_rules": [
+   "could have>could of",
+   "should have>should of",
+   "would have>would of",
+   "supposed to>suppose to",
+   "used to>use to",
+   "a lot>alot",
+   "it's>its",
+   "who's>whose",
+   "doesn't>doesnt",
+   "don't>dont",
+   "i'm>im"
+  ],
+  "alias_misspelling": "misspellAliasV13 (ProjectV2 Force=true, 1 token) / catalog.AliasFor (1..floor(len/3) edits, distinct from every other option): every discovery_font_set, discovery_accent_set, world_theme_discover_set and capability mode/accent/font prompt names its value misspelled",
+  "alias_prompt_share_of_tool_prompts": 0.0823
+ },
+ "served_text": {
+  "items_per_class_60_seeds": {
+   "tool": 6000,
+   "pair": 37739,
+   "response": 42944,
+   "pair_story": 5205,
+   "question": 15000
+  },
+  "lengths_served": {
+   "tool": {
+    "chars_p50": 92,
+    "chars_p90": 149,
+    "chars_p99": 223,
+    "chars_max": 252,
+    "words_p50": 16,
+    "words_p90": 26,
+    "words_max": 42
+   },
+   "pair": {
+    "chars_p50": 147,
+    "chars_p90": 291,
+    "chars_p99": 16679,
+    "chars_max": 17080,
+    "words_p50": 22,
+    "words_p90": 44,
+    "words_max": 1192
+   },
+   "response": {
+    "chars_p50": 79,
+    "chars_p90": 93,
+    "chars_p99": 133,
+    "chars_max": 210,
+    "words_p50": 14,
+    "words_p90": 17,
+    "words_max": 36
+   },
+   "pair_story": {
+    "chars_p50": 2525,
+    "chars_p90": 17775,
+    "chars_p99": 18102,
+    "chars_max": 18276,
+    "words_p50": 455,
+    "words_p90": 2061,
+    "words_max": 2311
+   },
+   "question": {
+    "chars_p50": 122,
+    "chars_p90": 228,
+    "chars_p99": 272,
+    "chars_max": 336,
+    "words_p50": 22,
+    "words_p90": 36,
+    "words_max": 59
+   }
+  },
+  "pairs_per_seed": {
+   "min": 702,
+   "max": 736,
+   "mean": 715.7
+  },
+  "story_pairs_per_seed": 86.75,
+  "unicode_item_share_served": {
+   "tool": {
+    "em_dash": 0.273
+   },
+   "pair": {
+    "em_dash": 0.1181,
+    "curly_double_quote": 0.0874,
+    "curly_single_quote": 0.0779,
+    "currency_symbol_non_dollar": 0.0079
+   },
+   "response": {
+    "curly_single_quote": 0.4781,
+    "em_dash": 0.3308
+   },
+   "pair_story": {
+    "em_dash": 0.4986,
+    "curly_single_quote": 0.0115
+   },
+   "question": {
+    "em_dash": 0.2233
+   }
+  },
+  "top_non_ascii_codepoints": [
+   [
+    "U+2014 EM DASH",
+    61082
+   ],
+   [
+    "U+2019 RIGHT SINGLE QUOTATION MARK",
+    38243
+   ],
+   [
+    "U+201C LEFT DOUBLE QUOTATION MARK",
+    3300
+   ],
+   [
+    "U+201D RIGHT DOUBLE QUOTATION MARK",
+    3300
+   ],
+   [
+    "U+20AC EURO SIGN",
+    459
+   ],
+   [
+    "U+00A3 POUND SIGN",
+    441
+   ],
+   [
+    "U+2018 LEFT SINGLE QUOTATION MARK",
+    60
+   ]
+  ],
+  "non_ascii_words_top": [],
+  "format_item_share_served": {
+   "tool": {
+    "clock_time_hh:mm": 0.0083,
+    "am_pm": 0.0012,
+    "weekday": 0.0713,
+    "percent": 0.0022,
+    "ordinal_number": 0.0012,
+    "comma_thousands": 0.0027,
+    "decimal": 0.0068,
+    "c_hex17_id": 0.0817,
+    "hex_run_6plus": 0.0817,
+    "allcaps_token_2plus": 0.015,
+    "double_quote_ascii": 0.2067,
+    "parenthetical": 0.0427,
+    "semicolon": 0.0818
+   },
+   "pair": {
+    "dollar_amount": 0.0715,
+    "pound_euro": 0.0079,
+    "clock_time_hh:mm": 0.0102,
+    "am_pm": 0.0155,
+    "iso_date": 0.0163,
+    "month_day": 0.0379,
+    "day_month": 0.0202,
+    "weekday": 0.0207,
+    "ordinal_number": 0.0005,
+    "decimal": 0.0678,
+    "c_hex17_id": 0.4321,
+    "hex_run_6plus": 0.4321,
+    "coin_GAVOTU-8841": 0.0052,
+    "coin_VK-": 0.0028,
+    "coin_gavotu_8841": 0.0065,
+    "coin_84-GAVO-TUKE": 0.0062,
+    "email_address": 0.197,
+    "allcaps_token_2plus": 0.1517,
+    "double_quote_ascii": 0.118,
+    "parenthetical": 0.0624,
+    "semicolon": 0.2535,
+    "newline": 0.1854,
+    "hashtag_or_at": 0.0006
+   },
+   "response": {
+    "c_hex17_id": 0.0743,
+    "hex_run_6plus": 0.0743,
+    "email_address": 0.0037,
+    "allcaps_token_2plus": 0.0054,
+    "double_quote_ascii": 0.0141,
+    "parenthetical": 0.1714,
+    "semicolon": 0.1093,
+    "thread_label": 0.166
+   },
+   "pair_story": {
+    "dollar_amount": 0.0438,
+    "clock_time_hh:mm": 0.0836,
+    "weekday": 0.0271,
+    "percent": 0.034,
+    "decimal": 0.0438,
+    "c_hex17_id": 0.219,
+    "hex_run_6plus": 0.219,
+    "coin_GAVOTU-8841": 0.0029,
+    "coin_VK-": 0.0015,
+    "coin_gavotu_8841": 0.0037,
+    "coin_84-GAVO-TUKE": 0.0035,
+    "join_key_CASE/TKT/PO/etc": 0.4025,
+    "email_address": 0.2409,
+    "allcaps_token_2plus": 0.6991,
+    "double_quote_ascii": 0.2305,
+    "parenthetical": 0.2165,
+    "semicolon": 0.9883,
+    "newline": 1.0,
+    "hashtag_or_at": 0.0657
+   },
+   "question": {
+    "iso_currency_code": 0.04,
+    "iso_date": 0.0011,
+    "month_day": 0.052,
+    "day_month": 0.0021,
+    "weekday": 0.004,
+    "percent": 0.0039,
+    "c_hex17_id": 0.208,
+    "hex_run_6plus": 0.208,
+    "allcaps_token_2plus": 0.0644,
+    "double_quote_ascii": 0.0503,
+    "parenthetical": 0.0177,
+    "semicolon": 0.0167
+   }
+  },
+  "format_examples": {
+   "join_key_CASE/TKT/PO/etc": [
+    "rsation. Their side calls it job number JOB-QX87506; that is the one to search fo",
+    "oins up. Their side calls it job number JOB-HB92635.\n\nThe printer jammed three ti",
+    "s Sabrina Morin with Lyn nodding along. JOB-AN64780 is the job number for this; t",
+    "ats. It links back to booking reference BK95600ZP; I checked twice. The quote n",
+    "ing. I filed it under booking reference BK67527KH, which I copied into my notes",
+    "er some persuading. The ticket on it is TKT-64885, same as on the paperwork.\n\nN"
+   ],
+   "hex_run_6plus": [
+    "For planning context c95d6b46e93e298f2: Ok so, adjust how hard you t",
+    "For planning context c94c11444ad1f0798: Hey — set the thinking level",
+    "For planning context c2549a0f22518492f: Hey — stick it onto my sched",
+    "For planning context c970b3061489b020e: Hey — pop that on my calenda",
+    "For planning context cdc5e953a6c482bac: One thing: add it on my cale",
+    "For planning context c1be9fd0a7df859ab: Quick one: put that into my "
+   ],
+   "coin_GAVOTU-8841": [
+    "e registration code they assigned me is DEFOBU-9237.",
+    "The vendor badge code JUSAFO-4385 belongs to Elijah Doyle. Plea",
+    "e to hang onto their crew check-in code BELESI-3476 for the same event. That's th",
+    "On Signal, Junebug is RICEFE-4243. Messages there get answered ",
+    "Kristie goes by TUHEDE-6584 on Signal — quickest way to g",
+    "On Signal, Audie is HAMUNA-3284. Messages there get answered "
+   ],
+   "coin_VK-": [
+    "e registration code they assigned me is VK-MZM8R9EHVE.",
+    "The vendor badge code VK-225Y5FL8N5 belongs to Brooke Garcia. Ple",
+    "e to hang onto their crew check-in code VK-GF9ELCF89S for the same event. That's th",
+    "Skip goes by VK-KEYZDGDRPJ on Signal — quickest way to g",
+    "On Signal, Marky is VK-SDUFZCD9LY. Messages there get answered ",
+    "Fi goes by VK-UWRS28V2GW on Signal — quickest way to g"
+   ],
+   "coin_84-GAVO-TUKE": [
+    "e registration code they assigned me is 55-TELO-KIRU.",
+    "The vendor badge code 84-MEFA-VAJU belongs to Dylan Delarosa. Pl",
+    "e to hang onto their crew check-in code 98-MEGU-NUVE for the same event. That's th",
+    "Flash goes by 67-JUVA-HOCE on Signal — quickest way to g",
+    "Tom goes by 29-CATO-GUCI on Signal — quickest way to g",
+    "On Signal, Chip is 55-NATI-RAKA. Messages there get answered "
+   ],
+   "coin_gavotu_8841": [
+    "e registration code they assigned me is disesi_2645.",
+    "The vendor badge code duribe_5938 belongs to Caden Wesley. Plea",
+    "e to hang onto their crew check-in code cirima_2482 for the same event. That's th",
+    "Flash goes by fapacu_5799 on Signal — quickest way to g",
+    "On Signal, Nicky is fefohi_7854. Messages there get answered ",
+    "Ollie goes by fofoha_8237 on Signal — quickest way to g"
+   ],
+   "dollar_amount": [
+    "d AP-C9C2D124: the original invoice was $10729.08; we have already paid ",
+    "d AP-CD51F485: the original invoice was $15825.89; we have already paid ",
+    "d AP-C0EDB11A: the original invoice was $19544.86; we have already paid ",
+    "d AP-C8383308: the original invoice was $20244.25; we have already paid ",
+    "d AP-C5E15952: the original invoice was $19525.99; we have already paid ",
+    "d AP-CA6E80F0: the original invoice was $16154.82; we have already paid "
+   ],
+   "thread_label": [
+    "ree I'll say so instead of picking one. (thread: vorailnode)",
+    "tream by its remit rather than by name. (thread: vorailnode)",
+    "ventions decide which label means what. (thread: vorailnode)",
+    "overn; I'll take the superseding entry. (thread: vorailnode)",
+    " from the prose, not from row position. (thread: vorailnode)",
+    "its role through this batch's glossary. (thread: vorailnode)"
+   ],
+   "c_hex17_id": [
+    "For planning context c95d6b46e93e298f2: Ok so, adjust how hard you t",
+    "For planning context c94c11444ad1f0798: Hey — set the thinking level",
+    "For planning context c2549a0f22518492f: Hey — stick it onto my sched",
+    "For planning context c970b3061489b020e: Hey — pop that on my calenda",
+    "For planning context cdc5e953a6c482bac: One thing: add it on my cale",
+    "For planning context c1be9fd0a7df859ab: Quick one: put that into my "
+   ]
+  },
+  "casing_served": {
+   "tool": {
+    "starts_lowercase": 0.0,
+    "no_terminal_punct": 0.002
+   },
+   "pair": {
+    "starts_lowercase": 0.0524,
+    "no_terminal_punct": 0.139
+   },
+   "response": {
+    "starts_lowercase": 0.0,
+    "no_terminal_punct": 0.0
+   },
+   "pair_story": {
+    "starts_lowercase": 0.0,
+    "no_terminal_punct": 0.0
+   },
+   "question": {
+    "starts_lowercase": 0.0,
+    "no_terminal_punct": 0.0
+   }
+  },
+  "served_typo_estimate": {
+   "tool": {
+    "items_with_typo_like_token": 0.028,
+    "typo_like_tokens_per_item": 0.028,
+    "token_rate": 0.00169
+   },
+   "pair": {
+    "items_with_typo_like_token": 0.0279,
+    "typo_like_tokens_per_item": 0.03,
+    "token_rate": 0.00034
+   },
+   "response": {
+    "items_with_typo_like_token": 0.0,
+    "typo_like_tokens_per_item": 0.0,
+    "token_rate": 0.0
+   },
+   "pair_story": {
+    "items_with_typo_like_token": 0.7182,
+    "typo_like_tokens_per_item": 1.555,
+    "token_rate": 0.00174
+   },
+   "question": {
+    "items_with_typo_like_token": 0.0157,
+    "typo_like_tokens_per_item": 0.016,
+    "token_rate": 0.00065
+   }
+  },
+  "served_typo_examples": {
+   "tool": [
+    [
+     "Domnie",
+     "done"
+    ],
+    [
+     "lightt",
+     "light"
+    ],
+    [
+     "wibe",
+     "wine"
+    ],
+    [
+     "Luma",
+     "lima"
+    ],
+    [
+     "wnie",
+     "wine"
+    ],
+    [
+     "wone",
+     "wine"
+    ],
+    [
+     "wage",
+     "wade"
+    ],
+    [
+     "burnt",
+     "burst"
+    ],
+    [
+     "meduimm",
+     "medium"
+    ],
+    [
+     "Cauro",
+     "cairo"
+    ],
+    [
+     "Luma",
+     "lima"
+    ],
+    [
+     "samdy",
+     "sammy"
+    ]
+   ],
+   "pair": [
+    [
+     "duribe",
+     "drive"
+    ],
+    [
+     "Finke",
+     "fine"
+    ],
+    [
+     "eriigate",
+     "eriumgate"
+    ],
+    [
+     "nexaorvale",
+     "nexaorline"
+    ],
+    [
+     "Altman",
+     "alan"
+    ],
+    [
+     "seloeljor",
+     "seloorjor"
+    ],
+    [
+     "fbcfbd",
+     "fcbd"
+    ],
+    [
+     "eeacbeb",
+     "eebeb"
+    ],
+    [
+     "becde",
+     "bede"
+    ],
+    [
+     "Hinkle",
+     "handle"
+    ],
+    [
+     "thee",
+     "these"
+    ],
+    [
+     "woork",
+     "work"
+    ]
+   ],
+   "response": [
+    [
+     "hkiser",
+     "haier"
+    ],
+    [
+     "lpatel",
+     "label"
+    ]
+   ],
+   "pair_story": [
+    [
+     "cohversation",
+     "conversation"
+    ],
+    [
+     "cakendzr",
+     "calendar"
+    ],
+    [
+     "gzrden",
+     "garden"
+    ],
+    [
+     "backgrround",
+     "background"
+    ],
+    [
+     "commgue",
+     "commute"
+    ],
+    [
+     "membesrgkp",
+     "membership"
+    ],
+    [
+     "mattefs",
+     "matters"
+    ],
+    [
+     "askked",
+     "asked"
+    ],
+    [
+     "meszsges",
+     "messages"
+    ],
+    [
+     "fniolly",
+     "finally"
+    ],
+    [
+     "reconvkeld",
+     "reconciled"
+    ],
+    [
+     "mksing",
+     "moving"
+    ]
+   ],
+   "question": [
+    [
+     "Finke",
+     "fine"
+    ],
+    [
+     "Rubin's",
+     "reuben's"
+    ],
+    [
+     "disappezr",
+     "disappear"
+    ],
+    [
+     "replaace",
+     "replace"
+    ],
+    [
+     "Cutler",
+     "clutter"
+    ],
+    [
+     "Parkes",
+     "parts"
+    ],
+    [
+     "Reed's",
+     "red's"
+    ],
+    [
+     "toegther",
+     "together"
+    ],
+    [
+     "opder",
+     "order"
+    ],
+    [
+     "Lanae",
+     "lane"
+    ],
+    [
+     "Stanford",
+     "standard"
+    ],
+    [
+     "Couch",
+     "coach"
+    ]
+   ]
+  },
+  "theme_prompt_examples": [
+   "Have Ditto use my usual teracota-ish accent — the personal app preference, not one of the client brand colors. If I mangled the spelling, check the available appearance options first.",
+   "Make Ditto's accent the blue version of sy, not the plain one. Confirm the exact option name from the appearance options first.",
+   "Use Domnie for the chat font. Treat my spelling loosely and pick the matching option from the workspace's font list first.",
+   "Change the accent colour to lightt salmon. Spelling is approximate, so confirm it against the options this workspace lists.",
+   "Use the garamond edition of Coomorant for chat. Verify the exact option name against the workspace's fonts before you apply it.",
+   "Switch Ditto's accent color to something like bufylood — look up the configured appearance options first in case I misspelled it.",
+   "Use OT Moon for the chat font. Treat my spelling loosely and pick the matching option from the workspace's font list first.",
+   "Have Ditto use my usual piriwinlke-ish accent — the personal app preference, not one of the client brand colors. If I mangled the spelling, check the available appearance options first."
+  ],
+  "isolation_question_examples": [
+   "For this contact list: What is the corrected email for Evelyn Suarez at Corsair Supply? This is for the Brembo launch follow-up. I remember we had to replace an older one, and I would rather verify than have this disappezr.",
+   "For this contact list: For the Bharti conference follow-up, what email should I actually use now for Caden Wesley at Germanwings Digital? I remember we had to replaace an older one, and I would rather verify than have this disappear.",
+   "For this contact list: Which up-to-date email belongs to Lincoln Clark at Arkia Systems, the person from the year-end leadership offsite? I remember we had to replace an older one, and I would rather verify than have this disappear.",
+   "For this contact list: Which up-to-date email belongs to William Hannah at Rado Energy, the person from the 2024 inventory audit? I want to avoid sending the note to an inbox nobody checks anymore, so please double-check before I hit send."
+  ],
+  "tool_categories_60_seeds": [
+   [
+    "v10_state_dependent_routing",
+    503
+   ],
+   [
+    "world_contact_research_email_result_usage",
+    201
+   ],
+   [
+    "world_link_chain_result_usage",
+    198
+   ],
+   [
+    "world_memory_delete",
+    196
+   ],
+   [
+    "discovery_font_set",
+    195
+   ],
+   [
+    "world_memory_update",
+    190
+   ],
+   [
+    "v13_restraint_declarative_preference",
+    186
+   ],
+   [
+    "v13_restraint_calendar",
+    185
+   ],
+   [
+    "v13_state_dependent_calendar",
+    180
+   ],
+   [
+    "discovery_accent_set",
+    165
+   ],
+   [
+    "v13_state_dependent_email",
+    161
+   ],
+   [
+    "v13_restraint_email",
+    160
+   ],
+   [
+    "v13_restraint_abstention_web",
+    157
+   ],
+   [
+    "world_business_workflow",
+    146
+   ],
+   [
+    "v13_restraint_effort",
+    145
+   ],
+   [
+    "world_theme_discover_set",
+    134
+   ],
+   [
+    "v13_restraint_negation_web",
+    127
+   ],
+   [
+    "v13_mutation_follow_up_read",
+    120
+   ],
+   [
+    "agent_jobs_result_usage",
+    60
+   ],
+   [
+    "schedules_result_usage",
+    60
+   ],
+   [
+    "tool_registry_result_usage",
+    60
+   ],
+   [
+    "sandbox_result_usage",
+    60
+   ],
+   [
+    "settings",
+    60
+   ],
+   [
+    "memory_save_not_search",
+    60
+   ],
+   [
+    "web_recovery_result_usage",
+    60
+   ],
+   [
+    "capability_discovery",
+    60
+   ],
+   [
+    "agent_read_not_run",
+    60
+   ],
+   [
+    "recipe_apply",
+    60
+   ],
+   [
+    "multi_web_result_usage",
+    60
+   ],
+   [
+    "web_result_usage",
+    60
+   ],
+   [
+    "set_tool_prefs",
+    60
+   ],
+   [
+    "link_chain_result_usage",
+    60
+   ],
+   [
+    "artifacts_create",
+    60
+   ],
+   [
+    "automation_list",
+    60
+   ],
+   [
+    "stale_context_web",
+    60
+   ],
+   [
+    "tool_discovery",
+    60
+   ],
+   [
+    "feedback",
+    60
+   ],
+   [
+    "entity_lookup_chain",
+    52
+   ],
+   [
+    "memory_subject",
+    46
+   ],
+   [
+    "memory_fetch",
+    45
+   ],
+   [
+    "image_edit_not_create",
+    43
+   ],
+   [
+    "multi_subject_scope",
+    43
+   ],
+   [
+    "route_memory_not_web",
+    42
+   ],
+   [
+    "set_effort",
+    40
+   ],
+   [
+    "code_compute",
+    39
+   ],
+   [
+    "calendar_create",
+    39
+   ],
+   [
+    "decoy_wiki_search_result_usage",
+    38
+   ],
+   [
+    "agent_workflow",
+    38
+   ],
+   [
+    "multi_image_edit",
+    38
+   ],
+   [
+    "code_compute_not_agent_job",
+    38
+   ],
+   [
+    "parallel_web_image",
+    38
+   ],
+   [
+    "decoy_docs_search_result_usage",
+    37
+   ],
+   [
+    "image_create",
+    36
+   ],
+   [
+    "memory_lookup",
+    36
+   ],
+   [
+    "route_web_not_memory",
+    35
+   ],
+   [
+    "calendar_search",
+    35
+   ],
+   [
+    "recipe_create",
+    34
+   ],
+   [
+    "agent_job",
+    34
+   ],
+   [
+    "decoy_reminders_list_result_usage",
+    34
+   ],
+   [
+    "decoy_chat_message_result_usage",
+    34
+   ],
+   [
+    "decoy_issue_create_result_usage",
+    33
+   ],
+   [
+    "multi_web_read",
+    33
+   ],
+   [
+    "web_search",
+    33
+   ],
+   [
+    "agent_run_not_read",
+    33
+   ],
+   [
+    "decoy_note_create_result_usage",
+    33
+   ],
+   [
+    "automation_not_job",
+    31
+   ],
+   [
+    "workflow_not_job",
+    30
+   ],
+   [
+    "decoy_poll_create_result_usage",
+    30
+   ],
+   [
+    "decoy_unit_convert_result_usage",
+    30
+   ],
+   [
+    "decoy_stock_quote_result_usage",
+    30
+   ],
+   [
+    "decoy_price_quote_result_usage",
+    29
+   ],
+   [
+    "decoy_timer_start_result_usage",
+    29
+   ],
+   [
+    "decoy_sidebar_color_result_usage",
+    29
+   ],
+   [
+    "decoy_file_convert_result_usage",
+    28
+   ],
+   [
+    "decoy_map_route_result_usage",
+    26
+   ],
+   [
+    "decoy_weather_lookup_result_usage",
+    26
+   ],
+   [
+    "decoy_crm_lookup_result_usage",
+    24
+   ],
+   [
+    "decoy_video_summarize_result_usage",
+    23
+   ],
+   [
+    "decoy_inbox_triage_result_usage",
+    22
+   ],
+   [
+    "decoy_spreadsheet_read_result_usage",
+    17
+   ],
+   [
+    "decoy_ticket_lookup_result_usage",
+    14
+   ],
+   [
+    "decoy_translate_text_result_usage",
+    13
+   ],
+   [
+    "decoy_thesaurus_lookup_result_usage",
+    11
+   ],
+   [
+    "decoy_contact_lookup_result_usage",
+    10
+   ]
+  ],
+  "filler_pool_item_share_served": {
+   "story_openers": {
+    "pair_story": {
+     "any": 0.7693,
+     "top": [
+      [
+       "Between all that,",
+       0.4534
+      ],
+      [
+       "Around then,",
+       0.4503
+      ],
+      [
+       "On the same day,",
+       0.4473
+      ],
+      [
+       "In the background,",
+       0.4459
+      ],
+      [
+       "Meanwhile,",
+       0.4438
+      ],
+      [
+       "That same week,",
+       0.4411
+      ],
+      [
+       "Unrelated, but",
+       0.4396
+      ],
+      [
+       "As an aside,",
+       0.4369
+      ]
+     ]
+    }
+   },
+   "story_tailnotes": {
+    "pair_story": {
+     "any": 0.7666,
+     "top": [
+      [
+       "Enough of that.",
+       0.4749
+      ],
+      [
+       "Moving on.",
+       0.4747
+      ],
+      [
+       "Anyway.",
+       0.4738
+      ],
+      [
+       "Back to the point.",
+       0.4724
+      ],
+      [
+       "That is the background noise.",
+       0.4574
+      ],
+      [
+       "None of that matters here.",
+       0.4553
+      ]
+     ]
+    }
+   },
+   "story_asides": {
+    "pair_story": {
+     "any": 0.7695,
+     "top": [
+      [
+       "which explains the typos",
+       0.3904
+      ],
+      [
+       "but the timing is what I want to keep straight",
+       0.3808
+      ],
+      [
+       "so my notes are a bit scattered",
+       0.38
+      ],
+      [
+       "none of which mattered to the thread itself",
+       0.3737
+      ],
+      [
+       "which is why I want it recorded properly",
+       0.3718
+      ],
+      [
+       "so I am reconstructing this from memory and a few screenshots",
+       0.3693
+      ],
+      [
+       "and I wrote most of this down on the back of an envelope",
+       0.3681
+      ],
+      [
+       "hence the late-night note",
+       0.3679
+      ]
+     ]
+    }
+   },
+   "v13_conversation_leads": {
+    "pair": {
+     "any": 0.0472,
+     "top": [
+      [
+       "Adding a workspace record — read it with our local glossary: ",
+       0.0122
+      ],
+      [
+       "Filing this under the same workstream set: ",
+       0.0119
+      ],
+      [
+       "One more line from our custom workspace schema: ",
+       0.0117
+      ],
+      [
+       "Here is another entry for the batch: ",
+       0.0115
+      ]
+     ]
+    }
+   },
+   "v13_glossary_openers": {
+    "pair": {
+     "any": 0.0509,
+     "top": [
+      [
+       "For this batch of records,",
+       0.0092
+      ],
+      [
+       "Within this workspace,",
+       0.0092
+      ],
+      [
+       "Reading guide for the entries that follow:",
+       0.0084
+      ],
+      [
+       "Local field conventions here:",
+       0.0084
+      ],
+      [
+       "Before the data lands, note that",
+       0.0078
+      ],
+      [
+       "Schema note for this workstream set:",
+       0.0078
+      ]
+     ]
+    }
+   },
+   "v13_question_openers": {
+    "question": {
+     "any": 0.064,
+     "top": [
+      [
+       "Work only from this batch's own field meanings.",
+       0.0111
+      ],
+      [
+       "Read the local glossary before naming any field.",
+       0.0111
+      ],
+      [
+       "Ground every label in this workspace's conventions.",
+       0.0105
+      ],
+      [
+       "Resolve the workstream by its remit, then answer.",
+       0.0105
+      ],
+      [
+       "Do not assume standard field names; use the ones defined here.",
+       0.0103
+      ],
+      [
+       "Apply the per-run schema before you answer.",
+       0.0103
+      ]
+     ]
+    }
+   },
+   "v13_personal_question_openers": {
+    "question": {
+     "any": 0.096,
+     "top": [
+      [
+       "From my household notes:",
+       0.0167
+      ],
+      [
+       "Help me keep the family logistics straight.",
+       0.0167
+      ],
+      [
+       "Before I forget —",
+       0.0157
+      ],
+      [
+       "Looking back at what I saved:",
+       0.0157
+      ],
+      [
+       "Quick one from my own notes.",
+       0.0156
+      ],
+      [
+       "Checking something I told you earlier.",
+       0.0156
+      ]
+     ]
+    }
+   },
+   "polite_markers": {
+    "tool": {
+     "any": 0.1198,
+     "top": [
+      [
+       "please",
+       0.046
+      ],
+      [
+       "thanks",
+       0.0253
+      ],
+      [
+       "when you can",
+       0.024
+      ],
+      [
+       "can you",
+       0.0118
+      ],
+      [
+       "no rush",
+       0.0043
+      ],
+      [
+       "cheers",
+       0.0042
+      ],
+      [
+       "could you",
+       0.0033
+      ],
+      [
+       "would you",
+       0.0022
+      ]
+     ]
+    },
+    "question": {
+     "any": 0.0579,
+     "top": [
+      [
+       "please",
+       0.0493
+      ],
+      [
+       "would you",
+       0.0046
+      ],
+      [
+       "can you",
+       0.0041
+      ]
+     ]
+    },
+    "pair": {
+     "any": 0.0082,
+     "top": [
+      [
+       "please",
+       0.0082
+      ]
+     ]
+    },
+    "pair_story": {
+     "any": 0.0576,
+     "top": [
+      [
+       "please",
+       0.0576
+      ]
+     ]
+    },
+    "response": {
+     "any": 0.1456,
+     "top": [
+      [
+       "thanks",
+       0.1456
+      ]
+     ]
+    }
+   }
+  },
+  "heads_tails_served": {
+   "tool": {
+    "top_first3": [
+     [
+      "For planning context",
+      490
+     ],
+     [
+      "Look up the",
+      108
+     ],
+     [
+      "Time to start",
+      108
+     ],
+     [
+      "Let's start the",
+      104
+     ],
+     [
+      "Go ahead and",
+      102
+     ],
+     [
+      "Kick off the",
+      99
+     ],
+     [
+      "Please begin the",
+      96
+     ],
+     [
+      "Remind me of",
+      91
+     ],
+     [
+      "Set the chat",
+      67
+     ],
+     [
+      "Make sure the",
+      63
+     ],
+     [
+      "Find the current",
+      59
+     ],
+     [
+      "Get back to",
+      58
+     ],
+     [
+      "Update my notes",
+      56
+     ],
+     [
+      "Search the web",
+      56
+     ],
+     [
+      "I want the",
+      56
+     ]
+    ],
+    "top_last3": [
+     [
+      "landed on. Go.",
+      149
+     ],
+     [
+      "settled earlier. Begin.",
+      132
+     ],
+     [
+      "agreed. Start now.",
+      117
+     ],
+     [
+      "when you can.",
+      115
+     ],
+     [
+      "decided together. Proceed.",
+      105
+     ],
+     [
+      "the review step.",
+      80
+     ],
+     [
+      "before applying it.",
+      61
+     ],
+     [
+      "the search summary.",
+      59
+     ],
+     [
+      "sort that out.",
+      56
+     ],
+     [
+      "out to them.",
+      54
+     ]
+    ],
+    "distinct_first3": 1292,
+    "n": 6000
+   },
+   "question": {
+    "top_first3": [
+     [
+      "Use only case",
+      3120
+     ],
+     [
+      "For this contact",
+      521
+     ],
+     [
+      "I need to",
+      249
+     ],
+     [
+      "Quick bookkeeping question.",
+      246
+     ],
+     [
+      "Sorting out where",
+      246
+     ],
+     [
+      "Checking one of",
+      234
+     ],
+     [
+      "Reconciling my records.",
+      234
+     ],
+     [
+      "Looking at the",
+      190
+     ],
+     [
+      "How do I",
+      180
+     ],
+     [
+      "Pull up the",
+      180
+     ],
+     [
+      "Which work email",
+      180
+     ],
+     [
+      "Who is my",
+      180
+     ],
+     [
+      "Which bank do",
+      180
+     ],
+     [
+      "How many seats",
+      180
+     ],
+     [
+      "What is my",
+      180
+     ]
+    ],
+    "top_last3": [
+     [
+      "I hit send.",
+      273
+     ],
+     [
+      "name is fine.",
+      272
+     ],
+     [
+      "have this disappear.",
+      272
+     ],
+     [
+      "it reaches them.",
+      262
+     ],
+     [
+      "the latest one.",
+      251
+     ],
+     [
+      "address I had.",
+      251
+     ],
+     [
+      "selection totals zero.",
+      240
+     ],
+     [
+      "counts as zero.",
+      240
+     ],
+     [
+      "Just the name.",
+      221
+     ],
+     [
+      "it these days?",
+      207
+     ]
+    ],
+    "distinct_first3": 2728,
+    "n": 15000
+   },
+   "pair": {
+    "top_first3": [
+     [
+      "Forwarding a text",
+      1812
+     ],
+     [
+      "From the fridge",
+      1812
+     ],
+     [
+      "Subject: workstream note",
+      1782
+     ],
+     [
+      "Pasted table row",
+      1782
+     ],
+     [
+      "Shared calendar entry",
+      1752
+     ],
+     [
+      "Back when they",
+      1680
+     ],
+     [
+      "Contact-maintenance receipt for",
+      1680
+     ],
+     [
+      "Accounts payable record",
+      1080
+     ],
+     [
+      "Handoff scratchpad for",
+      1080
+     ],
+     [
+      "Approval correction for",
+      1080
+     ],
+     [
+      "Quick update on",
+      720
+     ],
+     [
+      "This note applies",
+      490
+     ],
+     [
+      "Adding a workspace",
+      459
+     ],
+     [
+      "Remember this: Case",
+      454
+     ],
+     [
+      "Filing this under",
+      449
+     ]
+    ],
+    "top_last3": [
+     [
+      "deleted once reviewed.",
+      1680
+     ],
+     [
+      "or ownership record.",
+      1080
+     ],
+     [
+      "payment is unchanged.",
+      1080
+     ],
+     [
+      "two stays alone.",
+      720
+     ],
+     [
+      "newest entry governs.",
+      432
+     ],
+     [
+      "\"assign\" } ]",
+      390
+     ],
+     [
+      "with everyone there.",
+      376
+     ],
+     [
+      "who knows them.",
+      370
+     ],
+     [
+      "on Sunday evenings.",
+      369
+     ],
+     [
+      "no longer stands.",
+      367
+     ]
+    ],
+    "distinct_first3": 7276,
+    "n": 37739
+   },
+   "response": {
+    "top_first3": [
+     [
+      "I’ve got the",
+      2975
+     ],
+     [
+      "Got you —",
+      1822
+     ],
+     [
+      "Got it —",
+      1392
+     ],
+     [
+      "Thanks for the",
+      1339
+     ],
+     [
+      "I can feel",
+      1323
+     ],
+     [
+      "Saved. If it",
+      1241
+     ],
+     [
+      "Filed under family",
+      1209
+     ],
+     [
+      "Noted; I'll remember",
+      1190
+     ],
+     [
+      "Okay, updating what",
+      1159
+     ],
+     [
+      "Thanks — I've",
+      1117
+     ],
+     [
+      "I’m with you.",
+      999
+     ],
+     [
+      "Aw, I love",
+      767
+     ],
+     [
+      "That history helps",
+      749
+     ],
+     [
+      "Sounds good —",
+      726
+     ],
+     [
+      "Saved section 1",
+      720
+     ]
+    ],
+    "top_last3": [
+     [
+      "why it matters.",
+      2758
+     ],
+     [
+      "and after clear.",
+      2705
+     ],
+     [
+      "the fuller picture.",
+      2696
+     ],
+     [
+      "the whole thread.",
+      2677
+     ],
+     [
+      "into the story.",
+      2671
+     ],
+     [
+      "surrounding context too.",
+      2632
+     ],
+     [
+      "connects in mind.",
+      2612
+     ],
+     [
+      "the pieces fit.",
+      2611
+     ],
+     [
+      "just tell me.",
+      1241
+     ],
+     [
+      "your household notes.",
+      1212
+     ]
+    ],
+    "distinct_first3": 1090,
+    "n": 42944
+   }
+  },
+  "responses_with_emoji_share": 0.0
+ },
+ "salt": {
+  "tool_prompt": {
+   "mean": 0.1006,
+   "min": 0.04,
+   "max": 0.15
+  },
+  "question": {
+   "mean": 0.1478,
+   "min": 0.116,
+   "max": 0.18
+  },
+  "pair_prompt": {
+   "mean": 0.1679,
+   "min": 0.1395,
+   "max": 0.2174
+  },
+  "pair_response": {
+   "mean": 1.0,
+   "min": 1.0,
+   "max": 1.0
+  },
+  "catalog_identical": "90/90",
+  "catalog_order_identical": "90/90",
+  "tool_case_order_identical": "90/90",
+  "memory_case_order_identical": "90/90",
+  "expected_tools_identical": "90/90",
+  "expected_answer_diffs": {
+   "1": 90
+  },
+  "fixtures_identical": "90/90",
+  "surface_salt_field": [
+   [
+    1,
+    30
+   ],
+   [
+    2,
+    30
+   ],
+   [
+    3,
+    30
+   ]
+  ],
+  "generated_at_identical": "90/90",
+  "top_level_key_diff": [
+   [
+    [
+     "surface_salt"
+    ],
+    90
+   ]
+  ],
+  "canary_rotations_sample": [
+   [
+    "1347426410860463976",
+    1,
+    "world-canary",
+    "disesi_2645",
+    "setove_2285",
+    true
+   ],
+   [
+    "1347426410860463976",
+    2,
+    "world-canary",
+    "disesi_2645",
+    "mazoze_2839",
+    true
+   ],
+   [
+    "1347426410860463976",
+    3,
+    "world-canary",
+    "disesi_2645",
+    "humoko_8685",
+    true
+   ],
+   [
+    "165928024600959767",
+    1,
+    "world-canary",
+    "55-TELO-KIRU",
+    "88-BUDA-GIBA",
+    true
+   ],
+   [
+    "165928024600959767",
+    2,
+    "world-canary",
+    "55-TELO-KIRU",
+    "78-NONI-DUGA",
+    true
+   ],
+   [
+    "165928024600959767",
+    3,
+    "world-canary",
+    "55-TELO-KIRU",
+    "22-MAHU-ZENI",
+    true
+   ]
+  ],
+  "canary_rotation_count": 90,
+  "canary_types": {
+   "world-canary": 90
+  },
+  "stale_nonce_planted_as_distractor": "90/90",
+  "noised_set_jaccard_salt0_vs_saltk": {
+   "tool": 0.5343,
+   "question": 0.5371
+  },
+  "protected_word_set_size_per_seed": {
+   "min": 619,
+   "max": 666,
+   "mean": 644.7
+  },
+  "keyword_in_protected_set_seeds_of_30": {
+   "email": 30,
+   "note": 30,
+   "send": 30,
+   "contact": 30,
+   "what": 30,
+   "find": 30,
+   "remember": 30,
+   "handoff": 30,
+   "value": 30,
+   "figure": 30,
+   "latest": 30,
+   "change": 30,
+   "light": 30,
+   "dark": 30,
+   "phone": 30,
+   "quote": 30,
+   "approved": 29,
+   "project": 28,
+   "current": 25,
+   "address": 25,
+   "move": 21,
+   "meeting": 16,
+   "open": 7,
+   "dentist": 3
+  },
+  "memory_case_fields": [
+   "accept_any",
+   "answer_item_accept_any",
+   "answer_item_kinds",
+   "answer_items",
+   "answer_kind",
+   "bait_tool",
+   "bench_version",
+   "distractor_answers",
+   "dump_guard",
+   "expected_answer",
+   "forbidden_answer",
+   "grounding_tokens",
+   "id",
+   "question",
+   "question_id",
+   "question_type",
+   "run_after_wave",
+   "twin_group",
+   "user_id",
+   "v10_evidence_pair_ids",
+   "v10_provenance"
+  ],
+  "tool_case_fields": [
+   "allow_extra_tools",
+   "category",
+   "expected_behavior",
+   "expected_tools",
+   "fuzzy_trajectory",
+   "id",
+   "max_tool_calls",
+   "prerequisite_pairs",
+   "prompt",
+   "unordered"
+  ],
+  "what_changes": [
+   "typo-v2 draws (selection 70%, token choice, edits, keyboard layout)",
+   "world-canary nonce (expected answer) + old nonce appended as distractor",
+   "stage-1 marker composition (no markers present in v15 raw text: no effect)",
+   "top-level key surface_salt"
+  ],
+  "unchanged": [
+   "catalog names/descriptions/order",
+   "case ids and order",
+   "expected tools/args",
+   "fixtures",
+   "assistant responses",
+   "story-internal typos (story pass hard-codes salt 0)",
+   "generated_at"
+  ],
+  "typo_rates_by_salt": {
+   "0": {
+    "tool": 0.07423,
+    "pair": 0.01711,
+    "resp": 0.0,
+    "pair_story": 0.0024,
+    "question": 0.06432
+   },
+   "1": {
+    "tool": 0.07389,
+    "pair": 0.01655,
+    "resp": 0.0,
+    "pair_story": 0.00258,
+    "question": 0.06419
+   },
+   "2": {
+    "tool": 0.07359,
+    "pair": 0.01664,
+    "resp": 0.0,
+    "pair_story": 0.00249,
+    "question": 0.06466
+   },
+   "3": {
+    "tool": 0.07476,
+    "pair": 0.01665,
+    "resp": 0.0,
+    "pair_story": 0.00249,
+    "question": 0.06487
+   }
+  }
+ },
+ "serve_time": {
+  "renoising": false,
+  "mechanism": "dittobench-api run path (cmd/dittobench-api/main.go:1542-1571) generates tool/memory cases and sends them; BuildArtifactForVersion (main.go:1605) runs the surface pass on CLONES (gen/artifact.go:189,212) only for hashing; BuildHarnessProjection (main.go:1654, gen/projection.go:147) maps ids to per-run UUIDs and permutes order using a crypto/rand blinding key; runner sends c.Prompt unchanged (internal/runner/runner.go:450-454)",
+  "salt_on_live_v15": "none in this code: run path uses SurfaceOptions{} (salt 0) and verifies ExpectedDatasetSHA256 against it (main.go:1631-1636); private dataset mode is bench 13 only (private_dataset.go:49)",
+  "verified_run": {
+   "seed": 5451784605348316629,
+   "user_inputs": 350,
+   "identical_to_served_dump": 350,
+   "identical_to_dataset": 118,
+   "pairs": 710,
+   "pair_prompt_identical_dataset_vs_served": 251,
+   "pair_response_identical_dataset_vs_served": 461
+  },
+  "per_run_variation": [
+   "case_id/user_id/pair_id/session_id/subject_id -> UUID per run",
+   "tool case order, memory case order within wave, session-block order of pairs, subjects, links permuted per run",
+   "text unchanged; c+16hex ids inside text are not run ids and are not rewritten"
+  ],
+  "served_response_duplication": "served responses are not copy-bounded: 53.9% of records share an identical response with >2 others (max 21-32 copies/seed); the dataset appends codas so no response appears >2 times (gen/artifact.go:224)"
+ },
+ "coined_and_wordbanks": {
+  "proxy_dictionary_size": 2218,
+  "catalog_size_per_seed": {
+   "min": 233,
+   "max": 235
+  },
+  "production_tools_in_every_seed": 30,
+  "connector_tools_per_seed": {
+   "min": 200,
+   "max": 200
+  },
+  "decoys_per_seed": {
+   "3": 22,
+   "4": 21,
+   "5": 17
+  },
+  "decoy_examples": [
+   [
+    "nukuki_tracker_issue",
+    "berivil_crm_account",
+    "lepeze_wiki"
+   ],
+   [
+    "saser_tracker_issue",
+    "refa_reminders",
+    "lasigin_notebook_add",
+    "golet_poll"
+   ],
+   [
+    "luma_pricing_quote",
+    "zezur_notebook_add",
+    "fefen_tracker_issue",
+    "lobopi_focus_timer",
+    "dinol_chat_post"
+   ],
+   [
+    "pudut_wiki",
+    "fivisu_focus_timer",
+    "bagedin_route_planner"
+   ],
+   [
+    "zotet_unit_converter",
+    "nipin_translate",
+    "rireru_reminders"
+   ]
+  ],
+  "production_desc_variants": {
+   "artifacts": 6,
+   "calendar_create_event": 6,
+   "calendar_search_events": 6,
+   "create_image": 6,
+   "create_workflow": 6,
+   "delete_memory": 6,
+   "discover_capabilities": 6,
+   "edit_image": 6,
+   "execute_agent_job": 6,
+   "fetch_memories": 6,
+   "file_feedback_for_team": 6,
+   "gmail_send": 6,
+   "list_agent_jobs": 6,
+   "list_schedules": 6,
+   "list_workflows": 6,
+   "read_links": 6,
+   "run_code": 6,
+   "run_workflow": 6,
+   "save_memory": 6,
+   "search_memories": 6,
+   "search_memories_in_subjects": 6,
+   "search_subjects": 6,
+   "search_tools": 6,
+   "search_web": 6,
+   "set_accent_color": 6,
+   "set_chat_font": 6,
+   "set_chat_tool_preferences": 6,
+   "set_reasoning_effort": 6,
+   "set_theme": 6,
+   "update_memory": 6
+  },
+  "production_tools_with_varying_desc": 30,
+  "position_spread_examples": {
+   "search_web": [
+    17,
+    43
+   ],
+   "gmail_send": [
+    162,
+    195
+   ],
+   "search_memories": [
+    23,
+    54
+   ],
+   "read_links": [
+    12,
+    36
+   ],
+   "calendar_create_event": [
+    140,
+    184
+   ]
+  },
+  "connector_desc_variants_mean": 2,
+  "decoy_stems": {
+   "n": 235,
+   "far": 205,
+   "one_edit_from_proxy_word": 29,
+   "is_proxy_word": 1,
+   "examples": {
+    "far": [],
+    "one_edit_from_proxy_word": [
+     [
+      "nosa",
+      "nose"
+     ],
+     [
+      "tono",
+      "too"
+     ],
+     [
+      "tira",
+      "tire"
+     ],
+     [
+      "motel",
+      "model"
+     ],
+     [
+      "fama",
+      "fame"
+     ],
+     [
+      "lanu",
+      "lane"
+     ],
+     [
+      "mave",
+      "have"
+     ],
+     [
+      "rigut",
+      "right"
+     ],
+     [
+      "guna",
+      "gun"
+     ],
+     [
+      "mesan",
+      "mean"
+     ],
+     [
+      "ruse",
+      "use"
+     ],
+     [
+      "gira",
+      "girl"
+     ]
+    ],
+    "is_proxy_word": [
+     [
+      "side",
+      "side"
+     ]
+    ]
+   }
+  },
+  "thread_labels": {
+   "n": 240,
+   "far": 240,
+   "examples": {
+    "far": [
+     [
+      "vorailnode",
+      null
+     ],
+     [
+      "cyrelvale",
+      null
+     ],
+     [
+      "haroibjor",
+      null
+     ],
+     [
+      "morieset",
+      null
+     ],
+     [
+      "quillawire",
+      null
+     ],
+     [
+      "lumaovnode",
+      null
+     ],
+     [
+      "galiynfin",
+      null
+     ],
+     [
+      "belilrow",
+      null
+     ]
+    ]
+   },
+   "top": [
+    [
+     "haroibjor",
+     44
+    ],
+    [
+     "eriunode",
+     44
+    ],
+    [
+     "galiarset",
+     44
+    ],
+    [
+     "kestuunit",
+     44
+    ],
+    [
+     "galiorhelm",
+     44
+    ]
+   ]
+  },
+  "org_stems": {
+   "n": 805,
+   "english_word": 30,
+   "examples": [
+    "Credit",
+    "Square",
+    "Mattel",
+    "Station",
+    "Total",
+    "Next",
+    "Video",
+    "Under",
+    "Silk",
+    "Game",
+    "Hard",
+    "Dark",
+    "Focus",
+    "Five",
+    "Brother",
+    "Rare",
+    "Sprint",
+    "Nothing",
+    "Watch",
+    "Studio",
+    "Magic",
+    "Image",
+    "Medium",
+    "Hero",
+    "Four"
+   ]
+  },
+  "sizes": {
+   "given_names": 10000,
+   "surnames": 10000,
+   "nickname_rows": 1124,
+   "social_nicknames": 32,
+   "informal_short_forms": 7,
+   "cities": 31799,
+   "occupations": 721,
+   "fonts": 1946,
+   "colors": 952,
+   "org_stems_real_brands": 805,
+   "company_suffixes": 32,
+   "purposes": 181,
+   "decoy_shapes": 23,
+   "decoys_per_seed": "3-5",
+   "connector_apps": 136,
+   "connector_actions": 277,
+   "connector_tools_per_seed": 200,
+   "coinshaped_shapes": [
+    "GAVOTU-8841",
+    "VK-7GH2K9QRTZ",
+    "gavotu_8841",
+    "84-GAVO-TUKE"
+   ],
+   "coined_stem_alphabet": "consonants bdfgklmnprstvz x vowels aeiou, 2-3 syllables, optional final l/n/r/s/t",
+   "v13_status_alias_terms": 8,
+   "v10_label_starts": 24,
+   "v12_label_mids": 16,
+   "v10_label_ends": 20
+  },
+  "decoy_stems_english_manual": [
+   "side",
+   "motel",
+   "ruse",
+   "fuse",
+   "votes",
+   "mare"
+  ]
+ }
+}

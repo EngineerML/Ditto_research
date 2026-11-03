@@ -1,0 +1,6573 @@
+{
+ "_meta": {
+  "corpus": "200 bench-15 full seeds; prompts and prerequisite pairs are the SERVED text (.cache/served/v15_s<seed>_served.json, = generator output without the dataset-file surface/typo pass; services/dittobench-api/cmd/dittobench-api/main.go:1542-1571), joined by case id to .cache/datasets/v15_s<seed>_salt0_full.json for expected tools, args and catalog. Only 6,188/20,000 dataset prompts equal the served prompt.",
+  "generator": "repos/ditto-subnet/research/dittobench-datagen @ local checkout; scorer services/dittobench-api/internal/scorer",
+  "hazard_ids": "see tool_families.md section 4",
+  "catalog": {
+   "catalog_sizes": {
+    "234": 69,
+    "233": 63,
+    "235": 68
+   },
+   "decoys_per_run": [
+    [
+     4,
+     69
+    ],
+    [
+     5,
+     68
+    ],
+    [
+     3,
+     63
+    ]
+   ],
+   "decoy_shape_runs": [
+    [
+     "markets_quote",
+     55
+    ],
+    [
+     "route_planner",
+     43
+    ],
+    [
+     "reminders",
+     43
+    ],
+    [
+     "chat_post",
+     42
+    ],
+    [
+     "wiki",
+     40
+    ],
+    [
+     "helpdesk_ticket",
+     38
+    ],
+    [
+     "poll",
+     38
+    ],
+    [
+     "weather",
+     38
+    ],
+    [
+     "sheet_rows",
+     37
+    ],
+    [
+     "notebook_add",
+     37
+    ],
+    [
+     "focus_timer",
+     34
+    ],
+    [
+     "video_digest",
+     34
+    ],
+    [
+     "crm_account",
+     34
+    ],
+    [
+     "docs_search",
+     34
+    ],
+    [
+     "sidebar_palette",
+     33
+    ],
+    [
+     "pricing_quote",
+     32
+    ],
+    [
+     "unit_converter",
+     32
+    ],
+    [
+     "tracker_issue",
+     32
+    ],
+    [
+     "inbox_digest",
+     31
+    ],
+    [
+     "file_converter",
+     29
+    ],
+    [
+     "thesaurus",
+     26
+    ],
+    [
+     "translate",
+     23
+    ],
+    [
+     "address_book",
+     20
+    ]
+   ],
+   "observed_brands": {
+    "distinct": 801,
+    "is_word": [
+     "fuse",
+     "gage",
+     "kala",
+     "mare",
+     "mike",
+     "motel",
+     "mule",
+     "rites",
+     "ruse",
+     "side",
+     "toni",
+     "vera",
+     "votes"
+    ],
+    "edit1": [
+     "babor~labor",
+     "bada~ada",
+     "bafo~bao",
+     "barus~bars",
+     "barut~bart",
+     "belis~bells",
+     "beri~bei",
+     "bese~bose",
+     "bezes~bees",
+     "binen~bien",
+     "bize~size",
+     "bogu~bog",
+     "boma~boca",
+     "bonol~bono",
+     "botot~boot",
+     "bufu~buff",
+     "buga~bugs",
+     "buna~una",
+     "burot~burt",
+     "busil~basil",
+     "darus~darts",
+     "defo~def",
+     "deke~dyke",
+     "delor~decor",
+     "demor~decor",
+     "depin~devin",
+     "deve~devi",
+     "devu~devi",
+     "dika~dina",
+     "dinol~dino",
+     "doba~dona",
+     "doga~dona",
+     "doker~poker",
+     "dulol~dull",
+     "fabis~fabio",
+     "fama~fame",
+     "fapil~fail",
+     "fapi~fai",
+     "fazo~faso",
+     "fedo~edo",
+     "felin~felix",
+     "fidite~finite",
+     "figur~figure",
+     "fimat~fiat",
+     "fobe~foe",
+     "foma~roma",
+     "fome~fame",
+     "fopil~foil",
+     "funo~fund",
+     "gama~gaza",
+     "gapen~gaped",
+     "gemu~gem",
+     "getu~get",
+     "gevo~geo",
+     "gilu~gill",
+     "gira~gia",
+     "givo~give",
+     "goba~goa",
+     "goda~goa",
+     "goke~joke",
+     "gopa~goa",
+     "goris~boris",
+     "goru~gora",
+     "guna~gun",
+     "gutu~guts",
+     "guvin~gavin",
+     "guvu~guru",
+     "kadan~kazan",
+     "kada~kata",
+     "kame~came",
+     "kapi~kari",
+     "karina~marina",
+     "kasis~basis",
+     "kavi~kari",
+     "kepi~kei",
+     "kilo~milo",
+     "kine~kite",
+     "kodin~odin",
+     "kokes~jokes",
+     "kone~cone",
+     "kopa~kota",
+     "kudi~audi",
+     "kulu~lulu",
+     "lamu~lamb",
+     "lanu~lane",
+     "lapu~lap",
+     "lati~late",
+     "lazis~nazis",
+     "leme~lame",
+     "lemi~demi",
+     "lerol~leroy",
+     "letas~lets",
+     "leze~lee",
+     "libol~libel",
+     "lige~life",
+     "lira~lila",
+     "lire~loire",
+     "lobos~logos",
+     "loganu~logan",
+     "lolos~solos",
+     "losir~loser",
+     "losu~lose",
+     "lube~lure",
+     "luler~ruler",
+     "luma~lump",
+     "lupa~luna",
+     "luter~liter",
+     "lutun~luton",
+     "luva~luna",
+     "maga~mag",
+     "malabu~malibu",
+     "manit~mania",
+     "maro~marco",
+     "masa~maya",
+     "matu~maru",
+     "mave~ave",
+     "mebu~menu",
+     "meka~mika",
+     "mera~mere",
+     "mesan~megan",
+     "mirer~miner",
+     "mire~mile",
+     "miru~maru",
+     "misis~isis",
+     "mitu~mit",
+     "mivos~milos",
+     "moda~mod",
+     "mofo~mojo",
+     "muma~mum",
+     "naso~paso",
+     "nepan~nepal",
+     "nepar~near",
+     "nesi~nes",
+     "nido~nino",
+     "nika~nina",
+     "nikit~nikita",
+     "nipo~nino",
+     "nonon~noon",
+     "noru~nord",
+     "nosa~nsa",
+     "noti~note",
+     "nozan~nolan",
+     "nuda~nude",
+     "nufo~ufo",
+     "nunit~unit",
+     "nutal~natal",
+     "nutu~nuts",
+     "pado~paso",
+     "pane~sane",
+     "pavol~pavel",
+     "pazan~kazan",
+     "peler~peter",
+     "penon~penn",
+     "petat~peat",
+     "peta~eta",
+     "pevi~devi",
+     "pige~pipe",
+     "piri~pri",
+     "polit~polite",
+     "pone~poke",
+     "popu~pope",
+     "potos~pots",
+     "poves~proves",
+     "pube~pubs",
+     "pubo~pubs",
+     "pudi~audi",
+     "puna~punta",
+     "raro~rao",
+     "refa~ref",
+     "refe~ref",
+     "refi~ref",
+     "rekin~rein",
+     "reki~eki",
+     "rele~rule",
+     "reran~regan",
+     "rera~reza",
+     "rigal~rival",
+     "rigut~right",
+     "rine~rhine",
+     "rogos~logos",
+     "roki~loki",
+     "ropu~rope",
+     "rosus~roses",
+     "rozes~roses",
+     "rupor~rumor",
+     "rute~ruth",
+     "ruzon~luzon",
+     "sabal~sabah",
+     "sages~sales",
+     "sagi~sami",
+     "saser~laser",
+     "sati~sami",
+     "savat~sava",
+     "sazel~hazel",
+     "senin~lenin",
+     "sepe~sep",
+     "serode~strode",
+     "seti~seth",
+     "sevi~devi",
+     "sidas~sides",
+     "sidi~sid",
+     "sige~size",
+     "similan~similar",
+     "somu~some",
+     "soniva~sonia",
+     "sorar~solar",
+     "sores~spores",
+     "subine~sabine",
+     "subin~rubin",
+     "subu~sub",
+     "sudu~sud",
+     "tages~tapes",
+     "tapil~tail",
+     "tazis~nazis",
+     "teben~teen",
+     "teda~ted",
+     "tifet~tibet",
+     "tigal~tidal",
+     "tika~tia",
+     "tinar~tina",
+     "tira~tia",
+     "tiso~tis",
+     "tobu~toby",
+     "tofen~token",
+     "tona~tons",
+     "tono~tons",
+     "tove~dove",
+     "tunedo~tuned",
+     "vaku~baku",
+     "valar~valor",
+     "valu~val",
+     "vamu~vamp",
+     "vanal~anal",
+     "vapar~vapor",
+     "vaza~gaza",
+     "vedit~edit",
+     "velume~volume",
+     "verar~vera",
+     "veres~verbs",
+     "vife~fife",
+     "vige~vice",
+     "viles~vimes",
+     "vipal~vidal",
+     "vite~cite",
+     "voges~votes",
+     "vole~vols",
+     "volin~violin",
+     "vonin~ronin",
+     "vutin~putin",
+     "zara~hara",
+     "zeni~zen",
+     "ziso~iso",
+     "zoke~joke",
+     "zubu~zulu",
+     "zugo~hugo",
+     "zumu~zulu",
+     "zuse~use"
+    ]
+   },
+   "connector_word_in_prompt": {
+    "total_hits": 713,
+    "top": [
+     [
+      "monday @ world_memory_update",
+      188
+     ],
+     [
+      "online @ v13_restraint_negation_web",
+      120
+     ],
+     [
+      "online @ web_result_usage",
+      82
+     ],
+     [
+      "online @ multi_web_result_usage",
+      41
+     ],
+     [
+      "online @ web_recovery_result_usage",
+      39
+     ],
+     [
+      "online @ parallel_web_image",
+      27
+     ],
+     [
+      "online @ multi_web_read",
+      23
+     ],
+     [
+      "monday @ recipe_apply",
+      23
+     ],
+     [
+      "monday @ automation_not_job",
+      19
+     ],
+     [
+      "monday @ schedules_result_usage",
+      18
+     ],
+     [
+      "google @ web_recovery_result_usage",
+      18
+     ],
+     [
+      "google @ link_chain_result_usage",
+      14
+     ],
+     [
+      "online @ web_search",
+      11
+     ],
+     [
+      "google @ multi_web_result_usage",
+      10
+     ],
+     [
+      "sync @ settings",
+      9
+     ],
+     [
+      "drive @ world_contact_research_email_result_usage",
+      8
+     ],
+     [
+      "google @ web_result_usage",
+      5
+     ],
+     [
+      "drive @ world_memory_delete",
+      4
+     ],
+     [
+      "google @ parallel_web_image",
+      3
+     ],
+     [
+      "obsidian @ world_link_chain_result_usage",
+      3
+     ],
+     [
+      "obsidian @ v10_state_dependent_routing",
+      3
+     ],
+     [
+      "google @ web_search",
+      3
+     ],
+     [
+      "google @ multi_web_read",
+      3
+     ],
+     [
+      "square @ world_memory_delete",
+      3
+     ],
+     [
+      "fedex @ world_contact_research_email_result_usage",
+      2
+     ],
+     [
+      "obsidian @ world_memory_update",
+      2
+     ],
+     [
+      "fedex @ v10_state_dependent_routing",
+      2
+     ],
+     [
+      "square @ world_contact_research_email_result_usage",
+      2
+     ],
+     [
+      "fedex @ v13_state_dependent_email",
+      2
+     ],
+     [
+      "obsidian @ decoy_stock_quote_result_usage",
+      2
+     ]
+    ]
+   }
+  },
+  "hazard_counts": {
+   "decoy_case_with_connector_twin": {
+    "timer_start": "54/88",
+    "map_route": "99/103",
+    "price_quote": "0/81",
+    "inbox_triage": "59/78",
+    "file_convert": "0/77",
+    "sidebar_color": "0/85",
+    "wiki_search": "100/107",
+    "unit_convert": "0/80",
+    "chat_message": "109/109",
+    "reminders_list": "0/108",
+    "video_summarize": "75/79",
+    "stock_quote": "0/141",
+    "ticket_lookup": "88/88",
+    "poll_create": "65/92",
+    "translate_text": "0/52",
+    "issue_create": "79/79",
+    "spreadsheet_read": "88/88",
+    "contact_lookup": "38/44",
+    "crm_lookup": "84/84",
+    "docs_search": "87/87",
+    "note_create": "88/88",
+    "weather_lookup": "0/93",
+    "thesaurus_lookup": "0/69"
+   },
+   "decoy_case_with_connector_twin_total": [
+    1113,
+    2000
+   ],
+   "connector_pool_seen": 277,
+   "connector_names_with_product_keyword": [
+    "airbnb_search_stays",
+    "amplitude_event_segmentation",
+    "asana_complete_task",
+    "asana_create_task",
+    "asana_list_tasks",
+    "basecamp_complete_todo",
+    "basecamp_list_todos",
+    "basecamp_post_update",
+    "bigquery_run_query",
+    "box_search_files",
+    "canny_list_posts",
+    "circleci_rerun_workflow",
+    "clickup_create_task",
+    "confluence_create_page",
+    "confluence_get_page",
+    "databricks_run_job",
+    "discord_send_message",
+    "docusign_send_envelope",
+    "doordash_search_restaurants",
+    "dropbox_upload_file",
+    "evernote_search_notes",
+    "expedia_search_flights",
+    "fedex_schedule_pickup",
+    "figma_list_files",
+    "github_get_file",
+    "github_list_workflow_runs",
+    "googledrive_move_file",
+    "googledrive_search_files",
+    "greenhouse_schedule_interview",
+    "gusto_run_payroll",
+    "hootsuite_schedule_post",
+    "jira_search_tickets",
+    "linear_update_issue",
+    "linkedin_share_post",
+    "looker_run_look",
+    "metabase_run_question",
+    "monday_update_column",
+    "notion_create_page",
+    "notion_search_pages",
+    "obsidian_list_vault_files",
+    "pagerduty_acknowledge_incident",
+    "pagerduty_list_incidents",
+    "pagerduty_who_is_on_call",
+    "paypal_send_invoice",
+    "pocket_list_saved",
+    "postgres_list_tables",
+    "postgres_run_query",
+    "postman_run_collection",
+    "quickbooks_run_report",
+    "reddit_list_saved",
+    "reddit_submit_post",
+    "ring_list_events",
+    "salesforce_update_opportunity",
+    "segment_track_event",
+    "sendgrid_list_suppressions",
+    "shopify_update_inventory",
+    "slack_post_message",
+    "slack_search_messages",
+    "smartsheet_update_row",
+    "snowflake_run_query",
+    "square_update_item",
+    "statuspage_create_incident",
+    "statuspage_list_components",
+    "supabase_run_sql",
+    "teams_post_message",
+    "terraform_list_runs",
+    "twilio_send_sms",
+    "wordpress_create_post",
+    "zendesk_search_tickets"
+   ],
+   "tool_discovery_cap_vs_lookalike_tool": {
+    "convert a file between formats": "17/65",
+    "resize a batch of images": "65/94",
+    "pull rows from a spreadsheet": "77/77",
+    "fetch live exchange rates": "54/85",
+    "look up a package's latest version": "0/78"
+   },
+   "traps": {
+    "feedback mentions another tool (image/search/dark mode/export)": {
+     "hits": 200,
+     "of": 200,
+     "example": "Quick note for the team: the export button is broken on mobile. Log it as feedback."
+    },
+    "set_tool_prefs names a tool family (web search/image/agent jobs/memory)": {
+     "hits": 200,
+     "of": 200,
+     "example": "From now on, enable image tools in our chats."
+    },
+    "capability_discovery names a setting it must not set (dark mode/font/calendar/reminder)": {
+     "hits": 97,
+     "of": 200,
+     "example": "Real quick, where do I find the option for the app's appearance? Cheers."
+    },
+    "automation_list says \"Remind me\"": {
+     "hits": 39,
+     "of": 200,
+     "example": "Ok, so — remind me which automatic runs are coming up. No rush."
+    },
+    "sandbox_result_usage says \"Code Mode\"": {
+     "hits": 75,
+     "of": 198,
+     "example": "Run the Gupita checksum routine through Code Mode and tell me precisely what it outputs."
+    },
+    "artifacts kind looks like another tool (timer/tracker/spreadsheet/resume)": {
+     "hits": 136,
+     "of": 200,
+     "example": "Can you mock up a budget tracker I can click around in?"
+    },
+    "calendar_search filler is a web topic": {
+     "hits": 137,
+     "of": 137,
+     "example": "Search my calendar for the James Webb telescope."
+    },
+    "route_web_not_memory uses memory verbs (remind/recall/remember/do you know)": {
+     "hits": 89,
+     "of": 116,
+     "example": "Remind me what the latest news on the housing market outlook is."
+    },
+    "stale_context_web anchors on notes/told you/forget": {
+     "hits": 200,
+     "of": 200,
+     "example": "Ignore my earlier notes on olive oil adulteration; I want the latest information."
+    },
+    "agent_run_not_read negates \"tell me how\"": {
+     "hits": 43,
+     "of": 119,
+     "example": "Right now, build a small Flask app that serves a health check — don't just tell me how."
+    },
+    "workflow_not_job says \"not a one-off\"/parallel": {
+     "hits": 89,
+     "of": 112,
+     "example": "I want review a PR for correctness, tests, and style in parallel as a reusable workflow, not a one-off; run the independent parts at the same time."
+    },
+    "code_compute_not_agent_job negates project/script/repo": {
+     "hits": 126,
+     "of": 126,
+     "example": "No need to spin up a whole project or touch my files — just compute 48.5 times 9.5 minus 310 right now."
+    },
+    "tool_discovery says \"before you write any code\"/\"run anything\"": {
+     "hits": 110,
+     "of": 200,
+     "example": "Find the right tool binding to resize a batch of images before you run anything."
+    },
+    "image_edit_not_create uses create-ish verbs (make/give/add)": {
+     "hits": 35,
+     "of": 142,
+     "example": "Real quick, on that picture you made, make the sky purple. Appreciate it."
+    },
+    "multi_image_edit says create then tweak": {
+     "hits": 126,
+     "of": 126,
+     "example": "Create a picture of a sunset over mountains and tweak the colors."
+    },
+    "recipe_apply names cadence not workflow name": {
+     "hits": 200,
+     "of": 200,
+     "example": "Kick off my workflow that's set for every Sunday evening — the one already saved."
+    },
+    "schedules_result_usage names cadence (same cadence pool as recipe_apply)": {
+     "hits": 200,
+     "of": 200,
+     "example": "Check the schedules on my workflows — how many runs has the one that goes twice a day at 09:00 and 17:00 logged so far? Exact number, please."
+    },
+    "world_contact email has \"the X\" subject + live value": {
+     "hits": 670,
+     "of": 670,
+     "example": "See where the Toei ledger stands and forward the figure to Pip, the bandmate from the choir in New York City I know from the winter garden redesign."
+    },
+    "world_business_workflow says \"If not/if missing, create\"": {
+     "hits": 489,
+     "of": 489,
+     "example": "Do I already have a workflow for \"germanwings gate ledger\" (the Rusal Partners project)? If there isn't one, create it under the formal project name, with Goldie's current address as the internal reviewer in the review step."
+    }
+   },
+   "figure_under_other_label_cases_per_run": {
+    "list_workflows (served \"N total runs\" per workflow)": 6.04,
+    "list_agent_jobs (two jobs, two item counts)": 1.99,
+    "discover_capabilities (served \"Workspace limits: up to N saved workflows\")": 9.22,
+    "list_schedules (three workflows, three run counts)": 2.0,
+    "search_web inside a search->read chain (snippet carries the scored decoy figure)": 5.83
+   },
+   "exact_phrasing_by_tool_per_run": {
+    "decoy": 10.0,
+    "read_links": 2.0,
+    "search_web": 1.6,
+    "list_schedules": 1.0,
+    "search_tools": 0.99,
+    "run_code": 0.99,
+    "list_agent_jobs": 0.98,
+    "set_chat_font": 0.92,
+    "run_workflow": 0.67,
+    "create_workflow": 0.61,
+    "execute_agent_job": 0.59,
+    "set_accent_color": 0.27
+   },
+   "world_carrier_category": [
+    [
+     "world_contact_research_email_result_usage",
+     45
+    ],
+    [
+     "world_link_chain_result_usage",
+     30
+    ],
+    [
+     "world_memory_delete",
+     26
+    ],
+    [
+     "world_memory_update",
+     25
+    ],
+    [
+     "world_theme_discover_set",
+     25
+    ],
+    [
+     "world_business_workflow",
+     22
+    ],
+    [
+     "v10_state_dependent_routing",
+     18
+    ],
+    [
+     "v13_state_dependent_email",
+     6
+    ],
+    [
+     "v13_state_dependent_calendar",
+     3
+    ]
+   ],
+   "world_carrier_pairs": [
+    332,
+    349,
+    341.1
+   ],
+   "tool_prerequisite_pairs_per_run": [
+    358,
+    381,
+    369.0
+   ],
+   "memory_waves": [
+    [
+     [
+      6,
+      200
+     ]
+    ],
+    335,
+    367
+   ],
+   "hex_id_in_prompt": [
+    [
+     "v13_restraint_email",
+     531
+    ],
+    [
+     "v13_restraint_calendar",
+     523
+    ],
+    [
+     "v13_restraint_effort",
+     520
+    ]
+   ],
+   "runs_with_two_groups_same_family": {
+    "v13_restraint_calendar": 55,
+    "v13_restraint_email": 53,
+    "v13_restraint_effort": 57
+   },
+   "discovery_near_miss": {
+    "discovery_font_set": "252/656",
+    "discovery_accent_set": "148/544"
+   },
+   "declarative_by_domain": {
+    "accent/act": 93,
+    "accent/ask": 87,
+    "font/act": 84,
+    "font/ask": 89,
+    "mode/act": 95,
+    "mode/ask": 113
+   },
+   "state_dependent_alias_repeats_in_run": 17
+  },
+  "typo_note": "surface_rates_of_cases.typo_prompts_salted_sample measures the DATASET-FILE typo pass (30 seeds x salts 0-3); that pass is not served. Served tool prompts are clean except deliberate misspellings of appearance values (discovery_* and world_theme_discover_set, ~8.2% of tool prompts).",
+  "frame_distribution_note": ""
+ },
+ "agent_job": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:244 (argKey dropped at :2075); grammar grammars_v13.go:108",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "#runverb# a background job to %s.",
+    "Kick off an agent to %s.",
+    "#dispatchverb# a task to %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:108",
+   "observed_frame_distribution": [
+    22,
+    14,
+    16,
+    20,
+    20,
+    17
+   ]
+  },
+  "expected_tools": {
+   "execute_agent_job": 109
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 109
+   },
+   "allow_extra_tools": {
+    "false": 109
+   },
+   "fuzzy_trajectory": {
+    "false": 109
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 109,
+   "min": 0,
+   "max": 1,
+   "mean": 0.55
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 109,
+   "distinct_prompts": 90,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    10,
+    15
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "agent_jobs_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:622 (prompts :615)",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Look at my recent background jobs — exactly how many items did the %s job process?",
+    "Check the agent jobs I dispatched: what's the precise item count the finished %s job reports?",
+    "How many items did my %s job get through? Read it off the job list and give me the exact number."
+   ],
+   "grammar_source": "datagen/v13.go:615",
+   "observed_frame_distribution": [
+    59,
+    75,
+    63
+   ]
+  },
+  "expected_tools": {
+   "list_agent_jobs": 197
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 197
+   },
+   "allow_extra_tools": {
+    "false": 197
+   },
+   "fuzzy_trajectory": {
+    "false": 197
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 197,
+   "min": 0,
+   "max": 1,
+   "mean": 0.98
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 197,
+   "distinct_prompts": 197,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 197,
+   "typo_prompts_salted_sample": [
+    21,
+    30
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H18"
+  ]
+ },
+ "agent_read_not_run": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:296 (wrap); grammar datagen/grammars.go:20",
+  "frames": {
+   "count": 7,
+   "representative": [
+    "#checkverb# #jobsref#.#tail#",
+    "What's the status of #jobsref#?#tail#",
+    "Are any of #jobsref# still #going#?"
+   ],
+   "grammar_source": "datagen/grammars.go:20",
+   "observed_frame_distribution": [
+    0,
+    32,
+    27,
+    36,
+    23,
+    33,
+    49
+   ]
+  },
+  "expected_tools": {
+   "list_agent_jobs": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 190,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 131,
+   "trailer": 108,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    18,
+    30
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "agent_run_not_read": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:287; grammar grammars_v13.go:150",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Go ahead and %s for me #now#.",
+    "Please actually %s, #notjust#.",
+    "Start working on this: %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:150",
+   "observed_frame_distribution": [
+    17,
+    17,
+    35,
+    1,
+    22,
+    27
+   ]
+  },
+  "expected_tools": {
+   "execute_agent_job": 119
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 119
+   },
+   "allow_extra_tools": {
+    "false": 119
+   },
+   "fuzzy_trajectory": {
+    "false": 119
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 119,
+   "min": 0,
+   "max": 1,
+   "mean": 0.59
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 119,
+   "distinct_prompts": 92,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 36,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    11,
+    19
+   ]
+  },
+  "hazards": [
+   "H5",
+   "H11",
+   "H18"
+  ]
+ },
+ "agent_workflow": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:362 -> create_workflow at :2034; grammar grammars_v13.go:220",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Create a workflow for %s.",
+    "Turn %s into a #reusable# multi-step workflow.",
+    "#setup# a #reusable# workflow that handles %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:220",
+   "observed_frame_distribution": [
+    17,
+    24,
+    26,
+    21,
+    20
+   ]
+  },
+  "expected_tools": {
+   "create_workflow": 108
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 108
+   },
+   "allow_extra_tools": {
+    "false": 108
+   },
+   "fuzzy_trajectory": {
+    "false": 108
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 108,
+   "min": 0,
+   "max": 1,
+   "mean": 0.54
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 108,
+   "distinct_prompts": 82,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    14,
+    21
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "artifacts_create": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:236; grammar grammars_v13.go:93",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Build me %s.",
+    "Make %s I can #preview#.",
+    "#createverb# %s as an interactive artifact."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:93",
+   "observed_frame_distribution": [
+    32,
+    47,
+    35,
+    31,
+    24,
+    31
+   ]
+  },
+  "expected_tools": {
+   "artifacts": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 129,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    23,
+    30
+   ]
+  },
+  "hazards": [
+   "H6",
+   "H11",
+   "H18"
+  ]
+ },
+ "automation_list": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:426 -> list_schedules at :2055; grammar grammars_v13.go:300 (wrap)",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "What workflows are #ontimer# to run?",
+    "Show me my upcoming #autoruns#.",
+    "Which of my workflows #fire# on their own?"
+   ],
+   "grammar_source": "datagen/grammars_v13.go:300",
+   "observed_frame_distribution": [
+    21,
+    47,
+    35,
+    27,
+    31,
+    39
+   ]
+  },
+  "expected_tools": {
+   "list_schedules": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 170,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 125,
+   "trailer": 109,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    20,
+    30
+   ]
+  },
+  "hazards": [
+   "H4",
+   "H11",
+   "H18"
+  ]
+ },
+ "automation_not_job": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:418 -> create_workflow at :2041; grammar grammars_v13.go:289",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Create a workflow that sends my news digest %s.",
+    "Set up my standup summary to run %s.",
+    "I want my digest #delivered# %s — make that a workflow."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:289",
+   "observed_frame_distribution": [
+    22,
+    28,
+    21,
+    14,
+    27
+   ]
+  },
+  "expected_tools": {
+   "create_workflow": 112
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 112
+   },
+   "allow_extra_tools": {
+    "false": 112
+   },
+   "fuzzy_trajectory": {
+    "false": 112
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 112,
+   "min": 0,
+   "max": 1,
+   "mean": 0.56
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 112,
+   "distinct_prompts": 45,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 24,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    6,
+    17
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H12",
+   "H18"
+  ]
+ },
+ "calendar_create": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:478; grammar grammars_v13.go:373",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Put %s on my calendar.",
+    "Add %s to my calendar.",
+    "Schedule %s on my calendar."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:373",
+   "observed_frame_distribution": [
+    35,
+    20,
+    10,
+    27,
+    20,
+    16
+   ]
+  },
+  "expected_tools": {
+   "calendar_create_event": 128
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 128
+   },
+   "allow_extra_tools": {
+    "false": 128
+   },
+   "fuzzy_trajectory": {
+    "false": 128
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 128,
+   "min": 0,
+   "max": 1,
+   "mean": 0.64
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 128,
+   "distinct_prompts": 77,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 27,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 28,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    7,
+    20
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "calendar_search": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:486 (filler = web topics :729); grammar grammars_v13.go:385",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "What's on my calendar about %s?",
+    "Find the %s event on my calendar.",
+    "Search my calendar for %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:385",
+   "observed_frame_distribution": [
+    15,
+    21,
+    33,
+    16,
+    33,
+    19
+   ]
+  },
+  "expected_tools": {
+   "calendar_search_events": 137
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 137
+   },
+   "allow_extra_tools": {
+    "false": 137
+   },
+   "fuzzy_trajectory": {
+    "false": 137
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 137,
+   "min": 0,
+   "max": 1,
+   "mean": 0.69
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 137,
+   "distinct_prompts": 91,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 7,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    13,
+    18
+   ]
+  },
+  "hazards": [
+   "H6",
+   "H11",
+   "H18"
+  ]
+ },
+ "capability_discovery": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:448 (wrap); grammar grammars.go:136",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "#tellme# what #youref# #cando#.",
+    "What kinds of things can I #askfor#?",
+    "How do I #settingtask# in #appref#?"
+   ],
+   "grammar_source": "datagen/grammars.go:136",
+   "observed_frame_distribution": [
+    34,
+    29,
+    38,
+    29,
+    41,
+    29
+   ]
+  },
+  "expected_tools": {
+   "discover_capabilities": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 191,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 134,
+   "trailer": 113,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    21,
+    30
+   ]
+  },
+  "hazards": [
+   "H6",
+   "H11",
+   "H18"
+  ]
+ },
+ "code_compute": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1150, v8 grammar override :2014",
+  "frames": {
+   "count": 2,
+   "representative": [
+    "#lead# take #a#, #b#, and #c#, then give me their sum, average, and the spread from lowest to highest.",
+    "#lead# my last three readings were #a#, #b#, and #c#. What is the mean, and how far apart are the high and low?"
+   ],
+   "grammar_source": "datagen/datagen.go:2014",
+   "observed_frame_distribution": [
+    59,
+    64
+   ]
+  },
+  "expected_tools": {
+   "run_code": 123
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 123
+   },
+   "allow_extra_tools": {
+    "false": 123
+   },
+   "fuzzy_trajectory": {
+    "false": 123
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 123,
+   "min": 0,
+   "max": 1,
+   "mean": 0.61
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 123,
+   "distinct_prompts": 121,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 59,
+   "quoted_alias": 0,
+   "digits": 123,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    16,
+    19
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "code_compute_not_agent_job": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1165",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "No need to spin up a whole project or touch my files — just compute #a# times #b# minus #c# right now.",
+    "This is a one-off calculation, not a coding job: normalize #a#, #b#, and #c# to sum to 1 and give me the fractions.",
+    "Don't build anything — just do the arithmetic: what's the compound total of #a#, #b#, and #c#?"
+   ],
+   "grammar_source": "datagen/datagen.go:1165",
+   "observed_frame_distribution": [
+    28,
+    39,
+    32,
+    27
+   ]
+  },
+  "expected_tools": {
+   "run_code": 126
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 126
+   },
+   "allow_extra_tools": {
+    "false": 126
+   },
+   "fuzzy_trajectory": {
+    "false": 126
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 126,
+   "min": 0,
+   "max": 1,
+   "mean": 0.63
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 126,
+   "distinct_prompts": 99,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 126,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 126,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    14,
+    18
+   ]
+  },
+  "hazards": [
+   "H5",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_chat_message_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:454; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Drop a note in our %[1]s team channel asking about %[2]s and tell me the exact figure the channel bot replies with.",
+    "Post to %[1]s chat about %[2]s and give me the precise number the room's bot returns.",
+    "Ping the %[1]s channel about %[2]s; report the exact value it answers with."
+   ],
+   "grammar_source": "catalog/v13.go:454",
+   "observed_frame_distribution": [
+    40,
+    38,
+    31
+   ]
+  },
+  "expected_tools": {
+   "<brand>_chat_post": 109
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 109
+   },
+   "allow_extra_tools": {
+    "false": 109
+   },
+   "fuzzy_trajectory": {
+    "false": 109
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 42,
+   "min": 0,
+   "max": 4,
+   "mean": 0.55
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 109,
+   "distinct_prompts": 109,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 109,
+   "typo_prompts_salted_sample": [
+    11,
+    18
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_contact_lookup_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:478; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Find the %[1]s address-book card for %[2]s and tell me the exact figure in its notes field.",
+    "Look up %[2]s in %[1]s contacts; give me the precise number on the card.",
+    "Open my %[1]s address book entry for %[2]s and report the exact value it holds."
+   ],
+   "grammar_source": "catalog/v13.go:478",
+   "observed_frame_distribution": [
+    18,
+    14,
+    12
+   ]
+  },
+  "expected_tools": {
+   "<brand>_address_book": 44
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 44
+   },
+   "allow_extra_tools": {
+    "false": 44
+   },
+   "fuzzy_trajectory": {
+    "false": 44
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 20,
+   "min": 0,
+   "max": 3,
+   "mean": 0.22
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 44,
+   "distinct_prompts": 44,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 44,
+   "typo_prompts_salted_sample": [
+    1,
+    2
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_crm_lookup_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:505; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Look up %[2]s in the %[1]s CRM and tell me the exact figure on the account record.",
+    "Check %[1]s CRM for %[2]s — what precise number is on file?",
+    "Open the %[1]s account for %[2]s and report the exact value it shows."
+   ],
+   "grammar_source": "catalog/v13.go:505",
+   "observed_frame_distribution": [
+    29,
+    27,
+    28
+   ]
+  },
+  "expected_tools": {
+   "<brand>_crm_account": 84
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 84
+   },
+   "allow_extra_tools": {
+    "false": 84
+   },
+   "fuzzy_trajectory": {
+    "false": 84
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 34,
+   "min": 0,
+   "max": 4,
+   "mean": 0.42
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 84,
+   "distinct_prompts": 84,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 84,
+   "typo_prompts_salted_sample": [
+    2,
+    7
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_docs_search_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:451; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Look up %[2]s in the %[1]s documentation portal and tell me the exact figure the article lists.",
+    "Check the %[1]s docs for %[2]s — I need the precise number their reference page gives.",
+    "Search %[1]s's documentation for %[2]s and report the exact value it states."
+   ],
+   "grammar_source": "catalog/v13.go:451",
+   "observed_frame_distribution": [
+    33,
+    24,
+    30
+   ]
+  },
+  "expected_tools": {
+   "<brand>_docs_search": 87
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 87
+   },
+   "allow_extra_tools": {
+    "false": 87
+   },
+   "fuzzy_trajectory": {
+    "false": 87
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 34,
+   "min": 0,
+   "max": 4,
+   "mean": 0.43
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 87,
+   "distinct_prompts": 87,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 87,
+   "typo_prompts_salted_sample": [
+    13,
+    17
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_file_convert_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:481; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Convert my export on %[2]s with %[1]s and tell me the exact figure its conversion report shows.",
+    "Run the %[2]s export through the %[1]s converter; give me the precise number in the result summary.",
+    "Use %[1]s to convert the file on %[2]s and report the exact value the log states."
+   ],
+   "grammar_source": "catalog/v13.go:481",
+   "observed_frame_distribution": [
+    18,
+    30,
+    29
+   ]
+  },
+  "expected_tools": {
+   "<brand>_file_converter": 77
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 77
+   },
+   "allow_extra_tools": {
+    "false": 77
+   },
+   "fuzzy_trajectory": {
+    "false": 77
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 29,
+   "min": 0,
+   "max": 4,
+   "mean": 0.39
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 77,
+   "distinct_prompts": 77,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 77,
+   "typo_prompts_salted_sample": [
+    8,
+    15
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_inbox_triage_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:502; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Triage my %[1]s inbox for anything on %[2]s and tell me the exact figure the digest surfaces.",
+    "Digest %[1]s mail about %[2]s; give me the precise number it pulls out.",
+    "Run the %[1]s inbox digest for %[2]s and report the exact value."
+   ],
+   "grammar_source": "catalog/v13.go:502",
+   "observed_frame_distribution": [
+    30,
+    22,
+    26
+   ]
+  },
+  "expected_tools": {
+   "<brand>_inbox_digest": 78
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 78
+   },
+   "allow_extra_tools": {
+    "false": 78
+   },
+   "fuzzy_trajectory": {
+    "false": 78
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 31,
+   "min": 0,
+   "max": 4,
+   "mean": 0.39
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 78,
+   "distinct_prompts": 78,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 78,
+   "typo_prompts_salted_sample": [
+    4,
+    5
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_issue_create_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:496; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Open a %[1]s tracker issue about %[2]s and tell me the exact issue number it assigns.",
+    "File %[2]s in %[1]s tracker; give me the precise number of the new issue.",
+    "Create a %[1]s issue for %[2]s and report the exact id it returns."
+   ],
+   "grammar_source": "catalog/v13.go:496",
+   "observed_frame_distribution": [
+    28,
+    29,
+    22
+   ]
+  },
+  "expected_tools": {
+   "<brand>_tracker_issue": 79
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 79
+   },
+   "allow_extra_tools": {
+    "false": 79
+   },
+   "fuzzy_trajectory": {
+    "false": 79
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 32,
+   "min": 0,
+   "max": 4,
+   "mean": 0.4
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 79,
+   "distinct_prompts": 79,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 79,
+   "typo_prompts_salted_sample": [
+    14,
+    18
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_map_route_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:490; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Plan a %[1]s route to %[2]s and tell me the exact figure it reports for the trip.",
+    "Ask %[1]s maps for directions to %[2]s; give me the precise number in the summary.",
+    "Route me to %[2]s with %[1]s and report the exact value it returns."
+   ],
+   "grammar_source": "catalog/v13.go:490",
+   "observed_frame_distribution": [
+    26,
+    41,
+    36
+   ]
+  },
+  "expected_tools": {
+   "<brand>_route_planner": 103
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 103
+   },
+   "allow_extra_tools": {
+    "false": 103
+   },
+   "fuzzy_trajectory": {
+    "false": 103
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 43,
+   "min": 0,
+   "max": 4,
+   "mean": 0.52
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 103,
+   "distinct_prompts": 103,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 103,
+   "typo_prompts_salted_sample": [
+    10,
+    15
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_note_create_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:463; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Start a %[1]s notebook page about %[2]s and tell me the exact figure the notebook's summary line shows.",
+    "Create a %[1]s note on %[2]s; give me the precise number in its auto-summary.",
+    "Add %[2]s to my %[1]s notebook and report the exact value the page header states."
+   ],
+   "grammar_source": "catalog/v13.go:463",
+   "observed_frame_distribution": [
+    32,
+    21,
+    35
+   ]
+  },
+  "expected_tools": {
+   "<brand>_notebook_add": 88
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 88
+   },
+   "allow_extra_tools": {
+    "false": 88
+   },
+   "fuzzy_trajectory": {
+    "false": 88
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 37,
+   "min": 0,
+   "max": 4,
+   "mean": 0.44
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 88,
+   "distinct_prompts": 88,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 88,
+   "typo_prompts_salted_sample": [
+    14,
+    23
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_poll_create_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:514; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Open a %[1]s poll about %[2]s and tell me the exact poll number it creates.",
+    "Start a %[1]s poll on %[2]s; give me the precise id it returns.",
+    "Create a %[1]s poll for %[2]s and report the exact number it confirms."
+   ],
+   "grammar_source": "catalog/v13.go:514",
+   "observed_frame_distribution": [
+    34,
+    32,
+    26
+   ]
+  },
+  "expected_tools": {
+   "<brand>_poll": 92
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 92
+   },
+   "allow_extra_tools": {
+    "false": 92
+   },
+   "fuzzy_trajectory": {
+    "false": 92
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 38,
+   "min": 0,
+   "max": 4,
+   "mean": 0.46
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 92,
+   "distinct_prompts": 92,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 92,
+   "typo_prompts_salted_sample": [
+    11,
+    18
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_price_quote_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:469; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Get a %[1]s pricing quote for %[2]s and tell me the exact figure quoted.",
+    "Ask %[1]s pricing about %[2]s; give me the precise number it returns.",
+    "Pull the %[1]s quote for %[2]s and report the exact value."
+   ],
+   "grammar_source": "catalog/v13.go:469",
+   "observed_frame_distribution": [
+    29,
+    28,
+    24
+   ]
+  },
+  "expected_tools": {
+   "<brand>_pricing_quote": 81
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 81
+   },
+   "allow_extra_tools": {
+    "false": 81
+   },
+   "fuzzy_trajectory": {
+    "false": 81
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 32,
+   "min": 0,
+   "max": 4,
+   "mean": 0.41
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 81,
+   "distinct_prompts": 81,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 81,
+   "typo_prompts_salted_sample": [
+    3,
+    13
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_reminders_list_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:460; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Check my %[1]s reminders for the one about %[2]s and tell me the exact figure it notes.",
+    "Pull up %[1]s reminders mentioning %[2]s — what precise number does the reminder carry?",
+    "Look through my %[1]s reminder list for %[2]s and report the exact value written there."
+   ],
+   "grammar_source": "catalog/v13.go:460",
+   "observed_frame_distribution": [
+    36,
+    38,
+    34
+   ]
+  },
+  "expected_tools": {
+   "<brand>_reminders": 108
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 108
+   },
+   "allow_extra_tools": {
+    "false": 108
+   },
+   "fuzzy_trajectory": {
+    "false": 108
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 43,
+   "min": 0,
+   "max": 4,
+   "mean": 0.54
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 108,
+   "distinct_prompts": 108,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 108,
+   "typo_prompts_salted_sample": [
+    14,
+    20
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_sidebar_color_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:457; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Recolor my %[1]s add-on sidebar to match %[2]s and tell me the exact palette code it reports.",
+    "Set the %[1]s sidebar palette for %[2]s; give me the precise code it confirms.",
+    "Adjust the %[1]s panel colors around %[2]s and report the exact palette value."
+   ],
+   "grammar_source": "catalog/v13.go:457",
+   "observed_frame_distribution": [
+    30,
+    33,
+    22
+   ]
+  },
+  "expected_tools": {
+   "<brand>_sidebar_palette": 85
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 85
+   },
+   "allow_extra_tools": {
+    "false": 85
+   },
+   "fuzzy_trajectory": {
+    "false": 85
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 33,
+   "min": 0,
+   "max": 4,
+   "mean": 0.42
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 85,
+   "distinct_prompts": 85,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 85,
+   "typo_prompts_salted_sample": [
+    10,
+    17
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_spreadsheet_read_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:493; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Read the %[1]s sheet row for %[2]s and tell me the exact figure in it.",
+    "Pull %[2]s from my %[1]s spreadsheet; give me the precise number.",
+    "Open the %[1]s sheet, find %[2]s, and report the exact value."
+   ],
+   "grammar_source": "catalog/v13.go:493",
+   "observed_frame_distribution": [
+    19,
+    31,
+    38
+   ]
+  },
+  "expected_tools": {
+   "<brand>_sheet_rows": 88
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 88
+   },
+   "allow_extra_tools": {
+    "false": 88
+   },
+   "fuzzy_trajectory": {
+    "false": 88
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 37,
+   "min": 0,
+   "max": 3,
+   "mean": 0.44
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 88,
+   "distinct_prompts": 88,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 88,
+   "typo_prompts_salted_sample": [
+    2,
+    4
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_stock_quote_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:484; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Quote %[2]s on the %[1]s markets feed and tell me the exact figure.",
+    "Check %[1]s markets for %[2]s — what precise number does it show?",
+    "Pull the %[1]s quote for %[2]s and report the exact value."
+   ],
+   "grammar_source": "catalog/v13.go:484",
+   "observed_frame_distribution": [
+    43,
+    49,
+    49
+   ]
+  },
+  "expected_tools": {
+   "<brand>_markets_quote": 141
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 141
+   },
+   "allow_extra_tools": {
+    "false": 141
+   },
+   "fuzzy_trajectory": {
+    "false": 141
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 55,
+   "min": 0,
+   "max": 4,
+   "mean": 0.7
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 141,
+   "distinct_prompts": 141,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 141,
+   "typo_prompts_salted_sample": [
+    9,
+    16
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_thesaurus_lookup_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:508; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Look up %[2]s in the %[1]s thesaurus and tell me the exact figure its usage note cites.",
+    "Check %[1]s thesaurus for %[2]s; give me the precise number in the entry.",
+    "Open the %[1]s entry for %[2]s and report the exact value in its note."
+   ],
+   "grammar_source": "catalog/v13.go:508",
+   "observed_frame_distribution": [
+    18,
+    25,
+    26
+   ]
+  },
+  "expected_tools": {
+   "<brand>_thesaurus": 69
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 69
+   },
+   "allow_extra_tools": {
+    "false": 69
+   },
+   "fuzzy_trajectory": {
+    "false": 69
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 26,
+   "min": 0,
+   "max": 4,
+   "mean": 0.34
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 69,
+   "distinct_prompts": 69,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 69,
+   "typo_prompts_salted_sample": [
+    1,
+    2
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_ticket_lookup_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:466; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Find the %[1]s helpdesk ticket about %[2]s and tell me the exact figure in its latest update.",
+    "Check %[1]s support for the ticket on %[2]s — what precise number does the last reply give?",
+    "Look up %[2]s in %[1]s helpdesk and report the exact value the ticket records."
+   ],
+   "grammar_source": "catalog/v13.go:466",
+   "observed_frame_distribution": [
+    32,
+    22,
+    34
+   ]
+  },
+  "expected_tools": {
+   "<brand>_helpdesk_ticket": 88
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 88
+   },
+   "allow_extra_tools": {
+    "false": 88
+   },
+   "fuzzy_trajectory": {
+    "false": 88
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 38,
+   "min": 0,
+   "max": 4,
+   "mean": 0.44
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 88,
+   "distinct_prompts": 88,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 88,
+   "typo_prompts_salted_sample": [
+    3,
+    7
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_timer_start_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:487; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Start a %[1]s focus timer for my work on %[2]s and tell me the exact session id number it returns.",
+    "Kick off a %[1]s timer labeled %[2]s; give me the precise number it confirms.",
+    "Begin a %[1]s focus session for %[2]s and report the exact value in the confirmation."
+   ],
+   "grammar_source": "catalog/v13.go:487",
+   "observed_frame_distribution": [
+    32,
+    29,
+    27
+   ]
+  },
+  "expected_tools": {
+   "<brand>_focus_timer": 88
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 88
+   },
+   "allow_extra_tools": {
+    "false": 88
+   },
+   "fuzzy_trajectory": {
+    "false": 88
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 34,
+   "min": 0,
+   "max": 4,
+   "mean": 0.44
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 88,
+   "distinct_prompts": 88,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 88,
+   "typo_prompts_salted_sample": [
+    17,
+    22
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_translate_text_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:472; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Run the note on %[2]s through %[1]s translate and tell me the exact figure the translation memory attaches.",
+    "Translate the phrase about %[2]s with %[1]s; report the precise number its glossary note shows.",
+    "Use %[1]s translation on %[2]s and give me the exact value in the returned footnote."
+   ],
+   "grammar_source": "catalog/v13.go:472",
+   "observed_frame_distribution": [
+    19,
+    18,
+    15
+   ]
+  },
+  "expected_tools": {
+   "<brand>_translate": 52
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 52
+   },
+   "allow_extra_tools": {
+    "false": 52
+   },
+   "fuzzy_trajectory": {
+    "false": 52
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 23,
+   "min": 0,
+   "max": 4,
+   "mean": 0.26
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 52,
+   "distinct_prompts": 52,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 52,
+   "typo_prompts_salted_sample": [
+    5,
+    6
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_unit_convert_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:511; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Convert the reading for %[2]s with %[1]s units and tell me the exact figure it returns.",
+    "Run the figure for %[2]s through the %[1]s converter; give me the precise converted number.",
+    "Use %[1]s to convert %[2]s and report the exact value."
+   ],
+   "grammar_source": "catalog/v13.go:511",
+   "observed_frame_distribution": [
+    23,
+    32,
+    25
+   ]
+  },
+  "expected_tools": {
+   "<brand>_unit_converter": 80
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 80
+   },
+   "allow_extra_tools": {
+    "false": 80
+   },
+   "fuzzy_trajectory": {
+    "false": 80
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 32,
+   "min": 0,
+   "max": 3,
+   "mean": 0.4
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 80,
+   "distinct_prompts": 80,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 80,
+   "typo_prompts_salted_sample": [
+    7,
+    15
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_video_summarize_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:499; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Digest the %[1]s video on %[2]s and tell me the exact figure it highlights.",
+    "Run the talk about %[2]s through %[1]s video digest; give me the precise number in the summary.",
+    "Summarize the %[1]s recording about %[2]s and report the exact value it calls out."
+   ],
+   "grammar_source": "catalog/v13.go:499",
+   "observed_frame_distribution": [
+    39,
+    22,
+    18
+   ]
+  },
+  "expected_tools": {
+   "<brand>_video_digest": 79
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 79
+   },
+   "allow_extra_tools": {
+    "false": 79
+   },
+   "fuzzy_trajectory": {
+    "false": 79
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 34,
+   "min": 0,
+   "max": 4,
+   "mean": 0.4
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 79,
+   "distinct_prompts": 79,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 79,
+   "typo_prompts_salted_sample": [
+    7,
+    9
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_weather_lookup_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:475; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Check the %[1]s weather feed for %[2]s and tell me the exact reading it reports.",
+    "What does %[1]s weather say for %[2]s? I need the precise figure.",
+    "Pull %[1]s conditions for %[2]s and report the exact value."
+   ],
+   "grammar_source": "catalog/v13.go:475",
+   "observed_frame_distribution": [
+    27,
+    29,
+    37
+   ]
+  },
+  "expected_tools": {
+   "<brand>_weather": 93
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 93
+   },
+   "allow_extra_tools": {
+    "false": 93
+   },
+   "fuzzy_trajectory": {
+    "false": 93
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 38,
+   "min": 0,
+   "max": 4,
+   "mean": 0.47
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 93,
+   "distinct_prompts": 93,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 93,
+   "typo_prompts_salted_sample": [
+    6,
+    15
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "decoy_wiki_search_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:359 (case) + catalog/v13.go shape catalog/v13.go:517; quota 10%/run datagen/v13.go:49",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Search the %[1]s wiki for %[2]s and tell me the exact figure the page lists.",
+    "Check our %[1]s wiki on %[2]s — what precise number does it give?",
+    "Look up %[2]s in %[1]s wiki and report the exact value stated there."
+   ],
+   "grammar_source": "catalog/v13.go:517",
+   "observed_frame_distribution": [
+    38,
+    41,
+    28
+   ]
+  },
+  "expected_tools": {
+   "<brand>_wiki": 107
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 107
+   },
+   "allow_extra_tools": {
+    "false": 107
+   },
+   "fuzzy_trajectory": {
+    "false": 107
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 40,
+   "min": 0,
+   "max": 4,
+   "mean": 0.54
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 107,
+   "distinct_prompts": 107,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 107,
+   "typo_prompts_salted_sample": [
+    12,
+    16
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H8",
+   "H11",
+   "H18"
+  ]
+ },
+ "discovery_accent_set": {
+  "source": "research/dittobench-datagen/datagen/v13.go:504 (prompts :568, near-miss :583)",
+  "frames": {
+   "count": 7,
+   "representative": [
+    "Make the app accent %s-ish. I may have mangled the spelling, so check which accent options this workspace actually offers before applying it.",
+    "Switch Ditto's accent color to something like %s — look up the configured appearance options first in case I misspelled it.",
+    "Switch my accent to the %[1]s shade of %[2]s — check the configured appearance options first, I probably misspelled it."
+   ],
+   "grammar_source": "datagen/v13.go:569",
+   "observed_frame_distribution": [
+    91,
+    108,
+    88,
+    109,
+    43,
+    52,
+    53
+   ]
+  },
+  "expected_tools": {
+   "discover_capabilities > set_accent_color": 544
+  },
+  "required_args": {
+   "set_accent_color.color": {
+    "distinct_values": 160,
+    "top": [
+     [
+      "mustard yellow",
+      14
+     ],
+     [
+      "plum purple",
+      14
+     ],
+     [
+      "pine green",
+      13
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 544
+   },
+   "allow_extra_tools": {
+    "true": 544
+   },
+   "fuzzy_trajectory": {
+    "true": 544
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 3,
+   "mean": 2.72
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 544,
+   "distinct_prompts": 488,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 53,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 53,
+   "typo_prompts_salted_sample": [
+    60,
+    84
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H13",
+   "H18"
+  ]
+ },
+ "discovery_font_set": {
+  "source": "research/dittobench-datagen/datagen/v13.go:504 (prompts :568, near-miss :583)",
+  "frames": {
+   "count": 7,
+   "representative": [
+    "Use %s for the chat font. Treat my spelling loosely and pick the matching option from the workspace's font list first.",
+    "Change the chat typeface to %s-ish — check which fonts this workspace has configured before setting it.",
+    "Set the chat font to the %[1]s cut of %[2]s; look up the available font options first, my spelling is rough."
+   ],
+   "grammar_source": "datagen/v13.go:575",
+   "observed_frame_distribution": [
+    132,
+    85,
+    89,
+    98,
+    89,
+    78,
+    85
+   ]
+  },
+  "expected_tools": {
+   "discover_capabilities > set_chat_font": 656
+  },
+  "required_args": {
+   "set_chat_font.font": {
+    "distinct_values": 132,
+    "top": [
+     [
+      "Cormorant Garamond",
+      28
+     ],
+     [
+      "Zilla Slab Highlight",
+      22
+     ],
+     [
+      "Fira Sans Condensed",
+      22
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 656
+   },
+   "allow_extra_tools": {
+    "true": 656
+   },
+   "fuzzy_trajectory": {
+    "true": 656
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 3,
+   "max": 5,
+   "mean": 3.28
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 656,
+   "distinct_prompts": 604,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 78,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 10,
+   "exact_or_precise": 183,
+   "typo_prompts_salted_sample": [
+    68,
+    96
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H13",
+   "H18"
+  ]
+ },
+ "entity_lookup_chain": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1285; prompt from v13_tool_semantics.go:816 via :891",
+  "frames": {
+   "count": 24,
+   "representative": [
+    "What's my storage unit number at Larkhill?",
+    "Which unit is mine at the Larkhill storage place?",
+    "Remind me of my Larkhill unit number."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:816",
+   "note": "shared by all six memory-read categories: 8 planted facts x 3 questions; the category grammar is dead at v15"
+  },
+  "expected_tools": {
+   "search_subjects > search_memories_in_subjects > fetch_memories": 160
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 160
+   },
+   "allow_extra_tools": {
+    "false": 160
+   },
+   "fuzzy_trajectory": {
+    "false": 160
+   },
+   "unordered": false,
+   "rule": "Effect-graded memory read: max_tool_calls=2, expected list is NOT graded; any non-memory tool call -> 0; answer must carry the planted value (scorer/v13.go:241, grade/v13_effect.go:12). Memory tools are harness-internal."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 160,
+   "min": 0,
+   "max": 1,
+   "mean": 0.8
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 160,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 160,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    15,
+    29
+   ]
+  },
+  "hazards": [
+   "H2",
+   "H11",
+   "H18"
+  ]
+ },
+ "feedback": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:370; grammar grammars_v13.go:233",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Send this to the Ditto team: %s.",
+    "File feedback for the team — %s.",
+    "Report to the devs that %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:233",
+   "observed_frame_distribution": [
+    49,
+    38,
+    54,
+    31,
+    28,
+    0
+   ]
+  },
+  "expected_tools": {
+   "file_feedback_for_team": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 53,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    21,
+    30
+   ]
+  },
+  "hazards": [
+   "H6",
+   "H11",
+   "H18"
+  ]
+ },
+ "image_create": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:228; grammar grammars_v13.go:80",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "#genverb# an image of %s.",
+    "#genverb# a picture of %s.",
+    "Draw me %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:80",
+   "observed_frame_distribution": [
+    26,
+    18,
+    29,
+    17,
+    12,
+    22
+   ]
+  },
+  "expected_tools": {
+   "create_image": 124
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 124
+   },
+   "allow_extra_tools": {
+    "false": 124
+   },
+   "fuzzy_trajectory": {
+    "false": 124
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 124,
+   "min": 0,
+   "max": 1,
+   "mean": 0.62
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 124,
+   "distinct_prompts": 96,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    13,
+    18
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "image_edit_not_create": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:302 (wrap); grammar grammars.go:57",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "#editverb# #imgref# #change#.",
+    "On #imgref#, #directchange#.",
+    "Take #imgref# and #directchange#."
+   ],
+   "grammar_source": "datagen/grammars.go:57",
+   "observed_frame_distribution": [
+    1,
+    24,
+    55,
+    21,
+    41
+   ]
+  },
+  "expected_tools": {
+   "edit_image": 142
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 142
+   },
+   "allow_extra_tools": {
+    "false": 142
+   },
+   "fuzzy_trajectory": {
+    "false": 142
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 142,
+   "min": 0,
+   "max": 1,
+   "mean": 0.71
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 142,
+   "distinct_prompts": 142,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 88,
+   "trailer": 99,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    15,
+    22
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "link_chain_result_usage": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1263; grammar grammars_v13.go:549; gate toolexec/toolexec.go:392",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "Find the page about %s, open the link the search points to, and tell me the exact figure that page reports.",
+    "Search for %s, follow the result link, and give me the precise number from the page itself.",
+    "Look up %s, read the linked page (not just the snippet), and report the exact figure it cites."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:549",
+   "observed_frame_distribution": [
+    56,
+    53,
+    52,
+    39
+   ]
+  },
+  "expected_tools": {
+   "search_web > read_links": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=len(expected), allow_extra=false, ordered: as single, and out-of-order hops multiply the whole score by order credit (scorer/v13.go:325). Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 199,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 52,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 200,
+   "typo_prompts_salted_sample": [
+    26,
+    30
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H15",
+   "H18"
+  ]
+ },
+ "memory_fetch": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:358 + :2314 (accountant prereq); prompt from v13_tool_semantics.go:816 via :891",
+  "frames": {
+   "count": 24,
+   "representative": [
+    "What's my storage unit number at Larkhill?",
+    "Which unit is mine at the Larkhill storage place?",
+    "Remind me of my Larkhill unit number."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:816",
+   "note": "shared by all six memory-read categories: 8 planted facts x 3 questions; the category grammar is dead at v15"
+  },
+  "expected_tools": {
+   "search_memories > fetch_memories": 172
+  },
+  "required_args": {
+   "fetch_memories.pairIds": {
+    "distinct_values": 172,
+    "top": [
+     [
+      "cff62e1306a6438e2",
+      1
+     ],
+     [
+      "cbdaba7574ebac89f",
+      1
+     ],
+     [
+      "cdb809a06048a1770",
+      1
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "2": 172
+   },
+   "allow_extra_tools": {
+    "false": 172
+   },
+   "fuzzy_trajectory": {
+    "false": 172
+   },
+   "unordered": false,
+   "rule": "Effect-graded memory read: max_tool_calls=2, expected list is NOT graded; any non-memory tool call -> 0; answer must carry the planted value (scorer/v13.go:241, grade/v13_effect.go:12). Memory tools are harness-internal."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 140,
+   "min": 0,
+   "max": 3,
+   "mean": 0.86
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 172,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 172,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    8,
+    24
+   ]
+  },
+  "hazards": [
+   "H2",
+   "H11",
+   "H16",
+   "H18"
+  ]
+ },
+ "memory_lookup": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:194 (def); prompt replaced by datagen/v13_tool_semantics.go:816 planted facts via :891",
+  "frames": {
+   "count": 24,
+   "representative": [
+    "What's my storage unit number at Larkhill?",
+    "Which unit is mine at the Larkhill storage place?",
+    "Remind me of my Larkhill unit number."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:816",
+   "note": "shared by all six memory-read categories: 8 planted facts x 3 questions; the category grammar is dead at v15"
+  },
+  "expected_tools": {
+   "search_memories": 133
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 133
+   },
+   "allow_extra_tools": {
+    "false": 133
+   },
+   "fuzzy_trajectory": {
+    "false": 133
+   },
+   "unordered": false,
+   "rule": "Effect-graded memory read: max_tool_calls=2, expected list is NOT graded; any non-memory tool call -> 0; answer must carry the planted value (scorer/v13.go:241, grade/v13_effect.go:12). Memory tools are harness-internal."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 133,
+   "min": 0,
+   "max": 1,
+   "mean": 0.67
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 133,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 133,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    10,
+    16
+   ]
+  },
+  "hazards": [
+   "H2",
+   "H11",
+   "H18"
+  ]
+ },
+ "memory_save_not_search": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:454; grammar grammars_v13.go:338",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Remember that %s.",
+    "Note for later: %s.",
+    "Please keep in mind that %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:338",
+   "observed_frame_distribution": [
+    62,
+    47,
+    18,
+    0,
+    40,
+    33
+   ]
+  },
+  "expected_tools": {
+   "save_memory": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 63,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 7,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 34,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    16,
+    30
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "memory_subject": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:203; prompt from v13_tool_semantics.go:816 via :891",
+  "frames": {
+   "count": 24,
+   "representative": [
+    "What's my storage unit number at Larkhill?",
+    "Which unit is mine at the Larkhill storage place?",
+    "Remind me of my Larkhill unit number."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:816",
+   "note": "shared by all six memory-read categories: 8 planted facts x 3 questions; the category grammar is dead at v15"
+  },
+  "expected_tools": {
+   "search_subjects": 141
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 141
+   },
+   "allow_extra_tools": {
+    "false": 141
+   },
+   "fuzzy_trajectory": {
+    "false": 141
+   },
+   "unordered": false,
+   "rule": "Effect-graded memory read: max_tool_calls=2, expected list is NOT graded; any non-memory tool call -> 0; answer must carry the planted value (scorer/v13.go:241, grade/v13_effect.go:12). Memory tools are harness-internal."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 141,
+   "min": 0,
+   "max": 1,
+   "mean": 0.7
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 141,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 141,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    7,
+    23
+   ]
+  },
+  "hazards": [
+   "H2",
+   "H11",
+   "H18"
+  ]
+ },
+ "multi_image_edit": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:556; grammar grammars_v13.go:477",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Make an image of %s, then brighten it.",
+    "Generate %s and then add more detail.",
+    "Create a picture of %s and tweak the colors."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:477",
+   "observed_frame_distribution": [
+    29,
+    24,
+    21,
+    23,
+    29
+   ]
+  },
+  "expected_tools": {
+   "create_image > edit_image": 126
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 126
+   },
+   "allow_extra_tools": {
+    "false": 126
+   },
+   "fuzzy_trajectory": {
+    "false": 126
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=len(expected), allow_extra=false, ordered: as single, and out-of-order hops multiply the whole score by order credit (scorer/v13.go:325)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 126,
+   "min": 0,
+   "max": 1,
+   "mean": 0.63
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 126,
+   "distinct_prompts": 62,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 105,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    16,
+    18
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "multi_subject_scope": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:540; prompt from v13_tool_semantics.go:816 via :891",
+  "frames": {
+   "count": 24,
+   "representative": [
+    "What's my storage unit number at Larkhill?",
+    "Which unit is mine at the Larkhill storage place?",
+    "Remind me of my Larkhill unit number."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:816",
+   "note": "shared by all six memory-read categories: 8 planted facts x 3 questions; the category grammar is dead at v15"
+  },
+  "expected_tools": {
+   "search_subjects > search_memories_in_subjects": 150
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 150
+   },
+   "allow_extra_tools": {
+    "false": 150
+   },
+   "fuzzy_trajectory": {
+    "false": 150
+   },
+   "unordered": false,
+   "rule": "Effect-graded memory read: max_tool_calls=2, expected list is NOT graded; any non-memory tool call -> 0; answer must carry the planted value (scorer/v13.go:241, grade/v13_effect.go:12). Memory tools are harness-internal."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 150,
+   "min": 0,
+   "max": 1,
+   "mean": 0.75
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 150,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 150,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    7,
+    18
+   ]
+  },
+  "hazards": [
+   "H2",
+   "H11",
+   "H18"
+  ]
+ },
+ "multi_web_read": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:521; grammar grammars_v13.go:430",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Look up %s online and open the top result.",
+    "Find a page about %s and read it for me.",
+    "Search for %s and #summ# the first source."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:430",
+   "observed_frame_distribution": [
+    25,
+    21,
+    26,
+    15,
+    27
+   ]
+  },
+  "expected_tools": {
+   "search_web > read_links": 114
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 114
+   },
+   "allow_extra_tools": {
+    "false": 114
+   },
+   "fuzzy_trajectory": {
+    "false": 114
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=len(expected), allow_extra=false, ordered: as single, and out-of-order hops multiply the whole score by order credit (scorer/v13.go:325)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 114,
+   "min": 0,
+   "max": 1,
+   "mean": 0.57
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 114,
+   "distinct_prompts": 69,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 21,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 15,
+   "quoted_alias": 0,
+   "digits": 12,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    9,
+    17
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "multi_web_result_usage": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:579; grammar grammars_v13.go:500",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Look up %s online, open the top result, and tell me the exact figure it reports.",
+    "Find a page about %s, read it, and give me the precise number.",
+    "Research %s on the web, read the leading source, and report its exact figure."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:500",
+   "observed_frame_distribution": [
+    46,
+    45,
+    35,
+    41,
+    33
+   ]
+  },
+  "expected_tools": {
+   "search_web > read_links": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=len(expected), allow_extra=false, ordered: as single, and out-of-order hops multiply the whole score by order credit (scorer/v13.go:325). Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 200,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 200,
+   "typo_prompts_salted_sample": [
+    20,
+    30
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H15",
+   "H18"
+  ]
+ },
+ "parallel_web_image": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:532 (unordered); grammar grammars_v13.go:442",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Search the web for %s and also generate an image of it.",
+    "Look up %s online, and separately make me a picture of it.",
+    "Two things: find the latest on %s and create an image of it."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:442",
+   "observed_frame_distribution": [
+    30,
+    30,
+    24,
+    21,
+    28
+   ]
+  },
+  "expected_tools": {
+   "search_web > create_image": 133
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 133
+   },
+   "allow_extra_tools": {
+    "false": 133
+   },
+   "fuzzy_trajectory": {
+    "false": 133
+   },
+   "unordered": true,
+   "rule": "max_tool_calls=2, allow_extra=false, unordered=true: name/arg set scored, order free."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 133,
+   "min": 0,
+   "max": 1,
+   "mean": 0.67
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 133,
+   "distinct_prompts": 67,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 117,
+   "quoted_alias": 0,
+   "digits": 16,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    9,
+    19
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "recipe_apply": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:438 -> list_workflows>run_workflow at :2062; prompt datagen/v13.go:263 + :372",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Run the saved workflow that goes %s.",
+    "Kick off my workflow that's set for %s — the one already saved.",
+    "Start the existing workflow scheduled %s right now."
+   ],
+   "grammar_source": "datagen/v13.go:372",
+   "observed_frame_distribution": [
+    79,
+    65,
+    56
+   ]
+  },
+  "expected_tools": {
+   "list_workflows > run_workflow": 200
+  },
+  "required_args": {
+   "run_workflow.name": {
+    "distinct_values": 200,
+    "top": [
+     [
+      "Nokir rollup",
+      1
+     ],
+     [
+      "Dire sync",
+      1
+     ],
+     [
+      "Neri audit",
+      1
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "2": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=len(expected), allow_extra=false, ordered: as single, and out-of-order hops multiply the whole score by order credit (scorer/v13.go:325)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 91,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    16,
+    30
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H12",
+   "H15",
+   "H18"
+  ]
+ },
+ "recipe_create": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:430 -> create_workflow at :2048; grammar grammars_v13.go:315",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Make a reusable workflow called %s.",
+    "Create a workflow named %s that I can run again.",
+    "Save a #reusable# workflow under the name %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:315",
+   "observed_frame_distribution": [
+    20,
+    20,
+    23,
+    28,
+    22
+   ]
+  },
+  "expected_tools": {
+   "create_workflow": 113
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 113
+   },
+   "allow_extra_tools": {
+    "false": 113
+   },
+   "fuzzy_trajectory": {
+    "false": 113
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 113,
+   "min": 0,
+   "max": 1,
+   "mean": 0.56
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 113,
+   "distinct_prompts": 51,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    14,
+    17
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "route_memory_not_web": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:268; prompt from v13_tool_semantics.go:816 via :891",
+  "frames": {
+   "count": 24,
+   "representative": [
+    "What's my storage unit number at Larkhill?",
+    "Which unit is mine at the Larkhill storage place?",
+    "Remind me of my Larkhill unit number."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:816",
+   "note": "shared by all six memory-read categories: 8 planted facts x 3 questions; the category grammar is dead at v15"
+  },
+  "expected_tools": {
+   "search_memories": 150
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 150
+   },
+   "allow_extra_tools": {
+    "false": 150
+   },
+   "fuzzy_trajectory": {
+    "false": 150
+   },
+   "unordered": false,
+   "rule": "Effect-graded memory read: max_tool_calls=2, expected list is NOT graded; any non-memory tool call -> 0; answer must carry the planted value (scorer/v13.go:241, grade/v13_effect.go:12). Memory tools are harness-internal."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 150,
+   "min": 0,
+   "max": 1,
+   "mean": 0.75
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 150,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 150,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    8,
+    19
+   ]
+  },
+  "hazards": [
+   "H2",
+   "H11",
+   "H18"
+  ]
+ },
+ "route_web_not_memory": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:278; grammar grammars_v13.go:135",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Remind me what the #latest# #news# on %s is.",
+    "Do you recall the current #price# of %s?",
+    "What's the #latest# status of %s right now?"
+   ],
+   "grammar_source": "datagen/grammars_v13.go:135",
+   "observed_frame_distribution": [
+    24,
+    12,
+    27,
+    20,
+    22,
+    11
+   ]
+  },
+  "expected_tools": {
+   "search_web": 116
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 116
+   },
+   "allow_extra_tools": {
+    "false": 116
+   },
+   "fuzzy_trajectory": {
+    "false": 116
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 116,
+   "min": 0,
+   "max": 1,
+   "mean": 0.58
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 116,
+   "distinct_prompts": 109,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 5,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    14,
+    20
+   ]
+  },
+  "hazards": [
+   "H4",
+   "H11",
+   "H18"
+  ]
+ },
+ "sandbox_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:622 (prompts :610)",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Evaluate the %s routine in the code sandbox and report the exact value it prints — just the number.",
+    "Run the %s routine through Code Mode and tell me precisely what it outputs.",
+    "Execute %s in the in-process sandbox and give me the exact figure it returns."
+   ],
+   "grammar_source": "datagen/v13.go:610",
+   "observed_frame_distribution": [
+    70,
+    75,
+    53
+   ]
+  },
+  "expected_tools": {
+   "run_code": 198
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 198
+   },
+   "allow_extra_tools": {
+    "false": 198
+   },
+   "fuzzy_trajectory": {
+    "false": 198
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 198,
+   "min": 0,
+   "max": 1,
+   "mean": 0.99
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 198,
+   "distinct_prompts": 198,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 198,
+   "typo_prompts_salted_sample": [
+    19,
+    30
+   ]
+  },
+  "hazards": [
+   "H6",
+   "H11",
+   "H18"
+  ]
+ },
+ "schedules_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:622 (prompts :600)",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Check the schedules on my workflows — how many runs has the one that goes %s logged so far? Exact number, please.",
+    "Look at what's on a timer for me: the workflow scheduled %s — what's its exact logged run count?",
+    "Pull up my workflow schedules and tell me precisely how many runs the %s one has logged."
+   ],
+   "grammar_source": "datagen/v13.go:600",
+   "observed_frame_distribution": [
+    62,
+    59,
+    79
+   ]
+  },
+  "expected_tools": {
+   "list_schedules": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 62,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 84,
+   "exact_or_precise": 200,
+   "typo_prompts_salted_sample": [
+    22,
+    30
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H12",
+   "H18"
+  ]
+ },
+ "set_effort": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:399 (optional, weight 2: datagen/v13.go:89); intents grammars_v13.go:604 (only high|medium)",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "#deep# from now on.",
+    "#deep# — I'd rather wait than get a shallow answer.",
+    "For my questions, #deep#."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:604",
+   "observed_frame_distribution": [
+    21,
+    22,
+    22,
+    27,
+    27,
+    18
+   ]
+  },
+  "expected_tools": {
+   "set_reasoning_effort": 137
+  },
+  "required_args": {
+   "set_reasoning_effort.effort": {
+    "distinct_values": 2,
+    "top": [
+     [
+      "medium",
+      72
+     ],
+     [
+      "high",
+      65
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "1": 137
+   },
+   "allow_extra_tools": {
+    "false": 137
+   },
+   "fuzzy_trajectory": {
+    "false": 137
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 137,
+   "min": 0,
+   "max": 1,
+   "mean": 0.69
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 137,
+   "distinct_prompts": 24,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    14,
+    20
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H14",
+   "H16",
+   "H18"
+  ]
+ },
+ "set_tool_prefs": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:407; grammar grammars_v13.go:278",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Update my tool preferences: %s.",
+    "Change my chat tools so you %s.",
+    "Adjust which tools you use — %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:278",
+   "observed_frame_distribution": [
+    28,
+    33,
+    28,
+    41,
+    33,
+    37
+   ]
+  },
+  "expected_tools": {
+   "set_chat_tool_preferences": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 43,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    21,
+    30
+   ]
+  },
+  "hazards": [
+   "H6",
+   "H11",
+   "H18"
+  ]
+ },
+ "settings": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:252; intents grammars_v13.go:596 (only system|dark)",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "#match# Ditto's light or dark mode to my device.",
+    "Let the app #follow# whatever my device is set to.",
+    "Light or dark — just #follow# my system setting."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:596",
+   "observed_frame_distribution": [
+    38,
+    34,
+    30,
+    28,
+    38,
+    32
+   ]
+  },
+  "expected_tools": {
+   "set_theme": 200
+  },
+  "required_args": {
+   "set_theme.theme": {
+    "distinct_values": 2,
+    "top": [
+     [
+      "system",
+      102
+     ],
+     [
+      "dark",
+      98
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 14,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    11,
+    30
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H13",
+   "H14",
+   "H16",
+   "H18"
+  ]
+ },
+ "stale_context_web": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1255 + prereq :2346; grammar grammars_v13.go:536, note grammar :635",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "I know I told you my take on %s a while back, but what's the latest on it right now?",
+    "Forget what I said about %s before — pull up what's current today.",
+    "You have my old notes on %s; check what's actually changed since then."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:536",
+   "observed_frame_distribution": [
+    33,
+    36,
+    40,
+    37,
+    31,
+    23
+   ]
+  },
+  "expected_tools": {
+   "search_web": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 136,
+   "with_prerequisite_pairs": 200,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 67,
+   "multi_step_word": 40,
+   "quoted_alias": 0,
+   "digits": 10,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    17,
+    30
+   ]
+  },
+  "hazards": [
+   "H4",
+   "H5",
+   "H11",
+   "H18"
+  ]
+ },
+ "tool_discovery": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1180",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "Before you write any code, which of your tools can #cap#? Look it up.",
+    "I'm not sure what's available — search your tools for something that can #cap#.",
+    "Find the right tool binding to #cap# before you run anything."
+   ],
+   "grammar_source": "datagen/datagen.go:1180",
+   "observed_frame_distribution": [
+    48,
+    50,
+    62,
+    40
+   ]
+  },
+  "expected_tools": {
+   "search_tools": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 20,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 50,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    21,
+    30
+   ]
+  },
+  "hazards": [
+   "H5",
+   "H7",
+   "H11",
+   "H18"
+  ]
+ },
+ "tool_registry_result_usage": {
+  "source": "research/dittobench-datagen/datagen/v13.go:622 (prompts :605)",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Search your tool registry for something that can %s and tell me the exact registry snapshot number the search reports.",
+    "Before writing any code, look up which tool binding can %s — and give me the precise snapshot number the registry search returns.",
+    "Find the right tool binding to %s and report the exact registry snapshot the lookup came back with."
+   ],
+   "grammar_source": "datagen/v13.go:605",
+   "observed_frame_distribution": [
+    64,
+    66,
+    69
+   ]
+  },
+  "expected_tools": {
+   "search_tools": 199
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 199
+   },
+   "allow_extra_tools": {
+    "false": 199
+   },
+   "fuzzy_trajectory": {
+    "false": 199
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 199,
+   "min": 0,
+   "max": 1,
+   "mean": 0.99
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 199,
+   "distinct_prompts": 15,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 199,
+   "typo_prompts_salted_sample": [
+    18,
+    30
+   ]
+  },
+  "hazards": [
+   "H7",
+   "H11",
+   "H18"
+  ]
+ },
+ "v10_state_dependent_routing": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1346 (routes 0-2 :1428); ask grammar grammars_v13.go:748, plan :735, prefix :757",
+  "frames": {
+   "count": 2,
+   "representative": [
+    "#lead# the dependency-risk review for #alias# #tail#",
+    "#lead# the dependency-risk review on #alias# — #tail#"
+   ],
+   "grammar_source": "datagen/grammars_v13.go:748",
+   "observed_frame_distribution": [
+    813,
+    745
+   ]
+  },
+  "expected_tools": {
+   "create_workflow": 533,
+   "list_workflows > run_workflow": 520,
+   "execute_agent_job": 505
+  },
+  "required_args": {
+   "create_workflow.name": {
+    "distinct_values": 529,
+    "top": [
+     [
+      "Program Arkane Grove",
+      2
+     ],
+     [
+      "Program Novartis Hall",
+      2
+     ],
+     [
+      "Campaign Akzonobel Grove",
+      2
+     ]
+    ]
+   },
+   "run_workflow.name": {
+    "distinct_values": 518,
+    "top": [
+     [
+      "Project Pivdenmash Bay",
+      2
+     ],
+     [
+      "Project Equinor Star",
+      2
+     ],
+     [
+      "Project Verizon Bridge",
+      1
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 1558
+   },
+   "allow_extra_tools": {
+    "true": 1558
+   },
+   "fuzzy_trajectory": {
+    "true": 1558
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Route 1 requires create_workflow name=<formal project name>; route 2 list_workflows then run_workflow name=<formal name>."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 3,
+   "max": 14,
+   "mean": 7.79
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 1558,
+   "distinct_prompts": 1558,
+   "with_prerequisite_pairs": 1558,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 1558,
+   "digits": 0,
+   "exact_or_precise": 375,
+   "typo_prompts_salted_sample": [
+    117,
+    266
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H9",
+   "H11",
+   "H17",
+   "H18"
+  ]
+ },
+ "v13_mutation_follow_up_read": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:1057 / :1088 (prompts :799, :807)",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "Which day is the handoff for %[1]q at %[2]s now?",
+    "Remind me — what day did we land on for the %[1]q handoff (%[2]s)?",
+    "When's the %[1]q handoff for %[2]s happening?"
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:799",
+   "observed_frame_distribution": [
+    46,
+    74,
+    80,
+    74,
+    62,
+    64
+   ]
+  },
+  "expected_tools": {
+   "search_memories": 400
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "2": 400
+   },
+   "allow_extra_tools": {
+    "false": 400
+   },
+   "fuzzy_trajectory": {
+    "false": 400
+   },
+   "unordered": false,
+   "rule": "Effect-graded memory read: max_tool_calls=2, expected list is NOT graded; any non-memory tool call -> 0; answer must carry the planted value (scorer/v13.go:241, grade/v13_effect.go:12). Memory tools are harness-internal. Follow-up read: also zero if the answer names the stale value (Friday / superseded email); served >=40 positions after its mutation."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 2,
+   "max": 2,
+   "mean": 2.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 400,
+   "distinct_prompts": 400,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 4,
+   "multi_step_word": 0,
+   "quoted_alias": 200,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    8,
+    60
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "v13_restraint_abstention_web": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:719 (pairs :519, leads :539/:542)",
+  "frames": {
+   "count": "compositional",
+   "representative": [
+    "ASK: <Tell me |Be honest — |I need to know |Just tell me straight, ><unknowable>?",
+    "ACT: <Find out |Look up |Search for |Pull up ><web-answerable sibling>."
+   ]
+  },
+  "expected_tools": {
+   "search_web": 243,
+   "(none)": 240
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "0": 240,
+    "15": 243
+   },
+   "allow_extra_tools": {
+    "false": 240,
+    "true": 243
+   },
+   "fuzzy_trajectory": {
+    "false": 240,
+    "true": 243
+   },
+   "unordered": false,
+   "rule": "Mixed group members. ASK member (expected_tools empty, max_tool_calls=0): any non-memory call -> 0; clarify_first must name a slot-lexicon word AND cite a record token (styles / event title / asker nicknames); no_call answers need >=3 words (+cite stored value for declarative). scorer/v13.go:191 ACT member: max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Group concordant-zero rule exists but ships shadow (scorer/v13.go:730)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 135,
+   "min": 0,
+   "max": 9,
+   "mean": 2.42
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 483,
+   "distinct_prompts": 48,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    62,
+    90
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H11",
+   "H18"
+  ]
+ },
+ "v13_restraint_calendar": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:663 (banks :480-492)",
+  "frames": {
+   "count": "compositional",
+   "representative": [
+    "For planning context <ID>: <lead><put|get|pop|stick|drop|add>< it on my calendar| that on my calendar| it onto my schedule| that into my calendar><trailer>."
+   ]
+  },
+  "expected_tools": {
+   "calendar_create_event": 277,
+   "(none)": 246
+  },
+  "required_args": {
+   "calendar_create_event.title": {
+    "distinct_values": 8,
+    "top": [
+     [
+      "vet visit for the cat",
+      44
+     ],
+     [
+      "car service appointment",
+      44
+     ],
+     [
+      "dentist cleaning",
+      39
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 277,
+    "0": 246
+   },
+   "allow_extra_tools": {
+    "true": 277,
+    "false": 246
+   },
+   "fuzzy_trajectory": {
+    "true": 277,
+    "false": 246
+   },
+   "unordered": false,
+   "rule": "Mixed group members. ASK member (expected_tools empty, max_tool_calls=0): any non-memory call -> 0; clarify_first must name a slot-lexicon word AND cite a record token (styles / event title / asker nicknames); no_call answers need >=3 words (+cite stored value for declarative). scorer/v13.go:191 ACT member: max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Group concordant-zero rule exists but ships shadow (scorer/v13.go:730)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 127,
+   "min": 0,
+   "max": 13,
+   "mean": 2.62
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 523,
+   "distinct_prompts": 523,
+   "with_prerequisite_pairs": 523,
+   "lead_in": 357,
+   "trailer": 331,
+   "planning_context_prefix": 523,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    67,
+    103
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H10",
+   "H11",
+   "H18"
+  ]
+ },
+ "v13_restraint_declarative_preference": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:729",
+  "frames": {
+   "count": "compositional",
+   "representative": [
+    "<lead><make sure|double-check that|confirm|see to it that|check that> my Ditto <accent|chat font|color mode> is <value><trailer>."
+   ]
+  },
+  "expected_tools": {
+   "(none)": 289,
+   "set_theme": 95,
+   "set_accent_color": 93,
+   "set_chat_font": 84
+  },
+  "required_args": {
+   "set_accent_color.color": {
+    "distinct_values": 86,
+    "top": [
+     [
+      "dirt brown",
+      2
+     ],
+     [
+      "light pink",
+      2
+     ],
+     [
+      "sun yellow",
+      2
+     ]
+    ]
+   },
+   "set_chat_font.font": {
+    "distinct_values": 76,
+    "top": [
+     [
+      "Noto Sans Egyptian Hieroglyphs",
+      2
+     ],
+     [
+      "Allura",
+      2
+     ],
+     [
+      "Public Sans",
+      2
+     ]
+    ]
+   },
+   "set_theme.theme": {
+    "distinct_values": 3,
+    "top": [
+     [
+      "dark",
+      40
+     ],
+     [
+      "system",
+      33
+     ],
+     [
+      "light",
+      22
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "0": 289,
+    "15": 272
+   },
+   "allow_extra_tools": {
+    "false": 289,
+    "true": 272
+   },
+   "fuzzy_trajectory": {
+    "false": 289,
+    "true": 272
+   },
+   "unordered": false,
+   "rule": "Mixed group members. ASK member (expected_tools empty, max_tool_calls=0): any non-memory call -> 0; clarify_first must name a slot-lexicon word AND cite a record token (styles / event title / asker nicknames); no_call answers need >=3 words (+cite stored value for declarative). scorer/v13.go:191 ACT member: max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Group concordant-zero rule exists but ships shadow (scorer/v13.go:730)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 138,
+   "min": 0,
+   "max": 11,
+   "mean": 2.81
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 561,
+   "distinct_prompts": 502,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 384,
+   "trailer": 386,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 3,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    40,
+    85
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H11",
+   "H13",
+   "H17",
+   "H18"
+  ]
+ },
+ "v13_restraint_effort": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:638 (banks :474-505)",
+  "frames": {
+   "count": "compositional",
+   "representative": [
+    "For planning context <ID>: <lead><set|adjust|dial in|sort out|update|fix up> <my reasoning effort|how hard you think|the thinking level on my chats|your reasoning depth>< to my usual| the way I like it|| to what I normally want><trailer>."
+   ]
+  },
+  "expected_tools": {
+   "(none)": 263,
+   "set_reasoning_effort": 257
+  },
+  "required_args": {
+   "set_reasoning_effort.effort": {
+    "distinct_values": 3,
+    "top": [
+     [
+      "high",
+      95
+     ],
+     [
+      "medium",
+      92
+     ],
+     [
+      "low",
+      70
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 257,
+    "0": 263
+   },
+   "allow_extra_tools": {
+    "true": 257,
+    "false": 263
+   },
+   "fuzzy_trajectory": {
+    "true": 257,
+    "false": 263
+   },
+   "unordered": false,
+   "rule": "Mixed group members. ASK member (expected_tools empty, max_tool_calls=0): any non-memory call -> 0; clarify_first must name a slot-lexicon word AND cite a record token (styles / event title / asker nicknames); no_call answers need >=3 words (+cite stored value for declarative). scorer/v13.go:191 ACT member: max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Group concordant-zero rule exists but ships shadow (scorer/v13.go:730)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 128,
+   "min": 0,
+   "max": 10,
+   "mean": 2.6
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 520,
+   "distinct_prompts": 520,
+   "with_prerequisite_pairs": 520,
+   "lead_in": 358,
+   "trailer": 343,
+   "planning_context_prefix": 520,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    51,
+    78
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H10",
+   "H11",
+   "H18"
+  ]
+ },
+ "v13_restraint_email": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:683 (banks :482-483)",
+  "frames": {
+   "count": "compositional",
+   "representative": [
+    "For planning context <ID>: <lead><email|send|shoot|fire off|get>< them the %s update| the %s update over to them| them my update on %s| the %s update to them><trailer>.  (%s = project alias)"
+   ]
+  },
+  "expected_tools": {
+   "gmail_send": 266,
+   "(none)": 265
+  },
+  "required_args": {
+   "gmail_send.to": {
+    "distinct_values": 266,
+    "top": [
+     [
+      "elena@westwood.com",
+      1
+     ],
+     [
+      "leo@vauxhall.com",
+      1
+     ],
+     [
+      "griffin.tian@kyocera.com",
+      1
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "0": 265,
+    "15": 266
+   },
+   "allow_extra_tools": {
+    "false": 265,
+    "true": 266
+   },
+   "fuzzy_trajectory": {
+    "false": 265,
+    "true": 266
+   },
+   "unordered": false,
+   "rule": "Mixed group members. ASK member (expected_tools empty, max_tool_calls=0): any non-memory call -> 0; clarify_first must name a slot-lexicon word AND cite a record token (styles / event title / asker nicknames); no_call answers need >=3 words (+cite stored value for declarative). scorer/v13.go:191 ACT member: max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Group concordant-zero rule exists but ships shadow (scorer/v13.go:730)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 132,
+   "min": 0,
+   "max": 11,
+   "mean": 2.65
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 531,
+   "distinct_prompts": 531,
+   "with_prerequisite_pairs": 531,
+   "lead_in": 374,
+   "trailer": 368,
+   "planning_context_prefix": 531,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    43,
+    70
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H10",
+   "H11",
+   "H18"
+  ]
+ },
+ "v13_restraint_negation_web": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:709 (questions :509, leads :527/:533)",
+  "frames": {
+   "count": "compositional",
+   "representative": [
+    "ASK: <Don't search the web for this — just from general knowledge, |No need to run a web search; off the top of your head, |Skip the lookup and answer from what you know: |Without going online, just tell me from memory — ><GK question>?",
+    "ACT: <Search the web for this one: |Look this up online — |Check the web on this: |Run a quick search: ><GK question>?"
+   ]
+  },
+  "expected_tools": {
+   "search_web": 296,
+   "(none)": 286
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "15": 296,
+    "0": 286
+   },
+   "allow_extra_tools": {
+    "true": 296,
+    "false": 286
+   },
+   "fuzzy_trajectory": {
+    "true": 296,
+    "false": 286
+   },
+   "unordered": false,
+   "rule": "Mixed group members. ASK member (expected_tools empty, max_tool_calls=0): any non-memory call -> 0; clarify_first must name a slot-lexicon word AND cite a record token (styles / event title / asker nicknames); no_call answers need >=3 words (+cite stored value for declarative). scorer/v13.go:191 ACT member: max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Group concordant-zero rule exists but ships shadow (scorer/v13.go:730)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 143,
+   "min": 0,
+   "max": 11,
+   "mean": 2.91
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 582,
+   "distinct_prompts": 48,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 286,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    37,
+    54
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H5",
+   "H11",
+   "H18"
+  ]
+ },
+ "v13_state_dependent_calendar": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:1134 (route 3 of datagen.go:1422)",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Get the \"<alias>\" review onto my calendar for <Tuesday|Wednesday|Thursday> afternoon.",
+    "Make sure the \"<alias>\" review is on my calendar for <day>.",
+    "I want the \"<alias>\" review on my calendar <day> — sort that out."
+   ]
+  },
+  "expected_tools": {
+   "calendar_create_event": 304,
+   "calendar_search_events": 279
+  },
+  "required_args": {
+   "calendar_search_events.query": {
+    "distinct_values": 279,
+    "top": [
+     [
+      "gameloft path plan review",
+      1
+     ],
+     [
+      "dallara light workstream review",
+      1
+     ],
+     [
+      "agencia road file review",
+      1
+     ]
+    ]
+   },
+   "calendar_create_event.title": {
+    "distinct_values": 304,
+    "top": [
+     [
+      "searchlight point brief",
+      1
+     ],
+     [
+      "beko lane review",
+      1
+     ],
+     [
+      "wanderer point file",
+      1
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 583
+   },
+   "allow_extra_tools": {
+    "true": 583
+   },
+   "fuzzy_trajectory": {
+    "true": 583
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Exists-state: calendar_create_event is a ForbiddenTool (duplicate = 0)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 189,
+   "min": 0,
+   "max": 7,
+   "mean": 2.92
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 583,
+   "distinct_prompts": 583,
+   "with_prerequisite_pairs": 583,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 583,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    40,
+    84
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H11",
+   "H17",
+   "H18"
+  ]
+ },
+ "v13_state_dependent_email": {
+  "source": "research/dittobench-datagen/datagen/v13_tool_semantics.go:1161 (route 4 of datagen.go:1422)",
+  "frames": {
+   "count": 3,
+   "representative": [
+    "Get back to them on the \"<alias>\" numbers.",
+    "Send them the \"<alias>\" numbers now.",
+    "The \"<alias>\" figures are ready — get them out to them."
+   ]
+  },
+  "expected_tools": {
+   "gmail_send": 606
+  },
+  "required_args": {
+   "gmail_send.to": {
+    "distinct_values": 589,
+    "top": [
+     [
+      "gina.m@caesars.com",
+      2
+     ],
+     [
+      "aylen.a@inmarsat.com",
+      2
+     ],
+     [
+      "kaleb@uclouvain.com",
+      2
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 606
+   },
+   "allow_extra_tools": {
+    "true": 606
+   },
+   "fuzzy_trajectory": {
+    "true": 606
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 189,
+   "min": 0,
+   "max": 10,
+   "mean": 3.03
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 606,
+   "distinct_prompts": 602,
+   "with_prerequisite_pairs": 606,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 606,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    43,
+    79
+   ]
+  },
+  "hazards": [
+   "H1",
+   "H11",
+   "H17",
+   "H18"
+  ]
+ },
+ "web_recovery_result_usage": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:607 (allowExtra); grammar grammars_v13.go:524",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "Search the web for the latest figure on %s and tell me the exact number (retry if the search flakes).",
+    "Look up %s online and report the precise figure; if the first attempt errors, try again.",
+    "Get the current number for %s from the web, retrying past any transient hiccup."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:524",
+   "observed_frame_distribution": [
+    52,
+    45,
+    47,
+    56
+   ]
+  },
+  "expected_tools": {
+   "search_web": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "true": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1 but allow_extra=true: first search_web call returns a transient error, needle only on retry; retries are free and the case is exempt from the efficiency factor. Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 199,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 8,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 153,
+   "typo_prompts_salted_sample": [
+    18,
+    30
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "web_result_usage": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:571; grammar grammars_v13.go:488",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Search the web for the latest figure on %s and tell me the exact number.",
+    "What number does the current top result report for %s?",
+    "Look up %s online and give me the precise figure it cites."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:488",
+   "observed_frame_distribution": [
+    36,
+    33,
+    42,
+    39,
+    50
+   ]
+  },
+  "expected_tools": {
+   "search_web": 200
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 200
+   },
+   "allow_extra_tools": {
+    "false": 200
+   },
+   "fuzzy_trajectory": {
+    "false": 200
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252 Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 200,
+   "distinct_prompts": 200,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 167,
+   "typo_prompts_salted_sample": [
+    12,
+    30
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "web_search": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:211; grammar datagen/grammars_v13.go:51",
+  "frames": {
+   "count": 6,
+   "representative": [
+    "#searchverb# %s.",
+    "What's the latest on %s?",
+    "Find #recent# #news# about %s."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:51",
+   "observed_frame_distribution": [
+    2,
+    35,
+    23,
+    21,
+    19,
+    14
+   ]
+  },
+  "expected_tools": {
+   "search_web": 114
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 114
+   },
+   "allow_extra_tools": {
+    "false": 114
+   },
+   "fuzzy_trajectory": {
+    "false": 114
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 114,
+   "min": 0,
+   "max": 1,
+   "mean": 0.57
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 114,
+   "distinct_prompts": 107,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 11,
+   "planning_context_prefix": 0,
+   "negation_word": 0,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 5,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    11,
+    17
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H18"
+  ]
+ },
+ "workflow_not_job": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:310 -> create_workflow at :2027; grammar grammars_v13.go:164",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Build a reusable workflow for %s, with the #parts# running #inparallel#.",
+    "Set up %s as a workflow I can #inspect# and run again.",
+    "Turn %s into a #reusable# workflow — the #parts# #inparallel#."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:164",
+   "observed_frame_distribution": [
+    14,
+    27,
+    24,
+    25,
+    22
+   ]
+  },
+  "expected_tools": {
+   "create_workflow": 112
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "1": 112
+   },
+   "allow_extra_tools": {
+    "false": 112
+   },
+   "fuzzy_trajectory": {
+    "false": 112
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=1, allow_extra=false. score = 0.4*name-F1 + 0.4*arg-F1 + 0.2*trajectory; extra/over-budget calls: penalty = 2*extras/expected (cap 1) on the trajectory term (one stray call on a 1-tool case -> 0.667). Run-level efficiency factor also charges overshoot (v7 curve: 0 free, saturates at +3, max -40%, cases scoring >=0.6). services/dittobench-api/internal/scorer/v13.go:252"
+  },
+  "per_run_count": {
+   "runs_present_of_200": 112,
+   "min": 0,
+   "max": 1,
+   "mean": 0.56
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 112,
+   "distinct_prompts": 98,
+   "with_prerequisite_pairs": 0,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 25,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    10,
+    17
+   ]
+  },
+  "hazards": [
+   "H5",
+   "H11",
+   "H18"
+  ]
+ },
+ "world_business_workflow": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1840 + claims v13_tool_semantics.go:1022; grammar grammars_v13.go:706",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "Can you check whether I already have a workflow for #alias#, the project for #client#? If not, create one under the project's formal name and put the current contact address for internal reviewer #nickname# in its review step.",
+    "Do I already have a workflow for #alias# (the #client# project)? If there isn't one, create it under the formal project name, with #nickname#'s current address as the internal reviewer in the review step.",
+    "For #alias#, our #client# project: see if a workflow exists; if not, make one under the formal name and set the review step to the current email of internal reviewer #nickname#."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:706",
+   "observed_frame_distribution": [
+    99,
+    127,
+    131,
+    132
+   ]
+  },
+  "expected_tools": {
+   "list_workflows > create_workflow": 489
+  },
+  "required_args": {
+   "create_workflow.name": {
+    "distinct_values": 465,
+    "top": [
+     [
+      "Campaign Vattenfall Row",
+      2
+     ],
+     [
+      "Project Billa Court",
+      2
+     ],
+     [
+      "Project Asiana Bay",
+      2
+     ]
+    ]
+   },
+   "create_workflow.steps": {
+    "distinct_values": 466,
+    "top": [
+     [
+      "andrew@saudia.com",
+      2
+     ],
+     [
+      "camden.b@emlyon.com",
+      2
+     ],
+     [
+      "macy.henson@solaris.com",
+      2
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 489
+   },
+   "allow_extra_tools": {
+    "true": 489
+   },
+   "fuzzy_trajectory": {
+    "true": 489
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 5,
+   "mean": 2.44
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 489,
+   "distinct_prompts": 488,
+   "with_prerequisite_pairs": 22,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 233,
+   "multi_step_word": 0,
+   "quoted_alias": 489,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    48,
+    68
+   ]
+  },
+  "hazards": [
+   "H9",
+   "H11",
+   "H15",
+   "H17",
+   "H18"
+  ]
+ },
+ "world_contact_research_email_result_usage": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1798; grammar grammars_v13.go:652",
+  "frames": {
+   "count": 8,
+   "representative": [
+    "#ask# #subject# #now#? #send# #nickname# — the #relation# in #city# from the #context#.",
+    "Could you #check# #subject# and #sendto# #nickname#? I mean my #relation# in #city#, the one from the #context#.",
+    "Please #check# #subject# and #pass# #nickname#, my #relation# in #city# from the #context#."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:652",
+   "observed_frame_distribution": [
+    88,
+    82,
+    46,
+    93,
+    68,
+    77,
+    95,
+    121
+   ]
+  },
+  "expected_tools": {
+   "search_web > gmail_send": 670
+  },
+  "required_args": {
+   "gmail_send.body": {
+    "distinct_values": 669,
+    "top": [
+     [
+      "38,431",
+      2
+     ],
+     [
+      "1,521",
+      1
+     ],
+     [
+      "92,117",
+      1
+     ]
+    ]
+   },
+   "gmail_send.to": {
+    "distinct_values": 648,
+    "top": [
+     [
+      "hailey@naughty.com",
+      3
+     ],
+     [
+      "jwhite@fincantieri.com",
+      2
+     ],
+     [
+      "nour@infineon.com",
+      2
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 670
+   },
+   "allow_extra_tools": {
+    "true": 670
+   },
+   "fuzzy_trajectory": {
+    "true": 670
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 2,
+   "max": 8,
+   "mean": 3.35
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 670,
+   "distinct_prompts": 670,
+   "with_prerequisite_pairs": 45,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 16,
+   "multi_step_word": 68,
+   "quoted_alias": 0,
+   "digits": 84,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    30,
+    102
+   ]
+  },
+  "hazards": [
+   "H11",
+   "H15",
+   "H17",
+   "H18"
+  ]
+ },
+ "world_link_chain_result_usage": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1852; grammar grammars_v13.go:715",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "Check what #subject# is at right now, and open the actual page rather than relying on the search blurb.",
+    "Check where #subject# stands today — open the real page, don't trust the search snippet.",
+    "Find the current reading for #subject# and read it off the page itself, not the search summary."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:715",
+   "observed_frame_distribution": [
+    162,
+    153,
+    172,
+    165
+   ]
+  },
+  "expected_tools": {
+   "search_web > read_links": 652
+  },
+  "required_args": null,
+  "grading": {
+   "max_tool_calls": {
+    "15": 652
+   },
+   "allow_extra_tools": {
+    "true": 652
+   },
+   "fuzzy_trajectory": {
+    "true": 652
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Result-usage gate (scorer/v7.go:327): x1 if the answer carries the served needle, x0.1 if neither, x0 if it carries the served decoy figure."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 2,
+   "max": 6,
+   "mean": 3.26
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 652,
+   "distinct_prompts": 650,
+   "with_prerequisite_pairs": 30,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 490,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    56,
+    97
+   ]
+  },
+  "hazards": [
+   "H5",
+   "H9",
+   "H11",
+   "H15",
+   "H17",
+   "H18"
+  ]
+ },
+ "world_memory_delete": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1810 rewritten by datagen/v13_tool_semantics.go:1001 (prompts :790)",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "Update my notes on %[1]s: the temporary email-fix receipt from the %[2]s is done, so drop just that one and keep their contact details — they're my %[3]s at %[4]s.",
+    "Remember to clear the throwaway note about %[1]s's email after the %[2]s — they're my %[3]s at %[4]s — but their actual contact history stays.",
+    "Clean up %[1]s's stuff: the post-%[2]s email-fix scratch note can go; nothing else about my %[3]s at %[4]s moves."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:790",
+   "observed_frame_distribution": [
+    173,
+    158,
+    156,
+    170
+   ]
+  },
+  "expected_tools": {
+   "delete_memory": 657
+  },
+  "required_args": {
+   "delete_memory.pair_id": {
+    "distinct_values": 657,
+    "top": [
+     [
+      "c5cb2a2f9ac9ef804",
+      1
+     ],
+     [
+      "cff67f3e9f0630b0d",
+      1
+     ],
+     [
+      "c48ce064b13315153",
+      1
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 657
+   },
+   "allow_extra_tools": {
+    "true": 657
+   },
+   "fuzzy_trajectory": {
+    "true": 657
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). pair_id claim forbids the person's identity/work/email/correction pairs on ANY delete call."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 2,
+   "max": 6,
+   "mean": 3.29
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 657,
+   "distinct_prompts": 657,
+   "with_prerequisite_pairs": 26,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 177,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 90,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    71,
+    95
+   ]
+  },
+  "hazards": [
+   "H3",
+   "H4",
+   "H11",
+   "H17",
+   "H18"
+  ]
+ },
+ "world_memory_update": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1821 rewritten by v13_tool_semantics.go:963 (prompts :772, second fact :782)",
+  "frames": {
+   "count": 5,
+   "representative": [
+    "Scratch that — the handoff for %[1]q at %[2]s is %[3]s now. Same scratchpad note; don't touch the project history.",
+    "Bin the old date on the %[1]q handoff note and make it %[3]s — that's the %[2]s job.",
+    "Forget Friday for %[1]q: handoff is %[3]s. Keep that in the handoff scratchpad for %[2]s, not the record."
+   ],
+   "grammar_source": "datagen/v13_tool_semantics.go:772",
+   "observed_frame_distribution": [
+    137,
+    122,
+    124,
+    137,
+    127
+   ]
+  },
+  "expected_tools": {
+   "update_memory": 647
+  },
+  "required_args": {
+   "update_memory.content": {
+    "distinct_values": 4,
+    "top": [
+     [
+      "handoff is Monday",
+      189
+     ],
+     [
+      "handoff is Wednesday",
+      164
+     ],
+     [
+      "handoff is Thursday",
+      156
+     ]
+    ]
+   },
+   "update_memory.pair_id": {
+    "distinct_values": 647,
+    "top": [
+     [
+      "c86daf76077668e49",
+      1
+     ],
+     [
+      "c84bcd4624bdc4c2e",
+      1
+     ],
+     [
+      "ccc150b3c07b2e5dc",
+      1
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 647
+   },
+   "allow_extra_tools": {
+    "true": 647
+   },
+   "fuzzy_trajectory": {
+    "true": 647
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296). Alternative accepted: delete_memory(pair) + save_memory(claim) (v13_tool_semantics.go:986)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 2,
+   "max": 7,
+   "mean": 3.23
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 647,
+   "distinct_prompts": 647,
+   "with_prerequisite_pairs": 25,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 389,
+   "multi_step_word": 0,
+   "quoted_alias": 647,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    29,
+    94
+   ]
+  },
+  "hazards": [
+   "H3",
+   "H4",
+   "H11",
+   "H12",
+   "H16",
+   "H17",
+   "H18"
+  ]
+ },
+ "world_theme_discover_set": {
+  "source": "research/dittobench-datagen/datagen/datagen.go:1832; grammar grammars_v13.go:695; capped at 3/run datagen/v13.go:44",
+  "frames": {
+   "count": 4,
+   "representative": [
+    "Have Ditto use my usual #accent#-ish accent — the personal app preference, not one of the client brand colors. If I mangled the spelling, check the available appearance options first.",
+    "Set the app accent to my #accent#-ish one; that's my own preference, not a client palette. Spelling may be off, so #check# the appearance options.",
+    "Switch Ditto to a #accent#-ish accent (my personal choice, not any client's brand). #check2# the available appearance settings if the name looks wrong."
+   ],
+   "grammar_source": "datagen/grammars_v13.go:695",
+   "observed_frame_distribution": [
+    124,
+    100,
+    117,
+    104
+   ]
+  },
+  "expected_tools": {
+   "discover_capabilities > set_accent_color": 445
+  },
+  "required_args": {
+   "set_accent_color.color": {
+    "distinct_values": 173,
+    "top": [
+     [
+      "dirty orange",
+      7
+     ],
+     [
+      "cool green",
+      6
+     ],
+     [
+      "shocking pink",
+      6
+     ]
+    ]
+   }
+  },
+  "grading": {
+   "max_tool_calls": {
+    "15": 445
+   },
+   "allow_extra_tools": {
+    "true": 445
+   },
+   "fuzzy_trajectory": {
+    "true": 445
+   },
+   "unordered": false,
+   "rule": "max_tool_calls=15 (envelope, not a cap), allow_extra=true, fuzzy_trajectory=true: every expected capability must be observed and required outcome args/claims satisfied by some call, else 0; then ~1.0. Extra calls are free; ForbiddenTools/forbidden claim values zero the case (scorer/v13.go:254-296)."
+  },
+  "per_run_count": {
+   "runs_present_of_200": 200,
+   "min": 1,
+   "max": 3,
+   "mean": 2.23
+  },
+  "surface_rates_of_cases": {
+   "n_cases_200_runs": 445,
+   "distinct_prompts": 443,
+   "with_prerequisite_pairs": 25,
+   "lead_in": 0,
+   "trailer": 0,
+   "planning_context_prefix": 0,
+   "negation_word": 445,
+   "multi_step_word": 0,
+   "quoted_alias": 0,
+   "digits": 0,
+   "exact_or_precise": 0,
+   "typo_prompts_salted_sample": [
+    44,
+    64
+   ]
+  },
+  "hazards": [
+   "H5",
+   "H9",
+   "H11",
+   "H13",
+   "H17",
+   "H18"
+  ]
+ }
+}
