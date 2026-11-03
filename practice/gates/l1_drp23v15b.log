@@ -1,0 +1,31 @@
+reviewing practice/submission_drp23v15b.tgz as uploaded (copied to practice/l1_drp23v15b_v8.tar.gz) sha256 97fce15eeff5a4aa
+lineage packet 3ede11cad7ef73ea: parent v8, scope diff, 4 files changed, 10 rulings, 0 findings
+  review step 10/200
+  review step 20/200
+  review step 30/200
+  review step 40/200
+  review step 50/200
+  review step 60/200
+  review step 70/200
+  review step 80/200
+  review step 90/200
+  review step 100/200
+  review step 110/200
+  review step 120/200
+  review step 130/200
+  review step 140/200
+  review step 150/200
+  review step 160/200
+  review step 170/200
+  review step 180/200
+  review step 190/200
+  review step 200/200
+{
+ "risk_level": "medium",
+ "categories": [
+  "mandatory_contract_failure"
+ ],
+ "clearance_certified": true,
+ "reason_code": null
+}
+notes: 48; full observation in practice/l1_drp23v15b_v8.json
