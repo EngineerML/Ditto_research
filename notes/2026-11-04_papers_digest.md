@@ -12,6 +12,26 @@ The figures below are the papers' own. Several papers have internal inconsistenc
 Correction to the brief the readers were given: about 9 calls per question applies only to the full records path,
 76 of 175 datagen cases in run 20261104T154802Z. The run average is 5.9 calls per datagen case.
 
+## Verification pass (re-read in my own session from the arXiv HTML, 2026-11-04 evening)
+
+The claims the top approaches rest on, checked against each paper's text:
+
+| Claim in this digest | Verdict | What the text actually says |
+|---|---|---|
+| Grow the Harness: gpt-oss-20b, 76–92% fewer calls, equal accuracy | **holds, with limits** | gpt-oss-20b (Groq, medium effort, temperature 1.0). BrowseComp-Plus: grown 39.3±12.6% at 6.0 calls / $0.52 vs tool-calling 40.0±11.7% at 24.8 calls / $2.03. WebArena: 44.7% at 1.8 calls vs 12.7% at 22.3. But the paper **does not say which steps became code**. Output tokens went **up** (14.3k vs 8.3k). Optimiser cost is excluded, and the ablations are single runs. |
+| Engram answers in one call over a lean context | **overstated** | The answerer is doubao-seed-2.0-pro, a strong model, not ~20B. The read-time call count is not stated (latency is "dominated by" the answer call; decomposition may add calls). The headline run used a write-time LLM fact extractor. Lean 83.6% vs full 73.2% is significant (McNemar p < 1e-6). The facts-only ablation was not run, and there are no per-type full-context numbers. The answer prompt ("dig for the answer first", one ANSWER line, abstain "I don't know") is confirmed. |
+| SimpleMem: "without absolute times, temporal −57%" | **misattributed** | The −56.7% temporal (F1, LoCoMo, GPT-4.1-mini) is for removing the **whole** semantic-compression step (timestamps and coreference together), not timestamps alone. Its LongMemEval full-context baseline (39.6) is unusually low, so treat the gains with care. Read time is about 2 calls (planner + answer), inferred, not stated. |
+| Model card effort table and hallucination numbers | **exact** | All figures match Table 3 and Table 9. The card gives no temperature advice. Effort is set by "Reasoning: low/medium/high" in the system prompt, and past reasoning is dropped in multi-turn. |
+| EffGen complexity gate | **holds** | τ = 7.0 over five weighted factors. Below it, a single-agent ReAct loop; above it, decomposition. Removing routing costs 3.6 points at 1.5B, 6.2 at 7B and 7.9 at 32B. Temperature 0.1. |
+| EffGen gpt-oss-20b numbers (LoCoMo 21.4 → 10.3 under LangChain) | **unverified** | They are in Appendix U.1 / Table 51, which the HTML omits; a reader took them from the PDF. LangChain's memory losses are explained as truncating old context, not piling it up. |
+| Better Harnesses: "no sub-agent change ever helped", used against drafts | **weak evidence** | "we do not see successful harness adaptation of creating sub-agents" means sub-agents, not drafts. The paper does not study drafts or self-consistency. Harness cost rose for gemma ($0.043 → $0.071) and fell for the other two models. |
+
+What stands after the check:
+1. The case for one deciding call rests mainly on **our own live data**: Hades v24 and v26 answer these questions in ~1 call at accuracy 1.00. *Grow the Harness* backs it as the one paper on gpt-oss-20b. Engram and SimpleMem are supporting evidence on stronger models. **No paper tests whether our 3 drafts or the follow-up question help gpt-oss-20b, in either direction**, so the lean A/B on the same seed is the real test.
+2. Our packet is already lean (≤ 24k chars, ~6k tokens, comparable to Engram's 9.6k), so the "lean context beats full history" lesson is mostly already applied. Our gap is **calls**, not context size.
+3. Expect completion tokens per call to rise when calls fall. Grow the Harness shows this on gpt-oss-20b. At $0.15/M it is a small cost against prompt savings, but measure it.
+4. Supersession and alias notes (approaches 2–3) are supported as *ideas* by Engram and SimpleMem. Their measured effect on a ~20B answerer is unknown, so A/B them.
+
 ## Ranked approaches for horizon
 
 | # | Approach | Sources | Problem | Est. value |
