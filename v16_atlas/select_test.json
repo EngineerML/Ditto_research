@@ -1,0 +1,11 @@
+{
+ "half": "test",
+ "recall_cases": 1.0,
+ "recall_tools": 1.0,
+ "tool_tools": 30.9572,
+ "tool_tokens": 1363.3656660000001,
+ "mem_tools": 30.0852,
+ "mem_tokens": 1337.2137688,
+ "full_tokens": 7128.3212,
+ "misses": []
+}
