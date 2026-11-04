@@ -12,7 +12,7 @@ from .action import safe_run as run_action
 from .available import usable
 from .typography import plain_type
 from .config import Settings
-from .lane import ACTION, RECORDS, Lane, about_own_records, classify, names_held_alias, own_records_question, passes_on, within_records
+from .lane import ACTION, OWN_RECORD_CUES, RECORDS, Lane, about_own_records, alias_reading, classify, names_held_alias, own_records_question, passes_on, within_records
 from .llm import LLM, build_llm, grow_call_gate
 from .memory.coverage import unnamed_people
 from .memory.deliberation import Deliberation
@@ -160,8 +160,10 @@ class CaseRunner:
                 lane = Lane(RECORDS, "identifier")
             elif lane.name != RECORDS and settings.short_route and focus and own_records_question(req.user_input, req.tools, held=True):
                 lane = Lane(RECORDS, "identifier-held")
-            elif lane.name != RECORDS and lane.reason == "live" and about_own_records(req.user_input, req.tools, lane, index, self.retriever.question_anchors(index, req.user_input)):
+            elif lane.name != RECORDS and lane.reason in OWN_RECORD_CUES and about_own_records(req.user_input, req.tools, lane, index, self.retriever.question_anchors(index, req.user_input)):
                 lane = Lane(RECORDS, "own-records")
+            elif lane.name != RECORDS and alias_reading(req.user_input, req.tools, lane, index, nicknames([node.pair for node in index.nodes.values()])):
+                lane = Lane(RECORDS, "own-records-alias")
             elif lane.name != RECORDS and settings.short_story and not focus and own_records_question(req.user_input, req.tools) and not PASS_TYPO.search(req.user_input.lower()) and find_topic(req.user_input, [node.pair for node in index.nodes.values()], settings.story_min_density, settings.story_max_chars) is not None:
                 lane = Lane(RECORDS, "topic")
             elif (lane.name != RECORDS or lane.reason == "statement") and answer_form_question(req.user_input, req.tools) and (lane.reason != "live" or find_topic(req.user_input, [node.pair for node in index.nodes.values()], settings.story_min_density, settings.story_max_chars) is not None):

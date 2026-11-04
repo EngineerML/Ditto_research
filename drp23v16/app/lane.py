@@ -44,7 +44,9 @@ FETCH_VERBS = frozenset("search find look fetch pull open grab read research see
 RECORD_NOUNS = frozenset("thread account invoice balance record records".split())
 DATE_SPAN = re.compile(r"\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d{1,2}(?:st|nd|rd|th)?,?\s*\d{0,4}|\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b|\b\d{4}-\d{2}-\d{2}\b|\b(?:19|20)\d{2}\b|\b\d{1,2}:\d{2}\s*(?:am|pm)?\b", re.I)
 
-OWN_RECORD_CUES = frozenset({"live"})
+# Action-lane reasons that a request about the user's own records can still carry: a live cue word, or no cue at all
+# ("Name the two podcasts Pogo keeps recommending" is a request in the imperative that asks for what the records hold).
+OWN_RECORD_CUES = frozenset({"live", "default"})
 DETAIL_NOUNS = frozenset("email emails e-mail address addresses phone phones telephone handle handles username usernames".split())
 VERB_LIKE_NOUNS = frozenset("handle handles address email".split())
 # Detail nouns also read through a misspelling within one edit (typo handling); real words one edit away are not.
@@ -457,9 +459,19 @@ def about_own_records(request: str, tools: list[ToolDefinition], lane: Lane, ind
         return False
     clauses = [clause for clause in CLAUSE_SPLIT.split(request) if clause and clause.strip()] or [request]
     tails = QUESTION_TAIL.findall(request) if "?" in request else []
-    if not asks(request, clauses, True, tails) or acting(request) or unknown_name(request, index):
+    # With no cue word, a reading request in the imperative ("Name the two podcasts Pogo keeps recommending") asks too.
+    asked = asks(request, clauses, True, tails) or (lane.reason == "default" and reading_request(request))
+    if not asked or acting(request) or unknown_name(request, index):
         return False
     return held_in_records(request, tools, index, anchors)
+
+
+def alias_reading(request: str, tools: list[ToolDefinition], lane: Lane, index: UserIndex, aliases: set[str]) -> bool:
+    """A reading request in the imperative with no cue word that names someone only by a nickname the user's own
+    records give ("Name the two restaurants Skip always picks")."""
+    if lane.name != ACTION or lane.reason != "default" or not reading_request(request) or acting(request):
+        return False
+    return names_held_alias(request, tools, index, aliases)
 
 
 def names_held_alias(request: str, tools: list[ToolDefinition], index: UserIndex, aliases: set[str]) -> bool:
