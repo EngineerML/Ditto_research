@@ -23,6 +23,7 @@ from .memory.worksheet import render_worksheet
 from .packet import Packet, build_packet, compose, identifier_focus
 from .protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 from .tools import BLOCKED, UNHELD_IDS_NOTE, MemoryTools, ToolExecutor, openai_tools
+from .toolselect import OFFER
 from .memory.people import alias_lines, cards_for, namesakes, nickname_cards, owner_names
 
 log = logging.getLogger("harness.records")
@@ -125,7 +126,10 @@ def names_a_value(index: UserIndex | None, anchors: dict[str, tuple[str, float]]
 
 
 def host_catalog(tools: list[ToolDefinition]) -> dict[str, ToolDefinition]:
-    return dict((tool.name, tool) for tool in tools if tool.name not in MEMORY_TOOL_NAMES)
+    # Every tool the request supplied, listed or deferred, is callable.
+    offer = OFFER.get()
+    supplied = list(offer.definitions.values()) if offer is not None else []
+    return dict((tool.name, tool) for tool in (*supplied, *tools) if tool.name not in MEMORY_TOOL_NAMES)
 
 
 def offered_memory(tools: list[ToolDefinition]) -> frozenset[str]:

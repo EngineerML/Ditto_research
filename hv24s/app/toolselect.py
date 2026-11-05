@@ -21,11 +21,17 @@ app list, seed or bench version.
   made, a tool a result or the model named).
 
 `select` returns the offered names in catalog order; each tool keeps its place, name, description and schema.
+
+`Offer` keeps the request's whole catalog callable: the tools left out of the list are deferred, not removed. A call to
+any supplied tool is checked against its own schema and sent. A deferred tool the case calls, or that a tool result
+names (the catalog's own `search_tools` finds them), is listed from the next turn on.
 """
 from __future__ import annotations
 
 import re
+from contextvars import ContextVar
 from dataclasses import dataclass
+from typing import Any
 
 WORD = re.compile(r"[A-Za-z0-9][A-Za-z0-9]*(?:[.'][A-Za-z0-9]+)*")
 CAPITALISED = re.compile(r"(?<![.!?]\s)(?<!^)\b((?:[A-Z]|[0-9]+[A-Z])[A-Za-z0-9]*(?:\.[a-z]+)?(?:\s+[A-Z][A-Za-z0-9]*)*)")
@@ -119,3 +125,33 @@ def select(tools: list[dict], user_text: str, system_text: str = "", keep: set[s
             out.append(v.name)
             why[v.name] = reason
     return out, why
+
+
+class Offer:
+    """One request's catalog: every supplied tool (all callable), the ones shown, and the deferred ones it has reached."""
+
+    def __init__(self, supplied: list[Any], chosen: list[str]) -> None:
+        self.definitions = {tool.name: tool for tool in supplied}
+        self.shown = set(chosen) & set(self.definitions)
+        self._reached: list[str] = []
+        names = sorted(self.definitions, key=len, reverse=True)
+        self._named = re.compile(r"\b(?:" + "|".join(map(re.escape, names)) + r")\b") if names else None
+
+    def supplies(self, name: str) -> bool:
+        return name in self.definitions
+
+    def definition(self, name: str) -> Any:
+        return self.definitions.get(name)
+
+    def reach(self, called: str, output: str = "") -> None:
+        # A deferred tool the case has called, or that a tool result names, is listed from the next turn on.
+        found = ([called] if called in self.definitions else []) + (self._named.findall(output) if self._named is not None and output else [])
+        for name in found:
+            if name not in self.shown and name not in self._reached:
+                self._reached.append(name)
+
+    def reached(self) -> list[Any]:
+        return [self.definitions[name] for name in self._reached]
+
+
+OFFER: ContextVar[Offer | None] = ContextVar("offer", default=None)

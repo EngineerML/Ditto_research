@@ -21,22 +21,25 @@ unchanged.
 
 | File | Change | Size |
 |---|---|---|
-| `app/toolselect.py` | new: which listed tools a request is offered | 121 lines |
-| `app/agent.py` | `CaseRunner.run` applies it when a request arrives and logs one line per case | 1 import, 6 lines |
+| `app/toolselect.py` | new: which supplied tools a request's model calls list (`select`), and the request's whole callable catalog (`Offer`) | 157 lines |
+| `app/agent.py` | `CaseRunner.run` applies it when a request arrives and logs one line per case | 10 lines |
+| `app/surface.py`, `app/records.py`, `app/tools.py` | a deferred tool is known, checked against its own schema, sent, and listed once reached | 23 lines |
 | `DECLARATION.md` | one section added at the top; Hades' text below it is unchanged | about 15 lines |
 | `PROVENANCE.md` | this file | new |
 
-No routing rule, prompt, model setting, dependency or build file changes. To check, unpack both artifacts and run
-`diff -r`: only the four files above differ.
+No prompt, model setting, dependency or build file changes. To check, unpack both artifacts and run `diff -r`: only
+the files above differ.
 
 ## The change
 
-A request keeps every general tool, plus the tools of each app it names. App tools of apps the request does not
-mention are left out.
+The tool list each model call carries holds every general tool, plus the tools of each app the request names. The
+tools of apps the request does not mention are deferred, not removed.
 - An app-scoped tool is one whose own description names a brand that its own name starts with.
 - Mail and calendar tools count as general: they are the assistant's own channels, and a request reaches them without
   naming an app.
-- Kept tools are passed as supplied, in catalog order.
+- A call to any supplied tool, listed or deferred, is checked against its own schema and sent.
+- A deferred tool the case calls, or that a tool result names, is listed from the next turn on.
+- Listed tools are passed as supplied, in catalog order.
 
 **Why:** bench 16 lists about 234 tools per request, and every call that carries them pays about 7,100 prompt tokens
 for tools of apps the request never mentions. Offering about 31 cuts that to about 1,365 tokens a call, with no case losing

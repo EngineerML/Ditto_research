@@ -6,6 +6,7 @@ from .lane import CLAUSE_SPLIT, GENERIC_NAME_WORDS, LOOSE_SYNONYMS, READ_SYNONYM
 from .protocol import ToolDefinition
 from .route import Route, order_by_route
 from .tools import openai_tools
+from .toolselect import OFFER
 
 
 def name_forms(word: str) -> set[str]:
@@ -59,14 +60,20 @@ class Surface:
         self.ordered = named + [tool for tool in self.ordered if tool.name not in held]
 
     def knows(self, name: str) -> bool:
-        return name in self.by_name
+        # Every tool the request supplied is callable, shown or deferred.
+        offer = OFFER.get()
+        return name in self.by_name or (offer is not None and offer.supplies(name))
 
     def schema(self, name: str) -> dict[str, Any]:
-        tool = self.by_name.get(name)
+        offer = OFFER.get()
+        tool = self.by_name.get(name) or (offer.definition(name) if offer is not None else None)
         return tool.parameters if tool is not None and isinstance(tool.parameters, dict) else {}
 
     def required(self, name: str) -> list[str]:
         return list(self.schema(name).get("required") or [])
 
     def visible(self) -> list[dict[str, Any]]:
-        return openai_tools(self.ordered)
+        # The shown tools, then any deferred tool the case has reached (called, or named by a tool result).
+        offer = OFFER.get()
+        reached = [tool for tool in offer.reached() if tool.name not in self.by_name] if offer is not None else []
+        return openai_tools(self.ordered + reached)
