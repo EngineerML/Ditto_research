@@ -12,7 +12,8 @@ from .action import safe_run as run_action
 from .available import usable
 from .typography import plain_type
 from .config import Settings
-from .lane import ACTION, OWN_RECORD_CUES, RECORDS, Lane, about_own_records, alias_reading, classify, names_held_alias, own_records_question, passes_on, within_records
+from .evidence.view import answer_from_view, evidence_view
+from .lane import ACTION, OWN_RECORD_CUES, RECORDS, Lane, about_own_records, alias_reading, classify, effecting, names_held_alias, own_records_question, passes_on, within_records
 from .llm import LLM, build_llm, grow_call_gate
 from .memory.coverage import unnamed_people
 from .memory.deliberation import Deliberation
@@ -168,8 +169,15 @@ class CaseRunner:
                 lane = Lane(RECORDS, "topic")
             elif (lane.name != RECORDS or lane.reason == "statement") and answer_form_question(req.user_input, req.tools) and (lane.reason != "live" or find_topic(req.user_input, [node.pair for node in index.nodes.values()], settings.story_min_density, settings.story_max_chars) is not None):
                 lane = Lane(RECORDS, "answer-form")
+            view = None
+            if settings.evidence_view and not effecting(req.user_input) and not request_kind(req.user_input, [tool.name for tool in req.tools]):
+                view = evidence_view(req.user_input, [node.pair for node in index.nodes.values()])
+                if view is not None:
+                    lane = Lane(RECORDS, "evidence")
             receipts_before = len(executor.ledger)
-            handled = lane.name == RECORDS and await self.short_answer(req, lane, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome)
+            # A view that gets no reply goes on to the usual paths.
+            handled = view is not None and await answer_from_view(self.records_engine(llm, executor, memory, tally), req, view, [node.pair for node in index.nodes.values()], settings.short_effort, settings.short_max_tokens, deadline, outcome)
+            handled = handled or lane.name == RECORDS and await self.short_answer(req, lane, focus, index, self.records_engine(llm, executor, memory, tally), deadline, outcome)
             if lane.name == RECORDS and not handled and len(executor.ledger) > receipts_before:
                 # The short path's deciding turn ran tools and then ended without a reply. A fresh records run would
                 # decide without those completed results (I2), so the request ends here, with no reply.

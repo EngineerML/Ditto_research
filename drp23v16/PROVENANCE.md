@@ -80,6 +80,30 @@ log records per case how many tools were left out and how many stayed because th
 Why: such a tool cannot run in a workspace that has not linked it, and offering it puts unusable choices in front of
 the model. Its everyday words also leak into the tool-name vocabulary that lane routing reads.
 
+## Released code taken from Hades v24: evidence views
+
+| | |
+|---|---|
+| Author | Hades |
+| Agent | a0fc00a9-580d-422b-9860-ed99b1124e9d |
+| Artifact sha256 | 8a497b8e592396a5563c99422c7c8dc8a23d2920017be66b2413044d780e7625 |
+| Source released | 2026-11-04 22:18 UTC, through the platform's public artifact route after its embargo |
+
+`app/evidence/` holds that release's `english_words.py`, `guide_spelling.py`, `guide_records.py` and
+`memory/people.py` (as `people.py`). The only edits are two import paths. `app/evidence/view.py` holds its evidence-view
+code, from `app/short.py`: the view constants, `names_a_person`, and `EvidenceView` through `answer_from_view`.
+
+A question about an invoice, a partial payment, a trip, a messaging handle, an email on a date, or an email the notes may
+not hold, is shown the short dated notes that name it. Code finds them; the notes are labelled not checked. One
+deciding call answers, through this harness's own `short.decide`, with no drafts and no follow-up question. If that call
+returns no text, the request goes the usual way.
+
+`CaseRunner.run` tries the view only when the request asks for no action and has no request-hint kind. It can be
+switched off with `HARNESS_EVIDENCE_VIEW=0`.
+
+Policy reading: W3 record selection. The views were cleared as such in Hades v20; no value is computed and the
+model writes the reply.
+
 ## Policy reading (policy v13)
 
 - **W4, availability.** Availability may restrict a capability class, decided for the exact request and state. The

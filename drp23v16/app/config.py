@@ -133,6 +133,8 @@ class Settings:
     action_topic: bool = True
     action_topic_alias: bool = True
     final_check: bool = True
+    # One deciding call over the short dated notes on an invoice, trip, handle or email (Hades v24's evidence view).
+    evidence_view: bool = True
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -206,4 +208,5 @@ class Settings:
             action_topic=_flag("HARNESS_ACTION_TOPIC", True),
             action_topic_alias=_flag("HARNESS_ACTION_TOPIC_ALIAS", True),
             final_check=_flag("HARNESS_FINAL_CHECK", True),
+            evidence_view=_flag("HARNESS_EVIDENCE_VIEW", True),
         )
