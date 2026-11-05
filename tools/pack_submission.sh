@@ -21,6 +21,10 @@ cp "$TREE/Dockerfile" "$TREE/requirements.txt" "$TREE/PROVENANCE.md" "$STAGE/"
 if [ -n "${SHIP_DECLARATION:-}" ]; then
   cp "$TREE/DECLARATION.md" "$STAGE/"
 fi
+# A base's license (Hades ships MIT) goes with its code.
+if [ -f "$TREE/LICENSE" ]; then
+  cp "$TREE/LICENSE" "$STAGE/"
+fi
 cp -r "$TREE/app" "$STAGE/app"
 find "$STAGE" -name __pycache__ -type d -prune -exec rm -rf {} +
 if grep -rIl -E 'sk-or-v1-|sk-[A-Za-z0-9]{32,}|BEGIN (RSA|OPENSSH|EC) PRIVATE' "$STAGE"; then

@@ -1,5 +1,17 @@
 # Pipeline declaration
 
+## Changes from Hades v24 (publicly released base)
+
+Base: Hades v24, agent a0fc00a9-580d-422b-9860-ed99b1124e9d, artifact sha256
+8a497b8e592396a5563c99422c7c8dc8a23d2920017be66b2413044d780e7625, source released 2026-11-04 22:18 UTC through the
+platform's public artifact route. Every file not named below is that artifact's file byte for byte. Hades' own
+declaration follows this section unchanged.
+
+| Change | File and function | Policy reading |
+|---|---|---|
+| **Tools offered per request.** When a request arrives, it keeps every general tool, plus every tool of each app the request names. General tools are those whose description names no app: memory, web, images, code, workflows, settings, capability lookup and tool search, and mail and calendar, the assistant's own channels. An app-scoped tool is one whose own description names a brand its own name starts with (`slack_post_message`, "… the user's Slack workspace"). It is kept when the request's text (system text or message) names that app: a word of the brand or of the name's leading part, whole, or one edit off for words of five letters or more. The tools of an app the request does not name are left out. Each kept tool keeps its name, description, schema and catalog order. Lane routing and every call see the kept tools. The harness log records per case how many of how many were offered | `app/toolselect.py` view, brand_of, mentioned, select; `app/agent.py` CaseRunner.run | **Context pruning** (screening review: "context pruning, prompt compression, bounded retrieval fan-out … are legitimate when the supplied model gateway remains authoritative and the served answer and tool trajectory remain faithful"). The cut is by whole app class. Nothing inside a class is preselected, and there is no plan, singleton, tool_choice or retry. **I7:** the deciding model can choose any kept tool, skip a call, add or reorder calls, and every valid call it makes is executed and kept, so all four I7 questions are answered yes for the offered catalog. **W10:** kept tools pass exactly as supplied. **No benchmark trigger:** it reads each tool's own name and description and the request's own words, never a tool-name list, app list, seed, case or `bench_version`. Measured over 10,000 served bench-16 tool cases from 200 generated seeds, the expected tool was offered in every case (100% recall), including decoy-correct cases. Where Hades' declaration below says the catalog "stays whole" or that the host "removes none from the catalog", read it as the catalog after this step |
+| `PROVENANCE.md` added (lineage and the change above) | `PROVENANCE.md` | documentation only |
+
 ## Review map
 
 **What the host never does on the served path.** It computes no answer value, compares no reply with a draft, retries on no
