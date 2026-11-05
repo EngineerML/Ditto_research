@@ -28,6 +28,7 @@ from .guide_records import asks_account_figure, asks_contact_detail, asks_handle
 from .short import ShortPath, TopicPath, answer_from_view, evidence_view, find_topic, named_in, same_file, note_words, repeat_reply, same_notes, same_question, setting_reading, receipt_lead, recipient_lead, focus_token, nicknames, people_lead, scratchpad_lead, short_records, topic_lead
 from .store import Store
 from .tools import MemoryTools, ToolExecutor
+from .toolselect import select
 
 log = logging.getLogger("harness.agent")
 SAME_QUESTION_RESERVE = 45.0
@@ -117,6 +118,12 @@ class CaseRunner:
     async def run(self, req: RunRequest) -> RunResponse:
         started = time.monotonic()
         deadline = started + self.settings.case_budget_seconds
+        # Offer the general tools and the tools of each app the request names; each kept tool is passed as supplied.
+        offered, _ = select([{"name": tool.name, "description": tool.description} for tool in req.tools], req.user_input, req.system_prompt)
+        if len(offered) < len(req.tools):
+            kept = set(offered)
+            log.info("case=%s catalog: %d of %d tools offered (apps the request does not name left out)", req.case_id, len(kept), len(req.tools))
+            req = req.model_copy(update={"tools": [tool for tool in req.tools if tool.name in kept]})
         CaseRunner.active_cases += 1
         gate_limit = grow_call_gate(max(self.settings.max_inflight_calls, CaseRunner.active_cases))
         memory = MemoryTools(self.store, req.user_id)

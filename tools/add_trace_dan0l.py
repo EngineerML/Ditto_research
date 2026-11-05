@@ -134,7 +134,7 @@ def failed(messages, tools, payload, error) -> None:
     ])
     patch(app / "short.py", [
         (r"^from __future__ import annotations$", "\\g<0>\n\nfrom . import trace"),
-        (r"^(\s+)outcome\.events\.append\(f\"short path records=.*$", r"\g<0>\n\1trace.note(packet=[[p.pair_id, p.prompt[:160]] for p in records], path='program')"),
+        (r"^(\s+)outcome\.events\.append\(f\"short path (?:\(filed order\) )?records=.*$", r"\g<0>\n\1trace.note(packet=[[p.pair_id, p.prompt[:160]] for p in records], path='program')"),
         (r"^(\s+)draft = (?:.* else )?await self\.latest_draft\(req, notes, ",
          r"\1trace.note(packet=[[p.pair_id, p.prompt[:160]] for p in notes], path='topic')\n\g<0>"),
     ])
