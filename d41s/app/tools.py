@@ -12,6 +12,7 @@ from typing import Any
 import httpx
 
 from .lane import reads_state
+from .offer import OFFER
 from .protocol import LOCAL_PAIR_PREFIX, MEMORY_TOOL_NAMES, MemoryPair, ObservedToolCall, ToolDefinition, ToolExecRequest, handed_out
 from .store import Store
 
@@ -129,6 +130,9 @@ class ToolExecutor:
 
     async def send(self, name: str, args: dict[str, Any], raw_args: str = "") -> tuple[str, str]:
         output, state = await self._deliver(name, args, raw_args)
+        offer = OFFER.get()
+        if offer is not None:
+            offer.reach(name, output)
         self.ledger.append(Receipt(name, args, state, output))
         if state in REPEAT_OUTCOMES and not reads_state(name):
             self.changes += 1
