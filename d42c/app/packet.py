@@ -3,12 +3,17 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass, field
 
-from .memory.retrieval import Candidate, UserIndex, identifier_tokens, relevance_band
+from .memory.retrieval import (
+    Candidate,
+    UserIndex,
+    identifier_tokens,
+    relevance_band,
+)
 from .protocol import handed_out
 from .store import CODE_RE
 
-RECORDS_HEADER = "Relevant memory context for this turn:"
-QUESTION_HEADER = "Message:"
+RECORDS_HEADER = 'Relevant memory context for this turn:'
+QUESTION_HEADER = 'Message:'
 RECORD_PADDING = 64
 MAX_RECORDS = 60
 UNANCHORED_MAX_RECORDS = 3
@@ -34,7 +39,10 @@ class Packet:
     focused: bool = False
 
     def labels(self) -> dict[str, str]:
-        return {cand.pair.pair_id: f"M{position}" for position, cand in enumerate(self.records, start=1)}
+        return {
+            cand.pair.pair_id: f'M{position}'
+            for position, cand in enumerate(self.records, start=1)
+        }
 
     @property
     def chars(self) -> int:
@@ -49,7 +57,7 @@ def record_size(cand: Candidate) -> int:
 
 
 def codes_of(cand: Candidate) -> set[str]:
-    return set(CODE_RE.findall(cand.pair.prompt + " " + cand.pair.response))
+    return set(CODE_RE.findall(cand.pair.prompt + ' ' + cand.pair.response))
 
 
 def code_components(records: list[Candidate]) -> list[list[Candidate]]:
@@ -75,15 +83,30 @@ def code_components(records: list[Candidate]) -> list[list[Candidate]]:
 
 
 def held_identifier(message: str, ordered: list[Candidate]) -> bool:
-    tokens = set(identifier_tokens(message)) | {code.lower() for code in CODE_RE.findall(message)}
-    return any(token in (cand.pair.prompt + " " + cand.pair.response).lower() for token in tokens for cand in ordered)
+    tokens = set(identifier_tokens(message)) | {
+        code.lower() for code in CODE_RE.findall(message)
+    }
+    return any(
+        token in (cand.pair.prompt + ' ' + cand.pair.response).lower()
+        for token in tokens
+        for cand in ordered
+    )
 
 
-def identifier_focus(message: str, ordered: list[Candidate]) -> list[Candidate]:
+def identifier_focus(
+    message: str, ordered: list[Candidate]
+) -> list[Candidate]:
     for token in identifier_tokens(message):
-        carrying = [cand for cand in ordered if token in (cand.pair.prompt + " " + cand.pair.response).lower()]
+        carrying = [
+            cand
+            for cand in ordered
+            if token in (cand.pair.prompt + ' ' + cand.pair.response).lower()
+        ]
         if len(carrying) >= THREAD_MIN_RECORDS:
-            return sorted(carrying, key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id))
+            return sorted(
+                carrying,
+                key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id),
+            )
     return []
 
 
@@ -91,8 +114,12 @@ def arc_order(admitted: list[Candidate]) -> list[Candidate]:
     seat = {cand.pair.pair_id: index for index, cand in enumerate(admitted)}
     blocks: list[tuple[int, list[Candidate]]] = []
     for members in code_components(admitted):
-        members = sorted(members, key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id))
-        blocks.append((min(seat[cand.pair.pair_id] for cand in members), members))
+        members = sorted(
+            members, key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id)
+        )
+        blocks.append(
+            (min(seat[cand.pair.pair_id] for cand in members), members)
+        )
     blocks.sort(key=lambda block: block[0])
     return [cand for _, members in blocks for cand in members]
 
@@ -104,18 +131,33 @@ def strongest_group(ordered: list[Candidate]) -> list[Candidate]:
     best = max(groups, key=lambda members: sum(cand.score for cand in members))
     if not THREAD_MIN_RECORDS <= len(best) <= THREAD_MAX_RECORDS:
         return []
-    return sorted(best, key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id))
+    return sorted(
+        best, key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id)
+    )
 
 
-def leading_thread(ordered: list[Candidate], lead_anchored: bool = False) -> list[Candidate]:
+def leading_thread(
+    ordered: list[Candidate], lead_anchored: bool = False
+) -> list[Candidate]:
     thread = strongest_group(ordered)
-    if not thread or (lead_anchored and not any(cand.anchored for cand in thread) and any(cand.anchored for cand in ordered[:THREAD_POOL])):
+    if not thread or (
+        lead_anchored
+        and not any(cand.anchored for cand in thread)
+        and any(cand.anchored for cand in ordered[:THREAD_POOL])
+    ):
         return []
     names = {cand.pair.pair_id for cand in thread}
-    leads = ordered[0].pair.pair_id in names or sum(cand.score for cand in thread) >= THREAD_RATIO * max(cand.score for cand in ordered[:THREAD_LEAD])
+    leads = ordered[0].pair.pair_id in names or sum(
+        cand.score for cand in thread
+    ) >= THREAD_RATIO * max(cand.score for cand in ordered[:THREAD_LEAD])
     if not leads:
         return []
-    return thread + [cand for cand in ordered if cand.pair.pair_id not in names][:THREAD_TAIL]
+    return (
+        thread
+        + [cand for cand in ordered if cand.pair.pair_id not in names][
+            :THREAD_TAIL
+        ]
+    )
 
 
 def anchored_thread(ordered: list[Candidate]) -> list[Candidate]:
@@ -125,18 +167,44 @@ def anchored_thread(ordered: list[Candidate]) -> list[Candidate]:
     return thread
 
 
-def value_closure(ordered: list[Candidate], held: list[Candidate], budget: int) -> list[Candidate]:
+def value_closure(
+    ordered: list[Candidate], held: list[Candidate], budget: int
+) -> list[Candidate]:
     shared = set().union(*(cand.keys for cand in held)) if held else set()
     names = {cand.pair.pair_id for cand in held}
     top = max((cand.score for cand in ordered), default=0.0)
-    asked = [cand for cand in ordered if cand.pair.pair_id not in names and cand.pinned]
-    linked = [cand for cand in ordered if cand.pair.pair_id not in names and not cand.pinned and cand.keys & shared][:CLOSURE_MAX_RECORDS]
-    band = [cand for cand in ordered if cand.pair.pair_id not in names and not cand.pinned and cand.score >= CLOSURE_BAND_SHARE * top]
+    asked = [
+        cand
+        for cand in ordered
+        if cand.pair.pair_id not in names and cand.pinned
+    ]
+    linked = [
+        cand
+        for cand in ordered
+        if cand.pair.pair_id not in names
+        and not cand.pinned
+        and cand.keys & shared
+    ][:CLOSURE_MAX_RECORDS]
+    band = [
+        cand
+        for cand in ordered
+        if cand.pair.pair_id not in names
+        and not cand.pinned
+        and cand.score >= CLOSURE_BAND_SHARE * top
+    ]
     reached = {cand.pair.pair_id for cand in asked + linked}
-    return admit(asked + linked + [cand for cand in band if cand.pair.pair_id not in reached], budget, held)
+    return admit(
+        asked
+        + linked
+        + [cand for cand in band if cand.pair.pair_id not in reached],
+        budget,
+        held,
+    )
 
 
-def link_hop(index: UserIndex, held: list[Candidate], budget: int) -> list[Candidate]:
+def link_hop(
+    index: UserIndex, held: list[Candidate], budget: int
+) -> list[Candidate]:
     holding = {cand.pair.pair_id for cand in held}
     anchored = {cand.pair.pair_id for cand in held if cand.anchored}
     if anchored:
@@ -153,9 +221,13 @@ def link_hop(index: UserIndex, held: list[Candidate], budget: int) -> list[Candi
         frontier = list(step)
     used = sum(record_size(cand) for cand in held)
     reached: list[Candidate] = []
-    for pair_id in sorted(carried, key=lambda pid: (-carried[pid], index.nodes[pid].size, pid)):
+    for pair_id in sorted(
+        carried, key=lambda pid: (-carried[pid], index.nodes[pid].size, pid)
+    ):
         node = index.nodes[pair_id]
-        cand = Candidate(pair=node.pair, reasons=["link"], keys=frozenset(node.values))
+        cand = Candidate(
+            pair=node.pair, reasons=['link'], keys=frozenset(node.values)
+        )
         if used + record_size(cand) > budget:
             continue
         used += record_size(cand)
@@ -163,7 +235,11 @@ def link_hop(index: UserIndex, held: list[Candidate], budget: int) -> list[Candi
     return reached
 
 
-def admit(ordered: list[Candidate], budget: int, admitted: list[Candidate] | None = None) -> list[Candidate]:
+def admit(
+    ordered: list[Candidate],
+    budget: int,
+    admitted: list[Candidate] | None = None,
+) -> list[Candidate]:
     admitted = list(admitted or [])
     used = sum(record_size(cand) for cand in admitted)
     for cand in ordered:
@@ -177,7 +253,13 @@ def admit(ordered: list[Candidate], budget: int, admitted: list[Candidate] | Non
     return admitted
 
 
-def by_meaning(packet: Packet, fused: list[str], index: UserIndex, max_records: int, max_chars: int) -> Packet:
+def by_meaning(
+    packet: Packet,
+    fused: list[str],
+    index: UserIndex,
+    max_records: int,
+    max_chars: int,
+) -> Packet:
     held = {cand.pair.pair_id for cand in packet.records}
     added: list[Candidate] = []
     used = 0
@@ -187,7 +269,9 @@ def by_meaning(packet: Packet, fused: list[str], index: UserIndex, max_records: 
         node = index.nodes.get(pair_id)
         if node is None or pair_id in held:
             continue
-        cand = Candidate(pair=node.pair, reasons=["meaning"], keys=frozenset(node.values))
+        cand = Candidate(
+            pair=node.pair, reasons=['meaning'], keys=frozenset(node.values)
+        )
         if used + record_size(cand) > max_chars:
             continue
         added.append(cand)
@@ -197,90 +281,181 @@ def by_meaning(packet: Packet, fused: list[str], index: UserIndex, max_records: 
 
 def by_seat(packet: Packet, fused: list[str]) -> Packet:
     seat = {pair_id: position for position, pair_id in enumerate(fused)}
-    ranked = sorted(packet.records, key=lambda cand: seat.get(cand.pair.pair_id, len(seat)))
+    ranked = sorted(
+        packet.records, key=lambda cand: seat.get(cand.pair.pair_id, len(seat))
+    )
     return Packet(records=arc_order(ranked), focused=packet.focused)
 
 
-def build_packet(ordered: list[Candidate], anchored: bool, budget: int, message: str, index: UserIndex, fused: list[str] | None = None, meaning_records: int = 0, meaning_chars: int = 0, ceiling: int = 0, kept: list[Candidate] | None = None, lead_anchored: bool = False) -> Packet:
-    packet = with_kept(linked_packet(ordered, anchored, budget, message, index, lead_anchored), kept or [])
+def build_packet(
+    ordered: list[Candidate],
+    anchored: bool,
+    budget: int,
+    message: str,
+    index: UserIndex,
+    fused: list[str] | None = None,
+    meaning_records: int = 0,
+    meaning_chars: int = 0,
+    ceiling: int = 0,
+    kept: list[Candidate] | None = None,
+    lead_anchored: bool = False,
+) -> Packet:
+    packet = with_kept(
+        linked_packet(
+            ordered, anchored, budget, message, index, lead_anchored
+        ),
+        kept or [],
+    )
     if not fused:
         return packet
     if anchored and not identifier_focus(message, ordered):
-        packet = by_meaning(packet, fused, index, meaning_records, min(meaning_chars, ceiling - packet.chars))
+        packet = by_meaning(
+            packet,
+            fused,
+            index,
+            meaning_records,
+            min(meaning_chars, ceiling - packet.chars),
+        )
     return by_seat(packet, fused)
 
 
-def linked_packet(ordered: list[Candidate], anchored: bool, budget: int, message: str, index: UserIndex, lead_anchored: bool = False) -> Packet:
-    packet = assemble(ordered, anchored, budget - LINK_RESERVE, message, lead_anchored)
+def linked_packet(
+    ordered: list[Candidate],
+    anchored: bool,
+    budget: int,
+    message: str,
+    index: UserIndex,
+    lead_anchored: bool = False,
+) -> Packet:
+    packet = assemble(
+        ordered, anchored, budget - LINK_RESERVE, message, lead_anchored
+    )
     reached = link_hop(index, packet.records, budget)
     if not reached:
         return assemble(ordered, anchored, budget, message, lead_anchored)
     return Packet(records=packet.records + reached, focused=packet.focused)
 
 
-def assemble(ordered: list[Candidate], anchored: bool, budget: int, message: str, lead_anchored: bool = False) -> Packet:
+def assemble(
+    ordered: list[Candidate],
+    anchored: bool,
+    budget: int,
+    message: str,
+    lead_anchored: bool = False,
+) -> Packet:
     if message:
         focused = identifier_focus(message, ordered)
         if focused:
             held = {cand.pair.pair_id for cand in focused}
-            kept = admit([cand for cand in ordered if cand.pinned and cand.pair.pair_id not in held], budget, focused)
-            return Packet(records=sorted(kept, key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id)), focused=True)
+            kept = admit(
+                [
+                    cand
+                    for cand in ordered
+                    if cand.pinned and cand.pair.pair_id not in held
+                ],
+                budget,
+                focused,
+            )
+            return Packet(
+                records=sorted(
+                    kept,
+                    key=lambda cand: (cand.pair.timestamp, cand.pair.pair_id),
+                ),
+                focused=True,
+            )
     thread = leading_thread(ordered, lead_anchored)
     if thread:
-        return Packet(records=arc_order(value_closure(ordered, thread, budget)), focused=True)
+        return Packet(
+            records=arc_order(value_closure(ordered, thread, budget)),
+            focused=True,
+        )
     lead = anchored_thread(ordered)
     if lead:
         names = {cand.pair.pair_id for cand in lead}
         floor = DUAL_SHARE * ordered[0].score
-        held = admit([cand for cand in ordered if cand.pair.pair_id not in names and cand.score >= floor], budget, lead)
-        return Packet(records=arc_order(value_closure(ordered, held, budget)), focused=True)
+        held = admit(
+            [
+                cand
+                for cand in ordered
+                if cand.pair.pair_id not in names and cand.score >= floor
+            ],
+            budget,
+            lead,
+        )
+        return Packet(
+            records=arc_order(value_closure(ordered, held, budget)),
+            focused=True,
+        )
     if not anchored:
         ordered = ordered[:UNANCHORED_MAX_RECORDS]
     admitted = admit(ordered, budget)
     top = max((cand.score for cand in admitted), default=0.0)
-    admitted.sort(key=lambda cand: (relevance_band(cand.score, top), cand.pair.timestamp, cand.pair.pair_id))
+    admitted.sort(
+        key=lambda cand: (
+            relevance_band(cand.score, top),
+            cand.pair.timestamp,
+            cand.pair.pair_id,
+        )
+    )
     return Packet(records=arc_order(admitted))
 
 
-def render_records(packet: Packet, labels: dict[str, str] | None = None) -> str:
+def render_records(
+    packet: Packet, labels: dict[str, str] | None = None
+) -> str:
     marks = labels if labels is not None else packet.labels()
     lines: list[str] = []
     for cand in packet.records:
         pair = cand.pair
-        lines.append(f"[{marks[pair.pair_id]}]" + (f" pair_id={pair.pair_id}" if handed_out(pair.pair_id) else "") + f" time={pair.timestamp}")
-        lines.append(f"User: {pair.prompt.strip()}")
+        lines.append(
+            f'[{marks[pair.pair_id]}]'
+            + (f' pair_id={pair.pair_id}' if handed_out(pair.pair_id) else '')
+            + f' time={pair.timestamp}'
+        )
+        lines.append(f'User: {pair.prompt.strip()}')
         if pair.response.strip():
-            lines.append(f"Assistant: {pair.response.strip()}")
-        lines.append("")
-    return "\n".join(lines).strip()
+            lines.append(f'Assistant: {pair.response.strip()}')
+        lines.append('')
+    return '\n'.join(lines).strip()
 
 
 def memory_entry(cand: Candidate, mark: str) -> str:
     pair = cand.pair
-    entry = {"mark": mark}
+    entry = {'mark': mark}
     if handed_out(pair.pair_id):
-        entry["pairID"] = pair.pair_id
-    entry["timestamp"] = pair.timestamp
-    entry["user"] = pair.prompt.strip()
+        entry['pairID'] = pair.pair_id
+    entry['timestamp'] = pair.timestamp
+    entry['user'] = pair.prompt.strip()
     if pair.response.strip():
-        entry["ditto"] = pair.response.strip()
+        entry['ditto'] = pair.response.strip()
     return json.dumps(entry, ensure_ascii=False)
 
 
-def memory_context(packet: Packet, labels: dict[str, str] | None = None) -> str:
+def memory_context(
+    packet: Packet, labels: dict[str, str] | None = None
+) -> str:
     marks = labels if labels is not None else packet.labels()
-    entries = ",\n".join(memory_entry(cand, marks[cand.pair.pair_id]) for cand in packet.records)
-    return RECORDS_HEADER + '\n{"longTerm": {"memories": [\n' + entries + "\n]}}"
+    entries = ',\n'.join(
+        memory_entry(cand, marks[cand.pair.pair_id]) for cand in packet.records
+    )
+    return (
+        RECORDS_HEADER + '\n{"longTerm": {"memories": [\n' + entries + '\n]}}'
+    )
 
 
-def compose(packet: Packet, message: str, precursor: str = "", labels: dict[str, str] | None = None) -> str:
+def compose(
+    packet: Packet,
+    message: str,
+    precursor: str = '',
+    labels: dict[str, str] | None = None,
+) -> str:
     if not packet.records:
         return message
-    parts = [memory_context(packet, labels), ""]
+    parts = [memory_context(packet, labels), '']
     if precursor:
-        parts += [precursor, ""]
+        parts += [precursor, '']
     parts += [QUESTION_HEADER, message]
-    return "\n".join(parts)
+    return '\n'.join(parts)
 
 
 def with_kept(packet: Packet, kept: list[Candidate]) -> Packet:
@@ -292,16 +467,25 @@ def with_kept(packet: Packet, kept: list[Candidate]) -> Packet:
 
 
 BEST_KEPT = 2
-QUOTED_REASON = "q:"
+QUOTED_REASON = 'q:'
 
 
 def with_best(packet: Packet, ordered: list[Candidate], budget: int) -> Packet:
-    best = sorted((cand for cand in ordered if any(reason.startswith(QUOTED_REASON) for reason in cand.reasons)), key=lambda cand: -cand.score)[:BEST_KEPT]
+    best = sorted(
+        (
+            cand
+            for cand in ordered
+            if any(reason.startswith(QUOTED_REASON) for reason in cand.reasons)
+        ),
+        key=lambda cand: -cand.score,
+    )[:BEST_KEPT]
     held = {cand.pair.pair_id for cand in packet.records}
     missing = [cand for cand in best if cand.pair.pair_id not in held]
     if not missing:
         return packet
-    kept = {cand.pair.pair_id for cand in best} | {cand.pair.pair_id for cand in packet.records if cand.pinned}
+    kept = {cand.pair.pair_id for cand in best} | {
+        cand.pair.pair_id for cand in packet.records if cand.pinned
+    }
     records = packet.records + missing
     while sum(record_size(cand) for cand in records) > budget:
         spare = [cand for cand in records if cand.pair.pair_id not in kept]
