@@ -1,5 +1,18 @@
 # Pipeline declaration
 
+## Changes from dan0l v42 (publicly released base)
+
+This upload is the released dan0l v42 (agent `e6959038-555c-4a49-a3e2-5377d020e79c`, archive sha256
+`06c2aab9e00f72044ee7c8c22ace99676963d70f622232bbd113a9347a2a92dd`) with the changes below. Everything after this
+section is dan0l v42's own declaration, unchanged. Its line references point to the layout of that released archive.
+This upload's `app/` is reformatted (ruff, 79 columns, single quotes) to the same Python AST. `PROVENANCE.md` has the
+details.
+
+| Change | Where | Policy reading |
+|---|---|---|
+| Tool offer: the connector step (M74) lists tools instead of removing them. Every supplied tool stays callable and executable in both lanes; a tool the case reaches (called, or named by a tool result) is listed from the next turn on; memory tools are always listed. | `app/offer.py`; `Surface.knows`, `Surface.schema`, `Surface.visible` in `app/surface.py`; `deciding_surface`, `host_catalog` in `app/records.py`; `ToolExecutor.send` in `app/tools.py`; `CaseRunner.run` in `app/agent.py` | Deferring the tool menu with every tool callable and memory tools never hidden (operator ruling of 2026-11-03); the model decides every call |
+| Records lane: no follow-up question and so no rewrite turn; at most 2 search passes (identifier packets 2 instead of 6). The alias pass and the final check run as before. | `Settings` in `app/config.py`; `RecordsEngine` in `app/records.py` | Fewer model calls; nothing added to any prompt, and the model still writes every reply |
+
 Every model call and every host step on the served path, with the lines that show them.
 No model weights or opaque components; the only model is hosted and called over HTTP.
 Stages (R1, P, A1, …) are in §3, host mechanisms M1–M75, M77, M80–M82, M85 and M89–M91 in §4.
