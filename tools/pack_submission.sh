@@ -27,6 +27,21 @@ if [ -f "$TREE/LICENSE" ]; then
 fi
 cp -r "$TREE/app" "$STAGE/app"
 find "$STAGE" -name __pycache__ -type d -prune -exec rm -rf {} +
+# FORMAT=1: ship app/ in our own house style (ruff format, 79 columns, single quotes). The tree in git keeps
+# the base's layout so practice trace hooks still apply; the packed code must parse to the same AST.
+if [ -n "${FORMAT:-}" ]; then
+  /home/bittensor/ditto/repos/ditto-subnet/.venv/bin/ruff format --quiet --line-length 79 \
+    --config "format.quote-style='single'" "$STAGE/app"
+  python3 - "$TREE/app" "$STAGE/app" <<'PY'
+import ast, pathlib, sys
+a, b = map(pathlib.Path, sys.argv[1:3])
+bad = [str(f.relative_to(a)) for f in sorted(a.rglob("*.py"))
+       if ast.dump(ast.parse(f.read_text())) != ast.dump(ast.parse((b / f.relative_to(a)).read_text()))]
+if bad:
+    sys.exit(f"formatting changed the AST of {bad}; not packing")
+print("formatted app/: AST identical to the tree")
+PY
+fi
 if grep -rIl -E 'sk-or-v1-|sk-[A-Za-z0-9]{32,}|BEGIN (RSA|OPENSSH|EC) PRIVATE' "$STAGE"; then
   echo "secret-looking content found, not packing" >&2
   exit 1
