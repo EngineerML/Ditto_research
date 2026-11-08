@@ -27,11 +27,12 @@ if [ -f "$TREE/LICENSE" ]; then
 fi
 cp -r "$TREE/app" "$STAGE/app"
 find "$STAGE" -name __pycache__ -type d -prune -exec rm -rf {} +
-# FORMAT=1: ship app/ in our own house style (ruff format, 79 columns, single quotes). The tree in git keeps
-# the base's layout so practice trace hooks still apply; the packed code must parse to the same AST.
+# FORMAT=1: ship app/ in our own house style (ruff format; FORMAT_LINE columns, FORMAT_QUOTE quotes, default
+# 79 / single). The tree in git keeps the base's layout so practice trace hooks still apply; the packed code must
+# parse to the same AST.
 if [ -n "${FORMAT:-}" ]; then
-  /home/bittensor/ditto/repos/ditto-subnet/.venv/bin/ruff format --quiet --line-length 79 \
-    --config "format.quote-style='single'" "$STAGE/app"
+  /home/bittensor/ditto/repos/ditto-subnet/.venv/bin/ruff format --quiet --line-length "${FORMAT_LINE:-79}" \
+    --config "format.quote-style='${FORMAT_QUOTE:-single}'" "$STAGE/app"
   python3 - "$TREE/app" "$STAGE/app" <<'PY'
 import ast, pathlib, sys
 a, b = map(pathlib.Path, sys.argv[1:3])

@@ -5,7 +5,7 @@
 This upload is the released dan0l v42 (agent `e6959038-555c-4a49-a3e2-5377d020e79c`, archive sha256
 `06c2aab9e00f72044ee7c8c22ace99676963d70f622232bbd113a9347a2a92dd`) with the changes below. Everything after this
 section is dan0l v42's own declaration, unchanged. Its line references point to the layout of that released archive.
-This upload's `app/` is reformatted (ruff, 79 columns, single quotes) to the same Python AST. `PROVENANCE.md` has the
+This upload's `app/` is reformatted (ruff, 88 columns, double quotes) to the same Python AST. `PROVENANCE.md` has the
 details.
 
 | Change | Where | Policy reading |

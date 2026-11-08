@@ -19,7 +19,7 @@ Tuning fields can be overridden with `HARNESS_<FIELD>` environment variables for
 path sets them, so the defaults above are what runs.
 
 ## Layout
-`app/` is formatted with ruff (79 columns, single quotes). Every file parses to the same Python AST as our working
+`app/` is formatted with ruff (88 columns, double quotes). Every file parses to the same Python AST as our working
 tree, so the formatting changes no behaviour. The line references in dan0l v42's declaration below point to the
 original layout of the released archive named above.
 
