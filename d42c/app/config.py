@@ -48,16 +48,16 @@ class Settings:
     meaning_chars: int = 6000
     search_record_chars: int = 7000
     search_long_records: int = 2
-    search_passes: int = 5
+    search_passes: int = 2
     search_temperature: float = 0.7
     short_max_chars: int = 30000
     short_effort: str = "medium"
     short_max_tokens: int = 12000
     story_max_chars: int = 30000
     story_min_density: int = 3
-    identifier_search_passes: int = 6
+    identifier_search_passes: int = 2
     alias_pass: bool = True
-    follow_up: bool = True
+    follow_up: bool = False
     final_check: bool = True
 
     @classmethod
