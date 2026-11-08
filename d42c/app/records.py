@@ -279,7 +279,11 @@ def pin(ordered: list[Candidate], pins: list[str], pairs_by_id: dict[str, Any]) 
 
 
 class RecordsEngine:
-    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, long_packet_chars: int, meaning_records: int, meaning_chars: int, search_record_chars: int, search_long_records: int, search_passes: int, search_temperature: float, search_seed: int, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None, file_replies: dict[str, asyncio.Future[EarlierReply | None]] | None = None) -> None:
+    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, long_packet_chars: int, meaning_records: int, meaning_chars: int, search_record_chars: int, search_long_records: int, search_passes: int, search_temperature: float, search_seed: int, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None, file_replies: dict[str, asyncio.Future[EarlierReply | None]] | None = None, identifier_search_passes: int = IDENTIFIER_SEARCH_PASSES, alias_pass: bool = True, follow_up: bool = True, final_check: bool = True) -> None:
+        self.identifier_search_passes = identifier_search_passes
+        self.alias_pass = alias_pass
+        self.follow_up = follow_up
+        self.final_check = final_check
         self.llm = llm
         self.executor = executor
         self.memory = memory
@@ -391,7 +395,7 @@ class RecordsEngine:
         kept, note, asked = await self.search_pass(req, finder, index, question, pass_deadline, outcome, 1, None, None)
         first_took = time.monotonic() - started
         later: list[int] = []
-        passes = max(self.search_passes, IDENTIFIER_SEARCH_PASSES) if short else self.search_passes
+        passes = max(self.search_passes, self.identifier_search_passes) if short else self.search_passes
         while len(later) + 1 < passes:
             later.append(len(later) + 2)
         if later and pass_deadline - time.monotonic() < first_took:
@@ -544,7 +548,7 @@ class RecordsEngine:
             return await self.converse(req, follower, finder, FILE_REPLY_EFFORT, max_tokens, deadline, outcome, decline=decline)
         try:
             composed = compose(packet, req.user_input, precursor=block)
-            alias = await alias_note(self.llm, self.tally, outcome, system_prompt(req.system_prompt), compose(packet, req.user_input), asked_names(req.user_input), index, packet.labels(), deadline, ALIAS_EFFORT) if index is not None and not statement else ""
+            alias = await alias_note(self.llm, self.tally, outcome, system_prompt(req.system_prompt), compose(packet, req.user_input), asked_names(req.user_input), index, packet.labels(), deadline, ALIAS_EFFORT) if index is not None and not statement and self.alias_pass else ""
             if alias:
                 composed = compose(packet, req.user_input, precursor="\n\n".join(part for part in (block, alias) if part))
             named = names_a_value(index, self.anchors, req.user_input) or guide_records.asks_leg(req.user_input)
@@ -634,6 +638,8 @@ class RecordsEngine:
                         question = ""
                         if skip:
                             outcome.events.append(f"follow-up question skipped: {skip}")
+                        elif not self.follow_up:
+                            outcome.events.append("follow-up question skipped: off")
                         elif turns_left >= 1 and deadline - time.monotonic() >= FOLLOW_UP_MIN_SECONDS:
                             question = await self.follow_up_question(list(messages), result.content, "low" if retried_length or closing_asked else effort, deadline, outcome, follow_up_brief(req.user_input, decline, withdrawn))
                         else:
@@ -702,7 +708,7 @@ class RecordsEngine:
         return outcome
 
     def check_due(self, path: bool, result: ChatResult, turns_left: int, deadline: float) -> bool:
-        return path and bool(result.content.strip()) and result.finish_reason != "length" and turns_left >= 1 and deadline - time.monotonic() >= FINAL_CHECK_MIN_SECONDS
+        return path and self.final_check and bool(result.content.strip()) and result.finish_reason != "length" and turns_left >= 1 and deadline - time.monotonic() >= FINAL_CHECK_MIN_SECONDS
 
     def ask_check(self, messages: list[dict[str, Any]], outcome: Outcome, message: str) -> None:
         messages.append({"role": "assistant", "content": outcome.content})

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 
 def _env(name: str, default: str = "") -> str:
@@ -55,10 +55,14 @@ class Settings:
     short_max_tokens: int = 12000
     story_max_chars: int = 30000
     story_min_density: int = 3
+    identifier_search_passes: int = 6
+    alias_pass: bool = True
+    follow_up: bool = True
+    final_check: bool = True
 
     @classmethod
     def from_env(cls) -> "Settings":
-        return cls(
+        settings = cls(
             provider=_env("DITTOBENCH_PROVIDER", "openrouter").lower(),
             model=_env("DITTOBENCH_MODEL", "openai/gpt-oss-20b"),
             openrouter_api_key=_env("OPENROUTER_API_KEY"),
@@ -70,3 +74,24 @@ class Settings:
             db_path=_env("DITTOBENCH_DB", "/tmp/dittobench.db"),
             inference_base_url=_env("DITTOBENCH_INFERENCE_BASE_URL"),
         )
+        # HARNESS_<FIELD> overrides one of the tuning fields; unset keeps the default above.
+        changes: dict[str, object] = {}
+        for name in TUNABLE:
+            raw = _env("HARNESS_" + name.upper())
+            if not raw:
+                continue
+            default = getattr(settings, name)
+            if isinstance(default, bool):
+                changes[name] = raw.lower() not in {"0", "false", "no", "off"}
+            elif isinstance(default, int):
+                changes[name] = int(raw)
+            else:
+                changes[name] = raw
+        return replace(settings, **changes) if changes else settings
+
+
+TUNABLE = (
+    "packet_char_budget", "long_packet_chars", "max_model_turns", "max_output_tokens", "records_reasoning_effort",
+    "action_reasoning_effort", "short_effort", "short_max_chars", "story_max_chars", "meaning_records", "meaning_chars",
+    "search_passes", "identifier_search_passes", "alias_pass", "follow_up", "final_check",
+)
