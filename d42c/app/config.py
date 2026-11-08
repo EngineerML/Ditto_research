@@ -57,6 +57,7 @@ class Settings:
     story_min_density: int = 3
     identifier_search_passes: int = 2
     alias_pass: bool = True
+    alias_names_only: bool = True
     follow_up: bool = False
     final_check: bool = True
 
@@ -93,5 +94,5 @@ class Settings:
 TUNABLE = (
     "packet_char_budget", "long_packet_chars", "max_model_turns", "max_output_tokens", "records_reasoning_effort",
     "action_reasoning_effort", "short_effort", "short_max_chars", "story_max_chars", "meaning_records", "meaning_chars",
-    "search_passes", "identifier_search_passes", "alias_pass", "follow_up", "final_check",
+    "search_passes", "identifier_search_passes", "alias_pass", "alias_names_only", "follow_up", "final_check",
 )

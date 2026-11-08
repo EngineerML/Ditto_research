@@ -279,9 +279,10 @@ def pin(ordered: list[Candidate], pins: list[str], pairs_by_id: dict[str, Any]) 
 
 
 class RecordsEngine:
-    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, long_packet_chars: int, meaning_records: int, meaning_chars: int, search_record_chars: int, search_long_records: int, search_passes: int, search_temperature: float, search_seed: int, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None, file_replies: dict[str, asyncio.Future[EarlierReply | None]] | None = None, identifier_search_passes: int = IDENTIFIER_SEARCH_PASSES, alias_pass: bool = True, follow_up: bool = True, final_check: bool = True) -> None:
+    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, long_packet_chars: int, meaning_records: int, meaning_chars: int, search_record_chars: int, search_long_records: int, search_passes: int, search_temperature: float, search_seed: int, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None, file_replies: dict[str, asyncio.Future[EarlierReply | None]] | None = None, identifier_search_passes: int = IDENTIFIER_SEARCH_PASSES, alias_pass: bool = True, follow_up: bool = True, final_check: bool = True, alias_names_only: bool = True) -> None:
         self.identifier_search_passes = identifier_search_passes
         self.alias_pass = alias_pass
+        self.alias_names_only = alias_names_only
         self.follow_up = follow_up
         self.final_check = final_check
         self.llm = llm
@@ -363,6 +364,19 @@ class RecordsEngine:
                 outcome.host_calls += 1
                 outcome.events.append(f"recall turn {call.name}, tool endpoint outcome {state}")
         return pins, recall_receipts(served)
+
+    def alias_view(self, packet: Packet, message: str) -> str:
+        # The alias pass keeps a name only when one record holds both it and the asked name, so it reads the records
+        # that mention an asked name, under the packet's own marks; the deciding call still reads the whole packet.
+        if not self.alias_names_only:
+            return compose(packet, message)
+        from .memory.aliases import word_pattern
+
+        patterns = [word_pattern(name) for name in asked_names(message)]
+        kept = [cand for cand in packet.records if any(p.search(cand.pair.prompt + "\n" + cand.pair.response) for p in patterns)]
+        if not kept:
+            return compose(packet, message)
+        return compose(Packet(records=kept), message, labels=packet.labels())
 
     def holds_long(self, packet: Packet) -> bool:
         long_records = sum(1 for cand in packet.records if len(cand.pair.prompt) + len(cand.pair.response) >= self.search_record_chars)
@@ -548,7 +562,7 @@ class RecordsEngine:
             return await self.converse(req, follower, finder, FILE_REPLY_EFFORT, max_tokens, deadline, outcome, decline=decline)
         try:
             composed = compose(packet, req.user_input, precursor=block)
-            alias = await alias_note(self.llm, self.tally, outcome, system_prompt(req.system_prompt), compose(packet, req.user_input), asked_names(req.user_input), index, packet.labels(), deadline, ALIAS_EFFORT) if index is not None and not statement and self.alias_pass else ""
+            alias = await alias_note(self.llm, self.tally, outcome, system_prompt(req.system_prompt), self.alias_view(packet, req.user_input), asked_names(req.user_input), index, packet.labels(), deadline, ALIAS_EFFORT) if index is not None and not statement and self.alias_pass else ""
             if alias:
                 composed = compose(packet, req.user_input, precursor="\n\n".join(part for part in (block, alias) if part))
             named = names_a_value(index, self.anchors, req.user_input) or guide_records.asks_leg(req.user_input)
