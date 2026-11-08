@@ -22,6 +22,7 @@ from .memory.retrieval import QUOTE_RE, Candidate, UserIndex, asked_part, identi
 from .memory.same_entries import EarlierReply, SameEntries
 from .memory.topic import typo_of
 from .memory.worksheet import render_worksheet
+from .offer import OFFER, listed_extra
 from .packet import QUESTION_HEADER, Packet, build_packet, compose, identifier_focus
 from .protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 from .tools import BLOCKED, UNHELD_IDS_NOTE, MemoryTools, ToolExecutor, openai_tools
@@ -121,7 +122,8 @@ def has_note(messages: list[dict[str, Any]]) -> bool:
 def deciding_surface(tools: list[ToolDefinition], finder: RecordFinder | None = None) -> list[dict[str, Any]]:
     local = (CALCULATE_TOOL, finder.tool) if finder is not None else (CALCULATE_TOOL,)
     names = {tool.name for tool in tools}
-    return openai_tools(tools) + [tool for tool in local if tool["function"]["name"] not in names]
+    # The listed tools, then any unlisted tool the case has reached (called, or named by a tool result).
+    return openai_tools(list(tools) + listed_extra(names)) + [tool for tool in local if tool["function"]["name"] not in names]
 
 
 def first_line(text: str, limit: int = SEARCH_FIRST_LINE_CHARS) -> str:
@@ -148,7 +150,10 @@ def names_a_value(index: UserIndex | None, anchors: dict[str, tuple[str, float]]
 
 
 def host_catalog(tools: list[ToolDefinition]) -> dict[str, ToolDefinition]:
-    return dict((tool.name, tool) for tool in tools if tool.name not in MEMORY_TOOL_NAMES)
+    # Every tool the request supplied, listed or not, is callable.
+    offer = OFFER.get()
+    supplied = list(offer.definitions.values()) if offer is not None else []
+    return dict((tool.name, tool) for tool in (*supplied, *tools) if tool.name not in MEMORY_TOOL_NAMES)
 
 
 def offered_memory(tools: list[ToolDefinition]) -> frozenset[str]:

@@ -19,6 +19,7 @@ from .memory.coverage import unnamed_people
 from .memory.embedding import Embedder, EmbeddingError, dense_order, fuse, record_text, text_key
 from .memory.retrieval import Candidate, Retriever, UserIndex, asked_part
 from .memory.same_entries import EarlierReply
+from .offer import OFFER, Offer
 from .packet import build_packet, held_identifier, identifier_focus, with_best
 from .protocol import MemoryPair, RunRequest, RunResponse
 from .records import RecordsEngine
@@ -112,7 +113,10 @@ class CaseRunner:
         return await topic.answer(req, found, pairs, deadline, outcome)
 
     async def run(self, req: RunRequest) -> RunResponse:
+        # The connector step decides which tools are listed; every supplied tool stays callable (app/offer.py).
+        supplied = list(req.tools)
         req = linked_tools(req)
+        offer_token = OFFER.set(Offer(supplied, [tool.name for tool in req.tools]))
         started = time.monotonic()
         deadline = started + self.settings.case_budget_seconds
         CaseRunner.active_cases += 1
@@ -171,6 +175,7 @@ class CaseRunner:
             raise
         finally:
             CaseRunner.active_cases -= 1
+            OFFER.reset(offer_token)
             if llm is not None and llm is not self._default_llm:
                 await llm.aclose()
         latency_ms = int((time.monotonic() - started) * 1000)

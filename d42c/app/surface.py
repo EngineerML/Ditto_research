@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from .lane import CLAUSE_SPLIT, GENERIC_NAME_WORDS, LOOSE_SYNONYMS, READ_SYNONYMS, VERB_INITIAL, reads_state, singular, tokens
+from .offer import OFFER, listed_extra
 from .protocol import ToolDefinition
 from .route import Route, order_by_route
 from .tools import openai_tools
@@ -53,14 +54,18 @@ class Surface:
         self.ordered = order_by_route(presentation_order(self.catalog, request), route)
 
     def knows(self, name: str) -> bool:
-        return name in self.by_name
+        # Every tool the request supplied is callable, listed or not.
+        offer = OFFER.get()
+        return name in self.by_name or (offer is not None and offer.supplies(name))
 
     def schema(self, name: str) -> dict[str, Any]:
-        tool = self.by_name.get(name)
+        offer = OFFER.get()
+        tool = self.by_name.get(name) or (offer.definition(name) if offer is not None else None)
         return tool.parameters if tool is not None and isinstance(tool.parameters, dict) else {}
 
     def required(self, name: str) -> list[str]:
         return list(self.schema(name).get("required") or [])
 
     def visible(self) -> list[dict[str, Any]]:
-        return openai_tools(self.ordered)
+        # The listed tools, then any unlisted tool the case has reached (called, or named by a tool result).
+        return openai_tools(self.ordered + listed_extra(set(self.by_name)))
