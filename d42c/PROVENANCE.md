@@ -7,12 +7,13 @@ Building on a released agent is permitted. `DECLARATION.md` is dan0l v42's own d
 changes in a section at the top.
 
 ## Changes from dan0l v42
-113 lines added and 13 removed, in 6 files under `app/`.
+128 lines added and 13 removed, in 6 files under `app/`.
 
 | Change | Files | Lines |
 |---|---|---|
 | Tool offer: the connector step lists tools instead of removing them. Every supplied tool stays callable and executable in both lanes. A tool the case reaches (called, or named in a tool result such as a tool search) is listed from the next turn on. Memory tools are always listed. | `app/offer.py` (new), `app/agent.py`, `app/surface.py`, `app/records.py`, `app/tools.py` | +74 / −5 |
-| Records lane cost: no follow-up question (and so no rewrite turn); 2 search passes instead of 5 (identifier packets 2 instead of 6). The alias pass and the final check are unchanged. | `app/config.py`, `app/records.py`, `app/agent.py` | +39 / −8 |
+| Records lane cost: no follow-up question (and so no rewrite turn); 2 search passes instead of 5 (identifier packets 2 instead of 6). The final check is unchanged. | `app/config.py`, `app/records.py`, `app/agent.py` | +39 / −8 |
+| Alias pass input: the pass reads only the packet records that mention an asked name, under the packet's own record marks. It keeps an alias only when one record holds both the alias and the asked name, so the other records could not change its result. The deciding call still reads the whole packet. | `app/records.py` (`RecordsEngine.alias_view`), `app/config.py`, `app/agent.py` | +19 / −4 |
 
 Tuning fields can be overridden with `HARNESS_<FIELD>` environment variables for local practice. Nothing on the served
 path sets them, so the defaults above are what runs.
