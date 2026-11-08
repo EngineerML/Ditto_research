@@ -2,28 +2,24 @@ from __future__ import annotations
 
 import re
 
-HYPHEN = re.compile(r'(?<=[A-Za-z0-9])[‐‑]|[‐‑](?=[A-Za-z])')
-NO_BREAK_SPACE = re.compile('[\u00a0\u202f]')
-EMPHASIS = re.compile(r'(?<![\w*])\*\*(?=[^\s*])([^\n]*?[^\s*])\*\*(?![\w*])')
-CODE = re.compile(r'```.*?```|`[^`\n]*`', re.S)
-FIGURE = re.compile(r'[$€£]?\d[\d,]*(?:\.\d+)?%?')
+HYPHEN = re.compile(r"(?<=[A-Za-z0-9])[‐‑]|[‐‑](?=[A-Za-z])")
+NO_BREAK_SPACE = re.compile("[\u00a0\u202f]")
+EMPHASIS = re.compile(r"(?<![\w*])\*\*(?=[^\s*])([^\n]*?[^\s*])\*\*(?![\w*])")
+CODE = re.compile(r"```.*?```|`[^`\n]*`", re.S)
+FIGURE = re.compile(r"[$€£]?\d[\d,]*(?:\.\d+)?%?")
 
 
 def plain_hyphens(text: str) -> str:
-    return HYPHEN.sub('-', text)
+    return HYPHEN.sub("-", text)
 
 
 def plain_spaces(text: str) -> str:
-    return NO_BREAK_SPACE.sub(' ', text)
+    return NO_BREAK_SPACE.sub(" ", text)
 
 
 def unbold(match: re.Match[str]) -> str:
-    after = match.string[match.end() :]
-    if (
-        FIGURE.fullmatch(match.group(1))
-        and after[:1] in ('.', ',')
-        and after[1:].strip()
-    ):
+    after = match.string[match.end():]
+    if FIGURE.fullmatch(match.group(1)) and after[:1] in (".", ",") and after[1:].strip():
         return match.group(0)
     return match.group(1)
 
@@ -32,18 +28,18 @@ def plain_emphasis(text: str) -> str:
     parts: list[str] = []
     last = 0
     for code in CODE.finditer(text):
-        parts.append(EMPHASIS.sub(unbold, text[last : code.start()]))
+        parts.append(EMPHASIS.sub(unbold, text[last:code.start()]))
         parts.append(code.group(0))
         last = code.end()
     parts.append(EMPHASIS.sub(unbold, text[last:]))
-    return ''.join(parts)
+    return "".join(parts)
 
 
 def plain_type(text: str) -> str:
     return plain_emphasis(plain_spaces(plain_hyphens(plain_apostrophes(text))))
 
 
-APOSTROPHE = re.compile('[\u2018\u2019\u201b]')
+APOSTROPHE = re.compile("[\u2018\u2019\u201b]")
 
 
 def plain_apostrophes(text: str) -> str:

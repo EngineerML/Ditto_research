@@ -5,7 +5,7 @@ from typing import Any
 from pydantic import BaseModel, ConfigDict, Field
 
 
-LOCAL_PAIR_PREFIX = 'saved-'
+LOCAL_PAIR_PREFIX = "saved-"
 
 
 def handed_out(pair_id: str) -> bool:
@@ -13,18 +13,18 @@ def handed_out(pair_id: str) -> bool:
 
 
 class Wire(BaseModel):
-    model_config = ConfigDict(extra='allow', populate_by_name=True)
+    model_config = ConfigDict(extra="allow", populate_by_name=True)
 
 
 class ToolDefinition(Wire):
     name: str
-    description: str = ''
+    description: str = ""
     parameters: dict[str, Any] | None = None
 
 
 class RunRequest(Wire):
     case_id: str
-    system_prompt: str = ''
+    system_prompt: str = ""
     user_input: str
     tools: list[ToolDefinition] = Field(default_factory=list)
     tool_endpoint: str | None = None
@@ -33,14 +33,14 @@ class RunRequest(Wire):
 
 
 class ObservedToolCall(BaseModel):
-    model_config = ConfigDict(extra='forbid')
+    model_config = ConfigDict(extra="forbid")
     name: str
     args: dict[str, Any] = Field(default_factory=dict)
     hop: int = 0
 
 
 class RunResponse(BaseModel):
-    model_config = ConfigDict(extra='forbid')
+    model_config = ConfigDict(extra="forbid")
     final_text: str
     tool_calls: list[ObservedToolCall] = Field(default_factory=list)
     prompt_tokens: int = 0
@@ -50,29 +50,29 @@ class RunResponse(BaseModel):
 
     def wire(self) -> dict[str, Any]:
         body: dict[str, Any] = {
-            'final_text': self.final_text,
-            'tool_calls': [call.model_dump() for call in self.tool_calls],
-            'prompt_tokens': self.prompt_tokens,
-            'output_tokens': self.output_tokens,
-            'latency_ms': self.latency_ms,
+            "final_text": self.final_text,
+            "tool_calls": [call.model_dump() for call in self.tool_calls],
+            "prompt_tokens": self.prompt_tokens,
+            "output_tokens": self.output_tokens,
+            "latency_ms": self.latency_ms,
         }
         if self.answer is not None:
-            body['answer'] = self.answer.strip()
+            body["answer"] = self.answer.strip()
         return body
 
 
 class MemoryPair(Wire):
     pair_id: str
-    session_id: str = ''
-    timestamp: str = ''
-    prompt: str = ''
-    response: str = ''
+    session_id: str = ""
+    timestamp: str = ""
+    prompt: str = ""
+    response: str = ""
 
 
 class Subject(Wire):
     id: str
-    subject_text: str = ''
-    description_text: str = ''
+    subject_text: str = ""
+    description_text: str = ""
 
 
 class SubjectLink(Wire):
@@ -102,16 +102,11 @@ class ToolExecRequest(BaseModel):
 
 
 MEMORY_TOOL_NAMES = frozenset(
-    {
-        'search_memories',
-        'search_subjects',
-        'fetch_memories',
-        'search_memories_in_subjects',
-    }
+    {"search_memories", "search_subjects", "fetch_memories", "search_memories_in_subjects"}
 )
 
 
 def normalize_user_id(user_id: str | None) -> str:
     if user_id is None or not user_id.strip():
-        return 'default'
+        return "default"
     return user_id
