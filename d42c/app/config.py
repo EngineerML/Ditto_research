@@ -60,6 +60,7 @@ class Settings:
     alias_names_only: bool = True
     follow_up: bool = False
     final_check: bool = True
+    name_chain: bool = True
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -95,4 +96,5 @@ TUNABLE = (
     "packet_char_budget", "long_packet_chars", "max_model_turns", "max_output_tokens", "records_reasoning_effort",
     "action_reasoning_effort", "short_effort", "short_max_chars", "story_max_chars", "meaning_records", "meaning_chars",
     "search_passes", "identifier_search_passes", "alias_pass", "alias_names_only", "follow_up", "final_check",
+    "name_chain",
 )

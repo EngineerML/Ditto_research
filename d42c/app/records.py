@@ -14,6 +14,7 @@ from .answer import parse_slot, slot_match
 from .calc import CALCULATE_TOOL, run_calculate
 from .llm import LLM, ChatResult, LLMError, ToolCall
 from .memory.final_check import FINAL_CHECK_MIN_SECONDS, final_check_note
+from .memory.chain import chain_note, chain_pins, name_links
 from .memory.closest import closest_records
 from .memory.coverage import addressless_people, asked_names, card_pins, contact_sheet, given_names, nicknames, question_coverage, unnamed_note, unnamed_people
 from .memory.deliberation import NO_RECORD_REPLY, routed_no_record, shape_skip
@@ -279,7 +280,8 @@ def pin(ordered: list[Candidate], pins: list[str], pairs_by_id: dict[str, Any]) 
 
 
 class RecordsEngine:
-    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, long_packet_chars: int, meaning_records: int, meaning_chars: int, search_record_chars: int, search_long_records: int, search_passes: int, search_temperature: float, search_seed: int, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None, file_replies: dict[str, asyncio.Future[EarlierReply | None]] | None = None, identifier_search_passes: int = IDENTIFIER_SEARCH_PASSES, alias_pass: bool = True, follow_up: bool = True, final_check: bool = True, alias_names_only: bool = True) -> None:
+    def __init__(self, llm: LLM, executor: ToolExecutor, memory: MemoryTools, tally: TokenTally, *, max_turns: int, max_tokens: int, effort: str, recall_max_tokens: int, recall_effort: str, packet_chars: int, long_packet_chars: int, meaning_records: int, meaning_chars: int, search_record_chars: int, search_long_records: int, search_passes: int, search_temperature: float, search_seed: int, fused: list[str] | None = None, anchors: dict[str, tuple[str, float]] | None = None, file_replies: dict[str, asyncio.Future[EarlierReply | None]] | None = None, identifier_search_passes: int = IDENTIFIER_SEARCH_PASSES, alias_pass: bool = True, follow_up: bool = True, final_check: bool = True, alias_names_only: bool = True, name_chain: bool = True) -> None:
+        self.name_chain = name_chain
         self.identifier_search_passes = identifier_search_passes
         self.alias_pass = alias_pass
         self.alias_names_only = alias_names_only
@@ -526,6 +528,12 @@ class RecordsEngine:
         if carried:
             outcome.events.append(f"calls carried from the short path: {sum(1 for message in carried if message.get('role') == 'tool')} results")
             receipts = list(carried) + receipts
+        links = name_links(index, req.user_input) if self.name_chain and index is not None and not statement else []
+        if links:
+            # Records that tie another first name to the asked one go into the packet first, with the other name's own
+            # records; the note in decide names them and leaves the decision to the records.
+            pins = pins + [pid for pid in chain_pins(links) if pid not in pins and pid in pairs_by_id]
+            outcome.events.append(f"name chain: {', '.join(f'{link.name} - {link.other}' for link in links)}")
         packet = build_packet(pin(ordered, pins, pairs_by_id), anchored or bool(pins), self.packet_chars, req.user_input, index, self.fused, self.meaning_records, self.meaning_chars, self.long_packet_chars, kept=(cards := card_records(index, req.user_input)), lead_anchored=True)
         outcome.events.append(f"packet records={len(packet)} chars={packet.chars} pins={len(pins)}" + (f" card records of the asked person={len(cards)}" if cards else ""))
         return await self.decide(req, packet, receipts, deadline, outcome, index, statement)
@@ -546,7 +554,8 @@ class RecordsEngine:
         withdrawn = withdrawn_note(packet, index, req.user_input)
         if withdrawn:
             outcome.events.append("withdrawal in a record: note before the message")
-        block = "\n\n".join(part for part in (coverage, worksheet, tool_words, stays, unnamed, withdrawn, dated_sheet(index, req.user_input, packet, outcome)) if part)
+        chained = chain_note(name_links(index, req.user_input), packet.labels()) if self.name_chain and index is not None and not statement else ""
+        block = "\n\n".join(part for part in (coverage, worksheet, tool_words, stays, unnamed, chained, withdrawn, dated_sheet(index, req.user_input, packet, outcome)) if part)
         long_packet = packet.chars > self.long_packet_chars
         effort, max_tokens = "low" if long_packet else self.effort, self.max_tokens
         if long_packet:
