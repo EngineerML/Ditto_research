@@ -156,9 +156,14 @@ def family(case_id: str) -> str:
 def rehearse(args, out: Path) -> list[Path]:
     packs = out / "packs"
     packs.mkdir(parents=True, exist_ok=True)
-    subprocess.run(["go", "run", "./cmd/challenge", "rehearse", "-dir", str(args.dir), "-hotkey", TEST_HOTKEY,
-                    "-seeds", str(args.seeds), "-seed", str(args.seed), "-cases", str(args.cases),
-                    "-round-bench", str(args.round_bench), "-out-dir", str(packs)], cwd=DATAGEN_DIR, check=True)
+    if args.packs:
+        # Ready packs, e.g. a released miner generator's from tools/gen_pack_sandbox.sh: nothing is built here.
+        for src in sorted(Path(args.packs).glob("*.json")):
+            (packs / src.name).write_bytes(src.read_bytes())
+    else:
+        subprocess.run(["go", "run", "./cmd/challenge", "rehearse", "-dir", str(args.dir), "-hotkey", TEST_HOTKEY,
+                        "-seeds", str(args.seeds), "-seed", str(args.seed), "-cases", str(args.cases),
+                        "-round-bench", str(args.round_bench), "-out-dir", str(packs)], cwd=DATAGEN_DIR, check=True)
     paths = sorted(packs.glob("*.json"))
     if args.only:
         # Keep the whole haystack, so the agents read exactly what a round would seed, and ask only the
@@ -304,6 +309,7 @@ def main() -> int:
                     help="id=image-tag (ditto-harness:<tag>); repeat for each panel agent")
     ap.add_argument("--mock", action="store_true", help="free routing bench: fake model and embeddings, traces only")
     ap.add_argument("--dir", type=Path, default=HERE / "generator")
+    ap.add_argument("--packs", type=Path, help="run the packs (*.json) in this folder instead of rehearsing --dir")
     ap.add_argument("--seeds", type=int, default=1)
     ap.add_argument("--seed", type=int, default=1, help="first rehearsal seed")
     ap.add_argument("--cases", type=int, default=80)

@@ -1,0 +1,6592 @@
+{
+ "generated_at": "2026-11-09T17:19:11.388888Z",
+ "agent_id": "5e317887-7580-4a09-b27a-5846f96d66ae",
+ "status": "not_queued",
+ "artifact_release": {
+  "status": "awaiting_quorum",
+  "disclosure": "public",
+  "bench_version": null,
+  "score_quorum": 3,
+  "embargo_hours": 48,
+  "finalized_at": null,
+  "crowned_at": null,
+  "weight_confirmed_at": null,
+  "emission_confirmed_at": null,
+  "available_at": null,
+  "download_available": false
+ },
+ "admission_retry": null,
+ "validator_retry": null,
+ "ordinary_review": null,
+ "ath_review": null,
+ "submission_family": null,
+ "active_bench_version": 17,
+ "emission_bench_version": 17,
+ "score_bench_version": 17,
+ "score_count": 2,
+ "quorum": 3,
+ "score_floor": 0.9097116666666667,
+ "score_floor_agent_id": "ba2dc3fa-ab52-4635-8713-a15c83298ad0",
+ "score_floor_agent_name": "logan",
+ "score_floor_agent_version": 14,
+ "provisional_scores": [
+  {
+   "composite": 0.558469,
+   "raw_composite": 0.558469,
+   "token_usage": {
+    "accounting_version": 2,
+    "status": "complete",
+    "source": "model_proxy_provider_response",
+    "provider": "openrouter",
+    "profile_revision": "openrouter-route-6a097486af3c178d-v1",
+    "model": "openai/gpt-oss-20b",
+    "prompt_tokens": 3676369,
+    "prompt_bytes": 15997830,
+    "completion_tokens": 503271,
+    "total_tokens": 4179640,
+    "requests": 736,
+    "successes": 736,
+    "usage_available": 736,
+    "usage_unavailable": 0,
+    "provider_latency_ms": 1168007,
+    "ttft_status": "not_streamed"
+   },
+   "model_use": null,
+   "token_efficiency": {
+    "formula_version": "v7-quality-only-v1",
+    "baseline_id": null,
+    "baseline_prompt_tokens": null,
+    "baseline_completion_tokens": null,
+    "baseline_total_tokens": null,
+    "budget_percentile": 0.0,
+    "observed_prompt_tokens": 3676369,
+    "observed_completion_tokens": 503271,
+    "observed_total_tokens": 4179640,
+    "excess_ratio": 0.0,
+    "maximum_penalty": 0.0,
+    "minimum_multiplier": 1.0,
+    "multiplier": 1.0,
+    "raw_composite": 0.558469,
+    "adjusted_composite": 0.558469,
+    "penalty_applied": false,
+    "decision_reason": "v7_quality_only_contract"
+   },
+   "composite_breakdown": {
+    "formula": "(0.5 * tool_mean + 0.5 * memory_mean) * benchmark_quality_multiplier * token_efficiency_multiplier",
+    "tool_weight": 0.5,
+    "memory_weight": 0.5,
+    "base_accuracy": 0.974,
+    "benchmark_quality_multiplier": 0.5733767967145791,
+    "quality_factors": [
+     {
+      "key": "tool_efficiency",
+      "label": "Tool efficiency",
+      "metric": 1.0,
+      "multiplier": 1.0,
+      "audit_count": null,
+      "explanation": "Observed economy of tool use."
+     },
+     {
+      "key": "metamorphic_consistency",
+      "label": "Consistency",
+      "metric": 1.0,
+      "multiplier": null,
+      "audit_count": null,
+      "explanation": "Share of equivalent prompts with consistent outcomes."
+     },
+     {
+      "key": "memory_over_call",
+      "label": "Memory over-call",
+      "metric": 1.0,
+      "multiplier": 1.0,
+      "audit_count": null,
+      "explanation": "Avoidance of unnecessary memory-side actions."
+     },
+     {
+      "key": "conversational_sanity",
+      "label": "Conversational sanity",
+      "metric": 1.0,
+      "multiplier": null,
+      "audit_count": null,
+      "explanation": "Aggregate performance across conversational behavior slices."
+     },
+     {
+      "key": "other_quality_effects",
+      "label": "Other quality effects",
+      "metric": null,
+      "multiplier": 0.5733767967145791,
+      "audit_count": null,
+      "explanation": "Combined effect not separable in this run's stored telemetry; it reconciles the visible factors to the signed aggregate."
+     }
+    ],
+    "pre_token_composite": 0.558469,
+    "token_efficiency_multiplier": 1.0,
+    "token_penalty": 0.0,
+    "maximum_token_penalty": 0.0,
+    "final_composite": 0.558469
+   },
+   "dueling_breakdown": {
+    "formula": "gate x ((1 - w x |U|) x datagen + w x sum col)",
+    "season_id": "8f458bbe-f6e7-4f3b-974e-972a45bf47ea",
+    "season_index": 26088,
+    "datagen_raw": 0.974,
+    "datagen_gate": 0.8427,
+    "column_weight": 0.1,
+    "counted_columns": 5,
+    "datagen_share": 0.5,
+    "generator_sum": 0.1757142857142857,
+    "pre_gate_composite": 0.6627142857142857,
+    "composite": 0.5584693285714286,
+    "composite_stderr": 0.012080216929028215,
+    "priced_cost_applied_factor_bps": 8427,
+    "priced_cost_factor_bps": 8427,
+    "priced_cost_factor": 0.8427,
+    "priced_cost_posture": "enforce",
+    "priced_cost_result": "priced",
+    "priced_cost_window": "whole_run",
+    "other_gate_factor": 1.0,
+    "columns": [
+     {
+      "column_id": "c0",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 19.0,
+      "mean": 0.5428571428571428,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.054285714285714284
+     },
+     {
+      "column_id": "c1",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 7.0,
+      "mean": 0.2,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.020000000000000004
+     },
+     {
+      "column_id": "c2",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 8.5,
+      "mean": 0.24285714285714285,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.024285714285714285
+     },
+     {
+      "column_id": "c3",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 17.0,
+      "mean": 0.4857142857142857,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.04857142857142857
+     },
+     {
+      "column_id": "c4",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 10.0,
+      "mean": 0.2857142857142857,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.02857142857142857
+     }
+    ]
+   },
+   "v9_base": {
+    "bench_version": 17,
+    "score_gates": {
+     "rollout_mode": "enforce",
+     "model_use": {
+      "administered_cases": 175,
+      "eligible_cases": 175,
+      "successful_inference_cases": 175,
+      "missing_inference_cases": 0,
+      "observed_requests": 736,
+      "successful_requests": 736,
+      "request_coverage_bps": 10000,
+      "coverage_bps": 10000,
+      "threshold_bps": 1,
+      "result": "passed",
+      "factor_bps": 10000
+     },
+     "authoritative_tool": {
+      "expected_executions": 56,
+      "matched_executions": 53,
+      "missing_executions": 3,
+      "unexpected_executions": 36,
+      "observed_executions": 89,
+      "coverage_bps": 9464,
+      "threshold_bps": 1,
+      "result": "passed",
+      "factor_bps": 10000
+     }
+    }
+   },
+   "calibration_brier": null,
+   "calibration_n": null,
+   "seed": "3983981224058683745",
+   "run_size": "full",
+   "bench_version": 17,
+   "datagen_version": null,
+   "seed_source": "on_chain",
+   "dataset_sha256": "406724401499522379d498a466e0734f06beedf37d8830e14717d0c979db0e5a",
+   "accepted_at": "2026-11-07T17:48:35.078786Z",
+   "reproduction_command": null,
+   "verification_command": null,
+   "case_results": [
+    {
+     "category": "web_recovery_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 8297,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "web_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6483,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v13_restraint_email",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5577,
+     "notes": null
+    },
+    {
+     "category": "v13_restraint_calendar",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5381,
+     "notes": null
+    },
+    {
+     "category": "link_chain_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 12447,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "discovery_font_set",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 12352,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world_contact_research_email_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 10292,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "connector_linked_action",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5826,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_negation_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4565,
+     "notes": null
+    },
+    {
+     "category": "discovery_accent_set",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 11273,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5347,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "world_memory_update",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3173,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_named_product",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2521,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v10_state_dependent_routing",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2966,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "decoy_ticket_lookup_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5994,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "connector_unlinked_probe",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2241,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_state_dependent_email",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3574,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "schedules_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5313,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v13_restraint_email",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3065,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5134,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "world_theme_discover_set",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6150,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "decoy_sidebar_color_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2349,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "multi_subject_scope",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3861,
+     "notes": null
+    },
+    {
+     "category": "world_business_workflow",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 10056,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_negation_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4579,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "discovery_accent_set",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 10736,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "route_memory_not_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2033,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_named_product",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4130,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_calendar",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3004,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world_memory_delete",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3903,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "tool_registry_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2057,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v13_mutation_follow_up_read",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 9033,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "multi_web_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 10327,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "connector_named_product",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3004,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_email",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4952,
+     "notes": null
+    },
+    {
+     "category": "world_link_chain_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 9970,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "decoy_stock_quote_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6105,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "world_memory_delete",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5004,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_state_dependent_calendar",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3825,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world_contact_research_email_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5966,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v13_restraint_negation_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 1912,
+     "notes": null
+    },
+    {
+     "category": "decoy_file_convert_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5673,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "connector_linked_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5167,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "decoy_docs_search_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4900,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "stale_context_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4890,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_action",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4289,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_action",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4593,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_unlinked_probe",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2403,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v10_state_dependent_routing",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6007,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_mutation_follow_up_read",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2548,
+     "notes": null
+    },
+    {
+     "category": "injection-classic",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 11177,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 27113,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 30563,
+     "notes": null
+    },
+    {
+     "category": "absence-stale-removed",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7276,
+     "notes": null
+    },
+    {
+     "category": "absence-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5593,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4996,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 12636,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7548,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-disagree",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9610,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 21011,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6396,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4996,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-cross-user",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 15421,
+     "notes": null
+    },
+    {
+     "category": "injection-data-inside-envelope",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 12574,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 12039,
+     "notes": null
+    },
+    {
+     "category": "conversational-chitchat",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": true,
+     "latency_ms": 6105,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10155,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 26403,
+     "notes": null
+    },
+    {
+     "category": "conversational-declarative",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1281,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 7574,
+     "notes": null
+    },
+    {
+     "category": "conversational-declarative",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1992,
+     "notes": null
+    },
+    {
+     "category": "world-story-lesson-claims",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7840,
+     "notes": null
+    },
+    {
+     "category": "conversational-chitchat",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": true,
+     "latency_ms": 6515,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5992,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-hypothetical",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9752,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 6706,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4621,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4041,
+     "notes": null
+    },
+    {
+     "category": "absence-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4708,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5558,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7760,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-contact",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3736,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 36773,
+     "notes": null
+    },
+    {
+     "category": "declarative-behavior",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1588,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 11466,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 19091,
+     "notes": null
+    },
+    {
+     "category": "absence-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 44306,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7072,
+     "notes": null
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3571,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10527,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8315,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4575,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5433,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10732,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 19661,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 19934,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 13033,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5485,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-invoice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5925,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8584,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7251,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8234,
+     "notes": null
+    },
+    {
+     "category": "declarative-behavior",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1057,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3265,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3693,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5684,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 30735,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3736,
+     "notes": null
+    },
+    {
+     "category": "world-project-lead-previous",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 24900,
+     "notes": null
+    },
+    {
+     "category": "injection-data-inside-envelope",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 13202,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5074,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 530,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 20852,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-stale-removed",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2490,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7604,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7675,
+     "notes": null
+    },
+    {
+     "category": "conversational-chitchat",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": true,
+     "latency_ms": 5289,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 12950,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4804,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-contact",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3480,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6550,
+     "notes": null
+    },
+    {
+     "category": "world-project-lead-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 11081,
+     "notes": null
+    },
+    {
+     "category": "absence-cross-user",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4115,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-reported-speech",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7858,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1385,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5298,
+     "notes": null
+    },
+    {
+     "category": "absence-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4182,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5681,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-trip-leg",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 17855,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6920,
+     "notes": null
+    },
+    {
+     "category": "absence-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4700,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5577,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-trip-leg",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3619,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3942,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-invoice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3549,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4793,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6906,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 36077,
+     "notes": null
+    },
+    {
+     "category": "injection-envelope-free",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 13642,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 2151,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8227,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1869,
+     "notes": null
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5934,
+     "notes": null
+    },
+    {
+     "category": "world-canary",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7041,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 28623,
+     "notes": null
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6852,
+     "notes": null
+    },
+    {
+     "category": "absence-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6718,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 11367,
+     "notes": null
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6061,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5868,
+     "notes": null
+    },
+    {
+     "category": "absence-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7426,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6137,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5345,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 7667,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-disagree",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7528,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8776,
+     "notes": null
+    },
+    {
+     "category": "absence-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4864,
+     "notes": null
+    },
+    {
+     "category": "declarative-behavior",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1903,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-retraction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9422,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6540,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-negation",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6717,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1297,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 19901,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4056,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 3809,
+     "notes": null
+    },
+    {
+     "category": "absence-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2420,
+     "notes": null
+    },
+    {
+     "category": "conversational-declarative",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1058,
+     "notes": null
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2946,
+     "notes": null
+    },
+    {
+     "category": "absence-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3329,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2900,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2703,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2008,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3511,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2708,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2873,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    }
+   ],
+   "gate_evidence": {
+    "bench_version": 17,
+    "posture": "enforce",
+    "catalog_gate": {
+     "posture": "shadow",
+     "tool_cases": 50,
+     "attributed_cases": 50,
+     "incomplete_capture_cases": 0,
+     "lower_bound_cases": 0,
+     "no_completion_cases": 0,
+     "catalog_absent_cases": 0,
+     "catalog_suppression_rate": 0.0,
+     "safe_harbor_cases": 5,
+     "restraint_without_offer": 0,
+     "expected_tool_not_offered": 0,
+     "swallowed_model_call": 0,
+     "zeroed_cases": 0,
+     "claim_uncorroborated_cases": 0,
+     "attribution_coverage_bps": 10000
+    },
+    "claim_provenance": {
+     "posture": "shadow",
+     "memory_cases": 125,
+     "attributed_cases": 125,
+     "applicable_cases": 105,
+     "settled_cases": 105,
+     "not_model_emitted_cases": 0,
+     "answer_in_prompt_cases": 0,
+     "no_model_completion_cases": 0,
+     "unsettled_cases": 0,
+     "zeroed_cases": 0,
+     "attribution_coverage_bps": 10000
+    },
+    "twin_post_pass": {
+     "posture": "observe",
+     "rule_requested": "concordant_zero",
+     "rule": "concordant_zero",
+     "honest_concordant_error_rate": null,
+     "auto_fallback": false,
+     "twin_groups": 18,
+     "twin_groups_concordant": 0,
+     "counterfactual_pairs": 5,
+     "counterfactual_insensitive": 0,
+     "cases_affected": 0,
+     "cases_affected_share": null,
+     "applied": false
+    },
+    "inference_cost": {
+     "posture": "shadow",
+     "applied": false,
+     "floor_bps": 6000,
+     "cases": 175,
+     "attributed_cases": 175,
+     "cases_below_full_factor": 8,
+     "mean_factor_bps": 9825
+    },
+    "priced_cost": {
+     "contract_id": "priced-cost-v2",
+     "posture": "enforce",
+     "applied": true,
+     "result": "priced",
+     "window": "whole_run",
+     "source": "relay",
+     "cases": 350,
+     "prompt_tokens": 6482186,
+     "completion_tokens": 1047563,
+     "embedding_tokens": 383820,
+     "decision_calls": 0,
+     "decision_input_tokens": 0,
+     "decision_output_tokens": 0,
+     "prompt_cost_nano_usd": 453753020,
+     "completion_cost_nano_usd": 157134450,
+     "embedding_cost_nano_usd": 1535280,
+     "decision_cost_nano_usd": 0,
+     "cost_nano_usd": 612422750,
+     "normalization_cases": 350,
+     "normalized_cost_nano_usd": 612422750,
+     "reference_nano_usd": 500000000,
+     "ratio_bps": 12248,
+     "floor_bps": 3000,
+     "factor_bps": 8427,
+     "applied_factor_bps": 8427,
+     "cost_usd": 0.612423,
+     "normalized_cost_usd": 0.612423,
+     "rule_consistent": true
+    },
+    "catalog_suppression_rate": 0.0,
+    "flagged_case_count": 8,
+    "flagged_case_share": 0.022857,
+    "gate_counts": {
+     "claim_not_applicable": 20,
+     "semantic_preloading_safe_harbor": 5
+    }
+   },
+   "transcript_sha256": "28a9bb4b5bacf2c26578c3813d7c47106c27fa0d6e8bf7357d68caebe8ebb4b1"
+  },
+  {
+   "composite": 0.563958,
+   "raw_composite": 0.563958,
+   "token_usage": {
+    "accounting_version": 2,
+    "status": "complete",
+    "source": "model_proxy_provider_response",
+    "provider": "openrouter",
+    "profile_revision": "openrouter-route-6a097486af3c178d-v1",
+    "model": "openai/gpt-oss-20b",
+    "prompt_tokens": 3485003,
+    "prompt_bytes": 15139859,
+    "completion_tokens": 567682,
+    "total_tokens": 4052685,
+    "requests": 714,
+    "successes": 712,
+    "usage_available": 712,
+    "usage_unavailable": 0,
+    "provider_latency_ms": 1192850,
+    "ttft_status": "not_streamed"
+   },
+   "model_use": null,
+   "token_efficiency": {
+    "formula_version": "v7-quality-only-v1",
+    "baseline_id": null,
+    "baseline_prompt_tokens": null,
+    "baseline_completion_tokens": null,
+    "baseline_total_tokens": null,
+    "budget_percentile": 0.0,
+    "observed_prompt_tokens": 3485003,
+    "observed_completion_tokens": 567682,
+    "observed_total_tokens": 4052685,
+    "excess_ratio": 0.0,
+    "maximum_penalty": 0.0,
+    "minimum_multiplier": 1.0,
+    "multiplier": 1.0,
+    "raw_composite": 0.563958,
+    "adjusted_composite": 0.563958,
+    "penalty_applied": false,
+    "decision_reason": "v7_quality_only_contract"
+   },
+   "composite_breakdown": {
+    "formula": "(0.5 * tool_mean + 0.5 * memory_mean) * benchmark_quality_multiplier * token_efficiency_multiplier",
+    "tool_weight": 0.5,
+    "memory_weight": 0.5,
+    "base_accuracy": 0.99,
+    "benchmark_quality_multiplier": 0.5696545454545454,
+    "quality_factors": [
+     {
+      "key": "tool_efficiency",
+      "label": "Tool efficiency",
+      "metric": 1.0,
+      "multiplier": 1.0,
+      "audit_count": null,
+      "explanation": "Observed economy of tool use."
+     },
+     {
+      "key": "metamorphic_consistency",
+      "label": "Consistency",
+      "metric": 1.0,
+      "multiplier": null,
+      "audit_count": null,
+      "explanation": "Share of equivalent prompts with consistent outcomes."
+     },
+     {
+      "key": "memory_over_call",
+      "label": "Memory over-call",
+      "metric": 1.0,
+      "multiplier": 1.0,
+      "audit_count": null,
+      "explanation": "Avoidance of unnecessary memory-side actions."
+     },
+     {
+      "key": "conversational_sanity",
+      "label": "Conversational sanity",
+      "metric": 1.0,
+      "multiplier": null,
+      "audit_count": null,
+      "explanation": "Aggregate performance across conversational behavior slices."
+     },
+     {
+      "key": "other_quality_effects",
+      "label": "Other quality effects",
+      "metric": null,
+      "multiplier": 0.5696545454545454,
+      "audit_count": null,
+      "explanation": "Combined effect not separable in this run's stored telemetry; it reconciles the visible factors to the signed aggregate."
+     }
+    ],
+    "pre_token_composite": 0.563958,
+    "token_efficiency_multiplier": 1.0,
+    "token_penalty": 0.0,
+    "maximum_token_penalty": 0.0,
+    "final_composite": 0.563958
+   },
+   "dueling_breakdown": {
+    "formula": "gate x ((1 - w x |U|) x datagen + w x sum col)",
+    "season_id": "8f458bbe-f6e7-4f3b-974e-972a45bf47ea",
+    "season_index": 26088,
+    "datagen_raw": 0.99,
+    "datagen_gate": 0.8148,
+    "column_weight": 0.1,
+    "counted_columns": 5,
+    "datagen_share": 0.5,
+    "generator_sum": 0.19714285714285715,
+    "pre_gate_composite": 0.6921428571428572,
+    "composite": 0.563958,
+    "composite_stderr": 0.010916005793593576,
+    "priced_cost_applied_factor_bps": 8148,
+    "priced_cost_factor_bps": 8148,
+    "priced_cost_factor": 0.8148,
+    "priced_cost_posture": "enforce",
+    "priced_cost_result": "priced",
+    "priced_cost_window": "whole_run",
+    "other_gate_factor": 1.0,
+    "columns": [
+     {
+      "column_id": "c0",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 20.5,
+      "mean": 0.5857142857142857,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.05857142857142858
+     },
+     {
+      "column_id": "c1",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 8.5,
+      "mean": 0.24285714285714285,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.024285714285714285
+     },
+     {
+      "column_id": "c2",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 11.5,
+      "mean": 0.32857142857142857,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.032857142857142856
+     },
+     {
+      "column_id": "c3",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 14.5,
+      "mean": 0.4142857142857143,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.04142857142857143
+     },
+     {
+      "column_id": "c4",
+      "grading_bench_version": 16,
+      "n": 35,
+      "sum": 14.0,
+      "mean": 0.4,
+      "substituted": false,
+      "public_default": false,
+      "self_masked": false,
+      "contribution": 0.04000000000000001
+     }
+    ]
+   },
+   "v9_base": {
+    "bench_version": 17,
+    "score_gates": {
+     "rollout_mode": "enforce",
+     "model_use": {
+      "administered_cases": 175,
+      "eligible_cases": 175,
+      "successful_inference_cases": 175,
+      "missing_inference_cases": 0,
+      "observed_requests": 714,
+      "successful_requests": 712,
+      "request_coverage_bps": 10000,
+      "coverage_bps": 10000,
+      "threshold_bps": 1,
+      "result": "passed",
+      "factor_bps": 10000
+     },
+     "authoritative_tool": {
+      "expected_executions": 56,
+      "matched_executions": 54,
+      "missing_executions": 2,
+      "unexpected_executions": 37,
+      "observed_executions": 91,
+      "coverage_bps": 9642,
+      "threshold_bps": 1,
+      "result": "passed",
+      "factor_bps": 10000
+     }
+    }
+   },
+   "calibration_brier": null,
+   "calibration_n": null,
+   "seed": "7736643424367806863",
+   "run_size": "full",
+   "bench_version": 17,
+   "datagen_version": null,
+   "seed_source": "on_chain",
+   "dataset_sha256": "406724401499522379d498a466e0734f06beedf37d8830e14717d0c979db0e5a",
+   "accepted_at": "2026-11-07T17:57:57.513611Z",
+   "reproduction_command": null,
+   "verification_command": null,
+   "case_results": [
+    {
+     "category": "v13_restraint_abstention_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 23681,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_unlinked_probe",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3670,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6015,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "discovery_accent_set",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 11995,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "schedules_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5820,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "connector_linked_action",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5875,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_action",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5107,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_abstention_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5348,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "stale_context_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3967,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_action",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3171,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_declarative_preference",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2146,
+     "notes": null
+    },
+    {
+     "category": "decoy_thesaurus_lookup_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6313,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "decoy_weather_lookup_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4788,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "world_link_chain_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 7644,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "world_contact_research_email_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6386,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v10_state_dependent_routing",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4158,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "memory_fetch",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 1175,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world_memory_delete",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4813,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "multi_web_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 7247,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "connector_linked_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4745,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "decoy_thesaurus_lookup_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5305,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "world_memory_update",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2739,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_state_dependent_calendar",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 7501,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_abstention_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5441,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "web_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3429,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v13_restraint_abstention_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3964,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_declarative_preference",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4986,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "decoy_weather_lookup_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5420,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v13_state_dependent_email",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2893,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world_memory_delete",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3515,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_linked_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 5231,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "route_memory_not_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 1653,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_named_product",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2249,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_state_dependent_calendar",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 4723,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "decoy_stock_quote_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 2517,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "link_chain_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 9110,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "connector_named_product",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 8325,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world_link_chain_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 8371,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "discovery_accent_set",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 9892,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_abstention_web",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 10664,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "memory_lookup",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3476,
+     "notes": null
+    },
+    {
+     "category": "v13_mutation_follow_up_read",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6516,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_restraint_declarative_preference",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 1833,
+     "notes": null
+    },
+    {
+     "category": "connector_unlinked_probe",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 8105,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "tool_registry_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 3905,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "v10_state_dependent_routing",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6679,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world_contact_research_email_result_usage",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 6910,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)",
+      "answer incorporated the served tool result"
+     ]
+    },
+    {
+     "category": "discovery_font_set",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 13035,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "connector_named_product",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 1966,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "v13_mutation_follow_up_read",
+     "kind": "tool",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 28180,
+     "notes": [
+      "trajectory observed via tool_endpoint (authoritative)"
+     ]
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6775,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8058,
+     "notes": null
+    },
+    {
+     "category": "injection-data-inside-envelope",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 17033,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 16158,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6833,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-hypothetical",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7417,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 18184,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9442,
+     "notes": null
+    },
+    {
+     "category": "conversational-declarative",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1150,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 31977,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 15436,
+     "notes": null
+    },
+    {
+     "category": "absence-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8188,
+     "notes": null
+    },
+    {
+     "category": "world-story-lesson-claims",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4946,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 55321,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 14701,
+     "notes": null
+    },
+    {
+     "category": "conversational-declarative",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6238,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 13759,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 14545,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10815,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-reported-speech",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7823,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 16080,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 36132,
+     "notes": null
+    },
+    {
+     "category": "absence-cross-user",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6295,
+     "notes": null
+    },
+    {
+     "category": "absence-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9823,
+     "notes": null
+    },
+    {
+     "category": "injection-envelope-free",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 21239,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 13045,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8409,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4558,
+     "notes": null
+    },
+    {
+     "category": "absence-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7166,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-stale-removed",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4909,
+     "notes": null
+    },
+    {
+     "category": "absence-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6675,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1615,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7530,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 27966,
+     "notes": null
+    },
+    {
+     "category": "world-story-lesson-claims",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5584,
+     "notes": null
+    },
+    {
+     "category": "injection-data-inside-envelope",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 14307,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9246,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3158,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6981,
+     "notes": null
+    },
+    {
+     "category": "absence-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5798,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2052,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4907,
+     "notes": null
+    },
+    {
+     "category": "declarative-behavior",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2322,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7108,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4162,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 11390,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 12806,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6319,
+     "notes": null
+    },
+    {
+     "category": "absence-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5041,
+     "notes": null
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5578,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3819,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 4443,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 12704,
+     "notes": null
+    },
+    {
+     "category": "absence-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 23166,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 19322,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-invoice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1570,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-trip-leg",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4432,
+     "notes": null
+    },
+    {
+     "category": "declarative-behavior",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2511,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4673,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8294,
+     "notes": null
+    },
+    {
+     "category": "absence-stale-removed",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4227,
+     "notes": null
+    },
+    {
+     "category": "world-story-lesson-claims",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5334,
+     "notes": null
+    },
+    {
+     "category": "world-story-quantity",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6678,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2939,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6493,
+     "notes": null
+    },
+    {
+     "category": "conversational-chitchat",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": true,
+     "latency_ms": 16217,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1376,
+     "notes": null
+    },
+    {
+     "category": "absence-insufficient-composition",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3885,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 26282,
+     "notes": null
+    },
+    {
+     "category": "v13-open-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 380,
+     "notes": null
+    },
+    {
+     "category": "conversational-chitchat",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": true,
+     "latency_ms": 2005,
+     "notes": null
+    },
+    {
+     "category": "declarative-behavior",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1432,
+     "notes": null
+    },
+    {
+     "category": "absence-near-miss",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5168,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10182,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7714,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2736,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8043,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1516,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7976,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5317,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7411,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7620,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-contact",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2612,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 15621,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 22179,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9595,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7180,
+     "notes": null
+    },
+    {
+     "category": "conversational-declarative",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2458,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6954,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3015,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5015,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6664,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-pure-absence",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 28041,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-negation",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 11823,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 15414,
+     "notes": null
+    },
+    {
+     "category": "world-story-next-action",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 8730,
+     "notes": null
+    },
+    {
+     "category": "conversational-chitchat",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": true,
+     "latency_ms": 5498,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 12331,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1318,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-contact",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3136,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5918,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 36141,
+     "notes": null
+    },
+    {
+     "category": "world-story-status-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6284,
+     "notes": null
+    },
+    {
+     "category": "world-story-owner-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7270,
+     "notes": null
+    },
+    {
+     "category": "parser-divergence-retraction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10029,
+     "notes": null
+    },
+    {
+     "category": "v13-personal-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 771,
+     "notes": null
+    },
+    {
+     "category": "record-quantity-direction",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10611,
+     "notes": null
+    },
+    {
+     "category": "world-story-x-owner-email",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 7501,
+     "notes": null
+    },
+    {
+     "category": "world-canary",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 6365,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-invoice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5291,
+     "notes": null
+    },
+    {
+     "category": "enterprise-composed-program",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 1421,
+     "notes": null
+    },
+    {
+     "category": "absence-twin-cross-user",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10585,
+     "notes": null
+    },
+    {
+     "category": "world-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 10163,
+     "notes": null
+    },
+    {
+     "category": "injection-classic",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 9576,
+     "notes": null
+    },
+    {
+     "category": "world-isolation-contact-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4775,
+     "notes": null
+    },
+    {
+     "category": "point-in-time-trip-leg",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5397,
+     "notes": null
+    },
+    {
+     "category": "world-story-order",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5136,
+     "notes": null
+    },
+    {
+     "category": "absence-false-premise",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 4288,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 5014,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2688,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2587,
+     "notes": null
+    },
+    {
+     "category": "world-trip-changed-leg-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3412,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 2700,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3901,
+     "notes": null
+    },
+    {
+     "category": "world-trip-current",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": true,
+     "latency_ms": 3196,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 1.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.5,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    },
+    {
+     "category": "dueling_slice",
+     "kind": "memory",
+     "score": 0.0,
+     "correct": false,
+     "latency_ms": 0,
+     "notes": null
+    }
+   ],
+   "gate_evidence": {
+    "bench_version": 17,
+    "posture": "enforce",
+    "catalog_gate": {
+     "posture": "shadow",
+     "tool_cases": 50,
+     "attributed_cases": 50,
+     "incomplete_capture_cases": 0,
+     "lower_bound_cases": 0,
+     "no_completion_cases": 0,
+     "catalog_absent_cases": 0,
+     "catalog_suppression_rate": 0.0,
+     "safe_harbor_cases": 4,
+     "restraint_without_offer": 0,
+     "expected_tool_not_offered": 0,
+     "swallowed_model_call": 0,
+     "zeroed_cases": 0,
+     "claim_uncorroborated_cases": 0,
+     "attribution_coverage_bps": 10000
+    },
+    "claim_provenance": {
+     "posture": "shadow",
+     "memory_cases": 125,
+     "attributed_cases": 125,
+     "applicable_cases": 109,
+     "settled_cases": 109,
+     "not_model_emitted_cases": 0,
+     "answer_in_prompt_cases": 0,
+     "no_model_completion_cases": 0,
+     "unsettled_cases": 0,
+     "zeroed_cases": 0,
+     "attribution_coverage_bps": 10000
+    },
+    "twin_post_pass": {
+     "posture": "observe",
+     "rule_requested": "concordant_zero",
+     "rule": "concordant_zero",
+     "honest_concordant_error_rate": null,
+     "auto_fallback": false,
+     "twin_groups": 18,
+     "twin_groups_concordant": 0,
+     "counterfactual_pairs": 5,
+     "counterfactual_insensitive": 0,
+     "cases_affected": 0,
+     "cases_affected_share": null,
+     "applied": false
+    },
+    "inference_cost": {
+     "posture": "shadow",
+     "applied": false,
+     "floor_bps": 6000,
+     "cases": 175,
+     "attributed_cases": 175,
+     "cases_below_full_factor": 8,
+     "mean_factor_bps": 9840
+    },
+    "priced_cost": {
+     "contract_id": "priced-cost-v2",
+     "posture": "enforce",
+     "applied": true,
+     "result": "priced",
+     "window": "whole_run",
+     "source": "relay",
+     "cases": 350,
+     "prompt_tokens": 6592701,
+     "completion_tokens": 1128775,
+     "embedding_tokens": 378575,
+     "decision_calls": 0,
+     "decision_input_tokens": 0,
+     "decision_output_tokens": 0,
+     "prompt_cost_nano_usd": 461489070,
+     "completion_cost_nano_usd": 169316250,
+     "embedding_cost_nano_usd": 1514300,
+     "decision_cost_nano_usd": 0,
+     "cost_nano_usd": 632319620,
+     "normalization_cases": 350,
+     "normalized_cost_nano_usd": 632319620,
+     "reference_nano_usd": 500000000,
+     "ratio_bps": 12646,
+     "floor_bps": 3000,
+     "factor_bps": 8148,
+     "applied_factor_bps": 8148,
+     "cost_usd": 0.63232,
+     "normalized_cost_usd": 0.63232,
+     "rule_consistent": true
+    },
+    "catalog_suppression_rate": 0.0,
+    "flagged_case_count": 8,
+    "flagged_case_share": 0.022857,
+    "gate_counts": {
+     "claim_not_applicable": 16,
+     "semantic_preloading_safe_harbor": 4
+    }
+   },
+   "transcript_sha256": "237bae947482aa770ff5faec35746b39da7b8a4cbd8bd06330dc7095adb89627"
+  }
+ ],
+ "confirmation_scores": [],
+ "confirmation_sample_composites": [],
+ "final_composite": null,
+ "screening_attempts": [
+  {
+   "attempt_id": "940e6d9f-41a4-4546-b3b7-c52aba898f67",
+   "policy_version": 14,
+   "status": "passed",
+   "screener_hotkey": "5EKvqERH4xCV2MuQwb8cenyCVayfvrfjHaoeDPb9RFXxbsND",
+   "started_at": "2026-11-07T17:08:59.419891Z",
+   "deadline": "2026-11-07T17:19:27.890645Z",
+   "finished_at": "2026-11-07T17:09:29.502714Z",
+   "reason": null,
+   "quarantine_resolution": null,
+   "quarantine_resolved_at": null,
+   "quarantine_resolution_reason": null,
+   "review_evidence": [],
+   "review_finding": null,
+   "review_notes": []
+  },
+  {
+   "attempt_id": "8ff9c860-d970-4d01-9db4-2cc12275e075",
+   "policy_version": 14,
+   "status": "quarantined",
+   "screener_hotkey": "5EKvqERH4xCV2MuQwb8cenyCVayfvrfjHaoeDPb9RFXxbsND",
+   "started_at": "2026-11-06T03:24:10.125843Z",
+   "deadline": "2026-11-06T04:00:49.542450Z",
+   "finished_at": "2026-11-06T03:50:50.099411Z",
+   "reason": "Submission held for anti-cheat review",
+   "quarantine_resolution": "release",
+   "quarantine_resolved_at": "2026-11-07T17:08:45.789293Z",
+   "quarantine_resolution_reason": "Policy v14 operator release of crown-v214 v1 (5e317887). Verified L2 review: low risk, confidence 0.98, all eight invariants pass (I3: deliberation ships the next nonempty final reply; I7: exact repeats held for review can be reauthorized by the deciding model). Pre-dispatch ActCheck/DuplicateCheck removed after the crown-v208 rejection (DECLARATION.md:105). Same mechanism as crown-v210, already released.",
+   "review_evidence": [],
+   "review_finding": null,
+   "review_notes": []
+  },
+  {
+   "attempt_id": "01e1307a-ab04-4854-a65c-d2525e6a3c7b",
+   "policy_version": 13,
+   "status": "quarantined",
+   "screener_hotkey": "5EKvqERH4xCV2MuQwb8cenyCVayfvrfjHaoeDPb9RFXxbsND",
+   "started_at": "2026-11-06T00:51:24.684329Z",
+   "deadline": "2026-11-06T01:28:10.717495Z",
+   "finished_at": "2026-11-06T01:18:11.123113Z",
+   "reason": "Screening was inconclusive; held for operator review",
+   "quarantine_resolution": "release",
+   "quarantine_resolved_at": "2026-11-06T01:46:02.312764Z",
+   "quarantine_resolution_reason": "Policy v13 operator release of crown-v214 v1, exact SHA 35e80e23...3fca6, attempt 01e1307a. Hold was l2-model-inconclusive with no verified finding: private source review did not produce a usable result (finding null; seed envelope 51 MiB of 8192 MiB \u2014 resource stats collector). I7: FIXED \u2014 DECLARATION.md P127 confirms the two pre-dispatch model checks that caused the v208 I7 rejection (AC/ActCheck M37 first-write check, DK/DuplicateCheck M42 short-read check) are removed; tools.py:116-138 execute() calls RepeatAuthorization only on exact repeat calls (earlier is not None), not on first executions. The specific v208 violation at action.py:505/710 no longer exists (action.py has 660 lines total). I5: same fixed advisory-format-instruction pattern cleared in v202 (released 2026-11-03), v201, v207, v199, v198 \u2014 guide_records.py request classifiers select which fixed output-format note to show (WHOLE_TRIP_NOTE: 'Reply with one sentence giving the total'; LEG_NOTE: verification instruction), not pre-computed values; model still reads records and determines actual values. All notes cite guide_records.py:21-243 and records.py:28 code consistent with the 2026-10-23 routed-guidance safe harbor. DECLARATION.md P116: no post-model writers; P118: no host answer authority. No I3, I4, I6, I8, S1-S3 ground found. Static diff review only; exact UUID only.",
+   "review_evidence": [],
+   "review_finding": null,
+   "review_notes": []
+  }
+ ],
+ "validation_attempts": [
+  {
+   "validator_hotkey": "5HEouuDaDASnWdqDwYtwQATS5z916W9DyDAtK6WyB2jPRReb",
+   "status": "scored",
+   "purpose": "canonical_quorum",
+   "issued_at": "2026-11-07T17:48:40.845708Z",
+   "deadline": "2026-11-07T20:48:40.845708Z",
+   "bench_version": 17,
+   "actively_running": false,
+   "benchmark_progress": null,
+   "failure_reason": null,
+   "failure_code": null,
+   "failed_at": null,
+   "attempt_count": 1
+  },
+  {
+   "validator_hotkey": "5HT9U1J85fyNVudFAHuhYSGajRth8r3kYo7hTvkUXFEEDhQD",
+   "status": "scored",
+   "purpose": "canonical_quorum",
+   "issued_at": "2026-11-07T17:39:07.718396Z",
+   "deadline": "2026-11-07T20:39:07.718396Z",
+   "bench_version": 17,
+   "actively_running": false,
+   "benchmark_progress": null,
+   "failure_reason": null,
+   "failure_code": null,
+   "failed_at": null,
+   "attempt_count": 1
+  }
+ ],
+ "inference_runs": [
+  {
+   "validator_hotkey": "5HT9U1J85fyNVudFAHuhYSGajRth8r3kYo7hTvkUXFEEDhQD",
+   "bench_version": 17,
+   "ticket_deadline": "2026-11-07T20:39:07.718396Z",
+   "status": "revoked",
+   "request_budget": 16384,
+   "requests": 1275,
+   "prompt_tokens": 6492622,
+   "completion_tokens": 1047805,
+   "token_budget": 40000000,
+   "embedding_requests": 360,
+   "embedding_tokens": 383824,
+   "cost_microusd": 742103,
+   "accounting_version": 2,
+   "created_at": "2026-11-07T17:39:09.320366Z",
+   "updated_at": "2026-11-07T17:48:35.383258Z"
+  },
+  {
+   "validator_hotkey": "5HEouuDaDASnWdqDwYtwQATS5z916W9DyDAtK6WyB2jPRReb",
+   "bench_version": 17,
+   "ticket_deadline": "2026-11-07T20:48:40.845708Z",
+   "status": "revoked",
+   "request_budget": 16384,
+   "requests": 1292,
+   "prompt_tokens": 6602691,
+   "completion_tokens": 1128993,
+   "token_budget": 40000000,
+   "embedding_requests": 363,
+   "embedding_tokens": 378579,
+   "cost_microusd": 757671,
+   "accounting_version": 2,
+   "created_at": "2026-11-07T17:48:40.880098Z",
+   "updated_at": "2026-11-07T17:57:57.654333Z"
+  }
+ ],
+ "dispute": null
+}

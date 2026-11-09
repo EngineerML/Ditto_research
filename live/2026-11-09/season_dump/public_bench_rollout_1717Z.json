@@ -1,0 +1,122 @@
+{
+ "active_version": 17,
+ "desired_version": 17,
+ "status": "activated",
+ "promotion_pending": false,
+ "promotion_requirement": null,
+ "blocked_reason": null,
+ "capability_bench_version": 17,
+ "ranked_quorum_agents": 5,
+ "min_ranked_quorum_agents": 5,
+ "canary_capable_validator_count": 5,
+ "v3_capable_validator_count": 5,
+ "current_hybrid_top_five": [
+  "3e59be1e-808c-487f-8e64-9f59ac547a5d",
+  "656c08a6-50f0-4b86-ba92-50f57e2442ff",
+  "34300615-f20d-4967-81cc-45244d9489dd",
+  "ba2dc3fa-ab52-4635-8713-a15c83298ad0",
+  "3135bba4-01cd-4eb1-8719-348d9bc57254"
+ ],
+ "qualification_converged": false,
+ "cohort_size": 15,
+ "cohort_ready_count": 0,
+ "priority_cohort_size": 5,
+ "priority_cohort_ready_count": 0,
+ "priority_complete": false,
+ "members": [
+  {
+   "agent_id": "83d2a717-5ca9-4b82-900a-c400bd1868d6",
+   "position": 1,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "60e98ab5-3221-4073-bec5-81aa08aad535",
+   "position": 2,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "e6959038-555c-4a49-a3e2-5377d020e79c",
+   "position": 3,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "8fd976bb-be24-4e53-b5cb-da55195fe5c7",
+   "position": 4,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "5d48f401-0637-4e57-ad81-44aa5c967e3f",
+   "position": 5,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "bbad4995-dfcb-43cc-8196-8df0c0b12625",
+   "position": 6,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "a4d26512-cdef-480e-9553-af69fcb51fe2",
+   "position": 7,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "ac30084b-31b5-4b93-9768-aeabeaac8a14",
+   "position": 8,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "31ad3a16-e7d6-47c2-bfd0-801bd7766fd7",
+   "position": 9,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "7e09650b-d6c2-4b76-8388-04169b967b77",
+   "position": 10,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "cb1cc17d-199f-4061-bdfb-4d5f03e86333",
+   "position": 11,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "8e3b03e6-eeb8-4ad0-ae3c-08199d935c19",
+   "position": 12,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "02e88786-081f-42d8-ac5e-d7aded460cf7",
+   "position": 13,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "fb8fed44-0782-4683-9eba-d877884cb0ac",
+   "position": 14,
+   "score_count": 0,
+   "currently_top_five": false
+  },
+  {
+   "agent_id": "38041943-b2c2-4bf0-a67f-68a07ae93f44",
+   "position": 15,
+   "score_count": 0,
+   "currently_top_five": false
+  }
+ ],
+ "qualification_blockers": [],
+ "rescore_cohort_target": 15,
+ "max_rescore_cohort_size": 25,
+ "priority_cohort_target": 5
+}

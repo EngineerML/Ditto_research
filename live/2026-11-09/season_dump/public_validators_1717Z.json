@@ -1,0 +1,1932 @@
+{
+ "generated_at": "2026-11-09T17:17:39.200307Z",
+ "online_window_seconds": 300,
+ "stale_window_seconds": 900,
+ "active_bench_version": 17,
+ "slot_policy": {
+  "max_concurrent_slots": 8,
+  "disk_percent_ceiling": 100
+ },
+ "reported_count": 8,
+ "online_count": 5,
+ "validators": [
+  {
+   "validator_hotkey": "5CFtzzb4vym9eysfeF9cxxp6D7gksuUVTKYNq1mchnrMs118",
+   "software_version": "0.468.2",
+   "protocol_version": 35,
+   "state": "idle",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": null,
+   "assignment_state": "unassigned",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 8,
+   "allowed_slots": 4,
+   "reserved_round_slots": 0,
+   "issuance_paused": false,
+   "healthy_slots": [
+    "slot-0"
+   ],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [],
+   "first_seen_at": "2026-07-14T17:38:14.721022Z",
+   "reported_at": "2026-11-09T17:17:36Z",
+   "seen_at": "2026-11-09T17:17:36.784174Z",
+   "online": true,
+   "availability": "available",
+   "health": "healthy",
+   "scorer_liveness": "serving",
+   "health_reasons": [],
+   "bench_serviceability": "serving",
+   "system_metrics": {
+    "cpu_percent": 0,
+    "memory_percent": 35,
+    "disk_percent": 20,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": {
+    "cpu_count": 8,
+    "cpu_physical_cores": 8,
+    "memory_total_mib": 15987,
+    "disk_total_gib": 125,
+    "architecture": "x86_64"
+   },
+   "capabilities": {
+    "screened_images": true,
+    "require_screened_image": true,
+    "source_build_fallback": false,
+    "full_stack_managed": true,
+    "stack_updater": true,
+    "sandbox_egress_restricted": true,
+    "ticket_inference": true,
+    "signed_score_quorum": true,
+    "sandbox_memory_limit": true,
+    "round_commitments": true,
+    "season_commitments": true,
+    "executor_isolation": "privileged_dind",
+    "scorer_benchmarks": {
+     "status": "fresh_verified",
+     "supported_bench_versions": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "observed_at": 1794244656,
+     "software_version": "0.468.2",
+     "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+     "scored_runtime_env": {
+      "bench_version": 13,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "c88a845c68703a94c2ee1c205f218037ed7085c9b0b62751e394bad05fb4e942"
+     },
+     "v14_scored_runtime_env": {
+      "bench_version": 14,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "8bb30c00026c427146478e7edb3a49ed49f3077c9844114df8fdf66c8f41d314"
+     },
+     "v15_scored_runtime_env": {
+      "bench_version": 15,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "ef5458e620423f0b6d98ad8ef0705254e2536b5543c51ffe63d42927cd30764a"
+     },
+     "v16_scored_runtime_env": {
+      "bench_version": 16,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "82ed5b0cf054608533d01cbe85630b1cd60d6efb7d2d7df6bc46c0a66a75d348"
+     },
+     "v7_calibration": null,
+     "deterministic_v13_datasets": true,
+     "generator_rounds": true,
+     "generator_round_max_cases": 80,
+     "generator_round_bench_versions": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "dueling_slice_bench_versions": [
+      16,
+      17,
+      18
+     ],
+     "source_free_screened_images": true,
+     "probe": {
+      "outcome": "served",
+      "observed_at": 1794244656,
+      "http_status": 200,
+      "reason": null,
+      "last_served_at": 1794244656,
+      "consecutive_failures": 0
+     }
+    }
+   },
+   "stack": {
+    "mode": "managed",
+    "compose_schema": 1,
+    "release_descriptor_digest": "sha256:9fe8960c3b45be86c635c58ef31c5d19360a34bf7eabcdf392facdf5cf4a2f66",
+    "components": {
+     "ditto_subnet": {
+      "image_digest": "sha256:de52f10aaa0ef267d85c0489b50099856ed685b1971702a7e033e921c7ab5c2a",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "dittobench_api": {
+      "image_digest": "sha256:600f5ee8c770d38081fce34ccd9db8311ccb610b8a7b966d5c9a2bb83fc7449c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "sandbox_docker": {
+      "image_digest": "sha256:279381aefd86cd778d3cbaa1b81ae0b687a0f1748c6b7a3a00edc3669137559c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "model_relay": null,
+     "pylon": {
+      "image_digest": "sha256:407008cd5631e11226d5fab77d9edc44796cdd74400a986a45ed7c5bd4dc928a",
+      "source_revision": null,
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "ollama": null
+    }
+   },
+   "stack_health": {
+    "ditto_subnet": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244656,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "0.468.2"
+     }
+    },
+    "dittobench_api": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244656,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2"
+     }
+    },
+    "sandbox_docker": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244648,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "model_relay": null,
+    "pylon": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244648,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "ollama": null
+   },
+   "updater_status": {
+    "enabled": true,
+    "channel": "compat-2",
+    "state": "idle",
+    "transaction_phase": null,
+    "current_descriptor": "ghcr.io/ditto-assistant/ditto-subnet-stack@sha256:9fe8960c3b45be86c635c58ef31c5d19360a34bf7eabcdf392facdf5cf4a2f66",
+    "current_version": "0.468.2",
+    "candidate_descriptor": null,
+    "candidate_version": null,
+    "failed_candidate_count": 0,
+    "retry_after": null,
+    "suppressed": false,
+    "last_success_at": 1794198427,
+    "last_failure_at": null,
+    "last_failure_reason": null,
+    "self_refresh_installed": false,
+    "self_refresh_revision": null,
+    "self_refresh_last_success_at": null,
+    "observed_at": 1794244656
+   },
+   "weights_fold": {
+    "epoch_index": 26240,
+    "ledger_digest": "ce7fc4ee469494ffd178eedefa89fc86f333217b6208e39486066de9bfa74543",
+    "vector_digest": "a0bfd87ab0919bf57eb21910eff03a18f7e39989ab5ca5d4d5d2f5e47e28791c",
+    "champion_agent_id": "3e59be1e-808c-487f-8e64-9f59ac547a5d",
+    "folded_at": 1794244486
+   }
+  },
+  {
+   "validator_hotkey": "5Cg3DiRfrgzB1XzN7VuqQNchTgZ8PzPbphMKmVvHobWSL118",
+   "software_version": "0.468.2",
+   "protocol_version": 35,
+   "state": "idle",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": null,
+   "assignment_state": "unassigned",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 8,
+   "allowed_slots": 2,
+   "reserved_round_slots": 0,
+   "issuance_paused": false,
+   "healthy_slots": [],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [],
+   "first_seen_at": "2026-07-27T16:52:20.489318Z",
+   "reported_at": "2026-11-09T17:17:34Z",
+   "seen_at": "2026-11-09T17:17:35.234992Z",
+   "online": true,
+   "availability": "available",
+   "health": "healthy",
+   "scorer_liveness": "serving",
+   "health_reasons": [],
+   "bench_serviceability": "serving",
+   "system_metrics": {
+    "cpu_percent": 0,
+    "memory_percent": 25,
+    "disk_percent": 10,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": {
+    "cpu_count": 4,
+    "cpu_physical_cores": 4,
+    "memory_total_mib": 7934,
+    "disk_total_gib": 241,
+    "architecture": "x86_64"
+   },
+   "capabilities": {
+    "screened_images": true,
+    "require_screened_image": true,
+    "source_build_fallback": false,
+    "full_stack_managed": true,
+    "stack_updater": true,
+    "sandbox_egress_restricted": true,
+    "ticket_inference": true,
+    "signed_score_quorum": true,
+    "sandbox_memory_limit": true,
+    "round_commitments": true,
+    "season_commitments": true,
+    "executor_isolation": "privileged_dind",
+    "scorer_benchmarks": {
+     "status": "fresh_verified",
+     "supported_bench_versions": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "observed_at": 1794244654,
+     "software_version": "0.468.2",
+     "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+     "scored_runtime_env": {
+      "bench_version": 13,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "c88a845c68703a94c2ee1c205f218037ed7085c9b0b62751e394bad05fb4e942"
+     },
+     "v14_scored_runtime_env": {
+      "bench_version": 14,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "8bb30c00026c427146478e7edb3a49ed49f3077c9844114df8fdf66c8f41d314"
+     },
+     "v15_scored_runtime_env": {
+      "bench_version": 15,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "ef5458e620423f0b6d98ad8ef0705254e2536b5543c51ffe63d42927cd30764a"
+     },
+     "v16_scored_runtime_env": {
+      "bench_version": 16,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "82ed5b0cf054608533d01cbe85630b1cd60d6efb7d2d7df6bc46c0a66a75d348"
+     },
+     "v7_calibration": null,
+     "deterministic_v13_datasets": true,
+     "generator_rounds": true,
+     "generator_round_max_cases": 80,
+     "generator_round_bench_versions": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "dueling_slice_bench_versions": [
+      16,
+      17,
+      18
+     ],
+     "source_free_screened_images": true,
+     "probe": {
+      "outcome": "served",
+      "observed_at": 1794244654,
+      "http_status": 200,
+      "reason": null,
+      "last_served_at": 1794244654,
+      "consecutive_failures": 0
+     }
+    }
+   },
+   "stack": {
+    "mode": "managed",
+    "compose_schema": 1,
+    "release_descriptor_digest": "sha256:9fe8960c3b45be86c635c58ef31c5d19360a34bf7eabcdf392facdf5cf4a2f66",
+    "components": {
+     "ditto_subnet": {
+      "image_digest": "sha256:de52f10aaa0ef267d85c0489b50099856ed685b1971702a7e033e921c7ab5c2a",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "dittobench_api": {
+      "image_digest": "sha256:600f5ee8c770d38081fce34ccd9db8311ccb610b8a7b966d5c9a2bb83fc7449c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "sandbox_docker": {
+      "image_digest": "sha256:279381aefd86cd778d3cbaa1b81ae0b687a0f1748c6b7a3a00edc3669137559c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "model_relay": null,
+     "pylon": {
+      "image_digest": "sha256:407008cd5631e11226d5fab77d9edc44796cdd74400a986a45ed7c5bd4dc928a",
+      "source_revision": null,
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "ollama": null
+    }
+   },
+   "stack_health": {
+    "ditto_subnet": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244655,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "0.468.2"
+     }
+    },
+    "dittobench_api": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244654,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2"
+     }
+    },
+    "sandbox_docker": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244653,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "model_relay": null,
+    "pylon": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244653,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "ollama": null
+   },
+   "updater_status": {
+    "enabled": true,
+    "channel": "compat-2",
+    "state": "idle",
+    "transaction_phase": null,
+    "current_descriptor": "ghcr.io/ditto-assistant/ditto-subnet-stack@sha256:9fe8960c3b45be86c635c58ef31c5d19360a34bf7eabcdf392facdf5cf4a2f66",
+    "current_version": "0.468.2",
+    "candidate_descriptor": null,
+    "candidate_version": null,
+    "failed_candidate_count": 0,
+    "retry_after": null,
+    "suppressed": false,
+    "last_success_at": 1794197937,
+    "last_failure_at": null,
+    "last_failure_reason": null,
+    "self_refresh_installed": true,
+    "self_refresh_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+    "self_refresh_last_success_at": 1794244249,
+    "observed_at": 1794244654
+   },
+   "weights_fold": {
+    "epoch_index": 26240,
+    "ledger_digest": "ce7fc4ee469494ffd178eedefa89fc86f333217b6208e39486066de9bfa74543",
+    "vector_digest": "a0bfd87ab0919bf57eb21910eff03a18f7e39989ab5ca5d4d5d2f5e47e28791c",
+    "champion_agent_id": "3e59be1e-808c-487f-8e64-9f59ac547a5d",
+    "folded_at": 1794244514
+   }
+  },
+  {
+   "validator_hotkey": "5CqJAjSjv8fjF9uAQpDLyfN1hZEvBjwpFgcGeLbYpcbSaD1C",
+   "software_version": "0.468.2",
+   "protocol_version": 35,
+   "state": "polling",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": null,
+   "assignment_state": "unassigned",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 8,
+   "allowed_slots": 8,
+   "reserved_round_slots": 0,
+   "issuance_paused": false,
+   "healthy_slots": [
+    "slot-0"
+   ],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [],
+   "first_seen_at": "2026-07-14T19:35:16.665553Z",
+   "reported_at": "2026-11-09T17:17:30Z",
+   "seen_at": "2026-11-09T17:17:31.068959Z",
+   "online": true,
+   "availability": "available",
+   "health": "healthy",
+   "scorer_liveness": "serving",
+   "health_reasons": [],
+   "bench_serviceability": "serving",
+   "system_metrics": {
+    "cpu_percent": 0,
+    "memory_percent": 20,
+    "disk_percent": 80,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": {
+    "cpu_count": 4,
+    "cpu_physical_cores": 2,
+    "memory_total_mib": 15990,
+    "disk_total_gib": 77,
+    "architecture": "x86_64"
+   },
+   "capabilities": {
+    "screened_images": true,
+    "require_screened_image": true,
+    "source_build_fallback": false,
+    "full_stack_managed": false,
+    "stack_updater": false,
+    "sandbox_egress_restricted": true,
+    "ticket_inference": true,
+    "signed_score_quorum": true,
+    "sandbox_memory_limit": true,
+    "round_commitments": true,
+    "season_commitments": true,
+    "executor_isolation": "privileged_dind",
+    "scorer_benchmarks": {
+     "status": "fresh_verified",
+     "supported_bench_versions": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "observed_at": 1794244650,
+     "software_version": "0.468.2",
+     "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+     "scored_runtime_env": {
+      "bench_version": 13,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "c88a845c68703a94c2ee1c205f218037ed7085c9b0b62751e394bad05fb4e942"
+     },
+     "v14_scored_runtime_env": {
+      "bench_version": 14,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "8bb30c00026c427146478e7edb3a49ed49f3077c9844114df8fdf66c8f41d314"
+     },
+     "v15_scored_runtime_env": {
+      "bench_version": 15,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "ef5458e620423f0b6d98ad8ef0705254e2536b5543c51ffe63d42927cd30764a"
+     },
+     "v16_scored_runtime_env": {
+      "bench_version": 16,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "82ed5b0cf054608533d01cbe85630b1cd60d6efb7d2d7df6bc46c0a66a75d348"
+     },
+     "v7_calibration": null,
+     "deterministic_v13_datasets": true,
+     "generator_rounds": true,
+     "generator_round_max_cases": 80,
+     "generator_round_bench_versions": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "dueling_slice_bench_versions": [
+      16,
+      17,
+      18
+     ],
+     "source_free_screened_images": true,
+     "probe": {
+      "outcome": "served",
+      "observed_at": 1794244650,
+      "http_status": 200,
+      "reason": null,
+      "last_served_at": 1794244650,
+      "consecutive_failures": 0
+     }
+    }
+   },
+   "stack": {
+    "mode": "source",
+    "compose_schema": 1,
+    "release_descriptor_digest": null,
+    "components": {
+     "ditto_subnet": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "local_unverified"
+     },
+     "dittobench_api": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "committed_pin"
+     },
+     "sandbox_docker": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "unknown",
+      "provenance": "local_unverified"
+     },
+     "model_relay": null,
+     "pylon": {
+      "image_digest": null,
+      "source_revision": "d36d1a28e761ff9d743bbcc83d091309c4d3599e",
+      "version": "unknown",
+      "provenance": "committed_pin"
+     },
+     "ollama": null
+    }
+   },
+   "stack_health": {
+    "ditto_subnet": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244651,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "0.468.2"
+     }
+    },
+    "dittobench_api": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244650,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2"
+     }
+    },
+    "sandbox_docker": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244651,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "model_relay": null,
+    "pylon": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244651,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "ollama": null
+   },
+   "updater_status": {
+    "enabled": false,
+    "channel": null,
+    "state": "not_managed",
+    "transaction_phase": null,
+    "current_descriptor": null,
+    "current_version": null,
+    "candidate_descriptor": null,
+    "candidate_version": null,
+    "failed_candidate_count": 0,
+    "retry_after": null,
+    "suppressed": false,
+    "last_success_at": null,
+    "last_failure_at": null,
+    "last_failure_reason": null,
+    "self_refresh_installed": false,
+    "self_refresh_revision": null,
+    "self_refresh_last_success_at": null,
+    "observed_at": 1794244650
+   },
+   "weights_fold": {
+    "epoch_index": 26240,
+    "ledger_digest": "ce7fc4ee469494ffd178eedefa89fc86f333217b6208e39486066de9bfa74543",
+    "vector_digest": "a0bfd87ab0919bf57eb21910eff03a18f7e39989ab5ca5d4d5d2f5e47e28791c",
+    "champion_agent_id": "3e59be1e-808c-487f-8e64-9f59ac547a5d",
+    "folded_at": 1794244514
+   }
+  },
+  {
+   "validator_hotkey": "5HEouuDaDASnWdqDwYtwQATS5z916W9DyDAtK6WyB2jPRReb",
+   "software_version": "0.468.2",
+   "protocol_version": 35,
+   "state": "polling",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": null,
+   "assignment_state": "unassigned",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 8,
+   "allowed_slots": 6,
+   "reserved_round_slots": 1,
+   "issuance_paused": false,
+   "healthy_slots": [
+    "slot-0",
+    "slot-1",
+    "slot-2"
+   ],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [],
+   "first_seen_at": "2026-08-29T13:52:53.194191Z",
+   "reported_at": "2026-11-09T17:15:53Z",
+   "seen_at": "2026-11-09T17:15:53.333914Z",
+   "online": true,
+   "availability": "available",
+   "health": "healthy",
+   "scorer_liveness": "serving",
+   "health_reasons": [],
+   "bench_serviceability": "serving",
+   "system_metrics": {
+    "cpu_percent": 0,
+    "memory_percent": 10,
+    "disk_percent": 5,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": {
+    "cpu_count": 8,
+    "cpu_physical_cores": 4,
+    "memory_total_mib": 32099,
+    "disk_total_gib": 245,
+    "architecture": "x86_64"
+   },
+   "capabilities": {
+    "treasury_weights": {
+     "treasury_pin_version": 2,
+     "treasury_dispatch_version": 2,
+     "approved_policy_digest": "fb32519ac263e3388c888d7d654d084d4a8313decf2f194bbe9d5713a11a64f1",
+     "collector_policy_digest": "3e8d100a252dbf5918feefa3253ebd86af0b0bf974d78c6c981aa3a01cc1ccfd"
+    },
+    "screened_images": true,
+    "require_screened_image": true,
+    "source_build_fallback": false,
+    "full_stack_managed": true,
+    "stack_updater": true,
+    "sandbox_egress_restricted": true,
+    "ticket_inference": true,
+    "signed_score_quorum": true,
+    "sandbox_memory_limit": true,
+    "round_commitments": true,
+    "season_commitments": true,
+    "executor_isolation": "privileged_dind",
+    "scorer_benchmarks": {
+     "status": "fresh_verified",
+     "supported_bench_versions": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "observed_at": 1794244553,
+     "software_version": "0.468.2",
+     "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+     "scored_runtime_env": {
+      "bench_version": 13,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "c88a845c68703a94c2ee1c205f218037ed7085c9b0b62751e394bad05fb4e942"
+     },
+     "v14_scored_runtime_env": {
+      "bench_version": 14,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "8bb30c00026c427146478e7edb3a49ed49f3077c9844114df8fdf66c8f41d314"
+     },
+     "v15_scored_runtime_env": {
+      "bench_version": 15,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "ef5458e620423f0b6d98ad8ef0705254e2536b5543c51ffe63d42927cd30764a"
+     },
+     "v16_scored_runtime_env": {
+      "bench_version": 16,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "82ed5b0cf054608533d01cbe85630b1cd60d6efb7d2d7df6bc46c0a66a75d348"
+     },
+     "v7_calibration": null,
+     "deterministic_v13_datasets": true,
+     "generator_rounds": true,
+     "generator_round_max_cases": 80,
+     "generator_round_bench_versions": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "dueling_slice_bench_versions": [
+      16,
+      17,
+      18
+     ],
+     "source_free_screened_images": true,
+     "probe": {
+      "outcome": "served",
+      "observed_at": 1794244553,
+      "http_status": 200,
+      "reason": null,
+      "last_served_at": 1794244553,
+      "consecutive_failures": 0
+     }
+    }
+   },
+   "stack": {
+    "mode": "managed",
+    "compose_schema": 1,
+    "release_descriptor_digest": "sha256:9fe8960c3b45be86c635c58ef31c5d19360a34bf7eabcdf392facdf5cf4a2f66",
+    "components": {
+     "ditto_subnet": {
+      "image_digest": "sha256:de52f10aaa0ef267d85c0489b50099856ed685b1971702a7e033e921c7ab5c2a",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "dittobench_api": {
+      "image_digest": "sha256:600f5ee8c770d38081fce34ccd9db8311ccb610b8a7b966d5c9a2bb83fc7449c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "sandbox_docker": {
+      "image_digest": "sha256:279381aefd86cd778d3cbaa1b81ae0b687a0f1748c6b7a3a00edc3669137559c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "model_relay": null,
+     "pylon": {
+      "image_digest": "sha256:407008cd5631e11226d5fab77d9edc44796cdd74400a986a45ed7c5bd4dc928a",
+      "source_revision": null,
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "ollama": null
+    }
+   },
+   "stack_health": {
+    "ditto_subnet": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244553,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "0.468.2"
+     }
+    },
+    "dittobench_api": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244553,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2"
+     }
+    },
+    "sandbox_docker": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244553,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "model_relay": null,
+    "pylon": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244553,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "ollama": null
+   },
+   "updater_status": {
+    "enabled": true,
+    "channel": "compat-2",
+    "state": "unavailable",
+    "transaction_phase": null,
+    "current_descriptor": null,
+    "current_version": null,
+    "candidate_descriptor": null,
+    "candidate_version": null,
+    "failed_candidate_count": 0,
+    "retry_after": null,
+    "suppressed": false,
+    "last_success_at": null,
+    "last_failure_at": null,
+    "last_failure_reason": null,
+    "self_refresh_installed": false,
+    "self_refresh_revision": null,
+    "self_refresh_last_success_at": null,
+    "observed_at": 1794244553
+   },
+   "weights_fold": {
+    "epoch_index": 26240,
+    "ledger_digest": "ce7fc4ee469494ffd178eedefa89fc86f333217b6208e39486066de9bfa74543",
+    "vector_digest": "a0bfd87ab0919bf57eb21910eff03a18f7e39989ab5ca5d4d5d2f5e47e28791c",
+    "champion_agent_id": "3e59be1e-808c-487f-8e64-9f59ac547a5d",
+    "folded_at": 1794244512
+   }
+  },
+  {
+   "validator_hotkey": "5HT9U1J85fyNVudFAHuhYSGajRth8r3kYo7hTvkUXFEEDhQD",
+   "software_version": "0.468.2",
+   "protocol_version": 35,
+   "state": "polling",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": null,
+   "assignment_state": "unassigned",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 8,
+   "allowed_slots": 8,
+   "reserved_round_slots": 2,
+   "issuance_paused": false,
+   "healthy_slots": [
+    "slot-0",
+    "slot-1",
+    "slot-2",
+    "slot-3",
+    "slot-4",
+    "slot-5",
+    "slot-6"
+   ],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [],
+   "first_seen_at": "2026-08-19T15:48:36.927927Z",
+   "reported_at": "2026-11-09T17:15:46Z",
+   "seen_at": "2026-11-09T17:15:47.422632Z",
+   "online": true,
+   "availability": "available",
+   "health": "healthy",
+   "scorer_liveness": "serving",
+   "health_reasons": [],
+   "bench_serviceability": "serving",
+   "system_metrics": {
+    "cpu_percent": 5,
+    "memory_percent": 15,
+    "disk_percent": 15,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": {
+    "cpu_count": 8,
+    "cpu_physical_cores": 4,
+    "memory_total_mib": 64085,
+    "disk_total_gib": 406,
+    "architecture": "x86_64"
+   },
+   "capabilities": {
+    "screened_images": true,
+    "require_screened_image": true,
+    "source_build_fallback": false,
+    "full_stack_managed": true,
+    "stack_updater": true,
+    "sandbox_egress_restricted": true,
+    "ticket_inference": true,
+    "signed_score_quorum": true,
+    "sandbox_memory_limit": true,
+    "round_commitments": true,
+    "season_commitments": true,
+    "executor_isolation": "privileged_dind",
+    "scorer_benchmarks": {
+     "status": "fresh_verified",
+     "supported_bench_versions": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "observed_at": 1794244546,
+     "software_version": "0.468.2",
+     "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+     "scored_runtime_env": {
+      "bench_version": 13,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "c88a845c68703a94c2ee1c205f218037ed7085c9b0b62751e394bad05fb4e942"
+     },
+     "v14_scored_runtime_env": {
+      "bench_version": 14,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "8bb30c00026c427146478e7edb3a49ed49f3077c9844114df8fdf66c8f41d314"
+     },
+     "v15_scored_runtime_env": {
+      "bench_version": 15,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "ef5458e620423f0b6d98ad8ef0705254e2536b5543c51ffe63d42927cd30764a"
+     },
+     "v16_scored_runtime_env": {
+      "bench_version": 16,
+      "scope": "scorer-injected-env-only",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "injected_keys": [
+       "CHUTES_API_KEY",
+       "CHUTES_BASE_URL",
+       "DITTOBENCH_DB",
+       "DITTOBENCH_DECISIONS_URL",
+       "DITTOBENCH_INFERENCE_BASE_URL",
+       "DITTOBENCH_MEMORY_PATH",
+       "DITTOBENCH_MODEL",
+       "DITTOBENCH_PROVIDER",
+       "OLLAMA_BASE_URL",
+       "OPENAI_API_BASE",
+       "OPENAI_API_KEY",
+       "OPENAI_BASE_URL",
+       "OPENROUTER_API_KEY",
+       "OPENROUTER_BASE_URL"
+      ],
+      "sha256": "82ed5b0cf054608533d01cbe85630b1cd60d6efb7d2d7df6bc46c0a66a75d348"
+     },
+     "v7_calibration": null,
+     "deterministic_v13_datasets": true,
+     "generator_rounds": true,
+     "generator_round_max_cases": 80,
+     "generator_round_bench_versions": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+     ],
+     "dueling_slice_bench_versions": [
+      16,
+      17,
+      18
+     ],
+     "source_free_screened_images": true,
+     "probe": {
+      "outcome": "served",
+      "observed_at": 1794244546,
+      "http_status": 200,
+      "reason": null,
+      "last_served_at": 1794244546,
+      "consecutive_failures": 0
+     }
+    }
+   },
+   "stack": {
+    "mode": "managed",
+    "compose_schema": 1,
+    "release_descriptor_digest": "sha256:9fe8960c3b45be86c635c58ef31c5d19360a34bf7eabcdf392facdf5cf4a2f66",
+    "components": {
+     "ditto_subnet": {
+      "image_digest": "sha256:de52f10aaa0ef267d85c0489b50099856ed685b1971702a7e033e921c7ab5c2a",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "dittobench_api": {
+      "image_digest": "sha256:600f5ee8c770d38081fce34ccd9db8311ccb610b8a7b966d5c9a2bb83fc7449c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2",
+      "provenance": "signed_descriptor"
+     },
+     "sandbox_docker": {
+      "image_digest": "sha256:279381aefd86cd778d3cbaa1b81ae0b687a0f1748c6b7a3a00edc3669137559c",
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "model_relay": null,
+     "pylon": {
+      "image_digest": "sha256:407008cd5631e11226d5fab77d9edc44796cdd74400a986a45ed7c5bd4dc928a",
+      "source_revision": null,
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "ollama": null
+    }
+   },
+   "stack_health": {
+    "ditto_subnet": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244547,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "0.468.2"
+     }
+    },
+    "dittobench_api": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244546,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": "5cf366988002f520188ce580dc2511f7e75d1b20",
+      "version": "0.468.2"
+     }
+    },
+    "sandbox_docker": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244516,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "model_relay": null,
+    "pylon": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1794244516,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "ollama": null
+   },
+   "updater_status": {
+    "enabled": true,
+    "channel": "compat-2",
+    "state": "unavailable",
+    "transaction_phase": null,
+    "current_descriptor": null,
+    "current_version": null,
+    "candidate_descriptor": null,
+    "candidate_version": null,
+    "failed_candidate_count": 0,
+    "retry_after": null,
+    "suppressed": false,
+    "last_success_at": null,
+    "last_failure_at": null,
+    "last_failure_reason": null,
+    "self_refresh_installed": false,
+    "self_refresh_revision": null,
+    "self_refresh_last_success_at": null,
+    "observed_at": 1794244546
+   },
+   "weights_fold": {
+    "epoch_index": 26240,
+    "ledger_digest": "ce7fc4ee469494ffd178eedefa89fc86f333217b6208e39486066de9bfa74543",
+    "vector_digest": "a0bfd87ab0919bf57eb21910eff03a18f7e39989ab5ca5d4d5d2f5e47e28791c",
+    "champion_agent_id": "3e59be1e-808c-487f-8e64-9f59ac547a5d",
+    "folded_at": 1794244490
+   }
+  },
+  {
+   "validator_hotkey": "5HmP9732JFjnut2RY9yg4Gz2qJ38vF8xFwZb5dQVPF7FsmZz",
+   "software_version": "0.118.0",
+   "protocol_version": 25,
+   "state": "running_benchmark",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": "fe6a7da7-61fc-4152-b598-c37c91078d62",
+   "assignment_state": "assignment_mismatch",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 8,
+   "allowed_slots": 8,
+   "reserved_round_slots": 0,
+   "issuance_paused": false,
+   "healthy_slots": [
+    "slot-0",
+    "slot-1",
+    "slot-2",
+    "slot-4",
+    "slot-5",
+    "slot-6",
+    "slot-7"
+   ],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [
+    {
+     "slot_id": "slot-0",
+     "agent_id": "de936681-8131-47c4-a550-0d70318eb323"
+    },
+    {
+     "slot_id": "slot-7",
+     "agent_id": "fe6a7da7-61fc-4152-b598-c37c91078d62"
+    }
+   ],
+   "first_seen_at": null,
+   "reported_at": "2026-08-28T16:39:55Z",
+   "seen_at": "2026-08-28T16:39:55.630107Z",
+   "online": false,
+   "availability": "offline",
+   "health": "critical",
+   "scorer_liveness": "serving",
+   "health_reasons": [
+    "scorer identity is not eligible for bench v17"
+   ],
+   "bench_serviceability": "scorer_unverified",
+   "system_metrics": {
+    "cpu_percent": 5,
+    "memory_percent": 20,
+    "disk_percent": 85,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": null,
+   "capabilities": {
+    "screened_images": true,
+    "require_screened_image": true,
+    "source_build_fallback": false,
+    "full_stack_managed": true,
+    "stack_updater": true,
+    "sandbox_egress_restricted": true,
+    "ticket_inference": true,
+    "signed_score_quorum": true,
+    "executor_isolation": "privileged_dind",
+    "scorer_benchmarks": {
+     "status": "fresh_verified",
+     "supported_bench_versions": [
+      8,
+      9,
+      10,
+      11,
+      12
+     ],
+     "observed_at": 1787935195,
+     "software_version": "0.118.0",
+     "source_revision": "b3450ebbf7e658b9ad4a94cddfd7ad67d18abaf1",
+     "v7_calibration": null,
+     "probe": {
+      "outcome": "served",
+      "observed_at": 1787935195,
+      "http_status": 200,
+      "reason": null,
+      "last_served_at": 1787935195,
+      "consecutive_failures": 0
+     }
+    }
+   },
+   "stack": {
+    "mode": "managed",
+    "compose_schema": 1,
+    "release_descriptor_digest": "sha256:66d46e6e15ed6646834e09a6c96efefbe6969573ddd1f323980cf5901dd46d57",
+    "components": {
+     "ditto_subnet": {
+      "image_digest": "sha256:f3dd7dc4fe79c0e84e4085f688fef35d097b54c6b9cd1efdbbdac39b3aba6217",
+      "source_revision": "b3450ebbf7e658b9ad4a94cddfd7ad67d18abaf1",
+      "version": "0.118.0",
+      "provenance": "signed_descriptor"
+     },
+     "dittobench_api": {
+      "image_digest": "sha256:2a5c876334d17e59610d487a2d634f3ab4e42d624c336f6259028c16af5defea",
+      "source_revision": "b3450ebbf7e658b9ad4a94cddfd7ad67d18abaf1",
+      "version": "0.118.0",
+      "provenance": "signed_descriptor"
+     },
+     "sandbox_docker": {
+      "image_digest": "sha256:919c29ec4680ad949b8d9915bd557e87bb04c83ad9ce5b0d3422e5e6390b9dd3",
+      "source_revision": "b3450ebbf7e658b9ad4a94cddfd7ad67d18abaf1",
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "model_relay": null,
+     "pylon": {
+      "image_digest": "sha256:85af6da7dd54bcfb235f54f9d2b692f328c8db4f98509db1a3a994bbf5acd1ad",
+      "source_revision": null,
+      "version": null,
+      "provenance": "signed_descriptor"
+     },
+     "ollama": null
+    }
+   },
+   "stack_health": {
+    "ditto_subnet": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1787935195,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "0.118.0"
+     }
+    },
+    "dittobench_api": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1787935195,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": "b3450ebbf7e658b9ad4a94cddfd7ad67d18abaf1",
+      "version": "0.118.0"
+     }
+    },
+    "sandbox_docker": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1787935167,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "model_relay": null,
+    "pylon": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1787935167,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "ollama": null
+   },
+   "updater_status": {
+    "enabled": true,
+    "channel": "compat-2",
+    "state": "idle",
+    "transaction_phase": null,
+    "current_descriptor": "ghcr.io/ditto-assistant/ditto-subnet-stack@sha256:66d46e6e15ed6646834e09a6c96efefbe6969573ddd1f323980cf5901dd46d57",
+    "current_version": "0.118.0",
+    "candidate_descriptor": null,
+    "candidate_version": null,
+    "failed_candidate_count": 0,
+    "retry_after": null,
+    "suppressed": false,
+    "last_success_at": null,
+    "last_failure_at": null,
+    "last_failure_reason": null,
+    "self_refresh_installed": null,
+    "self_refresh_revision": null,
+    "self_refresh_last_success_at": null,
+    "observed_at": 1787935195
+   },
+   "weights_fold": null
+  },
+  {
+   "validator_hotkey": "5HKpbkeLSfp65ExySAeej6MhZJdbmjHQDqHZpjz39aKRgjy5",
+   "software_version": "0.9.6",
+   "protocol_version": 6,
+   "state": "idle",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": null,
+   "assignment_state": "unassigned",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 1,
+   "allowed_slots": 0,
+   "reserved_round_slots": 0,
+   "issuance_paused": true,
+   "healthy_slots": [
+    "slot-0"
+   ],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [],
+   "first_seen_at": "2026-07-23T16:53:22.210446Z",
+   "reported_at": "2026-08-28T02:26:59Z",
+   "seen_at": "2026-08-28T02:26:59.200182Z",
+   "online": false,
+   "availability": "offline",
+   "health": "critical",
+   "scorer_liveness": "unreported",
+   "health_reasons": [
+    "software too old for bench v17 (heartbeat protocol 6)"
+   ],
+   "bench_serviceability": "software_obsolete",
+   "system_metrics": {
+    "cpu_percent": 0,
+    "memory_percent": 10,
+    "disk_percent": 5,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": null,
+   "capabilities": null,
+   "stack": null,
+   "stack_health": null,
+   "updater_status": null,
+   "weights_fold": null
+  },
+  {
+   "validator_hotkey": "5FU3YKmvVry2EVRUqzcdaTRAqW1E6nqPPPqmUGLe25JBmNDd",
+   "software_version": "0.34.1",
+   "protocol_version": 15,
+   "state": "idle",
+   "assigned_agent_id": null,
+   "assigned_agent_name": null,
+   "reported_agent_id": null,
+   "assignment_state": "unassigned",
+   "active_agent_id": null,
+   "active_benchmark": null,
+   "configured_slots": 4,
+   "allowed_slots": 0,
+   "reserved_round_slots": 0,
+   "issuance_paused": true,
+   "healthy_slots": [
+    "slot-0"
+   ],
+   "admission": "accepting",
+   "active_benchmarks": [],
+   "assigned_benchmarks": [],
+   "confirmation_benchmarks": [],
+   "orphaned_slots": [],
+   "claimed_slots": [],
+   "first_seen_at": "2026-07-14T16:12:26.633341Z",
+   "reported_at": "2026-07-26T20:27:55Z",
+   "seen_at": "2026-07-26T20:27:55.276393Z",
+   "online": false,
+   "availability": "offline",
+   "health": "critical",
+   "scorer_liveness": "not_serving",
+   "health_reasons": [
+    "scorer identity is not eligible for bench v17",
+    "dittobench_api: degraded",
+    "scorer not serving: http 404 (3284 in a row)"
+   ],
+   "bench_serviceability": "scorer_unverified",
+   "system_metrics": {
+    "cpu_percent": 10,
+    "memory_percent": 15,
+    "disk_percent": 10,
+    "docker_status": "healthy",
+    "running_containers": 1,
+    "unhealthy_containers": 0
+   },
+   "host_specs": null,
+   "capabilities": {
+    "screened_images": true,
+    "require_screened_image": true,
+    "source_build_fallback": false,
+    "full_stack_managed": false,
+    "stack_updater": false,
+    "sandbox_egress_restricted": true,
+    "ticket_inference": true,
+    "signed_score_quorum": true,
+    "executor_isolation": "privileged_dind",
+    "scorer_benchmarks": {
+     "status": "legacy_v2",
+     "supported_bench_versions": [
+      2
+     ],
+     "observed_at": null,
+     "software_version": null,
+     "source_revision": null,
+     "v7_calibration": null,
+     "probe": {
+      "outcome": "http_error",
+      "observed_at": 1785097675,
+      "http_status": 404,
+      "reason": null,
+      "last_served_at": null,
+      "consecutive_failures": 3284
+     }
+    }
+   },
+   "stack": {
+    "mode": "source",
+    "compose_schema": 1,
+    "release_descriptor_digest": null,
+    "components": {
+     "ditto_subnet": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "source-build",
+      "provenance": "local_unverified"
+     },
+     "dittobench_api": {
+      "image_digest": null,
+      "source_revision": "3de0c62ff90a4f6288b19db5a310ecc6e6f78540",
+      "version": "unknown",
+      "provenance": "committed_pin"
+     },
+     "sandbox_docker": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "source-build",
+      "provenance": "local_unverified"
+     },
+     "model_relay": {
+      "image_digest": null,
+      "source_revision": "3de0c62ff90a4f6288b19db5a310ecc6e6f78540",
+      "version": "unknown",
+      "provenance": "committed_pin"
+     },
+     "pylon": {
+      "image_digest": "sha256:ba6ba5e3e7b32683f90039eb5a37a565d5479f034326b40288869f826f7362c7",
+      "source_revision": null,
+      "version": "unknown",
+      "provenance": "committed_pin"
+     },
+     "ollama": {
+      "image_digest": "sha256:a5409cb903d30f9cd67e9f430dd336ddc9274e16fd78f75b675c42065991b4fd",
+      "source_revision": null,
+      "version": "unknown",
+      "provenance": "committed_pin"
+     }
+    }
+   },
+   "stack_health": {
+    "ditto_subnet": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1785097675,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": {
+      "image_digest": null,
+      "source_revision": null,
+      "version": "0.34.1"
+     }
+    },
+    "dittobench_api": {
+     "health": "degraded",
+     "required": true,
+     "observed_at": 1785097675,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "sandbox_docker": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1785097640,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "model_relay": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1785097640,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "pylon": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1785097640,
+     "ready": true,
+     "model_ready": null,
+     "observed_identity": null
+    },
+    "ollama": {
+     "health": "healthy",
+     "required": true,
+     "observed_at": 1785097640,
+     "ready": true,
+     "model_ready": true,
+     "observed_identity": null
+    }
+   },
+   "updater_status": null,
+   "weights_fold": null
+  }
+ ]
+}

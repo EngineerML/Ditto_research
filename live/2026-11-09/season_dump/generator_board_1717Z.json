@@ -1,0 +1,1468 @@
+{
+ "entries": [
+  {
+   "miner_hotkey": "5ELk1RHE7WC8jBb3WV3hEqus8zEezKhNCunrFa2JdSjBDAf1",
+   "submission_id": "99dba8a8-de5e-4a60-aaec-0611b6cf69f8",
+   "round_index": 26080,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.372556462585034,
+   "discriminating_cases": 59,
+   "first_seen": "2026-11-03T15:11:07.326172Z",
+   "scored_at": "2026-11-06T01:18:34.538231Z",
+   "name": null,
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 3,
+   "status": "superseded",
+   "qualified_at": "2026-11-03T15:17:27.205881Z",
+   "rounds_in_window": 7,
+   "recent": [
+    {
+     "round_index": 26064,
+     "submission_id": "eb60f229-a595-4da9-8b46-a221f4ad2c06",
+     "score": 0.35228862973760944,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-02T20:49:28.844478Z"
+    },
+    {
+     "round_index": 26065,
+     "submission_id": "eb60f229-a595-4da9-8b46-a221f4ad2c06",
+     "score": 0.37190476190476196,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-03T02:05:52.727079Z"
+    },
+    {
+     "round_index": 26066,
+     "submission_id": "eb60f229-a595-4da9-8b46-a221f4ad2c06",
+     "score": 0.27946005830903786,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-03T06:55:34.411871Z"
+    },
+    {
+     "round_index": 26068,
+     "submission_id": "eb60f229-a595-4da9-8b46-a221f4ad2c06",
+     "score": 0.3146239067055394,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-03T16:33:02.784006Z"
+    },
+    {
+     "round_index": 26078,
+     "submission_id": "99dba8a8-de5e-4a60-aaec-0611b6cf69f8",
+     "score": 0.3969813411078717,
+     "rank": 1,
+     "columns": 4,
+     "scored_at": "2026-11-05T15:30:24.806276Z"
+    },
+    {
+     "round_index": 26079,
+     "submission_id": "99dba8a8-de5e-4a60-aaec-0611b6cf69f8",
+     "score": 0.3576971817298346,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-05T20:38:16.802565Z"
+    },
+    {
+     "round_index": 26080,
+     "submission_id": "99dba8a8-de5e-4a60-aaec-0611b6cf69f8",
+     "score": 0.372556462585034,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-06T01:18:34.538231Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5HGQghQpjgMTouMqSVioDb8rJU2x1ysM7ndZcPwpyZVpRizj",
+   "submission_id": "82aa3602-5c7f-429c-a102-9ecbb6c8942b",
+   "round_index": 26071,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.3659816326530613,
+   "discriminating_cases": 52,
+   "first_seen": "2026-11-02T19:44:57.054720Z",
+   "scored_at": "2026-11-04T07:02:24.494776Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 1,
+   "status": "superseded",
+   "qualified_at": "2026-11-02T19:54:44.662668Z",
+   "rounds_in_window": 1,
+   "recent": [
+    {
+     "round_index": 26071,
+     "submission_id": "82aa3602-5c7f-429c-a102-9ecbb6c8942b",
+     "score": 0.3659816326530613,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-04T07:02:24.494776Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5Ey8jpnscAx1qiHWLeGA38tDxoWRzpCXHPjMwv6GamYoB4n1",
+   "submission_id": "284de72b-4e69-4a12-838e-18411fdcb7a5",
+   "round_index": 26080,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.33163381924198254,
+   "discriminating_cases": 47,
+   "first_seen": "2026-11-04T11:43:37.406444Z",
+   "scored_at": "2026-11-06T01:18:34.538231Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 2,
+   "status": "superseded",
+   "qualified_at": "2026-11-04T11:53:44.006740Z",
+   "rounds_in_window": 1,
+   "recent": [
+    {
+     "round_index": 26080,
+     "submission_id": "284de72b-4e69-4a12-838e-18411fdcb7a5",
+     "score": 0.33163381924198254,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-06T01:18:34.538231Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5E2J8u7BDPLVHxV4RnkUaoZ3euPMkV1F7oj3W9aeVuZ8feLz",
+   "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+   "round_index": 26090,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.20067444120505346,
+   "discriminating_cases": 33,
+   "first_seen": "2026-11-04T11:28:50.902831Z",
+   "scored_at": "2026-11-08T01:59:11.022943Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 2,
+   "status": "superseded",
+   "qualified_at": "2026-11-04T11:37:34.077006Z",
+   "rounds_in_window": 4,
+   "recent": [
+    {
+     "round_index": 26079,
+     "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+     "score": 0.3086029154518951,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-05T20:38:16.802565Z"
+    },
+    {
+     "round_index": 26086,
+     "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+     "score": 0.22912390670553934,
+     "rank": 3,
+     "columns": 4,
+     "scored_at": "2026-11-07T06:52:03.436717Z"
+    },
+    {
+     "round_index": 26087,
+     "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+     "score": 0.23487998056365403,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-07T11:40:24.749285Z"
+    },
+    {
+     "round_index": 26090,
+     "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+     "score": 0.20067444120505346,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-08T01:59:11.022943Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5GQo7sueXzwjFnTsHzQNzQQeYgi6N5c9tVukvACWcjdmswpY",
+   "submission_id": "20178d8c-0135-445a-b42b-494438be9b74",
+   "round_index": 26092,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.19435179786200193,
+   "discriminating_cases": 34,
+   "first_seen": "2026-11-04T23:08:08.000701Z",
+   "scored_at": "2026-11-08T11:13:10.081602Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 3,
+   "status": "superseded",
+   "qualified_at": "2026-11-04T23:17:10.918373Z",
+   "rounds_in_window": 1,
+   "recent": [
+    {
+     "round_index": 26092,
+     "submission_id": "20178d8c-0135-445a-b42b-494438be9b74",
+     "score": 0.19435179786200193,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-08T11:13:10.081602Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5EhujgJUaY39aiFHKcUhmLQ9aSVyKKLStjD2T7rC1Hqk4znb",
+   "submission_id": "f2b50827-4a68-4f86-a538-5681197b274d",
+   "round_index": 26093,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.17918561710398445,
+   "discriminating_cases": 30,
+   "first_seen": "2026-11-04T23:21:09.975402Z",
+   "scored_at": "2026-11-08T15:59:37.736155Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 4,
+   "status": "superseded",
+   "qualified_at": "2026-11-04T23:30:04.281740Z",
+   "rounds_in_window": 1,
+   "recent": [
+    {
+     "round_index": 26093,
+     "submission_id": "f2b50827-4a68-4f86-a538-5681197b274d",
+     "score": 0.17918561710398445,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-08T15:59:37.736155Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+   "submission_id": "45cd9ba6-2de6-44b6-9a54-2c2fb3e56150",
+   "round_index": 26096,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.15687930029154518,
+   "discriminating_cases": 48,
+   "first_seen": "2026-11-06T14:56:44.346885Z",
+   "scored_at": "2026-11-09T06:25:21.374615Z",
+   "name": "staged-records-v1",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 1,
+   "status": "superseded",
+   "qualified_at": "2026-11-06T14:57:45.209001Z",
+   "rounds_in_window": 1,
+   "recent": [
+    {
+     "round_index": 26096,
+     "submission_id": "45cd9ba6-2de6-44b6-9a54-2c2fb3e56150",
+     "score": 0.15687930029154518,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-09T06:25:21.374615Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5CBD7DW3w7pyheNSTUWLLU6bFNPxEbMoPRbkbEGcKbKgkFyv",
+   "submission_id": "20d34ba1-95cb-4f77-9acd-5544fdd449e7",
+   "round_index": 26091,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.13186443148688046,
+   "discriminating_cases": 23,
+   "first_seen": "2026-11-04T12:55:25.042752Z",
+   "scored_at": "2026-11-08T06:55:38.312668Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 6,
+   "status": "superseded",
+   "qualified_at": "2026-11-04T13:04:29.460959Z",
+   "rounds_in_window": 3,
+   "recent": [
+    {
+     "round_index": 26066,
+     "submission_id": "33c227e6-96ff-45a0-a9c1-3bcd602c4bee",
+     "score": 0.27346705539358596,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-03T06:55:34.411871Z"
+    },
+    {
+     "round_index": 26089,
+     "submission_id": "20d34ba1-95cb-4f77-9acd-5544fdd449e7",
+     "score": 0.15833333333333333,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-07T21:10:31.127895Z"
+    },
+    {
+     "round_index": 26091,
+     "submission_id": "20d34ba1-95cb-4f77-9acd-5544fdd449e7",
+     "score": 0.13186443148688046,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-08T06:55:38.312668Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5FCRu5WxKnk4zUGQno8NffyLuvK7ZdhBDGKkVJDibrW9rvFd",
+   "submission_id": "1fabe3a9-8095-438c-9a84-b175ef212661",
+   "round_index": 26098,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.11458892128279884,
+   "discriminating_cases": 21,
+   "first_seen": "2026-11-07T19:21:44.088626Z",
+   "scored_at": "2026-11-09T16:42:07.795635Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 4,
+   "status": "active",
+   "qualified_at": "2026-11-07T19:32:48.544281Z",
+   "rounds_in_window": 4,
+   "recent": [
+    {
+     "round_index": 26067,
+     "submission_id": "e40865a6-8959-4977-a930-9ccdaadcffd0",
+     "score": 0.292757142857143,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-03T11:27:03.426543Z"
+    },
+    {
+     "round_index": 26088,
+     "submission_id": "093e8347-6643-44b3-997e-754b519bb6e2",
+     "score": 0.2852142857142857,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-07T16:34:00.289005Z"
+    },
+    {
+     "round_index": 26097,
+     "submission_id": "1fabe3a9-8095-438c-9a84-b175ef212661",
+     "score": 0.06816387269193393,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-09T11:04:31.590724Z"
+    },
+    {
+     "round_index": 26098,
+     "submission_id": "1fabe3a9-8095-438c-9a84-b175ef212661",
+     "score": 0.11458892128279884,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-09T16:42:07.795635Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+   "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+   "round_index": 26094,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.06142857142857143,
+   "discriminating_cases": 15,
+   "first_seen": "2026-11-03T15:20:23.916837Z",
+   "scored_at": "2026-11-08T20:56:20.140641Z",
+   "name": "reaxgen-b1",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 2,
+   "status": "superseded",
+   "qualified_at": "2026-11-03T15:23:13.240745Z",
+   "rounds_in_window": 14,
+   "recent": [
+    {
+     "round_index": 26064,
+     "submission_id": "fa7b2510-59f4-4254-a8e8-79f008ffd772",
+     "score": 0.30406540330417886,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-02T20:49:28.844478Z"
+    },
+    {
+     "round_index": 26065,
+     "submission_id": "fa7b2510-59f4-4254-a8e8-79f008ffd772",
+     "score": 0.2766839650145773,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-03T02:05:52.727079Z"
+    },
+    {
+     "round_index": 26078,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.36398833819241966,
+     "rank": 3,
+     "columns": 4,
+     "scored_at": "2026-11-05T15:30:24.806276Z"
+    },
+    {
+     "round_index": 26079,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.3887035957240038,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-05T20:38:16.802565Z"
+    },
+    {
+     "round_index": 26080,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.45157784256559746,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-06T01:18:34.538231Z"
+    },
+    {
+     "round_index": 26086,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.2809523809523809,
+     "rank": 1,
+     "columns": 4,
+     "scored_at": "2026-11-07T06:52:03.436717Z"
+    },
+    {
+     "round_index": 26087,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.26190476190476186,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-07T11:40:24.749285Z"
+    },
+    {
+     "round_index": 26088,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.25476190476190474,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-07T16:34:00.289005Z"
+    },
+    {
+     "round_index": 26089,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.1457142857142858,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-07T21:10:31.127895Z"
+    },
+    {
+     "round_index": 26090,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.12999999999999998,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-08T01:59:11.022943Z"
+    },
+    {
+     "round_index": 26091,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.09577521865889212,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-08T06:55:38.312668Z"
+    },
+    {
+     "round_index": 26092,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.06523809523809523,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-08T11:13:10.081602Z"
+    },
+    {
+     "round_index": 26093,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.03523809523809523,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-08T15:59:37.736155Z"
+    },
+    {
+     "round_index": 26094,
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "score": 0.06142857142857143,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-08T20:56:20.140641Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5C888ianRcYMmrDsLjk4eTkdGtYmfo1VZMnf4KGkn7jCNGWs",
+   "submission_id": "b30c204a-c1b5-418d-af13-82ebb861e021",
+   "round_index": 26095,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.04718367346938775,
+   "discriminating_cases": 18,
+   "first_seen": "2026-11-05T15:12:46.989065Z",
+   "scored_at": "2026-11-09T01:29:30.016188Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 3,
+   "status": "superseded",
+   "qualified_at": "2026-11-05T15:23:22.863053Z",
+   "rounds_in_window": 1,
+   "recent": [
+    {
+     "round_index": 26095,
+     "submission_id": "b30c204a-c1b5-418d-af13-82ebb861e021",
+     "score": 0.04718367346938775,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-09T01:29:30.016188Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5HQsecKgKNScDD6M1dJvz7Ebq7Jdcgu5aZG7s3qN2RUbJ4mg",
+   "submission_id": "cf9acd31-ed76-4731-88ba-c4c0864253ff",
+   "round_index": 26098,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.04275238095238095,
+   "discriminating_cases": 13,
+   "first_seen": "2026-11-07T21:53:14.054844Z",
+   "scored_at": "2026-11-09T16:42:07.795635Z",
+   "name": "sn118gen",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 3,
+   "status": "active",
+   "qualified_at": "2026-11-07T22:12:57.827160Z",
+   "rounds_in_window": 2,
+   "recent": [
+    {
+     "round_index": 26069,
+     "submission_id": "67c2dc78-c03d-4b39-a6af-27065b7cbbab",
+     "score": 0.010148688046647227,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-03T21:14:33.024709Z"
+    },
+    {
+     "round_index": 26098,
+     "submission_id": "cf9acd31-ed76-4731-88ba-c4c0864253ff",
+     "score": 0.04275238095238095,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-09T16:42:07.795635Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+   "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+   "round_index": 26098,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.03761904761904762,
+   "discriminating_cases": 12,
+   "first_seen": "2026-11-03T15:31:30.036811Z",
+   "scored_at": "2026-11-09T16:42:07.795635Z",
+   "name": null,
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 4,
+   "status": "active",
+   "qualified_at": "2026-11-03T15:34:58.640469Z",
+   "rounds_in_window": 18,
+   "recent": [
+    {
+     "round_index": 26064,
+     "submission_id": "6670aa8d-f502-4973-acf3-f8d82781537b",
+     "score": 0.4157450923226436,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-02T20:49:28.844478Z"
+    },
+    {
+     "round_index": 26065,
+     "submission_id": "6670aa8d-f502-4973-acf3-f8d82781537b",
+     "score": 0.34039650145772593,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-03T02:05:52.727079Z"
+    },
+    {
+     "round_index": 26066,
+     "submission_id": "6670aa8d-f502-4973-acf3-f8d82781537b",
+     "score": 0.3652380952380953,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-03T06:55:34.411871Z"
+    },
+    {
+     "round_index": 26067,
+     "submission_id": "6670aa8d-f502-4973-acf3-f8d82781537b",
+     "score": 0.2861667638483966,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-03T11:27:03.426543Z"
+    },
+    {
+     "round_index": 26068,
+     "submission_id": "6670aa8d-f502-4973-acf3-f8d82781537b",
+     "score": 0.32174771622934895,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-03T16:33:02.784006Z"
+    },
+    {
+     "round_index": 26078,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.37212021379980564,
+     "rank": 2,
+     "columns": 4,
+     "scored_at": "2026-11-05T15:30:24.806276Z"
+    },
+    {
+     "round_index": 26079,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.366906997084548,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-05T20:38:16.802565Z"
+    },
+    {
+     "round_index": 26080,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.32714013605442166,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-06T01:18:34.538231Z"
+    },
+    {
+     "round_index": 26086,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.23874402332361513,
+     "rank": 2,
+     "columns": 4,
+     "scored_at": "2026-11-07T06:52:03.436717Z"
+    },
+    {
+     "round_index": 26087,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.2408614188532555,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-07T11:40:24.749285Z"
+    },
+    {
+     "round_index": 26088,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.26835568513119534,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-07T16:34:00.289005Z"
+    },
+    {
+     "round_index": 26089,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.14204344023323623,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-07T21:10:31.127895Z"
+    },
+    {
+     "round_index": 26090,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.01333333333333333,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-08T01:59:11.022943Z"
+    },
+    {
+     "round_index": 26094,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.0661904761904762,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-08T20:56:20.140641Z"
+    },
+    {
+     "round_index": 26095,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.025714285714285717,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-09T01:29:30.016188Z"
+    },
+    {
+     "round_index": 26096,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.03619047619047619,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-09T06:25:21.374615Z"
+    },
+    {
+     "round_index": 26097,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.036190476190476197,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-09T11:04:31.590724Z"
+    },
+    {
+     "round_index": 26098,
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "score": 0.03761904761904762,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-09T16:42:07.795635Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+   "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+   "round_index": 26098,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.033313119533527696,
+   "discriminating_cases": 13,
+   "first_seen": "2026-11-04T12:11:22.136509Z",
+   "scored_at": "2026-11-09T16:42:07.795635Z",
+   "name": null,
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 7,
+   "status": "active",
+   "qualified_at": "2026-11-04T12:14:41.284346Z",
+   "rounds_in_window": 22,
+   "recent": [
+    {
+     "round_index": 26065,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.41000000000000003,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-03T02:05:52.727079Z"
+    },
+    {
+     "round_index": 26066,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.40000000000000013,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-03T06:55:34.411871Z"
+    },
+    {
+     "round_index": 26067,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.3333333333333335,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-03T11:27:03.426543Z"
+    },
+    {
+     "round_index": 26068,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.3241328474246843,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-03T16:33:02.784006Z"
+    },
+    {
+     "round_index": 26069,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.3511802721088437,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-03T21:14:33.024709Z"
+    },
+    {
+     "round_index": 26070,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.3100641399416909,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-04T02:08:34.591118Z"
+    },
+    {
+     "round_index": 26071,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.2979579203109817,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-04T07:02:24.494776Z"
+    },
+    {
+     "round_index": 26072,
+     "submission_id": "11db1d34-3394-4130-8b27-a76da3df32bc",
+     "score": 0.3469123420796891,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-04T11:58:12.283884Z"
+    },
+    {
+     "round_index": 26079,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.34245529640427597,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-05T20:38:16.802565Z"
+    },
+    {
+     "round_index": 26080,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.3352380952380952,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-06T01:18:34.538231Z"
+    },
+    {
+     "round_index": 26086,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.22833367346938765,
+     "rank": 4,
+     "columns": 4,
+     "scored_at": "2026-11-07T06:52:03.436717Z"
+    },
+    {
+     "round_index": 26087,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.26835568513119523,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-07T11:40:24.749285Z"
+    },
+    {
+     "round_index": 26088,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.2633298347910592,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-07T16:34:00.289005Z"
+    },
+    {
+     "round_index": 26089,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.13666666666666671,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-07T21:10:31.127895Z"
+    },
+    {
+     "round_index": 26090,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.0380952380952381,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-08T01:59:11.022943Z"
+    },
+    {
+     "round_index": 26092,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.04952380952380953,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-08T11:13:10.081602Z"
+    },
+    {
+     "round_index": 26093,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.02952380952380952,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-08T15:59:37.736155Z"
+    },
+    {
+     "round_index": 26094,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.03999378036929057,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-08T20:56:20.140641Z"
+    },
+    {
+     "round_index": 26095,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.03423848396501459,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-09T01:29:30.016188Z"
+    },
+    {
+     "round_index": 26096,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.035238095238095235,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-09T06:25:21.374615Z"
+    },
+    {
+     "round_index": 26097,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.01809523809523809,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-09T11:04:31.590724Z"
+    },
+    {
+     "round_index": 26098,
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "score": 0.033313119533527696,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-09T16:42:07.795635Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+   "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+   "round_index": 26098,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.03238095238095238,
+   "discriminating_cases": 7,
+   "first_seen": "2026-11-04T18:29:42.233071Z",
+   "scored_at": "2026-11-09T16:42:07.795635Z",
+   "name": null,
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 5,
+   "status": "active",
+   "qualified_at": "2026-11-04T18:31:17.531638Z",
+   "rounds_in_window": 20,
+   "recent": [
+    {
+     "round_index": 26064,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.36604285714285734,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-02T20:49:28.844478Z"
+    },
+    {
+     "round_index": 26065,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.31156618075801745,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-03T02:05:52.727079Z"
+    },
+    {
+     "round_index": 26066,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.29193148688046655,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-03T06:55:34.411871Z"
+    },
+    {
+     "round_index": 26067,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.3407103012633627,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-03T11:27:03.426543Z"
+    },
+    {
+     "round_index": 26068,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.3367840621963072,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-03T16:33:02.784006Z"
+    },
+    {
+     "round_index": 26069,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.31924120505345,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-03T21:14:33.024709Z"
+    },
+    {
+     "round_index": 26070,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.37881749271137033,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-04T02:08:34.591118Z"
+    },
+    {
+     "round_index": 26071,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.3120761904761905,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-04T07:02:24.494776Z"
+    },
+    {
+     "round_index": 26072,
+     "submission_id": "eab9260a-2e62-4ffd-ba33-c89215e397a5",
+     "score": 0.3860073858114674,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-04T11:58:12.283884Z"
+    },
+    {
+     "round_index": 26087,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.28952380952380946,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-07T11:40:24.749285Z"
+    },
+    {
+     "round_index": 26088,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.2864002915451896,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-07T16:34:00.289005Z"
+    },
+    {
+     "round_index": 26089,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.11380952380952386,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-07T21:10:31.127895Z"
+    },
+    {
+     "round_index": 26091,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.13238095238095238,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-08T06:55:38.312668Z"
+    },
+    {
+     "round_index": 26092,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.06952380952380952,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-08T11:13:10.081602Z"
+    },
+    {
+     "round_index": 26093,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.029047619047619044,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-08T15:59:37.736155Z"
+    },
+    {
+     "round_index": 26094,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.013333333333333334,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-08T20:56:20.140641Z"
+    },
+    {
+     "round_index": 26095,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.02571428571428571,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-09T01:29:30.016188Z"
+    },
+    {
+     "round_index": 26096,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.017142857142857144,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-09T06:25:21.374615Z"
+    },
+    {
+     "round_index": 26097,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.00857142857142857,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-09T11:04:31.590724Z"
+    },
+    {
+     "round_index": 26098,
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "score": 0.03238095238095238,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-09T16:42:07.795635Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+   "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+   "round_index": 26097,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.014285714285714284,
+   "discriminating_cases": 6,
+   "first_seen": "2026-11-04T18:32:04.430796Z",
+   "scored_at": "2026-11-09T11:04:31.590724Z",
+   "name": null,
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 4,
+   "status": "superseded",
+   "qualified_at": "2026-11-04T18:33:52.310317Z",
+   "rounds_in_window": 18,
+   "recent": [
+    {
+     "round_index": 26064,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.34444285714285716,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-02T20:49:28.844478Z"
+    },
+    {
+     "round_index": 26065,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.32272594752186606,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-03T02:05:52.727079Z"
+    },
+    {
+     "round_index": 26066,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.2771501457725948,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-03T06:55:34.411871Z"
+    },
+    {
+     "round_index": 26068,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.30182973760932946,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-03T16:33:02.784006Z"
+    },
+    {
+     "round_index": 26069,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.31287230320699694,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-03T21:14:33.024709Z"
+    },
+    {
+     "round_index": 26070,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.3132594752186588,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-04T02:08:34.591118Z"
+    },
+    {
+     "round_index": 26071,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.4179263362487855,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-04T07:02:24.494776Z"
+    },
+    {
+     "round_index": 26072,
+     "submission_id": "245c0b5e-da61-46d2-9e85-dc657e3af871",
+     "score": 0.4357142857142857,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-04T11:58:12.283884Z"
+    },
+    {
+     "round_index": 26087,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.301668804664723,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-07T11:40:24.749285Z"
+    },
+    {
+     "round_index": 26088,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.27007035957240033,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-07T16:34:00.289005Z"
+    },
+    {
+     "round_index": 26089,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.11983469387755107,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-07T21:10:31.127895Z"
+    },
+    {
+     "round_index": 26090,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.13602857142857144,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-08T01:59:11.022943Z"
+    },
+    {
+     "round_index": 26091,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.09809523809523807,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-08T06:55:38.312668Z"
+    },
+    {
+     "round_index": 26092,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.02571428571428571,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-08T11:13:10.081602Z"
+    },
+    {
+     "round_index": 26093,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.010476190476190472,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-08T15:59:37.736155Z"
+    },
+    {
+     "round_index": 26095,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.005714285714285713,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-09T01:29:30.016188Z"
+    },
+    {
+     "round_index": 26096,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.011428571428571427,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-09T06:25:21.374615Z"
+    },
+    {
+     "round_index": 26097,
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "score": 0.014285714285714284,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-09T11:04:31.590724Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+   "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+   "round_index": 26098,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.006477551020408163,
+   "discriminating_cases": 3,
+   "first_seen": "2026-11-04T18:33:01.359580Z",
+   "scored_at": "2026-11-09T16:42:07.795635Z",
+   "name": null,
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 2,
+   "status": "active",
+   "qualified_at": "2026-11-04T18:35:32.123490Z",
+   "rounds_in_window": 12,
+   "recent": [
+    {
+     "round_index": 26070,
+     "submission_id": "c01cfd3d-ee05-4398-a2dc-e9e248368356",
+     "score": 0.3948051506316812,
+     "rank": 1,
+     "columns": 6,
+     "scored_at": "2026-11-04T02:08:34.591118Z"
+    },
+    {
+     "round_index": 26071,
+     "submission_id": "c01cfd3d-ee05-4398-a2dc-e9e248368356",
+     "score": 0.3325801749271136,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-04T07:02:24.494776Z"
+    },
+    {
+     "round_index": 26072,
+     "submission_id": "c01cfd3d-ee05-4398-a2dc-e9e248368356",
+     "score": 0.3849516034985424,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-04T11:58:12.283884Z"
+    },
+    {
+     "round_index": 26090,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.15714285714285714,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-08T01:59:11.022943Z"
+    },
+    {
+     "round_index": 26091,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.10364081632653062,
+     "rank": 3,
+     "columns": 6,
+     "scored_at": "2026-11-08T06:55:38.312668Z"
+    },
+    {
+     "round_index": 26092,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.04476190476190477,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-08T11:13:10.081602Z"
+    },
+    {
+     "round_index": 26093,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.02220874635568514,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-08T15:59:37.736155Z"
+    },
+    {
+     "round_index": 26094,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.017142857142857144,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-08T20:56:20.140641Z"
+    },
+    {
+     "round_index": 26095,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.0038095238095238095,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-09T01:29:30.016188Z"
+    },
+    {
+     "round_index": 26096,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.04285714285714285,
+     "rank": 2,
+     "columns": 6,
+     "scored_at": "2026-11-09T06:25:21.374615Z"
+    },
+    {
+     "round_index": 26097,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.014761904761904764,
+     "rank": 4,
+     "columns": 6,
+     "scored_at": "2026-11-09T11:04:31.590724Z"
+    },
+    {
+     "round_index": 26098,
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "score": 0.006477551020408163,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-09T16:42:07.795635Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5HYXPA2pCdZSXtHzg7fjSbHhN9GwCGWSMxuDdoMGN9jVmcSb",
+   "submission_id": "db52daea-024e-411c-875e-e3af8f925938",
+   "round_index": 26091,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 3.061224489795913e-05,
+   "discriminating_cases": 3,
+   "first_seen": "2026-11-06T00:58:38.807673Z",
+   "scored_at": "2026-11-08T06:55:38.312668Z",
+   "name": "nanogen",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 3,
+   "status": "active",
+   "qualified_at": "2026-11-06T01:01:39.613861Z",
+   "rounds_in_window": 1,
+   "recent": [
+    {
+     "round_index": 26091,
+     "submission_id": "db52daea-024e-411c-875e-e3af8f925938",
+     "score": 3.061224489795913e-05,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-08T06:55:38.312668Z"
+    }
+   ]
+  },
+  {
+   "miner_hotkey": "5C4k7m8n6LNPTQYRJDusCjeyCnKXtSzGeNmqEfjEeqsap1Yc",
+   "submission_id": "48c21386-f186-40bd-98bf-f8fdf1b04458",
+   "round_index": 26094,
+   "generator_contract_version": 1,
+   "weight_eligible": true,
+   "score": 0.0,
+   "discriminating_cases": 0,
+   "first_seen": "2026-11-05T14:39:28.499178Z",
+   "scored_at": "2026-11-08T20:56:20.140641Z",
+   "name": "kinfolk",
+   "name_handle": null,
+   "avatar_url": null,
+   "version": 3,
+   "status": "active",
+   "qualified_at": "2026-11-05T14:51:51.370891Z",
+   "rounds_in_window": 4,
+   "recent": [
+    {
+     "round_index": 26068,
+     "submission_id": "6b89719a-975f-4c5e-891a-6a9f0311a1bf",
+     "score": 0.28175393586005837,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-03T16:33:02.784006Z"
+    },
+    {
+     "round_index": 26069,
+     "submission_id": "6b89719a-975f-4c5e-891a-6a9f0311a1bf",
+     "score": 0.29000000000000004,
+     "rank": 5,
+     "columns": 6,
+     "scored_at": "2026-11-03T21:14:33.024709Z"
+    },
+    {
+     "round_index": 26070,
+     "submission_id": "6b89719a-975f-4c5e-891a-6a9f0311a1bf",
+     "score": 0.275272983479106,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-04T02:08:34.591118Z"
+    },
+    {
+     "round_index": 26094,
+     "submission_id": "48c21386-f186-40bd-98bf-f8fdf1b04458",
+     "score": 0.0,
+     "rank": 6,
+     "columns": 6,
+     "scored_at": "2026-11-08T20:56:20.140641Z"
+    }
+   ]
+  }
+ ],
+ "count": 19,
+ "window_days": 7,
+ "mode": "enforce",
+ "generated_at": "2026-11-09T17:15:09.115870Z"
+}

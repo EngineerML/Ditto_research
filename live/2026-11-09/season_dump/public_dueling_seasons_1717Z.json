@@ -1,0 +1,1588 @@
+{
+ "seasons": [
+  {
+   "id": "01f6f086-7ffe-4f17-896c-ee5ee959af4d",
+   "bench_version": 17,
+   "season_index": 26095,
+   "shadow": false,
+   "commitment": "cdc3a8496b3dc15ce356fcfeabf496ee4a2b1ffcb49b4b1303386a7db083a463",
+   "secret_hex": "ee39b0c884fa710ce303c185bcaa91100b7bcb472be21dbb27d1e8ead8635ea2",
+   "anchor_block": 9465109,
+   "anchor_block_hash": "0xd468d90a14a397d755d9640f1f627d08d590353c2315c5feff41d5c692cdf3a8",
+   "season_seed": "d9d8b18859b0ed176092725284a4759443b153c744dd1faa8a810511b47e2280",
+   "opened_at": "2026-11-09T00:45:24.657228Z",
+   "closed_at": "2026-11-09T05:32:53.681425Z",
+   "revealed_at": "2026-11-09T12:45:19.164970Z",
+   "pins": {
+    "season_id": "01f6f086-7ffe-4f17-896c-ee5ee959af4d",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+      "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+      "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+      "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+      "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+      "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+      "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+      "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+      "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+      "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+      "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+      "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+      "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+     "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+     "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+     "source_sha256": "d4a8fb8759f51827b380b18caec59a4e7ca4dc5d68b6cdc7baed97464e24e6b2",
+     "public_default": false,
+     "release_at": "2026-11-08T17:33:00.079845Z",
+     "released_at": "2026-11-08T17:33:00.079845Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/aee7bf6e-cbce-4ca1-96d6-1f998743e10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+     "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+     "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+     "source_sha256": "7dfa68b2af32b6dca03b2f20ddec0dd3598b38348fb5fea56cb1a9ff66405e19",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+     "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+     "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+     "source_sha256": "d807454b7b6e2ed1bdb531c4434b74c04c8793d31f639566c9099833c9fa074b",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/e0b72a62-71b3-4da7-8fa7-a1dc3145c676/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+     "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+     "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+     "source_sha256": "48a5ed2422c9e06003ccecd773b43ddf83510c9ff93bf0193920e8e9a49b9fcc",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/f6f39eeb-43b2-49a5-9ff6-515aca6aba3a/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 16
+  },
+  {
+   "id": "231bb14d-c84e-45a4-9aea-deecdab288f2",
+   "bench_version": 17,
+   "season_index": 26094,
+   "shadow": false,
+   "commitment": "9b7dd690e1b58dc9c2a62361cf497b8af86420863720d9fb55d9020f4aceb912",
+   "secret_hex": "8a61245702fab612f62f90e9ae13822f8ae59e4cd6d6f9cf4d876f73cb85604a",
+   "anchor_block": 9463669,
+   "anchor_block_hash": "0x0fdb0d79601837b7b3054d0badfa60e829dfb8db0c1929c1dc048356a13f872d",
+   "season_seed": "eaea7528ac010a7e00f9f4a06861e66a70cace8a20b38377a4e58559d1de8bc6",
+   "opened_at": "2026-11-08T19:56:49.677135Z",
+   "closed_at": "2026-11-09T00:45:24.657228Z",
+   "revealed_at": "2026-11-09T07:56:59.107883Z",
+   "pins": {
+    "season_id": "231bb14d-c84e-45a4-9aea-deecdab288f2",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+      "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+      "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+      "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+      "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+      "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+      "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+      "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+      "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+      "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+     "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+     "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+     "source_sha256": "7dfa68b2af32b6dca03b2f20ddec0dd3598b38348fb5fea56cb1a9ff66405e19",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+     "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+     "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+     "source_sha256": "d807454b7b6e2ed1bdb531c4434b74c04c8793d31f639566c9099833c9fa074b",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/e0b72a62-71b3-4da7-8fa7-a1dc3145c676/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+     "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+     "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+     "source_sha256": "48a5ed2422c9e06003ccecd773b43ddf83510c9ff93bf0193920e8e9a49b9fcc",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/f6f39eeb-43b2-49a5-9ff6-515aca6aba3a/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 13
+  },
+  {
+   "id": "0e8ea32f-16dd-4f70-a63f-9c7dcca23642",
+   "bench_version": 17,
+   "season_index": 26093,
+   "shadow": false,
+   "commitment": "7b74c7c890cefae3b500eca522016c3e2404495578f348e4ce489814739ff2b5",
+   "secret_hex": "779c2aaf3eaa40c5352b200ddf63ad38f99856e31b6ccbd69defa362c295dcd2",
+   "anchor_block": 9462229,
+   "anchor_block_hash": "0x91b48ba1e6c3fee97d293f967ce4d6b1b439ade72c2b74adb4335529f686d506",
+   "season_seed": "26e1485e0722557625ff32f6183a82436ea50411325bd36fbe7e61e2143da4d9",
+   "opened_at": "2026-11-08T15:08:18.066209Z",
+   "closed_at": "2026-11-08T19:56:49.677135Z",
+   "revealed_at": "2026-11-09T03:09:21.671300Z",
+   "pins": {
+    "season_id": "0e8ea32f-16dd-4f70-a63f-9c7dcca23642",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+      "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+      "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+      "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+      "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+      "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+      "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+      "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+      "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+      "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+     "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+     "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+     "source_sha256": "7dfa68b2af32b6dca03b2f20ddec0dd3598b38348fb5fea56cb1a9ff66405e19",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+     "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+     "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+     "source_sha256": "d807454b7b6e2ed1bdb531c4434b74c04c8793d31f639566c9099833c9fa074b",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/e0b72a62-71b3-4da7-8fa7-a1dc3145c676/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+     "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+     "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+     "source_sha256": "48a5ed2422c9e06003ccecd773b43ddf83510c9ff93bf0193920e8e9a49b9fcc",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/f6f39eeb-43b2-49a5-9ff6-515aca6aba3a/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 18
+  },
+  {
+   "id": "5d5246c4-8f10-4c11-af2f-2f4a057a1f57",
+   "bench_version": 17,
+   "season_index": 26092,
+   "shadow": false,
+   "commitment": "473142868ae83d08c1572bd4b73df33cc5aeb73f946375b4d1caa7904991291e",
+   "secret_hex": "2d0e444c034f3984a292832bfc5778cb9d2bd8d49fb7706aab4bf232401bae57",
+   "anchor_block": 9460789,
+   "anchor_block_hash": "0xdd47861ed96bbe06f2e1cf08d786d229beb5eca42754e5cd22b0819d6b6105f8",
+   "season_seed": "7a931340c1fb61f03fb9d7cf9d975937f6aab3853ac8d92187f1227152905d61",
+   "opened_at": "2026-11-08T10:20:06.932296Z",
+   "closed_at": "2026-11-08T15:08:18.066209Z",
+   "revealed_at": "2026-11-08T22:21:04.737488Z",
+   "pins": {
+    "season_id": "5d5246c4-8f10-4c11-af2f-2f4a057a1f57",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+      "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+      "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+      "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+      "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+      "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+      "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+      "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+      "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+      "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+     "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+     "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+     "source_sha256": "7dfa68b2af32b6dca03b2f20ddec0dd3598b38348fb5fea56cb1a9ff66405e19",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+     "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+     "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+     "source_sha256": "d807454b7b6e2ed1bdb531c4434b74c04c8793d31f639566c9099833c9fa074b",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/e0b72a62-71b3-4da7-8fa7-a1dc3145c676/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+     "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+     "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+     "source_sha256": "48a5ed2422c9e06003ccecd773b43ddf83510c9ff93bf0193920e8e9a49b9fcc",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/f6f39eeb-43b2-49a5-9ff6-515aca6aba3a/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 22
+  },
+  {
+   "id": "70a35cd7-e1b3-42b0-bf8e-84e5b4da8e5a",
+   "bench_version": 17,
+   "season_index": 26091,
+   "shadow": false,
+   "commitment": "7017511a4d873e952a5486a3bbb659eaa4147f719762d44f13b5a2b5a3363095",
+   "secret_hex": "a9fbe765d288652a86ea175331a1fd7031850fba4422c12b1a49113df95c81ad",
+   "anchor_block": 9459349,
+   "anchor_block_hash": "0x29bcc4dc7e0007952603e633bffe315a7c1d74d1ae067c61d651ebb140543523",
+   "season_seed": "b55b5ce871323402bf80297f73dd91739b3dce15ff888d24e40f017931a09ebf",
+   "opened_at": "2026-11-08T05:33:41.893676Z",
+   "closed_at": "2026-11-08T10:20:06.932296Z",
+   "revealed_at": "2026-11-08T17:33:00.079845Z",
+   "pins": {
+    "season_id": "70a35cd7-e1b3-42b0-bf8e-84e5b4da8e5a",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "20d34ba1-95cb-4f77-9acd-5544fdd449e7",
+      "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+      "miner_hotkey": "5CBD7DW3w7pyheNSTUWLLU6bFNPxEbMoPRbkbEGcKbKgkFyv",
+      "tree_sha256": "59213a08e4b1ece708ae3bc6a2afc7fc816f7395d77ec0081e5d3809d4682d63",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+      "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+      "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+      "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+      "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+      "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+      "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "20d34ba1-95cb-4f77-9acd-5544fdd449e7",
+     "miner_hotkey": "5CBD7DW3w7pyheNSTUWLLU6bFNPxEbMoPRbkbEGcKbKgkFyv",
+     "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+     "tree_sha256": "59213a08e4b1ece708ae3bc6a2afc7fc816f7395d77ec0081e5d3809d4682d63",
+     "source_sha256": "ad8ef44aa846f5f44f0e24142cc7742103cc1e0d66b1466f9455f095ca22cf9c",
+     "public_default": false,
+     "release_at": "2026-11-10T10:20:06.932296Z",
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/20d34ba1-95cb-4f77-9acd-5544fdd449e7/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+     "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+     "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+     "source_sha256": "d4a8fb8759f51827b380b18caec59a4e7ca4dc5d68b6cdc7baed97464e24e6b2",
+     "public_default": false,
+     "release_at": "2026-11-08T17:33:00.079845Z",
+     "released_at": "2026-11-08T17:33:00.079845Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/aee7bf6e-cbce-4ca1-96d6-1f998743e10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "e0b72a62-71b3-4da7-8fa7-a1dc3145c676",
+     "miner_hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+     "owner_key": "coldkey:5HR4SuX1dqkkVGS6Rxj8fKyDhCRrdkUT3uLWxaQ4r2Zm74zK",
+     "tree_sha256": "5d208f521271aa683887d7cdf78e4fe2d1beb763bed5a21d017d6209640e73b6",
+     "source_sha256": "d807454b7b6e2ed1bdb531c4434b74c04c8793d31f639566c9099833c9fa074b",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/e0b72a62-71b3-4da7-8fa7-a1dc3145c676/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 30
+  },
+  {
+   "id": "474cf07a-008d-466f-bf9d-d7714e2e4708",
+   "bench_version": 17,
+   "season_index": 26090,
+   "shadow": false,
+   "commitment": "19b1829b5eed40a909dbb78cc2693182803fc835c568f6ff4fad762e2feff31c",
+   "secret_hex": "ea49bec263819271b33bd9a2ee60b3afa490056e6ee3cb1a789d1cff82d3a881",
+   "anchor_block": 9457909,
+   "anchor_block_hash": "0x477fc678e1f7ac66ee36396882357f7dff0a789a6d8f026e963eae2f935efacd",
+   "season_seed": "fea8dd7fe97e6ab93e11fa38a7eee98377c08c8a932245a74a959ca0bd872065",
+   "opened_at": "2026-11-08T00:45:08.380970Z",
+   "closed_at": "2026-11-08T05:33:41.893676Z",
+   "revealed_at": "2026-11-08T12:44:45.723349Z",
+   "pins": {
+    "season_id": "474cf07a-008d-466f-bf9d-d7714e2e4708",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+      "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+      "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+      "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+      "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+      "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+      "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+      "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+      "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+      "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+     "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+     "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+     "source_sha256": "d4a8fb8759f51827b380b18caec59a4e7ca4dc5d68b6cdc7baed97464e24e6b2",
+     "public_default": false,
+     "release_at": "2026-11-08T17:33:00.079845Z",
+     "released_at": "2026-11-08T17:33:00.079845Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/aee7bf6e-cbce-4ca1-96d6-1f998743e10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+     "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+     "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+     "source_sha256": "7dfa68b2af32b6dca03b2f20ddec0dd3598b38348fb5fea56cb1a9ff66405e19",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+     "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+     "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+     "source_sha256": "48a5ed2422c9e06003ccecd773b43ddf83510c9ff93bf0193920e8e9a49b9fcc",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/f6f39eeb-43b2-49a5-9ff6-515aca6aba3a/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 31
+  },
+  {
+   "id": "04dd4bd5-5a4f-4cd4-86e4-6308481c9592",
+   "bench_version": 17,
+   "season_index": 26089,
+   "shadow": false,
+   "commitment": "8d5b09103f0874eb10f35fa0b22028ab409952b393ac718ab1175d513c66cfe6",
+   "secret_hex": "6b59fcf7f5ecd8ae9e8b1445c329e72dd6406a96449ff307a8bb4d33c6a34943",
+   "anchor_block": 9456469,
+   "anchor_block_hash": "0xd5c16765e160c00720e3a0edf16d493898557c677b14213c0834f74e794ba661",
+   "season_seed": "4a011108d1cdcb99748a87a4c9cd0cefffc7b67ed7fd56888c841c2df7cb80bb",
+   "opened_at": "2026-11-07T19:56:33.130856Z",
+   "closed_at": "2026-11-08T00:45:08.380970Z",
+   "revealed_at": "2026-11-08T07:56:05.872839Z",
+   "pins": {
+    "season_id": "04dd4bd5-5a4f-4cd4-86e4-6308481c9592",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+      "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+      "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+      "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+      "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+      "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+      "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+      "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+      "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+      "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+     "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+     "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+     "source_sha256": "d4a8fb8759f51827b380b18caec59a4e7ca4dc5d68b6cdc7baed97464e24e6b2",
+     "public_default": false,
+     "release_at": "2026-11-08T17:33:00.079845Z",
+     "released_at": "2026-11-08T17:33:00.079845Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/aee7bf6e-cbce-4ca1-96d6-1f998743e10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+     "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+     "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+     "source_sha256": "7dfa68b2af32b6dca03b2f20ddec0dd3598b38348fb5fea56cb1a9ff66405e19",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+     "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+     "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+     "source_sha256": "48a5ed2422c9e06003ccecd773b43ddf83510c9ff93bf0193920e8e9a49b9fcc",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/f6f39eeb-43b2-49a5-9ff6-515aca6aba3a/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 80
+  },
+  {
+   "id": "8f458bbe-f6e7-4f3b-974e-972a45bf47ea",
+   "bench_version": 17,
+   "season_index": 26088,
+   "shadow": false,
+   "commitment": "38de7f4bea91264e50ff16d2a835139687edda0ffe0f79b0be57d962ac863d9a",
+   "secret_hex": "1d15fc951b2c0bf5cae0c116f48412bd41fb2f8ccb25135234219debd91aab3d",
+   "anchor_block": 9455029,
+   "anchor_block_hash": "0xc5ebd8b3b6de4402760b917fa81f2ca7510984874a0fea60d9639c9d6215a50a",
+   "season_seed": "fe713e01de06a67392ea711fcc9d26b2cc6dac506738dc923a9d8c78a07a9e2d",
+   "opened_at": "2026-11-07T15:08:20.593198Z",
+   "closed_at": "2026-11-07T19:56:33.130856Z",
+   "revealed_at": "2026-11-08T03:13:03.647072Z",
+   "pins": {
+    "season_id": "8f458bbe-f6e7-4f3b-974e-972a45bf47ea",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+      "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+      "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+      "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+      "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+      "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+      "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+      "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+      "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+      "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+      "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+      "miner_hotkey": "5E2J8u7BDPLVHxV4RnkUaoZ3euPMkV1F7oj3W9aeVuZ8feLz",
+      "tree_sha256": "f58f13c913a43274bf48c820968608836fb917fd6020b49d7e00fb2e3fce9400",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+     "miner_hotkey": "5E2J8u7BDPLVHxV4RnkUaoZ3euPMkV1F7oj3W9aeVuZ8feLz",
+     "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+     "tree_sha256": "f58f13c913a43274bf48c820968608836fb917fd6020b49d7e00fb2e3fce9400",
+     "source_sha256": "68cc2d3c77ab8efa2d01d5b6818dd34a3dbc7a5befab972b6531df3e29f2bd84",
+     "public_default": false,
+     "release_at": "2026-11-08T10:20:15.875853Z",
+     "released_at": "2026-11-08T10:21:15.631578Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/69f12191-4607-4cd8-b28f-2b5fce274798/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+     "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+     "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+     "source_sha256": "d4a8fb8759f51827b380b18caec59a4e7ca4dc5d68b6cdc7baed97464e24e6b2",
+     "public_default": false,
+     "release_at": "2026-11-08T17:33:00.079845Z",
+     "released_at": "2026-11-08T17:33:00.079845Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/aee7bf6e-cbce-4ca1-96d6-1f998743e10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c",
+     "miner_hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+     "owner_key": "coldkey:5Fk4NrqNQEN4gNc7c5oQ2m4SE449eSfDh8uUhKMEF5se86sF",
+     "tree_sha256": "6a4db1e2dd8279e1572807b3870a9e72530e85ac8f305a4e98986d7e915755b4",
+     "source_sha256": "7dfa68b2af32b6dca03b2f20ddec0dd3598b38348fb5fea56cb1a9ff66405e19",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/c78f1254-9a53-4857-ad9a-4d6f3f9d9d2c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "f6f39eeb-43b2-49a5-9ff6-515aca6aba3a",
+     "miner_hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+     "owner_key": "coldkey:5Dk6csKe2P3PjJt3ekGzDHBbNkcQ16GqjtmZWBGvEU2vA17V",
+     "tree_sha256": "9e764f9a766eafee82332d45906db16c725e8bb60cfddb39027afd01c37cfb98",
+     "source_sha256": "48a5ed2422c9e06003ccecd773b43ddf83510c9ff93bf0193920e8e9a49b9fcc",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/f6f39eeb-43b2-49a5-9ff6-515aca6aba3a/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 59
+  },
+  {
+   "id": "bf158056-af83-4e1a-893a-a2f4b2b6aed6",
+   "bench_version": 17,
+   "season_index": 26087,
+   "shadow": false,
+   "commitment": "56a094aa0789ce990af5a5eb20252381ba39ef9bcdc3950b39835a9f102a849b",
+   "secret_hex": "82a996d98a71898858479fcb964eaaf00127e993594ce314f54fcf89452eeb46",
+   "anchor_block": 9453589,
+   "anchor_block_hash": "0xf923003a69d684d206cb86ece82f6dd67529951f156709f92c676730cc1fe7ff",
+   "season_seed": "110842e022ef7f1caff5af2aa169ccf5cfe573d5b3160494425912922cf7a0df",
+   "opened_at": "2026-11-07T10:20:40.169755Z",
+   "closed_at": "2026-11-07T15:08:20.593198Z",
+   "revealed_at": "2026-11-07T22:20:25.713226Z",
+   "pins": {
+    "season_id": "bf158056-af83-4e1a-893a-a2f4b2b6aed6",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+      "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+      "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+      "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+      "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+      "miner_hotkey": "5E2J8u7BDPLVHxV4RnkUaoZ3euPMkV1F7oj3W9aeVuZ8feLz",
+      "tree_sha256": "f58f13c913a43274bf48c820968608836fb917fd6020b49d7e00fb2e3fce9400",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+      "owner_key": "",
+      "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+      "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+      "grading_bench_version": 17,
+      "public_default": true,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+     "miner_hotkey": "5E2J8u7BDPLVHxV4RnkUaoZ3euPMkV1F7oj3W9aeVuZ8feLz",
+     "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+     "tree_sha256": "f58f13c913a43274bf48c820968608836fb917fd6020b49d7e00fb2e3fce9400",
+     "source_sha256": "68cc2d3c77ab8efa2d01d5b6818dd34a3dbc7a5befab972b6531df3e29f2bd84",
+     "public_default": false,
+     "release_at": "2026-11-08T10:20:15.875853Z",
+     "released_at": "2026-11-08T10:21:15.631578Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/69f12191-4607-4cd8-b28f-2b5fce274798/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+     "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+     "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+     "source_sha256": "d4a8fb8759f51827b380b18caec59a4e7ca4dc5d68b6cdc7baed97464e24e6b2",
+     "public_default": false,
+     "release_at": "2026-11-08T17:33:00.079845Z",
+     "released_at": "2026-11-08T17:33:00.079845Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/aee7bf6e-cbce-4ca1-96d6-1f998743e10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 6
+  },
+  {
+   "id": "65aa4c1b-79f3-43bb-a62f-97f869bc48d2",
+   "bench_version": 17,
+   "season_index": 26086,
+   "shadow": false,
+   "commitment": "0b418583464df083e5b636da7342291f124faca951331dec9ff01f737d515592",
+   "secret_hex": "3d13743822ba0c1328a799b18e9d56208145f8df5cb98cf3b49af31d1094fc6f",
+   "anchor_block": 9452149,
+   "anchor_block_hash": "0xd62d2edd2171efcced9495421965ab5ad7fa3900e4456e12910b2bc7c6622821",
+   "season_seed": "0347b0b306856e91aef93c89c0ce86f7906d226c39e6af9e385e89bc5f981871",
+   "opened_at": "2026-11-07T05:32:31.156188Z",
+   "closed_at": "2026-11-07T10:20:40.169755Z",
+   "revealed_at": "2026-11-07T17:32:16.115917Z",
+   "pins": {
+    "season_id": "65aa4c1b-79f3-43bb-a62f-97f869bc48d2",
+    "columns": [
+     {
+      "column_id": "c0",
+      "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+      "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+      "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+      "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c1",
+      "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+      "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+      "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+      "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c2",
+      "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+      "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+      "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+      "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c3",
+      "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+      "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+      "miner_hotkey": "5E2J8u7BDPLVHxV4RnkUaoZ3euPMkV1F7oj3W9aeVuZ8feLz",
+      "tree_sha256": "f58f13c913a43274bf48c820968608836fb917fd6020b49d7e00fb2e3fce9400",
+      "grading_bench_version": 16,
+      "public_default": false,
+      "substituted": false,
+      "slice_seed": null
+     },
+     {
+      "column_id": "c4",
+      "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+      "owner_key": "",
+      "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+      "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+      "grading_bench_version": 17,
+      "public_default": true,
+      "substituted": false,
+      "slice_seed": null
+     }
+    ]
+   },
+   "fallback": {
+    "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+    "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+    "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+    "grading_bench_version": 17
+   },
+   "sources": [
+    {
+     "submission_id": "00e58d65-87a3-47ff-9f80-7c1be4ce6827",
+     "miner_hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+     "owner_key": "",
+     "tree_sha256": "da36e8319effb7ebce81460708a7fd8b7edaca97f925c22ffd42360d4a33d9c4",
+     "source_sha256": "4208e5aea549642aa6580bfffd1c928ec44aec67bc1ff9291035cec809c5a430",
+     "public_default": true,
+     "release_at": null,
+     "released_at": null,
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/00e58d65-87a3-47ff-9f80-7c1be4ce6827/archive",
+     "scorer_version": null
+    },
+    {
+     "submission_id": "69f12191-4607-4cd8-b28f-2b5fce274798",
+     "miner_hotkey": "5E2J8u7BDPLVHxV4RnkUaoZ3euPMkV1F7oj3W9aeVuZ8feLz",
+     "owner_key": "coldkey:5Gv89PdwSP1azyNhK59qykAV5hcV5xxPtgDReEhy43z9ELyx",
+     "tree_sha256": "f58f13c913a43274bf48c820968608836fb917fd6020b49d7e00fb2e3fce9400",
+     "source_sha256": "68cc2d3c77ab8efa2d01d5b6818dd34a3dbc7a5befab972b6531df3e29f2bd84",
+     "public_default": false,
+     "release_at": "2026-11-08T10:20:15.875853Z",
+     "released_at": "2026-11-08T10:21:15.631578Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/69f12191-4607-4cd8-b28f-2b5fce274798/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "86296a60-eed1-4d95-a207-6242db0cc10c",
+     "miner_hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+     "owner_key": "coldkey:5Dr4f8cJUnuV7zvppFuGgFGY5X8jLA32n5pVu2M3thsNv7yN",
+     "tree_sha256": "d11cd4eab8e0b8680c7b76a6052c9f3e5e5a0fbd02e4f1e3ac1b33c00c08e5bb",
+     "source_sha256": "707f15861a5f003a93937e3936c237e6aa23c191ada165919c58dbddb33503c3",
+     "public_default": false,
+     "release_at": "2026-11-09T07:56:59.107883Z",
+     "released_at": "2026-11-09T07:56:59.107883Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/86296a60-eed1-4d95-a207-6242db0cc10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "9e335089-8625-4061-a541-f05adb1b6a4a",
+     "miner_hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+     "owner_key": "coldkey:5FehcnbjHjDZa32TQTyydPcCah3HTyXWC7NWtQdkNqdbLVx1",
+     "tree_sha256": "3e7c929112c12e062fbc1e340820d1a26b9216c80a4b1a4ebefab63fae66cb2d",
+     "source_sha256": "315d2180d0a6e17a05a017511af3a738810f8b5b29650ef3b7cd5502333b1293",
+     "public_default": false,
+     "release_at": null,
+     "released_at": null,
+     "available": false,
+     "archive_path": "/api/v1/public/dueling/generator-sources/9e335089-8625-4061-a541-f05adb1b6a4a/archive",
+     "scorer_version": "challenge-scorer/7"
+    },
+    {
+     "submission_id": "aee7bf6e-cbce-4ca1-96d6-1f998743e10c",
+     "miner_hotkey": "5GxpdbRSye2cC33fZRPj5U5Z5ERJSUs5RaU8TnjQqLvb8UhT",
+     "owner_key": "coldkey:5EF47PmD6uouBPGdyvJVecpN1aJNG4DXJNfnwW1T8Fj8SWQy",
+     "tree_sha256": "22e59a9d34db6c69776475c69cad1c9e1f998be9b383150d152ac3d33e30e7af",
+     "source_sha256": "d4a8fb8759f51827b380b18caec59a4e7ca4dc5d68b6cdc7baed97464e24e6b2",
+     "public_default": false,
+     "release_at": "2026-11-08T17:33:00.079845Z",
+     "released_at": "2026-11-08T17:33:00.079845Z",
+     "available": true,
+     "archive_path": "/api/v1/public/dueling/generator-sources/aee7bf6e-cbce-4ca1-96d6-1f998743e10c/archive",
+     "scorer_version": "challenge-scorer/7"
+    }
+   ],
+   "slices": 10
+  }
+ ]
+}
