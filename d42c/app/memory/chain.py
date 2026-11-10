@@ -15,18 +15,21 @@ from dataclasses import dataclass, field
 
 from .retrieval import SENTENCE_BREAK_RE, SENTENCE_START, STOPWORDS, UserIndex
 
-SAID_LINE = " What those records say under {other}, in date order: {sentences}."
+SAID_LINE = " What those records say under {other}, newest first: {sentences}."
 MAX_SAID = 6
 MAX_SAID_CHARS = 220
+# A lead-in such as "Shared calendar note:" or 'Forwarding a text I got: "' before the sentence itself.
+LEAD_IN = re.compile(r"^(?:[A-Z][^:.!?]{0,60}:\s*[\"“]?)+")
 
 
 def said_under(index: UserIndex, pids: list[str], word: str, labels: dict[str, str]) -> str:
-    """The sentences of the user's own text that use the name, each once, oldest first, with its record's mark.
+    """The sentences of the user's own text that use the name, newest first, each once, with its record's mark.
 
     A fact told in passing inside a longer message ("... and the bus was cancelled. And Laz loves Ivory Quarry now.")
-    is quoted on its own, so the deciding call reads it next to the tie that makes it count."""
+    is quoted on its own, so the deciding call reads it next to the tie that makes it count. Newest first, because a
+    later record changes what an earlier one said; a sentence repeated under another lead-in counts once."""
     pattern = re.compile(r"(?<!\w)" + re.escape(word) + r"(?!\w)")
-    nodes = sorted((index.nodes[pid] for pid in pids if pid in index.nodes), key=lambda node: (node.pair.timestamp, node.pair.pair_id))
+    nodes = sorted((index.nodes[pid] for pid in pids if pid in index.nodes), key=lambda node: (node.pair.timestamp, node.pair.pair_id), reverse=True)
     seen: set[str] = set()
     out: list[str] = []
     for node in nodes:
@@ -39,13 +42,13 @@ def said_under(index: UserIndex, pids: list[str], word: str, labels: dict[str, s
                 parts.append(part)
         for sentence in parts:
             sentence = " ".join(sentence.split())
-            key = sentence.lower()
+            key = LEAD_IN.sub("", sentence).strip(" \"“”").lower()
             if not sentence or not pattern.search(sentence) or key in seen or len(sentence) > MAX_SAID_CHARS:
                 continue
             seen.add(key)
             mark = labels.get(node.pair.pair_id, f"pair {node.pair.pair_id}")
             out.append(f"{mark}: “{sentence}”")
-    return "; ".join(out[-MAX_SAID:])
+    return "; ".join(out[:MAX_SAID])
 
 WORD_RE = re.compile(r"\b[A-Z][a-z]{2,}\b")
 SURNAME_AFTER = r"\b{name}\s+([A-Z][a-z]{{2,}})\b"
