@@ -13,7 +13,39 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-from .retrieval import SENTENCE_START, STOPWORDS, UserIndex
+from .retrieval import SENTENCE_BREAK_RE, SENTENCE_START, STOPWORDS, UserIndex
+
+SAID_LINE = " What those records say under {other}, in date order: {sentences}."
+MAX_SAID = 6
+MAX_SAID_CHARS = 220
+
+
+def said_under(index: UserIndex, pids: list[str], word: str, labels: dict[str, str]) -> str:
+    """The sentences of the user's own text that use the name, each once, oldest first, with its record's mark.
+
+    A fact told in passing inside a longer message ("... and the bus was cancelled. And Laz loves Ivory Quarry now.")
+    is quoted on its own, so the deciding call reads it next to the tie that makes it count."""
+    pattern = re.compile(r"(?<!\w)" + re.escape(word) + r"(?!\w)")
+    nodes = sorted((index.nodes[pid] for pid in pids if pid in index.nodes), key=lambda node: (node.pair.timestamp, node.pair.pair_id))
+    seen: set[str] = set()
+    out: list[str] = []
+    for node in nodes:
+        parts: list[str] = []
+        for part in SENTENCE_BREAK_RE.split(node.pair.prompt):
+            # "Update on Laz:" introduces what follows; keep the two together.
+            if parts and parts[-1].rstrip().endswith(":"):
+                parts[-1] = parts[-1].rstrip() + " " + part
+            else:
+                parts.append(part)
+        for sentence in parts:
+            sentence = " ".join(sentence.split())
+            key = sentence.lower()
+            if not sentence or not pattern.search(sentence) or key in seen or len(sentence) > MAX_SAID_CHARS:
+                continue
+            seen.add(key)
+            mark = labels.get(node.pair.pair_id, f"pair {node.pair.pair_id}")
+            out.append(f"{mark}: “{sentence}”")
+    return "; ".join(out[-MAX_SAID:])
 
 WORD_RE = re.compile(r"\b[A-Z][a-z]{2,}\b")
 SURNAME_AFTER = r"\b{name}\s+([A-Z][a-z]{{2,}})\b"
@@ -135,7 +167,7 @@ def mark_list(pids: list[str], labels: dict[str, str]) -> str:
     return ", ".join(labels.get(pid, f"pair {pid} (not shown above)") for pid in dict.fromkeys(pids))
 
 
-def chain_note(links: list[Link], labels: dict[str, str]) -> str:
+def chain_note(links: list[Link], labels: dict[str, str], index: UserIndex | None = None) -> str:
     lines = []
     for link in links:
         ties = []
@@ -144,5 +176,7 @@ def chain_note(links: list[Link], labels: dict[str, str]) -> str:
                 ties.append(SURNAME_TIE.format(where_name=mark_list(name_pids, labels), name=link.name, surname=surname, where_other=mark_list(other_pids, labels), other=link.other))
             else:
                 ties.append(CALLED_TIE.format(where=mark_list(name_pids, labels), name=link.name, other=link.other))
-        lines.append(CHAIN_LINE.format(ties="; ".join(ties), other=link.other, name=link.name, marks=mark_list(link.records, labels)))
+        line = CHAIN_LINE.format(ties="; ".join(ties), other=link.other, name=link.name, marks=mark_list(link.records, labels))
+        said = said_under(index, link.records, link.other, labels) if index is not None else ""
+        lines.append(line + (SAID_LINE.format(other=link.other, sentences=said) if said else ""))
     return "\n".join(lines)

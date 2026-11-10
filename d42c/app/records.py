@@ -554,7 +554,7 @@ class RecordsEngine:
         withdrawn = withdrawn_note(packet, index, req.user_input)
         if withdrawn:
             outcome.events.append("withdrawal in a record: note before the message")
-        chained = chain_note(name_links(index, req.user_input), packet.labels()) if self.name_chain and index is not None and not statement else ""
+        chained = chain_note(name_links(index, req.user_input), packet.labels(), index) if self.name_chain and index is not None and not statement else ""
         block = "\n\n".join(part for part in (coverage, worksheet, tool_words, stays, unnamed, chained, withdrawn, dated_sheet(index, req.user_input, packet, outcome)) if part)
         long_packet = packet.chars > self.long_packet_chars
         effort, max_tokens = "low" if long_packet else self.effort, self.max_tokens

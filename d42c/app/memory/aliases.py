@@ -5,6 +5,7 @@ import time
 
 from ..action import Outcome, TokenTally
 from ..llm import LLM, LLMError
+from .chain import SAID_LINE, said_under
 from .retrieval import UserIndex
 
 ALIAS_BRIEF = """Before the message is answered, look only at who it asks about: {names}. List every other name the records above use for {who} - a nickname, a handle, a short form of the name, a title - but only one that a record itself ties to {who}. Write one per line and nothing else; if the records tie no other name to {who}, write the single word none. Do not answer the message."""
@@ -69,6 +70,11 @@ async def alias_note(llm: LLM, tally: TokenTally, outcome: Outcome, system: str,
         aliases = [alias for alias in proposed(result.content, name) if tied(texts, name, alias)][:MAX_ALIASES]
         marks = sorted({labels[pid] for alias in aliases for pid in alias_records(texts, name, alias) if pid in labels}, key=lambda mark: int(mark[1:]))
         if aliases and marks:
-            notes.append(ALIAS_NOTE.format(name=name, aliases=", ".join(aliases), marks=", ".join(marks)))
+            note = ALIAS_NOTE.format(name=name, aliases=", ".join(aliases), marks=", ".join(marks))
+            for alias in aliases:
+                said = said_under(index, alias_records(texts, name, alias), alias, labels)
+                if said:
+                    note += SAID_LINE.format(other=alias, sentences=said)
+            notes.append(note)
     outcome.events.append(f"alias pass: {len(notes)} note(s)")
     return "\n".join(notes)
