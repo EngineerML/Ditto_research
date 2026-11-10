@@ -50,3 +50,15 @@ is graded as an abstention and scores 0 (`internal/mix/mix.go:66`).
    two-word name to a nickname; pin the nickname's records ("Teo also loves B") the way v12 does for first names.
 3. Pin the nickname's newest and distinct records first: with the stale C copied five times, the 6-record cap fills
    with copies and can drop the update and the last "also" line.
+
+## kinfolk v6 (5CBD7DW3 = beast's hotkey, submission 20d34ba1, released 2026-11-10 10:20 UTC)
+Archive sha256 ad8ef44a... matches the season record; read and built only in the no-network sandbox
+(`.cache/miner_gens/dl/kinfolk-v6-5CBD7DW3_20d34ba1`, packs in `.cache/miner_gens/packs/kinfolk-v6`).
+- Code version 813 (v2 is 810). The whole difference: `hop2` is removed, so the nickname is tied to the first name
+  in one record ("My climbing partner Rowena has been Rowie to everyone since primary school", "the whole family
+  just calls them Teddy", "who also calls them Neil like the rest of us"). Rotation, look-alike diminutives and the
+  1,000 chatter pairs are as in v2. It is the easier variant; it was pinned only in season 26091.
+- v12's name chain (live in overhorizoner v2) on three v6 packs (seeds 201-203): fires on 105/105 cases (naming
+  sentence tie), pins the nickname's item record in 105/105, no distractor record pinned. No paid run needed.
+- The live kinfolk column is v4 (5FCRu5Wx), not released; its live score for v2 is 0.86-0.91, as for the two-hop
+  v2 packs locally.
