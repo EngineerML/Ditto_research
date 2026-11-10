@@ -196,6 +196,10 @@ def start_agents(args, out: Path, tag: str, env: dict, model_url: str, embed_url
                "-v", f"{trace}:/trace", "-e", "HARNESS_TRACE_DIR=/trace"]
         if model_url:
             cmd += ["-e", f"OPENROUTER_BASE_URL={model_url}/v1"]
+        # "image@HARNESS_X=1+HARNESS_Y=2" runs one image with practice settings, so two settings share a panel.
+        image, _, settings = image.partition("@")
+        for setting in filter(None, settings.split("+")):
+            cmd += ["-e", setting]
         # The images' own command binds 8080 whatever PORT says, so give each its port explicitly.
         cmd += [f"ditto-harness:{image}", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", str(port),
                 "--workers", "1", "--log-level", "info"]
