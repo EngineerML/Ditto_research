@@ -77,3 +77,32 @@ NAME_CONTINUES = re.compile(r"\s+[A-Z][a-z]")
 
 def mentions_app(text: str, app: str) -> bool:
     return any(app.islower() or not match.group(0).islower() for match in phrase_pattern(app).finditer(text))
+
+# Toolkit actions (bench 18 menus carry 1,400-2,000 of them, ``ZOOM_CREATE_PROJECT``): third-party catalog entries
+# named in upper case with underscores. They stay callable (app/offer.py); the menu lists one only when the message
+# names it or its toolkit ("Zoom", "Digital Ocean"), and a tool the case reaches is listed from the next turn on.
+TOOLKIT_ACTION = re.compile(r"^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+$")
+TOOLKIT_PREFIX_WORDS = 3
+
+
+def message_grams(message: str) -> set[str]:
+    words = re.findall(r"[a-z0-9]+", message.lower())
+    return {"_".join(words[i:i + k]) for k in range(1, TOOLKIT_PREFIX_WORDS + 1) for i in range(len(words) - k + 1)} | {"".join(words[i:i + k]) for k in range(2, TOOLKIT_PREFIX_WORDS + 1) for i in range(len(words) - k + 1)}
+
+
+def toolkit_named(name: str, grams: set[str], message: str) -> bool:
+    if name in message:
+        return True
+    parts = name.lower().split("_")
+    prefixes = {"_".join(parts[:k]) for k in range(1, min(TOOLKIT_PREFIX_WORDS, len(parts) - 1) + 1)}
+    prefixes |= {"".join(parts[:k]) for k in range(2, min(TOOLKIT_PREFIX_WORDS, len(parts) - 1) + 1)}
+    return any(len(prefix) >= 3 and prefix in grams for prefix in prefixes)
+
+
+def listed_toolkits(req: RunRequest) -> RunRequest:
+    """List toolkit actions only for a toolkit the message names; every other tool is listed as before."""
+    grams = message_grams(req.user_input)
+    kept = [tool for tool in req.tools if not TOOLKIT_ACTION.match(tool.name) or toolkit_named(tool.name, grams, req.user_input)]
+    if len(kept) == len(req.tools):
+        return req
+    return req.model_copy(update={"tools": kept})

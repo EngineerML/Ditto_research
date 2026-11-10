@@ -10,7 +10,7 @@ from .action import ActionEngine, Outcome, TokenTally
 from .action import safe_run as run_action
 from .typography import plain_type
 from .config import Settings
-from .connectors import linked_tools
+from .connectors import linked_tools, listed_toolkits
 from .request_kinds import request_kinds
 from .lane import ACTION, RECORDS, Lane, about_own_records, classify, names_held_alias, own_records_question
 from .lane import main_clause
@@ -115,7 +115,7 @@ class CaseRunner:
     async def run(self, req: RunRequest) -> RunResponse:
         # The connector step decides which tools are listed; every supplied tool stays callable (app/offer.py).
         supplied = list(req.tools)
-        req = linked_tools(req)
+        req = listed_toolkits(linked_tools(req))
         offer_token = OFFER.set(Offer(supplied, [tool.name for tool in req.tools]))
         started = time.monotonic()
         deadline = started + self.settings.case_budget_seconds
