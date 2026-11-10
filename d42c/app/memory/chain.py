@@ -16,6 +16,7 @@ from dataclasses import dataclass, field
 from .retrieval import SENTENCE_START, STOPWORDS, UserIndex
 
 WORD_RE = re.compile(r"\b[A-Z][a-z]{2,}\b")
+FULL_RE = re.compile(r"\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+\b")
 SURNAME_AFTER = r"\b{name}\s+([A-Z][a-z]{{2,}})\b"
 FIRST_BEFORE = r"\b([A-Z][a-z]{{1,}})\s+{surname}\b"
 CALLED_CUES = (
@@ -25,6 +26,11 @@ CALLED_CUES = (
     r"\bknown\s+as\s+([A-Z][a-z]{1,})\b",
     r"\bnicknamed?\s+([A-Z][a-z]{1,})\b",
 )
+# A sentence that says what someone is called: any of these words in a record that also holds the asked full name.
+NAMING_RE = re.compile(r"\b(?:call(?:s|ed|ing)?|nick ?names?|nicknamed|go(?:es)? by|gone by|went by|known as|signs?|signed|answers? to|they mean|means|refer(?:s|red)? to)\b", re.IGNORECASE)
+# The name a naming phrase points at: "calls them Teo", "says Waffles", "gone by Kipper", "as Yoyo", "known as Bix",
+# or a quoted one-word name ("called “Joey”").
+NAMED_AFTER = re.compile(r"(?:\b(?:call(?:s|ed|ing)?(?:\s+(?:them|him|her))?|says|say|by|as|nicknamed?|named)\s+[“\"']?([A-Z][a-z]{1,})\b|[“\"]([A-Z][a-z]{1,})[”\"])")
 MAX_SURNAME_RECORDS = 4
 MAX_OTHER_NAMES = 2
 MAX_OTHER_RECORDS = 6
@@ -60,6 +66,27 @@ def asked_first_names(message: str) -> list[str]:
             continue
         out.append(word)
     return list(dict.fromkeys(out))
+
+
+def asked_full_names(message: str) -> list[str]:
+    """Names of two or three capitalized words in the message ("Kenya Swartz")."""
+    out: list[str] = []
+    for match in FULL_RE.finditer(message):
+        words = match.group(0).split()
+        while words and not plain(words[0]):
+            words.pop(0)
+        if 2 <= len(words) <= 3 and all(plain(word) for word in words):
+            out.append(" ".join(words))
+    return list(dict.fromkeys(out))
+
+
+def newest_distinct(index: UserIndex, pids: list[str]) -> list[str]:
+    """The records newest first, a record whose text repeats an earlier-kept one left out."""
+    nodes = sorted((index.nodes[pid] for pid in pids), key=lambda node: (node.pair.timestamp, node.pair.pair_id), reverse=True)
+    kept: dict[str, str] = {}
+    for node in nodes:
+        kept.setdefault(" ".join(node.pair.prompt.split()), node.pair.pair_id)
+    return list(kept.values())
 
 
 def holders(store: dict[str, str], word: str, without: str = "") -> list[str]:
@@ -114,9 +141,28 @@ def name_links(index: UserIndex, message: str) -> list[Link]:
                     if other != name and plain(other):
                         link = links.setdefault((name, other), Link(name, other))
                         link.ties.append(("called", "", [pid], []))
+    # A full name asked about ("Kenya Swartz"): a record that holds it and says what people call them ("everyone
+    # there calls them Teo") ties the other name to it in one record.
+    for full in asked_full_names(message):
+        words = set(full.split())
+        named: dict[str, list[str]] = {}
+        for pid in holders(store, full):
+            text = store[pid]
+            if not NAMING_RE.search(text):
+                continue
+            for match in NAMED_AFTER.finditer(text):
+                other = match.group(1) or match.group(2)
+                if other not in words and plain(other):
+                    named.setdefault(other, []).append(pid)
+        # A person goes by one or two other names; more than that is a company or a place, not a nickname.
+        if len(named) > MAX_OTHER_NAMES:
+            continue
+        for other, pids in named.items():
+            link = links.setdefault((full, other), Link(full, other))
+            link.ties.append(("called", "", pids, []))
     out = []
     for link in links.values():
-        link.records = holders(store, link.other, without=link.name)[:MAX_OTHER_RECORDS]
+        link.records = newest_distinct(index, holders(store, link.other, without=link.name))[:MAX_OTHER_RECORDS]
         if link.records and stands_alone(store, link.other):
             out.append(link)
     return out
