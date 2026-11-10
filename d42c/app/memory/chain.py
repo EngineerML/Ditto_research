@@ -29,7 +29,7 @@ MAX_SURNAME_RECORDS = 4
 MAX_OTHER_NAMES = 2
 MAX_OTHER_RECORDS = 6
 MAX_PINS = 12
-CHAIN_LINE = "Picked out by code from a word search over every stored conversation, not checked: {ties}. Records that use {other} without {name}: {marks}. Records with one surname may or may not be about one person, and a name that only looks like another is someone else; the records decide whether {other} is {name}."
+CHAIN_LINE = "Picked out by code from a word search over every stored conversation, not checked: {ties}. Records that use {other} without {name}: {marks}. Where the records show that {other} is {name}, what they say about {other} counts for {name} as well, and a list asked about {name} takes its items from records under either name; a name that only looks like {name}'s, with no record tying it to {name}, is someone else. The records decide."
 SURNAME_TIE = "{where_name} writes {name} {surname} and {where_other} writes {other} with {surname}"
 CALLED_TIE = "{where} holds {name} together with the name {other}"
 
