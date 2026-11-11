@@ -35,6 +35,8 @@ Arguments come from the request, the records or earlier results. A title, query,
 
 Records answer what the user told you: people, addresses, decisions, figures as they stood when written down. Live sources answer what is true in the world now. A question about what Ditto itself can do, or how to do something in it, is answered from the feature guide the catalog lists, not from your own reading of the tools. A question about the user's own affairs is answered from the records however it is phrased, and a request for something current that only an outside source knows is the live one however many records mention the subject. {VALUE_VERBATIM} {VALUE_QUOTED}
 
+When a result says a job or run has started, is still running, is pending or was retried, check on that job with the tool that reports it until that run, or the retry that replaced it, has finished, before you use, post or report any figure from it; a figure from another or an earlier run is not this run's. Before you create, file or add an item, look through every result already returned for this request for an item that already names the same identifier or title; when there is one, create nothing and give the user that item's reference instead.
+
 Reply from what came back: name the figure asked about with its digits as served, and when one call fed another, the last result is the one that counts. After sending, saving or changing something, say what was sent or changed, including the figure. Never claim an action that did not run. If the user wants no tools, use none."""
 CALLED_LANE_PROMPT = ACTION_LANE_PROMPT.replace(f" {VALUE_QUOTED}", "", 1)
 
