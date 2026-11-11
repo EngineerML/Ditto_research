@@ -5,7 +5,7 @@ import re
 from collections.abc import Iterable
 from functools import lru_cache
 
-from .protocol import RunRequest, ToolDefinition
+from .protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 
 CONNECTOR_MARKER = re.compile(r"\bNeeds the (\S.{0,80}?) connector to be linked in Settings\.?\s*$")
 APP_NAMES = {
@@ -103,7 +103,13 @@ def toolkit_named(name: str, grams: set[str], message: str) -> bool:
 MENU_UNTOUCHED = 60
 MENU_SIZE = 40
 NAMED_FIRST = 1000.0
-CORE_TOOLS = frozenset({"search_web", "read_links", "run_code", "search_tools", "discover_capabilities"})
+# Always listed on a trimmed menu: the memory tools (the recall turn reads them from the listed menu) and the product's
+# core capabilities (web, links, code, email, calendar, workflows and jobs, images, artifacts, tool discovery).
+CORE_TOOLS = MEMORY_TOOL_NAMES | frozenset({
+    "search_web", "read_links", "run_code", "search_tools", "discover_capabilities", "gmail_send", "calendar_create_event",
+    "calendar_search_events", "create_workflow", "list_workflows", "run_workflow", "list_schedules", "list_agent_jobs",
+    "execute_agent_job", "create_image", "edit_image", "artifacts",
+})
 MENU_STOP = frozenset("a an the and or of to in on at for with my me you your is are be it this that from by as please can could would will do does what which who when how about into up out new all any some".split())
 
 
