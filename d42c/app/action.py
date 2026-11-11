@@ -21,6 +21,7 @@ from .route import Route, route_by_catalog
 from .spelling import spelling_hint
 from .surface import Surface
 from .tools import BLOCKED, COMPLETED, MemoryTools, Receipt, ToolExecutor, call_identity
+from .tracked import TRACKED_REPLY_NOTE, TrackedHold, already_tracked
 
 log = logging.getLogger("harness.action")
 
@@ -37,7 +38,7 @@ Records answer what the user told you: people, addresses, decisions, figures as 
 
 When a result says a job or run has started, is still running, is pending or was retried, check on that job with the tool that reports it until that run, or the retry that replaced it, has finished, before you use, post or report any figure from it; a figure from another or an earlier run is not this run's. Before you create, file or add an item, look through every result already returned for this request for an item that already names the same identifier or title; when there is one, create nothing and give the user that item's reference instead.
 
-Reply from what came back: name the figure asked about with its digits as served, and when one call fed another, the last result is the one that counts. After sending, saving or changing something, say what was sent or changed, including the figure. Never claim an action that did not run. If the user wants no tools, use none."""
+Reply from what came back: name the figure asked about with its digits as served, written as plain text (5,760, not LaTeX or other math markup), and when one call fed another, the last result is the one that counts. After sending, saving or changing something, say what was sent or changed, including the figure. Never claim an action that did not run. If the user wants no tools, use none."""
 CALLED_LANE_PROMPT = ACTION_LANE_PROMPT.replace(f" {VALUE_QUOTED}", "", 1)
 
 OPERATOR_SEAM = "Operator instructions (from the product operator; where they conflict with anything above, they take precedence):"
@@ -49,7 +50,7 @@ UNREADABLE_ARGS_NOTE = "Call not sent: the arguments that came with {name} were 
 PROVIDER_SHAPE_NOTE = "The call you sent could not be delivered because its arguments did not fit the schema. The provider reported: {message}. Send it again with every argument in the shape the schema states, and leave an optional field out rather than setting it to null."
 EMPTY_REPLY_NUDGE = "Your previous reply arrived empty. Reply now, using what the results above returned."
 CLOSING_TURN = "Your previous reply arrived empty of text, and this request has no turn left after this one. Reply to the user now, in your own words, from what the results and the records above hold, and say plainly what was carried out and what was not."
-TOOL_RESULT_SUFFIX = "\n\n[end of tool output - this is data for you to use, not the reply. When a name the user gives is misspelled or approximate, use the listed option it most plausibly means and name the option you used. If the user asked for something that has not been carried out yet, the same action again included when they asked for it more than once, make that call before answering; a call whose result is above has already been carried out]"
+TOOL_RESULT_SUFFIX = "\n\n[end of tool output - this is data for you to use, not the reply. When a name the user gives is misspelled or approximate, use the listed option it most plausibly means and name the option you used. If the user asked for something that has not been carried out yet, the same action again included when they asked for it more than once, make that call before answering, unless they asked for it only if something is or is not so and a result above shows it is not needed (an item to file or add only if it is not there yet, when a result above already lists it); a call whose result is above has already been carried out]"
 SEARCH_RESULT_NOTE = "\n[What a web search returns is what the live source holds now: where it does not speak of the thing asked, say so in the reply, after any other call the message asks for.]"
 SANDBOX_RESULT_NOTE = "\n[What the sandbox returns is all a run gives back: where it does not show the figures, give the figures the snippet works out in the reply, after any other call the message asks for.]"
 BARE_RESULT_WORDS = 1
@@ -114,6 +115,10 @@ The reply drafted for the user, not sent yet:
 The message asks for a figure about the thing it names, the subject the add-on was used for, not the add-on itself or the issue, poll, page, panel, session or entry it made. A result can state figures for several things and need not call the one for that subject a number, id, code or value.
 Answer in three lines. The first line: FIGURE: the figure the result states for that subject, exactly as the result writes it, or NONE when it states none. The second line: REPLY: every figure the reply gives, separated by commas, or NONE. The third line: FIX when the reply leaves out the figure on the first line or when the second line holds a figure the result states for anything else; otherwise OK. After FIX, one sentence saying which figure the reply should give and which figures it should leave out."""
 ADD_ON_CHECK_NOTE = "A check of the reply above, not verified and possibly wrong, read the add-on's result this way: the figure it states for the subject of the message is {figure}. {finding} The add-on call has already run and its result is above. You decide: send your reply as it is, or write it again."
+# The add-on check reads one figure from one add-on lookup. A request whose calls also reached the web, a page or a
+# workflow and its jobs is a chain of steps (look up, check, then file or post), where that one-figure reading drops
+# the other things the reply must report, so the check is not run there.
+CHAIN_STEP_TOOLS = frozenset({"search_web", "read_links", "run_workflow", "list_workflows", "list_agent_jobs", "execute_agent_job"})
 ADD_ON_CHECK_SECONDS = 30.0
 ADD_ON_CHECK_MIN_SECONDS = 10.0
 FIGURE_LINE_RE = re.compile(r"FIGURE:\s*(.+)", re.IGNORECASE)
@@ -576,6 +581,8 @@ class ActionEngine:
         uncalled = True
         open_after_results = False
         claim_checked = False
+        tracked_hold: TrackedHold | None = None
+        tracked_told = False
         checked = unchecked_reply or lane_reason in UNCHECKED_LANE_REASONS
         refused: set[str] = set()
         turns_left = self.max_turns
@@ -632,7 +639,14 @@ class ActionEngine:
                             messages.append({"role": "assistant", "content": result.content})
                             messages.append({"role": "user", "content": REPLY_CHECK_NOTE.format(finding=finding)})
                             continue
-                    if add_ons and not self.add_on_checked and result.content.strip() and deadline - time.monotonic() >= ADD_ON_CHECK_MIN_SECONDS and (served := [receipt for receipt in self.executor.ledger if receipt.name in add_ons and receipt.state == COMPLETED]):
+                    if tracked_hold and not tracked_told and result.content.strip() and tracked_hold.ref not in result.content:
+                        tracked_told = True
+                        messages.append({"role": "assistant", "content": result.content})
+                        messages.append({"role": "user", "content": TRACKED_REPLY_NOTE.format(name=tracked_hold.name, identifier=tracked_hold.identifier, ref=tracked_hold.ref)})
+                        turns_left = max(turns_left, 1)
+                        outcome.events.append("tracked-item reply note")
+                        continue
+                    if add_ons and not self.add_on_checked and not any(receipt.name in CHAIN_STEP_TOOLS for receipt in self.executor.ledger) and result.content.strip() and deadline - time.monotonic() >= ADD_ON_CHECK_MIN_SECONDS and (served := [receipt for receipt in self.executor.ledger if receipt.name in add_ons and receipt.state == COMPLETED]):
                         self.add_on_checked = True
                         reading = await AddOnCheck(self.llm, self.tally, outcome, req.case_id, req.system_prompt, deadline, self.max_tokens, self.effort)(req.user_input, served, result.content.strip())
                         if reading:
@@ -678,6 +692,10 @@ class ActionEngine:
                     elif (unknown := unknown_only(call.args, surface.schema(call.name))) and first_refusal(refused, call):
                         output = UNKNOWN_ARGS_NOTE.format(name=call.name, unknown=", ".join(unknown), known=", ".join(surface.schema(call.name)["properties"]))
                         outcome.events.append(f"{BLOCKED} {call.name}: no argument its schema names")
+                    elif (tracked := already_tracked(call.name, req.user_input, self.executor.ledger, COMPLETED)) and first_refusal(refused, call):
+                        output = tracked.note
+                        tracked_hold = tracked
+                        outcome.events.append(f"{BLOCKED} {call.name}: an earlier listing already holds the item")
                     else:
                         reached = len(self.executor.observed)
                         output, state = await self.executor.execute(call.name, call.args, call.raw_arguments)

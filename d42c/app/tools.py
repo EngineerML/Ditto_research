@@ -37,7 +37,9 @@ DELIVERED_FAILED = "delivered_failed"
 NOT_DELIVERED = "not_delivered"
 BLOCKED = "blocked_before_execution"
 REPEAT_OUTCOMES = {COMPLETED: "already ran (its result is above)", DELIVERY_UNKNOWN: "was already sent and no result came back (whether it ran is unknown)"}
-REPEAT_NOTE = "Not sent: an identical {name} call, with exactly these arguments, {outcome} earlier in this request, so this one was not sent. If the user's message asks for this same call once more, send it again and it goes out."
+# A status read whose last result shows a job or run still going is a poll: the same call may go out again.
+UNFINISHED_RE = re.compile(r"\b(?:running|pending|queued|in progress|in_progress|processing|retrying|not (?:yet )?(?:finished|complete|done))\b", re.IGNORECASE)
+REPEAT_NOTE ="Not sent: an identical {name} call, with exactly these arguments, {outcome} earlier in this request, so this one was not sent. If the user's message asks for this same call once more, send it again and it goes out."
 SAVED_PAIR_ID = LOCAL_PAIR_PREFIX + "{digest}"
 SAVED_AT = "%Y-%m-%dT%H:%M:%SZ"
 UNHELD_IDS_NOTE = "Call not sent: {name} names {ids}, and no stored conversation or subject of this user has that identifier. Identifiers are the pair_id and subject id values printed with the records or returned by a search; the mark a record is shown with, such as M4, is not one. Send it again with those identifiers, or search by words."
@@ -98,6 +100,7 @@ class ToolExecutor:
         self.observed: list[ObservedToolCall] = []
         self.sent: dict[str, str] = {}
         self.read_after: dict[str, int] = {}
+        self.read_output: dict[str, str] = {}
         self.noted: set[str] = set()
         self.changes = 0
         self.ledger: list[Receipt] = []
@@ -112,6 +115,8 @@ class ToolExecutor:
         earlier = self.sent.get(key)
         if earlier is not None and reads_state(name) and self.read_after[key] != self.changes:
             earlier = None
+        if earlier is not None and reads_state(name) and UNFINISHED_RE.search(self.read_output.get(key, "")):
+            earlier = None
         if earlier is not None and key not in self.noted:
             self.noted.add(key)
             note = REPEAT_NOTE.format(name=name, outcome=REPEAT_OUTCOMES[earlier])
@@ -124,6 +129,7 @@ class ToolExecutor:
             if state == COMPLETED:
                 self.sent[key] = state
                 self.read_after[key] = self.changes
+                self.read_output[key] = output
         elif state in REPEAT_OUTCOMES:
             self.sent[key] = state
         return output, state

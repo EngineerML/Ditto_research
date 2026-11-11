@@ -7,7 +7,7 @@ Building on a released agent is permitted. `DECLARATION.md` is dan0l v42's own d
 changes in a section at the top.
 
 ## Changes from dan0l v42
-511 lines added and 22 removed, in 12 files under `app/`.
+634 lines added and 26 removed, in 13 files under `app/`.
 
 | Change | Files | Lines |
 |---|---|---|
@@ -19,6 +19,8 @@ changes in a section at the top.
 | Large tool menus (bench 18 sends 1,400-2,000 tools): after the connector step, a menu of more than 60 tools lists at most 40: the memory tools and the core product tools (web, links, code, email, calendar, workflows and jobs, images, artifacts, tool discovery), then the tools of an app or toolkit the message names, then the best word matches to the message. Upper-case toolkit actions the message does not name are never listed. Every supplied tool stays callable through the tool offer, and a tool the case reaches is listed from the next turn on. A menu of 60 tools or fewer (every bench before 18) is listed as before. The tools that save, change or delete a memory are listed with the core tools. | `app/connectors.py` (`listed_toolkits`), `app/agent.py` | +83 / −6 |
 | Action lane prompt: two more sentences. A result that says a job or run started, is running, pending or was retried is checked with the tool that reports it until that run (or its retry) has finished, before any figure from it is used; before creating an item, the results already returned are looked through for one that names the same identifier or title, and that item's reference is given instead. | `app/action.py` (`ACTION_LANE_PROMPT`) | +2 / −0 |
 | Records lane reading rules: one more bullet. An event dated by its distance from another takes the calendar date that distance gives, and what came immediately before or after an event is found by putting the events of that subject in date order. | `app/records.py` (`READING_RULES`) | +1 / −0 |
+| Multi-step tool requests: (a) the add-on reply check is not run once the request's calls reached the web, a page, or a workflow and its jobs; (b) the note after each tool result says a step the user asked for only on a condition is not carried out when a result shows it is not needed, and the action prompt asks for figures as plain text, not LaTeX; (c) an identical status read goes out again while its last result says the job is running, pending, queued or retrying. | `app/action.py`, `app/tools.py` | +11 / −3 |
+| Already-tracked hold: when the message asks for a new item only if none exists, and a listing from the same app already holds an item naming the current identifier another source gave (on the user's region, not marked resolved), the first create call to that app is not sent and the model is told which item holds it; it may send the call again. If its reply then leaves that item's reference out, it is asked once to write the reply again. No model call; the model writes every reply. | `app/tracked.py` (new), `app/action.py` | +112 / −1 |
 | Event dates, program path: when the message asks what came immediately before or after an event, a note that dates something by its distance from another event ("13 days after the board review") gets a line giving the calendar date, worked out from the one note that dates the other event; the lines are headed as worked out by code, not checked, the notes deciding. No model call; nothing is added when no such note can be placed. | `app/memory/spans.py` (new), `app/short.py` | +93 / −1 |
 
 Tuning fields can be overridden with `HARNESS_<FIELD>` environment variables for local practice. Nothing on the served
