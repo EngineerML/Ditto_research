@@ -103,10 +103,11 @@ def toolkit_named(name: str, grams: set[str], message: str) -> bool:
 MENU_UNTOUCHED = 60
 MENU_SIZE = 40
 NAMED_FIRST = 1000.0
-# Always listed on a trimmed menu: the memory tools (the recall turn reads them from the listed menu) and the product's
-# core capabilities (web, links, code, email, calendar, workflows and jobs, images, artifacts, tool discovery).
+# Always listed on a trimmed menu: the memory tools (the recall turn reads them from the listed menu), the tools that
+# save, change or delete a memory, and the product's core capabilities (web, links, code, email, calendar, workflows
+# and jobs, images, artifacts, tool discovery).
 CORE_TOOLS = MEMORY_TOOL_NAMES | frozenset({
-    "search_web", "read_links", "run_code", "search_tools", "discover_capabilities", "gmail_send", "calendar_create_event",
+    "save_memory", "update_memory", "delete_memory", "search_web", "read_links", "run_code", "search_tools", "discover_capabilities", "gmail_send", "calendar_create_event",
     "calendar_search_events", "create_workflow", "list_workflows", "run_workflow", "list_schedules", "list_agent_jobs",
     "execute_agent_job", "create_image", "edit_image", "artifacts",
 })

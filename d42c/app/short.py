@@ -15,6 +15,7 @@ from . import guide_records
 from .answer import parse_slot
 from .llm import LLM, LLMError
 from .memory.retrieval import QUOTE_RE, Candidate, asked_part, identifier_tokens, tokens
+from .memory.spans import distance_view
 from .memory.people import ALIAS_RE, FULL_NAME_RE, SHORT_RECORD_CHARS, by_date, cards_for, full_names, person_card
 from .memory.topic import Topic, TopicIndex, paragraphs, typo_of
 from .packet import Packet
@@ -271,7 +272,7 @@ class ShortPath:
         reading = reading_notes(req.user_input, notes)
         system = program_system(req.system_prompt, req.user_input, False, reading)
         shown = f"{opening}{NOTES_HEADER}\n\n{record_view(notes)}"
-        guide = reading_view(reading, notes)
+        guide = reading_view(reading, notes) + distance_view(req.user_input, [pair.prompt for pair in notes])
         asked = asked_part(req.user_input)
         key = hashlib.sha256(json.dumps([normalize_user_id(req.user_id), system, shown, asked]).encode()).hexdigest()
         note, held = await self.shared_draft(key, deadline, outcome)
