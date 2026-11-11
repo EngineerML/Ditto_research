@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 from collections.abc import Iterable
 from functools import lru_cache
@@ -99,10 +100,50 @@ def toolkit_named(name: str, grams: set[str], message: str) -> bool:
     return any(len(prefix) >= 3 and prefix in grams for prefix in prefixes)
 
 
+MENU_UNTOUCHED = 60
+MENU_SIZE = 40
+NAMED_FIRST = 1000.0
+CORE_TOOLS = frozenset({"search_web", "read_links", "run_code", "search_tools", "discover_capabilities"})
+MENU_STOP = frozenset("a an the and or of to in on at for with my me you your is are be it this that from by as please can could would will do does what which who when how about into up out new all any some".split())
+
+
+def menu_words(text: str) -> list[str]:
+    return [word for word in re.findall(r"[a-z0-9]+", text.lower()) if len(word) > 2 and word not in MENU_STOP]
+
+
 def listed_toolkits(req: RunRequest) -> RunRequest:
-    """List toolkit actions only for a toolkit the message names; every other tool is listed as before."""
+    """List a menu the size of a pre-v18 one; every supplied tool stays callable (app/offer.py).
+
+    A menu of at most MENU_UNTOUCHED tools is listed as it is. A larger one (bench 18 sends 1,400-2,000 tools) lists
+    the core tools, the tools of an app or toolkit the message names, and then the tools whose names and
+    descriptions share the most distinctive words with the message, up to MENU_SIZE. Toolkit actions the message does
+    not name are never listed. A tool the case reaches (called, or named by a tool result) is listed from the next
+    turn on, and memory tools are always listed."""
     grams = message_grams(req.user_input)
-    kept = [tool for tool in req.tools if not TOOLKIT_ACTION.match(tool.name) or toolkit_named(tool.name, grams, req.user_input)]
-    if len(kept) == len(req.tools):
-        return req
-    return req.model_copy(update={"tools": kept})
+    tools = [tool for tool in req.tools if not TOOLKIT_ACTION.match(tool.name) or toolkit_named(tool.name, grams, req.user_input)]
+    if len(tools) <= MENU_UNTOUCHED:
+        return req if len(tools) == len(req.tools) else req.model_copy(update={"tools": tools})
+    asked = set(menu_words(req.user_input))
+    texts = {tool.name: (set(menu_words(tool.name.replace("_", " "))), set(menu_words(tool.description or ""))) for tool in tools}
+    seen: dict[str, int] = {}
+    for name_words, description_words in texts.values():
+        for word in name_words | description_words:
+            seen[word] = seen.get(word, 0) + 1
+    rarity = {word: math.log(len(tools) / (1 + count)) for word, count in seen.items()}
+    kept: list[ToolDefinition] = []
+    ranked: list[tuple[float, int, ToolDefinition]] = []
+    for position, tool in enumerate(tools):
+        app = tool.name.split("_")[0].lower()
+        if tool.name in CORE_TOOLS or tool.name in req.user_input:
+            kept.append(tool)
+            continue
+        name_words, description_words = texts[tool.name]
+        score = sum(rarity.get(word, 0.0) * (2.0 if word in name_words else 1.0) for word in asked & (name_words | description_words))
+        # The tools of an app or toolkit the message names come first, best match first, within the same cap.
+        if (len(app) >= 3 and app in grams and "_" in tool.name) or TOOLKIT_ACTION.match(tool.name):
+            score += NAMED_FIRST
+        if score > 0:
+            ranked.append((-score, position, tool))
+    ranked.sort(key=lambda item: (item[0], item[1]))
+    chosen = {tool.name for tool in kept} | {tool.name for _, _, tool in ranked[:max(0, MENU_SIZE - len(kept))]}
+    return req.model_copy(update={"tools": [tool for tool in tools if tool.name in chosen]})
