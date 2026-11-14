@@ -1,5 +1,20 @@
 # Pipeline declaration
 
+## Changes in this submission (overhorizoner, built on the released crown-v228)
+
+This is crown-v228's declaration, kept as shipped. `PROVENANCE.md` lists our changes to it. None of them adds a model call or a stage:
+
+- **Code mechanisms (holds, view inputs):**
+  - In the tied-names view (`app/evidence.py`, stage V): initials ties, a list-answer note, a 28-note cap, and a code-read list headed "not checked; the notes decide".
+  - In the action lane (`app/action.py`, `app/tracked.py`, `app/jobs.py`): three first-call holds that the model can override by sending the call again (already tracked, list before create, run not finished).
+  - In polling (`app/tools.py`): a running job's status read goes out again with no repeat check.
+- **A name repair:** tool-name trimming in `app/llm.py`.
+- **Notes:** the open-the-page note for incident and pricing requests (`app/action.py`).
+
+The line numbers in the sections below point to crown-v228's released layout; the files named above have moved by a few lines.
+
+---
+
 Every model call and every host step on the served path. §0 and §1 give exact lines; §2 to §6 name the file and the symbol.
 No model weights or opaque components; the only model is hosted and called over HTTP.
 §0 is the review map, §1 the decision paths. Stages (R1, P, A1, …) are in §4, host mechanisms M1–M72 in §5.
