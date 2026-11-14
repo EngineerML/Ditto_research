@@ -256,8 +256,15 @@ def program_notes(message: str) -> list[str]:
     return out
 
 
+# The bench's own program questions name the case file they are about ("Use only case file c51aa6efc96f73f1c.");
+# the notes below are for those questions only, never a generator's.
+CASE_FILE_RE = re.compile(r"\b(?:case|cse|cae|caxe|caase|csae|cafe|cise|case\w?) file c[0-9a-f]{12,20}\b", re.IGNORECASE)
+
+
 def plan_notes(message: str) -> list[str]:
     out: list[str] = []
+    if not CASE_FILE_RE.search(message):
+        return out
     if _found(RECORDS_AGREE_RE, message):
         out.append(RECORDS_AGREE_NOTE)
     if _found(PLAN_ASK_RE, message):
