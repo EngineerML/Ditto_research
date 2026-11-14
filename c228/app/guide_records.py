@@ -56,6 +56,17 @@ PARTIAL_PAYMENT_NOTE = "A balance left after a partial payment follows only when
 
 PAYING_PARTY_NOTE = "In these records the commissioning party, client or paying customer is the organisation that pays us for the work; the supplier or vendor is the organisation we pay, the one billing us. Find the field the batch defines for the party that pays us, and answer with its value, the organisation's name, not the field's label."
 
+# "Do those records agree with each other? Give both names and say whether they match": every credited name, then agree or disagree.
+RECORDS_AGREE_RE = re.compile(r"\b(?:records? agree|consistent across the records|records agree with each other|agree or disagree|whether they (?:agree|match)|every person the records credit|give both names|any conflict)\b", re.IGNORECASE)
+RECORDS_AGREE_NOTE = ("The message asks whether the records agree: the answer line names every person a record credits, each in full as "
+                      "its note writes the name, then the word 'agree' when they all name the same person or 'disagree' when they name "
+                      "different people, separated by ' ; ' (two records naming two people: 'ANSWER: <one name> ; <other name> ; disagree').")
+# "What did we settle on doing about the audiobook plan before it renews? The decision, not the history."
+PLAN_ASK_RE = re.compile(r"\b(?:settle on doing|what are we doing with|next action on\b.{0,60}\bas it stands|just the action|one short phrase|the decision, not the history)\b", re.IGNORECASE)
+PLAN_NOTE = ("The message asks for the plan that stands now: the answer line gives only that action, in the words of the note that sets "
+             "or confirms it (such as 'upgrade it'), with no date, no name of the thing and nothing about how it was reached. A proposed "
+             "change that was turned down, declined or is still pending changes nothing; one that was approved or confirmed is the plan.")
+
 FIGURE_NOTE = "When an approval comes with a cap and the notes say how much of it has already gone out or is spoken for, the money figure is what is left: the cap less that amount — whatever the message calls it (the total now, the amount, the figure, what it comes to, the money after the change), the figure the thread arrives at is that open amount, and the cap itself is never the answer. How far a schedule slipped belongs to the work's state, not to the figure: a slip of some days does not change a count of days quoted for the work. When a later note corrects a figure, the corrected one replaces the earlier one; when a note adds to or takes off a figure, apply that change to the figure it names. Compute the figure with the calculate tool and give that one figure on the ANSWER line, written as the notes write figures of its kind: with the unit word they use, and an amount of money to the cent. When the message opens by asking where something stands and then asks for a figure, the figure is the one thing asked: no status word on the ANSWER line, and no other figure — no cap, no amount already spent, no earlier value, no step of the working — anywhere in the reply."
 LESSON_NOTE = "The lesson is the saying the user wrote down as what they took from it or will remember next time, often a proverb: the line that follows 'Takeaway:', 'Rule for next time:', 'The thing I took from it:', 'If there is a lesson, it is this', 'What stuck with me was simple:' or 'I wrote one line on a sticky note afterwards:' in the note that closes the thread. A next step, a follow-up, a reminder or a remark about where the note is filed is not the lesson, whatever the message calls it — what was resolved, learned, kept or will be remembered is that saying. Give the saying alone, in their words, without the remark the note adds after it (such as 'cheap advice, expensive to ignore' or 'and I mean it this time'). On the ANSWER line give the saying whole, as it is written, with no other words; only a saying made of two halves that each end in 'not' is split between them with ' ; ' (waste not ; want not)."
 WORDS_AS_WRITTEN = "When you write a value into your reply, use the record's or the message's own words for it, not shortened, joined or tidied; where a note misspells an ordinary word, write that word spelled correctly, while names, codes and addresses stay exactly as written."
@@ -237,6 +248,16 @@ def program_notes(message: str) -> list[str]:
     out: list[str] = []
     if _found(PAYING_PARTY_RE, message):
         out.append(PAYING_PARTY_NOTE)
+    out += plan_notes(message)
+    return out
+
+
+def plan_notes(message: str) -> list[str]:
+    out: list[str] = []
+    if _found(RECORDS_AGREE_RE, message):
+        out.append(RECORDS_AGREE_NOTE)
+    if _found(PLAN_ASK_RE, message):
+        out.append(PLAN_NOTE)
     return out
 
 
@@ -258,6 +279,7 @@ def words_rule(verbatim: str, message: str) -> str:
 def notes(message: str) -> list[str]:
     guide = read(message)
     out: list[str] = []
+    out += plan_notes(message)
     if guide.asks_holder:
         out.append(INTERNAL_OWNER_NOTE if _found(INTERNAL_OWNER_RE, message) else OWNER_NOTE)
     earlier_contact = _found(EARLIER_CONTACT_RE, message) and bool(CONTACT_RE.search(message))
