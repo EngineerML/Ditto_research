@@ -29,6 +29,7 @@ from .records import safe_run as run_records
 from .short import ShortPath, TopicPath, codes_asked, find_topic, focus_token, nicknames, note_words, repeat_reply, same_asked, same_notes, short_records, topic_lead
 from .store import Store
 from .tools import MemoryTools, ToolExecutor
+from .governor import GOVERNOR
 
 log = logging.getLogger("harness.agent")
 OWN_TOPIC_ROUTE = True
@@ -242,4 +243,5 @@ class CaseRunner:
         answer = outcome.answer if outcome.answer is not None else parse_slot(outcome.content)[1]
         text_sha = hashlib.sha256(plain_type(outcome.content.strip()).encode()).hexdigest()[:16]
         log.info("case=%s user=%s lane=%s:%s observed=%d host=%d memory=%d model_calls=%d answer=%r ms=%d gate=%d text_sha=%s prompt_tokens=%d output_tokens=%d events=%s", req.case_id, req.user_id, lane.name, lane.reason, len(executor.observed), outcome.host_calls, outcome.memory_calls, outcome.model_calls, outcome.answer, latency_ms, gate_limit, text_sha, tally.prompt, tally.output, outcome.events)
+        GOVERNOR.record(tally.prompt, tally.output)
         return RunResponse(final_text=plain_type(outcome.content.strip()), tool_calls=executor.observed, prompt_tokens=tally.prompt, output_tokens=tally.output, latency_ms=latency_ms, answer=None if answer is None else plain_type(answer))

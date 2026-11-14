@@ -13,6 +13,7 @@ from typing import Any
 import httpx
 
 from .config import Settings
+from .governor import GOVERNOR
 
 log = logging.getLogger("harness.llm")
 PROMPT_LOG = (os.environ.get("DITTOBENCH_PROMPT_LOG") or "").strip()
@@ -251,7 +252,8 @@ class OpenAICompatLLM(LLM):
 
     async def chat(self, messages: list[dict[str, Any]], tools: list[dict[str, Any]] | None, *, deadline: float, max_tokens: int | None = None, reasoning_effort: str | None = None, temperature: float | None = None, seed: int | None = None, tool_choice: str | None = None, once: bool = False) -> ChatResult:
         payload: dict[str, Any] = {"model": self.model, "messages": messages, "temperature": self.temperature if temperature is None else temperature, "seed": self.seed if seed is None else seed}
-        effort = reasoning_effort if reasoning_effort in {"low", "medium", "high"} else self.reasoning_effort
+        effort = GOVERNOR.effort(reasoning_effort if reasoning_effort in {"low", "medium", "high"} else self.reasoning_effort)
+        max_tokens = GOVERNOR.max_tokens(max_tokens)
         if effort:
             if self.reasoning_style == "openrouter":
                 payload["reasoning"] = {"effort": effort, "exclude": True}
