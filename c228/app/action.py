@@ -19,6 +19,8 @@ from .request_kinds import reply_only, request_kinds, unchecked
 from .route import Route, route_by_catalog
 from .surface import Surface
 from .tools import BLOCKED, COMPLETED, HOLD, REPEAT_OUTCOMES, SEND, MemoryTools, Receipt, ToolExecutor, call_identity
+from .tracked import TRACKED_REPLY_NOTE, TrackedHold, already_tracked, unlisted_create
+from .jobs import running_job
 
 log = logging.getLogger("harness.action")
 
@@ -515,6 +517,9 @@ class ActionEngine:
         open_noted = False
         checked = unchecked_reply or lane_reason in UNCHECKED_LANE_REASONS or skip_check
         turns_left = self.max_turns
+        refused: set[str] = set()
+        tracked_hold: TrackedHold | None = None
+        tracked_told = False
         while True:
             while turns_left > 0:
                 if deadline - time.monotonic() < 3:
@@ -576,6 +581,12 @@ class ActionEngine:
                             messages.append({"role": "assistant", "content": result.content})
                             messages.append({"role": "user", "content": REPLY_CHECK_NOTE.format(finding=finding)})
                             continue
+                    if tracked_hold and not tracked_told and turns_left and result.content.strip() and tracked_hold.ref not in result.content:
+                        tracked_told = True
+                        messages.append({"role": "assistant", "content": result.content})
+                        messages.append({"role": "user", "content": TRACKED_REPLY_NOTE.format(name=tracked_hold.name, identifier=tracked_hold.identifier, ref=tracked_hold.ref)})
+                        outcome.events.append("tracked-item reply note")
+                        continue
                     outcome.content = result.content or outcome.content
                     break
                 still_open = False
@@ -607,6 +618,16 @@ class ActionEngine:
                     elif problems := type_problems(call.args, surface.schema(call.name)):
                         output = BAD_TYPE_NOTE.format(name=call.name, problems="; ".join(problems))
                         outcome.events.append(f"{BLOCKED} {call.name}: {'; '.join(problems)}")
+                    elif (tracked := already_tracked(call.name, req.user_input, self.executor.ledger, COMPLETED)) and first_refusal(refused, call):
+                        output = tracked.note
+                        tracked_hold = tracked
+                        outcome.events.append(f"{BLOCKED} {call.name}: an earlier listing already holds the item")
+                    elif (unlisted := unlisted_create(call.name, req.user_input, self.executor.ledger, COMPLETED)) and first_refusal(refused, call):
+                        output = unlisted
+                        outcome.events.append(f"{BLOCKED} {call.name}: no listing of that app read before creating")
+                    elif (running := running_job(call.name, req.user_input, self.executor.ledger, COMPLETED)) and first_refusal(refused, call):
+                        output = running
+                        outcome.events.append(f"{BLOCKED} {call.name}: the run it reports on is still going")
                     else:
                         reached = len(self.executor.observed)
                         output, state = await self.executor.execute(call.name, call.args, call.raw_arguments, RepeatAuthorization(self.llm, self.tally, outcome, req.case_id, req.system_prompt, messages[1]["content"], deadline, self.max_tokens, self.effort))
@@ -666,3 +687,11 @@ async def safe_run(engine: ActionEngine, req: RunRequest, packet: Packet, deadli
         log.error("case=%s action lane llm failure: %s", req.case_id, exc)
         outcome.events.append(f"llm failure: {exc}")
         return outcome
+
+
+def first_refusal(refused: set[str], call: Any) -> bool:
+    key = call_identity(call.name, call.args)
+    if key in refused:
+        return False
+    refused.add(key)
+    return True

@@ -132,7 +132,7 @@ def parse_chat_completion(body: Any) -> ChatResult:
     for index, call in enumerate(message.get("tool_calls") or []):
         function = call.get("function") or {}
         name = function.get("name") or ""
-        clean = re.split(r"<\|", name)[0].strip()
+        clean = re.split(r"<\||[^A-Za-z0-9_.\-]", name)[0].strip()  # also "read_links?commentary?json"
         if clean != name:
             # gpt-oss sometimes runs a channel marker into the name ("find_in_records<|channel|>json");
             # the provider rejects the whole next request when that name is echoed back, so keep the name alone.
