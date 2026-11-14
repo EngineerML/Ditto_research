@@ -311,6 +311,35 @@ def person_ties(index: UserIndex, message: str, full: str) -> dict[str, list[str
     return {alias: list(dict.fromkeys(stated)) for alias, stated in ties.items() if len(coverage.name_holders(index, alias)) <= coverage.MAX_SURNAME_HOLDERS}
 
 
+# A capitalised phrase of two to six words: a place or thing a note names ("Pinehaven Bread Room").
+NAMED_THING_RE = re.compile(r"\b[A-Z][\w'’&-]*(?:\s+(?:of|the|and|on|de|la)?\s*[A-Z][\w'’&-]*){1,5}")
+PAST_CUE_RE = re.compile(r"\b(?:used to|no longer|gave up|stopped|anymore|any more|replaced|instead of|switched from|before)\b", re.IGNORECASE)
+WORK_CUE_RE = re.compile(r"\b(?:works? (?:as|at|for)|employed|job at|joined|hired by|colleague|manager at|lead at)\b", re.IGNORECASE)
+TIED_READ = "Code read off each note above whose subject is this person, under one of these names, the place or thing it names; not checked, and the notes decide:\n{things}"
+
+
+ASKED_COUNT = {"two": 2, "both": 2, "three": 3, "four": 4}
+ASKED_COUNT_RE = re.compile(r"\b(two|both|three|four)\b")
+
+
+def things_named(text: str, patterns: list[re.Pattern[str]], names: list[str]) -> list[str]:
+    """The capitalised phrases a note names after one of the person's names when that name is the note's subject: not a
+    possessive ("X's sibling ... loves Y" is the sibling's), not in a note that puts it in the past, not a name of the person."""
+    if PAST_CUE_RE.search(text) or WORK_CUE_RE.search(text):
+        return []
+    found: list[str] = []
+    for pattern in patterns:
+        for match in pattern.finditer(text):
+            after = text[match.end():]
+            if after[:2] in ("'s", "’s"):
+                continue
+            for thing in NAMED_THING_RE.findall(after.split(". ")[0]):
+                thing = thing.strip()
+                if not any(name in thing or thing in name for name in names) and thing not in found:
+                    found.append(thing)
+    return found
+
+
 def tied_names_view(message: str, index: UserIndex) -> EvidenceView | None:
     if len(message) > SEVERAL_MAX_CHARS or not SEVERAL_OF_RE.search(message) or NOT_A_LIST_ASK_RE.search(message):
         return None
@@ -335,14 +364,23 @@ def tied_names_view(message: str, index: UserIndex) -> EvidenceView | None:
     if not 2 <= len(held) <= TIED_MAX_NOTES:
         return None
     lines = []
+    things: list[str] = []
     for pair in sorted(held, key=lambda pair: (pair.timestamp, pair.pair_id)):
         text = pair.prompt.strip()
+        for thing in things_named(text, patterns, names) if len(text) <= TIED_LONG_NOTE else []:
+            things.append(f"- {pair.timestamp[:10]}: {thing}")
         if len(text) > TIED_LONG_NOTE:
             sentences = SENTENCE_END_RE.split(text)
             keep = sorted({place for position, sentence in enumerate(sentences) if any(pattern.search(sentence) for pattern in patterns) for place in (position, position + 1) if place < len(sentences)})
             text = " ... ".join(sentences[place] for place in keep)
         lines.append(f"- {pair.timestamp[:10]}: {text}")
-    return EvidenceView(TIED_SHOWN.format(names=", ".join(names), ties=tied, notes="\n".join(lines)), [TIED_NOTE], list_ask=True)
+    shown = TIED_SHOWN.format(names=", ".join(names), ties=tied, notes="\n".join(lines))
+    asked = ASKED_COUNT.get(next(iter(ASKED_COUNT_RE.findall(message.lower())), ""), 0)
+    named = [thing.split(": ", 1)[1] for thing in things]
+    # Shown only when it reads cleanly: as many things as the message asks for, none written twice.
+    if asked and len(named) == asked and len(set(named)) == asked:
+        shown += "\n\n" + TIED_READ.format(things="\n".join(things))
+    return EvidenceView(shown, [TIED_NOTE], list_ask=True)
 
 
 def evidence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView | None:
