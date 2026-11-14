@@ -217,7 +217,7 @@ POINT_IN_TIME_RE = re.compile(r"\b(as (?:they|it|things) stood|as of|on that (?:
 POINT_IN_TIME_NOTE = "A question about what was on file on a given day asks for the value the latest record on or before that day gives: a value recorded earlier and not replaced by then was the one on file that day, a record dated that very day is not needed, and a value recorded after that day is not the one asked for. Where a record on or before that day gives the value, give it; say you have no record only when no record on or before that day gives one. Give that one value and no other figure: do not restate the date asked about, in digits or in words, and give no other day count or amount beside it. In these records a person's work address is their work email, so the address current on a day is the email held that day; a reply that gives the value says nowhere that it has no record of it."
 
 
-CASE_FILE_RE = re.compile(r"\b\w{2,6}\s+\w{3,5}\s+c[0-9a-f]{16}\b")  # "case file c51aa6efc96f73f1c", typo'd or not
+CASE_FILE_RE = re.compile(r"^\s*use only case file\b", re.IGNORECASE)
 CASE_FILE_NOTE = "This question names a case file, and that case file's entries hold its answer: follow the chain the question describes through them, one link at a time (each link resolved from the entries, and the entry that holds at the step asked where entries change over steps), and give the value the chain leads to. For a case-file question a reply saying there is no record of it is not the answer; where a link is hard to find, search the case file's entries for it by the identifier the previous link gave."
 
 
@@ -258,12 +258,12 @@ def program_notes(message: str) -> list[str]:
 
 # The bench's own program questions name the case file they are about ("Use only case file c51aa6efc96f73f1c.");
 # the notes below are for those questions only, never a generator's.
-CASE_FILE_RE = re.compile(r"\b(?:case|cse|cae|caxe|caase|csae|cafe|cise|case\w?) file c[0-9a-f]{12,20}\b", re.IGNORECASE)
+PROGRAM_FILE_RE = re.compile(r"\b\w{2,6}\s+\w{3,5}\s+c[0-9a-f]{16}\b")  # "case file c51aa6efc96f73f1c", typo'd or not
 
 
 def plan_notes(message: str) -> list[str]:
     out: list[str] = []
-    if not CASE_FILE_RE.search(message):
+    if not PROGRAM_FILE_RE.search(message):
         return out
     if _found(RECORDS_AGREE_RE, message):
         out.append(RECORDS_AGREE_NOTE)
