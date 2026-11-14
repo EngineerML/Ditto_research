@@ -233,7 +233,29 @@ TIED_NOTE = "The message asks for more than one thing of one person. In these no
 SENTENCE_END_RE = re.compile(r"(?<=[.!?])\s+")
 CAPITAL_RUN_RE = re.compile(r"[A-Z][\w'’-]*(?:\s+[A-Z][\w'’-]*)*")
 ROLE_HELD_RE = re.compile(r"\bis (?:now )?(?:the|our) (?:new )?([A-Za-z][A-Za-z' -]{5,60}?)[.,;]")
-CALLED_CUE_RE = re.compile(r"\b(?:goes by|go by|calls?|called|known as|nicknamed?|answers to|signs [a-z ]{0,20}as)\b")
+CALLED_CUE_RE = re.compile(r"\b(?:goes by|go by|gone by|went by|knows? [^.?!]{1,60}? as|they mean|calls?|called|known as|nicknamed?|answers to|signs [a-z ]{0,20}as)\b")
+
+
+# Initials a person goes by ("has gone by S.B.", "everybody calls F.C."): a called name that is no capitalised word.
+INITIALS_RE = re.compile(r"(?<![\w.])((?:[A-Z]\.){2,3})(?!\w)")
+
+
+def initials_ties(index: UserIndex, full: str) -> dict[str, list[str]]:
+    """Initials that a short note writing the full name, with a called-name cue, gives the person: one set of initials in that note."""
+    ties: dict[str, list[str]] = {}
+    for pid in index.nodes:
+        text = coverage.short_prompt(index, pid)
+        if text and coverage.mention(text, full) and CALLED_CUE_RE.search(text):
+            found = list(dict.fromkeys(INITIALS_RE.findall(text)))
+            if len(found) == 1:
+                ties.setdefault(found[0], []).append(pid)
+    return ties
+
+
+def name_pattern(name: str) -> re.Pattern[str]:
+    if name.endswith("."):
+        return re.compile(r"(?<![\w.])" + re.escape(name))
+    return re.compile(r"\b" + re.escape(name) + r"\b")
 
 
 def lone_names(index: UserIndex, text: str, parts: set[str]) -> list[str]:
@@ -256,6 +278,8 @@ def person_ties(index: UserIndex, message: str, full: str) -> dict[str, list[str
     first = full.split()[0]
     ties: dict[str, list[str]] = {alias: list(stated) for alias, (name, stated) in alias_ties(index, message).items() if name == full}
     if ties:
+        for initials, stated in initials_ties(index, full).items():
+            ties.setdefault(initials, []).extend(stated)
         return ties
     shorts = [(pid, coverage.short_prompt(index, pid)) for pid in index.nodes]
     shorts = [(pid, text) for pid, text in shorts if text]
@@ -281,6 +305,8 @@ def person_ties(index: UserIndex, message: str, full: str) -> dict[str, list[str
                 names = [name for name in lone_names(index, text, parts) if name in opens]
                 if len(names) == 1:
                     ties.setdefault(names[0], []).append(pid)
+    for initials, stated in initials_ties(index, full).items():
+        ties.setdefault(initials, []).extend(stated)
     return {alias: list(dict.fromkeys(stated)) for alias, stated in ties.items() if len(coverage.name_holders(index, alias)) <= coverage.MAX_SURNAME_HOLDERS}
 
 
@@ -302,7 +328,7 @@ def tied_names_view(message: str, index: UserIndex) -> EvidenceView | None:
         names = list(dict.fromkeys(name for alias, (full, _) in found.items() for name in (full, alias)))
     if not ties:
         return None
-    patterns = [re.compile(r"\b" + re.escape(name) + r"\b") for name in names]
+    patterns = [name_pattern(name) for name in names]
     stated = {pid for pids in ties.values() for pid in pids}
     held = [node.pair for pid, node in index.nodes.items() if pid in stated or any(pattern.search(node.pair.prompt) for pattern in patterns)]
     if not 2 <= len(held) <= TIED_MAX_NOTES:
