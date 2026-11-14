@@ -10,6 +10,7 @@ default; override with --in-price / --out-price).
 import argparse
 import glob
 import json
+import os
 import re
 import urllib.request
 from collections import defaultdict
@@ -19,8 +20,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("run", nargs="?")
     ap.add_argument("--block", type=int, default=10)
-    ap.add_argument("--in-price", type=float, default=0.03)
-    ap.add_argument("--out-price", type=float, default=0.14)
+    ap.add_argument("--in-price", type=float, default=0.07)
+    ap.add_argument("--out-price", type=float, default=0.15)
     ap.add_argument("--dump", action="store_true", help="print the status keys (debug)")
     args = ap.parse_args()
     run = args.run or sorted(glob.glob("/home/bittensor/ditto/practice/2026*_full"))[-1]
@@ -48,7 +49,8 @@ def main() -> int:
     if isinstance(cases, dict):
         cases = list(cases.values())
     tokens = {}
-    for line in open(f"{run}/trace.jsonl"):
+    trace_lines = open(f"{run}/trace.jsonl") if os.path.exists(f"{run}/trace.jsonl") else []
+    for line in trace_lines:
         t = json.loads(line)
         pt = sum((c.get("prompt_tokens") or (c.get("usage") or {}).get("prompt_tokens") or 0) for c in t.get("calls", []))
         ct = sum((c.get("completion_tokens") or (c.get("usage") or {}).get("completion_tokens") or 0) for c in t.get("calls", []))
