@@ -31,6 +31,25 @@ _spec = importlib.util.spec_from_file_location("local_rehearsal", KIT_SCRIPTS / 
 lr = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(lr)
 
+# A scorer on a loaded host can take longer than the kit's 10 s to answer a status read; one slow answer used to end
+# the whole practice run (2026-11-14, seed 1810006). Status reads get 60 s and five retries; the submit is unchanged.
+_kit_request_json = lr.request_json
+
+
+def _patient_request_json(url, *, method="GET", payload=None, timeout=10):
+    if method != "GET":
+        return _kit_request_json(url, method=method, payload=payload, timeout=timeout)
+    for attempt in range(6):
+        try:
+            return _kit_request_json(url, method=method, payload=payload, timeout=max(timeout, 60))
+        except lr.RehearsalError:
+            if attempt == 5:
+                raise
+            time.sleep(10)
+
+
+lr.request_json = _patient_request_json
+
 SCORER_BIN = HERE / ".cache" / "dittobench-api"
 SUBSET_SCORER_BIN = HERE / ".cache" / "dittobench-api-subset"
 LIVE_BENCH = 13  # live contract on 2026-10-22 (/api/v1/public/bench/config); the kit still says 12
