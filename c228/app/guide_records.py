@@ -221,8 +221,23 @@ CASE_FILE_RE = re.compile(r"^\s*use only case file\b", re.IGNORECASE)
 CASE_FILE_NOTE = "This question names a case file, and that case file's entries hold its answer: follow the chain the question describes through them, one link at a time (each link resolved from the entries, and the entry that holds at the step asked where entries change over steps), and give the value the chain leads to. For a case-file question a reply saying there is no record of it is not the answer; where a link is hard to find, search the case file's entries for it by the identifier the previous link gave."
 
 
+# "Which two bakeries does Gwendolyn Castellano love?", "Name every one you can find": a list ask. Generators grade a reply
+# that names what the notes hold and says nothing of the rest as a partial answer, and any "no record" / "not stated"
+# phrase in it as a decline that scores 0.
+LIST_ASK_RE = re.compile(r"\b(?:which|what|name)\s+(?:the\s+)?(?:two|three|four|both)\b|\bname (?:both|every one|each one)\b|\bevery one you can find\b", re.IGNORECASE)
+LIST_PARTIAL_NOTE = ("The message asks for more than one thing. If the notes give fewer of them than the message asks for, answer "
+                     "with the ones they do give and write nothing at all about the rest: no 'no record', 'not stated', 'not "
+                     "found', 'unknown', 'no other', 'only one' or words like them anywhere in the reply. Only if the notes give "
+                     "none of them, say that you have no record of them.")
+
+
+def list_partial_notes(message: str) -> list[str]:
+    return [LIST_PARTIAL_NOTE] if LIST_ASK_RE.search(message) else []
+
+
 def record_notes(message: str) -> list[str]:
     out: list[str] = []
+    out += list_partial_notes(message)
     if CASE_FILE_RE.search(message):
         out.append(CASE_FILE_NOTE)
     if asks_signoff(message):
@@ -291,6 +306,7 @@ def notes(message: str) -> list[str]:
     guide = read(message)
     out: list[str] = []
     out += plan_notes(message)
+    out += list_partial_notes(message)
     if guide.asks_holder:
         out.append(INTERNAL_OWNER_NOTE if _found(INTERNAL_OWNER_RE, message) else OWNER_NOTE)
     earlier_contact = _found(EARLIER_CONTACT_RE, message) and bool(CONTACT_RE.search(message))

@@ -14,6 +14,7 @@ from .llm import LLM, ChatResult, LLMError, Usage
 from .memory.people import ALIAS_RE, SHORT_RECORD_CHARS
 from .packet import Packet, compose, render_records
 from .guide_tools import guide_block
+from .guide_records import list_partial_notes
 from .protocol import MemoryPair, RunRequest, handed_out
 from .request_kinds import reply_only, request_kinds, unchecked
 from .route import Route, route_by_catalog
@@ -489,6 +490,7 @@ class ActionEngine:
             outcome.events.append(f"route {route.basis}: {' > '.join(route.tools)}")
         surface = Surface(req.tools, req.user_input, route=route)
         guide = guide_block(req.user_input, [tool.name for tool in req.tools])
+        guide = "\n".join(part for part in [guide, *list_partial_notes(req.user_input)] if part)
         kinds = set(request_kinds(req.user_input, [tool.name for tool in req.tools]))
         live = LIVE_KIND in kinds
         unchecked_reply = reply_only(req.user_input, [tool.name for tool in req.tools]) or bool(kinds & REPLY_UNCHECKED_KINDS)

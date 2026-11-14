@@ -323,7 +323,9 @@ def evidence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView | None:
 
 
 async def answer_from_view(engine: RecordsEngine, req: RunRequest, view: EvidenceView, effort: str, max_tokens: int, deadline: float, outcome: Outcome) -> bool:
-    system = short_system(req.system_prompt, " ".join([VIEW_SYSTEM, *view.notes]))
+    listed = guide_rules.list_partial_notes(req.user_input)
+    base = VIEW_SYSTEM.replace(f" {NOT_STATED_LINE}", "") if listed else VIEW_SYSTEM
+    system = short_system(req.system_prompt, " ".join([base, *view.notes, *(note for note in listed if note not in view.notes)]))
     user = f"{view.shown}\n\n{MESSAGE_HEADER}\n{req.user_input}" + (f"\n\n{view.closing}" if view.closing else "")
     outcome.events.append("evidence view")
     return await decide(engine, req, [{"role": "system", "content": system}, {"role": "user", "content": user}], effort, view.max_tokens or max_tokens, deadline, outcome)
