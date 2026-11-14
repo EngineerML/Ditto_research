@@ -62,6 +62,7 @@ class EvidenceView:
     notes: list[str]
     max_tokens: int = 0
     closing: str = ""
+    list_ask: bool = False  # a list of one person's things: what the notes do not hold goes unsaid
 
 
 def names_a_person(text: str) -> bool:
@@ -226,10 +227,10 @@ def contact_sentence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView
 SEVERAL_OF_RE = re.compile(r"\b(?:two|three|four|both)\b|^\s*(?:Which|What)\s+[a-z][a-z' -]{1,30}s\s+(?:does|do|did|is|are|was|were|has|have|had)\b|^\s*What\s+(?:does|did|has|have|is)\s+[A-Z][a-z]+\s+[A-Z][a-z]+\b")
 NOT_A_LIST_ASK_RE = re.compile(r"\b(?:e-?mail|address|handle|phone|number|invoice|owed?|balance|case file|thread|in order)\b", re.IGNORECASE)
 SEVERAL_MAX_CHARS = 200
-TIED_MAX_NOTES = 14
+TIED_MAX_NOTES = 28
 TIED_LONG_NOTE = 700
 TIED_SHOWN = "The user's notes that write one of these names, found by code; not checked: {names}. Code took them for one person because a note ties them ({ties}) and may be wrong; a note that writes only a name resembling one of them is left out as someone else's. The notes, oldest first:\n{notes}"
-TIED_NOTE = "The message asks for more than one thing of one person. In these notes each is written under one of that person's names, the full name or the other name a note ties to them, and usually in different notes, so read every note above before you answer; a note that says one thing replaced another for them leaves only the newer one, something a note puts in the past (used to, no longer, gave up) is not theirs now, and something a note only reports about a differently named person is not theirs. Give each item as its note writes it, all on the one line 'ANSWER: <first> and <second>'."
+TIED_NOTE = "The message asks for more than one thing of one person. In these notes each is written under one of that person's names, the full name or the other name a note ties to them, and usually in different notes, so read every note above before you answer; a note that says one thing replaced another for them leaves only the newer one, something a note puts in the past (used to, no longer, gave up) is not theirs now, and something a note only reports about a differently named person is not theirs. A note that says they love, like, swear by, are a regular at, are obsessed with, go to or keep going back to a place says what the message asks, whichever of those words the message uses, so each such place counts. Give every item you find, each as its note writes it, all on the one line 'ANSWER: <item> and <item>', as many as you found. If you find fewer than the message asks for, give only those and write nothing at all about the rest: not 'not stated', 'unknown', 'none', 'no other' or 'no record'."
 SENTENCE_END_RE = re.compile(r"(?<=[.!?])\s+")
 CAPITAL_RUN_RE = re.compile(r"[A-Z][\w'’-]*(?:\s+[A-Z][\w'’-]*)*")
 ROLE_HELD_RE = re.compile(r"\bis (?:now )?(?:the|our) (?:new )?([A-Za-z][A-Za-z' -]{5,60}?)[.,;]")
@@ -341,7 +342,7 @@ def tied_names_view(message: str, index: UserIndex) -> EvidenceView | None:
             keep = sorted({place for position, sentence in enumerate(sentences) if any(pattern.search(sentence) for pattern in patterns) for place in (position, position + 1) if place < len(sentences)})
             text = " ... ".join(sentences[place] for place in keep)
         lines.append(f"- {pair.timestamp[:10]}: {text}")
-    return EvidenceView(TIED_SHOWN.format(names=", ".join(names), ties=tied, notes="\n".join(lines)), [TIED_NOTE])
+    return EvidenceView(TIED_SHOWN.format(names=", ".join(names), ties=tied, notes="\n".join(lines)), [TIED_NOTE], list_ask=True)
 
 
 def evidence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView | None:
@@ -349,7 +350,8 @@ def evidence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView | None:
 
 
 async def answer_from_view(engine: RecordsEngine, req: RunRequest, view: EvidenceView, effort: str, max_tokens: int, deadline: float, outcome: Outcome) -> bool:
-    system = short_system(req.system_prompt, " ".join([VIEW_SYSTEM, *view.notes]))
+    base = VIEW_SYSTEM.replace(f" {NOT_STATED_LINE}", "") if view.list_ask else VIEW_SYSTEM
+    system = short_system(req.system_prompt, " ".join([base, *view.notes]))
     user = f"{view.shown}\n\n{MESSAGE_HEADER}\n{req.user_input}" + (f"\n\n{view.closing}" if view.closing else "")
     outcome.events.append("evidence view")
     return await decide(engine, req, [{"role": "system", "content": system}, {"role": "user", "content": user}], effort, view.max_tokens or max_tokens, deadline, outcome)
