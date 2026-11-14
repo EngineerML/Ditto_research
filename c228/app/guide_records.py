@@ -60,12 +60,15 @@ PAYING_PARTY_NOTE = "In these records the commissioning party, client or paying 
 RECORDS_AGREE_RE = re.compile(r"\b(?:records? agree|consistent across the records|records agree with each other|agree or disagree|whether they (?:agree|match)|every person the records credit|give both names|any conflict)\b", re.IGNORECASE)
 RECORDS_AGREE_NOTE = ("The message asks whether the records agree: the answer line names every person a record credits, each in full as "
                       "its note writes the name, then the word 'agree' when they all name the same person or 'disagree' when they name "
-                      "different people, separated by ' ; ' (two records naming two people: 'ANSWER: <one name> ; <other name> ; disagree').")
+                      "different people, separated by ' ; ' (two records naming two people: 'ANSWER: <one name> ; <other name> ; disagree'). "
+                      "Here no record replaces another, whatever their dates: the rule that the newest entry governs does not apply "
+                      "to who each record credits, so every credited name stays on the line, the earlier record's too.")
 # "What did we settle on doing about the audiobook plan before it renews? The decision, not the history."
 PLAN_ASK_RE = re.compile(r"\b(?:settle on doing|what are we doing with|next action on\b.{0,60}\bas it stands|just the action|one short phrase|the decision, not the history)\b", re.IGNORECASE)
 PLAN_NOTE = ("The message asks for the plan that stands now: the answer line gives only that action, the verb and its object in the "
              "words of the note that sets or confirms it, and stops where the action ends ('upgrade it', not 'upgrade it before then' or "
-             "'upgrade it before it renews'): no date, no time phrase, no name of the thing and nothing about how it was reached. A proposed "
+             "'upgrade it before it renews'): no date, no time phrase, no name of the thing and nothing about how it was reached; "
+             "from a note saying 'the plan was to upgrade it before then' the answer line is 'ANSWER: upgrade it'. A proposed "
              "change that was turned down, declined or is still pending changes nothing; one that was approved or confirmed is the plan.")
 
 FIGURE_NOTE = "When an approval comes with a cap and the notes say how much of it has already gone out or is spoken for, the money figure is what is left: the cap less that amount — whatever the message calls it (the total now, the amount, the figure, what it comes to, the money after the change), the figure the thread arrives at is that open amount, and the cap itself is never the answer. How far a schedule slipped belongs to the work's state, not to the figure: a slip of some days does not change a count of days quoted for the work. When a later note corrects a figure, the corrected one replaces the earlier one; when a note adds to or takes off a figure, apply that change to the figure it names. Compute the figure with the calculate tool and give that one figure on the ANSWER line, written as the notes write figures of its kind: with the unit word they use, and an amount of money to the cent. When the message opens by asking where something stands and then asks for a figure, the figure is the one thing asked: no status word on the ANSWER line, and no other figure — no cap, no amount already spent, no earlier value, no step of the working — anywhere in the reply."
