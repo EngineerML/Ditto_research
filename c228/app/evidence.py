@@ -62,7 +62,6 @@ class EvidenceView:
     notes: list[str]
     max_tokens: int = 0
     closing: str = ""
-    list_ask: bool = False  # a list of one person's things: what the notes do not hold goes unsaid
 
 
 def names_a_person(text: str) -> bool:
@@ -227,36 +226,14 @@ def contact_sentence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView
 SEVERAL_OF_RE = re.compile(r"\b(?:two|three|four|both)\b|^\s*(?:Which|What)\s+[a-z][a-z' -]{1,30}s\s+(?:does|do|did|is|are|was|were|has|have|had)\b|^\s*What\s+(?:does|did|has|have|is)\s+[A-Z][a-z]+\s+[A-Z][a-z]+\b")
 NOT_A_LIST_ASK_RE = re.compile(r"\b(?:e-?mail|address|handle|phone|number|invoice|owed?|balance|case file|thread|in order)\b", re.IGNORECASE)
 SEVERAL_MAX_CHARS = 200
-TIED_MAX_NOTES = 28
+TIED_MAX_NOTES = 14
 TIED_LONG_NOTE = 700
 TIED_SHOWN = "The user's notes that write one of these names, found by code; not checked: {names}. Code took them for one person because a note ties them ({ties}) and may be wrong; a note that writes only a name resembling one of them is left out as someone else's. The notes, oldest first:\n{notes}"
-TIED_NOTE = "The message asks for more than one thing of one person. In these notes each is written under one of that person's names, the full name or the other name a note ties to them, and usually in different notes, so read every note above before you answer; a note that says one thing replaced another for them leaves only the newer one, something a note puts in the past (used to, no longer, gave up) is not theirs now, and something a note only reports about a differently named person is not theirs. A note that says they love, like, swear by, are a regular at, are obsessed with, go to or keep going back to a place says what the message asks, whichever of those words the message uses, so each such place counts. Give every item you find, each as its note writes it, all on the one line 'ANSWER: <item> and <item>', as many as you found. If you find fewer than the message asks for, give only those and write nothing at all about the rest: not 'not stated', 'unknown', 'none', 'no other' or 'no record'."
+TIED_NOTE = "The message asks for more than one thing of one person. In these notes each is written under one of that person's names, the full name or the other name a note ties to them, and usually in different notes, so read every note above before you answer; a note that says one thing replaced another for them leaves only the newer one, something a note puts in the past (used to, no longer, gave up) is not theirs now, and something a note only reports about a differently named person is not theirs. Give each item as its note writes it, all on the one line 'ANSWER: <first> and <second>'."
 SENTENCE_END_RE = re.compile(r"(?<=[.!?])\s+")
 CAPITAL_RUN_RE = re.compile(r"[A-Z][\w'’-]*(?:\s+[A-Z][\w'’-]*)*")
 ROLE_HELD_RE = re.compile(r"\bis (?:now )?(?:the|our) (?:new )?([A-Za-z][A-Za-z' -]{5,60}?)[.,;]")
-CALLED_CUE_RE = re.compile(r"\b(?:goes by|go by|gone by|went by|knows? [^.?!]{1,60}? as|they mean|calls?|called|known as|nicknamed?|answers to|signs [a-z ]{0,20}as)\b")
-
-
-# Initials a person goes by ("has gone by S.B.", "everybody calls F.C."): a called name that is no capitalised word.
-INITIALS_RE = re.compile(r"(?<![\w.])((?:[A-Z]\.){2,3})(?!\w)")
-
-
-def initials_ties(index: UserIndex, full: str) -> dict[str, list[str]]:
-    """Initials that a short note writing the full name, with a called-name cue, gives the person: one set of initials in that note."""
-    ties: dict[str, list[str]] = {}
-    for pid in index.nodes:
-        text = coverage.short_prompt(index, pid)
-        if text and coverage.mention(text, full) and CALLED_CUE_RE.search(text):
-            found = list(dict.fromkeys(INITIALS_RE.findall(text)))
-            if len(found) == 1:
-                ties.setdefault(found[0], []).append(pid)
-    return ties
-
-
-def name_pattern(name: str) -> re.Pattern[str]:
-    if name.endswith("."):
-        return re.compile(r"(?<![\w.])" + re.escape(name))
-    return re.compile(r"\b" + re.escape(name) + r"\b")
+CALLED_CUE_RE = re.compile(r"\b(?:goes by|go by|calls?|called|known as|nicknamed?|answers to|signs [a-z ]{0,20}as)\b")
 
 
 def lone_names(index: UserIndex, text: str, parts: set[str]) -> list[str]:
@@ -279,8 +256,6 @@ def person_ties(index: UserIndex, message: str, full: str) -> dict[str, list[str
     first = full.split()[0]
     ties: dict[str, list[str]] = {alias: list(stated) for alias, (name, stated) in alias_ties(index, message).items() if name == full}
     if ties:
-        for initials, stated in initials_ties(index, full).items():
-            ties.setdefault(initials, []).extend(stated)
         return ties
     shorts = [(pid, coverage.short_prompt(index, pid)) for pid in index.nodes]
     shorts = [(pid, text) for pid, text in shorts if text]
@@ -306,38 +281,7 @@ def person_ties(index: UserIndex, message: str, full: str) -> dict[str, list[str
                 names = [name for name in lone_names(index, text, parts) if name in opens]
                 if len(names) == 1:
                     ties.setdefault(names[0], []).append(pid)
-    for initials, stated in initials_ties(index, full).items():
-        ties.setdefault(initials, []).extend(stated)
     return {alias: list(dict.fromkeys(stated)) for alias, stated in ties.items() if len(coverage.name_holders(index, alias)) <= coverage.MAX_SURNAME_HOLDERS}
-
-
-# A capitalised phrase of two to six words: a place or thing a note names ("Pinehaven Bread Room").
-NAMED_THING_RE = re.compile(r"\b[A-Z][\w'’&-]*(?:\s+(?:of|the|and|on|de|la)?\s*[A-Z][\w'’&-]*){1,5}")
-PAST_CUE_RE = re.compile(r"\b(?:used to|no longer|gave up|stopped|anymore|any more|replaced|instead of|switched from|before)\b", re.IGNORECASE)
-WORK_CUE_RE = re.compile(r"\b(?:works? (?:as|at|for)|employed|job at|joined|hired by|colleague|manager at|lead at)\b", re.IGNORECASE)
-TIED_READ = "Code read off each note above whose subject is this person, under one of these names, the place or thing it names; not checked, and the notes decide:\n{things}"
-
-
-ASKED_COUNT = {"two": 2, "both": 2, "three": 3, "four": 4}
-ASKED_COUNT_RE = re.compile(r"\b(two|both|three|four)\b")
-
-
-def things_named(text: str, patterns: list[re.Pattern[str]], names: list[str]) -> list[str]:
-    """The capitalised phrases a note names after one of the person's names when that name is the note's subject: not a
-    possessive ("X's sibling ... loves Y" is the sibling's), not in a note that puts it in the past, not a name of the person."""
-    if PAST_CUE_RE.search(text) or WORK_CUE_RE.search(text):
-        return []
-    found: list[str] = []
-    for pattern in patterns:
-        for match in pattern.finditer(text):
-            after = text[match.end():]
-            if after[:2] in ("'s", "’s"):
-                continue
-            for thing in NAMED_THING_RE.findall(after.split(". ")[0]):
-                thing = thing.strip()
-                if not any(name in thing or thing in name for name in names) and thing not in found:
-                    found.append(thing)
-    return found
 
 
 def tied_names_view(message: str, index: UserIndex) -> EvidenceView | None:
@@ -358,29 +302,20 @@ def tied_names_view(message: str, index: UserIndex) -> EvidenceView | None:
         names = list(dict.fromkeys(name for alias, (full, _) in found.items() for name in (full, alias)))
     if not ties:
         return None
-    patterns = [name_pattern(name) for name in names]
+    patterns = [re.compile(r"\b" + re.escape(name) + r"\b") for name in names]
     stated = {pid for pids in ties.values() for pid in pids}
     held = [node.pair for pid, node in index.nodes.items() if pid in stated or any(pattern.search(node.pair.prompt) for pattern in patterns)]
     if not 2 <= len(held) <= TIED_MAX_NOTES:
         return None
     lines = []
-    things: list[str] = []
     for pair in sorted(held, key=lambda pair: (pair.timestamp, pair.pair_id)):
         text = pair.prompt.strip()
-        for thing in things_named(text, patterns, names) if len(text) <= TIED_LONG_NOTE else []:
-            things.append(f"- {pair.timestamp[:10]}: {thing}")
         if len(text) > TIED_LONG_NOTE:
             sentences = SENTENCE_END_RE.split(text)
             keep = sorted({place for position, sentence in enumerate(sentences) if any(pattern.search(sentence) for pattern in patterns) for place in (position, position + 1) if place < len(sentences)})
             text = " ... ".join(sentences[place] for place in keep)
         lines.append(f"- {pair.timestamp[:10]}: {text}")
-    shown = TIED_SHOWN.format(names=", ".join(names), ties=tied, notes="\n".join(lines))
-    asked = ASKED_COUNT.get(next(iter(ASKED_COUNT_RE.findall(message.lower())), ""), 0)
-    named = [thing.split(": ", 1)[1] for thing in things]
-    # Shown only when it reads cleanly: as many things as the message asks for, none written twice.
-    if asked and len(named) == asked and len(set(named)) == asked:
-        shown += "\n\n" + TIED_READ.format(things="\n".join(things))
-    return EvidenceView(shown, [TIED_NOTE], list_ask=True)
+    return EvidenceView(TIED_SHOWN.format(names=", ".join(names), ties=tied, notes="\n".join(lines)), [TIED_NOTE])
 
 
 def evidence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView | None:
@@ -388,8 +323,7 @@ def evidence_view(message: str, pairs: list[MemoryPair]) -> EvidenceView | None:
 
 
 async def answer_from_view(engine: RecordsEngine, req: RunRequest, view: EvidenceView, effort: str, max_tokens: int, deadline: float, outcome: Outcome) -> bool:
-    base = VIEW_SYSTEM.replace(f" {NOT_STATED_LINE}", "") if view.list_ask else VIEW_SYSTEM
-    system = short_system(req.system_prompt, " ".join([base, *view.notes]))
+    system = short_system(req.system_prompt, " ".join([VIEW_SYSTEM, *view.notes]))
     user = f"{view.shown}\n\n{MESSAGE_HEADER}\n{req.user_input}" + (f"\n\n{view.closing}" if view.closing else "")
     outcome.events.append("evidence view")
     return await decide(engine, req, [{"role": "system", "content": system}, {"role": "user", "content": user}], effort, view.max_tokens or max_tokens, deadline, outcome)

@@ -8,10 +8,11 @@ formatted with ruff (88 columns, double quotes); every file parses to the same P
 
 This is crown-v228's declaration, kept as shipped. `PROVENANCE.md` lists our changes to it. None of them adds a model call or a stage:
 
-- **Code mechanisms (holds, view inputs):**
-  - In the tied-names view (`app/evidence.py`, stage V): initials ties, a list-answer note, a 28-note cap, and a code-read list headed "not checked; the notes decide".
+- **Code mechanisms (holds):**
   - In the action lane (`app/action.py`, `app/tracked.py`, `app/jobs.py`): three first-call holds that the model can override by sending the call again (already tracked, list before create, run not finished).
   - In polling (`app/tools.py`): a running job's status read goes out again with no repeat check.
+  - A spend governor (`app/governor.py`): while the last 100 requests average far above an ordinary run's cost, calls go out at low effort with a lower output cap.
+- **Program notes** (`app/guide_records.py`): for 'do the records agree' and 'what did we settle on' questions.
 - **A name repair:** tool-name trimming in `app/llm.py`.
 - **Notes:** the open-the-page note for incident and pricing requests (`app/action.py`).
 
