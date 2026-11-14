@@ -2,6 +2,10 @@
 
 ## Changes in this submission (overhorizoner, built on the released crown-v228)
 
+Base: crown-v228 v1, publicly released agent `673386d0-cc54-4acc-986c-f0d2663615ec`, archive sha256
+`212288958f1c0504cf49b30008c161ced7b6c22a7b3b1d4df27e0982b66d9ee6` (released 2026-11-14 03:08 UTC). `app/` is
+formatted with ruff (88 columns, double quotes); every file parses to the same Python AST as the unformatted tree.
+
 This is crown-v228's declaration, kept as shipped. `PROVENANCE.md` lists our changes to it. None of them adds a model call or a stage:
 
 - **Code mechanisms (holds, view inputs):**
