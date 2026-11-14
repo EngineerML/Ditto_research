@@ -39,6 +39,9 @@ BLOCKED = "blocked_before_execution"
 SEND = "SEND"
 HOLD = "HOLD"
 REPEAT_OUTCOMES = {COMPLETED: "already ran (its result is above)", DELIVERY_UNKNOWN: "was already sent and no result came back (whether it ran is unknown)"}
+# A status read whose last result shows a job or run still going is a poll: the same call may go out again
+# (ported from overhorizoner v3 / d42c, tools.py).
+UNFINISHED_RE = re.compile(r"(?:running|pending|queued|in progress|in_progress|processing|retrying|not (?:yet )?(?:finished|complete|done))", re.IGNORECASE)
 UNDELIVERED_NOTE = "Tool {name} is not available for this request: it did not run and changed nothing. Reply to the user from the message and the records, without saying that this tool ran or that it changed anything. Where the user stated a preference or setting of their own, acknowledge it by stating the value written in their message as what they told you."
 UNDELIVERED_AGAIN_NOTE = "Tool {name} is not available for this request: it did not run earlier and does not run now, and it changed nothing. Write the reply to the user from the message and the records, without saying that this tool ran or that it changed anything; where the user stated a preference or setting of their own, acknowledge it by stating the value written in their message as what they told you."
 HELD_REPEAT_NOTE = "Not sent: an identical {name} call, with exactly these arguments, {outcome} earlier in this request, and the check made before sending found that the user's message does not ask for this exact call more times than it was already sent, so this one was held and nothing was sent. If the user's message does ask for this exact call again, send it once more and it goes out."
@@ -110,6 +113,7 @@ class ToolExecutor:
         self.changes = 0
         self.ledger: list[Receipt] = []
         self.held: set[str] = set()
+        self.read_output: dict[str, str] = {}
 
     def window(self) -> float:
         if self.deadline is None:
@@ -125,6 +129,8 @@ class ToolExecutor:
         earlier = self.sent.get(key)
         if earlier is not None and reads_state(name) and self.read_after[key] != self.changes:
             earlier = None
+        if earlier is not None and reads_state(name) and UNFINISHED_RE.search(self.read_output.get(key, "")):
+            earlier = None  # a poll of a job still running: no repeat check, the read goes out
         if earlier is not None and key in self.held:
             # the deciding model sent this exact call again after it was held: its decision stands and the call goes out
             log.info("case=%s identical call %s sent again by the deciding model after a hold: sent", self.case_id, name)
@@ -145,6 +151,7 @@ class ToolExecutor:
             if state == COMPLETED:
                 self.sent[key] = state
                 self.read_after[key] = self.changes
+                self.read_output[key] = output
         elif state in REPEAT_OUTCOMES:
             self.sent[key] = state
         return output, state
