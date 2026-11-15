@@ -36,6 +36,9 @@ MAX_CHAIN_WORDS = 3
 CALLED_HEADER = "Names the stored conversations say a person the message names in full is called, found by the same mechanical word search and not checked:"
 CALLED_LINE = '"{full}" - {given} says they are called "{alias}"; "{alias}" - {found}'
 CALLED_RE = re.compile(r"\b(?:calls?|called|known as|goes by|go by|nicknamed?|answers to)\s+(?:them|him|her|it)?\s*([A-Z][a-z]+)\b|\bbeen\s+([A-Z][a-z]+)\s+to\s+everyone\b")
+# A called-name cue with the name quoted a few words on, in the same sentence ("who nobody has called anything but \"Custard\"").
+QUOTED_CALLED_RE = re.compile(r"\b(?:calls?|called|known as|goes by|go by|nicknamed?|answers to)\b[^.!?\n\"“”]{0,30}[\"“]([A-Z][a-z]+)[\"”]")
+SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+|\n+")
 GIVEN_NAME_CUE_RE = re.compile(r"\b(?:goes by|go by|going by|known (?:to [a-z ]+ )?as|knows? (?:[A-Za-z]+ ){0,3}as|nicknamed?|nick|dubbed|a\.?k\.?a\.?|calls?|called|short for|answers to|first name|full name|real name|gone by|they mean|we mean|to (?:everyone|friends|family|us|the team|colleagues))\b|\([A-Z][a-z]+\)", re.IGNORECASE)
 CAPITAL_WORD_RE = re.compile(r"\b[A-Z][a-z]{1,20}\b")
 MAX_CALLED_LINES = 4
@@ -200,6 +203,12 @@ def cued_given_names(index: UserIndex, text: str, parts: set[str]) -> list[str]:
     return words if len(words) == 1 else []
 
 
+def called_in(text: str) -> list[str]:
+    """Names a called-name phrase in the text gives: right after the cue, or quoted a few words on."""
+    found = [match.group(1) or match.group(2) for match in CALLED_RE.finditer(text)]
+    return found + [match.group(1) for match in QUOTED_CALLED_RE.finditer(text) if match.group(1) not in found]
+
+
 def called_names(index: UserIndex, question: str) -> list[tuple[str, str, set[str], set[str]]]:
     """For each full name the message writes, and each one-word name it uses: a name a short stored conversation holding that name says the person is called (for a one-word name, by the called-name phrases alone), where it says so, and the conversations holding that name."""
     out: list[tuple[str, str, set[str], set[str]]] = []
@@ -210,13 +219,20 @@ def called_names(index: UserIndex, question: str) -> list[tuple[str, str, set[st
         where: dict[str, set[str]] = {}
         for pid in index.nodes:
             text = short_prompt(index, pid)
-            if not text or not mention(text, full):
+            if text:
+                if not mention(text, full):
+                    continue
+                texts = [text]
+            elif one_word:
                 continue
-            for match in CALLED_RE.finditer(text):
-                alias = match.group(1) or match.group(2)
-                if alias and alias not in parts and alias not in NOT_NAMES:
-                    where.setdefault(alias, set()).add(pid)
-            if one_word:
+            else:
+                # A long record: read a tie only from its sentences that write the full name.
+                texts = [part for part in SENTENCE_SPLIT_RE.split(index.nodes[pid].pair.prompt) if len(part) < SHORT_RECORD_CHARS and mention(part, full)]
+            for part in texts:
+                for alias in called_in(part):
+                    if alias and alias not in parts and alias not in NOT_NAMES:
+                        where.setdefault(alias, set()).add(pid)
+            if one_word or not text:
                 continue
             for alias in cued_given_names(index, text, parts):
                 where.setdefault(alias, set()).add(pid)
@@ -224,7 +240,7 @@ def called_names(index: UserIndex, question: str) -> list[tuple[str, str, set[st
             for alias, pids in surname_hop_names(index, full, question).items():
                 where.setdefault(alias, set()).update(pids)
         for alias, pids in sorted(where.items()):
-            holders = {pid for pid in name_holders(index, alias) if short_prompt(index, pid)}
+            holders = {pid for pid in name_holders(index, alias) if short_prompt(index, pid)} or name_holders(index, alias) - pids
             if len(holders) > MAX_SURNAME_HOLDERS:
                 continue
             out.append((full, alias, pids, holders))

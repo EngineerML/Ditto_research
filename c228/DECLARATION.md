@@ -13,6 +13,8 @@ This is crown-v228's declaration, kept as shipped. `PROVENANCE.md` lists our cha
   - In polling (`app/tools.py`): a running job's status read goes out again with no repeat check.
   - A spend governor (`app/governor.py`): while the last 100 requests average far above an ordinary run's cost, calls go out at low effort with a lower output cap.
 - **Program notes** (`app/guide_records.py`): for 'do the records agree' and 'what did we settle on' questions.
+- **List note** (`app/guide_records.py`, `app/evidence.py`, `app/action.py`): a question asking for two or more things gets a note to name the ones the notes give and say nothing of the rest.
+- **Called names in long records** (`app/memory/coverage.py`): crown's called-name search (M48) also reads the sentences of a long record that write the asked full name, and a name quoted a few words after the cue. It changes advisory text only.
 - **A name repair:** tool-name trimming in `app/llm.py`.
 - **Notes:** the open-the-page note for incident and pricing requests (`app/action.py`).
 

@@ -12,7 +12,7 @@ v42), which is our code.
 
 ## Changes from crown-v228
 
-`app/evidence.py` (the tied-names view) is crown-v228's own, unchanged.
+`app/evidence.py` (the tied-names view) is crown-v228's own, except that the list note below joins its notes.
 
 | Change | Files |
 |---|---|
@@ -24,5 +24,7 @@ v42), which is our code.
 | Open the page: for incident-triage and pricing-correction requests a lone web search gets the open-the-page note, never the reply-now note. | `app/action.py` (`PAGE_KINDS`) |
 | Spend governor: the tokens of each finished request, priced at the bench's published chat rates, go into a window of the last 100 requests. While the window averages over $0.0035 per request (about 1.6 times the costliest stretch of an ordinary run), later calls go out at low effort with at most 4,000 output tokens, and over $0.0050 with at most 1,500; under $0.0028 they go out as before. It reads only that window, so process age and the number of runs served never matter. It changes no message or tool. | `app/governor.py` (new), `app/llm.py`, `app/agent.py` |
 | Tool names: anything after the first character that cannot be in a tool name ("read_links?commentary?json") is trimmed, as the `<|` marker already was. | `app/llm.py` |
+| List note: a message that asks for two, three, four or both things, or every one, gets a note to answer with the ones the notes give and say nothing about the rest; only when the notes give none of them does the reply say there is no record. The tied-names view drops its "not stated" line when this note is on. | `app/guide_records.py` (`LIST_ASK_RE`, `LIST_PARTIAL_NOTE`, `list_partial_notes`), `app/evidence.py`, `app/action.py` |
+| Called names in long records: the called-name search (crown's M48) also reads a long record, but only its sentences that write the full name the message uses, and also takes a name quoted a few words after the cue ("who nobody has called anything but \"Pip\""). When no short record holds that name, the long ones that do are listed. | `app/memory/coverage.py` (`QUOTED_CALLED_RE`, `called_in`, `called_names`) |
 
 None of these makes a model call. Every hold releases the call when the model sends it again.
