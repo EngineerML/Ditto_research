@@ -22,7 +22,7 @@ from .memory.deliberation import DRAFT_TOOL_CHOICE, NO_RECORD_REPLY, Deliberatio
 from .memory.finder import FIND_TOOL, RecordFinder, order_word, wanted_texts
 from .memory.retrieval import Candidate, UserIndex, asked_part, identifier_tokens
 from .memory.worksheet import render_worksheet
-from .packet import employer_records, QUESTION_HEADER, Packet, build_packet, compose, identifier_focus, name_ties, number_threads, PHRASE_MEANS, REFERS_BACK_REASON, referring_turns, weave_followups, weave_ties
+from .packet import employer_records, QUESTION_HEADER, Packet, build_packet, compose, identifier_focus, name_ties, number_threads, person_forms, person_forms_block, PHRASE_MEANS, REFERS_BACK_REASON, referring_turns, seat_person_records, weave_followups, weave_ties
 from .protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 from .tools import BLOCKED, MemoryTools, ToolExecutor, openai_tools
 
@@ -502,6 +502,10 @@ class RecordsEngine:
         referred, rereferred = referring_turns(packet, req.user_input, index, statement)
         if referred or rereferred:
             outcome.events.append(f"next turns that speak of someone by a phrase, seated after the record naming the asked name: added {referred}, moved {rereferred}")
+        if guide_records.current_list_notes(req.user_input) and not statement:
+            seated_person = seat_person_records(packet, person_forms(index, req.user_input), index)
+            if seated_person:
+                outcome.events.append(f"records naming the asked person by first name or title, added: {seated_person}")
         follow = weave_followups(packet, index)
         if follow:
             outcome.events.append(f"session follow-ups={follow}")
@@ -527,7 +531,10 @@ class RecordsEngine:
             outcome.events.append(f"name ties (M48) on {tied} records, {seated} seated after the last record writing the tied name")
         coverage = question_coverage(index, req.user_input, packet.labels()) if index is not None else ""
         worksheet = render_worksheet(packet) if not packet.focused else ""
-        block = "\n\n".join(part for part in (coverage, worksheet) if part)
+        forms = person_forms_block(packet, person_forms(index, req.user_input), index) if index is not None and guide_records.current_list_notes(req.user_input) else ""
+        if forms:
+            outcome.events.append("records naming the asked person listed by how they name them")
+        block = "\n\n".join(part for part in (coverage, forms, worksheet) if part)
         long_packet = packet.chars > self.long_packet_chars
         effort, max_tokens = "low" if long_packet else self.effort, self.max_tokens
         if long_packet:

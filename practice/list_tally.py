@@ -26,5 +26,5 @@ for pr in sorted(os.listdir(f"{run}/trace")):
             s = 0.0 if bad or dec else len(got) / len(c["answer_items"])
             tot += s
             n += 1
-            dist["distractor" if bad else f"{len(got)}/2" + (" +decline" if dec else "")] += 1
+            dist["distractor" if bad else f"{len(got)}/{len(c['answer_items'])}" + (" +decline" if dec else "")] += 1
         print(f"{pr:10} {agent:5} mean {tot / n:.2f} over {n}  {dict(dist)}")

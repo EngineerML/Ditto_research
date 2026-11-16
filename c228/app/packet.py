@@ -4,6 +4,7 @@ import json
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
+from typing import Any
 
 from .memory.retrieval import NAME_RE, SENTENCE_START, Candidate, UserIndex, identifier_tokens, noted_matter, relevance_band
 from .protocol import MemoryPair, handed_out
@@ -555,6 +556,188 @@ def weave_followups(packet: Packet, index: UserIndex | None) -> int:
     if after:
         packet.records[:] = [seat for cand in packet.records for seat in (cand, *after.get(cand.pair.pair_id, ()))]
     return len(added)
+
+
+TITLE_GENDER = {"Mr": "he", "Ms": "she", "Mrs": "she", "Miss": "she", "Dr": ""}
+HE_RE = re.compile(r"\b(?:he|his|him|himself)\b", re.IGNORECASE)
+SHE_RE = re.compile(r"\b(?:she|her|hers|herself)\b", re.IGNORECASE)
+PERSON_FORMS_MAX = 16
+
+
+def person_forms(index: UserIndex, message: str) -> dict[str, Any] | None:
+    """How the stored records name the one person a message asks about by full name: the records writing the full name,
+    the first name alone, or a title with the surname that fits the pronouns those records use for them; and the records
+    writing the surname for someone else (another first name, or the other title). Found by spelling, never by meaning."""
+    if index is None:
+        return None
+    names = asked_full_names(message)
+    role = None if names else role_holder(index, message)
+    if role:
+        names = [role[0]]
+    if len(names) != 1 or len(names[0].split()) != 2:
+        return None
+    full = names[0]
+    first, last = full.split()
+    first_re = re.compile(r"\b" + re.escape(first) + r"\b(?!\s+[A-Z])")
+    title_re = re.compile(r"\b(Mr|Ms|Mrs|Miss|Dr)\.?\s+" + re.escape(last) + r"\b")
+    other_re = re.compile(r"\b(?!" + re.escape(first) + r"\b)([A-Z][a-z]+)\s+" + re.escape(last) + r"\b")
+    forms: dict[str, list[str]] = {"full": [], "first": [], "title": [], "unsettled": [], "other": []}
+    he = she = 0
+    for node in sorted(index.nodes.values(), key=lambda node: (node.pair.timestamp, node.pair.pair_id)):
+        text = node.pair.prompt
+        if full in text:
+            forms["full"].append(node.pair.pair_id)
+        elif first_re.search(text):
+            forms["first"].append(node.pair.pair_id)
+        else:
+            continue
+        he += len(HE_RE.findall(text))
+        she += len(SHE_RE.findall(text))
+    gender = "he" if he > 2 * she else "she" if she > 2 * he else ""
+    if not gender:
+        # no pronoun for them anywhere: when the records give the surname one title only, that title is taken as theirs
+        used = {TITLE_GENDER[m.group(1)] for node in index.nodes.values() for m in title_re.finditer(node.pair.prompt)} - {""}
+        gender = used.pop() if len(used) == 1 else ""
+    titles: dict[str, str] = {}
+    for node in index.nodes.values():
+        text = node.pair.prompt
+        if full in text or first_re.search(text):
+            continue
+        match = title_re.search(text)
+        if match and gender and TITLE_GENDER[match.group(1)] in ("", gender):
+            forms["title"].append(node.pair.pair_id)
+            titles[match.group(1)] = 1
+        elif match and not gender:
+            forms["unsettled"].append(node.pair.pair_id)
+        elif match or (other_re.search(text) and other_re.search(text).group(1) not in TITLE_GENDER):
+            forms["other"].append(node.pair.pair_id)
+    if not forms["first"] and not forms["title"] and not forms["unsettled"]:
+        return None
+    return {"name": full, "first_name": first, "last": last, "gender": gender, "titles": list(titles), "role": role[1] if role else "", "role_record": role[2] if role else "", **forms}
+
+
+ROLE_ASK_RE = re.compile(r"\bdoes my ((?:[A-Za-z][a-z-]* ){0,4}?[a-z][a-z-]*)(?: ([A-Z][a-z]+))? (?:get|gets|buy|buys|swim|climb|watch|work|go|goes|eat|see|play|take|have|do|shop|train|order)\b")
+FULL_IN_TEXT_RE = re.compile(r"\b([A-Z][a-z]+ [A-Z][a-z]+)\b")
+
+
+def role_holder(index: UserIndex, message: str) -> tuple[str, str, str] | None:
+    """For "Which cafés does my dog walker get coffee at now?" (or "my electrician Zofia"): the full name in the latest
+    stored record that names the role ("... so I switched to Jurek Stockcombe as my dog walker"), the last one it writes,
+    and with the first name the message gives when it gives one. Found by spelling only; (name, role, pair id)."""
+    match = ROLE_ASK_RE.search(message)
+    if not match:
+        return None
+    role, first = match.group(1).strip(), match.group(2) or ""
+    role_re = re.compile(r"\b" + re.escape(role) + r"\b", re.IGNORECASE)
+    for node in sorted(index.nodes.values(), key=lambda node: (node.pair.timestamp, node.pair.pair_id), reverse=True):
+        text = node.pair.prompt
+        if not role_re.search(text):
+            continue
+        fulls = [name for name in FULL_IN_TEXT_RE.findall(text) if name.split()[0] not in SENTENCE_START and (not first or name.split()[0] == first)]
+        if fulls:
+            # the new holder is the name written with "now" / "it's ..." / "to ..."; otherwise the last name the record writes
+            current = [name for name in fulls if re.search(re.escape(name) + r"(?: is (?:my|our) [\w -]+)? now\b", text) or re.search(r"\b(?:it's|it is|to|trust:) " + re.escape(name), text)]
+            return (current or fulls)[-1], role, node.pair.pair_id
+    return None
+
+
+PLACE_RE = re.compile(r"\b([A-Z][a-z]+(?: [A-Z][a-z]+){1,2})\b")
+MOVED_FROM_TO_RE = re.compile(r"\bfrom ([A-Z][a-z]+(?: [A-Z][a-z]+){1,2}) to ([A-Z][a-z]+(?: [A-Z][a-z]+){1,2})\b")
+SWAPPED_FOR_RE = re.compile(r"\bswapped ([A-Z][a-z]+(?: [A-Z][a-z]+){1,2}) for ([A-Z][a-z]+(?: [A-Z][a-z]+){1,2})\b")
+REPLACED_RE = re.compile(r"\b([A-Z][a-z]+(?: [A-Z][a-z]+){1,2}) has replaced ([A-Z][a-z]+(?: [A-Z][a-z]+){1,2})\b")
+CEASED_RE = re.compile(r"\b(?:given (?:it )?up|gave (?:it )?up|giving up|done with|dropped|crossed (?:it )?off|written (?:it |the place )?off|wrote (?:it |the place )?off|moved on|cancell?ed|let the [\w-]+ (?:card|membership|pass)[\w ]* expire|expire[ds]?\b|sold (?:his|her|their) |stopped (?:going|bothering)|no longer|never (?:going|letting|setting)|never to (?:set foot|go)|won't (?:buy|go|be going|renew)|run out|ran out|that's (?:finished|over|it for)|is over for|quit|left (?:it|for good)|turned (?:his|her|their) back on)", re.IGNORECASE)
+DAY_WORDS = frozenset("Monday Tuesday Wednesday Thursday Friday Saturday Sunday January February March April May June July August September October November December".split())
+PLAN_RE = re.compile(r"\b(?:wants? to try|plans? to (?:try|go|check)|thinking (?:of|about) trying|might try|keen to try|hopes? to try|is going to try)\b", re.IGNORECASE)
+
+
+def person_places(index: UserIndex, found: dict[str, Any], kinds: tuple[str, ...] = ("full", "first", "title")) -> list[dict[str, Any]]:
+    """Places the records naming the asked person give, read by code from wording only and never checked: for each place,
+    the records that name it with them, and the last such record that says they left it (moved, swapped or switched away,
+    replaced, gave up, dropped ...) or only plan to try it. Oldest record first."""
+    skip = {found["name"], found["first_name"], found["last"]}
+    if found.get("role_record"):
+        skip |= {name for name in FULL_IN_TEXT_RE.findall(index.nodes[found["role_record"]].pair.prompt)}
+        skip |= {word for name in skip if " " in name for word in name.split()}
+    ids = [pid for kind in kinds for pid in found[kind]]
+    ids.sort(key=lambda pid: (index.nodes[pid].pair.timestamp, pid))
+    places: dict[str, dict[str, Any]] = {}
+    for pid in ids:
+        text = index.nodes[pid].pair.prompt
+        left, joined = set(), set()
+        for match in MOVED_FROM_TO_RE.finditer(text):
+            left.add(match.group(1)); joined.add(match.group(2))
+        for match in SWAPPED_FOR_RE.finditer(text):
+            left.add(match.group(1)); joined.add(match.group(2))
+        for match in REPLACED_RE.finditer(text):
+            joined.add(match.group(1)); left.add(match.group(2))
+        named = [p for p in PLACE_RE.findall(text) if p not in skip and not set(p.split()) & (skip | DAY_WORDS) and p.split()[0] not in ("Mr", "Ms", "Mrs", "Miss", "Dr")]
+        for place in named:
+            entry = places.setdefault(place, {"place": place, "records": [], "left": "", "plan": ""})
+            entry["records"].append(pid)
+            if place in left or (place not in joined and len(set(named)) == 1 and CEASED_RE.search(text)):
+                entry["left"] = pid
+            elif place in joined or not PLAN_RE.search(text):
+                entry["left"] = ""
+                entry["plan"] = ""
+            if PLAN_RE.search(text) and place not in joined and len(set(named)) == 1:
+                entry["plan"] = pid
+    return list(places.values())
+
+
+def seat_person_records(packet: Packet, found: dict[str, Any] | None, index: UserIndex | None) -> int:
+    """Stored records that name the asked person by full name, first name alone or a fitting title, missing from the
+    packet, are added at its end oldest first (up to 16); records are never edited."""
+    if not found or index is None:
+        return 0
+    held = {cand.pair.pair_id for cand in packet.records}
+    missing = [pid for kind in ("full", "first", "title", "unsettled") for pid in found[kind] if pid not in held][:PERSON_FORMS_MAX]
+    missing.sort(key=lambda pid: (index.nodes[pid].pair.timestamp, pid))
+    packet.records.extend(Candidate(pair=index.nodes[pid].pair, reasons=["names the asked person by first name or title"], keys=frozenset(index.nodes[pid].values)) for pid in missing)
+    return len(missing)
+
+
+def person_forms_block(packet: Packet, found: dict[str, Any] | None, index: UserIndex | None = None) -> str:
+    if not found:
+        return ""
+    block = person_records_lines(packet, found)
+    if index is None:
+        return block
+    marks = packet.labels()
+    mark = lambda pid: marks.get(pid, pid)
+    who = found["name"]
+    lines = [f"Places those records give for {who}, read by code from their wording and not checked (the records decide; a place a later record says {who} left is no longer theirs):"]
+    for entry in person_places(index, found):
+        status = f"; {mark(entry['left'])} later says {who} left it" if entry["left"] else f"; {mark(entry['plan'])} says {who} only plans to try it" if entry["plan"] else ""
+        lines.append(f"- {entry['place']}: {', '.join(mark(pid) for pid in entry['records'])}{status}")
+    holding = [entry["place"] for entry in person_places(index, found) if not entry["left"] and not entry["plan"]]
+    if holding:
+        lines.append(f"Read that way, every place above that no later record says {who} left: {', '.join(holding)}. Each record above that says {who} goes to, uses, loves or orders from a place, however it is worded, counts; leave a place out only if a record shows it is not theirs.")
+    unsettled = person_places(index, found, ("unsettled",))
+    if unsettled:
+        lines.append(f"Places under a title with {found['last']} that code could not settle (only the title that fits the first name {found['first_name']} is {who}):")
+        for entry in unsettled:
+            title = next((m.group(1) for pid in entry["records"] for m in [re.search(r"\b(Mr|Ms|Mrs|Miss|Dr)\.?\s+" + re.escape(found["last"]), index.nodes[pid].pair.prompt)] if m), "")
+            status = f"; {mark(entry['left'])} later says they left it" if entry["left"] else ""
+            lines.append(f"- {entry['place']}: {title}. {found['last']}, {', '.join(mark(pid) for pid in entry['records'])}{status}")
+    return block + "\n" + "\n".join(lines) if len(lines) > 1 else block
+
+
+def person_records_lines(packet: Packet, found: dict[str, Any]) -> str:
+    marks = packet.labels()
+    shown = lambda kind: ", ".join(marks[pid] for pid in found[kind] if pid in marks) or "none"
+    pronoun = {"he": "he and his", "she": "she and her"}.get(found["gender"], "")
+    who = found["name"]
+    lead = f"Your {found['role']} is taken here as {who}: the latest record naming that role ({marks.get(found['role_record'], found['role_record'])}) names them last, read by code and not checked.\n" if found.get("role") else ""
+    lines = [f"{lead}Records that speak of {who}, found by code from how each one names them. Each one that says {who} uses a place gives a place for the answer, unless a later one of them says {who} gave that place up:",
+             f"- writing the full name: {shown('full')}",
+             f"- writing the first name {found['first_name']} alone: {shown('first')}"]
+    if found["title"]:
+        lines.append(f"- writing {' or '.join(t + '.' for t in found['titles'])} {found['last']}, a title that fits {who} (the records above say {pronoun} of them): {shown('title')}")
+    if found["unsettled"]:
+        lines.append(f"- writing a title with {found['last']} ({shown('unsettled')}): the records never say he or she of {who}, so code could not tell which title is theirs; the one that fits the first name {found['first_name']} is {who}, the other is a relative")
+    if found["other"]:
+        lines.append(f"Records writing the surname {found['last']} for someone else (another first name, or a title that does not fit {who}): {shown('other')}. Those are a relative's, not {who}'s.")
+    return "\n".join(lines)
 
 
 # A note that speaks of someone only by a phrase ("The parent I met at the school gates is ...", "My quiz partner ...").

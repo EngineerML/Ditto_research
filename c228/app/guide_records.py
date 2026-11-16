@@ -235,9 +235,31 @@ def list_partial_notes(message: str) -> list[str]:
     return [LIST_PARTIAL_NOTE] if LIST_ASK_RE.search(message) else []
 
 
+# "Which swimming pools does Hagen Halesford swim at these days?", "Which cafés does my locksmith Reinhold get coffee at?":
+# every place that holds for one person now, with no count given. The places are told under the full name, the first name
+# alone or a title with the surname, and the ones given up are told the same way.
+CURRENT_LIST_RE = re.compile(r"^\s*Which [a-zà-ÿ][\w'à-ÿ -]*?s does (?!.*\b(?:two|three|four|both|every)\b)(?:.+?\b(?:these days|now|currently|at the moment)|my (?:[A-Za-z][a-z-]* ){1,4}[A-Z][a-z]+ [^?]+)\?\s*$")
+CURRENT_LIST_NOTE = ("The message asks for every place that holds for that person now, and does not say how many: the answer is "
+                     "all of them. Go through every record above that speaks of that person, whichever way "
+                     "it names them: the full name, the first name alone, or Mr., Ms., Mrs. or Dr. with the surname when that "
+                     "title fits them (the records say he and his, or she and her, of them). Give each place such a record says "
+                     "they use, however loosely it is worded (loves the cold water there, booked a trim there, ordered through "
+                     "it). Someone else with that surname, another first name or the other title, is a relative, and their "
+                     "places are not the answer. Leave out a place a later record says that person left, swapped or switched "
+                     "away from, replaced, gave up, dropped, crossed off, wrote off, is done with, moved on from, cancelled, let "
+                     "expire, sold the ticket for or stopped going to, even when that later record names them by first name or "
+                     "title only; the place they moved to counts. A place they only plan to try does not count. Name each place "
+                     "once, and no place you set aside.")
+
+
+def current_list_notes(message: str) -> list[str]:
+    return [CURRENT_LIST_NOTE] if CURRENT_LIST_RE.search(message) else []
+
+
 def record_notes(message: str) -> list[str]:
     out: list[str] = []
     out += list_partial_notes(message)
+    out += current_list_notes(message)
     if CASE_FILE_RE.search(message):
         out.append(CASE_FILE_NOTE)
     if asks_signoff(message):
