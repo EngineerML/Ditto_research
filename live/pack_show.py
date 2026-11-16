@@ -7,9 +7,9 @@ p = json.load(open(sys.argv[1]))
 n = int(sys.argv[2]) if len(sys.argv) > 2 else 2
 start = int(sys.argv[3]) if len(sys.argv) > 3 else 0
 pairs = {}
-for w in p["memory_waves"]:
+for wi, w in enumerate(p["memory_waves"]):
     for x in w["pairs"]:
-        pairs[x["pair_id"]] = (w["wave"], w["user_id"], x)
+        pairs[x["pair_id"]] = (w.get("wave", wi), w["user_id"], x)
 kinds = {}
 for c in p["cases"]:
     kinds[c["question_type"]] = kinds.get(c["question_type"], 0) + 1

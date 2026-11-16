@@ -450,6 +450,9 @@ def memory_entry(cand: Candidate, mark: str, continues: str = "", ties: dict[str
         entry["rewrittenByUser"] = True
     if continues:
         entry["sameConversationAs"] = continues
+    meant = next((reason[len(PHRASE_MEANS):] for reason in cand.reasons if reason.startswith(PHRASE_MEANS)), "")
+    if meant and continues:
+        entry["phraseMeans"] = meant
     tied = name_ties(cand, ties, marks)
     if tied:
         entry["nameTies"] = tied
@@ -552,3 +555,49 @@ def weave_followups(packet: Packet, index: UserIndex | None) -> int:
     if after:
         packet.records[:] = [seat for cand in packet.records for seat in (cand, *after.get(cand.pair.pair_id, ()))]
     return len(added)
+
+
+# A note that speaks of someone only by a phrase ("The parent I met at the school gates is ...", "My quiz partner ...").
+PERSON_NOUNS = r"(?:person|parent|man|woman|guy|lady|companion|partner|friend|mate|neighbou?r|colleague|buddy|pal|teammate|classmate|roommate|flatmate|housemate|host|guest|date|coach|tutor|contact)s?"
+REFERS_BACK_RE = re.compile(r"^\s*(?:The (?:[a-z][\w'-]* ){1,3}(?:I|we) [a-z]|The (?:[a-z][\w'-]* ){0,2}" + PERSON_NOUNS + r" (?:from|at|on|in|with|who|that|next|beside) [a-z]|(?:My|Our) (?:[a-z][\w'-]* ){0,3}" + PERSON_NOUNS + r"(?![\w'’-])(?! [A-Z]))")
+REFERS_BACK_MAX = 6
+REFERS_BACK_REASON = "same conversation, next turn speaks of someone by a phrase"
+PHRASE_MEANS = "phrase means "
+
+
+def referring_turns(packet: Packet, message: str, index: UserIndex | None, statement: bool) -> tuple[int, int]:
+    """After a packet record that writes the asked full name, the very next turn of the same conversation, whatever the time
+    between them, when that turn names nobody and speaks of someone by a phrase ("The parent I met at the school gates is ...").
+    It is seated right after that record with the tie shown as `sameConversationAs`; records are added or moved, never edited."""
+    if index is None or statement or packet.focused or not packet.records:
+        return 0, 0
+    names = asked_full_names(message)
+    if not names:
+        return 0, 0
+    sessions: dict[str, list[MemoryPair]] = {}
+    for node in index.nodes.values():
+        if node.pair.session_id:
+            sessions.setdefault(node.pair.session_id, []).append(node.pair)
+    by_id = {cand.pair.pair_id: cand for cand in packet.records}
+    after: dict[str, Candidate] = {}
+    for cand in packet.records:
+        if not any(name in cand.pair.prompt for name in names):
+            continue
+        later = sorted((pair for pair in sessions.get(cand.pair.session_id, ()) if (pair.timestamp, pair.pair_id) > (cand.pair.timestamp, cand.pair.pair_id)), key=lambda pair: (pair.timestamp, pair.pair_id))
+        if not later:
+            continue
+        turn = later[0]
+        if turn.pair_id in after or any(name in turn.prompt for name in names) or not REFERS_BACK_RE.match(turn.prompt):
+            continue
+        held = by_id.get(turn.pair_id)
+        if held is not None and held.continues:
+            continue
+        after[cand.pair.pair_id] = Candidate(pair=turn, score=held.score if held else 0.0, reasons=[*(held.reasons if held else []), REFERS_BACK_REASON, PHRASE_MEANS + next(name for name in names if name in cand.pair.prompt)], keys=held.keys if held else frozenset(index.nodes[turn.pair_id].values), continues=cand.pair.pair_id)
+        if len(after) >= REFERS_BACK_MAX:
+            break
+    if not after:
+        return 0, 0
+    moving = {seat.pair.pair_id for seat in after.values()}
+    packet.records[:] = [seat for cand in packet.records if cand.pair.pair_id not in moving for seat in (cand, *((after[cand.pair.pair_id],) if cand.pair.pair_id in after else ()))]
+    added = sum(1 for pair_id in moving if pair_id not in by_id)
+    return added, len(moving) - added
