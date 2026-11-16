@@ -291,7 +291,9 @@ def tied_names_view(message: str, index: UserIndex) -> EvidenceView | None:
     if len(fulls) > 1:
         return None
     if fulls:
-        ties = person_ties(index, message, fulls[0])
+        # A capitalised word the message writes right with the full name ("Xocelo Junhaorl Granary") is part of the asked name, never another name of it.
+        asked_run = {word for run in CAPITAL_RUN_RE.findall(message) if fulls[0] in run for word in run.split()}
+        ties = {alias: pids for alias, pids in person_ties(index, message, fulls[0]).items() if alias not in asked_run}
         tied = "; ".join(f"{alias} = {fulls[0]}" for alias in ties)
         names = [fulls[0], *ties]
     else:

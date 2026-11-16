@@ -22,7 +22,7 @@ from .memory.deliberation import DRAFT_TOOL_CHOICE, NO_RECORD_REPLY, Deliberatio
 from .memory.finder import FIND_TOOL, RecordFinder, order_word, wanted_texts
 from .memory.retrieval import Candidate, UserIndex, asked_part, identifier_tokens
 from .memory.worksheet import render_worksheet
-from .packet import employer_records, QUESTION_HEADER, Packet, build_packet, compose, identifier_focus, name_ties, weave_followups, weave_ties
+from .packet import employer_records, QUESTION_HEADER, Packet, build_packet, compose, identifier_focus, name_ties, number_threads, weave_followups, weave_ties
 from .protocol import MEMORY_TOOL_NAMES, RunRequest, ToolDefinition
 from .tools import BLOCKED, MemoryTools, ToolExecutor, openai_tools
 
@@ -494,6 +494,9 @@ class RecordsEngine:
             ranked = pin(ranked, chained, pairs_by_id, score=ordered[0].score if ordered else 0.0, reason="surname chain")
         packet = build_packet(ranked, anchored or bool(pins) or bool(chained), self.packet_chars, req.user_input, index, self.fused, self.meaning_records, self.meaning_chars, self.long_packet_chars)
         outcome.events.append(f"packet records={len(packet)} chars={packet.chars} pins={len(pins)} chain={len(chained)}")
+        packet, threaded, regrouped = number_threads(packet, req.user_input, index, statement)
+        if threaded or regrouped:
+            outcome.events.append(f"records sharing a number with a record that names the asked name, shown after that record oldest first: added {threaded}, moved {regrouped}")
         follow = weave_followups(packet, index)
         if follow:
             outcome.events.append(f"session follow-ups={follow}")

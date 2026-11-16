@@ -12,7 +12,7 @@ v42), which is our code.
 
 ## Changes from crown-v228
 
-`app/evidence.py` (the tied-names view) is crown-v228's own, except that the list note below joins its notes.
+`app/evidence.py` (the tied-names view) is crown-v228's own, except that the list note below joins its notes and the asked-name row below filters its ties.
 
 | Change | Files |
 |---|---|
@@ -26,5 +26,7 @@ v42), which is our code.
 | Tool names: anything after the first character that cannot be in a tool name ("read_links?commentary?json") is trimmed, as the `<|` marker already was. | `app/llm.py` |
 | List note: a message that asks for two, three, four or both things, or every one, gets a note to answer with the ones the notes give and say nothing about the rest; only when the notes give none of them does the reply say there is no record. The tied-names view drops its "not stated" line when this note is on. | `app/guide_records.py` (`LIST_ASK_RE`, `LIST_PARTIAL_NOTE`, `list_partial_notes`), `app/evidence.py`, `app/action.py` |
 | Called names in long records: the called-name search (crown's M48) also reads a long record, but only its sentences that write the full name the message uses, and also takes a name quoted a few words after the cue ("who nobody has called anything but \"Pip\""). When no short record holds that name, the long ones that do are listed. | `app/memory/coverage.py` (`QUOTED_CALLED_RE`, `called_in`, `called_names`) |
+| Number threads: when the message writes a full name and a packet record writing it holds a five-plus digit number, stored records holding that number (a number held by 2 to 12 records) are seated right after that record oldest first, and the numbers they hold are followed the same way, up to 5 hops and 24 records in all. Records are moved or added, never edited. From the released dan0l v59 (agent `a06c97e5`), `app/packet.py` `number_threads`, unchanged except that crown's packet has no merged copies. | `app/packet.py` (`NUMBER_RE`, `asked_full_names`, `number_holders`, `number_thread`, `number_threads`), `app/records.py` |
+| Asked name in the tied-names view: a capitalised word the message writes in one run with the asked full name ("Xocelo Junhaorl Granary") is part of the asked name, so it is never taken as another name of that person. Before, such a word made the view show only the notes writing it and answer from them. | `app/evidence.py` (`tied_names_view`) |
 
 None of these makes a model call. Every hold releases the call when the model sends it again.

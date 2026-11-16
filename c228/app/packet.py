@@ -5,7 +5,7 @@ import re
 from dataclasses import dataclass, field
 from datetime import datetime
 
-from .memory.retrieval import Candidate, UserIndex, identifier_tokens, noted_matter, relevance_band
+from .memory.retrieval import NAME_RE, SENTENCE_START, Candidate, UserIndex, identifier_tokens, noted_matter, relevance_band
 from .protocol import MemoryPair, handed_out
 from .store import CODE_RE
 
@@ -311,6 +311,88 @@ def assemble(ordered: list[Candidate], anchored: bool, budget: int, message: str
     top = max((cand.score for cand in admitted), default=0.0)
     admitted.sort(key=lambda cand: (relevance_band(cand.score, top), cand.pair.timestamp, cand.pair.pair_id))
     return Packet(records=arc_order(admitted))
+
+
+NUMBER_RE = re.compile(r"(?<![\w$€£#.,:/+-])\d{5,}(?![\w%]|[.,:/-]\d)")
+NUMBER_MAX_HOLDERS = 12
+NUMBER_HOPS = 5
+NUMBER_MAX_RECORDS = 24
+
+
+def asked_full_names(message: str) -> list[str]:
+    names = []
+    for found in NAME_RE.findall(message):
+        words = found.replace("-", " - ").split()
+        while words and words[0] in SENTENCE_START:
+            words = words[1:]
+        name = " ".join(words).replace(" - ", "-")
+        if len(name.split()) >= 2:
+            names.append(name)
+    return list(dict.fromkeys(names))
+
+
+def number_holders(index: UserIndex) -> dict[str, list[str]]:
+    holders: dict[str, list[str]] = {}
+    for pair_id, node in index.nodes.items():
+        for number in set(NUMBER_RE.findall(node.pair.prompt)):
+            holders.setdefault(number, []).append(pair_id)
+    return holders
+
+
+def number_thread(anchor: Candidate, holders: dict[str, list[str]], index: UserIndex, claimed: set[str], room: int) -> list[str]:
+    members: list[str] = []
+    seen: set[str] = set()
+    frontier = sorted(set(NUMBER_RE.findall(anchor.pair.prompt)))
+    for _ in range(NUMBER_HOPS):
+        reached: list[str] = []
+        for number in frontier:
+            seen.add(number)
+            holding = holders.get(number, [])
+            if not 2 <= len(holding) <= NUMBER_MAX_HOLDERS:
+                continue
+            for pair_id in sorted(holding):
+                if pair_id in claimed or len(members) >= room:
+                    continue
+                claimed.add(pair_id)
+                members.append(pair_id)
+                reached.extend(NUMBER_RE.findall(index.nodes[pair_id].pair.prompt))
+        frontier = sorted(set(reached) - seen)
+        if not frontier:
+            break
+    return sorted(members, key=lambda pair_id: (index.nodes[pair_id].pair.timestamp, pair_id))
+
+
+def number_threads(packet: Packet, message: str, index: UserIndex | None, statement: bool) -> tuple[Packet, int, int]:
+    """Records sharing a five-plus digit number with a packet record that names the asked full name, followed for up to five hops and shown right after that record oldest first (dan0l v59 packet.py, released)."""
+    if index is None or statement or packet.focused:
+        return packet, 0, 0
+    names = asked_full_names(message)
+    if not names:
+        return packet, 0, 0
+    anchors = [cand for cand in packet.records if any(name in cand.pair.prompt for name in names) and NUMBER_RE.search(cand.pair.prompt)]
+    if not anchors:
+        return packet, 0, 0
+    holders = number_holders(index)
+    claimed = {cand.pair.pair_id for cand in anchors}
+    threads: dict[str, list[str]] = {}
+    for anchor in anchors:
+        members = number_thread(anchor, holders, index, claimed, NUMBER_MAX_RECORDS - sum(len(found) for found in threads.values()))
+        if members:
+            threads[anchor.pair.pair_id] = members
+    moving = {pair_id for members in threads.values() for pair_id in members}
+    if not moving:
+        return packet, 0, 0
+    by_id = {cand.pair.pair_id: cand for cand in packet.records}
+    records: list[Candidate] = []
+    for cand in packet.records:
+        if cand.pair.pair_id in moving:
+            continue
+        records.append(cand)
+        for pair_id in threads.get(cand.pair.pair_id, []):
+            node = index.nodes[pair_id]
+            records.append(by_id.get(pair_id) or Candidate(pair=node.pair, reasons=["number"], keys=frozenset(node.values)))
+    added = sum(1 for pair_id in moving if pair_id not in by_id)
+    return Packet(records=records, focused=packet.focused), added, len(moving) - added
 
 
 def render_records(packet: Packet, labels: dict[str, str] | None = None) -> str:

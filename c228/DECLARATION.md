@@ -15,6 +15,8 @@ This is crown-v228's declaration, kept as shipped. `PROVENANCE.md` lists our cha
 - **Program notes** (`app/guide_records.py`): for 'do the records agree' and 'what did we settle on' questions.
 - **List note** (`app/guide_records.py`, `app/evidence.py`, `app/action.py`): a question asking for two or more things gets a note to name the ones the notes give and say nothing of the rest.
 - **Called names in long records** (`app/memory/coverage.py`): crown's called-name search (M48) also reads the sentences of a long record that write the asked full name, and a name quoted a few words after the cue. It changes advisory text only.
+- **Number threads** (`app/packet.py` `number_threads`, called in `app/records.py`): stored records that share a five-plus digit number with a packet record writing the asked full name are seated right after that record, oldest first, following numbers for up to 5 hops and 24 records (W3 selection and layout by a mechanical key; records are never edited). Taken from the released dan0l v59 (`a06c97e5`, `app/packet.py`).
+- **Asked name in the tied-names view** (`app/evidence.py`): a capitalised word written in one run with the asked full name is never taken as another name of that person.
 - **A name repair:** tool-name trimming in `app/llm.py`.
 - **Notes:** the open-the-page note for incident and pricing requests (`app/action.py`).
 
