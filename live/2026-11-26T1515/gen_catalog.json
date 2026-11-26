@@ -1,0 +1,2113 @@
+[
+ {
+  "dir": "5D4XN6uG_c5dab45f",
+  "hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+  "released_at": "2026-11-14T00:45:43.775046Z",
+  "scorer": "challenge-scorer/7",
+  "files": 46,
+  "lines": 13740,
+  "exts": {
+   ".go": 41,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "5DWjUMSx_1ba32b5d",
+  "hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+  "released_at": "2026-11-13T12:45:24.552340Z",
+  "scorer": "challenge-scorer/7",
+  "files": 46,
+  "lines": 13740,
+  "exts": {
+   ".go": 41,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "5FnYAk_e4cfece4",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-15T19:58:04.696338Z",
+  "scorer": "challenge-scorer/7",
+  "files": 14,
+  "lines": 1913,
+  "exts": {
+   ".go": 13,
+   ".mod": 1
+  },
+  "top": [
+   "arm.go",
+   "asymmetric.go",
+   "audit.go",
+   "directkey.go",
+   "families.go",
+   "go.mod",
+   "hardened.go",
+   "k4.go"
+  ]
+ },
+ {
+  "dir": "5FqQq9WL_f5659f80",
+  "hotkey": "5FqQq9WLy3RXrnSMhR48ennfCESRG46oPLJT4LpGXp6VJjAg",
+  "released_at": "2026-11-15T03:08:54.880171Z",
+  "scorer": "challenge-scorer/7",
+  "files": 47,
+  "lines": 14472,
+  "exts": {
+   ".go": 44,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "5HQsecKg_206867a5",
+  "hotkey": "5HQsecKgKNScDD6M1dJvz7Ebq7Jdcgu5aZG7s3qN2RUbJ4mg",
+  "released_at": "2026-11-13T15:09:26.521784Z",
+  "scorer": "challenge-scorer/7",
+  "files": 196,
+  "lines": 65152,
+  "exts": {
+   ".go": 182,
+   ".tsv": 9,
+   ".txt": 2,
+   ".mod": 1
+  },
+  "top": [
+   "gen",
+   "go.mod",
+   "history_test.go",
+   "main.go",
+   "main_test.go",
+   "timing_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "5Hb5Sxe4_01a9c68e",
+  "hotkey": "5Hb5Sxe46cp1XjwG23FX4BcqWSmgrewZLATBEX3LwreEFfC5",
+  "released_at": "2026-11-13T05:34:18.746831Z",
+  "scorer": "challenge-scorer/7",
+  "files": 54,
+  "lines": 15998,
+  "exts": {
+   ".go": 51,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "bauni-v4_a3b9650d",
+  "hotkey": "5CvZx4ZU2hsW61AXpCPDp7ZmW74DKaDHUeYHJ3gjeBuDedax",
+  "released_at": "2026-11-15T00:46:08.450453Z",
+  "scorer": "challenge-scorer/7",
+  "files": 59,
+  "lines": 17110,
+  "exts": {
+   ".go": 56,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "bauni-v5_386be01f",
+  "hotkey": "5CvZx4ZU2hsW61AXpCPDp7ZmW74DKaDHUeYHJ3gjeBuDedax",
+  "released_at": "2026-11-15T10:21:21.748764Z",
+  "scorer": "challenge-scorer/7",
+  "files": 61,
+  "lines": 17300,
+  "exts": {
+   ".go": 58,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "bauni-v6_41a497e8",
+  "hotkey": "5CvZx4ZU2hsW61AXpCPDp7ZmW74DKaDHUeYHJ3gjeBuDedax",
+  "released_at": "2026-11-16T05:33:55.227799Z",
+  "scorer": "challenge-scorer/7",
+  "files": 61,
+  "lines": 17311,
+  "exts": {
+   ".go": 58,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "bounty-v1_22caa69d",
+  "hotkey": null,
+  "released_at": null,
+  "scorer": null,
+  "files": 0,
+  "lines": 0,
+  "exts": {},
+  "top": []
+ },
+ {
+  "dir": "bounty-v2_0506250c",
+  "hotkey": "5GTo8TLpPuxVPyv39eXs2d5N4ZabedVxgi1b5g3y7ZyRstCK",
+  "released_at": "2026-11-17T10:22:19.814394Z",
+  "scorer": "challenge-scorer/7",
+  "files": 61,
+  "lines": 17309,
+  "exts": {
+   ".go": 58,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "bujhmml_7d2dc209",
+  "hotkey": "5DveEYviiPkDqq8kdXxgsf6tyboiRs27yxXV4hAXoGZU7Mtv",
+  "released_at": "2026-11-24T05:38:58.849016Z",
+  "scorer": "challenge-scorer/7",
+  "files": 49,
+  "lines": 15554,
+  "exts": {
+   ".go": 46,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "builder.go",
+   "families.go",
+   "go.mod",
+   "lines.go",
+   "main.go",
+   "main_test.go",
+   "refs.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "bujhmml_b5835b3f",
+  "hotkey": "5DveEYviiPkDqq8kdXxgsf6tyboiRs27yxXV4hAXoGZU7Mtv",
+  "released_at": "2026-11-22T00:45:37.434232Z",
+  "scorer": "challenge-scorer/7",
+  "files": 49,
+  "lines": 15461,
+  "exts": {
+   ".go": 46,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "builder.go",
+   "families.go",
+   "go.mod",
+   "lines.go",
+   "main.go",
+   "main_test.go",
+   "refs.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "crown-scatter-v13_eaf1455d",
+  "hotkey": "5GNmn5BeybKcMV45E67PudrsbdHYNUbeNqHS6GF8vzBviMh2",
+  "released_at": "2026-11-26T15:15:37.564009Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15573,
+  "exts": {
+   ".go": 46,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor",
+   "world"
+  ]
+ },
+ {
+  "dir": "crown-scatter_653ccc99",
+  "hotkey": "5GNmn5BeybKcMV45E67PudrsbdHYNUbeNqHS6GF8vzBviMh2",
+  "released_at": "2026-11-23T10:22:49.443176Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15373,
+  "exts": {
+   ".go": 46,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor",
+   "world"
+  ]
+ },
+ {
+  "dir": "crown-scatter_ee4c72cf",
+  "hotkey": "5GNmn5BeybKcMV45E67PudrsbdHYNUbeNqHS6GF8vzBviMh2",
+  "released_at": "2026-11-25T05:39:00.781680Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15569,
+  "exts": {
+   ".go": 46,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor",
+   "world"
+  ]
+ },
+ {
+  "dir": "dan0l-v1_28a7644a",
+  "hotkey": "5DveEYviiPkDqq8kdXxgsf6tyboiRs27yxXV4hAXoGZU7Mtv",
+  "released_at": "2026-11-19T10:21:31.209635Z",
+  "scorer": "challenge-scorer/7",
+  "files": 49,
+  "lines": 15290,
+  "exts": {
+   ".go": 46,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "builder.go",
+   "families.go",
+   "go.mod",
+   "lines.go",
+   "main.go",
+   "main_test.go",
+   "refs.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "dittogen-v1_12c992c0",
+  "hotkey": "5CWwgH6svfuCqTESCCfvJs2nJdcWyJckba83mfzEb6dtL1qp",
+  "released_at": "2026-11-21T07:58:35.052823Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 15121,
+  "exts": {
+   ".go": 44,
+   "LICENSE": 2,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "LICENSE",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "gan-v1-v2_b47a35f8",
+  "hotkey": "5ES8xrjjzut61nF8UzZoW4GpghsVePjhWRJmGgF6F5qdSFnJ",
+  "released_at": "2026-11-18T00:45:14.818230Z",
+  "scorer": "challenge-scorer/7",
+  "files": 143,
+  "lines": 51089,
+  "exts": {
+   ".go": 140,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "gan-v1-v4_c0c3d8bd",
+  "hotkey": "5ES8xrjjzut61nF8UzZoW4GpghsVePjhWRJmGgF6F5qdSFnJ",
+  "released_at": "2026-11-20T00:45:18.835860Z",
+  "scorer": "challenge-scorer/7",
+  "files": 145,
+  "lines": 53681,
+  "exts": {
+   ".go": 142,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "gen-5DWjUMSx-v4_f6f39eeb",
+  "hotkey": null,
+  "released_at": null,
+  "scorer": null,
+  "files": 46,
+  "lines": 13663,
+  "exts": {
+   ".go": 41,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "gen-5GxpdbRS-v4_aee7bf6e",
+  "hotkey": null,
+  "released_at": null,
+  "scorer": null,
+  "files": 0,
+  "lines": 0,
+  "exts": {},
+  "top": []
+ },
+ {
+  "dir": "gen-v8-v10_ae6f499b",
+  "hotkey": "5HKmBL1H6aC3u7jwDShSV9Np1oDuNaq1Bzer2wSi4EFzh9Xv",
+  "released_at": "2026-11-22T10:22:38.352316Z",
+  "scorer": "challenge-scorer/7",
+  "files": 89,
+  "lines": 49196,
+  "exts": {
+   ".go": 65,
+   ".json": 8,
+   ".py": 8,
+   "LICENSE": 2
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "bank_shard_test.go",
+   "busy.go",
+   "busy_test.go",
+   "crowd.go",
+   "crowd_test.go"
+  ]
+ },
+ {
+  "dir": "gth5-gen-v1_b12eb2a5",
+  "hotkey": "5EptCEdtHV8KUN5Mm9bLw9DSWsRQTA6kYFUsqAGe6bFFUyVo",
+  "released_at": "2026-11-19T05:33:25.547167Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 14836,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "gth5-gen_16a80a6c",
+  "hotkey": "5EptCEdtHV8KUN5Mm9bLw9DSWsRQTA6kYFUsqAGe6bFFUyVo",
+  "released_at": "2026-11-24T00:50:59.421367Z",
+  "scorer": "challenge-scorer/7",
+  "files": 51,
+  "lines": 15439,
+  "exts": {
+   ".go": 46,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "gth5-gen_b2aeb559",
+  "hotkey": "5EptCEdtHV8KUN5Mm9bLw9DSWsRQTA6kYFUsqAGe6bFFUyVo",
+  "released_at": "2026-11-23T00:46:45.810680Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15197,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "gth5-gen_ed304553",
+  "hotkey": "5EptCEdtHV8KUN5Mm9bLw9DSWsRQTA6kYFUsqAGe6bFFUyVo",
+  "released_at": "2026-11-24T20:03:03.253917Z",
+  "scorer": "challenge-scorer/7",
+  "files": 52,
+  "lines": 15577,
+  "exts": {
+   ".go": 47,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "kinfolk-v2-5E2J8u7B_69f12191",
+  "hotkey": null,
+  "released_at": null,
+  "scorer": null,
+  "files": 45,
+  "lines": 14580,
+  "exts": {
+   ".go": 42,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "kinfolk-v4_1fabe3a9",
+  "hotkey": "5FCRu5WxKnk4zUGQno8NffyLuvK7ZdhBDGKkVJDibrW9rvFd",
+  "released_at": "2026-11-11T19:58:00.551507Z",
+  "scorer": "challenge-scorer/7",
+  "files": 45,
+  "lines": 14580,
+  "exts": {
+   ".go": 42,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "kinfolk-v6-5CBD7DW3_20d34ba1",
+  "hotkey": null,
+  "released_at": null,
+  "scorer": null,
+  "files": 45,
+  "lines": 14515,
+  "exts": {
+   ".go": 42,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "kinlist-v2_a0b29a05",
+  "hotkey": "5GsuLHjf9QeKhW17JBr1PWmnfwKsU3E9a38Fk9khzz6UFLnF",
+  "released_at": "2026-11-16T19:58:46.027323Z",
+  "scorer": "challenge-scorer/7",
+  "files": 47,
+  "lines": 15317,
+  "exts": {
+   ".go": 44,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "kinlist-v7_ba2ee4d1",
+  "hotkey": "5Ey8jpnscAx1qiHWLeGA38tDxoWRzpCXHPjMwv6GamYoB4n1",
+  "released_at": "2026-11-17T10:22:19.814394Z",
+  "scorer": "challenge-scorer/7",
+  "files": 47,
+  "lines": 15318,
+  "exts": {
+   ".go": 44,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "kinlist-v8_819fbeb9",
+  "hotkey": "5C888ianRcYMmrDsLjk4eTkdGtYmfo1VZMnf4KGkn7jCNGWs",
+  "released_at": "2026-11-20T07:56:50.868696Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 15753,
+  "exts": {
+   ".go": 45,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "lh2gen-v4_6850b1ee",
+  "hotkey": "5EyKrm2f1J8sDGTpMxamV57qQakkhERReqM3pVpGPAP7gPcg",
+  "released_at": "2026-11-20T03:09:42.827837Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 16220,
+  "exts": {
+   ".go": 45,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "builder.go",
+   "families.go",
+   "go.mod",
+   "lists.go",
+   "main.go",
+   "pools.go",
+   "vendor",
+   "versus.go"
+  ]
+ },
+ {
+  "dir": "lh2gen_cfafd6bf",
+  "hotkey": "5CCrBmKyjyqrVnUzZfgvSYMDey3Ua8iaWHSGupnrrnDbRQu6",
+  "released_at": "2026-11-22T10:22:38.352316Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 16264,
+  "exts": {
+   ".go": 45,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "builder.go",
+   "families.go",
+   "go.mod",
+   "lists.go",
+   "main.go",
+   "pools.go",
+   "vendor",
+   "versus.go"
+  ]
+ },
+ {
+  "dir": "memgen-v7_663cf753",
+  "hotkey": "5Hb5Sxe46cp1XjwG23FX4BcqWSmgrewZLATBEX3LwreEFfC5",
+  "released_at": "2026-11-15T12:45:04.689554Z",
+  "scorer": "challenge-scorer/7",
+  "files": 61,
+  "lines": 17297,
+  "exts": {
+   ".go": 58,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "memgen-v9_49a527a1",
+  "hotkey": "5Hb5Sxe46cp1XjwG23FX4BcqWSmgrewZLATBEX3LwreEFfC5",
+  "released_at": "2026-11-25T15:14:58.921568Z",
+  "scorer": "challenge-scorer/7",
+  "files": 64,
+  "lines": 19289,
+  "exts": {
+   ".go": 61,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "memgen_a9d59752",
+  "hotkey": "5Hb5Sxe46cp1XjwG23FX4BcqWSmgrewZLATBEX3LwreEFfC5",
+  "released_at": "2026-11-08T00:44:02.849984Z",
+  "scorer": "challenge-scorer/7",
+  "files": 47,
+  "lines": 14966,
+  "exts": {
+   ".go": 44,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "querverweis-v1_363f4377",
+  "hotkey": "5DcBmn6F7oExzNBtpC7PuHFJXNqbMQGSzANoi3fFUxpHZ48i",
+  "released_at": "2026-11-14T15:10:20.716302Z",
+  "scorer": "challenge-scorer/7",
+  "files": 47,
+  "lines": 13993,
+  "exts": {
+   ".go": 43,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "categories.go",
+   "chatter.go",
+   "families.go",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "pools.go"
+  ]
+ },
+ {
+  "dir": "querverweis-v2_01e36814",
+  "hotkey": "5DcBmn6F7oExzNBtpC7PuHFJXNqbMQGSzANoi3fFUxpHZ48i",
+  "released_at": "2026-11-16T00:45:02.634699Z",
+  "scorer": "challenge-scorer/7",
+  "files": 59,
+  "lines": 16683,
+  "exts": {
+   ".go": 55,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "baustein.go",
+   "baustein_gesichert.go",
+   "baustein_gesichert_test.go",
+   "baustein_pronomen.go",
+   "baustein_pronomen_test.go",
+   "baustein_wem.go",
+   "baustein_wem_test.go"
+  ]
+ },
+ {
+  "dir": "querverweis-v3_c955422c",
+  "hotkey": "5DcBmn6F7oExzNBtpC7PuHFJXNqbMQGSzANoi3fFUxpHZ48i",
+  "released_at": "2026-11-16T17:33:29.752351Z",
+  "scorer": "challenge-scorer/7",
+  "files": 60,
+  "lines": 16783,
+  "exts": {
+   ".go": 56,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "baustein.go",
+   "baustein_gesichert.go",
+   "baustein_gesichert_test.go",
+   "baustein_pronomen.go",
+   "baustein_pronomen_test.go",
+   "baustein_v3_test.go",
+   "baustein_wem.go"
+  ]
+ },
+ {
+  "dir": "querverweis-v4_15c96464",
+  "hotkey": "5DcBmn6F7oExzNBtpC7PuHFJXNqbMQGSzANoi3fFUxpHZ48i",
+  "released_at": "2026-11-19T19:57:27.636023Z",
+  "scorer": "challenge-scorer/7",
+  "files": 57,
+  "lines": 16194,
+  "exts": {
+   ".go": 52,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "block.go",
+   "block_akte.go",
+   "block_confirmed.go",
+   "block_pronoun.go",
+   "block_whom.go",
+   "categories.go"
+  ]
+ },
+ {
+  "dir": "querverweis_27124762",
+  "hotkey": "5DcBmn6F7oExzNBtpC7PuHFJXNqbMQGSzANoi3fFUxpHZ48i",
+  "released_at": "2026-11-24T00:50:59.421367Z",
+  "scorer": "challenge-scorer/7",
+  "files": 59,
+  "lines": 17010,
+  "exts": {
+   ".go": 54,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "block.go",
+   "block_buchung.go",
+   "block_confirmed.go",
+   "block_falls.go",
+   "block_pronoun.go",
+   "block_rest.go"
+  ]
+ },
+ {
+  "dir": "querverweis_4a6f8c36",
+  "hotkey": "5DcBmn6F7oExzNBtpC7PuHFJXNqbMQGSzANoi3fFUxpHZ48i",
+  "released_at": "2026-11-26T10:27:29.921830Z",
+  "scorer": "challenge-scorer/7",
+  "files": 61,
+  "lines": 18122,
+  "exts": {
+   ".go": 56,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "block.go",
+   "block_buchung.go",
+   "block_confirmed.go",
+   "block_falls.go",
+   "block_koref.go",
+   "block_pronoun.go"
+  ]
+ },
+ {
+  "dir": "querverweis_783397b2",
+  "hotkey": "5DcBmn6F7oExzNBtpC7PuHFJXNqbMQGSzANoi3fFUxpHZ48i",
+  "released_at": "2026-11-21T10:22:26.185342Z",
+  "scorer": "challenge-scorer/7",
+  "files": 57,
+  "lines": 16283,
+  "exts": {
+   ".go": 52,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "block.go",
+   "block_akte.go",
+   "block_confirmed.go",
+   "block_pronoun.go",
+   "block_whom.go",
+   "categories.go"
+  ]
+ },
+ {
+  "dir": "reaxgen-b1-v3_b691592e",
+  "hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+  "released_at": "2026-11-12T15:09:34.977091Z",
+  "scorer": "challenge-scorer/7",
+  "files": 146,
+  "lines": 38985,
+  "exts": {
+   ".go": 131,
+   ".tsv": 4,
+   ".mod": 2,
+   "LICENSE": 2
+  },
+  "top": [
+   "README.md",
+   "cmd",
+   "gitattributes",
+   "gitignore",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go"
+  ]
+ },
+ {
+  "dir": "reaxgen-b1-v4_fe51e28e",
+  "hotkey": "5DaLyZfVF4f9v7fciaYAV75rxRKGpcuakLQciUWuT8uiqGyK",
+  "released_at": "2026-11-14T10:21:39.874515Z",
+  "scorer": "challenge-scorer/7",
+  "files": 146,
+  "lines": 39030,
+  "exts": {
+   ".go": 131,
+   ".tsv": 4,
+   ".mod": 2,
+   "LICENSE": 2
+  },
+  "top": [
+   "README.md",
+   "cmd",
+   "gitattributes",
+   "gitignore",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go"
+  ]
+ },
+ {
+  "dir": "reaxgen-b1_86296a60",
+  "hotkey": null,
+  "released_at": null,
+  "scorer": null,
+  "files": 129,
+  "lines": 35011,
+  "exts": {
+   ".go": 114,
+   ".tsv": 4,
+   ".mod": 2,
+   "LICENSE": 2
+  },
+  "top": [
+   "README.md",
+   "cmd",
+   "gitattributes",
+   "gitignore",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go"
+  ]
+ },
+ {
+  "dir": "sn118-recall-v1_b897a6bd",
+  "hotkey": null,
+  "released_at": null,
+  "scorer": null,
+  "files": 46,
+  "lines": 14194,
+  "exts": {
+   ".go": 43,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "sn118-recall-v2_67d07e83",
+  "hotkey": "5HWFP48fL7EeRzRX5KMEQECy8m7NTMBzJL2GHWzQqHKGgopB",
+  "released_at": "2026-11-20T00:45:18.835860Z",
+  "scorer": "challenge-scorer/7",
+  "files": 56,
+  "lines": 15314,
+  "exts": {
+   ".go": 51,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "sn118-recall_cf7e87bf",
+  "hotkey": "5HWFP48fL7EeRzRX5KMEQECy8m7NTMBzJL2GHWzQqHKGgopB",
+  "released_at": "2026-11-22T10:22:38.352316Z",
+  "scorer": "challenge-scorer/7",
+  "files": 56,
+  "lines": 15463,
+  "exts": {
+   ".go": 51,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "sn118gen-v3_cf9acd31",
+  "hotkey": "5HQsecKgKNScDD6M1dJvz7Ebq7Jdcgu5aZG7s3qN2RUbJ4mg",
+  "released_at": "2026-11-12T00:45:25.286536Z",
+  "scorer": "challenge-scorer/7",
+  "files": 194,
+  "lines": 64796,
+  "exts": {
+   ".go": 180,
+   ".tsv": 9,
+   ".txt": 2,
+   ".mod": 1
+  },
+  "top": [
+   "gen",
+   "go.mod",
+   "history_test.go",
+   "main.go",
+   "main_test.go",
+   "timing_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "staged-records-v2-v2_3af07583",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-13T05:34:18.746831Z",
+  "scorer": "challenge-scorer/7",
+  "files": 9,
+  "lines": 1235,
+  "exts": {
+   ".go": 8,
+   ".mod": 1
+  },
+  "top": [
+   "asymmetric.go",
+   "audit.go",
+   "families.go",
+   "go.mod",
+   "hardened.go",
+   "main.go",
+   "symmetric.go",
+   "synth.go"
+  ]
+ },
+ {
+  "dir": "tern-gen-v1_ba5821d4",
+  "hotkey": "5CMfXCSWYqV5Lu4vQujeAHLXCkHQ8T4MKJ6ToGe5xq74C9xD",
+  "released_at": "2026-11-18T10:22:23.309151Z",
+  "scorer": "challenge-scorer/7",
+  "files": 58,
+  "lines": 16134,
+  "exts": {
+   ".go": 54,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "tern-gen-v6_8feec515",
+  "hotkey": "5CMfXCSWYqV5Lu4vQujeAHLXCkHQ8T4MKJ6ToGe5xq74C9xD",
+  "released_at": "2026-11-26T15:15:37.564009Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 14907,
+  "exts": {
+   ".go": 44,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "tern-gen_fee39692",
+  "hotkey": "5CMfXCSWYqV5Lu4vQujeAHLXCkHQ8T4MKJ6ToGe5xq74C9xD",
+  "released_at": "2026-11-24T05:38:58.849016Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 14907,
+  "exts": {
+   ".go": 44,
+   ".md": 1,
+   ".mod": 1,
+   ".txt": 1
+  },
+  "top": [
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "tessera-v2_a1d97bc9",
+  "hotkey": "5GTwdGh8AoAFyxJfKWYaHKZ4ySWBaxoyE5pjx3VfCKRQWfJR",
+  "released_at": "2026-11-16T10:22:47.492600Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 14879,
+  "exts": {
+   ".go": 45,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "go.mod",
+   "main.go",
+   "names.go",
+   "pack.go",
+   "rng.go",
+   "story.go",
+   "text.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "tessera-v5_29f1153d",
+  "hotkey": "5GTwdGh8AoAFyxJfKWYaHKZ4ySWBaxoyE5pjx3VfCKRQWfJR",
+  "released_at": "2026-11-24T22:26:16.946534Z",
+  "scorer": "challenge-scorer/7",
+  "files": 48,
+  "lines": 14697,
+  "exts": {
+   ".go": 45,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "go.mod",
+   "main.go",
+   "names.go",
+   "pack.go",
+   "rng.go",
+   "story.go",
+   "text.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "tetgol-v6_33c60a4b",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-17T00:45:15.976497Z",
+  "scorer": "challenge-scorer/7",
+  "files": 14,
+  "lines": 1999,
+  "exts": {
+   ".go": 13,
+   ".mod": 1
+  },
+  "top": [
+   "arm.go",
+   "asymmetric.go",
+   "audit.go",
+   "directkey.go",
+   "families.go",
+   "go.mod",
+   "hardened.go",
+   "k4.go"
+  ]
+ },
+ {
+  "dir": "tetgol-v8_4e815d20",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-19T00:45:58.776953Z",
+  "scorer": "challenge-scorer/7",
+  "files": 14,
+  "lines": 2055,
+  "exts": {
+   ".go": 13,
+   ".mod": 1
+  },
+  "top": [
+   "arm.go",
+   "asymmetric.go",
+   "audit.go",
+   "directkey.go",
+   "families.go",
+   "go.mod",
+   "hardened.go",
+   "k4.go"
+  ]
+ },
+ {
+  "dir": "tetgol-v9_35b52c37",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-20T05:33:40.923763Z",
+  "scorer": "challenge-scorer/7",
+  "files": 14,
+  "lines": 2129,
+  "exts": {
+   ".go": 13,
+   ".mod": 1
+  },
+  "top": [
+   "arm.go",
+   "asymmetric.go",
+   "audit.go",
+   "directkey.go",
+   "families.go",
+   "go.mod",
+   "hardened.go",
+   "k4.go"
+  ]
+ },
+ {
+  "dir": "tetgol_b1c3ff49",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-24T20:03:03.253917Z",
+  "scorer": "challenge-scorer/7",
+  "files": 4,
+  "lines": 486,
+  "exts": {
+   ".go": 3,
+   ".mod": 1
+  },
+  "top": [
+   "go.mod",
+   "herbarium.go",
+   "main.go",
+   "shared.go"
+  ]
+ },
+ {
+  "dir": "tetgol_dd2001df",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-22T05:34:46.776571Z",
+  "scorer": "challenge-scorer/7",
+  "files": 3,
+  "lines": 531,
+  "exts": {
+   ".go": 2,
+   ".mod": 1
+  },
+  "top": [
+   "go.mod",
+   "loans.go",
+   "main.go"
+  ]
+ },
+ {
+  "dir": "tetgol_fb5f19e7",
+  "hotkey": "5FnYAkd5qvczJhvApvy7ukCGHbdbqnSGCxxjAEetCBojxRDZ",
+  "released_at": "2026-11-26T05:39:51.075245Z",
+  "scorer": "challenge-scorer/7",
+  "files": 4,
+  "lines": 486,
+  "exts": {
+   ".go": 3,
+   ".mod": 1
+  },
+  "top": [
+   "go.mod",
+   "herbarium.go",
+   "main.go",
+   "shared.go"
+  ]
+ },
+ {
+  "dir": "unnamed-00e58d65_00e58d65",
+  "hotkey": "5DqcqcAKouh1CQscxXwo87SiWtvH6A4oVtnMssQ8uTMLnvT6",
+  "released_at": null,
+  "scorer": null,
+  "files": 6,
+  "lines": 1,
+  "exts": {
+   ".mod": 2,
+   "LICENSE": 1,
+   ".": 1,
+   "._LICENSE": 1
+  },
+  "top": [
+   "._.",
+   "._LICENSE",
+   "._README.md",
+   "._go.mod",
+   "LICENSE",
+   "go.mod"
+  ]
+ },
+ {
+  "dir": "unnamed-ce635a13_ce635a13",
+  "hotkey": "5Dex4afD7bj8Awf5yAc3wKvisvprAjzDULZiQFRYVVwnmaXd",
+  "released_at": "2026-11-17T00:45:15.976497Z",
+  "scorer": "challenge-scorer/7",
+  "files": 61,
+  "lines": 17309,
+  "exts": {
+   ".go": 58,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "cmd",
+   "gen",
+   "go.mod",
+   "main.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v1_adde4d33",
+  "hotkey": "5Dsrh27d59fGJtDjbM6z9jP41jrY2TL2zETzfanbZACZ8Jqd",
+  "released_at": "2026-11-23T20:03:01.907298Z",
+  "scorer": "challenge-scorer/7",
+  "files": 87,
+  "lines": 48327,
+  "exts": {
+   ".go": 63,
+   ".json": 8,
+   ".py": 8,
+   "LICENSE": 2
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "bank_shard_test.go",
+   "busy.go",
+   "busy_test.go",
+   "crowd.go",
+   "crowd_test.go"
+  ]
+ },
+ {
+  "dir": "unnamed-v1_c6a49b82",
+  "hotkey": "5FqQq9WLy3RXrnSMhR48ennfCESRG46oPLJT4LpGXp6VJjAg",
+  "released_at": "2026-11-12T19:57:15.568504Z",
+  "scorer": "challenge-scorer/7",
+  "files": 47,
+  "lines": 14199,
+  "exts": {
+   ".go": 44,
+   ".mod": 1,
+   ".txt": 1,
+   "LICENSE": 1
+  },
+  "top": [
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v1_d68cc182",
+  "hotkey": "5GsKtwcqhqLxkP9ZfXrdy9o4CfHCZmVxU7Z9ZvwqvY1HL1qk",
+  "released_at": "2026-11-19T00:45:58.776953Z",
+  "scorer": "challenge-scorer/7",
+  "files": 84,
+  "lines": 46907,
+  "exts": {
+   ".go": 60,
+   ".json": 8,
+   ".py": 8,
+   "LICENSE": 2
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "bank_shard_test.go",
+   "busy.go",
+   "busy_test.go",
+   "cap_dump_test.go",
+   "crowd.go"
+  ]
+ },
+ {
+  "dir": "unnamed-v2_e0b72a62",
+  "hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+  "released_at": "2026-11-10T12:45:42.506152Z",
+  "scorer": "challenge-scorer/7",
+  "files": 46,
+  "lines": 13665,
+  "exts": {
+   ".go": 41,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v4_da5215fd",
+  "hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+  "released_at": "2026-11-15T05:33:24.693053Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 14870,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v5_6208f7cc",
+  "hotkey": "5ELk1RHE7WC8jBb3WV3hEqus8zEezKhNCunrFa2JdSjBDAf1",
+  "released_at": "2026-11-12T10:21:10.534763Z",
+  "scorer": "challenge-scorer/7",
+  "files": 124,
+  "lines": 33556,
+  "exts": {
+   ".go": 109,
+   ".tsv": 4,
+   ".mod": 2,
+   "LICENSE": 2
+  },
+  "top": [
+   ".gitattributes",
+   ".gitignore",
+   "README.md",
+   "cmd",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go"
+  ]
+ },
+ {
+  "dir": "unnamed-v5_c78f1254",
+  "hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+  "released_at": "2026-11-10T12:45:42.506152Z",
+  "scorer": "challenge-scorer/7",
+  "files": 46,
+  "lines": 13665,
+  "exts": {
+   ".go": 41,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v6_4169a065",
+  "hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+  "released_at": "2026-11-15T19:58:04.696338Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 14948,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v7_017d774a",
+  "hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+  "released_at": "2026-11-19T15:09:32.964517Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15262,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v7_3c0c666b",
+  "hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+  "released_at": "2026-11-15T15:10:34.000222Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 14948,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v7_9e335089",
+  "hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+  "released_at": "2026-11-11T03:09:36.480984Z",
+  "scorer": "challenge-scorer/7",
+  "files": 124,
+  "lines": 33556,
+  "exts": {
+   ".go": 109,
+   ".tsv": 4,
+   ".mod": 2,
+   "LICENSE": 2
+  },
+  "top": [
+   ".gitattributes",
+   ".gitignore",
+   "README.md",
+   "cmd",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go"
+  ]
+ },
+ {
+  "dir": "unnamed-v8_d8a96d1d",
+  "hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+  "released_at": "2026-11-18T00:45:14.818230Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15213,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v9_7987204d",
+  "hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+  "released_at": "2026-11-20T15:09:32.362149Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15214,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed-v9_ec8f4563",
+  "hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+  "released_at": "2026-11-18T15:09:28.302268Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15214,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed_11db1d34",
+  "hotkey": "5CXEMm6u6onoMpFPbpSqFLdeDzkG68nyTirSg3SVQfiMVhJa",
+  "released_at": "2026-11-06T10:21:25.424146Z",
+  "scorer": "challenge-scorer/7",
+  "files": 124,
+  "lines": 33556,
+  "exts": {
+   ".go": 109,
+   ".tsv": 4,
+   ".mod": 2,
+   "LICENSE": 2
+  },
+  "top": [
+   ".gitattributes",
+   ".gitignore",
+   "README.md",
+   "cmd",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go"
+  ]
+ },
+ {
+  "dir": "unnamed_1958bfaa",
+  "hotkey": "5DWjUMSxk8XeESAAQHCPBi3m1e6wrptjR7q1cqQGGWHJ73c3",
+  "released_at": "2026-11-23T05:35:23.680925Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15076,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed_41fc50c3",
+  "hotkey": "5E7VQE3HAxTKnM25aYMuFZyhQGggkedfumJsbX532eaL8BQE",
+  "released_at": "2026-11-26T05:39:51.075245Z",
+  "scorer": "challenge-scorer/7",
+  "files": 49,
+  "lines": 15059,
+  "exts": {
+   ".go": 44,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "roll",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed_815a249a",
+  "hotkey": "5D4XN6uGqEYdqLZiSBRtYDPqFS4KvrWnuZhhL4rKCSnXdomo",
+  "released_at": "2026-11-22T05:34:46.776571Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15009,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed_99dba8a8",
+  "hotkey": "5ELk1RHE7WC8jBb3WV3hEqus8zEezKhNCunrFa2JdSjBDAf1",
+  "released_at": "2026-11-08T00:44:02.849984Z",
+  "scorer": "challenge-scorer/7",
+  "files": 124,
+  "lines": 33591,
+  "exts": {
+   ".go": 109,
+   ".tsv": 4,
+   ".mod": 2,
+   "LICENSE": 2
+  },
+  "top": [
+   ".gitattributes",
+   ".gitignore",
+   "README.md",
+   "cmd",
+   "go.mod",
+   "internal",
+   "main.go",
+   "main_test.go"
+  ]
+ },
+ {
+  "dir": "unnamed_dd2c043d",
+  "hotkey": "5E7VQE3HAxTKnM25aYMuFZyhQGggkedfumJsbX532eaL8BQE",
+  "released_at": "2026-11-23T05:35:23.680925Z",
+  "scorer": "challenge-scorer/7",
+  "files": 49,
+  "lines": 14968,
+  "exts": {
+   ".go": 44,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "roll",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "unnamed_ea03b974",
+  "hotkey": "5G9WMtou1nAdvhSHdJ1awLnNo5dJ2rUNNfnKNtj3fGa9nHoM",
+  "released_at": "2026-11-25T20:03:28.843577Z",
+  "scorer": "challenge-scorer/7",
+  "files": 50,
+  "lines": 15255,
+  "exts": {
+   ".go": 45,
+   "LICENSE": 2,
+   ".md": 1,
+   ".mod": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "families",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "v3h-worlds-v9_3ea2ae3e",
+  "hotkey": "5HKmBL1H6aC3u7jwDShSV9Np1oDuNaq1Bzer2wSi4EFzh9Xv",
+  "released_at": "2026-11-17T19:57:50.497884Z",
+  "scorer": "challenge-scorer/7",
+  "files": 49,
+  "lines": 14636,
+  "exts": {
+   ".go": 41,
+   ".json": 3,
+   "LICENSE": 2,
+   ".md": 1
+  },
+  "top": [
+   "LICENSE",
+   "README.md",
+   "data",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "wrengen2-v2_4584b510",
+  "hotkey": "5D2qgKgG3xZfq38FKS1yPqShU2ED6ZJ4QTcinnTrkNaK6YoH",
+  "released_at": "2026-11-18T19:58:00.563768Z",
+  "scorer": "challenge-scorer/7",
+  "files": 53,
+  "lines": 15844,
+  "exts": {
+   ".go": 47,
+   "LICENSE": 2,
+   ".gitignore": 1,
+   ".md": 1
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "fam",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "wrengen2_1013d222",
+  "hotkey": "5D2qgKgG3xZfq38FKS1yPqShU2ED6ZJ4QTcinnTrkNaK6YoH",
+  "released_at": "2026-11-23T15:11:22.466131Z",
+  "scorer": "challenge-scorer/7",
+  "files": 56,
+  "lines": 16726,
+  "exts": {
+   ".go": 50,
+   "LICENSE": 2,
+   ".gitignore": 1,
+   ".md": 1
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "fam",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "wrengen2_2457bd4a",
+  "hotkey": "5D2qgKgG3xZfq38FKS1yPqShU2ED6ZJ4QTcinnTrkNaK6YoH",
+  "released_at": "2026-11-23T00:46:45.810680Z",
+  "scorer": "challenge-scorer/7",
+  "files": 55,
+  "lines": 16611,
+  "exts": {
+   ".go": 49,
+   "LICENSE": 2,
+   ".gitignore": 1,
+   ".md": 1
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "fam",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "wrengen2_36b292d3",
+  "hotkey": "5D2qgKgG3xZfq38FKS1yPqShU2ED6ZJ4QTcinnTrkNaK6YoH",
+  "released_at": "2026-11-26T15:15:37.564009Z",
+  "scorer": "challenge-scorer/7",
+  "files": 57,
+  "lines": 16977,
+  "exts": {
+   ".go": 51,
+   "LICENSE": 2,
+   ".gitignore": 1,
+   ".md": 1
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "fam",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "wrengen2_42d96bb1",
+  "hotkey": "5D2qgKgG3xZfq38FKS1yPqShU2ED6ZJ4QTcinnTrkNaK6YoH",
+  "released_at": "2026-11-25T00:50:43.727413Z",
+  "scorer": "challenge-scorer/7",
+  "files": 57,
+  "lines": 16920,
+  "exts": {
+   ".go": 51,
+   "LICENSE": 2,
+   ".gitignore": 1,
+   ".md": 1
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "fam",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "wrengen2_96fc8a66",
+  "hotkey": "5D2qgKgG3xZfq38FKS1yPqShU2ED6ZJ4QTcinnTrkNaK6YoH",
+  "released_at": "2026-11-19T15:09:32.964517Z",
+  "scorer": "challenge-scorer/7",
+  "files": 53,
+  "lines": 16227,
+  "exts": {
+   ".go": 47,
+   "LICENSE": 2,
+   ".gitignore": 1,
+   ".md": 1
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "fam",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ },
+ {
+  "dir": "wrengen2_e5df75da",
+  "hotkey": "5D2qgKgG3xZfq38FKS1yPqShU2ED6ZJ4QTcinnTrkNaK6YoH",
+  "released_at": "2026-11-21T00:45:30.364194Z",
+  "scorer": "challenge-scorer/7",
+  "files": 55,
+  "lines": 16604,
+  "exts": {
+   ".go": 49,
+   "LICENSE": 2,
+   ".gitignore": 1,
+   ".md": 1
+  },
+  "top": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "fam",
+   "go.mod",
+   "main.go",
+   "main_test.go",
+   "vendor"
+  ]
+ }
+]
